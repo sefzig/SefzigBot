@@ -30,6 +30,8 @@ module.exports = new Script({
         prompt: (bot) => bot.say('Und mit Nachnamen?'),
         receive: (bot, message) => {
             var vorname = bot.getProp('vorname');
+            vorname = vorname.toSource();
+            
             const nachname = message.text;
             return bot.setProp('nachname', nachname)
                 .then(() => bot.say(vorname+` ${nachname}, danke.`))
