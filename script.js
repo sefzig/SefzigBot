@@ -33,74 +33,35 @@ module.exports = new Script({
                 .then(() => 'finish');
         }
     }
-},{
+}
+
+module.exports = new Script({
     processing: {
-        //prompt: (bot) => bot.say('Beep boop...'),
+        prompt: (bot) => bot.say('Beep boop...'),
         receive: () => 'processing'
     },
 
     start: {
         receive: (bot) => {
-            return bot.say('So you want to learn about Esther? Just say HELLO to get started.')
-                .then(() => 'speak');
+            return bot.say('Hi! Ich bin Smooch Bot!')
+                .then(() => 'askName');
         }
     },
 
-    speak: {
+    askName: {
+        prompt: (bot) => bot.say('Wie heissen Sie?'),
         receive: (bot, message) => {
+            const name = message.text;
+            return bot.setProp('name', name)
+                .then(() => bot.say(`Prima, ich nenne Sie ${name}`))
+                .then(() => 'finish');
+        }
+    },
 
-            let upperText = message.text.trim().toUpperCase();
-
-            function updateSilent() {
-                switch ("--"+upperText) {
-                    case "CONNECT ME":
-                        return bot.setProp("silent", true);
-                    case "DISCONNECT":
-                        return bot.setProp("silent", false);
-                    default:
-                        return Promise.resolve();
-                }
-            }
-
-            function getSilent() {
-                return bot.getProp("silent");
-            }
-
-            function processMessage(isSilent) {
-                if (isSilent) {
-                    return Promise.resolve("speak");
-                }
-
-                if (!_.has(scriptRules, upperText)) {
-                    return bot.say(`I didn't understand that.`).then(() => 'speak');
-                }
-
-                var response = scriptRules[upperText];
-                var lines = response.split(/(<img src=\'[^>]*\'\/>)/);
-
-                var p = Promise.resolve();
-                _.each(lines, function(line) {
-                    line = line.trim();
-                    if (!line.startsWith("<")) {
-                        p = p.then(function() {
-                            return bot.say(line);
-                        });
-                    } else {
-                        // p = p.then(function() {
-                        //     var start = line.indexOf("'") + 1;
-                        //     var end = line.lastIndexOf("'");
-                        //     var imageFile = line.substring(start, end);
-                        //     return bot.sendImage(imageFile);
-                        // });
-                    }
-                })
-
-                return p.then(() => 'speak');
-            }
-
-            return updateSilent()
-                .then(getSilent)
-                .then(processMessage);
+    finish: {
+        receive: (bot, message) => {
+            return bot.getProp('name')
+                .then(() => 'finish');
         }
     }
 });
