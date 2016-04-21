@@ -21,8 +21,8 @@ module.exports = new Script({
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say(`Prima, wir nennen Sie ${name}.`)),
-                .then(() => bot.say('Wollen Sie --Person oder --Kompetenzen?')),
+                .then(() => bot.say(`Prima, wir nennen Sie ${name}.`))
+                .then(() => bot.say('Wollen Sie --Person oder --Kompetenzen?'))
                 .then(() => 'register');
         }
     },
