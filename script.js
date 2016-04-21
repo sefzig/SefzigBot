@@ -20,7 +20,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say('Great! I\'ll call you ${name}'))
+                .then(() => bot.say(`Great! I'll call you ${name}`))
                 .then(() => 'finish');
         }
     },
@@ -28,7 +28,7 @@ module.exports = new Script({
     finish: {
         receive: (bot, message) => {
             return bot.getProp('name')
-                .then((name) => bot.say('Sorry ${name}, my creator didn\'t ' +
+                .then((name) => bot.say(`Sorry ${name}, my creator didn't ` +
                         'teach me how to do anything else!'))
                 .then(() => 'finish');
         }
