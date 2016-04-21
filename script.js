@@ -1,8 +1,6 @@
 'use strict';
 
-const _ = require('lodash');
 const Script = require('smooch-bot').Script;
-const scriptRules = require('./script.json');
 
 module.exports = new Script({
     processing: {
@@ -23,35 +21,17 @@ module.exports = new Script({
             const name = message.text;
             return bot.setProp('name', name)
                 .then(() => bot.say(`Great! I'll call you ${name}`))
-                .then(() => 'finish');
+                .then(() => 'register');
         }
     },
 
-    finish: {
+    register: {
+        prompt: (bot) => bot.say('Wollen Sie --Person oder --Kompetenzen?'),
         receive: (bot, message) => {
-            return bot.getProp('name')
-                .then(() => 'finish');
-        }
-    }
-},{
-    processing: {
-        prompt: (bot) => bot.say('Beep boop...'),
-        receive: () => 'processing'
-    },
-
-    start: {
-        receive: (bot) => {
-            return bot.say('Hi! Ich bin Smooch Bot!')
-                .then(() => 'askName');
-        }
-    },
-
-    askName: {
-        prompt: (bot) => bot.say('Wie heissen Sie?'),
-        receive: (bot, message) => {
-            const name = message.text;
-            return bot.setProp('name', name)
-                .then(() => bot.say(`Prima, ich nenne Sie ${name}`))
+            const wollen = message.text;
+            
+            return bot.setProp('wollen', wollen)
+                .then(() => bot.say(`Great! Sie wollen ${wollen}`))
                 .then(() => 'finish');
         }
     },
