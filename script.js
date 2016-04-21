@@ -11,13 +11,13 @@ module.exports = new Script({
     start: {
         receive: (bot) => {
             return bot.say('Hallo! ich bin Andreas Sefzigs Bot.')
-                .then(() => bot.say('Wenn Andreas online ist, sieht er, was Sie schreiben und kann diesem Gespräch beitreten.'))
+                .then(() => bot.say('Hinweis: Wenn Andreas online ist, sieht er dieses Gespräch und kann beitreten.'))
                 .then(() => 'vorname');
         }
     },
 
     vorname: {
-        prompt: (bot) => bot.say('Vielleicht darf ich Sie erstmal begrüßen: Wie heissen Sie mit Vornamen?'),
+        prompt: (bot) => bot.say('Wie heissen Sie mit Vornamen?'),
         receive: (bot, message) => {
             var vorname = message.text;
             return bot.setProp('vorname', vorname)
@@ -31,8 +31,8 @@ module.exports = new Script({
         receive: (bot, message) => {
             var nachname = message.text;
             return bot.setProp('nachname', nachname)
-                .then(() => bot.say(`${nachname}, danke.`))
-                .then(() => bot.say('Schreiben Sie eine Nachricht an Andreas - oder unterhalten Sie sich mit mir, indem Sie --bot schreiben.'))
+                .then(() => bot.say(`${vorname} ${nachname}, danke.`))
+                .then(() => bot.say('Schreiben Sie hier eine Nachricht an Andreas. Oder unterhalten Sie sich mit mir, indem Sie --bot schreiben!'))
                 .then(() => 'register');
         }
     },
