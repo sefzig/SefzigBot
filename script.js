@@ -29,10 +29,10 @@ module.exports = new Script({
     nachname: {
         prompt: (bot) => bot.say('Und mit Nachnamen?'),
         receive: (bot, message) => {
-            const vorname = bot.getProp('vorname');
+            var vorname = bot.getProp('vorname');
             const nachname = message.text;
             return bot.setProp('nachname', nachname)
-                .then(() => bot.say(`${vorname} ${nachname}, danke.`))
+                .then(() => bot.say(vorname+` ${nachname}, danke.`))
                 .then(() => bot.say('Schreiben Sie eine Nachricht an Andreas - oder unterhalten Sie sich mit mir, indem Sie --bot schreiben.'))
                 .then(() => 'register');
         }
