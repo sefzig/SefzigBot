@@ -31,13 +31,10 @@ module.exports = new Script({
         receive: (bot, message) => {
             
             const wollen = message.text;
-            var befehl = wollen;
-            befehl = befehl.replace("--", "");
-            befehl = befehl.trim();
-            befehl = befehl.toUpperCase();
+            const befehl = wollen.trim().toUpperCase();
             
-            if (befehl == "HALLO")     { bot.say('Begrüßung und alles.'); }
-            if (befehl == "ABBRECHEN") { bot.say('Text zum Abbruch.'); }
+            if (befehl == "--HALLO")     { bot.say('Begrüßung und alles.'); }
+            if (befehl == "--ABBRECHEN") { bot.say('Text zum Abbruch.'); }
             
             return bot.setProp('wollen', wollen)
                 .then(() => 'register');
