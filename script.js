@@ -19,7 +19,7 @@ module.exports = new Script({
     vorname: {
         prompt: (bot) => bot.say('Vielleicht darf ich Sie erstmal begrüßen: Wie heissen Sie mit Vornamen?'),
         receive: (bot, message) => {
-            const vorname = message.text;
+            var vorname = message.text;
             return bot.setProp('vorname', vorname)
                 .then(() => bot.say(`${vorname}, prima.`))
                 .then(() => 'nachname');
@@ -29,9 +29,9 @@ module.exports = new Script({
     nachname: {
         prompt: (bot) => bot.say('Und mit Nachnamen?'),
         receive: (bot, message) => {
-            const nachname = message.text;
+            var nachname = message.text;
             return bot.setProp('nachname', nachname)
-                .then(() => bot.say(`${vorname} ${nachname}, danke.`))
+                .then(() => bot.say(`${nachname}, danke.`))
                 .then(() => bot.say('Schreiben Sie eine Nachricht an Andreas - oder unterhalten Sie sich mit mir, indem Sie --bot schreiben.'))
                 .then(() => 'register');
         }
@@ -40,18 +40,18 @@ module.exports = new Script({
     register: {
         receive: (bot, message) => {
             
-            const wollen = message.text;
+            var wollen = message.text;
             var befehl = wollen;
             befehl = befehl.trim();
             befehl = befehl.toUpperCase();
             
          // Über mich
-            if (befehl == "--PERSON")       { bot.say('Person'); }
-            if (befehl == "--PERSON")       { bot.say('Person'); }
+            if (befehl == "--PERSON")       { bot.say('Person.'); }
+            if (befehl == "--LEBENSLAUF")   { bot.say('Lebenslauf.'); }
             
          // System
-            if (befehl == "--BOT")       { bot.say('Die Hilfe usw.'); }
-            if (befehl == "--ABBRECHEN") { bot.say('Text zum Abbruch.'); }
+            if (befehl == "--BOT")       { bot.say('Bot.'); }
+            if (befehl == "--ABBRECHEN") { bot.say('Abbruch.'); }
             
             return bot.setProp('wollen', wollen)
                 .then(() => 'register');
