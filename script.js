@@ -46,7 +46,7 @@ module.exports = new Script({
             befehl = befehl.toUpperCase();
             
          // System
-            if (befehl == "--BOT")          { bot.say('Ich bin sozusagen Andreas\' Assistent. Er hat mir vieles beigebracht, das sie durch Schreiben der mit -- beginnenden Wörter abrufen können:'); bot.say('Wollen Sie etwas über seine --Person erfahren, hören, was es --Neues bei ihm gibt oder auf anderem Wege --Kontakt  aufnehmen?'); }
+            if (befehl == "--BOT")          { bot.say('Wollen Sie etwas über seine --Person erfahren, hören, was es --Neues bei ihm gibt oder auf anderem Wege --Kontakt  aufnehmen?'); bot.say('Ich bin sozusagen Andreas\' Assistent. Er hat mir vieles beigebracht, das sie durch Schreiben der mit -- beginnenden Wörter abrufen können:'); }
             if (befehl == "--ABBRECHEN")    { bot.say('Text: Abbruch.'); }
             
          // Über mich
