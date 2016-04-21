@@ -19,7 +19,7 @@ module.exports = new Script({
     vorname: {
         prompt: (bot) => bot.say('Vielleicht darf ich Sie erstmal begrüßen: Wie heissen Sie mit Vornamen?'),
         receive: (bot, message) => {
-            const vorname = message.text;
+            var vorname = message.text;
             return bot.setProp('vorname', vorname)
                 .then(() => bot.say(`${vorname}, prima.`))
                 .then(() => 'nachname');
@@ -29,13 +29,9 @@ module.exports = new Script({
     nachname: {
         prompt: (bot) => bot.say('Und mit Nachnamen?'),
         receive: (bot, message) => {
-            var vorname = bot.getProp('vorname');
-            vorname = vorname.toSource();
-            
-            const nachname = message.text;
+            var nachname = message.text;
             return bot.setProp('nachname', nachname)
-                .getProp('vorname')
-                .then((vorname) => bot.say(`${vorname} ${nachname}, danke.`))
+                .then(() => bot.say(`${nachname}, danke.`))
                 .then(() => bot.say('Schreiben Sie eine Nachricht an Andreas - oder unterhalten Sie sich mit mir, indem Sie --bot schreiben.'))
                 .then(() => 'register');
         }
@@ -44,7 +40,7 @@ module.exports = new Script({
     register: {
         receive: (bot, message) => {
             
-            const wollen = message.text;
+            var wollen = message.text;
             var befehl = wollen;
             befehl = befehl.trim();
             befehl = befehl.toUpperCase();
