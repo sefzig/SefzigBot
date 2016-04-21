@@ -7,6 +7,11 @@
           
        // chatStarten();
           
+       // Konto füllen
+          var vorname =  Cookies.get('SefzigbotVorname');  if ((vorname)  && (vorname != ""))  { $("#vorname").val(vorname);   } else { vorname  = "Vorname";        } $("#vorname").change(function(){ Cookies.set('SefzigbotVorname', $(this).val()); });
+          var nachname = Cookies.get('SefzigbotNachname'); if ((nachname) && (nachname != "")) { $("#nachname").val(nachname); } else { nachname = "Nachname";       }
+          var email =    Cookies.get('SefzigbotEmail');    if ((email)    && (email != ""))    { $("#email").val(email);       } else { email    = "E-Mail-Adresse"; }
+          
        });
        
     /* Chat starten
@@ -17,6 +22,10 @@
           
           bereit = true;
           if (bereit) {
+             
+             var vorname =  Cookies.get('SefzigbotVorname');  if ((!vorname)  || (vorname  == "Vorname"))        { vorname  = ""; }
+             var nachname = Cookies.get('SefzigbotNachname'); if ((!nachname) || (nachname == "Nachname"))       { nachname = ""; }
+             var email =    Cookies.get('SefzigbotEmail');    if ((!email)    || (email    == "E-Mail-Adresse")) { email    = ""; }
              
           // Smooch Js
           // https://github.com/smooch/smooch-js
