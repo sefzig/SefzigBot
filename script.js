@@ -31,7 +31,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             const nachname = message.text;
             return bot.setProp('nachname', nachname)
-                .then(() => bot.say(`${nachname}, danke.`))
+                .then(() => bot.say(`${vorname} ${nachname}, danke.`))
                 .then(() => bot.say('Schreiben Sie eine Nachricht an Andreas - oder unterhalten Sie sich mit mir, indem Sie --bot schreiben.'))
                 .then(() => 'register');
         }
@@ -45,8 +45,12 @@ module.exports = new Script({
             befehl = befehl.trim();
             befehl = befehl.toUpperCase();
             
+         // Über mich
+            if (befehl == "--PERSON")       { bot.say('Person'); }
+            if (befehl == "--PERSON")       { bot.say('Person'); }
+            
+         // System
             if (befehl == "--BOT")       { bot.say('Die Hilfe usw.'); }
-            if (befehl == "--HALLO")     { bot.say('Begrussung und alles.'); }
             if (befehl == "--ABBRECHEN") { bot.say('Text zum Abbruch.'); }
             
             return bot.setProp('wollen', wollen)
