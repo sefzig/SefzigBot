@@ -31,7 +31,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             var nachname = message.text;
             return bot.setProp('nachname', nachname)
-                .then(() => bot.say(`${vorname} ${nachname}, danke.`))
+                .then(() => bot.say(`${nachname}, danke.`))
                 .then(() => bot.say('Schreiben Sie hier eine Nachricht an Andreas. Oder unterhalten Sie sich mit mir, indem Sie --bot schreiben!'))
                 .then(() => 'register');
         }
