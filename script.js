@@ -10,17 +10,18 @@ module.exports = new Script({
 
     start: {
         receive: (bot) => {
-            return bot.say('Hi! I\'m Smooch Bot!')
+            return bot.say('Hallo! ich bin Andreas Sefzigs Bot.')
+                .then(() => bot.say('Wenn Andreas online ist, sieht er unsere Unterhaltung. Darf ich Sie zunächst ankündigen?'))
                 .then(() => 'askName');
         }
     },
 
     askName: {
-        prompt: (bot) => bot.say('What\'s your name?'),
+        prompt: (bot) => bot.say('Wie sollen wir Sie nennen?'),
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say(`Great! I'll call you ${name}`))
+                .then(() => bot.say(`Prima, wir nennen Sie ${name}.`))
                 .then(() => 'register');
         }
     },
@@ -28,10 +29,12 @@ module.exports = new Script({
     register: {
         prompt: (bot) => bot.say('Wollen Sie --Person oder --Kompetenzen?'),
         receive: (bot, message) => {
-            const wollen = message.text;
+            
+            const wollen = message.text.replace("--", "");
+            
+            if (wollen == "HALLO") { bot.say('Begrüßung und alles.'); }
             
             return bot.setProp('wollen', wollen)
-                .then(() => bot.say(`Great! Sie wollen ${wollen}`))
                 .then(() => 'finish');
         }
     },
