@@ -30,13 +30,9 @@ module.exports = new Script({
     register: {
         receive: (bot, message) => {
             
-            const wollen = message.text;
-            var befehl = wollen;
-            befehl = befehl.trim();
-            befehl = befehl.toUpperCase();
+            const wollen = message.text.replace("--", "");
             
-            if (befehl == "--HALLO")     { bot.say('Begrussung und alles.'); }
-            if (befehl == "--ABBRECHEN") { bot.say('Text zum Abbruch.'); }
+            if (wollen == "HALLO") { bot.say('Begrüßung und alles.'); }
             
             return bot.setProp('wollen', wollen)
                 .then(() => 'register');
