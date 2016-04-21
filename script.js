@@ -4,7 +4,7 @@ const Script = require('smooch-bot').Script;
 
 module.exports = new Script({
     processing: {
-        prompt: (bot) => bot.say('Beep boop...'),
+        prompt: (bot) => bot.say('101100111001101...'),
         receive: () => 'processing'
     },
 
@@ -46,13 +46,14 @@ module.exports = new Script({
             befehl = befehl.toUpperCase();
             
          // System
-            if (befehl == "--BOT")          { bot.say('Wollen Sie etwas über seine --Person erfahren, hören, was es --Neues bei ihm gibt oder auf anderem Wege --Kontakt  aufnehmen?'); bot.say('Ich bin sozusagen Andreas\' Assistent. Er hat mir vieles beigebracht, das sie durch Schreiben der mit -- beginnenden Wörter abrufen können:'); }
+            if (befehl == "--BOT")          { bot.say('Ich bin sozusagen Andreas\' Assistent. Er hat mir vieles beigebracht, das sie durch Schreiben der mit -- beginnenden Wörter abrufen können:'); }
+            if (befehl == "--BOT")          { bot.say('Wollen Sie etwas über seine --Person erfahren, hören, was es --Neues bei ihm gibt oder auf anderem Wege --Kontakt  aufnehmen?'); }
             if (befehl == "--ABBRECHEN")    { bot.say('Text: Abbruch.'); }
             
          // Über mich
             if (befehl == "--PERSON")       { bot.say('Text: Person; Links: --Lebenslauf, --Foto.'); }
             if (befehl == "--LEBENSLAUF")   { bot.say('Text: Lebenslauf.'); }
-            if (befehl == "--FOTO")         { bot.say('Text: Foto.'); }
+            if (befehl == "--FOTO")         { bot.say('<img src=http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png/>'); }
             if (befehl == "--NEUES")        { bot.say('Text: Neues.'); }
             
          // Kontakt

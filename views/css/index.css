@@ -22,6 +22,11 @@
     #seite > div {
        display: none;
     }
+    #seite > div > iframe {
+       width: 100%;
+       height: 100%;
+       border: 0px black solid;
+    }
     
  /* Smooch Web Widget */
     .sk-left-row { vertical-align: top; }

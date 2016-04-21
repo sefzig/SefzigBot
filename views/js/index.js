@@ -5,21 +5,22 @@
      */ 
        $(document).ready(function(){
           
-       // chatStarten();
-          
        // Konto füllen
           var vorname =  Cookies.get('SefzigbotVorname');  if ((vorname)  && (vorname != ""))  { $("#vorname").val(vorname);   } else { vorname  = "Vorname";        } $("#vorname").change(function(){  Cookies.set('SefzigbotVorname',  $(this).val()); });
           var nachname = Cookies.get('SefzigbotNachname'); if ((nachname) && (nachname != "")) { $("#nachname").val(nachname); } else { nachname = "Nachname";       } $("#nachname").change(function(){ Cookies.set('SefzigbotNachname', $(this).val()); });
           var email =    Cookies.get('SefzigbotEmail');    if ((email)    && (email != ""))    { $("#email").val(email);       } else { email    = "E-Mail-Adresse"; } $("#email").change(function(){    Cookies.set('SefzigbotEmail',    $(this).val()); });
           
-          $("[data-start]").click(function() {
+       // Benutzeroberfläche
+          $("[data-start]").click(function(e) {
              
              var starten = $(this).attr("data-start");
              
              $("#seite > div").fadeOut();
              $("#seite #"+starten).fadeIn();
              
-             if (starten == "chat") { chatStarten(); }
+             start(starten);
+             
+             e.preventDefault();
              
           });
           
@@ -29,10 +30,9 @@
      * 
      * 
      */ 
-       function chatStarten() {
+       function start(methode) {
           
-          bereit = true;
-          if (bereit) {
+          if (methode == "chat") {
              
              var vorname =  Cookies.get('SefzigbotVorname');  if ((!vorname)  || (vorname  == "") || (vorname  == "Vorname"))        { vorname  = "Daniel"; }
              var nachname = Cookies.get('SefzigbotNachname'); if ((!nachname) || (nachname == "") || (nachname == "Nachname"))       { nachname = "Tester"; }
@@ -50,7 +50,7 @@
                    headerText: 'Andreas Sefzigs Bot',
                    inputPlaceholder: 'Schreiben Sie eine Nachricht...',
                    sendButtonText: 'Absenden',
-                   introText: 'Dies ist der Anfang unseres Gesprächs.',
+                   introText: 'Dies ist der Anfang unseres Gesprächs.<br/>Bitte schreiben Sie irgendetwas, um das Gespräch zu beginnen!',
                    settingsText: 'Hinterlassen Sie Ihre E-Mail-Adresse, damit ich Kontakt zu Ihnen aufnehmen kann.',
                    settingsReadOnlyText: 'Ich schreibe Ihnen an diese E-Mail-Adresse, sollen wir uns verpasst haben.',
                    settingsInputPlaceholder: 'Ihre E-Mail-Adresse',
@@ -68,6 +68,14 @@
              
              Smooch.render(document.getElementById('chat'));
           // Smooch.open();
+             
+             Smooch.updateUser({ email: email });
+             
+          }
+          
+          if (methode == "facebook") {
+             
+             $("#facebook > iframe").attr("src", "https://www.messenger.com/t/1195928167086850/");
              
           }
           
