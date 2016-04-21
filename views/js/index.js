@@ -42,7 +42,6 @@
           // https://github.com/smooch/smooch-js
              Smooch.init({ 
                 appToken: '{{appToken}}',
-                embedded: true,
                 givenName: vorname,
                 surname: nachname,
                 email: email,
@@ -66,8 +65,9 @@
                 }
              });
              
-             Smooch.render(document.getElementById('chat'));
-          // Smooch.open();
+          // embedded: true,
+          // Smooch.render(document.getElementById('chat'));
+             Smooch.open();
              
           }
           
