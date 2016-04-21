@@ -45,6 +45,10 @@ module.exports = new Script({
             befehl = befehl.trim();
             befehl = befehl.toUpperCase();
             
+         // System
+            if (befehl == "--BOT")          { bot.say('Text: Bot.'); }
+            if (befehl == "--ABBRECHEN")    { bot.say('Text: Abbruch.'); }
+            
          // Über mich
             if (befehl == "--PERSON")       { bot.say('Text: Person; Links: --Lebenslauf, --Foto.'); }
             if (befehl == "--LEBENSLAUF")   { bot.say('Text: Lebenslauf.'); }
@@ -52,15 +56,11 @@ module.exports = new Script({
             
          // Themen
             if (befehl == "--KONTAKT")      { bot.say('Text: Kontakt mit Webseite; Links: --Twitter, --Slackteam, --Xing.'); }
-            if (befehl == "--TWITTER")      { bot.say('Text: Twitter.'); }
             if (befehl == "--SLACKTEAM")    { bot.say('Text: Offenes Slack-Team.'); }
             
-         // Links
-            if (befehl == "--XING")         { bot.say('%[XING-Profil](http://xing.com/profile/Andreas_Sefzig/)'); }
-            
-         // System
-            if (befehl == "--BOT")          { bot.say('Text: Bot.'); }
-            if (befehl == "--ABBRECHEN")    { bot.say('Text: Abbruch.'); }
+         // Angebote
+            if (befehl == "--XING")         { bot.say('Andreas ist Mitglied bei Xing: %[XING-Profil](http://xing.com/profile/Andreas_Sefzig/)'); }
+            if (befehl == "--TWITTER")      { bot.say('Andreas ist auf Twitter: %[Twitter-Profil](http://twitter.com/sefzig/)'); }
             
          // Vorlage
             if (befehl == "--VORLAGE")      { bot.say('Text: Vorlage.'); }
