@@ -27,7 +27,7 @@
     .sk-left-row { vertical-align: top; }
     .sk-left-row img { margin-top: -20px; }
  /* #sk-header { display: none; } */
-    #sk-header > span:before {
+    #sk-header > span:after {
        content: "";
        display: block;
        background: url("https://media.smooch.io/appicons/571777938ea8c63e0057cc1f.jpg") no-repeat;

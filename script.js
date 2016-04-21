@@ -46,15 +46,16 @@ module.exports = new Script({
             befehl = befehl.toUpperCase();
             
          // System
-            if (befehl == "--BOT")          { bot.say('Text: Bot.'); }
+            if (befehl == "--BOT")          { bot.say('Ich bin sozusagen Andreas\' Assistent. Er hat mir vieles beigebracht, das sie durch Schreiben der mit -- beginnenden Wörter abrufen können:'); bot.say('Wollen Sie etwas über seine --Person erfahren, hören, was es --Neues bei ihm gibt oder auf anderem Wege --Kontakt  aufnehmen?'); }
             if (befehl == "--ABBRECHEN")    { bot.say('Text: Abbruch.'); }
             
          // Über mich
             if (befehl == "--PERSON")       { bot.say('Text: Person; Links: --Lebenslauf, --Foto.'); }
             if (befehl == "--LEBENSLAUF")   { bot.say('Text: Lebenslauf.'); }
             if (befehl == "--FOTO")         { bot.say('Text: Foto.'); }
+            if (befehl == "--NEUES")        { bot.say('Text: Neues.'); }
             
-         // Themen
+         // Kontakt
             if (befehl == "--KONTAKT")      { bot.say('Text: Kontakt mit Webseite; Links: --Twitter, --Slackteam, --Xing.'); }
             if (befehl == "--SLACKTEAM")    { bot.say('Text: Offenes Slack-Team.'); }
             
