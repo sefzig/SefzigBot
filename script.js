@@ -32,12 +32,12 @@ module.exports = new Script({
             const nachname = message.text;
             return bot.setProp('nachname', nachname)
                 .then(() => bot.say(`${nachname}, danke.`))
+                .then(() => bot.say('Schreiben Sie eine Nachricht an Andreas - oder unterhalten Sie sich mit mir, indem Sie --bot schreiben.'))
                 .then(() => 'register');
         }
     },
 
     register: {
-        prompt: (bot) => bot.say('Schreiben Sie Andreas eine Nachricht oder unterhalten Sie sich mit mir über ihn, indem Sie --bot schreiben.'),
         receive: (bot, message) => {
             
             const wollen = message.text;
