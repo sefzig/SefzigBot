@@ -1,49 +1,28 @@
 
     /* Anwendung starten
      * 
+     * 
      */ 
        $(document).ready(function(){
           
-          formStarten();
+       // chatStarten();
           
        });
        
-    /* Formular vorbereiten
-     * 
-     */ 
-       function formStarten() {
-          
-          var vorname = Cookies.get('BewerbotVorname');
-          var nachname = Cookies.get('BewerbotNachname');
-          var email = Cookies.get('BewerbotEmail');
-          
-          if (vorname) { $("#vorname").val(vorname); }
-          if (nachname) { $("#nachname").val(nachname); }
-          if (email) { $("#email").val(email); }
-          
-          if ((vorname) && (nachname) && (email)) { chatStarten(); }
-           
-       }
-       
     /* Chat starten
      * 
-     * Smooch Js-Dokumentation
-     * https://github.com/smooch/smooch-js
+     * 
      */ 
        function chatStarten() {
           
-          var bereit = false;
-          
-          var vorname =  $("#vorname").val();  if ((vorname == "")  || (vorname  == "Ihr Vorname"))         { vorname  = false; } else { Cookies.set('BewerbotVorname',  vorname); }
-          var nachname = $("#nachname").val(); if ((nachname == "") || (nachname == "Ihr Nachname"))        { nachname = false; } else { Cookies.set('BewerbotNachname', nachname); }
-          var email =    $("#email").val();    if ((email == "")    || (email    == "Ihre E-Mail-Adresse")) { email    = false; } else { Cookies.set('BewerbotEmail',    email); }
-          
-          if ((vorname) && (nachname) && (email)) { bereit = true; } else { alert("Bitte geben Sie alle Daten an."); }
-          
+          bereit = true;
           if (bereit) {
              
+          // Smooch Js
+          // https://github.com/smooch/smooch-js
              Smooch.init({ 
                 appToken: '{{appToken}}',
+                embedded: true,
                 givenName: vorname,
                 surname: nachname,
                 email: email,
@@ -67,7 +46,11 @@
                 }
              });
              
-             Smooch.open();
+             Smooch.render(document.getElementById('chat'));
+          // Smooch.open();
+             
+             $("#seite > div").fadeOut();
+             $("#seite #chat").fadeIn();
              
           }
           
