@@ -41,7 +41,7 @@
           // Smooch Js
           // https://github.com/smooch/smooch-js
              Smooch.init({ 
-                appToken: '{{appToken}}',
+                appToken: 'd9k415y76nk8ab2croifjshpv',
                 embedded: true,
                 givenName: vorname,
                 surname: nachname,
