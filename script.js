@@ -21,7 +21,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             const vorname = message.text;
             return bot.setProp('vorname', vorname)
-                .then(() => bot.say(`${vorname}, prima. Und mit Nachnamen?`))
+                .then(() => bot.say(`${vorname}, prima.`))
                 .then(() => 'nachname');
         }
     },
@@ -31,7 +31,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             const nachname = message.text;
             return bot.setProp('nachname', nachname)
-                .then(() => bot.say(`${vorname} ${nachname}, danke.`))
+                .then(() => bot.say(`${nachname}, danke.`))
                 .then(() => 'register');
         }
     },
