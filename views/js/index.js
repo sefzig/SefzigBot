@@ -12,6 +12,17 @@
           var nachname = Cookies.get('SefzigbotNachname'); if ((nachname) && (nachname != "")) { $("#nachname").val(nachname); } else { nachname = "Nachname";       }
           var email =    Cookies.get('SefzigbotEmail');    if ((email)    && (email != ""))    { $("#email").val(email);       } else { email    = "E-Mail-Adresse"; }
           
+          $("[data-start]").click(function() {
+             
+             var starten = $(this).attr("data-start");
+             
+             $("#seite > div").fadeOut();
+             $("#seite #"+starten).fadeIn();
+             
+             if (starten == "chat") { chatStarten(); }
+             
+          });
+          
        });
        
     /* Chat starten
@@ -57,9 +68,6 @@
              
              Smooch.render(document.getElementById('chat'));
           // Smooch.open();
-             
-             $("#seite > div").fadeOut();
-             $("#seite #chat").fadeIn();
              
           }
           
