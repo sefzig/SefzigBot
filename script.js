@@ -30,8 +30,6 @@ module.exports = new Script({
     finish: {
         receive: (bot, message) => {
             return bot.getProp('name')
-                .then((name) => bot.say(`Sorry ${name}, my creator didn't ` +
-                        'teach me how to do anything else!'))
                 .then(() => 'finish');
         }
     }
@@ -54,7 +52,7 @@ module.exports = new Script({
             let upperText = message.text.trim().toUpperCase();
 
             function updateSilent() {
-                switch (upperText) {
+                switch ("--"+upperText) {
                     case "CONNECT ME":
                         return bot.setProp("silent", true);
                     case "DISCONNECT":
