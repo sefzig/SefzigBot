@@ -46,12 +46,24 @@ module.exports = new Script({
             befehl = befehl.toUpperCase();
             
          // Über mich
-            if (befehl == "--PERSON")       { bot.say('Text: Person.'); }
+            if (befehl == "--PERSON")       { bot.say('Text: Person; Links: --Lebenslauf, --Foto.'); }
             if (befehl == "--LEBENSLAUF")   { bot.say('Text: Lebenslauf.'); }
+            if (befehl == "--FOTO")         { bot.say('Text: Foto.'); }
+            
+         // Themen
+            if (befehl == "--KONTAKT")      { bot.say('Text: Kontakt mit Webseite; Links: --Twitter, --Slackteam, --Xing.'); }
+            if (befehl == "--TWITTER")      { bot.say('Text: Twitter.'); }
+            if (befehl == "--SLACKTEAM")    { bot.say('Text: Offenes Slack-Team.'); }
+            
+         // Links
+            if (befehl == "--XING")         { bot.say('%[XING-Profil](http://xing.com/profile/Andreas_Sefzig/)'); }
             
          // System
             if (befehl == "--BOT")          { bot.say('Text: Bot.'); }
             if (befehl == "--ABBRECHEN")    { bot.say('Text: Abbruch.'); }
+            
+         // Vorlage
+            if (befehl == "--VORLAGE")      { bot.say('Text: Vorlage.'); }
             
             return bot.setProp('wollen', wollen)
                 .then(() => 'register');
