@@ -34,9 +34,9 @@
           bereit = true;
           if (bereit) {
              
-             var vorname =  Cookies.get('SefzigbotVorname');  if ((!vorname)  || (vorname  == "Vorname"))        { vorname  = ""; }
-             var nachname = Cookies.get('SefzigbotNachname'); if ((!nachname) || (nachname == "Nachname"))       { nachname = ""; }
-             var email =    Cookies.get('SefzigbotEmail');    if ((!email)    || (email    == "E-Mail-Adresse")) { email    = ""; }
+             var vorname =  Cookies.get('SefzigbotVorname');  if ((!vorname)  || (vorname  == "Vorname"))        { vorname  = "Daniel"; }
+             var nachname = Cookies.get('SefzigbotNachname'); if ((!nachname) || (nachname == "Nachname"))       { nachname = "Tester"; }
+             var email =    Cookies.get('SefzigbotEmail');    if ((!email)    || (email    == "E-Mail-Adresse")) { email    = "daniel.tester@sefzig.net"; }
              
           // Smooch Js
           // https://github.com/smooch/smooch-js
