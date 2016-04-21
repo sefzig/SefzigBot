@@ -1,33 +1,28 @@
 
  /* Allgemein: Normalisieren */ 
-    h1, h2. h3, h4, h5, h6 {
+    html, body, h1, h2. h3, h4, h5, h6, #seite {
        margin: 0px;
        padding: 0px;
+       overflow-x: hidden;
+    }
+    html, body, #seite {
+       width: 100%;
+       height: 100%;
+       background-color: white;
     }
     
  /* Seite: Layout */
-    html, body, #seite {
-       height:100%;
-       overflow-x: hidden;
-       margin: 0px;
-       padding: 0px;
-    }
-    #seite {
-       position: relative; 
-       clear:left;
-       margin-left: auto;
-       margin-right: auto;
-       width: 100%;
-       height: 100%;
-       display: block;
-       background-color: #cccccc;
+    #seite, #seite > div {
+       position: absolute;
+       top: 0px;
+       right: 0px;
+       bottom: 0px;
+       left: 0px;
     }
     #seite > div {
-       width: 100%;
-       height: 100%;
-       background-color: #ffffff;
+       display: none;
     }
     
- /* Smooch Web Hacks */
+ /* Smooch Web Widget */
     .sk-left-row { vertical-align: top; }
     .sk-left-row img { margin-top: -20px; }

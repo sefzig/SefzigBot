@@ -46,12 +46,12 @@ module.exports = new Script({
             befehl = befehl.toUpperCase();
             
          // Über mich
-            if (befehl == "--PERSON")       { bot.say('Person.'); }
-            if (befehl == "--LEBENSLAUF")   { bot.say('Lebenslauf.'); }
+            if (befehl == "--PERSON")       { bot.say('Text: Person.'); }
+            if (befehl == "--LEBENSLAUF")   { bot.say('Text: Lebenslauf.'); }
             
          // System
-            if (befehl == "--BOT")       { bot.say('Bot.'); }
-            if (befehl == "--ABBRECHEN") { bot.say('Abbruch.'); }
+            if (befehl == "--BOT")          { bot.say('Text: Bot.'); }
+            if (befehl == "--ABBRECHEN")    { bot.say('Text: Abbruch.'); }
             
             return bot.setProp('wollen', wollen)
                 .then(() => 'register');
