@@ -1,7 +1,7 @@
 'use strict';
 
 const Script = require('smooch-bot').Script;
-const botVorweg = "/sefzigbot: ";
+const botVorweg = "[Bot] ";
 
 module.exports = new Script({
     processing: {
@@ -59,7 +59,7 @@ module.exports = new Script({
             
          // Kontakt
             if (befehl == "--KONTAKT")      { bot.say(botVorweg+'Sie erreichen Andreas über andreas@sefzig.net, in seinem --Slackteam, auf --Twitter und auf --Xing. %[Kontakt-Seite öffnen](http://sefzig.net/link/Kontakt/)'); }
-            if (befehl == "--SLACKTEAM")    { bot.say(botVorweg+'Andreas betreibt ein offenes Slack-Team, in dem man sich über Marketing-Technologie unterhält. %[Offenes Slack-Team öffnen](http://sefzig.net/link/Slack/)'); }
+            if (befehl == "--SLACKTEAM")    { bot.say(botVorweg+'Andreas betreibt ein offenes Slack-Team, in dem man sich über Marketing-Technologie unterhält. %[Slack-Team öffnen](http://sefzig.net/link/Slack/)'); }
             if (befehl == "--XING")         { bot.say(botVorweg+'Andreas ist bei Xing: Er ist seit 2004 angemeldet und gehört mit über 500 Kontakten zu den 5% der bestvernetzten Mitglieder. %[Xing-Profil öffnen](http://sefzig.net/link/Xing/)'); bot.say(botVorweg+'[Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/xing_vernetzt.png]'); }
             if (befehl == "--TWITTER")      { bot.say(botVorweg+'Andreas ist auf Twitter: %[Twitter-Profil öffnen](http://sefzig.net/link/Twitter/)'); }
             

@@ -60,7 +60,7 @@
              
           // Bots anpassen
              text_alt = text_neu;
-             text_neu = text_neu.replace("/sefzigbot: ","");
+             text_neu = text_neu.replace("[Bot] ","");
              if (text_neu != text_alt) {
                 
              // Bot-Namen anpassen
