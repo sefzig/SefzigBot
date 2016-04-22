@@ -44,7 +44,7 @@
              
              for (i = 1; i < texte.length; i++) {
                 
-                var befehle = texte[i].split(/<|,|;|\.|!|?| /);
+                var befehle = texte[i].split(/<|,|;|\.|!|\?| /);
              // var befehle = texte[i].split(" "); 
                 if (befehle[1]) { var befehl = befehle[0]; } else { var befehl = texte[i]; }
                 
