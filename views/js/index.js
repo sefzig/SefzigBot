@@ -43,8 +43,8 @@
              for (i = 1; i < texte.length; i++) {
                 
                 var befehl = texte[i].split(/,|;|:|\.|!|\?| /)[0];
-                console.log("- Befehl angepasst: "+befehl);
                 text_neu = text_neu.replace("--"+befehl, '<span class="befehl" onclick="befehlen(\'--'+befehl+'\')">--'+befehl+'</span>');
+                console.log("- Befehl angepasst: "+befehl);
                 var befehl = "";
                 
              }
@@ -55,8 +55,20 @@
              for (j = 1; j < bilder.length; j++) {
                 
                 var bild = bilder[j].split("]")[0];
-                console.log("- Bild angepasst: "+bild);
                 text_neu = text_neu.replace("[Bild:"+bild+"]", '<img class="bild" src="'+bild+'" />');
+                console.log("- Bild angepasst: "+bild);
+                var bild = "";
+                
+             }
+             
+          // Bot anpassen
+             var bilder = " "+text+" ";
+             bilder = bilder.split("[Bild:");
+             for (j = 1; j < bilder.length; j++) {
+                
+                var bild = bilder[j].split("]")[0];
+                text_neu = text_neu.replace("[Bild:"+bild+"]", '<img class="bild" src="'+bild+'" />');
+                console.log("- Bild angepasst: "+bild);
                 var bild = "";
                 
              }

@@ -51,15 +51,15 @@ module.exports = new Script({
             if (befehl == "--ABBRECHEN")    { bot.say('Text: Abbruch.'); }
             
          // Über mich
-            if (befehl == "--PERSON")       { bot.say('Text: Person; Links: --Lebenslauf, --Foto.'); }
-            if (befehl == "--LEBENSLAUF")   { bot.say('Text: Lebenslauf. %[Lebenslauf öffnen](http://sefzig.net/link/Lebenslauf/)'); }
-            if (befehl == "--FOTO")         { bot.say('[Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png]'); }
+            if (befehl == "--PERSON")       { bot.say('Andreas ist 38 Jahre alt und lebt in Hamburg. Hier sein --Lebenslauf und ein --Foto.'); }
+            if (befehl == "--LEBENSLAUF")   { bot.say('Tabellarisches und ausformuliertes Curriculum Vitae: %[Lebenslauf öffnen](http://sefzig.net/link/Lebenslauf/)'); }
+            if (befehl == "--FOTO")         { bot.say('[Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png] Andreas Sefzig mit Logo'); }
             if (befehl == "--NEUES")        { bot.say('Text: Neues.'); }
             
          // Kontakt
-            if (befehl == "--KONTAKT")      { bot.say('Text: Kontakt mit Webseite; Links: --Twitter, --Slackteam, --Xing. %[Kontakt-Seite öffnen](http://sefzig.net/link/Kontakt/)'); }
+            if (befehl == "--KONTAKT")      { bot.say('Sie erreichen Andreas über andreas@sefzig.net, in seinem --Slackteam, auf --Twitter und auf --Xing. %[Kontakt-Seite öffnen](http://sefzig.net/link/Kontakt/)'); }
             if (befehl == "--SLACKTEAM")    { bot.say('Andreas betreibt ein offenes Slack-Team, in dem man sich über Marketing-Technologie unterhält. %[Offenes Slack-Team öffnen](http://sefzig.net/link/Slack/)'); }
-            if (befehl == "--XING")         { bot.say('Andreas ist Xing: Er ist seit 2004 angemeldet und gehört mit über 500 Kontakten zu den 5% der bestvernetzten Mitglieder. %[Xing-Profil ansehen](http://sefzig.net/link/Xing/)'); bot.say('[Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/xing_vernetzt.png]'); }
+            if (befehl == "--XING")         { bot.say('Andreas ist bei Xing: Er ist seit 2004 angemeldet und gehört mit über 500 Kontakten zu den 5% der bestvernetzten Mitglieder. %[Xing-Profil öffnen](http://sefzig.net/link/Xing/)'); bot.say('[Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/xing_vernetzt.png]'); }
             if (befehl == "--TWITTER")      { bot.say('Andreas ist auf Twitter: %[Twitter-Profil öffnen](http://sefzig.net/link/Twitter/)'); }
             
          // Vorlage
