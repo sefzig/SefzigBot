@@ -35,16 +35,17 @@
              
           // $(this).css("background-color","lime");
              
-             var text = $(this).text();
+             var text = $(this).html();
              var text_neu = text;
              var texte = text.split("--");
              
              for (i = 0; i < texte.length; i++) {
                 
                 var test = texte[i].substring(0,2);
+                console.log("test: "+test);
                 if (test == "--") {
                    
-                   var befehle = texte[i].split(/,|\.|!|?| /);
+                   var befehle = texte[i].split(/,|\.|!|?| /); 
                    var befehl = befehle[0];
                 
                    text_neu = text_neu.replace("--"+befehl, '<span class="befehl">--'+befehl+'</span>');
@@ -53,7 +54,7 @@
                 
              }
              
-             $(this).text(text_neu);
+             $(this).html(text_neu);
              
           });
           
