@@ -39,18 +39,13 @@
              var text_neu = text;
              var texte = text.split("--");
              
-             for (i = 0; i < texte.length; i++) {
+             for (i = 1; i < texte.length; i++) {
                 
-                var test = texte[i].substring(0,2);
-                console.log("test: "+test);
-                if (test == "--") {
-                   
-                   var befehle = texte[i].split(/,|\.|!|?| /); 
-                   var befehl = befehle[0];
+             // var befehle = texte[i].split(/,|;|\.|!|?| /);
+                var befehle = texte[i].split(" "); 
+                if (befehle[1]) { var befehl = befehle[0]; } else { var befehl = texte[i]; }
                 
-                   text_neu = text_neu.replace("--"+befehl, '<span class="befehl">--'+befehl+'</span>');
-                   
-                }
+                text_neu = text_neu.replace("--"+befehl, '<span class="befehl" style="background-color:red">--'+befehl+'</span>');
                 
              }
              
