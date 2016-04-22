@@ -129,7 +129,8 @@
     
     function befehlen(befehl) {
        
-       alert(befehl);
+       $(".input-container .message-input").val(befehl);
+       $(".input-container .send").trigger("click");
        
     }
     
