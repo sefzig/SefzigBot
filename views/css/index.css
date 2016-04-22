@@ -66,4 +66,9 @@
     .sk-messages img.bild { 
        max-width: 200px;
     }
+    #sk-container.sk-embedded .btn-sk-primary {
+       color: black;
+       background-color: silver;
+       border-color: silver;
+    }
     

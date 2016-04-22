@@ -25,14 +25,15 @@
        });
        
        var zuletzt = 0;
-       window.setInterval(function() { 
+       window.setInterval(function() { anpassen(); }, 1000);
+       function anpassen() {
           
           var zahler = 0;
           $(".sk-messages").each(function() { zahler++; });
           if (zahler > zuletzt) { zuletzt = zahler; }
           
           var selektor = ".sk-messages .sk-left-row .sk-msg > span > span > span:not([data-angepasst])";
-          $(selektor+":contains('--'), "+selektor+":contains('[Bild:')").each(function() {
+          $(selektor+":contains('--'), "+selektor+":contains('[Bild:'), "+selektor+":contains('/sefzigbot')").each(function() {
              
              var text = $(this).html();
              var text_neu = text;
@@ -68,7 +69,7 @@
                 
                 $(this).attr("id", zahler);
                 console.log("- Bot: "+zahler);
-                $(this).css("color", "red");
+                $(this).css("background-color", "red");
              // var inhalt = $(this).parent().parent().parent().parent().parent().children().filter(".sk-from").html();
              // $(this).parent().parent().parent().parent().parent().children().filter(".sk-from").attr("data-bot", "true").html(inhalt+"s Bot");
                 
@@ -79,7 +80,7 @@
              
           });
           
-       },1000);
+       }
        
     });
     
