@@ -68,7 +68,7 @@
                 $(this).parent().parent().parent().parent().children().filter(".sk-from").html(absender+"s Bot");
                 
              // Bot-Bild anpassen
-                var pfad = "http://media.smooch.io/appicons/571777938ea8c63e0057cc1f.jpg";
+                var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_displaybild.jpg";
                 $(this).parent().parent().parent().parent().parent().children().filter("img").css("border","red 1px solid").attr("src", pfad);
                 
              }
