@@ -63,10 +63,13 @@
              text_neu = text_neu.replace("/sefzigbot","");
              if (text_neu != text_alt) {
                 
-                console.log("- Ist Bot");
-                $(this).parent().parent().parent().parent().children().filter(".sk-from").css("background-color", "red");
-             // var inhalt = $(this).parent().parent().parent().parent().parent().children().filter(".sk-from").html();
-             // $(this).parent().parent().parent().parent().parent().children().filter(".sk-from").attr("data-bot", "true").html(inhalt+"s Bot");
+             // Bot-Namen anpassen
+                var absender = $(this).parent().parent().parent().parent().children().filter(".sk-from").html();
+                $(this).parent().parent().parent().parent().children().filter(".sk-from").html(absender+"s Bot");
+                
+             // Bot-Bild anpassen
+                var pfad = "https://media.smooch.io/appicons/571777938ea8c63e0057cc1f.jpg";
+                $(this).parent().parent().parent().parent().children().filter("img").first().attr("src", pfad);
                 
              }
              
