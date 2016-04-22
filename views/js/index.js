@@ -29,7 +29,7 @@
        function anpassen() {
           
           var selektor = ".sk-messages .sk-left-row .sk-msg > span > span > span:not([data-angepasst])";
-          $(selektor+":contains('--'), "+selektor+":contains('[Bild:'), "+selektor+":contains('/sefzigbot')").each(function() {
+          $(selektor+":contains('--'), "+selektor+":contains('[Bild:'), "+selektor+":contains('/sefzigbot: ')").each(function() {
              
              var text = $(this).html();
              var text_neu = text;
@@ -60,7 +60,7 @@
              
           // Bots anpassen
              text_alt = text_neu;
-             text_neu = text_neu.replace("/sefzigbot","");
+             text_neu = text_neu.replace("/sefzigbot: ","");
              if (text_neu != text_alt) {
                 
              // Bot-Namen anpassen
@@ -68,8 +68,8 @@
                 $(this).parent().parent().parent().parent().children().filter(".sk-from").html(absender+"s Bot");
                 
              // Bot-Bild anpassen
-                var pfad = "https://media.smooch.io/appicons/571777938ea8c63e0057cc1f.jpg";
-                $(this).parent().parent().parent().parent().parent().children().filter("img").first().attr("src", pfad);
+                var pfad = "http://media.smooch.io/appicons/571777938ea8c63e0057cc1f.jpg";
+                $(this).parent().parent().parent().parent().parent().children().filter("img").css("background-color","red").attr("src", pfad);
                 
              }
              
