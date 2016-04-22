@@ -31,13 +31,15 @@
           $(".sk-messages").each(function() { zahler++; });
           if (zahler > zuletzt) { zuletzt = zahler; }
           
-          $(".sk-messages .sk-left-row .sk-msg > span > span > span:not([data-angepasst]):contains('--')").each(function() {
+          var selektor = ".sk-messages .sk-left-row .sk-msg > span > span > span:not([data-angepasst])";
+          $(selektor+":contains('--'), "+selektor+":contains('[Bild:')").each(function() {
              
              var text = $(this).html();
              var text_neu = text;
              
           // Befehle anpassen
-             var texte = text.split("--");
+             var texte = " "+text+" ";
+             texte = texte.split("--");
              for (i = 1; i < texte.length; i++) {
                 
                 var befehl = texte[i].split(/,|;|:|\.|!|\?| /)[0];
@@ -49,7 +51,7 @@
              
           // Bilder anpassen
              var bilder = " "+text+" ";
-             var bilder = bilder.split("[Bild:");
+             bilder = bilder.split("[Bild:");
              for (j = 1; j < bilder.length; j++) {
                 
                 var bild = bilder[j].split("]")[0];
