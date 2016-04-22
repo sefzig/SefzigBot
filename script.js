@@ -31,7 +31,8 @@ module.exports = new Script({
             var nachname = message.text;
             return bot.setProp('nachname', nachname)
                 .then(() => bot.say(`${nachname}, danke.`))
-                .then(() => bot.say('Schreiben Sie hier eine Nachricht an Andreas. Oder unterhalten Sie sich mit mir, indem Sie --bot schreiben!'))
+                .then(() => bot.say('Sie können hier jederzeit eine Nachricht an Andreas eingeben. Unterhalten Sie sich solange mit mir! Bitte schreiben Sie --bot:'))
+                .then(() => bot.say('--bot'))
                 .then(() => 'register');
         }
     },
@@ -45,7 +46,7 @@ module.exports = new Script({
             befehl = befehl.toUpperCase();
             
          // System
-            if (befehl == "--BOT")          { bot.say('Ich bin sozusagen Andreas\' Assistent. Er hat mir vieles beigebracht, was Sie durch Schreiben der mit -- beginnenden Wörter abrufen können.'); }
+            if (befehl == "--BOT")          { bot.say('Andreas hat mir viel beigebracht - Sie können das durch Schreiben der mit -- beginnenden Wörter abrufen!'); }
             if (befehl == "--BOT")          { bot.say('Wollen Sie etwas über seine --Person erfahren, hören, was es --Neues bei ihm gibt oder auf anderem Wege --Kontakt  aufnehmen?'); }
             if (befehl == "--ABBRECHEN")    { bot.say('Text: Abbruch.'); }
             
