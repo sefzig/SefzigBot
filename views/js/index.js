@@ -39,13 +39,21 @@
              var text_neu = text;
              var texte = text.split("--");
              
+             text_neu = text_neu.replace(/<\/?span class=befehl[^>]*>/g,"");
+             text_neu = text_neu.replace(/<\/span[^>]*>/g,"");
+             
              for (i = 1; i < texte.length; i++) {
                 
              // var befehle = texte[i].split(/,|;|\.|!|?| /);
                 var befehle = texte[i].split(" "); 
                 if (befehle[1]) { var befehl = befehle[0]; } else { var befehl = texte[i]; }
                 
-                text_neu = text_neu.replace("--"+befehl, '<span class="befehl" style="color:red">--'+befehl+'</span>');
+                var davor =  '<span class=befehl>--';
+                var danach = '</span>';
+                
+                var istSpan = 
+                
+                text_neu = text_neu.replace("--"+befehl, ''+davor+''+befehl+''+danach);
                 
              }
              
