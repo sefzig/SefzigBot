@@ -1,7 +1,7 @@
 'use strict';
 
 const Script = require('smooch-bot').Script;
-const botVorweg = "";
+const botVorweg = "/sefzigbot";
 
 module.exports = new Script({
     processing: {
