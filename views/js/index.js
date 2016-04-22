@@ -49,9 +49,9 @@
              
              for (i = 1; i < texte.length; i++) {
                 
-                var befehle = texte[i].split(/,|;|:|\.|!|\?| /);
+                var befehle = texte[i].split(/,|;|:|\.|!|\?| /)[0];
              // var befehle = texte[i].split(" "); 
-                if (befehle[1]) { var befehl = befehle[0]; } else { var befehl = texte[i]; var ohne = "ohne" }
+             // if (befehle[1]) { var befehl = befehle[0]; } else { var befehl = texte[i]; var ohne = "ohne" }
                 
                 console.log("- befehl: "+befehl);
                 
