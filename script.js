@@ -31,8 +31,8 @@ module.exports = new Script({
             var nachname = message.text;
             return bot.setProp('nachname', nachname)
                 .then(() => bot.say(`${nachname}, danke.`))
-                .then(() => bot.say('Sie können hier jederzeit eine Nachricht an Andreas eingeben. Unterhalten Sie sich solange mit mir! Bitte schreiben Sie --bot:'))
-                .then(() => bot.say('--bot'))
+                .then(() => bot.say('Sie können hier jederzeit eine Nachricht an Andreas eingeben.'))
+                .then(() => bot.say('Unterhalten Sie sich solange mit mir! Bitte schreiben Sie --bot:'))
                 .then(() => 'register');
         }
     },
