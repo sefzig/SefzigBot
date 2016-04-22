@@ -58,8 +58,8 @@ module.exports = new Script({
             
          // Kontakt
             if (befehl == "--KONTAKT")      { bot.say('Text: Kontakt mit Webseite; Links: --Twitter, --Slackteam, --Xing. %[Kontakt-Seite öffnen](http://sefzig.net/link/Kontakt/)'); }
-            if (befehl == "--SLACKTEAM")    { bot.say('Text: Offenes Slack-Team. %[Offenes Slack-Team](http://sefzig.net/link/Slack/)'); }
-            if (befehl == "--XING")         { bot.say('Andreas ist Mitglied bei Xing: %[Xing-Profil ansehen](http://sefzig.net/link/Xing/)'); }
+            if (befehl == "--SLACKTEAM")    { bot.say('Andreas betreibt ein offenes Slack-Team, in dem man sich über Marketing-Technologie unterhält. %[Offenes Slack-Team öffnen](http://sefzig.net/link/Slack/)'); }
+            if (befehl == "--XING")         { bot.say('Andreas ist Xing: Er ist seit 2004 angemeldet und gehört mit über 500 Kontakten zu den 5% der bestvernetzten Mitglieder. %[Xing-Profil ansehen](http://sefzig.net/link/Xing/)'); bot.say('[Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/xing_vernetzt.png]'); }
             if (befehl == "--TWITTER")      { bot.say('Andreas ist auf Twitter: %[Twitter-Profil öffnen](http://sefzig.net/link/Twitter/)'); }
             
          // Vorlage
