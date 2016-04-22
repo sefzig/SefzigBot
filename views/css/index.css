@@ -50,6 +50,7 @@
        padding-left: 2px;
        padding-right: 2px;
        display: inline-block;
+       border-radius: 2px;
        background-color: #00aeff;
        color: white;
     }
