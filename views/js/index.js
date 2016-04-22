@@ -129,7 +129,7 @@
     
     function befehlen(befehl) {
        
-       $(".input-container .message-input").val(befehl).trigger("submit");
+       $(".input-container .message-input").val(befehl).trigger("keydown").trigger("keyup").trigger("change").trigger("submit");
        
     }
     
