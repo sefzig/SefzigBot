@@ -66,7 +66,7 @@
              text_neu = text_neu.replace("/sefzigbot","");
              if (text_neu != text_alt) {
                 
-                console.log("- Bot: "+zahler);
+                console.log("- Ist Bot");
                 $(this).css("background-color", "red");
              // var inhalt = $(this).parent().parent().parent().parent().parent().children().filter(".sk-from").html();
              // $(this).parent().parent().parent().parent().parent().children().filter(".sk-from").attr("data-bot", "true").html(inhalt+"s Bot");
