@@ -33,33 +33,32 @@
           
           $(".sk-messages .sk-left-row .sk-msg > span > span > span:not([data-angepasst]):contains('--')").each(function() {
              
-          // $(this).css("background-color","lime");
-             
              var text = $(this).html();
              var text_neu = text;
+             
+          // Befehle anpassen
              var texte = text.split("--");
-          // console.log("\nText alt: "+text);
-             
-             var davor =  '<span class="befehl">';
-             var danach = '</span>';
-                
-          // text_neu = text_neu.replace(davor,"");
-          // text_neu = text_neu.replace(danach,"");
-          // console.log("Text bereinigt: "+text);
-             
              for (i = 1; i < texte.length; i++) {
                 
                 var befehl = texte[i].split(/,|;|:|\.|!|\?| /)[0];
-                console.log("- befehl: "+befehl);
-                
-                text_neu = text_neu.replace("--"+befehl, davor+'--'+befehl+''+danach+'');
+                console.log("- Befehl angepasst: "+befehl);
+                text_neu = text_neu.replace("--"+befehl, '<span class="befehl">--'+befehl+'</span>');
                 var befehl = "";
                 
              }
              
-             $(this).html(text_neu);
-          // console.log("Text neu: "+befehl);
+          // Bilder anpassen
+             var bilder = text.split("[Bild:");
+             for (i = 1; i < bilder.length; i++) {
+                
+                var bild = bilder[i].split("]")[0];
+                console.log("- Bild angepasst: "+bild);
+                text_neu = text_neu.replace(bild, '<img class="bild" src="'+bild+'" />');
+                var bild = "";
+                
+             }
              
+             $(this).html(text_neu);
              $(this).attr("data-angepasst", "true");
              
           });

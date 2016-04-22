@@ -47,13 +47,14 @@ module.exports = new Script({
             
          // System
             if (befehl == "--BOT")          { bot.say('Andreas hat mir viel beigebracht - Sie können das durch Schreiben der mit -- beginnenden Wörter abrufen!'); }
-            if (befehl == "--BOT")          { bot.say('Wollen Sie etwas über seine --Person erfahren, hören, was es --Neues bei ihm gibt oder auf anderem Wege --Kontakt  aufnehmen?'); }
+            if (befehl == "--BOT")          { bot.say('Wollen Sie etwas über seine --Person oder --Neues erfahren? Oder auf anderem Wege --Kontakt  aufnehmen?'); }
             if (befehl == "--ABBRECHEN")    { bot.say('Text: Abbruch.'); }
             
          // Über mich
             if (befehl == "--PERSON")       { bot.say('Text: Person; Links: --Lebenslauf, --Foto.'); }
             if (befehl == "--LEBENSLAUF")   { bot.say('Text: Lebenslauf. %[Lebenslauf öffnen](http://sefzig.net/link/Lebenslauf/)'); }
-            if (befehl == "--FOTO")         { bot.say('Text mit http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png Bild.'); }
+            if (befehl == "--FOTO")         { bot.say('[Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png]'); }
+            if (befehl == "--FOTOS")        { bot.say('Text [Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png] Text.'); }
             if (befehl == "--NEUES")        { bot.say('Text: Neues.'); }
             
          // Kontakt

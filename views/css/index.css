@@ -31,12 +31,6 @@
        border: 0px black solid;
     }
     
-    span.befehl { 
-       background-color: silver;
-       padding-left: 2px;
-       padding-right: 2px;
-    }
-    
  /* Smooch Web Widget */
     .sk-left-row { vertical-align: top; }
  /* .sk-left-row img { margin-top: -20px; } */
@@ -50,3 +44,9 @@
        float: left;
        margin: 0 6px 0 0;
     }
+    
+ /* Smooch Web Widget Anpassungen */
+    .sk-messages img.bild { 
+       max-width: 200px;
+    }
+    
