@@ -47,12 +47,14 @@
     
  /* Smooch Web Widget Anpassungen */
     .sk-messages span.befehl { 
+       margin-bottom: 1px;
        padding-left: 2px;
        padding-right: 2px;
        display: inline-block;
        border-radius: 2px;
        background-color: #00aeff;
        color: white;
+       cursor: pointer;
     }
     .sk-messages img.bild { 
        max-width: 200px;
