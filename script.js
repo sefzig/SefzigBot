@@ -10,7 +10,7 @@ module.exports = new Script({
 
     start: {
         receive: (bot) => {
-            return bot.say('Hinweis: Wenn Andreas online ist, sieht er dieses Gespräch und kann beitreten.'))
+            return bot.say('Hinweis: Wenn Andreas online ist, sieht er dieses Gespräch und kann beitreten.')
                 .then(() => 'vorname');
         }
     },
