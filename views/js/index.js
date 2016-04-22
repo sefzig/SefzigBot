@@ -37,7 +37,8 @@
              
              var text = $(this).html();
              var text_neu = text;
-             var texte = text.split("--");
+             var textx = text+"--";
+             var texte = textx.split("--");
           // console.log("\nText alt: "+text);
              
              var davor =  '<span class="befehl">';
