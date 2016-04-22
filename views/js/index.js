@@ -28,12 +28,11 @@
        window.setInterval(function() { anpassen(); }, 1000);
        function anpassen() {
           
-          var zahler = 0;
-          $(".sk-messages").each(function() { zahler++; $(this).attr("id", "anpassung"+zahler); });
-          if (zahler > zuletzt) { zuletzt = zahler; }
-          
           var selektor = ".sk-messages .sk-left-row .sk-msg > span > span > span:not([data-angepasst])";
-          $(selektor+":contains('--'), "+selektor+":contains('[Bild:'), "+selektor+":contains('/sefzigbot')").each(function() {
+          $(selektor+":contains('--'), 
+          "+selektor+":contains('[Bild:'), 
+          "+selektor+":contains('/sefzigbot')")
+          .each(function() {
              
              var text = $(this).html();
              var text_neu = text;
@@ -67,8 +66,6 @@
              text_neu = text_neu.replace("/sefzigbot","");
              if (text_neu != text_alt) {
                 
-                var zahler = $(this).attr("id");
-                zahler = zahler.replace("anpassung","");
                 console.log("- Bot: "+zahler);
                 $(this).css("background-color", "red");
              // var inhalt = $(this).parent().parent().parent().parent().parent().children().filter(".sk-from").html();
