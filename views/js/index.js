@@ -69,14 +69,14 @@
                 
              // Bot-Bild anpassen
                 var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_displaybild.jpg";
-                $(this).parent().parent().parent().parent().parent().children().filter("img").css("border","red 1px solid").attr("src", pfad);
+                $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
                 
              }
              else {
                 
              // Bot-Bild anpassen
-                var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_personbild.png";
-                $(this).parent().parent().parent().parent().parent().children().filter("img").css("border","green 1px solid").attr("src", pfad);
+                var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_personbild.jpg";
+                $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
              }
              
              $(this).html(text_neu);
