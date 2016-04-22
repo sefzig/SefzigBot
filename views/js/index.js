@@ -29,10 +29,7 @@
        function anpassen() {
           
           var selektor = ".sk-messages .sk-left-row .sk-msg > span > span > span:not([data-angepasst])";
-          $(selektor+":contains('--'), 
-          "+selektor+":contains('[Bild:'), 
-          "+selektor+":contains('/sefzigbot')")
-          .each(function() {
+          $(selektor+":contains('--'), "+selektor+":contains('[Bild:'), "+selektor+":contains('/sefzigbot')").each(function() {
              
              var text = $(this).html();
              var text_neu = text;
