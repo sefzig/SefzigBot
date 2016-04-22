@@ -19,8 +19,12 @@
        bottom: 0px;
        left: 0px;
     }
+    #seite {
+       
+    }
     #seite > div {
        display: none;
+       padding: 10px;
     }
     #seite > div > iframe {
        width: 100%;

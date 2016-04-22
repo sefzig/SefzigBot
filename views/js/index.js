@@ -47,7 +47,7 @@
                 surname: nachname,
                 email: email,
                 customText: {
-                   headerText: 'Andreas Sefzigs Bot',
+                   headerText: 'Andreas Sefzig und Bot',
                    inputPlaceholder: 'Schreiben Sie eine Nachricht...',
                    sendButtonText: 'Absenden',
                    introText: 'Dies ist der Anfang unseres Gesprächs.<br/>Bitte schreiben Sie irgendetwas, um das Gespräch zu beginnen!',
@@ -66,16 +66,18 @@
                 }
              });
              
-             Smooch.render(document.getElementById('chat'));
           // Smooch.open();
+             Smooch.render(document.getElementById('chat'));
              
+             Smooch.updateUser({ vorname: vorname });
+             Smooch.updateUser({ nachname: nachname });
              Smooch.updateUser({ email: email });
              
           }
           
           if (methode == "facebook") {
              
-             $("#facebook > iframe").attr("src", "https://www.messenger.com/t/1195928167086850/");
+             $("#facebook > iframe").attr("src", "http://www.messenger.com/t/1195928167086850/");
              
           }
           
