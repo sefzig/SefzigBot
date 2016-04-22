@@ -31,7 +31,7 @@
           $(".sk-messages").each(function() { zahler++; });
           if (zahler > zuletzt) { zuletzt = zahler; }
           
-          $(".sk-messages .sk-msg span span span:contains('--')").each(function() {
+          $(".sk-messages .sk-msg > span > span > span:contains('--')").each(function() {
              
           // $(this).css("background-color","lime");
              
