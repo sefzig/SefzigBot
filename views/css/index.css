@@ -30,7 +30,7 @@
     
  /* Smooch Web Widget */
     .sk-left-row { vertical-align: top; }
-    .sk-left-row img { margin-top: -20px; }
+ /* .sk-left-row img { margin-top: -20px; } */
  /* #sk-header { display: none; } */
     #sk-header > span:after {
        content: "";
