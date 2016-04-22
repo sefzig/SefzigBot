@@ -61,18 +61,6 @@
                 
              }
              
-          // Bot anpassen
-             var bilder = " "+text+" ";
-             bilder = bilder.split("[Bild:");
-             for (j = 1; j < bilder.length; j++) {
-                
-                var bild = bilder[j].split("]")[0];
-                text_neu = text_neu.replace("[Bild:"+bild+"]", '<img class="bild" src="'+bild+'" />');
-                console.log("- Bild angepasst: "+bild);
-                var bild = "";
-                
-             }
-             
              $(this).html(text_neu);
              $(this).attr("data-angepasst", "true");
              
