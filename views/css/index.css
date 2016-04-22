@@ -31,7 +31,11 @@
        border: 0px black solid;
     }
     
-    span.befehl { background-color: silver; }
+    span.befehl { 
+       background-color: silver;
+       padding-left: 3px;
+       padding-right: 3px;
+    }
     
  /* Smooch Web Widget */
     .sk-left-row { vertical-align: top; }
