@@ -37,8 +37,6 @@
              
              var text = $(this).html();
              var text_neu = text;
-             var texte = text.split("--");
-          // console.log("\nText alt: "+text);
              
              var davor =  '<span class="befehl">';
              var danach = '</span>';
@@ -47,11 +45,13 @@
           // text_neu = text_neu.replace(danach,"");
           // console.log("Text bereinigt: "+text);
              
+             text = text+"--";
+             var texte = text.split("--");
+          // console.log("\nText alt: "+text);
              for (i = 1; i < texte.length; i++) {
                 
                 var wert = texte[i]+" "; console.log("- wert: "+wert);
                 var befehle = wert.split(/,|;|:|\.|!|\?| /);
-             // var befehle = texte[i].split(" "); 
                 if (befehle[1]) { var befehl = befehle[0]; } else { var befehl = texte[i]; }
                 
                 text_neu = text_neu.replace("--"+befehl, davor+'--'+befehl+''+danach+'</span>');
