@@ -20,6 +20,7 @@ module.exports = new Script({
         prompt: (bot) => bot.say('Wie heissen Sie mit Vornamen?'),
         receive: (bot, message) => {
             var vorname = message.text;
+            Smooch.updateUser({ givenName: vorname });
             return bot.setProp('vorname', vorname)
                 .then(() => bot.say(`${vorname}, prima.`))
                 .then(() => 'nachname');
@@ -30,6 +31,7 @@ module.exports = new Script({
         prompt: (bot) => bot.say('Und mit Nachnamen?'),
         receive: (bot, message) => {
             var nachname = message.text;
+            Smooch.updateUser({ surname: nachname });
             return bot.setProp('nachname', nachname)
                 .then(() => bot.say(`${nachname}, danke.`))
                 .then(() => bot.say('Schreiben Sie hier eine Nachricht an Andreas. Oder unterhalten Sie sich mit mir, indem Sie --bot schreiben!'))
