@@ -1,7 +1,7 @@
 'use strict';
 
 const Script = require('smooch-bot').Script;
-const botVorweg = "/sefzigbot";
+const botVorweg = "";
 
 module.exports = new Script({
     processing: {
@@ -21,7 +21,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             var vorname = message.text;
             return bot.setProp('vorname', vorname)
-                .then(() => bot.say(`${vorname}, prima.`))
+                .then(() => bot.say(botVorweg+`${vorname}, prima.`))
                 .then(() => 'nachname');
         }
     },
@@ -31,7 +31,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             var nachname = message.text;
             return bot.setProp('nachname', nachname)
-                .then(() => bot.say(`${nachname}, danke.`))
+                .then(() => bot.say(botVorweg+`${nachname}, danke.`))
                 .then(() => bot.say(botVorweg+'Sie können hier jederzeit eine Nachricht an Andreas eingeben.'))
                 .then(() => bot.say(botVorweg+'Unterhalten Sie sich solange mit mir! Bitte schreiben Sie --bot:'))
                 .then(() => 'register');
