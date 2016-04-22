@@ -29,7 +29,7 @@
        function anpassen() {
           
           var zahler = 0;
-          $(".sk-messages").each(function() { zahler++; });
+          $(".sk-messages").each(function() { zahler++; $(this).attr("id", "anpassung"+zahler); });
           if (zahler > zuletzt) { zuletzt = zahler; }
           
           var selektor = ".sk-messages .sk-left-row .sk-msg > span > span > span:not([data-angepasst])";
@@ -67,7 +67,8 @@
              text_neu = text_neu.replace("/sefzigbot","");
              if (text_neu != text_alt) {
                 
-                $(this).attr("id", zahler);
+                var zahler = $(this).attr("id");
+                zahler = zahler.replace("anpassung","");
                 console.log("- Bot: "+zahler);
                 $(this).css("background-color", "red");
              // var inhalt = $(this).parent().parent().parent().parent().parent().children().filter(".sk-from").html();
