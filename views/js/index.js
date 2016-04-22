@@ -72,6 +72,11 @@
                 $(this).parent().parent().parent().parent().parent().children().filter("img").css("border","red 1px solid").attr("src", pfad);
                 
              }
+             else {
+                
+                var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_personbild.png";
+                $(this).parent().parent().parent().parent().parent().children().filter("img").css("border","green 1px solid").attr("src", pfad);
+             }
              
              $(this).html(text_neu);
              $(this).attr("data-angepasst", "true");
