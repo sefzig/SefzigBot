@@ -21,6 +21,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             
             var vorname = message.text;
+            
             Smooch.updateUser({ givenName: vorname });
             
             return bot.setProp('vorname', vorname)
@@ -34,6 +35,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             
             var nachname = message.text;
+            
             Smooch.updateUser({ surname: nachname });
             
             return bot.setProp('nachname', nachname)
