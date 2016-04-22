@@ -69,7 +69,7 @@
                 
              // Bot-Bild anpassen
                 var pfad = "https://media.smooch.io/appicons/571777938ea8c63e0057cc1f.jpg";
-                $(this).parent().parent().parent().parent().children().filter("img").first().attr("src", pfad);
+                $(this).parent().parent().parent().parent().parent().children().filter("img").first().attr("src", pfad);
                 
              }
              
