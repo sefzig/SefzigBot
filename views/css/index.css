@@ -46,6 +46,12 @@
     }
     
  /* Smooch Web Widget Anpassungen */
+    .sk-messages span.befehl { 
+       padding-left: 2px;
+       padding-right: 2px;
+       background-color: black;
+       color: white;
+    }
     .sk-messages img.bild { 
        max-width: 200px;
     }

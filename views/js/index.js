@@ -38,7 +38,7 @@
              var text_neu = text;
              
           // Befehle anpassen
-             var texte = " "+text+" ";
+             var texte = text;
              texte = texte.split("--");
              for (i = 1; i < texte.length; i++) {
                 

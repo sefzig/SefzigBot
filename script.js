@@ -54,7 +54,6 @@ module.exports = new Script({
             if (befehl == "--PERSON")       { bot.say('Text: Person; Links: --Lebenslauf, --Foto.'); }
             if (befehl == "--LEBENSLAUF")   { bot.say('Text: Lebenslauf. %[Lebenslauf öffnen](http://sefzig.net/link/Lebenslauf/)'); }
             if (befehl == "--FOTO")         { bot.say('[Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png]'); }
-            if (befehl == "--FOTOS")        { bot.say('Text [Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png] Text.'); }
             if (befehl == "--NEUES")        { bot.say('Text: Neues.'); }
             
          // Kontakt
