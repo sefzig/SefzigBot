@@ -48,12 +48,13 @@
              }
              
           // Bilder anpassen
-             var bilder = text.split("[Bild:");
-             for (i = 1; i < bilder.length; i++) {
+             var bilder = " "+text+" ";
+             var bilder = bilder.split("[Bild:");
+             for (j = 1; j < bilder.length; j++) {
                 
-                var bild = bilder[i].split("]")[0];
+                var bild = bilder[j].split("]")[0];
                 console.log("- Bild angepasst: "+bild);
-                text_neu = text_neu.replace(bild, '<img class="bild" src="'+bild+'" />');
+                text_neu = text_neu.replace("[Bild:"+bild+"]", '<img class="bild" src="'+bild+'" />');
                 var bild = "";
                 
              }
