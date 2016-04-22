@@ -44,12 +44,19 @@
        float: left;
        margin: 0 6px 0 0;
     }
+    #sk-container #sk-wrapper .sk-msg {
+       background-color: green;
+    }
+    #sk-container #sk-wrapper .sk-msg::after {
+       border-left-color: blue;
+    }
     
  /* Smooch Web Widget Anpassungen */
     .sk-messages span.befehl { 
+       margin-top: 1px;
        margin-bottom: 1px;
-       padding-left: 2px;
-       padding-right: 2px;
+       padding-left: 3px;
+       padding-right: 3px;
        display: inline-block;
        border-radius: 2px;
        background-color: #00aeff;
