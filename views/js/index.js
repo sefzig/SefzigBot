@@ -31,21 +31,21 @@
           $(".sk-messages").each(function() { zahler++; });
           if (zahler > zuletzt) { zuletzt = zahler; }
           
-          $(".sk-messages .sk-msg > span > span > span:contains('--')").each(function() {
+          $(".sk-messages .sk-msg > span > span > span:not([data-angepasst]):contains('--')").each(function() {
              
           // $(this).css("background-color","lime");
              
              var text = $(this).html();
              var text_neu = text;
              var texte = text.split("--");
-             console.log("\nText alt: "+text);
+          // console.log("\nText alt: "+text);
              
              var davor =  '<span class="befehl">';
              var danach = '</span>';
                 
              text_neu = text_neu.replace(davor,"");
              text_neu = text_neu.replace(danach,"");
-             console.log("Text bereinigt: "+text);
+          // console.log("Text bereinigt: "+text);
              
              for (i = 1; i < texte.length; i++) {
                 
@@ -54,12 +54,14 @@
                 if (befehle[1]) { var befehl = befehle[0]; } else { var befehl = texte[i]; }
                 
                 text_neu = text_neu.replace("--"+befehl, davor+'--'+befehl+''+danach+'</span>');
-                console.log("- um --"+befehl);
+             // console.log("- um --"+befehl);
                 
              }
              
              $(this).html(text_neu);
-             console.log("Text neu: "+befehl);
+          // console.log("Text neu: "+befehl);
+             
+             $(this).attr("data-angepasst", "true");
              
           });
           
