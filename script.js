@@ -52,17 +52,15 @@ module.exports = new Script({
             
          // Über mich
             if (befehl == "--PERSON")       { bot.say('Text: Person; Links: --Lebenslauf, --Foto.'); }
-            if (befehl == "--LEBENSLAUF")   { bot.say('Text: Lebenslauf.'); }
+            if (befehl == "--LEBENSLAUF")   { bot.say('Text: Lebenslauf. %[Lebenslauf öffnen](http://sefzig.net/link/Lebenslauf/)'); }
             if (befehl == "--FOTO")         { bot.say('<img src=http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png/>'); }
             if (befehl == "--NEUES")        { bot.say('Text: Neues.'); }
             
          // Kontakt
-            if (befehl == "--KONTAKT")      { bot.say('Text: Kontakt mit Webseite; Links: --Twitter, --Slackteam, --Xing.'); }
-            if (befehl == "--SLACKTEAM")    { bot.say('Text: Offenes Slack-Team.'); }
-            
-         // Angebote
-            if (befehl == "--XING")         { bot.say('Andreas ist Mitglied bei Xing: %[XING-Profil](http://xing.com/profile/Andreas_Sefzig/)'); }
-            if (befehl == "--TWITTER")      { bot.say('Andreas ist auf Twitter: %[Twitter-Profil](http://twitter.com/sefzig/)'); }
+            if (befehl == "--KONTAKT")      { bot.say('Text: Kontakt mit Webseite; Links: --Twitter, --Slackteam, --Xing. %[Kontakt-Seite öffnen](http://sefzig.net/link/Kontakt/)'); }
+            if (befehl == "--SLACKTEAM")    { bot.say('Text: Offenes Slack-Team. %[Offenes Slack-Team](http://sefzig.net/link/Slack/)'); }
+            if (befehl == "--XING")         { bot.say('Andreas ist Mitglied bei Xing: %[Xing-Profil ansehen](http://sefzig.net/link/Xing/)'); }
+            if (befehl == "--TWITTER")      { bot.say('Andreas ist auf Twitter: %[Twitter-Profil öffnen](http://sefzig.net/link/Twitter/)'); }
             
          // Vorlage
             if (befehl == "--VORLAGE")      { bot.say('Text: Vorlage.'); }
