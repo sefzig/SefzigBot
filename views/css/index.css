@@ -49,7 +49,8 @@
     .sk-messages span.befehl { 
        padding-left: 2px;
        padding-right: 2px;
-       background-color: black;
+       display: inline-block;
+       background-color: #00aeff;
        color: white;
     }
     .sk-messages img.bild { 

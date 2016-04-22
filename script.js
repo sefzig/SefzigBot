@@ -47,7 +47,7 @@ module.exports = new Script({
             
          // System
             if (befehl == "--BOT")          { bot.say('Andreas hat mir viel beigebracht - Sie können das durch Schreiben der mit -- beginnenden Wörter abrufen!'); }
-            if (befehl == "--BOT")          { bot.say('Wollen Sie etwas über seine --Person oder --Neues erfahren? Oder auf anderem Wege --Kontakt  aufnehmen?'); }
+            if (befehl == "--BOT")          { bot.say('Wollen Sie etwas über seine --Person oder --Neues von ihm erfahren? Oder auf anderem Wege --Kontakt  aufnehmen?'); }
             if (befehl == "--ABBRECHEN")    { bot.say('Text: Abbruch.'); }
             
          // Über mich

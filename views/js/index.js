@@ -44,7 +44,7 @@
                 
                 var befehl = texte[i].split(/,|;|:|\.|!|\?| /)[0];
                 console.log("- Befehl angepasst: "+befehl);
-                text_neu = text_neu.replace("--"+befehl, '<span class="befehl">--'+befehl+'</span>');
+                text_neu = text_neu.replace("--"+befehl, '<span class="befehl" onclick="befehlen(\'--'+befehl+'\')">--'+befehl+'</span>');
                 var befehl = "";
                 
              }
@@ -127,5 +127,9 @@
        
     }
     
-    
+    function befehlen(befehl) {
+       
+       alert(befehl);
+       
+    }
     
