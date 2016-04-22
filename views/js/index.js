@@ -62,12 +62,13 @@
              }
              
           // Bots anpassen
-             $(this).attr("id", zahler);
              text_alt = text_neu;
              text_neu = text_neu.replace("/sefzigbot","");
              if (text_neu != text_alt) {
                 
+                $(this).attr("id", zahler);
                 console.log("- Bot: "+zahler);
+                $(this).css("color", "red");
              // var inhalt = $(this).parent().parent().parent().parent().parent().children().filter(".sk-from").html();
              // $(this).parent().parent().parent().parent().parent().children().filter(".sk-from").attr("data-bot", "true").html(inhalt+"s Bot");
                 
