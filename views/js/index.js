@@ -24,67 +24,10 @@
           
        });
        
+       start("chat");
+       
        var zuletzt = 0;
        window.setInterval(function() { anpassen(); }, 100);
-       function anpassen() {
-          
-          var selektor = ".sk-messages .sk-left-row .sk-msg > span > span > span:not([data-angepasst])";
-          $(selektor).each(function() {
-             
-             var text = $(this).html();
-             var text_neu = text;
-             
-          // Befehle anpassen
-             var texte = text;
-             texte = texte.split("--");
-             for (i = 1; i < texte.length; i++) {
-                
-                var befehl = texte[i].split(/,|;|:|\.|!|\?| /)[0];
-                text_neu = text_neu.replace("--"+befehl, '<span class="befehl" onclick="befehlen(\'--'+befehl+'\')">--'+befehl+'</span>');
-                console.log("- Befehl angepasst: "+befehl);
-                var befehl = "";
-                
-             }
-             
-          // Bilder anpassen
-             var bilder = " "+text+" ";
-             bilder = bilder.split("[Bild:");
-             for (j = 1; j < bilder.length; j++) {
-                
-                var bild = bilder[j].split("]")[0];
-                text_neu = text_neu.replace("[Bild:"+bild+"]", '<img class="bild" src="'+bild+'" />');
-                console.log("- Bild angepasst: "+bild);
-                var bild = "";
-                
-             }
-             
-          // Bots anpassen
-             text_alt = text_neu;
-             text_neu = text_neu.replace("[Bot] ","");
-             if (text_neu != text_alt) {
-                
-             // Bot-Namen anpassen
-                var absender = $(this).parent().parent().parent().parent().children().filter(".sk-from").html();
-                $(this).parent().parent().parent().parent().children().filter(".sk-from").html(absender+"s Bot");
-                
-             // Bot-Bild anpassen
-                var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_displaybild.jpg";
-                $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
-                
-             }
-             else {
-                
-             // Bot-Bild anpassen
-                var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_personbild.jpg";
-                $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
-             }
-             
-             $(this).html(text_neu);
-             $(this).attr("data-angepasst", "true");
-             
-          });
-          
-       }
        
     });
     
@@ -145,6 +88,66 @@
        
     }
     
+    function anpassen() {
+       
+       var selektor = ".sk-messages .sk-left-row .sk-msg > span > span > span:not([data-angepasst])";
+       $(selektor).each(function() {
+          
+          var text = $(this).html();
+          var text_neu = text;
+          
+       // Befehle anpassen
+          var texte = text;
+          texte = texte.split("--");
+          for (i = 1; i < texte.length; i++) {
+             
+             var befehl = texte[i].split(/,|;|:|\.|!|\?| /)[0];
+             text_neu = text_neu.replace("--"+befehl, '<span class="befehl" onclick="befehlen(\'--'+befehl+'\')">--'+befehl+'</span>');
+             console.log("- Befehl angepasst: "+befehl);
+             var befehl = "";
+             
+          }
+          
+       // Bilder anpassen
+          var bilder = " "+text+" ";
+          bilder = bilder.split("[Bild:");
+          for (j = 1; j < bilder.length; j++) {
+             
+             var bild = bilder[j].split("]")[0];
+             text_neu = text_neu.replace("[Bild:"+bild+"]", '<img class="bild" src="'+bild+'" />');
+             console.log("- Bild angepasst: "+bild);
+             var bild = "";
+             
+          }
+          
+       // Bots anpassen
+          text_alt = text_neu;
+          text_neu = text_neu.replace("[Bot] ","");
+          if (text_neu != text_alt) {
+             
+          // Bot-Namen anpassen
+             var absender = $(this).parent().parent().parent().parent().children().filter(".sk-from").html();
+             $(this).parent().parent().parent().parent().children().filter(".sk-from").html(absender+"s Bot");
+             
+          // Bot-Bild anpassen
+             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_displaybild.jpg";
+             $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
+             
+          }
+          else {
+             
+          // Bot-Bild anpassen
+             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_personbild.jpg";
+             $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
+          }
+          
+          $(this).html(text_neu);
+          $(this).attr("data-angepasst", "true");
+          
+       });
+       
+    }
+       
     function befehlen(befehl) {
        
        $(".input-container .message-input").val(befehl).trigger("keydown", {which: 50});
