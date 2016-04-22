@@ -25,7 +25,7 @@
        });
        
        var zuletzt = 0;
-       window.setInterval(function() { anpassen(); }, 1000);
+       window.setInterval(function() { anpassen(); }, 100);
        function anpassen() {
           
           var selektor = ".sk-messages .sk-left-row .sk-msg > span > span > span:not([data-angepasst])";
