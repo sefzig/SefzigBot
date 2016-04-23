@@ -54,7 +54,7 @@
              surname: nachname,
              email: email,
              customText: {
-                headerText: 'Andreas Sefzig und Bot',
+                headerText: 'Andreas Sefzig (und Bots)',
                 inputPlaceholder: 'Schreiben Sie eine Nachricht...',
                 sendButtonText: 'Absenden',
                 introText: 'Dies ist der Anfang unseres Gesprächs.<br/>Schreiben Sie irgendetwas, um zu beginnen!',
