@@ -20,10 +20,6 @@
        // Navigation
           start(starten);
           
-       // Ansicht
-          $("#seite > div").fadeOut();
-          $("#seite #"+starten).fadeIn();
-          
        // Klick verhindern
           e.preventDefault();
           
@@ -38,6 +34,10 @@
  // Chat starten
     function start(methode) {
        
+    // Ansichten anpassen
+       $("#seite > div").fadeOut();
+       $("#seite #"+methode).fadeIn();
+          
        if (methode == "chat") {
           
        // Umgebungs-Parameter einsammeln
