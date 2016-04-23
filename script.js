@@ -51,7 +51,7 @@ module.exports = new Script({
          // System
          // -----------------
          
-            if (befehl == "--BOT")            { bot.say(SefzigBot+'Andreas hat mir viel beigebracht - Sie können das durch Schreiben der mit -- beginnenden Wörter abrufen!');
+            if (befehl == "--BOT")            { bot.say(SefzigBot+'Ich weiß eine Menge über Andreas - und bin sein Ersatz für eine klassische Webseite. Sie können mein Wissen durch Schreiben der mit -- beginnenden Wörter abrufen!');
                                                 bot.say(SefzigBot+'Wollen Sie etwas über seine --Person oder --Neues von ihm erfahren? Oder auf anderem Wege --Kontakt  aufnehmen?'); }
             if (befehl == "--ABBRECHEN")      { bot.say(SefzigBot+'Text: Abbruch.'); }
             
