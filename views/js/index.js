@@ -171,6 +171,8 @@
              $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
           }
           
+          text_neu = link_neu;
+          
        // Angepasste Inhalte schreiben
           $(this).html(text_neu);
           
