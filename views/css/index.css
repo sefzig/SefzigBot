@@ -3,15 +3,15 @@
  /* ----------------- */
 
  /* Normalisieren */ 
-    html, body, h1, h2. h3, h4, h5, h6, #seite {
-       margin: 0px;
-       padding: 0px;
-       overflow-x: hidden;
-    }
     html, body, #seite {
        width: 100%;
        height: 100%;
        background-color: white;
+    }
+    html, body, #seite, h1, h2. h3, h4, h5, h6 {
+       margin: 0px;
+       padding: 0px;
+       overflow-x: hidden;
     }
     
  /* Seite */
@@ -38,30 +38,28 @@
  /* ----------------- */
 
  /* Layout */
-    #sk-header, #sk-conversation, #sk-footer {
+    #sk-wrapper, #sk-header, #sk-conversation, #sk-footer {
        position: absolute;
-       top: 0px;
        right: 0px;
-       bottom: 0px;
        left: 0px;
     }
     #sk-header {
+       top: 0px;
        height: 20px;
-       bottom: none;
     }
     #sk-conversation {
        top: 30px;
        bottom: 45px;
     }
     #sk-footer {
-       top: none;
        height: 45px;
+       bottom: 0px;
     }
     #sk-footer > * {
        position: relative;
     }
     
- /* Kopfzeile: Logo */
+ /* Kopfzeile */
     #sk-header > span:after {
        content: "";
        display: block;
@@ -71,6 +69,10 @@
        float: left;
        margin: 0 6px 0 0;
     }
+    
+ /* Inhalt */
+    
+ /* Fusszeile */
     
  /* Smooch Web Widget Anpassungen */
     .sk-messages span.befehl { 
@@ -87,7 +89,7 @@
     .sk-messages img.bild { 
        max-width: 200px;
     }
-    .sk-msg a.btn-sk-primary {
+    .sk-messages a.btn-sk-primary {
        color: black;
        background-color: silver;
        border-color: silver;
