@@ -50,8 +50,9 @@
        height: 45px;
     }
     #sk-conversation {
-       top: 45px;
-       bottom: -45px;
+       top: 0px;
+       padding-top: 45px;
+       bottom: 0px;
     }
     #sk-footer {
        bottom: 0px;
