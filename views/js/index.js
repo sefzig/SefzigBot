@@ -130,10 +130,8 @@
           }
           
        // Bots anpassen
-          link_alt = text_neu;
-          link_neu = text_neu.replace("[LinkBot] ","");
-          text_alt = text_neu;
-          text_neu = text_neu.replace("[SefzigBot] ","");
+          text_alt = text_neu; text_neu = text_neu.replace("[SefzigBot] ","");
+          link_alt = text_neu; link_neu = text_neu.replace("[LinkBot] ","");
           
        // SefzigBot 
           if (text_neu != text_alt) {
@@ -146,7 +144,7 @@
              $(this).parent().parent().parent().parent().children().filter(".sk-from").html(name);
              
           // Bot-Bild schreiben
-             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_displaybild.jpg";
+             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_sefzig-bot.jpg";
              $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
              
           }
@@ -161,15 +159,15 @@
              $(this).parent().parent().parent().parent().children().filter(".sk-from").html(name);
              
           // Bot-Bild schreiben
-             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/linkbot_displaybild.jpg";
+             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_link-bot.png";
              $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
              
           }
-       // Default-Bot (Smooch)
+       // Default-Bot (/sk Smooch in Slack)
           else {
              
           // Bot-Bild anpassen
-             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_personbild.jpg";
+             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_andreas-sefzig.jpg";
              $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
           }
           
