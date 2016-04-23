@@ -144,7 +144,7 @@
              $(this).parent().parent().parent().parent().children().filter(".sk-from").html(name);
              
           // Bot-Bild schreiben
-             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_sefzig-bot.jpg";
+             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_sefzig_bot.jpg";
              $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
              
           }
@@ -159,7 +159,7 @@
              $(this).parent().parent().parent().parent().children().filter(".sk-from").html(name);
              
           // Bot-Bild schreiben
-             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_link-bot.png";
+             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_link_bot.png";
              $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
              
           }
@@ -167,7 +167,7 @@
           else {
              
           // Bot-Bild anpassen
-             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_andreas-sefzig.jpg";
+             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_andreas_sefzig.jpg";
              $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
           }
           
