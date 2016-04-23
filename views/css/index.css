@@ -62,13 +62,12 @@
     }
     
  /* Kopfzeile */
-    #sk-header > span:after {
-       content: "";
-       display: block;
+    #sk-header > span:before {
+       content: "!.!";
+       display: inline;
        background: url("https://media.smooch.io/appicons/571777938ea8c63e0057cc1f.jpg") no-repeat;
        width: 20px;
        height: 20px;
-       float: left;
        margin: 0 6px 0 0;
     }
     
