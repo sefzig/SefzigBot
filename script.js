@@ -59,8 +59,8 @@ module.exports = new Script({
          // -----------------
          
             if (befehl == "--PERSON")         { bot.say(botVorweg+'Andreas ist 38 Jahre alt und lebt in Hamburg. Hier sein --Lebenslauf und ein --Foto.'); }
-            if (befehl == "--LEBENSLAUF")     { bot.say(botVorweg+'Tabellarisches und ausformuliertes Curriculum Vitae: %[Lebenslauf öffnen](http://sefzig.net/link/Lebenslauf/)'); 
-                                                bot.say(botVorweg+'Lebenslauf zum Ausdrucken: %[Lebenslauf als PDF](http://sefzig.net/text/seiten/Lebenslauf/dateien/Andreas_Sefzig_Lebenslauf.pdf)'); }
+            if (befehl == "--LEBENSLAUF")     { bot.say(botVorweg+'Lebenslauf als PDF-Dokument: %[Lebenslauf als PDF](http://sefzig.net/text/seiten/Lebenslauf/dateien/Andreas_Sefzig_Lebenslauf.pdf)');
+                                                bot.say(botVorweg+'Tabellarisches und ausformuliertes CV: %[Lebenslauf öffnen](http://sefzig.net/link/Lebenslauf/)'); }
             if (befehl == "--FOTO")           { bot.say(botVorweg+'[Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png] Andreas Sefzig mit Logo'); }
             if (befehl == "--NEUES")          { bot.say(botVorweg+'Text: Neues.'); }
             
