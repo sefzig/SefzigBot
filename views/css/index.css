@@ -57,8 +57,10 @@
        bottom: 0px;
     }
     .sk-messages {
-       padding-top: 45px !important;
        padding-bottom: 20px !important;
+    }
+    .sk-intro {
+       padding-top: 45px !important;
     }
     
  /* Kopfzeile */
