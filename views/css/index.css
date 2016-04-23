@@ -4,8 +4,6 @@
 
  /* Normalisieren */ 
     html, body, #seite {
-       width: 100%;
-       height: 100%;
        background-color: white;
     }
     html, body, #seite, h1, h2. h3, h4, h5, h6 {
