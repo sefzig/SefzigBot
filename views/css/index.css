@@ -46,10 +46,11 @@
        bottom: 0px;
     }
     #sk-header {
-       
+       top: 0px;
+       height: 45px;
     }
     #sk-conversation {
-       top: 0px;
+       top: 45px;
        height: 100% !important;
        bottom: 0px;
     }
