@@ -44,12 +44,6 @@
        float: left;
        margin: 0 6px 0 0;
     }
-    #sk-container #sk-wrapper .sk-msg {
-       background-color: green;
-    }
-    #sk-container #sk-wrapper .sk-msg::after {
-       border-left-color: blue;
-    }
     
  /* Smooch Web Widget Anpassungen */
     .sk-messages span.befehl { 
@@ -66,7 +60,7 @@
     .sk-messages img.bild { 
        max-width: 200px;
     }
-    #sk-container.sk-embedded .btn-sk-primary {
+    .sk-action > .btn-sk-primary a {
        color: black;
        background-color: silver;
        border-color: silver;

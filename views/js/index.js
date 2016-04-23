@@ -1,8 +1,5 @@
 
- /* Anwendung starten
-  * 
-  * 
-  */ 
+ // Anwendung starten
     $(document).ready(function(){
        
     // Konto füllen
@@ -10,35 +7,39 @@
        var nachname = Cookies.get('SefzigbotNachname'); if ((nachname) && (nachname != "")) { $("#nachname").val(nachname); } else { nachname = "Nachname";       } $("#nachname").change(function(){ Cookies.set('SefzigbotNachname', $(this).val()); });
        var email =    Cookies.get('SefzigbotEmail');    if ((email)    && (email != ""))    { $("#email").val(email);       } else { email    = "E-Mail-Adresse"; } $("#email").change(function(){    Cookies.set('SefzigbotEmail',    $(this).val()); });
        
-       $("[data-start='chat']").trigger("click");
+    // Chat direkt starten
+       start("chat");
        
     // Benutzeroberfläche
        $("[data-start]").click(function(e) {
           
+       // Navigations-Elemente
           var starten = $(this).attr("data-start");
           
+       // Navigation ausführen
+          start(starten);
+          
+       // Navigation Ansicht
           $("#seite > div").fadeOut();
           $("#seite #"+starten).fadeIn();
           
-          start(starten);
-          
+       // Klick verhindern
           e.preventDefault();
           
        });
        
+    // Chat-Inhalte anpassen
        var zuletzt = 0;
-       window.setInterval(function() { anpassen(); }, 100);
+       window.setInterval(function() { anpassen(); }, 333);
        
     });
     
- /* Chat starten
-  * 
-  * 
-  */ 
+ // Chat starten
     function start(methode) {
        
        if (methode == "chat") {
           
+       // Umgebungs-Parameter einsammeln
           var vorname =  Cookies.get('SefzigbotVorname');  if ((!vorname)  || (vorname  == "") || (vorname  == "Vorname"))        { vorname  = "Nicht"; }
           var nachname = Cookies.get('SefzigbotNachname'); if ((!nachname) || (nachname == "") || (nachname == "Nachname"))       { nachname = "Bekannt"; }
           var email =    Cookies.get('SefzigbotEmail');    if ((!email)    || (email    == "") || (email    == "E-Mail-Adresse")) { email    = "unbekannt@sefzig.net"; }
@@ -74,6 +75,7 @@
        // Smooch.open();
           Smooch.render(document.getElementById('chat'));
           
+       // Nutzer-Infos aktualisieren
           Smooch.updateUser({ vorname: vorname });
           Smooch.updateUser({ nachname: nachname });
           Smooch.updateUser({ email: email });
@@ -82,18 +84,24 @@
        
        if (methode == "facebook") {
           
+       // Facebook Messenger in Iframe laden
           $("#facebook > iframe").attr("src", "http://www.messenger.com/t/1195928167086850/");
           
        }
        
     }
     
+ // Chat-Inhalte anpassen
     function anpassen() {
        
+    // Noch nicht angepasste anpassen
        var selektor = ".sk-messages .sk-left-row .sk-msg > span > span > span:not([data-angepasst])";
        $(selektor).each(function() {
           
+       // Inhalte lesen
           var text = $(this).html();
+          
+       // Neuen Inhalt beginnen
           var text_neu = text;
           
        // Befehle anpassen
@@ -141,7 +149,10 @@
              $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
           }
           
+       // Angepasste Inhalte schreiben
           $(this).html(text_neu);
+          
+       // Als angepasst markieren
           $(this).attr("data-angepasst", "true");
           
        });
