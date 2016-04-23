@@ -7,19 +7,20 @@
        var nachname = Cookies.get('SefzigbotNachname'); if ((nachname) && (nachname != "")) { $("#nachname").val(nachname); } else { nachname = "Nachname";       } $("#nachname").change(function(){ Cookies.set('SefzigbotNachname', $(this).val()); });
        var email =    Cookies.get('SefzigbotEmail');    if ((email)    && (email != ""))    { $("#email").val(email);       } else { email    = "E-Mail-Adresse"; } $("#email").change(function(){    Cookies.set('SefzigbotEmail',    $(this).val()); });
        
-    // Chat direkt starten
-       start("chat");
+    // Chat starten
+       var starten = "chat";
+       window.setTimeout(function() { start(starten); }, 1000);
        
     // Benutzeroberfläche
        $("[data-start]").click(function(e) {
           
-       // Navigations-Elemente
+       // Elemente
           var starten = $(this).attr("data-start");
           
-       // Navigation ausführen
+       // Navigation
           start(starten);
           
-       // Navigation Ansicht
+       // Ansicht
           $("#seite > div").fadeOut();
           $("#seite #"+starten).fadeIn();
           
