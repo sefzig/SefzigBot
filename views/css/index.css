@@ -56,6 +56,9 @@
     #sk-footer {
        bottom: 0px;
     }
+    .sk-messages {
+       padding-bottom: 20px !important;
+    }
     
  /* Kopfzeile */
     #sk-header > span:after {
