@@ -54,7 +54,7 @@ module.exports = new Script({
             if (befehl == "--BOT")            { bot.say(SefzigBot+'Ich weiß eine Menge über Andreas - und bin sein Ersatz für eine klassische Webseite. Sie können mein Wissen durch Schreiben der mit -- beginnenden Wörter abrufen!');
                                                 bot.say(SefzigBot+'Wollen Sie etwas über seine --Person oder --Neues von ihm erfahren? Oder auf anderem Wege --Kontakt  aufnehmen?'); }
             if (befehl == "--ABBRECHEN")      { bot.say(SefzigBot+'Text: Abbruch.'); }
-            if (befehl == "--QRCODE")         { bot.say(SefzigBot+'Öffnen Sie diesen Chat mobil: [Bild:https://zxing.org/w/chart?cht=qr&chs=200x200&chld=L&choe=UTF-8&chl=http%3A%2F%2Fsefzigbot.herokuapp.com%2F].'); }
+            if (befehl == "--QRCODE")         { bot.say(SefzigBot+'Diesen Chat mobil öffnen: [Bild:https://zxing.org/w/chart?cht=qr&chs=200x200&chld=L&choe=UTF-8&chl=http%3A%2F%2Fsefzigbot.herokuapp.com%2F]'); }
             
          // -----------------
          // Über mich

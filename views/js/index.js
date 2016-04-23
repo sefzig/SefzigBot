@@ -129,16 +129,21 @@
              
           }
           
-       // Bots anpassen
+       // SefzigBot anpassen
           text_alt = text_neu;
           text_neu = text_neu.replace("[SefzigBot] ","");
           if (text_neu != text_alt) {
              
-          // Bot-Namen anpassen
+          // Konfiguration
+             var name = "Andreas Sefzigs Bot";
+             
+          // Bot-Namen lesen
              var absender = $(this).parent().parent().parent().parent().children().filter(".sk-from").html();
+             
+          // Bot-Namen anpassen
              $(this).parent().parent().parent().parent().children().filter(".sk-from").html(absender+"s Bot");
              
-          // Bot-Bild anpassen
+          // Bot-Bild schreiben
              var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_displaybild.jpg";
              $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
              
