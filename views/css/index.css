@@ -43,6 +43,10 @@
        right: 0px;
        left: 0px;
     }
+    #sk-wrapper {
+       top: 0px;
+       bottom: 0px;
+    }
     #sk-header {
        top: 0px;
        height: 20px;
@@ -54,9 +58,6 @@
     #sk-footer {
        height: 45px;
        bottom: 0px;
-    }
-    #sk-footer > * {
-       position: relative;
     }
     
  /* Kopfzeile */
