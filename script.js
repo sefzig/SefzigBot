@@ -12,7 +12,7 @@ module.exports = new Script({
     start: {
         receive: (bot) => {
             return bot.say(botVorweg+'Wenn Andreas gerade online ist, sieht er dieses Gespräch und kann beitreten.')
-                .then(() => 'vorname');
+                .then(() => 'register'); /* <-- vorname */
         }
     },
 
