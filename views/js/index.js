@@ -129,25 +129,43 @@
              
           }
           
-       // SefzigBot anpassen
+       // Bots anpassen
+          link_alt = text_neu;
+          link_neu = text_neu.replace("[LinkBot] ","");
           text_alt = text_neu;
           text_neu = text_neu.replace("[SefzigBot] ","");
+          
+       // SefzigBot 
           if (text_neu != text_alt) {
              
           // Konfiguration
              var name = "Andreas Sefzigs Bot";
-             
-          // Bot-Namen lesen
-             var absender = $(this).parent().parent().parent().parent().children().filter(".sk-from").html();
+             var name_bisher = $(this).parent().parent().parent().parent().children().filter(".sk-from").html();
              
           // Bot-Namen anpassen
-             $(this).parent().parent().parent().parent().children().filter(".sk-from").html(absender+"s Bot");
+             $(this).parent().parent().parent().parent().children().filter(".sk-from").html(name);
              
           // Bot-Bild schreiben
              var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_displaybild.jpg";
              $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
              
           }
+       // LinkBot 
+          else if (link_neu != link_alt) {
+             
+          // Konfiguration
+             var name = "Link Bot";
+             var name_bisher = $(this).parent().parent().parent().parent().children().filter(".sk-from").html();
+             
+          // Bot-Namen anpassen
+             $(this).parent().parent().parent().parent().children().filter(".sk-from").html(name);
+             
+          // Bot-Bild schreiben
+             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/linkbot_displaybild.jpg";
+             $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
+             
+          }
+       // Default-Bot (Smooch)
           else {
              
           // Bot-Bild anpassen
