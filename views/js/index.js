@@ -56,7 +56,7 @@
                 headerText: 'Andreas Sefzig und Bot',
                 inputPlaceholder: 'Schreiben Sie eine Nachricht...',
                 sendButtonText: 'Absenden',
-                introText: 'Dies ist der Anfang unseres Gesprächs.<br/>Bitte schreiben Sie irgendetwas, um das Gespräch zu beginnen!',
+                introText: 'Dies ist der Anfang unseres Gesprächs.<br/>Schreiben Sie irgendetwas, um zu beginnen!',
                 settingsText: 'Hinterlassen Sie Ihre E-Mail-Adresse, damit ich Kontakt zu Ihnen aufnehmen kann.',
                 settingsReadOnlyText: 'Ich schreibe Ihnen an diese E-Mail-Adresse, sollen wir uns verpasst haben.',
                 settingsInputPlaceholder: 'Ihre E-Mail-Adresse',

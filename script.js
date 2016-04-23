@@ -84,8 +84,8 @@ module.exports = new Script({
             if (befehl == "--SLACKTEAM")      { bot.say(botVorweg+'Andreas betreibt ein offenes Slack-Team, in dem man sich über Marketing-Technologie unterhält. %[Slack-Team öffnen](http://sefzig.net/link/Slack/)'); }
             if (befehl == "--XING")           { bot.say(botVorweg+'Andreas ist bei Xing: Er ist seit 2004 angemeldet und gehört mit über 500 Kontakten zu den 5% der bestvernetzten Mitglieder. %[Xing-Profil öffnen](http://sefzig.net/link/XingProfil/)'); 
                                                 bot.say(botVorweg+'[Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/xing_vernetzt.png]'); }
-            if (befehl == "--TWITTER")        { bot.say(botVorweg+'Andreas ist auf Twitter: Er ist seit 2008 angemeldet, hat beinahe 500 Follower und sah sich kürzlich gezwungen, alle Tweets zu löschen: %[Twitter-Profil öffnen](http://sefzig.net/link/Twitter/)'); 
-                                                bot.say(botVorweg+'Schreiben Sie einen Tweet über @sefzig: %[@sefzig twittern](http://sefzig.net/link/XingTweet/)'); }
+            if (befehl == "--TWITTER")        { bot.say(botVorweg+'Andreas ist auf Twitter: Er ist seit 2008 angemeldet, hat beinahe 500 Follower und sah sich kürzlich gezwungen, alle Tweets zu löschen: Neustart 2016. %[Twitter-Profil öffnen](http://sefzig.net/link/TwitterProfil/)'); 
+                                                bot.say(botVorweg+'Schreiben Sie einen Tweet über @sefzig: %[@sefzig twittern](http://sefzig.net/link/TwitterTweet/)'); }
             
          // -----------------
          // Vorlage

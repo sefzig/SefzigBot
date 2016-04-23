@@ -1,5 +1,8 @@
 
- /* Allgemein: Normalisieren */ 
+ /* Allgemein */ 
+ /* ----------------- */
+
+ /* Normalisieren */ 
     html, body, h1, h2. h3, h4, h5, h6, #seite {
        margin: 0px;
        padding: 0px;
@@ -11,16 +14,16 @@
        background-color: white;
     }
     
- /* Seite: Layout */
+ /* Seite */
+ /* ----------------- */
+
+ /* Layout */
     #seite, #seite > div {
        position: absolute;
        top: 0px;
        right: 0px;
        bottom: 0px;
        left: 0px;
-    }
-    #seite {
-       
     }
     #seite > div {
        display: none;
@@ -32,9 +35,30 @@
     }
     
  /* Smooch Web Widget */
-    .sk-left-row { vertical-align: top; }
- /* .sk-left-row img { margin-top: -20px; } */
- /* #sk-header { display: none; } */
+ /* ----------------- */
+
+ /* Layout */
+    #sk-header, #sk-conversation, #sk-footer {
+       position: absolute;
+       top: 0px;
+       right: 0px;
+       bottom: 0px;
+       left: 0px;
+    }
+    #sk-header {
+       height: 20px;
+       bottom: none;
+    }
+    #sk-conversation {
+       top: 30px;
+       bottom: 45px;
+    }
+    #sk-footer {
+       top: none;
+       height: 45px;
+    }
+    
+ /* Kopfzeile: Logo */
     #sk-header > span:after {
        content: "";
        display: block;
@@ -60,7 +84,7 @@
     .sk-messages img.bild { 
        max-width: 200px;
     }
-    .sk-action > .btn-sk-primary a {
+    .sk-msg a.btn-sk-primary {
        color: black;
        background-color: silver;
        border-color: silver;
