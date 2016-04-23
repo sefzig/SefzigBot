@@ -51,13 +51,13 @@
     }
     #sk-conversation {
        top: 0px;
-       padding-top: 45px;
        bottom: 0px;
     }
     #sk-footer {
        bottom: 0px;
     }
     .sk-messages {
+       padding-top: 45px !important;
        padding-bottom: 20px !important;
     }
     
