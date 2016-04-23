@@ -65,7 +65,7 @@
     
  /* Kopfzeile */
     #sk-header > span:before {
-       content: ".!,!.";
+       content: ".!,,!";
        display: inline;
        background: url("http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_displaybild.jpg") no-repeat;
        width: 20px;
