@@ -52,7 +52,7 @@
     #sk-conversation {
        top: 45px;
        height: 100% !important;
-       bottom: 0px;
+       bottom: -45px;
     }
     #sk-footer {
        bottom: 0px;
@@ -63,9 +63,9 @@
     
  /* Kopfzeile */
     #sk-header > span:before {
-       content: "!.!";
+       content: ".!,!.";
        display: inline;
-       background: url("https://media.smooch.io/appicons/571777938ea8c63e0057cc1f.jpg") no-repeat;
+       background: url("http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_displaybild.jpg") no-repeat;
        width: 20px;
        height: 20px;
        margin: 0 6px 0 0;
