@@ -46,7 +46,7 @@
        bottom: 0px;
     }
     #sk-header {
-       display: none;
+       
     }
     #sk-conversation {
        top: 0px;
@@ -57,7 +57,7 @@
        bottom: 0px;
     }
     .sk-messages {
-       padding-bottom: 50px !important;
+       padding-bottom: 20px !important;
     }
     
  /* Kopfzeile */
