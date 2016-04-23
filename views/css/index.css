@@ -50,17 +50,17 @@
        height: 45px;
     }
     #sk-conversation {
-       top: 0px;
+       top: 45px;
        bottom: 0px;
     }
     #sk-footer {
        bottom: 0px;
     }
     .sk-messages {
-       padding-bottom: 20px !important;
+       padding-bottom: 0px !important;
     }
     .sk-intro {
-       padding-top: 45px !important;
+       padding-top: 10px !important;
     }
     
  /* Kopfzeile */
