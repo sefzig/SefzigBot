@@ -57,6 +57,9 @@
        top: none;
        height: 45px;
     }
+    #sk-footer > * {
+       position: relative;
+    }
     
  /* Kopfzeile: Logo */
     #sk-header > span:after {
