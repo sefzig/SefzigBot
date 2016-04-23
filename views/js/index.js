@@ -144,7 +144,7 @@
              $(this).parent().parent().parent().parent().children().filter(".sk-from").html(name);
              
           // Bot-Bild schreiben
-             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_sefzig_bot.jpg";
+             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_sefzig_bot.png";
              $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
              
           }
