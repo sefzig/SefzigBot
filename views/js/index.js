@@ -158,10 +158,10 @@
              var jquery = var3;
              
           // Botnamen anpassen
-             jquery.parent().parent().parent().parent().children().filter(".sk-from").html(name);
+             $(jquery).parent().parent().parent().parent().children().filter(".sk-from").html(name);
              
           // Botbild anpassen
-             jquery.parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
+             $(jquery).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
              
           // Neuen Text anpassen
              text_string = text_string.replace("["+var1+"] ","");
