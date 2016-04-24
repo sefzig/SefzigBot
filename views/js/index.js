@@ -231,11 +231,16 @@
              
           }
           
+       // Alle Absender verbergen
+          $(".sk-from.bot"+zufall).css("display","none");
+          $(".sk-from.bot"+zufall).parent().parent().css("padding-top","10px");
+          
+       // Bei erstem Absender anzeigen
           var ist_erster = $(".sk-from.bot"+zufall).parent().parent().prev().hasClass("sk-right-row");
-          if (ist_erster != true) { 
+          if (ist_erster == true) { 
              
-             $(".sk-from.bot"+zufall).css("display","none");
-             $(".sk-from.bot"+zufall).parent().parent().css("padding-top","10px");
+             $(".sk-from.bot"+zufall).css("display","block");
+             $(".sk-from.bot"+zufall).parent().parent().css("padding-top","30px");
              
           }
           console.log('> ist_erster: '+ist_erster); 
