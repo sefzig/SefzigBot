@@ -3,6 +3,7 @@
 const Script = require('smooch-bot').Script;
 const SefzigBot = "[SefzigBot] ";
 const LinkBot = "[LinkBot] ";
+const TextBot = "[TextBot] ";
 
 module.exports = new Script({
     processing: {
