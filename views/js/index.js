@@ -93,9 +93,23 @@
           
           skPromise.then(function() {
              
-             console.log("Gesagt, getan. skPromise.");
+             console.log("- skPromise, sobald Gespräch begonnen.");
              
           });
+          
+          Smooch.on('message:received', function(message) {
+             
+             console.log('- Nachricht erhalten');
+             
+          });
+          
+          Smooch.on('message:sent', function(message) {
+             
+             console.log('- Nachricht gesendet');
+             
+          });
+          
+          Smooch.sendMessage('hello');
 
        }
        
