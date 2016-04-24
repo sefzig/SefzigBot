@@ -231,9 +231,9 @@
              
           }
           
+          if (ist_erster != true) { $(".sk-from.bot"+zufall).css("display","none"); }
           var ist_erster = $(".sk-from.bot"+zufall).parent().parent().hasClass("sk-right-row");
           console.log('> ist_erster: '+ist_erster);
-          if (ist_erster != true) { $(".sk-from.bot"+zufall).css("display","none"); }
           ist_erster = "";
           
        }
