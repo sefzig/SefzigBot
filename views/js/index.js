@@ -175,6 +175,15 @@
              
              var script = scripts[j].split("]")[0];
              text_neu = text_neu.replace("[Javascript:"+script+"]", '');
+             
+var myFuncs = {
+  func1: function () { alert('Function 1'); },
+  func2: function () { alert('Function 2'); },
+  func3: function () { alert('Function 3'); },
+  func4: function () { alert('Function 4'); },
+  func5: function () { alert('Function 5'); }
+};
+
              myFuncs[script]();
              console.log("- Javascript ausgeführt: "+script);
              var script = "";
@@ -192,17 +201,6 @@
        });
        
     }
-    
-    // set up the possible functions:
-var myFuncs = {
-  func1: function () { alert('Function 1'); },
-  func2: function () { alert('Function 2'); },
-  func3: function () { alert('Function 3'); },
-  func4: function () { alert('Function 4'); },
-  func5: function () { alert('Function 5'); }
-};
-// execute the one specified in the 'funcToRun' variable:
-// myFuncs[funcToRun]();
     
     function befehlen(befehl) {
        
