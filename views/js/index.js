@@ -233,7 +233,7 @@
           
           var is_erster = $(".sk-from.bot"+zufall).parent().parent().hasClass("sk-right-row");
           console.log('> is_erster: '+is_erster);
-          if (is_erster == true) { $(".sk-from.bot"+zufall).css("display","none") }
+          if (is_erster != true) { $(".sk-from.bot"+zufall).css("display","none") }
           is_erster = "";
           
        }
