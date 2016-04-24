@@ -162,8 +162,9 @@ module.exports = new Script({
                                                               +'\n○ --kontaktTwitter '
                                                               +'\n○ --kontaktSlack '); }
             
-            if (befehl == "--KONTAKT")        { bot.say(SefzigBot+'Andreas E-Mail-Adresse: [Button:andreas@sefzig.net,mailto:andreas@sefzig.net] Mobile Telefonnummer: [Button:0151 15 92 00 82,tel:+4915115920082] Kontaktseite: [Text:SefzignetKontakt]');
-                                                bot.say(SefzigBot+'Besuchen Sie ihn auf --Twitter und --Xing. Oder treten Sie seinem offenen --Slackteam bei!'); }
+            if (befehl == "--KONTAKT")        { bot.say(SefzigBot+'Andreas E-Mail-Adresse: [Button:andreas@sefzig.net,mailto:andreas@sefzig.net] Kontaktseite: [Text:SefzignetKontakt]');
+                                                bot.say(SefzigBot+'Oder rufen Sie ihn einfach an: [Button:0151 15 92 00 82,tel:+4915115920082]');
+                                                bot.say(SefzigBot+'Besuchen Sie ihn auch auf --Twitter und --Xing oder treten Sie seinem offenen --Slackteam bei!'); }
             if (befehl == "--SLACKTEAM")      { bot.say(SefzigBot+'Andreas betreibt ein offenes Slack-Team, in dem man sich über Marketing-Technologie unterhält. %[Slack-Team öffnen](http://sefzig.net/link/SlackAnmeldung/)'); }
             if (befehl == "--XING")           { bot.say(SefzigBot+'Andreas ist bei Xing: Er ist seit 2004 angemeldet und gehört mit über 500 Kontakten zu den 5% der bestvernetzten Mitglieder. %[Xing-Profil öffnen](http://sefzig.net/link/XingProfil/)'); 
                                                 bot.say(SefzigBot+'[Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/xing_vernetzt.png]'); }
