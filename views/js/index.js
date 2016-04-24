@@ -89,7 +89,7 @@
        
     }
     
-    function inhalt(methode, text_string) {
+    function inhalt(methode, text_string, modul) {
        
        text_string = " "+text_string+" ";
        var inhalte = text_string;
@@ -103,6 +103,22 @@
              var inhalt = inhalte[i].split(/,|;|:|\.|!|\?| /)[0];
              text_string = text_string.replace("--"+inhalt, '<span class="befehl" onclick="befehlen(\'--'+inhalt+'\')">--'+inhalt+'</span>');
              console.log("- Befehl angepasst! "+inhalt);
+             var inhalt = "";
+             
+          }
+          
+       }
+       
+       
+       if ((methode == "modul") && (modul) && (modul != "")) { 
+       
+       // Modul anpassen
+          inhalte = inhalte.split("["+modul+":");
+          for (i = 1; i < inhalte.length; i++) {
+             
+             var inhalt = inhalte[i].split("]")[0];
+             text_string = text_string.replace("["+modul+":"+inhalt+"]", '<img class="bild" src="'+inhalt+'" />');
+             console.log("- "+modul+" angepasst! "+inhalt);
              var inhalt = "";
              
           }
