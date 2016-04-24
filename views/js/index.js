@@ -102,7 +102,7 @@
              
              var inhalt = inhalte[i].split(/,|;|:|\.|!|\?| /)[0];
              text_string = text_string.replace("--"+inhalt, '<span class="befehl" onclick="befehlen(\'--'+inhalt+'\')">--'+inhalt+'</span>');
-             console.log("- Befehl angepasst! "+inhalt);
+             console.log("- Befehl angepasst; "+inhalt);
              var inhalt = "";
              
           }
@@ -118,7 +118,7 @@
              
              var inhalt = inhalte[i].split("]")[0];
              text_string = text_string.replace("["+modul+":"+inhalt+"]", '<img class="bild" src="'+inhalt+'" />');
-             console.log("- "+modul+" angepasst! "+inhalt);
+             console.log("- "+modul+" angepasst; "+inhalt);
              var inhalt = "";
              
           }
@@ -144,18 +144,7 @@
           
        // Inhalte anpassen
           var text_neu = inhalt("befehl", text_neu);
-          
-       // Bilder anpassen
-          var bilder = " "+text_alt+" ";
-          bilder = bilder.split("[Bild:");
-          for (j = 1; j < bilder.length; j++) {
-             
-             var bild = bilder[j].split("]")[0];
-             text_neu = text_neu.replace("[Bild:"+bild+"]", '<img class="bild" src="'+bild+'" />');
-             console.log("- Bild angepasst: "+bild);
-             var bild = "";
-             
-          }
+          var text_neu = inhalt("modul", text_neu, "Bild");
           
        // Bots anpassen
           text_alt = text_neu; text_neu = text_neu.replace("[SefzigBot] ","");
