@@ -97,17 +97,17 @@
        $(selektor).each(function() {
           
        // Inhalte lesen
-          var text = $(this).html();
+          var text_alt = $(this).html();
           
-       // Neuen Inhalt beginnen
-          var text_neu = text;
+       // Neuen Inhalt beginnen // String wird von allen folgenden Funktionen angepasst
+          var text_neu = text_alt;
           
        // Befehle anpassen
-          var texte = text;
-          texte = texte.split("--");
-          for (i = 1; i < texte.length; i++) {
+          var befehle = text_alt;
+          befehle = befehle.split("--");
+          for (i = 1; i < befehle.length; i++) {
              
-             var befehl = texte[i].split(/,|;|:|\.|!|\?| /)[0];
+             var befehl = befehle[i].split(/,|;|:|\.|!|\?| /)[0];
              text_neu = text_neu.replace("--"+befehl, '<span class="befehl" onclick="befehlen(\'--'+befehl+'\')">--'+befehl+'</span>');
              console.log("- Befehl angepasst: "+befehl);
              var befehl = "";
@@ -115,7 +115,7 @@
           }
           
        // Bilder anpassen
-          var bilder = " "+text+" ";
+          var bilder = " "+text_alt+" ";
           bilder = bilder.split("[Bild:");
           for (j = 1; j < bilder.length; j++) {
              
@@ -171,7 +171,7 @@
           }
           
        // Javascript ausführen
-          var scripts = " "+text+" ";
+          var scripts = " "+text_alt+" ";
           scripts = scripts.split("[Javascript:");
           for (k = 1; k < scripts.length; k++) {
              
