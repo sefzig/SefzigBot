@@ -95,7 +95,7 @@
              
              console.log('- Nachricht erhalten');
              
-             window.setTimeout(function() { anpassen(); }, 333);
+             window.setTimeout(function() { anpassen(); }, 10);
              
           });
           
