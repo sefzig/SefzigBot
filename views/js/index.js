@@ -74,9 +74,9 @@
           Smooch.render(document.getElementById('chat'));
           
        // Nutzer-Infos aktualisieren
-          Smooch.updateUser({ vorname: vorname });
-          Smooch.updateUser({ nachname: nachname });
-          Smooch.updateUser({ email: email });
+       // Smooch.updateUser({ vorname: vorname });
+       // Smooch.updateUser({ nachname: nachname });
+       // Smooch.updateUser({ email: email });
           
        }
        
