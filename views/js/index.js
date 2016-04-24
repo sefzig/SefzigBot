@@ -47,7 +47,7 @@
           
        // Smooch Js
        // https://github.com/smooch/smooch-js
-          Smooch.init({ 
+          var skPromise = Smooch.init({ 
              appToken: 'd9k415y76nk8ab2croifjshpv',
              embedded: true,
              customText: {
@@ -88,6 +88,12 @@
           Smooch.on('say', function(){
              
              console.log("Gesagt, getan.");
+             
+          });
+          
+          skPromise.then(function() {
+             
+             console.log("Gesagt, getan. skPromise.");
              
           });
 
