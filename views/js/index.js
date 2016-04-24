@@ -89,7 +89,7 @@
        
     }
     
-    function inhalt(methode, text_string, var1, var2) {
+    function inhalt(methode, text_string, var1, var2, var3) {
        
        text_string = " "+text_string+" ";
        var inhalte = text_string;
@@ -142,10 +142,11 @@
           
        }
        
-       if ((methode == "bot") && (var1) && (var1 != "") && (var2) && (var2 != "")) {
+       if ((methode == "bot") && (var1) && (var1 != "") && (var2) && (var2 != "") && (var3) && (var3 != "")) {
        // methode: bot
        // var1: SefzigBot
        // var2: Andreas Sefzigs Bot
+       // var3: Jquery this
           
        // Wenn Text den Botnamen enthält
           bot_alt = inhalte; bot_neu = inhalte.replace("["+var1+"] ","");
@@ -154,12 +155,13 @@
           // Konfiguration
              var name = var2;
              var pfad = "img/bots/Displaybild_"+var1+".png";
+             var jquery = var3;
              
           // Botnamen anpassen
-             $(this).parent().parent().parent().parent().children().filter(".sk-from").html(name);
+             jquery.parent().parent().parent().parent().children().filter(".sk-from").html(name);
              
           // Botbild anpassen
-             $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
+             jquery.parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
              
           // Neuen Text anpassen
              text_string = text_string.replace("["+var1+"] ","");
@@ -235,10 +237,10 @@
           
        // Bots anpassen
           var text_merken = text_neu;
-          text_neu = inhalt("bot", text_neu, "SefzigBot", "Andreas Sefzigs Bot");
-          text_neu = inhalt("bot", text_neu, "LinkBot", "Link Bot");
+          text_neu = inhalt("bot", text_neu, "SefzigBot", "Andreas Sefzigs Bot", $(this));
+          text_neu = inhalt("bot", text_neu, "LinkBot", "Link Bot", $(this));
           if (text_neu != text_merken) { text_neu = "[AndreasSefzig] "+text_neu; }
-          text_neu = inhalt("bot", text_neu, "AndreasSefzig", "Andreas Sefzig");
+          text_neu = inhalt("bot", text_neu, "AndreasSefzig", "Andreas Sefzig", $(this));
           
        // Angepasste Inhalte schreiben
           $(this).html(text_neu);
