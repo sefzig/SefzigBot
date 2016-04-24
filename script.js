@@ -91,12 +91,18 @@ module.exports = new Script({
             
             if (befehl == "--LINK")           { bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)');
                                                 bot.say(LinkBot  +'URLs der Link-Verwaltung: --LinkEingabe, --LinkListe, --LinkEinrichten, --LinkAdmin, --LinkUber.'); }
-            if (befehl == "--LINKEINGABE")    { bot.say(LinkBot  +'Eingabemaske für einen neuen Link: %[Link eigeben](http://sefzig.net/link/)'); }
-            if (befehl == "--LINKLISTE")      { bot.say(LinkBot  +'Andreas allgemeine Linkliste: %[Link eigeben](http://sefzig.net/link/)');
+            if (befehl == "--LINKEINGABE")    { bot.say(LinkBot  +'Fügen Sie einen Link zu meiner Liste hinzu! %[Link: Eingabe](http://sefzig.net/link/)'); }
+            if (befehl == "--LINKEINRICHTEN") { bot.say(LinkBot  +'Jeder kann Link benutzen. Die Einrichtung ist einfach und interaktiv: %[Link: Einrichtung](http://sefzig.net/link/einrichten/)'); }
+            if (befehl == "--LINKADMIN")      { bot.say(LinkBot  +'In der Administration werden die Links verwaltet: %[Link: Administration](http://sefzig.net/link/admin/)'); }
+            if (befehl == "--LINKUBER")       { bot.say(LinkBot  +'Link ist recht gut dokumentiert - Andreas Text dazu: %[Link: Dokumentation](http://sefzig.net/text/link/)'); }
+            if (befehl == "--LINKLISTE")      { bot.say(LinkBot  +'Alle Links von Andreas fließen in eine filterbare Linkliste ein: %[Link: Liste](http://sefzig.net/link/liste/)');
                                                 bot.say(LinkBot  +'Empfohlene Linklisten: --LinksWerkzeuge, --LinksDemo, --LinksInnovation, --LinksRtm, --LinksAnhang'); }
-            if (befehl == "--LINKEINRICHTEN") { bot.say(LinkBot  +'Link: Einrichten.'); }
-            if (befehl == "--LINKADMIN")      { bot.say(LinkBot  +'Link: Administration.'); }
-            if (befehl == "--LINKUBER")       { bot.say(LinkBot  +'Link: Über.'); }
+            
+            if (befehl == "--LinksWerkzeuge") { bot.say(SefzigBot+'Linkliste: Werkzeuge.'); }
+            if (befehl == "--LinksDemo")      { bot.say(SefzigBot+'Linkliste: Demo.'); }
+            if (befehl == "--LinksInnovation"){ bot.say(SefzigBot+'Linkliste: Innovation.'); }
+            if (befehl == "--LinksRtm")       { bot.say(SefzigBot+'Linkliste: Rtm.'); }
+            if (befehl == "--LinksAnhang")    { bot.say(SefzigBot+'Linkliste: Anhang.'); }
             
          // -----------------
          // Text

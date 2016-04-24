@@ -232,7 +232,12 @@
           }
           
           var ist_erster = $(".sk-from.bot"+zufall).parent().parent().prev().hasClass("sk-right-row");
-          if (ist_erster != true) { $(".sk-from.bot"+zufall).css("display","none"); $(".sk-from.bot"+zufall).parent().parent().css("padding-top","10px"); }
+          if (ist_erster != true) { 
+             
+             $(".sk-from.bot"+zufall).css("display","none");
+             $(".sk-from.bot"+zufall).parent().parent().css("padding-top","10px");
+             
+          }
           console.log('> ist_erster: '+ist_erster); 
           ist_erster = "";
           
