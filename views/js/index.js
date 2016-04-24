@@ -146,25 +146,24 @@
        // methode: bot
        // var1: SefzigBot
        // var2: Andreas Sefzigs Bot
-       // var3: Jquery this
+       // var3: zufall
           
        // Wenn Text den Botnamen enthält
           bot_alt = inhalte; bot_neu = inhalte.replace("["+var1+"] ","");
           if (bot_neu != bot_alt) {
              
           // Konfiguration
+             var kurzel = var1;
              var name = var2;
-             var pfad = "img/bots/Displaybild_"+var1+".png";
-             var jquery = var3;
+             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/Displaybild_"+kurzel+".png";
+             var zufall = var3;
              
           // Botnamen anpassen
-             $(jquery).parent().parent().parent().parent().children().filter(".sk-from").html(name);
-             
-          // Botbild anpassen
-             $(jquery).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
+             $(".sk-from").hasClass("bot"+zufall).html(name);
+             $(".sk-msg-avatar").hasClass("bot"+zufall).attr("src", pfad);
              
           // Neuen Text anpassen
-             text_string = text_string.replace("["+var1+"] ","");
+             text_string = text_string.replace("["+kurzel+"] ","");
              
           // Debuggen
              console.log("- Bot angepasst: "+pfad);
@@ -224,12 +223,19 @@
        // Neuen Inhalt beginnen // String wird von allen folgenden Funktionen angepasst
           var text_neu = text_alt;
           
+       // 1 Zufallszahl für jede Blase
+          var zufall = Math.floor(Math.random()*999999);
+          
        // Zugelassene Javascript-Funktionen
           var funktionen = {
              test_alert:   function () { alert('Hallo Welt!'); },
              test_console: function () { console.log('Hallo Welt!'); }
           };
           
+       // Bot-Inhalte markieren
+          $(this).parent().parent().parent().parent().children().filter(".sk-from").addClass("bot"+zufall);
+          $(this).parent().parent().parent().parent().parent().children().filter("img").addClass("bot"+zufall);
+             
        // Inhalte anpassen
           text_neu = inhalt("befehl", text_neu);
           text_neu = inhalt("modul", text_neu, "Bild"); 
@@ -237,10 +243,10 @@
           
        // Bots anpassen
           var text_merken = text_neu;
-          text_neu = inhalt("bot", text_neu, "SefzigBot", "Andreas Sefzigs Bot", $(this));
-          text_neu = inhalt("bot", text_neu, "LinkBot", "Link Bot", $(this));
+          text_neu = inhalt("bot", text_neu, "SefzigBot", "Andreas Sefzigs Bot", zufall);
+          text_neu = inhalt("bot", text_neu, "LinkBot", "Link Bot", zufall);
           if (text_neu != text_merken) { text_neu = "[AndreasSefzig] "+text_neu; }
-          text_neu = inhalt("bot", text_neu, "AndreasSefzig", "Andreas Sefzig", $(this));
+          text_neu = inhalt("bot", text_neu, "AndreasSefzig", "Andreas Sefzig", zufall);
           
        // Angepasste Inhalte schreiben
           $(this).html(text_neu);
