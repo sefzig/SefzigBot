@@ -122,5 +122,6 @@
     #text { 
        z-index: 3000;
        display: none;
+       background-color: red;
     }
     
