@@ -247,7 +247,9 @@
           var text_merken = text_neu;
           text_neu = inhalt("bot", text_neu, "SefzigBot", "Andreas Sefzigs Bot", zufall);
           text_neu = inhalt("bot", text_neu, "LinkBot", "Link Bot", zufall);
-          if (text_neu != text_merken) { text_neu = "[AndreasSefzig] "+text_neu; }
+          
+       // Default-Bot
+          if (text_neu == text_merken) { text_neu = "[AndreasSefzig] "+text_neu; }
           text_neu = inhalt("bot", text_neu, "AndreasSefzig", "Andreas Sefzig", zufall);
           
        // Angepasste Inhalte schreiben
