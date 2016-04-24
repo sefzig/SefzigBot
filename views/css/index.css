@@ -112,8 +112,15 @@
        max-width: 200px;
     }
     .sk-messages a.btn-sk-primary {
+       margin-top: 5px !important;
+       margin-bottom: -10px !important;
        color: black !important;
        background-color: silver !important;
        border-color: silver !important;
+    }
+    
+    #text { 
+       z-index: 3000;
+       display: none;
     }
     

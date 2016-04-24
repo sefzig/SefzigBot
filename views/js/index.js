@@ -40,6 +40,7 @@
     // Konsole beginnen
        console.log('Neues Gespräch');
        
+    // Chat starten
        if (methode == "chat") {
           
        // Umgebungs-Parameter einsammeln
@@ -86,13 +87,6 @@
              console.log('- Nutzer hat eine Nachricht gesendet');
              
           });
-          
-       }
-       
-       if (methode == "facebook") {
-          
-       // Facebook Messenger in Iframe laden
-          $("#facebook > iframe").attr("src", "http://www.messenger.com/t/1195928167086850/");
           
        }
        
@@ -143,7 +137,7 @@
           klasse = klasse.toLowerCase();
           
        // Templates
-          var text = ' <div class="sk-action"><a class="btn btn-sk-primary" href="http://sefzig.net/text/%inhalt%/#einbindung" target="_blank">Text: %inhalt%</a></div> ';
+          var text = ' <div class="sk-action"><a class="btn btn-sk-primary" href="http://sefzig.net/text/%inhalt%/" onclick="text(\'%inhalt%\');" target="_blank">Text: %inhalt%</a></div> ';
           var bild = '<img class="%klasse%" src="%inhalt%" />';
           var youtube = '<iframe width="180" height="102" class="%klasse%" src="http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
           
@@ -243,7 +237,7 @@
              $(".sk-from.bot"+zufall).parent().parent().css("padding-top","30px");
              
           }
-          console.log('> ist_erster: '+ist_erster); 
+       // console.log('> ist_erster: '+ist_erster); 
           ist_erster = "";
           
        }
@@ -309,6 +303,24 @@
     function befehlen(befehl) {
        
        $(".input-container .message-input").val(befehl).trigger("keydown", {which: 50});
+       
+    }
+    
+ // Text in Ebene öffnen
+    function text(kurzel) {
+       
+       if ((kurzel) && (kurzel != "")) {
+          
+       // URL errechnen
+          var url = "http://sefzig.net/text/"+kurzel+"/#einbindung";
+          
+       // Iframe laden
+          $("#text > iframe").attr("src", url);
+          
+       // Ebene öffnen
+          $("#text").fadeIn(500);
+          
+       }
        
     }
     
