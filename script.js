@@ -109,7 +109,7 @@ module.exports = new Script({
             
          // Linklisten
             if ((befehl == "--LINKS") ||
-                (befehl == "--LINKLISTEN")    { bot.say(LinkBot  +'Empfohlene Linklisten '
+                (befehl == "--LINKLISTEN"))   { bot.say(LinkBot  +'Empfohlene Linklisten '
                                                              +'\n○ --LinksWerkzeuge '
                                                              +'\n○ --LinksDemo '
                                                              +'\n○ --LinksInnovation '
