@@ -93,14 +93,14 @@ module.exports = new Script({
             
          // Befehle
             if ((befehl == "--LINK") ||
-                (befehl == "--LINKS"))        { bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)');
-                                                bot.say(LinkBot  +'URLs der Link-Verwaltung '
+                (befehl == "--LINKS"))        { bot.say(LinkBot  +'URLs der Link-Verwaltung '
                                                              +'\n○ --LinkEingabe '
                                                              +'\n○ --LinkListe '
                                                              +'\n○ --LinkListen '
                                                              +'\n○ --LinkEinrichten '
                                                              +'\n○ --LinkAdmin '
-                                                             +'\n○ --LinkUber.'); }
+                                                             +'\n○ --LinkUber.');
+                                                bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)'); }
          // Inhalte
             if (befehl == "--LINKEINGABE")    { bot.say(LinkBot  +'Fügen Sie einen Link zu meiner Liste hinzu! %[Link: Eingabe](http://sefzig.net/link/)'); }
             if (befehl == "--LINKEINRICHTEN") { bot.say(LinkBot  +'Jeder kann Link benutzen. Die Einrichtung ist einfach und interaktiv: %[Link: Einrichtung](http://sefzig.net/link/einrichten/)'); }
@@ -116,11 +116,11 @@ module.exports = new Script({
                                                              +'\n○ --LinksRtm '
                                                              +'\n○ --LinksAnhang'); }
          // Inhalte
-            if (befehl == "--LinksWerkzeuge") { bot.say(SefzigBot+'Das Netz ist voller nützlicher Werkzeuge - hier eine nützliche Linkliste: %[Linkliste: Werkzeuge](http://sefzig.net/link/liste/Werkzeug/)'); }
-            if (befehl == "--LinksDemo")      { bot.say(SefzigBot+'Andreas produziert Links am laufenden Band: %[Linkliste: Mappe](http://sefzig.net/link/liste/Mappe/)'); }
-            if (befehl == "--LinksInnovation"){ bot.say(SefzigBot+'Links zu innovativen Ideen und Techniken aus Marketing und Kultur: %[Linkliste: Innovationen](http://sefzig.net/link/liste/Innovation/)'); }
-            if (befehl == "--LinksRtm")       { bot.say(SefzigBot+'Real Time Messaging/Marketing ist das Ding! %[Linkliste: Rtm](http://sefzig.net/link/liste/Rtm/)'); }
-            if (befehl == "--LinksAnhang")    { bot.say(SefzigBot+'In einer Liste hält Andreas Unterhaltsames fest: %[Linkliste: Anhang](http://sefzig.net/link/liste/Anhang/)'); }
+            if (befehl == "--LINKSWERKZEUGE") { bot.say(SefzigBot+'Das Netz ist voller nützlicher Werkzeuge - hier eine nützliche Linkliste: %[Linkliste: Werkzeuge](http://sefzig.net/link/liste/Werkzeug/)'); }
+            if (befehl == "--LINKSDEMO")      { bot.say(SefzigBot+'Andreas produziert Links am laufenden Band: %[Linkliste: Mappe](http://sefzig.net/link/liste/Mappe/)'); }
+            if (befehl == "--LINKSINNOVATION"){ bot.say(SefzigBot+'Links zu innovativen Ideen und Techniken aus Marketing und Kultur: %[Linkliste: Innovationen](http://sefzig.net/link/liste/Innovation/)'); }
+            if (befehl == "--LINKSRTM")       { bot.say(SefzigBot+'Real Time Messaging/Marketing ist das Ding! %[Linkliste: Rtm](http://sefzig.net/link/liste/Rtm/)'); }
+            if (befehl == "--LINKSANHANG")    { bot.say(SefzigBot+'In einer Liste hält Andreas Unterhaltsames fest: %[Linkliste: Anhang](http://sefzig.net/link/liste/Anhang/)'); }
             
          // -----------------
          // Text
