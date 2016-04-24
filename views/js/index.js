@@ -27,7 +27,7 @@
        
     // Chat-Inhalte anpassen
        var zuletzt = 0;
-       window.setInterval(function() { anpassen(); }, 333);
+    // window.setInterval(function() { anpassen(); }, 333);
        
     });
     
@@ -85,21 +85,17 @@
        // Smooch.open();
           Smooch.render(document.getElementById('chat'));
           
-          Smooch.on('say', function(){
-             
-             console.log("Gesagt, getan.");
-             
-          });
-          
           skPromise.then(function() {
              
-             console.log("- skPromise, sobald Gespräch begonnen.");
+             console.log("- Gespräch begonnen.");
              
           });
           
           Smooch.on('message:received', function(message) {
              
              console.log('- Nachricht erhalten');
+             
+             anpassen();
              
           });
           
