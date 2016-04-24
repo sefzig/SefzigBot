@@ -92,8 +92,7 @@ module.exports = new Script({
                                                              +'\n○ --linkUber '); }
             
          // Befehle
-            if ((befehl == "--LINK") ||
-                (befehl == "--LINKS"))        { bot.say(LinkBot  +'URLs der Link-Verwaltung '
+            if (befehl == "--LINK")           { bot.say(LinkBot  +'URLs der Link-Verwaltung '
                                                              +'\n○ --LinkEingabe '
                                                              +'\n○ --LinkListe '
                                                              +'\n○ --LinkListen '
@@ -102,14 +101,15 @@ module.exports = new Script({
                                                              +'\n○ --LinkUber.');
                                                 bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)'); }
          // Inhalte
-            if (befehl == "--LINKEINGABE")    { bot.say(LinkBot  +'Fügen Sie einen Link zu meiner Liste hinzu! %[Link: Eingabe](http://sefzig.net/link/)'); }
+            if (befehl == "--LINKEINGABE")    { bot.say(LinkBot  +'Fügen Sie einen Link zu Andreas Liste hinzu! %[Link: Eingabe](http://sefzig.net/link/)'); }
             if (befehl == "--LINKEINRICHTEN") { bot.say(LinkBot  +'Jeder kann Link benutzen. Die Einrichtung ist einfach und interaktiv: %[Link: Einrichtung](http://sefzig.net/link/einrichten/)'); }
             if (befehl == "--LINKADMIN")      { bot.say(LinkBot  +'In der Administration werden die Links verwaltet: %[Link: Administration](http://sefzig.net/link/admin/)'); }
             if (befehl == "--LINKUBER")       { bot.say(LinkBot  +'Link ist recht gut dokumentiert - Andreas Text dazu: %[Link: Dokumentation](http://sefzig.net/text/link/)'); }
             if (befehl == "--LINKLISTE")      { bot.say(LinkBot  +'Alle Links von Andreas fließen in eine filterbare Linkliste ein: %[Link: Allgemeine Liste](http://sefzig.net/link/liste/)'); }
             
          // Linklisten
-            if (befehl == "--LINKLISTEN")     { bot.say(LinkBot  +'Empfohlene Linklisten '
+            if ((befehl == "--LINKS") ||
+                (befehl == "--LINKLISTEN")    { bot.say(LinkBot  +'Empfohlene Linklisten '
                                                              +'\n○ --LinksWerkzeuge '
                                                              +'\n○ --LinksDemo '
                                                              +'\n○ --LinksInnovation '
