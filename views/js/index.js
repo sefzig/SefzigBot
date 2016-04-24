@@ -140,14 +140,15 @@
           klasse = klasse.toLowerCase();
           
        // Button-Text von URL trennen
-          var buttons = var1;
-          buttons = buttons.split(",");
-          if (buttons[1]) { var button_text = buttons[0]; var button_url =  buttons[1]; }
-          else { var button_text = "Link öffnen"; var button_url =  var1; }
+          if (modul == "Button")  { 
+             var buttons = var1.split(",");
+             if (buttons[1]) { var button_text = buttons[0]; var button_url =  buttons[1]; }
+             else { var button_text = "Link öffnen"; var button_url = var1; }
+          }
           
        // Templates
           var text =    '<div class="sk-action" style="margin-bottom:-20px"><a class="btn btn-sk-primary" href="http://sefzig.net/text/%inhalt%/" onclick="texte(\'%inhalt%\'); return false;">Text: %inhalt%</a></div>';
-          var button =  '<div class="sk-action" style="margin-bottom:-20px"><a class="btn btn-sk-primary" href="%inhalt%" target="_blank">Link öffnen</a></div>';
+          var button =  '<div class="sk-action" style="margin-bottom:0px"  ><a class="btn btn-sk-primary" href="'+button_url+'" target="_blank">'+button_text+'</a></div>';
           var iframe =  '<iframe src="" data-src="%inhalt%" width="180" height="102" onclick="this.src = this.data-src" frameborder="0">Frame laden</iframe>';
           var bild =    '<img class="%klasse%" src="%inhalt%" />';
           var youtube = '<iframe width="180" height="102" class="%klasse%" src="http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
