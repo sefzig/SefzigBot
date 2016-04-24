@@ -315,7 +315,7 @@
        if ((kurzel) && (kurzel != "")) {
           
        // URL errechnen
-          var url = "http://sefzig.net/text/"+kurzel+"/#einbindung";
+          var url = "http://sefzig.net/text/"+kurzel+"/";
           
        // Iframe laden
           $("#text > iframe").attr("src", url);

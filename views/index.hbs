@@ -20,9 +20,9 @@
   </head>
   <body>
     <div id="seite">
-      <div id="intro" style="display: block">
+      <div id="intro" style="display:none">
         <h2>SefzigBot</h2>
-        <ul style="display:none">
+        <ul>
           <li><a href="#chat"     data-start="chat"    >Andreas Sefzigs Bot</a></li>
           <li><a href="#facebook" data-start="facebook">Facebook Messenger</a></li>
           <li><a href="#slack"    data-start="slack"   >Offenes Slack-Team</a></li>
@@ -42,6 +42,7 @@
       </div>
       <div id="text">
         <iframe src=""></iframe>
+        <div><img src="img/ui/Schliessen.png" onclick="$('#text').fadeOut()" /></div>
       </div>
     </div>
     <script src="https://cdn.smooch.io/smooch.min.js"></script>
