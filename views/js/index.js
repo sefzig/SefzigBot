@@ -50,9 +50,6 @@
           Smooch.init({ 
              appToken: 'd9k415y76nk8ab2croifjshpv',
              embedded: true,
-             givenName: vorname,
-             surname: nachname,
-             email: email,
              customText: {
                 headerText: 'Andreas Sefzig (und Bots)',
                 inputPlaceholder: 'Schreiben Sie eine Nachricht...',
