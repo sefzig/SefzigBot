@@ -230,15 +230,18 @@
              test_alert:   function () { alert('Hallo Welt!'); },
              test_console: function () { console.log('Hallo Welt!'); }
           };
-
+          
        // Inhalte anpassen
           text_neu = inhalt("befehl", text_neu);
-          text_neu = inhalt("modul", text_neu, "Bild"); var text_merken = text_neu;
+          text_neu = inhalt("modul", text_neu, "Bild"); 
+          text_neu = inhalt("javascript", text_neu, funktionen, "Ich habe ein Javascript ausgeführt.");
+          
+       // Bots anpassen
+          var text_merken = text_neu;
           text_neu = inhalt("bot", text_neu, "SefzigBot", "Andreas Sefzigs Bot");
           text_neu = inhalt("bot", text_neu, "LinkBot", "Link Bot");
           if (text_neu != text_merken) { text_neu = "[AndreasSefzig] "+text_neu; }
           text_neu = inhalt("bot", text_neu, "AndreasSefzig", "Andreas Sefzig");
-          text_neu = inhalt("javascript", text_neu, funktionen, "Ich habe ein Javascript ausgeführt.");
           
        // Angepasste Inhalte schreiben
           $(this).html(text_neu);
