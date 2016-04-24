@@ -112,8 +112,8 @@
        max-width: 200px;
     }
     .sk-messages a.btn-sk-primary {
-       color: black;
-       background-color: silver;
-       border-color: silver;
+       color: black !important;
+       background-color: silver !important;
+       border-color: silver !important;
     }
     

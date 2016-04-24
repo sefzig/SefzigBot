@@ -111,13 +111,13 @@ module.exports = new Script({
             if ((befehl == "--LINKS") ||
                 (befehl == "--LINKLISTEN"))   { bot.say(LinkBot  +'Empfohlene Linklisten '
                                                              +'\n○ --LinksWerkzeuge '
-                                                             +'\n○ --LinksDemo '
+                                                             +'\n○ --LinksMappe '
                                                              +'\n○ --LinksInnovation '
                                                              +'\n○ --LinksRtm '
                                                              +'\n○ --LinksAnhang'); }
          // Inhalte
             if (befehl == "--LINKSWERKZEUGE") { bot.say(SefzigBot+'Das Netz ist voller nützlicher Werkzeuge - hier eine nützliche Linkliste: %[Linkliste: Werkzeuge](http://sefzig.net/link/liste/Werkzeug/)'); }
-            if (befehl == "--LINKSDEMO")      { bot.say(SefzigBot+'Andreas produziert Links am laufenden Band: %[Linkliste: Mappe](http://sefzig.net/link/liste/Mappe/)'); }
+            if (befehl == "--LINKSMAPPE")     { bot.say(SefzigBot+'Andreas produziert Links am laufenden Band: %[Linkliste: Mappe](http://sefzig.net/link/liste/Mappe/)'); }
             if (befehl == "--LINKSINNOVATION"){ bot.say(SefzigBot+'Links zu innovativen Ideen und Techniken aus Marketing und Kultur: %[Linkliste: Innovationen](http://sefzig.net/link/liste/Innovation/)'); }
             if (befehl == "--LINKSRTM")       { bot.say(SefzigBot+'Real Time Messaging/Marketing ist das Ding! %[Linkliste: Rtm](http://sefzig.net/link/liste/Rtm/)'); }
             if (befehl == "--LINKSANHANG")    { bot.say(SefzigBot+'In einer Liste hält Andreas Unterhaltsames fest: %[Linkliste: Anhang](http://sefzig.net/link/liste/Anhang/)'); }
@@ -129,7 +129,7 @@ module.exports = new Script({
             if (befehl == "--BEFEHLE")        { bot.say(TextBot  +'--text '
                                                              +'\n○ --textUber '); }
             
-            if (befehl == "--TEXT")           { bot.say(TextBot  +'Andreas hat SefzigBot dokumentiert: [Text:SefzigBot]'); }
+            if (befehl == "--TEXT")           { bot.say(TextBot  +'Andreas hat diesen Bot ausführlich dokumentiert: [Text:SefzigBot]'); }
             if (befehl == "--TEXTUBER")       { bot.say(TextBot  +'Über Text.'); }
             
          // -----------------
