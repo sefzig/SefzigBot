@@ -90,6 +90,8 @@
           
        }
        
+       anpassen();
+       
     }
     
  // Texte anpassen
