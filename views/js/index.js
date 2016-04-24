@@ -235,7 +235,7 @@
     function anpassen() {
        
     // Noch nicht angepasste anpassen
-       var selektor = ".sk-messages .sk-left-row .sk-msg > span > span > span:not([data-angepasst])";
+       var selektor = ".sk-messages .sk-msg > span > span > span:not([data-angepasst])";
        $(selektor).each(function() {
           
        // Inhalte lesen
