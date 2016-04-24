@@ -155,9 +155,6 @@
              var name = var2;
              var pfad = "img/bots/Displaybild_"+var1+".png";
              
-          // Bisheriger Botname
-          // var name_bisher = $(this).parent().parent().parent().parent().children().filter(".sk-from").html();
-             
           // Botnamen anpassen
              $(this).parent().parent().parent().parent().children().filter(".sk-from").html(name);
              
@@ -168,7 +165,7 @@
              text_string = text_string.replace("["+var1+"] ","");
              
           // Debuggen
-             console.log("- Bot angepasst; "+inhalt);
+             console.log("- Bot angepasst: "+name);
              
           }
           
