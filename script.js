@@ -53,10 +53,10 @@ module.exports = new Script({
          // -----------------
          
             if (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'Hier die wichtigsten --befehle:');
-                                                bot.say(SefzigBot+'--bot'
-                                                             +'<br>--mobil'
-                                                             +'<br>--befehle'
-                                                             +'<br>--abbrechen'); }
+                                                bot.say(SefzigBot+'--bot '
+                                                            +'<br> --mobil '
+                                                            +'<br> --befehle '
+                                                            +'<br> --abbrechen '); }
             
             if ((befehl == "--BOT") ||
                 (befehl == "--UBER"))         { bot.say(SefzigBot+'Ich weiß eine Menge über Andreas - und bin sein Ersatz für eine klassische Webseite. Rufen Sie mein Wissen durch Schreiben der mit -- beginnenden Wörter ab!');
@@ -69,10 +69,10 @@ module.exports = new Script({
          // Über mich
          // -----------------
          
-            if (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'--über'
-                                                             +'<br>--person'
-                                                             +'<br>--neues'
-                                                             +'<br>--kontakt'); }
+            if (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'--über '
+                                                            +'<br> --person '
+                                                            +'<br> --neues '
+                                                            +'<br> --kontakt '); }
             
             if (befehl == "--PERSON")         { bot.say(SefzigBot+'Andreas ist 38 Jahre alt und lebt in Hamburg. Hier sein --Lebenslauf und ein --Foto.'); }
             if (befehl == "--LEBENSLAUF")     { bot.say(SefzigBot+'Sein Lebenslauf als druckbares PDF-Dokument: %[Lebenslauf.pdf](http://sefzig.net/text/seiten/Lebenslauf/dateien/Andreas_Sefzig_Lebenslauf.pdf)');
@@ -84,10 +84,10 @@ module.exports = new Script({
          // Link
          // -----------------
          
-            if (befehl == "--BEFEHLE")        { bot.say(LinkBot  +'--link'
-                                                             +'<br>--linkEingabe'
-                                                             +'<br>--linkListe'
-                                                             +'<br>--linkUber'); }
+            if (befehl == "--BEFEHLE")        { bot.say(LinkBot  +'--link '
+                                                            +'<br> --linkEingabe '
+                                                            +'<br> --linkListe '
+                                                            +'<br> --linkUber '); }
             
             if (befehl == "--LINKS")          { bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)');
                                                 bot.say(LinkBot  +'URLs der Link-Verwaltung: --LinkEingabe, --LinkListe, --LinkEinrichten, --LinkAdmin, --LinkUber.'); }
@@ -102,8 +102,8 @@ module.exports = new Script({
          // Text
          // -----------------
          
-            if (befehl == "--BEFEHLE")        { bot.say(TextBot  +'--text'
-                                                             +'<br>--textUber'); }
+            if (befehl == "--BEFEHLE")        { bot.say(TextBot  +'--text '
+                                                            +'<br> --textUber '); }
             
             if (befehl == "--TEXT")           { bot.say(TextBot  +'Andreas hat SefzigBot dokumentiert: [Text:SefzigBot]'); }
             if (befehl == "--TEXTUBER")       { bot.say(TextBot  +'Über Text.'); }
@@ -112,10 +112,10 @@ module.exports = new Script({
          // Kontakt
          // -----------------
          
-            if (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'--kontakt'
-                                                             +'<br>--kontaktSeite'
-                                                             +'<br>--kontaktTwitter'
-                                                             +'<br>--kontaktSlack'); }
+            if (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'--kontakt '
+                                                            +'<br> --kontaktSeite '
+                                                            +'<br> --kontaktTwitter '
+                                                            +'<br> --kontaktSlack '); }
             
             if (befehl == "--KONTAKT")        { bot.say(SefzigBot+'Sie erreichen Andreas über andreas@sefzig.net, in seinem --Slackteam, auf --Twitter und auf --Xing. %[Kontakt-Seite öffnen](http://sefzig.net/link/Kontakt/)'); }
             if (befehl == "--SLACKTEAM")      { bot.say(SefzigBot+'Andreas betreibt ein offenes Slack-Team, in dem man sich über Marketing-Technologie unterhält. %[Slack-Team öffnen](http://sefzig.net/link/Slack/)'); }
