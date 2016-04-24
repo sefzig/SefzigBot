@@ -73,12 +73,33 @@ module.exports = new Script({
                                                              +'\n○ --person '
                                                              +'\n○ --neues '
                                                              +'\n○ --kontakt '); }
-                                                             
+            
             if (befehl == "--PERSON")         { bot.say(SefzigBot+'Andreas ist 38 Jahre alt und lebt in Hamburg. Hier sein --Lebenslauf und ein --Foto.'); }
             if (befehl == "--LEBENSLAUF")     { bot.say(SefzigBot+'Sein Lebenslauf als druckbares PDF-Dokument: %[Lebenslauf.pdf](http://sefzig.net/text/seiten/Lebenslauf/dateien/Andreas_Sefzig_Lebenslauf.pdf)');
                                                 bot.say(SefzigBot+'Tabellarisches und ausformuliertes CV: %[Lebenslauf öffnen](http://sefzig.net/link/Lebenslauf/)'); }
             if (befehl == "--FOTO")           { bot.say(SefzigBot+'[Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png] Andreas Sefzig mit Logo'); }
-            if (befehl == "--NEUES")          { bot.say(SefzigBot+'Text: Neues.'); }
+            
+         // -----------------
+         // Themen
+         // -----------------
+         
+         // Übersicht
+            if (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'--neues '
+                                                             +'\n○ --jobsuche '
+                                                             +'\n○ --slack '
+                                                             +'\n○ --rtm '); }
+            
+         // Befehle
+            if (befehl == "--NEUES")          { bot.say(SefzigBot  +' Was es bei Andreas --neues gibt? So einiges... ');
+                                                bot.say(SefzigBot  +'○ --jobsuche '
+                                                             +'\n○ --slack '
+                                                             +'\n○ --rtm '
+                                                             +'\n○ --newsletter '); }
+            
+         // Inhalte
+            if (befehl == "--SLACK")          { bot.say(SefzigBot+'Text: Neues.'); }
+            if ((befehl == "--FRISKY") ||
+                (befehl == "--FRISKYRADIO"))  { bot.say(SefzigBot+'Frisky Radio: Global EDM [Iframe:http://www.friskyradio.com/m3u/frisky.m3u]'); }
             
          // -----------------
          // Link
@@ -129,7 +150,7 @@ module.exports = new Script({
             if (befehl == "--BEFEHLE")        { bot.say(TextBot  +'--text '
                                                              +'\n○ --textUber '); }
             
-            if (befehl == "--TEXT")           { bot.say(TextBot  +'Andreas hat diesen Bot ausführlich dokumentiert: [Text:SefzigBot]'); }
+            if (befehl == "--TEXT")           { bot.say(TextBot  +'Andreas hat angefangen, diesen Bot zu dokumentieren: [Text:SefzigBot]'); }
             if (befehl == "--TEXTUBER")       { bot.say(TextBot  +'Über Text.'); }
             
          // -----------------
