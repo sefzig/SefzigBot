@@ -121,8 +121,11 @@
     
     #text { 
        z-index: 3000;
+       position: fixed;
+       top: 30px;
+       bottom: 45px;
        display: none;
-       background-color: red;
+       background-color: white;
     }
     #text > div { 
        z-index: 3001;
@@ -133,5 +136,6 @@
     #text > div > img { 
        width: 50px;
        height: 50px;
+       cursor: pointer;
     }
     
