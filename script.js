@@ -162,7 +162,7 @@ module.exports = new Script({
                                                               +'\n○ --kontaktTwitter '
                                                               +'\n○ --kontaktSlack '); }
             
-            if (befehl == "--KONTAKT")        { bot.say(SefzigBot+'Andreas E-Mail-Adresse ist mailto:andreas@sefzig.net, seine Mobilnummer ist tel:015115920082. [Text:Kontakt]');
+            if (befehl == "--KONTAKT")        { bot.say(SefzigBot+'Andreas E-Mail-Adresse: [Button:andreas@sefzig.net,mailto:andreas@sefzig.net] Andreas Mobilnummer: [Button:0151 15 92 00 82,tel:+4915115920082] Kontaktseite: [Text:Kontakt]');
                                                 bot.say(SefzigBot+'Besuchen Sie ihn auf --Twitter und --Xing. Oder treten Sie seinem offenen --Slackteam bei!'); }
             if (befehl == "--SLACKTEAM")      { bot.say(SefzigBot+'Andreas betreibt ein offenes Slack-Team, in dem man sich über Marketing-Technologie unterhält. %[Slack-Team öffnen](http://sefzig.net/link/SlackAnmeldung/)'); }
             if (befehl == "--XING")           { bot.say(SefzigBot+'Andreas ist bei Xing: Er ist seit 2004 angemeldet und gehört mit über 500 Kontakten zu den 5% der bestvernetzten Mitglieder. %[Xing-Profil öffnen](http://sefzig.net/link/XingProfil/)'); 
