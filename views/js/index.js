@@ -68,16 +68,29 @@
                 messageIndicatorTitleSingular: '({count}) neue Nachricht',
                 messageIndicatorTitlePlural: '({count}) neue Nachrichten'
              }
+          })
+          .then(function() {
+             
+             Smooch.updateUser({
+                
+             // Nutzer-Infos aktualisieren
+             // Smooch.updateUser({ vorname: vorname });
+             // Smooch.updateUser({ nachname: nachname });
+             // Smooch.updateUser({ email: email });
+          
+             });
+                
           }); 
           
        // Smooch.open();
           Smooch.render(document.getElementById('chat'));
           
-       // Nutzer-Infos aktualisieren
-       // Smooch.updateUser({ vorname: vorname });
-       // Smooch.updateUser({ nachname: nachname });
-       // Smooch.updateUser({ email: email });
-          
+          Smooch.on('say', function(){
+             
+             console.log("Gesagt, getan.");
+             
+          });
+
        }
        
        if (methode == "facebook") {
@@ -191,7 +204,7 @@
           // Konfiguration
              var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/Displaybild_"+kurzel+".png";
              
-          // Botnamen anpassen
+          // Bot-Inhalte anpassen
              $(".sk-from.bot"+zufall).html(name);
              $(".sk-msg-avatar.bot"+zufall).attr("src", pfad);
              
@@ -199,7 +212,7 @@
              text_string = text_string.replace("["+kurzel+"] ","");
              
           // Debuggen
-             console.log("- Bot angepasst: "+zufall);
+             console.log("- Bot angepasst: "+name);
              
           }
           
@@ -231,7 +244,7 @@
              test_console: function () { console.log('Hallo Welt!'); }
           };
           
-       // Bot-Inhalte markieren
+       // Bot-Inhalte markieren :/
           $(this).parent().parent().parent().parent().children().filter(".sk-from").addClass("bot"+zufall);
           $(this).parent().parent().parent().parent().parent().children().filter("img").addClass("bot"+zufall);
              
