@@ -94,16 +94,22 @@
        text_string = " "+text_string+" ";
        var inhalte = text_string;
        
-       if (methode == "befehl") { 
-       // methode: befehl
+       if (methode == "befehl") {
        
        // Befehle anpassen
           inhalte = inhalte.split("--");
           for (i = 1; i < inhalte.length; i++) {
              
+          // Befehl freistellen
              var inhalt = inhalte[i].split(/,|;|:|\.|!|\?| /)[0];
+             
+          // Neuen Text anpassen
              text_string = text_string.replace("--"+inhalt, '<span class="befehl" onclick="befehlen(\'--'+inhalt+'\')">--'+inhalt+'</span>');
+             
+          // Debuggen
              console.log("- Befehl angepasst: "+inhalt);
+             
+          // Zurücksetzen
              var inhalt = "";
              
           }
@@ -111,11 +117,11 @@
        }
        
        if ((methode == "modul") && (var1) && (var1 != "")) {
-       // methode: modul
-       // var1: Bild
+          
+       // Funktions-Parameter
+          var modul = var1;
           
        // Modulnamen kamelisieren
-          var modul = var1;
           modul = modul.charAt(0).toUpperCase() + modul.slice(1);
           
        // Klasse in Kleinbuchstaben
@@ -133,7 +139,7 @@
              text_string = text_string.replace("["+modul+":"+inhalt+"]", '<img class="'+klasse+'" src="'+inhalt+'" />');
              
           // Debuggen
-             console.log("- "+modul+" angepasst; "+inhalt);
+             console.log("- "+modul+" angepasst: "+inhalt);
              
           // Zurücksetzen
              var inhalt = "";
@@ -142,52 +148,15 @@
           
        }
        
-       if ((methode == "bot") && (var1) && (var1 != "") && (var2) && (var2 != "") && (var3) && (var3 != "")) {
-       // methode: bot
-       // var1: SefzigBot
-       // var2: Andreas Sefzigs Bot
-       // var3: zufall
-          
-       // Wenn Text den Botnamen enthält
-          bot_alt = inhalte; bot_neu = inhalte.replace("["+var1+"] ","");
-          if (bot_neu != bot_alt) {
-             
-          // Funktions-Parameter
-             var kurzel = var1;
-             var name = var2;
-             var zufall = var3;
-             
-          // Konfiguration
-             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/Displaybild_"+kurzel+".png";
-             
-          // Botnamen anpassen
-             $(".sk-from.bot"+zufall).html(name);
-             $(".sk-msg-avatar.bot"+zufall).attr("src", pfad);
-             
-          // Neuen Text anpassen
-             text_string = text_string.replace("["+kurzel+"] ","");
-             
-          // Debuggen
-             console.log("- Bot angepasst: "+zufall);
-             
-          }
-          
-       }
-       
        if ((methode == "javascript") && (var1) && (var1 != "") && (var2) && (var2 != "")) {
-       // methode: javascript
-       // var1: var funktionen
-       // var2: Ich habe den Text geöffnet.
           
+       // Funktions-Parameter
+          var funktionen = var1;
+          var meldung = var2;
+             
        // Javascript ausführen
           inhalte = inhalte.split("[Javascript:");
           for (i = 1; i < inhalte.length; i++) {
-             
-          // Funktionen übernehmen
-             var funktionen = var1;
-             
-          // Meldung übernehmen
-             var meldung = var2;
              
           // Funktions-Namen freistellen
              var skript = inhalte[i].split("]")[0];
@@ -207,7 +176,35 @@
           }
           
        }
+       
+       if ((methode == "bot") && (var1) && (var1 != "") && (var2) && (var2 != "") && (var3) && (var3 != "")) {
           
+       // Funktions-Parameter
+          var kurzel = var1;
+          var name = var2;
+          var zufall = var3;
+             
+       // Wenn Text den Botnamen enthält
+          bot_alt = inhalte; bot_neu = inhalte.replace("["+var1+"] ","");
+          if (bot_neu != bot_alt) {
+             
+          // Konfiguration
+             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/Displaybild_"+kurzel+".png";
+             
+          // Botnamen anpassen
+             $(".sk-from.bot"+zufall).html(name);
+             $(".sk-msg-avatar.bot"+zufall).attr("src", pfad);
+             
+          // Neuen Text anpassen
+             text_string = text_string.replace("["+kurzel+"] ","");
+             
+          // Debuggen
+             console.log("- Bot angepasst: "+zufall);
+             
+          }
+          
+       }
+       
        return text_string;
        
     }
