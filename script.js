@@ -68,7 +68,7 @@ module.exports = new Script({
             if (befehl == "--NEUES")          { bot.say(SefzigBot+'Text: Neues.'); }
             
          // -----------------
-         // Links
+         // Link
          // -----------------
          
             if (befehl == "--LINKS")          { bot.say(LinkBot+'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)');
@@ -79,6 +79,12 @@ module.exports = new Script({
             if (befehl == "--LINKEINRICHTEN") { bot.say(LinkBot+'Link: Einrichten.'); }
             if (befehl == "--LINKADMIN")      { bot.say(LinkBot+'Link: Administration.'); }
             if (befehl == "--LINKUBER")       { bot.say(LinkBot+'Link: Über.'); }
+            
+         // -----------------
+         // Text
+         // -----------------
+         
+            if (befehl == "--TEXT")           { bot.say(TextBot+'[Text:SefzigBot]'); }
             
          // -----------------
          // Kontakt
@@ -96,7 +102,6 @@ module.exports = new Script({
          // -----------------
          
             if (befehl == "--VIDEO")          { bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
-            if (befehl == "--TEXT")           { bot.say(SefzigBot+'[Text:SefzigBot]'); }
             
          // -----------------
          // Vorlage
