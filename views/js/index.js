@@ -192,7 +192,7 @@
              var skript = inhalte[i].split("]")[0];
              
           // Neuen Text anpassen
-             text_neu = text_neu.replace("[Javascript:"+skript+"]", meldung);
+             text_string = text_string.replace("[Javascript:"+skript+"]", meldung);
              
           // Bekannte Funktionen ausführen
              funktionen[skript]();
