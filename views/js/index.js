@@ -259,7 +259,8 @@
              
        // Inhalte anpassen
           text_neu = inhalt("befehl", text_neu);
-          text_neu = inhalt("modul", text_neu, "Bild"); 
+          text_neu = inhalt("modul", text_neu, "Bild");
+          text_neu = inhalt("modul", text_neu, "Video");
           text_neu = inhalt("javascript", text_neu, funktionen, "Ich habe ein Javascript ausgeführt.");
           
        // Bots anpassen
