@@ -137,6 +137,7 @@
           
        // Button-Text von URL trennen
           if (modul == "Button")  { 
+             console.log("> Button Var: "+var1);
              var buttons = var1.split(",");
              if (buttons[1]) { var button_text = buttons[0]; var button_url = buttons[1]; }
              else { var button_text = "Link öffnen"; var button_url = var1; }
