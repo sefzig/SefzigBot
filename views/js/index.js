@@ -129,6 +129,10 @@
        if ((methode == "modul") && (var1) && (var1 != "")) {
           
        // Funktions-Parameter
+          var kurzel = var1;
+          var zufall = var3;
+             
+       // Funktions-Parameter
           var modul = var1;
           
        // Modulnamen kamelisieren
@@ -139,19 +143,21 @@
           klasse = klasse.toLowerCase();
           
        // Templates
+          var text = ' %[Text "%inhalt%" öffnen](http://sefzig.net/text/%inhalt%/) ';
           var bild = '<img class="%klasse%" src="%inhalt%" />';
           var youtube = '<iframe width="180" height="102" class="%klasse%" src="http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
           
+       // Template auswählen
+          if (modul == "Text")    { var template = text; }
+          if (modul == "Bild")    { var template = bild; }
+          if (modul == "Youtube") { var template = youtube; }
+             
        // Modul anpassen
           inhalte = inhalte.split("["+modul+":");
           for (i = 1; i < inhalte.length; i++) {
              
           // Inhalt freistellen
              var inhalt = inhalte[i].split("]")[0];
-             
-          // Template auswählen
-             if (modul == "Bild")  { var template = bild; }
-             if (modul == "Youtube") { var template = youtube; }
              
           // Template anpassen
              template = template.replace(/%klasse%/g, klasse);
@@ -259,6 +265,7 @@
              
        // Inhalte anpassen
           text_neu = inhalt("befehl", text_neu);
+          text_neu = inhalt("modul", text_neu, "Text");
           text_neu = inhalt("modul", text_neu, "Bild");
           text_neu = inhalt("modul", text_neu, "Youtube");
           text_neu = inhalt("javascript", text_neu, funktionen, "Ich habe ein Javascript ausgeführt.");
