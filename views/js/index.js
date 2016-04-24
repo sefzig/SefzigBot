@@ -140,7 +140,7 @@
           
        // Templates
           var bild = '<img class="%klasse%" src="%inhalt%" />';
-          var youtube = '<iframe width="200" height="113" class="%klasse%" src="http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
+          var youtube = '<iframe width="180" height="102" class="%klasse%" src="http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
           
        // Modul anpassen
           inhalte = inhalte.split("["+modul+":");
