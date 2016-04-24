@@ -152,11 +152,13 @@
           bot_alt = inhalte; bot_neu = inhalte.replace("["+var1+"] ","");
           if (bot_neu != bot_alt) {
              
-          // Konfiguration
+          // Funktions-Parameter
              var kurzel = var1;
              var name = var2;
-             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/Displaybild_"+kurzel+".png";
              var zufall = var3;
+             
+          // Konfiguration
+             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/Displaybild_"+kurzel+".png";
              
           // Botnamen anpassen
              $(".sk-from.bot"+zufall).html(name);
@@ -166,7 +168,7 @@
              text_string = text_string.replace("["+kurzel+"] ","");
              
           // Debuggen
-             console.log("- Bot angepasst: "+pfad);
+             console.log("- Bot angepasst: "+zufall);
              
           }
           
