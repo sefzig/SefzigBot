@@ -174,7 +174,7 @@
           for (k = 1; k < scripts.length; k++) {
              
              var script = scripts[k].split("]")[0];
-             text_neu = text_neu.replace("[Javascript:"+script+"]", '');
+             text_neu = text_neu.replace("[Javascript:"+script+"]", "Javascript ausgeführt...");
              
              var funktionen = {
                 test_alert:   function () { alert('Hallo Welt!'); },
