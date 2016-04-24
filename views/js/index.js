@@ -126,10 +126,6 @@
        if ((methode == "modul") && (var1) && (var1 != "")) {
           
        // Funktions-Parameter
-          var kurzel = var1;
-          var zufall = var3;
-             
-       // Funktions-Parameter
           var modul = var1;
           
        // Modulnamen kamelisieren
@@ -142,8 +138,10 @@
        // Button-Text von URL trennen
           if (modul == "Button")  { 
              var buttons = var1.split(",");
-             if (buttons[1]) { var button_text = buttons[0]; var button_url =  buttons[1]; }
+             if (buttons[1]) { var button_text = buttons[0]; var button_url = buttons[1]; }
              else { var button_text = "Link öffnen"; var button_url = var1; }
+             console.log("> Button Text: "+button_text);
+             console.log("> Button Url: "+button_url);
           }
           
        // Templates
