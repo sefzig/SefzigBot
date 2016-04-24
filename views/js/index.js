@@ -231,6 +231,10 @@
              
           }
           
+          var is_avatar = $(".sk-from.bot"+zufall).parent().hasClass("sk-right-row");
+          console.log('> is_avatar: '+is_avatar);
+          if (is_avatar != true) { $(".sk-from.bot"+zufall).css("display","none") }
+          
        }
        
        return text_string;

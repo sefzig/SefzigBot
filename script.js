@@ -89,7 +89,7 @@ module.exports = new Script({
                                                              +'\n- --linkListe '
                                                              +'\n- --linkUber '); }
             
-            if (befehl == "--LINKS")          { bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)');
+            if (befehl == "--LINK")           { bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)');
                                                 bot.say(LinkBot  +'URLs der Link-Verwaltung: --LinkEingabe, --LinkListe, --LinkEinrichten, --LinkAdmin, --LinkUber.'); }
             if (befehl == "--LINKEINGABE")    { bot.say(LinkBot  +'Eingabemaske für einen neuen Link: %[Link eigeben](http://sefzig.net/link/)'); }
             if (befehl == "--LINKLISTE")      { bot.say(LinkBot  +'Andreas allgemeine Linkliste: %[Link eigeben](http://sefzig.net/link/)');
