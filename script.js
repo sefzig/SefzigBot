@@ -96,7 +96,7 @@ module.exports = new Script({
             if (befehl == "--VORLAGE")        { bot.say(SefzigBot+'Text: Vorlage.'); }
             
             return bot.setProp('wollen', wollen)
-                .then(function(){ console.log('--> Wir bleiben beim Register'); })
+                .then(function(){ bot.say('--> Ein Javascript-Aufruf! Nur... Welches Javascript?'); })
                 .then(() => 'register');
         }
     },
