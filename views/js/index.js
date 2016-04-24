@@ -25,8 +25,7 @@
           
        });
        
-    // Chat-Inhalte anpassen
-       var zuletzt = 0;
+    // Inhalte im Interval anpassen
     // window.setInterval(function() { anpassen(); }, 333);
        
     });
@@ -68,45 +67,23 @@
                 messageIndicatorTitleSingular: '({count}) neue Nachricht',
                 messageIndicatorTitlePlural: '({count}) neue Nachrichten'
              }
-          })
-          .then(function() {
-             
-             Smooch.updateUser({
-                
-             // Nutzer-Infos aktualisieren
-             // Smooch.updateUser({ vorname: vorname });
-             // Smooch.updateUser({ nachname: nachname });
-             // Smooch.updateUser({ email: email });
-          
-             });
-                
           }); 
           
        // Smooch.open();
           Smooch.render(document.getElementById('chat'));
-          
-          skPromise.then(function() {
-             
-             console.log("- Gespräch begonnen.");
-             
-          });
-          
           Smooch.on('message:received', function(message) {
-             
-             console.log('- Nachricht erhalten');
              
              window.setTimeout(function() { anpassen(); }, 1);
              
+             console.log('- Nutzer hat eine Nachricht erhalten');
+             
           });
-          
           Smooch.on('message:sent', function(message) {
              
-             console.log('- Nachricht gesendet');
+             console.log('- Nutzer hat eine Nachricht gesendet');
              
           });
           
-          Smooch.sendMessage('hello');
-
        }
        
        if (methode == "facebook") {
@@ -118,6 +95,7 @@
        
     }
     
+ // Texte anpassen
     function inhalt(methode, text_string, var1, var2, var3) {
        
        text_string = " "+text_string+" ";
@@ -238,7 +216,7 @@
        
     }
     
- // Chat-Inhalte anpassen
+ // Inhalte anpassen
     function anpassen() {
        
     // Noch nicht angepasste anpassen
@@ -257,7 +235,7 @@
        // Zugelassene Javascript-Funktionen
           var funktionen = {
              test_alert:   function () { alert('Hallo Welt!'); },
-             test_console: function () { console.log('Hallo Welt!'); }
+             test_console: function () { console.log('> Hallo Welt!'); }
           };
           
        // Bot-Inhalte markieren :/
@@ -273,6 +251,7 @@
           var text_merken = text_neu;
           text_neu = inhalt("bot", text_neu, "SefzigBot", "Andreas Sefzigs Bot", zufall);
           text_neu = inhalt("bot", text_neu, "LinkBot", "Link Bot", zufall);
+          text_neu = inhalt("bot", text_neu, "TextBot", "Text Bot", zufall);
           
        // Default-Bot
           if (text_neu == text_merken) { text_neu = "[AndreasSefzig] "+text_neu; }
@@ -288,6 +267,7 @@
        
     }
     
+ // Klicks auf Befehle
     function befehlen(befehl) {
        
        $(".input-container .message-input").val(befehl).trigger("keydown", {which: 50});
