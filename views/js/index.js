@@ -54,7 +54,7 @@
              appToken: 'd9k415y76nk8ab2croifjshpv',
              embedded: true,
              customText: {
-                headerText: 'Andreas Sefzig (und Bots)',
+                headerText: 'Andreas Sefzigs #Robogeddon',
                 inputPlaceholder: 'Schreiben Sie eine Nachricht...',
                 sendButtonText: 'Absenden',
                 introText: 'Dies ist der Anfang unseres Gesprächs.<br/>Schreiben Sie irgendetwas, um zu beginnen!',
@@ -326,6 +326,8 @@
           $("#text").fadeIn(500);
           
        }
+       
+       return false;
        
     }
     

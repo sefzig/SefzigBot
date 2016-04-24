@@ -80,7 +80,7 @@ module.exports = new Script({
             if (befehl == "--FOTO")           { bot.say(SefzigBot+'[Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png] Andreas Sefzig mit Logo'); }
             
          // -----------------
-         // Themen
+         // Neues
          // -----------------
          
          // Übersicht
@@ -90,14 +90,14 @@ module.exports = new Script({
                                                              +'\n○ --rtm '); }
             
          // Befehle
-            if (befehl == "--NEUES")          { bot.say(SefzigBot  +' Was es bei Andreas --neues gibt? So einiges... ');
+            if (befehl == "--NEUES")          { bot.say(SefzigBot  +' Was es bei Andreas --Neues gibt? So einiges... ');
                                                 bot.say(SefzigBot  +'○ --jobsuche '
-                                                             +'\n○ --slack '
-                                                             +'\n○ --rtm '
+                                                             +'\n○ --slack / --rtm '
                                                              +'\n○ --newsletter '); }
             
          // Inhalte
-            if (befehl == "--SLACK")          { bot.say(SefzigBot+'Text: Neues.'); }
+            if (befehl == "--SLACK")          { bot.say(SefzigBot+'Andreas ');
+                                                bot.say(SefzigBot+'Text: Slack.'); }
             if ((befehl == "--FRISKY") ||
                 (befehl == "--FRISKYRADIO"))  { bot.say(SefzigBot+'Frisky Radio: Global EDM [Iframe:http://www.friskyradio.com/m3u/frisky.m3u]'); }
             
@@ -162,8 +162,9 @@ module.exports = new Script({
                                                               +'\n○ --kontaktTwitter '
                                                               +'\n○ --kontaktSlack '); }
             
-            if (befehl == "--KONTAKT")        { bot.say(SefzigBot+'Sie erreichen Andreas über andreas@sefzig.net, in seinem --Slackteam, auf --Twitter und auf --Xing. %[Kontakt-Seite öffnen](http://sefzig.net/link/Kontakt/)'); }
-            if (befehl == "--SLACKTEAM")      { bot.say(SefzigBot+'Andreas betreibt ein offenes Slack-Team, in dem man sich über Marketing-Technologie unterhält. %[Slack-Team öffnen](http://sefzig.net/link/Slack/)'); }
+            if (befehl == "--KONTAKT")        { bot.say(SefzigBot+'Andreas E-Mail-Adresse ist mailto:andreas@sefzig.net, seine Mobilnummer ist tel:015115920082. [Text:Kontakt]');
+                                                bot.say(SefzigBot+'Besuchen Sie ihn auf --Twitter und --Xing. Oder treten Sie seinem offenen --Slackteam bei!'); }
+            if (befehl == "--SLACKTEAM")      { bot.say(SefzigBot+'Andreas betreibt ein offenes Slack-Team, in dem man sich über Marketing-Technologie unterhält. %[Slack-Team öffnen](http://sefzig.net/link/SlackAnmeldung/)'); }
             if (befehl == "--XING")           { bot.say(SefzigBot+'Andreas ist bei Xing: Er ist seit 2004 angemeldet und gehört mit über 500 Kontakten zu den 5% der bestvernetzten Mitglieder. %[Xing-Profil öffnen](http://sefzig.net/link/XingProfil/)'); 
                                                 bot.say(SefzigBot+'[Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/xing_vernetzt.png]'); }
             if (befehl == "--TWITTER")        { bot.say(SefzigBot+'Andreas ist auf Twitter: Er ist seit 2008 angemeldet, hat beinahe 500 Follower und sah sich kürzlich gezwungen, alle Tweets zu löschen: Neustart 2016. %[Twitter-Profil öffnen](http://sefzig.net/link/TwitterProfil/)'); 
