@@ -231,9 +231,10 @@
              
           }
           
-          var is_avatar = $(".sk-from.bot"+zufall).parent().parent().hasClass("sk-right-row");
-          console.log('> is_avatar: '+is_avatar);
-          if (is_avatar == false) { $(".sk-from.bot"+zufall).css("display","none") }
+          var is_erster = $(".sk-from.bot"+zufall).parent().parent().hasClass("sk-right-row");
+          console.log('> is_erster: '+is_erster);
+          if (is_erster == true) { $(".sk-from.bot"+zufall).css("display","none") }
+          is_erster = "";
           
        }
        
