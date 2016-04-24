@@ -143,7 +143,7 @@
           klasse = klasse.toLowerCase();
           
        // Templates
-          var text = ' <div class="sk-action"><a class="btn btn-sk-primary" href="http://sefzig.net/text/%inhalt%/#einbindung" target="_blank">Text "%inhalt%" öffnen</a></div> ';
+          var text = ' <div class="sk-action"><a class="btn btn-sk-primary" href="http://sefzig.net/text/%inhalt%/#einbindung" target="_blank">Text: %inhalt%</a></div> ';
           var bild = '<img class="%klasse%" src="%inhalt%" />';
           var youtube = '<iframe width="180" height="102" class="%klasse%" src="http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
           

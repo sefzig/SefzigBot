@@ -52,16 +52,28 @@ module.exports = new Script({
          // System
          // -----------------
          
-            if (befehl == "--BOT")            { bot.say(SefzigBot+'Ich weiß eine Menge über Andreas - und bin sein Ersatz für eine klassische Webseite. Rufen Sie mein Wissen durch Schreiben der mit -- beginnenden Wörter ab!');
+            if (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'Hier die wichtigsten --befehle:<br>'
+                                                bot.say(SefzigBot+'--bot'
+                                                                 +'<br>--mobil'
+                                                                 +'<br>--befehle'
+                                                                 +'<br>--abbrechen'); }
+            
+            if ((befehl == "--BOT") ||
+                (befehl == "--UBER"))         { bot.say(SefzigBot+'Ich weiß eine Menge über Andreas - und bin sein Ersatz für eine klassische Webseite. Rufen Sie mein Wissen durch Schreiben der mit -- beginnenden Wörter ab!');
                                                 bot.say(SefzigBot+'Wollen Sie etwas über seine --Person oder --Neues von ihm erfahren? Oder auf anderem Wege --Kontakt  aufnehmen?'); }
             if (befehl == "--ABBRECHEN")      { bot.say(SefzigBot+'Text: Abbruch.'); }
-            if (befehl == "--QRCODE")         { bot.say(SefzigBot+'Diesen Chat mobil öffnen: [Bild:https://zxing.org/w/chart?cht=qr&chs=200x200&chld=L&choe=UTF-8&chl=http%3A%2F%2Fsefzigbot.herokuapp.com%2F]'); }
-            if (befehl == "--JAVASCRIPT")     { bot.say(SefzigBot+'[Javascript:test_alert]'); }
+            if (befehl == "--MOBIL")          { bot.say(SefzigBot+'Diesen Chat mobil öffnen: [Bild:https://zxing.org/w/chart?cht=qr&chs=200x200&chld=L&choe=UTF-8&chl=http%3A%2F%2Fsefzigbot.herokuapp.com%2F]');
+                                                bot.say(SefzigBot+'(Leider werden Sie dort nicht wiedererkannt. Das sollte in einer späteren Version möglich sein...)'); }
             
          // -----------------
          // Über mich
          // -----------------
          
+            if (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'--über'
+                                                                 +'<br>--person'
+                                                                 +'<br>--neues'
+                                                                 +'<br>--kontakt'); }
+            
             if (befehl == "--PERSON")         { bot.say(SefzigBot+'Andreas ist 38 Jahre alt und lebt in Hamburg. Hier sein --Lebenslauf und ein --Foto.'); }
             if (befehl == "--LEBENSLAUF")     { bot.say(SefzigBot+'Sein Lebenslauf als druckbares PDF-Dokument: %[Lebenslauf.pdf](http://sefzig.net/text/seiten/Lebenslauf/dateien/Andreas_Sefzig_Lebenslauf.pdf)');
                                                 bot.say(SefzigBot+'Tabellarisches und ausformuliertes CV: %[Lebenslauf öffnen](http://sefzig.net/link/Lebenslauf/)'); }
@@ -72,25 +84,39 @@ module.exports = new Script({
          // Link
          // -----------------
          
-            if (befehl == "--LINKS")          { bot.say(LinkBot+'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)');
-                                                bot.say(LinkBot+'URLs der Link-Verwaltung: --LinkEingabe, --LinkListe, --LinkEinrichten, --LinkAdmin, --LinkUber.'); }
-            if (befehl == "--LINKEINGABE")    { bot.say(LinkBot+'Eingabemaske für einen neuen Link: %[Link eigeben](http://sefzig.net/link/)'); }
-            if (befehl == "--LINKLISTE")      { bot.say(LinkBot+'Andreas allgemeine Linkliste: %[Link eigeben](http://sefzig.net/link/)');
-                                                bot.say(LinkBot+'Empfohlene Linklisten: --LinksWerkzeuge, --LinksDemo, --LinksInnovation, --LinksRtm, --LinksAnhang'); }
-            if (befehl == "--LINKEINRICHTEN") { bot.say(LinkBot+'Link: Einrichten.'); }
-            if (befehl == "--LINKADMIN")      { bot.say(LinkBot+'Link: Administration.'); }
-            if (befehl == "--LINKUBER")       { bot.say(LinkBot+'Link: Über.'); }
+            if (befehl == "--BEFEHLE")        { bot.say(LinkBot  +'--link'
+                                                                 +'<br>--linkEingabe'
+                                                                 +'<br>--linkListe'
+                                                                 +'<br>--linkUber'); }
+            
+            if (befehl == "--LINKS")          { bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)');
+                                                bot.say(LinkBot  +'URLs der Link-Verwaltung: --LinkEingabe, --LinkListe, --LinkEinrichten, --LinkAdmin, --LinkUber.'); }
+            if (befehl == "--LINKEINGABE")    { bot.say(LinkBot  +'Eingabemaske für einen neuen Link: %[Link eigeben](http://sefzig.net/link/)'); }
+            if (befehl == "--LINKLISTE")      { bot.say(LinkBot  +'Andreas allgemeine Linkliste: %[Link eigeben](http://sefzig.net/link/)');
+                                                bot.say(LinkBot  +'Empfohlene Linklisten: --LinksWerkzeuge, --LinksDemo, --LinksInnovation, --LinksRtm, --LinksAnhang'); }
+            if (befehl == "--LINKEINRICHTEN") { bot.say(LinkBot  +'Link: Einrichten.'); }
+            if (befehl == "--LINKADMIN")      { bot.say(LinkBot  +'Link: Administration.'); }
+            if (befehl == "--LINKUBER")       { bot.say(LinkBot  +'Link: Über.'); }
             
          // -----------------
          // Text
          // -----------------
          
-            if (befehl == "--TEXT")           { bot.say(TextBot+'[Text:SefzigBot]'); }
+            if (befehl == "--BEFEHLE")        { bot.say(TextBot  +'--text'
+                                                                 +'<br>--textUber'); }
+            
+            if (befehl == "--TEXT")           { bot.say(TextBot  +'Andreas hat SefzigBot dokumentiert: [Text:SefzigBot]'); }
+            if (befehl == "--TEXTUBER")       { bot.say(TextBot  +'Über Text.'); }
             
          // -----------------
          // Kontakt
          // -----------------
          
+            if (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'--kontakt'
+                                                                 +'<br>--kontaktSeite'
+                                                                 +'<br>--kontaktTwitter'
+                                                                 +'<br>--kontaktSlack'); }
+            
             if (befehl == "--KONTAKT")        { bot.say(SefzigBot+'Sie erreichen Andreas über andreas@sefzig.net, in seinem --Slackteam, auf --Twitter und auf --Xing. %[Kontakt-Seite öffnen](http://sefzig.net/link/Kontakt/)'); }
             if (befehl == "--SLACKTEAM")      { bot.say(SefzigBot+'Andreas betreibt ein offenes Slack-Team, in dem man sich über Marketing-Technologie unterhält. %[Slack-Team öffnen](http://sefzig.net/link/Slack/)'); }
             if (befehl == "--XING")           { bot.say(SefzigBot+'Andreas ist bei Xing: Er ist seit 2004 angemeldet und gehört mit über 500 Kontakten zu den 5% der bestvernetzten Mitglieder. %[Xing-Profil öffnen](http://sefzig.net/link/XingProfil/)'); 
@@ -102,6 +128,7 @@ module.exports = new Script({
          // Tests
          // -----------------
          
+            if (befehl == "--JAVASCRIPT")     { bot.say(SefzigBot+'[Javascript:test_alert]'); }
             if (befehl == "--VIDEO")          { bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
             
          // -----------------
