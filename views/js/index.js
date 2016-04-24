@@ -89,6 +89,30 @@
        
     }
     
+    function inhalt(methode, text_string) {
+       
+       text_string = " "+text_string+" ";
+       var inhalte = text_string;
+       
+       if (methode == "befehl") { 
+       
+       // Befehle anpassen
+          inhalte = inhalte.split("--");
+          for (i = 1; i < inhalte.length; i++) {
+             
+             var inhalt = inhalte[i].split(/,|;|:|\.|!|\?| /)[0];
+             text_string = text_string.replace("--"+inhalt, '<span class="befehl" onclick="befehlen(\'--'+inhalt+'\')">--'+inhalt+'</span>');
+             console.log("- Befehl angepasst: "+inhalt);
+             var inhalt = "";
+             
+          }
+          
+       }
+       
+       return text_string;
+       
+    }
+    
  // Chat-Inhalte anpassen
     function anpassen() {
        
@@ -102,17 +126,8 @@
        // Neuen Inhalt beginnen // String wird von allen folgenden Funktionen angepasst
           var text_neu = text_alt;
           
-       // Befehle anpassen
-          var befehle = text_alt;
-          befehle = befehle.split("--");
-          for (i = 1; i < befehle.length; i++) {
-             
-             var befehl = befehle[i].split(/,|;|:|\.|!|\?| /)[0];
-             text_neu = text_neu.replace("--"+befehl, '<span class="befehl" onclick="befehlen(\'--'+befehl+'\')">--'+befehl+'</span>');
-             console.log("- Befehl angepasst: "+befehl);
-             var befehl = "";
-             
-          }
+       // Inhalte anpassen
+          var text_neu = inhalt("befehl", text_neu);
           
        // Bilder anpassen
           var bilder = " "+text_alt+" ";
