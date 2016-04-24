@@ -6,7 +6,7 @@ const LinkBot = "[LinkBot] ";
 
 module.exports = new Script({
     processing: {
-        prompt: (bot) => bot.say(SefzigBot+'101100111001101...'),
+        prompt: (bot) => bot.say(SefzigBot+'Nicht so schnell bitte...'),
         receive: () => 'processing'
     },
 

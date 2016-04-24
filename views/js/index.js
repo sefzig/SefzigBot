@@ -89,12 +89,13 @@
        
     }
     
-    function inhalt(methode, text_string, modul) {
+    function inhalt(methode, text_string, var1, var2) {
        
        text_string = " "+text_string+" ";
        var inhalte = text_string;
        
        if (methode == "befehl") { 
+       // methode: befehl
        
        // Befehle anpassen
           inhalte = inhalte.split("--");
@@ -109,22 +110,104 @@
           
        }
        
-       
-       if ((methode == "modul") && (modul) && (modul != "")) {
-       
+       if ((methode == "modul") && (var1) && (var1 != "")) {
+       // methode: modul
+       // var1: Bild
+          
+       // Modulnamen kamelisieren
+          var modul = var1;
+          modul = modul.charAt(0).toUpperCase() + modul.slice(1);
+          
+       // Klasse in Kleinbuchstaben
+          var klasse = var1;
+          klasse = klasse.toLowerCase();
+          
        // Modul anpassen
           inhalte = inhalte.split("["+modul+":");
           for (i = 1; i < inhalte.length; i++) {
              
+          // Inhalt freistellen
              var inhalt = inhalte[i].split("]")[0];
-             text_string = text_string.replace("["+modul+":"+inhalt+"]", '<img class="bild" src="'+inhalt+'" />');
+             
+          // Neuen Text anpassen
+             text_string = text_string.replace("["+modul+":"+inhalt+"]", '<img class="'+klasse+'" src="'+inhalt+'" />');
+             
+          // Debuggen
              console.log("- "+modul+" angepasst; "+inhalt);
+             
+          // Zurücksetzen
              var inhalt = "";
              
           }
           
        }
        
+       if ((methode == "bot") && (var1) && (var1 != "") && (var2) && (var2 != "")) {
+       // methode: bot
+       // var1: SefzigBot
+       // var2: Andreas Sefzigs Bot
+          
+       // Wenn Text den Botnamen enthält
+          bot_alt = inhalte; bot_neu = inhalte.replace("["+var1+"] ","");
+          if (bot_neu != bot_alt) {
+             
+          // Konfiguration
+             var name = var2;
+             var pfad = "img/bots/Displaybild_"+var1+".png";
+             
+          // Bisheriger Botname
+          // var name_bisher = $(this).parent().parent().parent().parent().children().filter(".sk-from").html();
+             
+          // Botnamen anpassen
+             $(this).parent().parent().parent().parent().children().filter(".sk-from").html(name);
+             
+          // Botbild anpassen
+             $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
+             
+          // Neuen Text anpassen
+             text_string = text_string.replace("["+var1+"] ","");
+             
+          // Debuggen
+             console.log("- Bot angepasst; "+inhalt);
+             
+          }
+          
+       }
+       
+       if ((methode == "javascript") && (var1) && (var1 != "") && (var2) && (var2 != "")) {
+       // methode: javascript
+       // var1: var funktionen
+       // var2: Ich habe den Text geöffnet.
+          
+       // Javascript ausführen
+          inhalte = inhalte.split("[Javascript:");
+          for (i = 1; i < inhalte.length; i++) {
+             
+          // Funktionen übernehmen
+             var funktionen = var1;
+             
+          // Meldung übernehmen
+             var meldung = var2;
+             
+          // Funktions-Namen freistellen
+             var skript = inhalte[i].split("]")[0];
+             
+          // Neuen Text anpassen
+             text_neu = text_neu.replace("[Javascript:"+skript+"]", meldung);
+             
+          // Bekannte Funktionen ausführen
+             funktionen[skript]();
+             
+          // Debuggen
+             console.log("- Javascript ausgeführt: "+skript);
+             
+          // Zurücksetzen
+             var skript = "";
+             
+          }
+          
+       }
+          
        return text_string;
        
     }
@@ -142,72 +225,20 @@
        // Neuen Inhalt beginnen // String wird von allen folgenden Funktionen angepasst
           var text_neu = text_alt;
           
-       // Inhalte anpassen
-          var text_neu = inhalt("befehl", text_neu);
-          var text_neu = inhalt("modul", text_neu, "Bild");
-          
-       // Bots anpassen
-          text_alt = text_neu; text_neu = text_neu.replace("[SefzigBot] ","");
-          link_alt = text_neu; link_neu = text_neu.replace("[LinkBot] ","");
-          
-       // SefzigBot 
-          if (text_neu != text_alt) {
-             
-          // Konfiguration
-             var name = "Andreas Sefzigs Bot";
-             var name_bisher = $(this).parent().parent().parent().parent().children().filter(".sk-from").html();
-             
-          // Bot-Namen anpassen
-             $(this).parent().parent().parent().parent().children().filter(".sk-from").html(name);
-             
-          // Bot-Bild schreiben
-             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_sefzig_bot.png";
-             $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
-             
-          }
-       // LinkBot 
-          else if (link_neu != link_alt) {
-             
-          // Konfiguration
-             var name = "Link Bot";
-             var name_bisher = $(this).parent().parent().parent().parent().children().filter(".sk-from").html();
-             
-          // Bot-Namen anpassen
-             $(this).parent().parent().parent().parent().children().filter(".sk-from").html(name);
-             
-          // Bot-Bild schreiben
-             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_link_bot.png";
-             $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
-             
-             text_neu = link_neu;
-          
-          }
-       // Default-Bot (/sk Smooch in Slack)
-          else {
-             
-          // Bot-Bild anpassen
-             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_andreas_sefzig.jpg";
-             $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
-          }
-          
-       // Javascript ausführen
-          var scripts = " "+text_alt+" ";
-          scripts = scripts.split("[Javascript:");
-          for (k = 1; k < scripts.length; k++) {
-             
-             var script = scripts[k].split("]")[0];
-             text_neu = text_neu.replace("[Javascript:"+script+"]", "Javascript ausgeführt...");
-             
-             var funktionen = {
-                test_alert:   function () { alert('Hallo Welt!'); },
-                test_console: function () { console.log('Hallo Welt!'); }
-             };
+       // Zugelassene Javascript-Funktionen
+          var funktionen = {
+             test_alert:   function () { alert('Hallo Welt!'); },
+             test_console: function () { console.log('Hallo Welt!'); }
+          };
 
-             funktionen[script]();
-             console.log("- Javascript ausgeführt: "+script);
-             var script = "";
-             
-          }
+       // Inhalte anpassen
+          text_neu = inhalt("befehl", text_neu);
+          text_neu = inhalt("modul", text_neu, "Bild"); var text_merken = text_neu;
+          text_neu = inhalt("bot", text_neu, "SefzigBot", "Andreas Sefzigs Bot");
+          text_neu = inhalt("bot", text_neu, "LinkBot", "Link Bot");
+          if (text_neu != text_merken) { text_neu = "[AndreasSefzig] "+text_neu; }
+          text_neu = inhalt("bot", text_neu, "AndreasSefzig", "Andreas Sefzig");
+          text_neu = inhalt("javascript", text_neu, funktionen, "Ich habe ein Javascript ausgeführt.");
           
        // Angepasste Inhalte schreiben
           $(this).html(text_neu);
