@@ -289,6 +289,8 @@
           text_neu = inhalt("befehl", text_neu);
           text_neu = inhalt("modul", text_neu, "Text");
           text_neu = inhalt("modul", text_neu, "Bild");
+          text_neu = inhalt("modul", text_neu, "Button");
+          text_neu = inhalt("modul", text_neu, "Iframe");
           text_neu = inhalt("modul", text_neu, "Youtube");
           text_neu = inhalt("javascript", text_neu, funktionen, "Ich habe ein Javascript ausgeführt.");
           
