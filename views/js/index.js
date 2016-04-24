@@ -171,20 +171,17 @@
        // Javascript ausführen
           var scripts = " "+text+" ";
           scripts = scripts.split("[Javascript:");
-          for (j = 1; j < scripts.length; j++) {
+          for (k = 1; k < scripts.length; k++) {
              
-             var script = scripts[j].split("]")[0];
+             var script = scripts[k].split("]")[0];
              text_neu = text_neu.replace("[Javascript:"+script+"]", '');
              
-var myFuncs = {
-  func1: function () { alert('Function 1'); },
-  func2: function () { alert('Function 2'); },
-  func3: function () { alert('Function 3'); },
-  func4: function () { alert('Function 4'); },
-  func5: function () { alert('Function 5'); }
-};
+             var funktionen = {
+                test_alert:   function () { alert('Hallo Welt!'); },
+                test_console: function () { console.log('Hallo Welt!'); }
+             };
 
-             myFuncs[script]();
+             funktionen[script]();
              console.log("- Javascript ausgeführt: "+script);
              var script = "";
              
