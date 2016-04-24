@@ -68,7 +68,7 @@
                 messageIndicatorTitleSingular: '({count}) neue Nachricht',
                 messageIndicatorTitlePlural: '({count}) neue Nachrichten'
              }
-          }); 
+          });
           
        // Smooch.open();
           Smooch.render(document.getElementById('chat'));
