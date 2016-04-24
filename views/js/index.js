@@ -231,14 +231,14 @@
              
           }
           
+          var ist_erster = $(".sk-from.bot"+zufall).parent().parent().previous().hasClass("sk-right-row");
           if (ist_erster != true) { $(".sk-from.bot"+zufall).css("display","none"); }
-          var ist_erster = $(".sk-from.bot"+zufall).parent().parent().hasClass("sk-right-row");
           console.log('> ist_erster: '+ist_erster);
           ist_erster = "";
           
        }
        
-       return text_string;
+       return text_string; 
        
     }
     
