@@ -159,6 +159,8 @@
              var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/displaybild_link_bot.png";
              $(this).parent().parent().parent().parent().parent().children().filter("img").attr("src", pfad);
              
+             text_neu = link_neu;
+          
           }
        // Default-Bot (/sk Smooch in Slack)
           else {
@@ -186,8 +188,6 @@
              var script = "";
              
           }
-          
-          text_neu = link_neu;
           
        // Angepasste Inhalte schreiben
           $(this).html(text_neu);
