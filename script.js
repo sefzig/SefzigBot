@@ -74,8 +74,9 @@ module.exports = new Script({
          
             if (befehl == "--LINKS")          { bot.say(LinkBot+'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)');
                                                 bot.say(LinkBot+'URLs der Link-Verwaltung: --LinkEingabe, --LinkListe, --LinkEinrichten, --LinkAdmin, --LinkUber.'); }
-            if (befehl == "--LINKEINGABE")    { bot.say(LinkBot+'Link: Eingabe.'); }
-            if (befehl == "--LINKLISTE")      { bot.say(LinkBot+'Link: Liste.'); }
+            if (befehl == "--LINKEINGABE")    { bot.say(LinkBot+'Eingabemaske für einen neuen Link: %[Link eigeben](http://sefzig.net/link/)'); }
+            if (befehl == "--LINKLISTE")      { bot.say(LinkBot+'Andreas allgemeine Linkliste: %[Link eigeben](http://sefzig.net/link/)');
+                                                bot.say(LinkBot+'Empfohlene Linklisten: --LinksWerkzeuge, --LinksDemo, --LinksInnovation, --LinksRtm, --LinksAnhang'); }
             if (befehl == "--LINKEINRICHTEN") { bot.say(LinkBot+'Link: Einrichten.'); }
             if (befehl == "--LINKADMIN")      { bot.say(LinkBot+'Link: Administration.'); }
             if (befehl == "--LINKUBER")       { bot.say(LinkBot+'Link: Über.'); }
