@@ -159,8 +159,8 @@
              var zufall = var3;
              
           // Botnamen anpassen
-             $(".sk-from").hasClass("bot"+zufall).html(name);
-             $(".sk-msg-avatar").hasClass("bot"+zufall).attr("src", pfad);
+             $(".sk-from.bot"+zufall).html(name);
+             $(".sk-msg-avatar.bot"+zufall).attr("src", pfad);
              
           // Neuen Text anpassen
              text_string = text_string.replace("["+kurzel+"] ","");
