@@ -71,7 +71,8 @@
                 messageIndicatorTitleSingular: '({count}) neue Nachricht',
                 messageIndicatorTitlePlural: '({count}) neue Nachrichten'
              }
-          }); 
+          })
+          .then(function () { window.setTimeout(function() { anpassen(); }, 100); }); 
           
        // Smooch.open();
           Smooch.render(document.getElementById('chat'));
@@ -139,7 +140,7 @@
           klasse = klasse.toLowerCase();
           
        // Templates
-          var text = ' <div class="sk-action"><a class="btn btn-sk-primary" href="http://sefzig.net/text/%inhalt%/" onclick="texte(\'%inhalt%\');">Text: %inhalt%</a></div> ';
+          var text = ' <div class="sk-action"><a class="btn btn-sk-primary" href="http://sefzig.net/text/%inhalt%/" onclick="texte(\'%inhalt%\'); return false;">Text: %inhalt%</a></div> ';
           var bild = '<img class="%klasse%" src="%inhalt%" />';
           var youtube = '<iframe width="180" height="102" class="%klasse%" src="http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
           
