@@ -36,7 +36,10 @@
     // Ansichten anpassen
        $("#seite > div").fadeOut();
        $("#seite #"+methode).fadeIn();
-          
+       
+    // Konsole beginnen
+       console.log('Neues Gespräch');
+       
        if (methode == "chat") {
           
        // Umgebungs-Parameter einsammeln
@@ -135,6 +138,10 @@
           var klasse = var1;
           klasse = klasse.toLowerCase();
           
+       // Templates
+          var bild =  '<img class="%klasse%" src="%inhalt%" />';
+          var video = 'Ein Video: %klasse%, %inhalt%.';
+          
        // Modul anpassen
           inhalte = inhalte.split("["+modul+":");
           for (i = 1; i < inhalte.length; i++) {
@@ -142,8 +149,16 @@
           // Inhalt freistellen
              var inhalt = inhalte[i].split("]")[0];
              
+          // Template auswählen
+             if (modul == "Bild")  { var template = bild; }
+             if (modul == "Video") { var template = video; }
+             
+          // Template anpassen
+             template = template.replace(/%klasse%/g, klasse);
+             template = template.replace(/%inhalt%/g, inhalt);
+             
           // Neuen Text anpassen
-             text_string = text_string.replace("["+modul+":"+inhalt+"]", '<img class="'+klasse+'" src="'+inhalt+'" />');
+             text_string = text_string.replace("["+modul+":"+inhalt+"]", template);
              
           // Debuggen
              console.log("- "+modul+" angepasst: "+inhalt);
