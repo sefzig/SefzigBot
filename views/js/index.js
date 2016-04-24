@@ -165,7 +165,7 @@
              text_string = text_string.replace("["+var1+"] ","");
              
           // Debuggen
-             console.log("- Bot angepasst: "+name);
+             console.log("- Bot angepasst: "+pfad);
              
           }
           
