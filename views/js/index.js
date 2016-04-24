@@ -111,7 +111,7 @@
           for (i = 1; i < inhalte.length; i++) {
              
           // Befehl freistellen
-             var inhalt = inhalte[i].split(/,|;|:|\.|!|\?| /)[0];
+             var inhalt = inhalte[i].split(/<|,|;|:|\.|!|\?| /)[0];
              
           // Neuen Text anpassen
              text_string = text_string.replace("--"+inhalt, '<span class="befehl" onclick="befehlen(\'--'+inhalt+'\')">--'+inhalt+'</span>');
