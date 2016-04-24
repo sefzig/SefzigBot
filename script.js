@@ -54,9 +54,9 @@ module.exports = new Script({
          
             if (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'Hier die wichtigsten --befehle:');
                                                 bot.say(SefzigBot+'--bot '
-                                                            +'<br> --mobil '
-                                                            +'<br> --befehle '
-                                                            +'<br> --abbrechen '); }
+                                                            +'\n --mobil '
+                                                            +'\n --befehle '
+                                                            +'\n --abbrechen '); }
             
             if ((befehl == "--BOT") ||
                 (befehl == "--UBER"))         { bot.say(SefzigBot+'Ich weiß eine Menge über Andreas - und bin sein Ersatz für eine klassische Webseite. Rufen Sie mein Wissen durch Schreiben der mit -- beginnenden Wörter ab!');
