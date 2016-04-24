@@ -66,7 +66,7 @@ module.exports = new Script({
                                                 bot.say(SefzigBot+'Tabellarisches und ausformuliertes CV: %[Lebenslauf öffnen](http://sefzig.net/link/Lebenslauf/)'); }
             if (befehl == "--FOTO")           { bot.say(SefzigBot+'[Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png] Andreas Sefzig mit Logo'); }
             if (befehl == "--NEUES")          { bot.say(SefzigBot+'Text: Neues.'); }
-            if (befehl == "--VIDEO")          { bot.say(SefzigBot+'[Video:HalloTest]'); }
+            if (befehl == "--VIDEO")          { bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
             
          // -----------------
          // Links

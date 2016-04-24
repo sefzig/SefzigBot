@@ -139,8 +139,8 @@
           klasse = klasse.toLowerCase();
           
        // Templates
-          var bild =  '<img class="%klasse%" src="%inhalt%" />';
-          var video = 'Ein Video: %klasse%, %inhalt%.';
+          var bild = '<img class="%klasse%" src="%inhalt%" />';
+          var youtube = '<iframe width="200" height="113" class="%klasse%" src="http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
           
        // Modul anpassen
           inhalte = inhalte.split("["+modul+":");
@@ -151,7 +151,7 @@
              
           // Template auswählen
              if (modul == "Bild")  { var template = bild; }
-             if (modul == "Video") { var template = video; }
+             if (modul == "Youtube") { var template = youtube; }
              
           // Template anpassen
              template = template.replace(/%klasse%/g, klasse);
@@ -260,7 +260,7 @@
        // Inhalte anpassen
           text_neu = inhalt("befehl", text_neu);
           text_neu = inhalt("modul", text_neu, "Bild");
-          text_neu = inhalt("modul", text_neu, "Video");
+          text_neu = inhalt("modul", text_neu, "Youtube");
           text_neu = inhalt("javascript", text_neu, funktionen, "Ich habe ein Javascript ausgeführt.");
           
        // Bots anpassen
