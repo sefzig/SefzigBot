@@ -70,7 +70,8 @@ module.exports = new Script({
                                                               +'\n○ --Einrichten '
                                                               +'\n○ --Admin '
                                                               +'\n○ --Uber');
-                                                gehezu = "link"; } 
+                                                 bot.say(LinkBot  +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
+                                                 gehezu = "link"; } 
             
          // -----------------
          // System
@@ -85,7 +86,7 @@ module.exports = new Script({
             if ((befehl == "--BOT") ||
                 (befehl == "--UBER"))          { bot.say(SefzigBot+'Ich weiß eine Menge über Andreas - und bin sein Ersatz für eine klassische Webseite. Rufen Sie mein Wissen durch Schreiben der mit -- beginnenden Wörter ab!');
                                                  bot.say(SefzigBot+'Wollen Sie etwas über seine --Person oder --Neues von ihm erfahren? Oder auf anderem Wege --Kontakt  aufnehmen?'); }
-            if  (befehl == "--ABBRECHEN")      { bot.say(SefzigBot+'Text: Abbruch.'); }
+            if  (befehl == "--ABBRECHEN")      { bot.say(SefzigBot+'Sie können das Gespräch mit mir beenden'); }
             if  (befehl == "--MOBIL")          { bot.say(SefzigBot+'Diesen Chat mobil öffnen: [Bild:https://zxing.org/w/chart?cht=qr&chs=200x200&chld=L&choe=UTF-8&chl=http%3A%2F%2Fsefzigbot.herokuapp.com%2F]');
                                                  bot.say(SefzigBot+'(Leider werden Sie dort nicht wiedererkannt. Das sollte in einer späteren Version möglich sein...)'); }
             
@@ -197,7 +198,7 @@ module.exports = new Script({
                                                               +'\n○ --Über'),
                                                  bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)'); }
             if ((befehl == "--BOT") ||
-                (befehl == "--ABBRECHEN"))     { bot.say(LinkBot  +'Zurück an Sefzig Bot (--bot). Bis später!');
+                (befehl == "--ABBRECHEN"))     { bot.say(LinkBot  +'Zurück an Sefzig --bot. Bis später!');
                                                  gehezu = "register"; }
             
          // Inhalte

@@ -120,7 +120,7 @@
        border-color: silver !important;
     }
     
-    #text { 
+    #fenster { 
        z-index: 3000;
        position: fixed;
        top: 30px;
@@ -128,13 +128,13 @@
        display: none;
        background-color: white;
     }
-    #text > div { 
+    #fenster > div { 
        z-index: 3001;
        position: fixed;
        top: 10px;
        right: 10px;
     }
-    #text > div > img { 
+    #fenster > div > img { 
        width: 40px;
        height: 40px;
        cursor: pointer;
