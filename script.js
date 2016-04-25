@@ -197,7 +197,7 @@ module.exports = new Script({
                                                               +'\n○ --Über'),
                                                  bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)'); }
             if ((befehl == "--BOT") ||
-                (befehl == "--ABBRECHEN"))     { bot.say(LinkBot  +'Zurück an Sefzig Bot. Bis später!');
+                (befehl == "--ABBRECHEN"))     { bot.say(LinkBot  +'Zurück an Sefzig Bot (--bot). Bis später!');
                                                  gehezu = "register"; }
             
          // Inhalte
@@ -207,7 +207,7 @@ module.exports = new Script({
             if  (befehl == "--UBER")           { bot.say(LinkBot  +'Link ist recht gut dokumentiert - Andreas Text dazu: %[Link: Dokumentation](http://sefzig.net/text/link/)'); }
             if  (befehl == "--LISTE")          { bot.say(LinkBot  +'Alle Links von Andreas fließen in eine filterbare Linkliste ein: %[Link: Allgemeine Liste](http://sefzig.net/link/liste/)'); }
             if ((befehl == "--UBER") ||
-                (befehl == "--ÜBER"))          { bot.say(LinkBot  +'Link ist eine Web-Anwendung zur Verwaltung von Links. Hier die Dokumentation: [Text:link] Link basiert auf Open Source: %[Externer Link: Yourls](http://yourls.org)'); }
+                (befehl == "--ÜBER"))          { bot.say(LinkBot  +'Link ist eine Web-Anwendung zur Verwaltung von Links. Hier die Dokumentation: [Text:link] Link basiert auf der Open Source-Software Yourls: %[Externer Link: Yourls](http://yourls.org)'); }
             
          // Linklisten
             if ((befehl == "--LINKS") ||
