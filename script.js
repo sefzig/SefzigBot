@@ -55,20 +55,20 @@ module.exports = new Script({
             var gehezu = "register";
             
          // -----------------
-         // Andere Bots
+         // Bots
          // -----------------
             
             if ((befehl == "--LINK") ||
-                (befehl == "--LINKS"))         { bot.say(LinkBot  +'Andreas speichert viele interessante Links - für sich wie auch für Sie! [Linkliste:Allgemein] 1.000 Links, 6.000 Aufrufe!');
-                                                 bot.say(LinkBot  +'Steuern Sie mich mit diesen Befehlen:'
-                                                              +'\n○ --Eingabe '
-                                                              +'\n○ --Liste '
-                                                              +'\n○ --Listen '
-                                                              +'\n○ --Einrichten '
-                                                              +'\n○ --Admin '
-                                                              +'\n○ --Uber');
+                (befehl == "--LINKS"))         { bot.say(LinkBot  +'Andreas speichert viele interessante Links - für sich wie auch für Sie: [Linkliste:Allgemein] 1.000 Links, 6.000 Aufrufe!');
+                                                 bot.say(LinkBot  +'Steuern Sie mich mit diesen Befehlen: \n○ --Eingabe \n○ --Liste \n○ --Listen \n○ --Einrichten \n○ --Admin \n○ --Uber');
                                                  bot.say(LinkBot  +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
                                                  gehezu = "link"; } 
+            
+            if ((befehl == "--TEXT") ||
+                (befehl == "--TEXTE"))         { bot.say(TextBot  +'Andreas verwaltet, bearbeitet und teilt alle seine Texte mit einer eigens entwickelten Software: Text.');
+                                                 bot.say(TextBot  +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
+                                                 bot.say(TextBot  +'Steuern Sie mich mit diesen Befehlen: \n○ --Startseite \n○ --Hilfe \n○ --Uber');
+                                                 gehezu = "text"; } 
             
          // -----------------
          // System
