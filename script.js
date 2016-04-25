@@ -115,14 +115,16 @@ module.exports = new Script({
                                                               +'\n○ --rtm '); }
             
          // Befehle
-            if  (befehl == "--NEUES")          { bot.say(SefzigBot  +' Was es bei Andreas --Neues gibt? So einiges... ');
-                                                 bot.say(SefzigBot  +'○ --jobsuche '
+            if  (befehl == "--NEUES")          { bot.say(SefzigBot  +'○ --jobsuche '
                                                               +'\n○ --slack / --rtm '
-                                                              +'\n○ --newsletter '); }
+                                                              +'\n○ --newsletter ');
+                                                 bot.say(SefzigBot  +' Was es bei Andreas --Neues gibt? So einiges... '); }
             
          // Inhalte
-            if  (befehl == "--SLACK")          { bot.say(SefzigBot+'Andreas ');
-                                                 bot.say(SefzigBot+'Text: Slack.'); }
+            if  (befehl == "--SLACK")          { bot.say(SefzigBot+'Slack ist zur Zeit die beste Chat-Anwendung für Teams. Bedienfreundlich, automatisierbar und operationalisierbar. Über Slack wurde Andreas auf #Robogeddon aufmerksam!');
+                                                 bot.say(SefzigBot+'Lesen Sie Andreas Artikel zu Slack: [Text:Slack]');
+                                                 bot.say(SefzigBot+'Treten Sie dem offenem Slack-Team von Andreas bei, um sich mit ihm zu beraten und um Slack aus nächster Nähe im Betrieb zu sehen: [Text:SlackOffenesTeam] ');
+                                                 bot.say(SefzigBot+'Andreas hat viele Links zu Slack gesammelt: [Linkliste:Slack] '); }
             if ((befehl == "--FRISKY") ||
                 (befehl == "--RADIO") ||
                 (befehl == "--FRISKYRADIO"))   { bot.say(SefzigBot+'Frisky Radio: Global EDM [Audio:http://www.friskyradio.com/m3u/frisky.m3u] Mitglied seit 2003.'); }
@@ -219,7 +221,6 @@ module.exports = new Script({
                                                               +'\n○ --Innovation '
                                                               +'\n○ --Rtm '
                                                               +'\n○ --Anhang'); }
-         // Inhalte
             if  (befehl == "--WERKZEUGE")      { bot.say(LinkBot  +'Das Netz ist voller nützlicher Werkzeuge - hier eine nützliche Linkliste: %[Linkliste: Werkzeuge](http://sefzig.net/link/liste/Werkzeug/)'); }
             if  (befehl == "--MAPPE")          { bot.say(LinkBot  +'Andreas produziert Links am laufenden Band: %[Linkliste: Mappe](http://sefzig.net/link/liste/Mappe/)'); }
             if  (befehl == "--INNOVATION")     { bot.say(LinkBot  +'Links zu innovativen Ideen und Techniken aus Marketing und Kultur: %[Linkliste: Innovationen](http://sefzig.net/link/liste/Innovation/)'); }
