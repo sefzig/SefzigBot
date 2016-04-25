@@ -198,7 +198,7 @@ module.exports = new Script({
                                                              +'\n○ --Listen '
                                                              +'\n○ --Einrichten '
                                                              +'\n○ --Admin '
-                                                             +'\n○ --Über');
+                                                             +'\n○ --Uber');
                                                  bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)'); }
             if  (befehl == "--ABBRECHEN")      { bot.say(LinkBot  +'Ich gebe zurück an Sefzig Bot.');
                                                  gehezu = "register"; }
@@ -209,7 +209,6 @@ module.exports = new Script({
             if  (befehl == "--ADMIN")          { bot.say(LinkBot  +'In der Administration werden die Links verwaltet: %[Link: Administration](http://sefzig.net/link/admin/)'); }
             if  (befehl == "--UBER")           { bot.say(LinkBot  +'Link ist recht gut dokumentiert - Andreas Text dazu: %[Link: Dokumentation](http://sefzig.net/text/link/)'); }
             if  (befehl == "--LISTE")          { bot.say(LinkBot  +'Alle Links von Andreas fließen in eine filterbare Linkliste ein: %[Link: Allgemeine Liste](http://sefzig.net/link/liste/)'); }
-            if ((befehl == "--ÜBER"))           { bot.say(LinkBot  +'"Link" ist eine webbasierte Link-Verwaltung auf Basis von Yourls. Hier die Dokumentation: [Text:link]'); }
             
          // Linklisten
             if ((befehl == "--LINKS") ||
