@@ -71,9 +71,9 @@ module.exports = new Script({
                                                  bot.say(TextBot  +'Steuern Sie mich mit diesen Befehlen: \n○ --Startseite \n○ --Hilfe \n○ --Uber');
                                                  gehezu = "text"; } 
             
-            if  (befehl == "--SLACK")          { bot.say(SlackBot +'Andreas mag Interne Kommunikation und Informations-Automatisierung und er liebt Slack! Das sollte Ihr Team auch tun...');
+            if  (befehl == "--SLACK")          { bot.say(SlackBot +'Andreas mag Interne Kommunikation und Automatisierung - er liebt Slack! Das sollte Ihr Team auch tun...');
                                                  bot.say(SlackBot +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
-                                                 bot.say(SlackBot +'Steuern Sie mich mit diesen Befehlen: \n○ --Artikel \n○ --Blogpost \n○ --Links \n○ --Team');
+                                                 bot.say(SlackBot +'Ich empfehle Ihnen seinen --Artikel, den --Blogpost und diverse --Links zu Slack. Wollen Sie Andreas offenem Slack --Team beitreten?');
                                                  gehezu = "slack"; } 
             
          // -----------------
