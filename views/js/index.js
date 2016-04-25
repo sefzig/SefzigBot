@@ -307,7 +307,7 @@
           text_neu = inhalt("modul", text_neu, "Iframe");
           text_neu = inhalt("modul", text_neu, "Audio");
           text_neu = inhalt("modul", text_neu, "Youtube");
-          text_neu = inhalt("modul", text_neu, "Linkliste");
+          text_neu = inhalt("modul", text_neu, "Linkliste"); 
           text_neu = inhalt("javascript", text_neu, funktionen, "Ich habe ein Javascript ausgeführt.");
           
        // Bots anpassen
