@@ -80,8 +80,7 @@ module.exports = new Script({
          // System
          // -----------------
          
-            if  (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'Hier die wichtigsten --befehle:');
-                                                 bot.say(SefzigBot+'--bot '
+            if  (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'--bot '
                                                               +'\n○ --mobil '
                                                               +'\n○ --befehle '
                                                               +'\n○ --abbrechen '); }
@@ -126,6 +125,8 @@ module.exports = new Script({
             if ((befehl == "--FRISKY") ||
                 (befehl == "--RADIO") ||
                 (befehl == "--FRISKYRADIO"))   { bot.say(SefzigBot+'Frisky Radio: Global EDM [Audio:http://www.friskyradio.com/m3u/frisky.m3u] Mitglied seit 2003.'); }
+            
+            if  (befehl == "--ROBOGEDDON")     { bot.say(SefzigBot+'#Robogeddon ist Andreas Hashtag für den Einzug von Chatbots in unser Leben. [Text:Robogeddon] '); }
             
          // -----------------
          // Kontakt 
@@ -277,20 +278,19 @@ module.exports = new Script({
             var gehezu = "slack";
             
          // Befehle
-            if ((befehl == "--BEFEHLE") ||
-                (befehl == "--TEXT"))          { bot.say(SlackBot +'--Slack '
+            if  (befehl == "--BEFEHLE")        { bot.say(SlackBot +'--Slack '
                                                               +'\n○ --Artikel '
                                                               +'\n○ --Blogpost '
                                                               +'\n○ --Links '
-                                                              +'\n○ --Team');
-                                                 bot.say(SlackBot +'Text: %[Link öffnen](http://sefzig.net/link/)'); }
+                                                              +'\n○ --Team'); }
             if ((befehl == "--BOT") ||
                 (befehl == "--ABBRECHEN"))     { bot.say(SlackBot +'Zurück an Sefzig --bot. Bis später!');
                                                  gehezu = "register"; }
             
          // Inhalte
             if  (befehl == "--SLACK")          { bot.say(SlackBot +'Slack ist zur Zeit die beste Chat-Anwendung für Teams. Bedienfreundlich, automatisierbar und operationalisierbar. Über Slack wurde Andreas auf #Robogeddon aufmerksam!');
-                                                 bot.say(SlackBot +'Lesen Sie Andreas --Artikel oder --Blogpost dazu, öffnen Sie seine --Links oder treten Sie Andreas offenem --Team bei.'); }
+                                                 bot.say(SlackBot +'[Bild:http://sefzig.net/text/seiten/SefzignetSlack/dateien/slack_logo.png]');
+                                                 bot.say(SlackBot +'Lesen Sie Andreas --Artikel oder --Blogpost, öffnen Sie seine --Links oder treten Sie Andreas offenem --Team bei.'); }
             if  (befehl == "--ARTIKEL")        { bot.say(SlackBot +'Andreas hat einen umfangreichen Artikel zu Slack geschrieben: [Text:Slack]'); }
             if  (befehl == "--BLOGPOST")       { bot.say(SlackBot +'Lesen Sie auch Andreas Blogpost zu Slack: [Text:SefzignetBlogSlack]'); }
             if  (befehl == "--LINKS")          { bot.say(SlackBot +'Andreas hat viele Links zu Slack gesammelt: [Linkliste:Slack] '); }
