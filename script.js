@@ -63,11 +63,7 @@ module.exports = new Script({
             
             if ((befehl == "--LINK") ||
                 (befehl == "--LINKS"))        { bot.say(SefzigBot+'Ich übergebe an Link Bot.'); 
-                                                gehezu = "link"; }
-            if ((befehl == "--TEXT") ||
-                (befehl == "--TEXTE"))        { bot.say(SefzigBot+'Ich übergebe an Text Bot.'); 
-                                                gehezu = "text"; }
-            
+                
          // -----------------
          // System
          // -----------------
