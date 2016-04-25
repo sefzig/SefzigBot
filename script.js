@@ -120,14 +120,21 @@ module.exports = new Script({
                                                               +'\n○ --newsletter ');
                                                  bot.say(SefzigBot  +' Was es bei Andreas --Neues gibt? So einiges... '); }
             
-         // Inhalte
-            if  (befehl == "--SLACK")          { bot.say(SefzigBot+'Slack ist zur Zeit die beste Chat-Anwendung für Teams. Bedienfreundlich, automatisierbar und operationalisierbar. Über Slack wurde Andreas auf #Robogeddon aufmerksam!');
-                                                 bot.say(SefzigBot+'Lesen Sie Andreas Artikel zu Slack: [Text:Slack]');
-                                                 bot.say(SefzigBot+'Treten Sie dem offenem Slack-Team von Andreas bei, um sich mit ihm zu beraten und um Slack aus nächster Nähe im Betrieb zu sehen: [Text:SlackOffenesTeam] ');
-                                                 bot.say(SefzigBot+'Andreas hat viele Links zu Slack gesammelt: [Linkliste:Slack] '); }
             if ((befehl == "--FRISKY") ||
                 (befehl == "--RADIO") ||
                 (befehl == "--FRISKYRADIO"))   { bot.say(SefzigBot+'Frisky Radio: Global EDM [Audio:http://www.friskyradio.com/m3u/frisky.m3u] Mitglied seit 2003.'); }
+            
+         // -----------------
+         // Slack
+         // -----------------
+         
+         // Inhalte
+            if  (befehl == "--SLACK")          { bot.say(SlackBot +'Slack ist zur Zeit die beste Chat-Anwendung für Teams. Bedienfreundlich, automatisierbar und operationalisierbar. Über Slack wurde Andreas auf #Robogeddon aufmerksam!');
+                                                 bot.say(SlackBot +'Lesen Sie Andreas --Artikel oder --Blogpost dazu, öffnen Sie seine --Links oder treten Sie Andreas offenem --Team bei.'); }
+            if  (befehl == "--ARTIKEL")        { bot.say(SlackBot +'Andreas hat einen umfangreichen Artikel zu Slack geschrieben: [Text:Slack]'); }
+            if  (befehl == "--BLOGPOST")       { bot.say(SlackBot +'Lesen Sie auch Andreas Blogpost zu Slack: [Text:SefzignetBlogSlack]'); }
+            if  (befehl == "--LINKS")          { bot.say(SlackBot +'Andreas hat viele Links zu Slack gesammelt: [Linkliste:Slack] '); }
+            if  (befehl == "--TEAM")           { bot.say(SlackBot +'Treten Sie dem offenem Slack-Team von Andreas bei, um sich mit ihm zu beraten und um Slack aus nächster Nähe im Betrieb zu sehen: [Text:SlackOffenesTeam] '); }
             
          // -----------------
          // Text
@@ -183,10 +190,7 @@ module.exports = new Script({
     link: {
         receive: (bot, message) => {
             
-            var wollen = message.text;
-            var befehl = wollen;
-            befehl = befehl.trim();
-            befehl = befehl.toUpperCase();
+            var befehl = message.text.trim().toUpperCase();
             var gehezu = "link";
             
          // Befehle
