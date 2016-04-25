@@ -63,7 +63,10 @@ module.exports = new Script({
             
             if ((befehl == "--LINK") ||
                 (befehl == "--LINKS"))        { bot.say(SefzigBot+'Ich übergebe an Link Bot.'); 
-                                                gehezu = "link"; } 
+                                                gehezu = "link"; }
+            if ((befehl == "--TEXT") ||
+                (befehl == "--TEXTE"))        { bot.say(SefzigBot+'Ich übergebe an Text Bot.'); 
+                                                gehezu = "text"; }
             
          // -----------------
          // System
@@ -206,17 +209,16 @@ module.exports = new Script({
             if  (befehl == "--ADMIN")          { bot.say(LinkBot  +'In der Administration werden die Links verwaltet: %[Link: Administration](http://sefzig.net/link/admin/)'); }
             if  (befehl == "--UBER")           { bot.say(LinkBot  +'Link ist recht gut dokumentiert - Andreas Text dazu: %[Link: Dokumentation](http://sefzig.net/text/link/)'); }
             if  (befehl == "--LISTE")          { bot.say(LinkBot  +'Alle Links von Andreas fließen in eine filterbare Linkliste ein: %[Link: Allgemeine Liste](http://sefzig.net/link/liste/)'); }
-            if ((befehl == "--UBER") ||
-                (befehl == "--ÜBER"))          { bot.say(LinkBot  +'"Link" ist eine webbasierte Link-Verwaltung auf Basis von Yourls. Hier die Dokumentation: [Text:link]'); }
+            if ((befehl == "--ÜBER"))           { bot.say(LinkBot  +'"Link" ist eine webbasierte Link-Verwaltung auf Basis von Yourls. Hier die Dokumentation: [Text:link]'); }
             
          // Linklisten
             if ((befehl == "--LINKS") ||
                 (befehl == "--LISTEN"))        { bot.say(LinkBot  +'Empfohlene Linklisten '
-                                                             +'\n○ --Werkzeuge '
-                                                             +'\n○ --Mappe '
-                                                             +'\n○ --Innovation '
-                                                             +'\n○ --Rtm '
-                                                             +'\n○ --Anhang'); }
+                                                             +'\n○ --LinksWerkzeuge '
+                                                             +'\n○ --LinksMappe '
+                                                             +'\n○ --LinksInnovation '
+                                                             +'\n○ --LinksRtm '
+                                                             +'\n○ --LinksAnhang'); }
          // Inhalte
             if  (befehl == "--WERKZEUGE")      { bot.say(SefzigBot+'Das Netz ist voller nützlicher Werkzeuge - hier eine nützliche Linkliste: %[Linkliste: Werkzeuge](http://sefzig.net/link/liste/Werkzeug/)'); }
             if  (befehl == "--MAPPE")          { bot.say(SefzigBot+'Andreas produziert Links am laufenden Band: %[Linkliste: Mappe](http://sefzig.net/link/liste/Mappe/)'); }
