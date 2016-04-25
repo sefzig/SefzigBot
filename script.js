@@ -51,10 +51,7 @@ module.exports = new Script({
     register: {
         receive: (bot, message) => {
             
-            var wollen = message.text;
-            var befehl = wollen;
-            befehl = befehl.trim();
-            befehl = befehl.toUpperCase();
+            var befehl = message.text.trim().toUpperCase();
             var gehezu = "register";
             
          // -----------------
@@ -178,7 +175,7 @@ module.exports = new Script({
             if  (befehl == "--VORLAGE")        { bot.say(SefzigBot+'Text: Vorlage.'); }
             
          // .then(function(){ bot.say(''); })
-            return bot.setProp('wollen', wollen)
+            return bot.setProp('register', 'gesprochen')
                 .then(() => gehezu);
         }
     },
@@ -190,13 +187,7 @@ module.exports = new Script({
     link: {
         receive: (bot, message) => {
             
-         // var befehl = message.text.trim().toUpperCase();
-         // var gehezu = "link";
-            
-            var wollen = message.text;
-            var befehl = wollen;
-            befehl = befehl.trim();
-            befehl = befehl.toUpperCase();
+            var befehl = message.text.trim().toUpperCase();
             var gehezu = "link";
             
          // Befehle
@@ -238,7 +229,7 @@ module.exports = new Script({
             if  (befehl == "--ANHANG")         { bot.say(LinkBot  +'In dieser Liste hält Andreas Unterhaltsames fest: %[Linkliste: Anhang](http://sefzig.net/link/liste/Anhang/)'); }
             
          // .then(function(){ bot.say(''); })
-            return bot.setProp('wollen', wollen)
+            return bot.setProp('link', 'gesprochen')
                 .then(() => gehezu);
             
         }
