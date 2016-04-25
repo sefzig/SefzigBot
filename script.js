@@ -134,16 +134,6 @@ module.exports = new Script({
             if  (befehl == "--TEAM")           { bot.say(SlackBot +'Treten Sie dem offenem Slack-Team von Andreas bei, um sich mit ihm zu beraten und um Slack aus nächster Nähe im Betrieb zu sehen: [Text:SlackOffenesTeam] '); }
             
          // -----------------
-         // Text
-         // -----------------
-         
-            if  (befehl == "--BEFEHLE")        { bot.say(TextBot  +'--text '
-                                                              +'\n○ --textUber '); }
-            
-            if  (befehl == "--TEXT")           { bot.say(TextBot  +'Andreas hat angefangen, diesen Bot zu dokumentieren: [Text:SefzigBot]'); }
-            if  (befehl == "--TEXTUBER")       { bot.say(TextBot  +'Über Text.'); }
-            
-         // -----------------
          // Kontakt 
          // -----------------
          
@@ -183,7 +173,7 @@ module.exports = new Script({
  // -------------------------
  // Link
  // -------------------------
-         
+    
     link: {
         receive: (bot, message) => {
             
@@ -230,6 +220,42 @@ module.exports = new Script({
             
          // .then(function(){ bot.say(''); })
             return bot.setProp('link', 'gesprochen')
+                .then(() => gehezu);
+            
+        }
+        
+    },
+
+ // -------------------------
+ // Text
+ // -------------------------
+    
+    text: {
+        receive: (bot, message) => {
+            
+            var befehl = message.text.trim().toUpperCase();
+            var gehezu = "text";
+            
+         // Befehle
+            if ((befehl == "--BEFEHLE") ||
+                (befehl == "--TEXT"))          { bot.say(TextBot  +'--Text '
+                                                              +'\n○ --Startseite '
+                                                              +'\n○ --Hilfe '
+                                                              +'\n○ --Über'),
+                                                 bot.say(TextBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)'); }
+            if ((befehl == "--BOT") ||
+                (befehl == "--ABBRECHEN"))     { bot.say(TextBot  +'Zurück an Sefzig --bot. Bis später!');
+                                                 gehezu = "register"; }
+            
+         // Inhalte
+            if  (befehl == "--STARTSEITE")     { bot.say(TextBot  +'Auf der Startseite können bestehende Texte geöffnet oder ein neuer Text angelegt werden: %[Startseite öffnen](http://sefzig.net/text/)'); }
+            if  (befehl == "--HILFE")          { bot.say(TextBot  +'Die Hilfeseite erklärt Text, die Wikisprache Textile und die verfügbaren Inhalts-Module: %[Hilfe öffnen](http://sefzig.net/text/)'); }
+            if  (befehl == "--UBER")           { bot.say(TextBot  +'"Text" ist eine Web-Anwendung zur Verwaltung von Texten wie Notizen, Artikel, Whitepapers, Wikis und sogar Präsentationen.),
+                                                 bot.say(TextBot  +'Hier die Dokumentation: [Text:text]),
+                                                 bot.say(TextBot  +'Andreas hat Text entwickelt, um sich und seinem Umfeld einen leichteren Umgang mit Texten zu verschaffen.'); }
+            
+         // .then(function(){ bot.say(''); })
+            return bot.setProp('text', 'gesprochen')
                 .then(() => gehezu);
             
         }
