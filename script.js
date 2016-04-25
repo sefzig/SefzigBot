@@ -4,6 +4,7 @@ const Script = require('smooch-bot').Script;
 const SefzigBot = "[SefzigBot] ";
 const LinkBot = "[LinkBot] ";
 const TextBot = "[TextBot] ";
+const SlackBot = "[SlackBot] ";
 
 module.exports = new Script({
     processing: {
@@ -69,6 +70,11 @@ module.exports = new Script({
                                                  bot.say(TextBot  +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
                                                  bot.say(TextBot  +'Steuern Sie mich mit diesen Befehlen: \n○ --Startseite \n○ --Hilfe \n○ --Uber');
                                                  gehezu = "text"; } 
+            
+            if  (befehl == "--SLACK")          { bot.say(SlackBot +'Andreas mag Interne Kommunikation und Informations-Automatisierung und er liebt Slack! Das sollte Ihr Team auch tun...');
+                                                 bot.say(SlackBot +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
+                                                 bot.say(SlackBot +'Steuern Sie mich mit diesen Befehlen: \n○ --Artikel \n○ --Blogpost \n○ --Links \n○ --Team');
+                                                 gehezu = "slack"; } 
             
          // -----------------
          // System
@@ -273,9 +279,10 @@ module.exports = new Script({
          // Befehle
             if ((befehl == "--BEFEHLE") ||
                 (befehl == "--TEXT"))          { bot.say(SlackBot +'--Slack '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt');
+                                                              +'\n○ --Artikel '
+                                                              +'\n○ --Blogpost '
+                                                              +'\n○ --Links '
+                                                              +'\n○ --Team');
                                                  bot.say(SlackBot +'Text: %[Link öffnen](http://sefzig.net/link/)'); }
             if ((befehl == "--BOT") ||
                 (befehl == "--ABBRECHEN"))     { bot.say(SlackBot +'Zurück an Sefzig --bot. Bis später!');
