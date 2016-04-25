@@ -59,7 +59,7 @@ module.exports = new Script({
          // Bots
          // -----------------
             
-            if ((befehl == "--LINK") ||
+            if ((~befehl.indexOf("--LINK")) ||
                 (befehl == "--LINKS"))         { bot.say(LinkBot  +'Andreas speichert viele interessante Links - für sich wie auch für Sie: [Linkliste:Allgemein] 1.000 Links, 6.000 Aufrufe!');
                                                  bot.say(LinkBot  +'Steuern Sie mich mit diesen Befehlen: \n○ --Eingabe \n○ --Liste \n○ --Listen \n○ --Einrichten \n○ --Admin \n○ --Uber');
                                                  bot.say(LinkBot  +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
@@ -93,21 +93,23 @@ module.exports = new Script({
                                                  bot.say(SefzigBot+'(Leider werden Sie dort nicht wiedererkannt. Das sollte in einer späteren Version möglich sein...)'); }
             
          // -----------------
-         // Über mich
+         // Person
          // -----------------
          
-            if  (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'--über '
-                                                              +'\n○ --person '
-                                                              +'\n○ --neues '
-                                                              +'\n○ --kontakt '); }
+            if  (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'--Person '
+                                                              +'\n○ --Über '
+                                                              +'\n○ --Foto '
+                                                              +'\n○ --Lebenslauf '
+                                                              +'\n○ --Kompetenzen '
+                                                              +'\n○ --Disziplinen '); }
             
-            if  (befehl == "--PERSON")         { bot.say(SefzigBot+'Andreas ist 38 Jahre alt und lebt in Hamburg.');
+            if  (befehl == "--PERSON")         { bot.say(SefzigBot+'Lesen Sie den --Lebenslauf von Andreas, eine Liste seiner --Kompetenzen oder über die Marketing --Disziplinen, die er beherrscht.');
                                                  bot.say(SefzigBot+'[Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png]');
-                                                 bot.say(SefzigBot+'Lesen Sie seinen --Lebenslauf, eine Liste seiner --Kompetenzen oder über die Marketing --Disziplinen, die er beherrscht.'); }
+                                                 bot.say(SefzigBot+'Andreas ist 38 Jahre alt und lebt in Hamburg.'); }
             if  (befehl == "--LEBENSLAUF")     { bot.say(SefzigBot+'Sein Lebenslauf als druckbares PDF-Dokument: %[Lebenslauf.pdf](http://sefzig.net/text/seiten/Lebenslauf/dateien/Andreas_Sefzig_Lebenslauf.pdf)');
                                                  bot.say(SefzigBot+'Tabellarisches und ausformuliertes CV: %[Lebenslauf öffnen](http://sefzig.net/link/Lebenslauf/)'); }
-            if  (befehl == "--KOMPETENZEN")    { bot.say(SefzigBot+'Text Kompetenzen: [Text:SefzignetKompetenzen] '); }
-            if  (befehl == "--DISZIPLINEN")    { bot.say(SefzigBot+'Text Disziplinen: [Text:SefzignetDisziplinen] '); }
+            if  (befehl == "--KOMPETENZEN")    { bot.say(SefzigBot+'Text Kompetenzen: [Text:Kompetenzen] '); }
+            if  (befehl == "--DISZIPLINEN")    { bot.say(SefzigBot+'Text Disziplinen: [Text:Disziplinen] '); }
             if  (befehl == "--FOTO")           { bot.say(SefzigBot+'[Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png] Andreas Sefzig mit Logo'); }
             
          // -----------------
