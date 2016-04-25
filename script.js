@@ -62,7 +62,7 @@ module.exports = new Script({
          // -----------------
             
             if ((befehl == "--LINK") ||
-                (befehl == "--LINKS"))         { bot.say(LinkBot  +'Andreas speichert interessante Links - für sich und Sie! %[Linkliste öffnen](http://sefzig.net/link/liste/) '
+                (befehl == "--LINKS"))         { bot.say(LinkBot  +'Andreas speichert viele interessante Links - für sich und Sie! [Linkliste:Allgemein] '
                                                               +'Steuern Sie mich mit diesen Befehlen:'
                                                               +'\n○ --Eingabe '
                                                               +'\n○ --Liste '
