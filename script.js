@@ -55,12 +55,14 @@ module.exports = new Script({
             var befehl = wollen;
             befehl = befehl.trim();
             befehl = befehl.toUpperCase();
+            var gehezu = "register";
             
          // -----------------
          // Andere Bots
          // -----------------
             
-            if (befehl == "--LINK")           { bot.say(SefzigBot+'Ich übergebe an Link Bot.').then(() => 'link'); }
+            if (befehl == "--LINK")           { bot.say(SefzigBot+'Ich übergebe an Link Bot.'); 
+                                                gehezu = "link"; }
             
          // -----------------
          // System
@@ -114,7 +116,7 @@ module.exports = new Script({
                                                 bot.say(SefzigBot+'Text: Slack.'); }
             if ((befehl == "--FRISKY") ||
                 (befehl == "--RADIO") ||
-                (befehl == "--FRISKYRADIO"))  { bot.say(SefzigBot+'Frisky Radio: Global EDM [Audio:http://www.friskyradio.com/m3u/frisky.m3u]'); }
+                (befehl == "--FRISKYRADIO"))  { bot.say(SefzigBot+'Frisky Radio: Global EDM [Audio:http://www.friskyradio.com/m3u/frisky.m3u] Mitglied seit 2003.'); }
             
          // -----------------
          // Text
@@ -159,7 +161,7 @@ module.exports = new Script({
             
          // .then(function(){ bot.say(''); })
             return bot.setProp('wollen', wollen)
-                .then(() => 'register');
+                .then(() => gehezu);
         }
     },
 

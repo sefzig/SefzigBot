@@ -159,7 +159,7 @@
           var text =    '<div class="sk-action" style="margin-bottom:-20px"><a class="btn btn-sk-primary" href="http://sefzig.net/text/%inhalt%/" onclick="texte(\'%inhalt%\'); return false;">Text: %inhalt%</a></div>';
           var button =  '<div class="sk-action" style="margin-bottom:0px"  ><a class="btn btn-sk-primary" href="'+button_url+'" target="_blank">'+button_text+'</a></div>';
           var iframe =  '<iframe src="%inhalt%" width="180" height="102" frameborder="0">Frame laden</iframe>';
-          var audio =   '<audio class="%klasse%" controls="false" style="width: 100%; max-width: 500px;" x-webkit-airplay="allow"><source src="%inhalt%" type="audio/mpeg">Audio-Fehler</audio>';
+          var audio =   '<audio class="%klasse%" controls="true" style="width: 100%; max-width: 500px; margin-top: 10px;" x-webkit-airplay="allow"><source src="%inhalt%" type="audio/mpeg">Lade Audio...</audio>';
           var bild =    '<img class="%klasse%" src="%inhalt%" />';
           var youtube = '<iframe width="180" height="102" class="%klasse%" src="http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
           
