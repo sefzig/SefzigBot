@@ -201,13 +201,14 @@ module.exports = new Script({
                                                  gehezu = "register"; }
             
          // Inhalte
-            if  (befehl == "--EINGABE")        { bot.say(LinkBot  +'Fügen Sie einen Link zu Andreas Liste hinzu! %[Link: Eingabe](http://sefzig.net/link/)'); }
+            if ((befehl == "--EINGABE") ||
+                (befehl == "--EINGEBEN"))      { bot.say(LinkBot  +'Fügen Sie einen Link zu Andreas Liste hinzu! %[Link: Eingabe](http://sefzig.net/link/)'); }
             if  (befehl == "--EINRICHTEN")     { bot.say(LinkBot  +'Jeder kann Link benutzen. Die Einrichtung ist einfach und interaktiv: %[Link: Einrichtung](http://sefzig.net/link/einrichten/)'); }
             if  (befehl == "--ADMIN")          { bot.say(LinkBot  +'In der Administration werden die Links verwaltet: %[Link: Administration](http://sefzig.net/link/admin/)'); }
-            if  (befehl == "--UBER")           { bot.say(LinkBot  +'Link ist recht gut dokumentiert - Andreas Text dazu: %[Link: Dokumentation](http://sefzig.net/text/link/)'); }
+            if  (befehl == "--UBER")           { bot.say(LinkBot  +'"Link" ist  gut dokumentiert - hier Andreas Text dazu: %[Link: Dokumentation](http://sefzig.net/text/link/)'); }
             if  (befehl == "--LISTE")          { bot.say(LinkBot  +'Alle Links von Andreas fließen in eine filterbare Linkliste ein: %[Link: Allgemeine Liste](http://sefzig.net/link/liste/)'); }
             if ((befehl == "--UBER") ||
-                (befehl == "--ÜBER"))          { bot.say(LinkBot  +'Link ist eine Web-Anwendung zur Verwaltung von Links. Hier die Dokumentation: [Text:link] Link basiert auf der Open Source-Software Yourls: %[Externer Link: Yourls](http://yourls.org)'); }
+                (befehl == "--ÜBER"))          { bot.say(LinkBot  +'"Link" ist eine Web-Anwendung zur Verwaltung von Links. Hier die Dokumentation: [Text:link] Link basiert auf der Open Source-Software Yourls: %[Externer Link: Yourls](http://yourls.org)'); }
             
          // Linklisten
             if ((befehl == "--LINKS") ||
@@ -218,11 +219,11 @@ module.exports = new Script({
                                                               +'\n○ --Rtm '
                                                               +'\n○ --Anhang'); }
          // Inhalte
-            if  (befehl == "--WERKZEUGE")      { bot.say(SefzigBot+'Das Netz ist voller nützlicher Werkzeuge - hier eine nützliche Linkliste: %[Linkliste: Werkzeuge](http://sefzig.net/link/liste/Werkzeug/)'); }
-            if  (befehl == "--MAPPE")          { bot.say(SefzigBot+'Andreas produziert Links am laufenden Band: %[Linkliste: Mappe](http://sefzig.net/link/liste/Mappe/)'); }
-            if  (befehl == "--INNOVATION")     { bot.say(SefzigBot+'Links zu innovativen Ideen und Techniken aus Marketing und Kultur: %[Linkliste: Innovationen](http://sefzig.net/link/liste/Innovation/)'); }
-            if  (befehl == "--RTM")            { bot.say(SefzigBot+'Real Time Messaging/Marketing ist das Ding! %[Linkliste: Rtm](http://sefzig.net/link/liste/Rtm/)'); }
-            if  (befehl == "--ANHANG")         { bot.say(SefzigBot+'In einer Liste hält Andreas Unterhaltsames fest: %[Linkliste: Anhang](http://sefzig.net/link/liste/Anhang/)'); }
+            if  (befehl == "--WERKZEUGE")      { bot.say(LinkBot  +'Das Netz ist voller nützlicher Werkzeuge - hier eine nützliche Linkliste: %[Linkliste: Werkzeuge](http://sefzig.net/link/liste/Werkzeug/)'); }
+            if  (befehl == "--MAPPE")          { bot.say(LinkBot  +'Andreas produziert Links am laufenden Band: %[Linkliste: Mappe](http://sefzig.net/link/liste/Mappe/)'); }
+            if  (befehl == "--INNOVATION")     { bot.say(LinkBot  +'Links zu innovativen Ideen und Techniken aus Marketing und Kultur: %[Linkliste: Innovationen](http://sefzig.net/link/liste/Innovation/)'); }
+            if  (befehl == "--RTM")            { bot.say(LinkBot  +'Real Time Messaging wird schon 2016 Robogeddon über das Marketing bringen! %[Linkliste: Rtm](http://sefzig.net/link/liste/Rtm/)'); }
+            if  (befehl == "--ANHANG")         { bot.say(LinkBot  +'In dieser Liste hält Andreas Unterhaltsames fest: %[Linkliste: Anhang](http://sefzig.net/link/liste/Anhang/)'); }
             
          // .then(function(){ bot.say(''); })
             return bot.setProp('wollen', wollen)
