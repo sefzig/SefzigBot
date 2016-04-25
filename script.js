@@ -251,8 +251,8 @@ module.exports = new Script({
          // Inhalte
             if  (befehl == "--STARTSEITE")     { bot.say(TextBot  +'Auf der Startseite können bestehende Texte geöffnet oder ein neuer Text angelegt werden: %[Startseite öffnen](http://sefzig.net/text/)'); }
             if  (befehl == "--HILFE")          { bot.say(TextBot  +'Die Hilfeseite erklärt Text, die Wikisprache Textile und die verfügbaren Inhalts-Module: %[Hilfe öffnen](http://sefzig.net/text/)'); }
-            if  (befehl == "--UBER")           { bot.say(TextBot  +'"Text" ist eine Web-Anwendung zur Verwaltung von Texten wie Notizen, Artikel, Whitepapers, Wikis und sogar Präsentationen.);
-                                                 bot.say(TextBot  +'Hier die Dokumentation: [Text:text]);
+            if  (befehl == "--UBER")           { bot.say(TextBot  +'"Text" ist eine Web-Anwendung zur Verwaltung von Texten wie Notizen, Artikel, Whitepapers, Wikis und sogar Präsentationen.');
+                                                 bot.say(TextBot  +'Hier die Dokumentation: [Text:text] ');
                                                  bot.say(TextBot  +'Andreas hat Text entwickelt, um sich und seinem Umfeld einen leichteren Umgang mit Texten zu verschaffen.'); }
             
          // Konversation fortführen
