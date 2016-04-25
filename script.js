@@ -154,7 +154,7 @@ module.exports = new Script({
             if (befehl == "--TEXTUBER")       { bot.say(TextBot  +'Über Text.'); }
             
          // -----------------
-         // Kontakt 
+         // Kontakt
          // -----------------
          
             if (befehl == "--BEFEHLE")        { bot.say(SefzigBot+'--kontakt '
