@@ -218,6 +218,7 @@ module.exports = new Script({
             if  (befehl == "--RTM")            { bot.say(LinkBot  +'Real Time Messaging wird schon 2016 Robogeddon über das Marketing bringen! %[Linkliste: Rtm](http://sefzig.net/link/liste/Rtm/)'); }
             if  (befehl == "--ANHANG")         { bot.say(LinkBot  +'In dieser Liste hält Andreas Unterhaltsames fest: %[Linkliste: Anhang](http://sefzig.net/link/liste/Anhang/)'); }
             
+         // Konversation fortführen
          // .then(function(){ bot.say(''); })
             return bot.setProp('link', 'gesprochen')
                 .then(() => gehezu);
@@ -241,7 +242,7 @@ module.exports = new Script({
                 (befehl == "--TEXT"))          { bot.say(TextBot  +'--Text '
                                                               +'\n○ --Startseite '
                                                               +'\n○ --Hilfe '
-                                                              +'\n○ --Über'),
+                                                              +'\n○ --Über');
                                                  bot.say(TextBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)'); }
             if ((befehl == "--BOT") ||
                 (befehl == "--ABBRECHEN"))     { bot.say(TextBot  +'Zurück an Sefzig --bot. Bis später!');
@@ -250,11 +251,11 @@ module.exports = new Script({
          // Inhalte
             if  (befehl == "--STARTSEITE")     { bot.say(TextBot  +'Auf der Startseite können bestehende Texte geöffnet oder ein neuer Text angelegt werden: %[Startseite öffnen](http://sefzig.net/text/)'); }
             if  (befehl == "--HILFE")          { bot.say(TextBot  +'Die Hilfeseite erklärt Text, die Wikisprache Textile und die verfügbaren Inhalts-Module: %[Hilfe öffnen](http://sefzig.net/text/)'); }
-            if  (befehl == "--UBER")           { bot.say(TextBot  +'"Text" ist eine Web-Anwendung zur Verwaltung von Texten wie Notizen, Artikel, Whitepapers, Wikis und sogar Präsentationen.),
-                                                 bot.say(TextBot  +'Hier die Dokumentation: [Text:text]),
+            if  (befehl == "--UBER")           { bot.say(TextBot  +'"Text" ist eine Web-Anwendung zur Verwaltung von Texten wie Notizen, Artikel, Whitepapers, Wikis und sogar Präsentationen.);
+                                                 bot.say(TextBot  +'Hier die Dokumentation: [Text:text]);
                                                  bot.say(TextBot  +'Andreas hat Text entwickelt, um sich und seinem Umfeld einen leichteren Umgang mit Texten zu verschaffen.'); }
             
-         // .then(function(){ bot.say(''); })
+         // Konversation fortführen
             return bot.setProp('text', 'gesprochen')
                 .then(() => gehezu);
             
