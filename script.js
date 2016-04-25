@@ -132,7 +132,8 @@ module.exports = new Script({
                 (~befehl.indexOf("--RADIO")) ||
                 (~befehl.indexOf("--FRISKYRADIO")))   { bot.say(SefzigBot+'Frisky Radio: Global EDM [Audio:http://www.friskyradio.com/m3u/frisky.m3u] Mitglied seit 2003.'); }
             
-            if  (~befehl.indexOf("--ROBOGEDDON"))     { bot.say(SefzigBot+'#Robogeddon ist Andreas Hashtag für den Einzug von Chatbots in unser Leben. [Text:Robogeddon] Bots werden die digitale Welt verändern! '); }
+            if  (~befehl.indexOf("--ROBOGEDDON"))     { bot.say(SefzigBot+'#Robogeddon ist Andreas Hashtag für den Einzug von Chatbots in unser Leben. [Text:Robogeddon] Bots werden die digitale Welt verändern!'); }
+            if  (~befehl.indexOf("--SLACKTEAM"))      { bot.say(SefzigBot+'Treten Sie dem offenen Slack-Team von Andreas bei, um sich mit ihm zu beraten und um Slack im laufenden Betrieb zu sehen: [Button:Anmeldung,http://sefzig.net/link/SlackAnmeldung/] '); }
             
          // -----------------
          // Kontakt 
@@ -143,9 +144,8 @@ module.exports = new Script({
                                                               +'\n○ --kontaktTwitter '
                                                               +'\n○ --kontaktSlack '); }
             
-            if  (~befehl.indexOf("--KONTAKT"))        { bot.say(SefzigBot+'Andreas E-Mail-Adresse: [Button:andreas@sefzig.net,mailto:andreas@sefzig.net] Andreas Kontaktdaten: [Text:SefzignetKontakt]');
-                                                        bot.say(SefzigBot+'Besuchen Sie Andreas auf --Twitter und --Xing oder treten Sie seinem offenen --SlackTeam bei!');
-                                                        bot.say(SefzigBot+'Rufen Sie Andreas an! [Button:0151 - 15 92 00 82,tel:+4915115920082] (D1 Telekom)'); }
+            if  (~befehl.indexOf("--KONTAKT"))        { bot.say(SefzigBot+'Andreas mobile Telefonnummer: [Button:0151 - 15 92 00 82,tel:+4915115920082] Andreas E-Mail-Adresse: [Button:andreas@sefzig.net,mailto:andreas@sefzig.net] Weitere Kontaktdaten: [Text:SefzignetKontakt]');
+                                                        bot.say(SefzigBot+'Besuchen Sie Andreas auf --Twitter und --Xing oder treten Sie seinem offenen --SlackTeam bei!'); }
             if  (~befehl.indexOf("--SLACKTEAM"))      { bot.say(SefzigBot+'Andreas betreibt ein offenes Slack-Team, in dem man sich über Marketing-Technologie unterhält. %[Slack-Team öffnen](http://sefzig.net/link/SlackAnmeldung/)'); }
             if  (~befehl.indexOf("--XING"))           { bot.say(SefzigBot+'Andreas ist bei Xing: Er ist seit 2004 angemeldet und gehört mit über 500 Kontakten zu den 5% der bestvernetzten Mitglieder. %[Xing-Profil öffnen](http://sefzig.net/link/XingProfil/)'); 
                                                         bot.say(SefzigBot+'[Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/xing_vernetzt.png]'); }
