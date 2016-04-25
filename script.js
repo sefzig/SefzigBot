@@ -171,8 +171,8 @@ module.exports = new Script({
  // -------------------------
          
     link: {
-        prompt: (bot) => bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)'),
-                         bot.say(LinkBot  +'Befehle für den Bot von Andreas Link-Verwaltung:'
+        prompt: (bot) => bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/) '
+                                          +'Befehle für den Bot von Andreas Link-Verwaltung:'
                                                              +'\n○ --Eingabe '
                                                              +'\n○ --Liste '
                                                              +'\n○ --Listen '
