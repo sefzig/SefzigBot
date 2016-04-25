@@ -189,7 +189,7 @@ module.exports = new Script({
                                                               +'\n○ --Über'),
                                                  bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)'); }
             if ((befehl == "--BOT") ||
-                (befehl == "--ABBRECHEN"))     { bot.say(LinkBot  +'Zurück an Sefzig --bot. Bis später!');
+                (befehl == "--ABBRECHEN"))     { bot.say(LinkBot  +'Zurück an Sefzig --Bot. Bis später!');
                                                  gehezu = "register"; }
             
          // Inhalte
@@ -246,7 +246,7 @@ module.exports = new Script({
                                                               +'\n○ --Über');
                                                  bot.say(TextBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)'); }
             if ((befehl == "--BOT") ||
-                (befehl == "--ABBRECHEN"))     { bot.say(TextBot  +'Zurück an Sefzig --bot. Bis später!');
+                (befehl == "--ABBRECHEN"))     { bot.say(TextBot  +'Zurück an Sefzig --Bot. Bis später!');
                                                  gehezu = "register"; }
             
          // Inhalte
@@ -284,7 +284,7 @@ module.exports = new Script({
                                                               +'\n○ --Links '
                                                               +'\n○ --Team'); }
             if ((befehl == "--BOT") ||
-                (befehl == "--ABBRECHEN"))     { bot.say(SlackBot +'Zurück an Sefzig --bot. Bis später!');
+                (befehl == "--ABBRECHEN"))     { bot.say(SlackBot +'Zurück an Sefzig --Bot. Bis später!');
                                                  gehezu = "register"; }
             
          // Inhalte
