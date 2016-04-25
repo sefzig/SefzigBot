@@ -190,7 +190,13 @@ module.exports = new Script({
     link: {
         receive: (bot, message) => {
             
-            var befehl = message.text.trim().toUpperCase();
+         // var befehl = message.text.trim().toUpperCase();
+         // var gehezu = "link";
+            
+            var wollen = message.text;
+            var befehl = wollen;
+            befehl = befehl.trim();
+            befehl = befehl.toUpperCase();
             var gehezu = "link";
             
          // Befehle
