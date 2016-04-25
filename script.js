@@ -113,7 +113,8 @@ module.exports = new Script({
             if (befehl == "--SLACK")          { bot.say(SefzigBot+'Andreas ');
                                                 bot.say(SefzigBot+'Text: Slack.'); }
             if ((befehl == "--FRISKY") ||
-                (befehl == "--FRISKYRADIO"))  { bot.say(SefzigBot+'Frisky Radio: Global EDM [Iframe:http://www.friskyradio.com/m3u/frisky.m3u]'); }
+                (befehl == "--RADIO") ||
+                (befehl == "--FRISKYRADIO"))  { bot.say(SefzigBot+'Frisky Radio: Global EDM [Audio:http://www.friskyradio.com/m3u/frisky.m3u]'); }
             
          // -----------------
          // Text
