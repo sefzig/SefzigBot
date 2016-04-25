@@ -101,9 +101,13 @@ module.exports = new Script({
                                                               +'\n○ --neues '
                                                               +'\n○ --kontakt '); }
             
-            if  (befehl == "--PERSON")         { bot.say(SefzigBot+'Andreas ist 38 Jahre alt und lebt in Hamburg. Hier sein --Lebenslauf und ein --Foto.'); }
+            if  (befehl == "--PERSON")         { bot.say(SefzigBot+'Andreas ist 38 Jahre alt und lebt in Hamburg.');
+                                                 bot.say(SefzigBot+'[Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png]');
+                                                 bot.say(SefzigBot+'Lesen Sie seinen --Lebenslauf, eine Liste seiner --Kompetenzen oder über die Marketing --Disziplinen, die er beherrscht.'); }
             if  (befehl == "--LEBENSLAUF")     { bot.say(SefzigBot+'Sein Lebenslauf als druckbares PDF-Dokument: %[Lebenslauf.pdf](http://sefzig.net/text/seiten/Lebenslauf/dateien/Andreas_Sefzig_Lebenslauf.pdf)');
                                                  bot.say(SefzigBot+'Tabellarisches und ausformuliertes CV: %[Lebenslauf öffnen](http://sefzig.net/link/Lebenslauf/)'); }
+            if  (befehl == "--KOMPETENZEN")    { bot.say(SefzigBot+'Text Kompetenzen: [Text:SefzignetKompetenzen] '); }
+            if  (befehl == "--DISZIPLINEN")    { bot.say(SefzigBot+'Text Disziplinen: [Text:SefzignetDisziplinen] '); }
             if  (befehl == "--FOTO")           { bot.say(SefzigBot+'[Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png] Andreas Sefzig mit Logo'); }
             
          // -----------------
@@ -126,7 +130,7 @@ module.exports = new Script({
                 (befehl == "--RADIO") ||
                 (befehl == "--FRISKYRADIO"))   { bot.say(SefzigBot+'Frisky Radio: Global EDM [Audio:http://www.friskyradio.com/m3u/frisky.m3u] Mitglied seit 2003.'); }
             
-            if  (befehl == "--ROBOGEDDON")     { bot.say(SefzigBot+'#Robogeddon ist Andreas Hashtag für den Einzug von Chatbots in unser Leben. [Text:Robogeddon] '); }
+            if  (befehl == "--ROBOGEDDON")     { bot.say(SefzigBot+'#Robogeddon ist Andreas Hashtag für den Einzug von Chatbots in unser Leben. [Text:Robogeddon] Bots werden die digitale Welt verändern! '); }
             
          // -----------------
          // Kontakt 
@@ -279,6 +283,7 @@ module.exports = new Script({
             
          // Befehle
             if  (befehl == "--BEFEHLE")        { bot.say(SlackBot +'--Slack '
+                                                              +'\n○ --Über '
                                                               +'\n○ --Artikel '
                                                               +'\n○ --Blogpost '
                                                               +'\n○ --Links '
@@ -288,13 +293,14 @@ module.exports = new Script({
                                                  gehezu = "register"; }
             
          // Inhalte
-            if  (befehl == "--SLACK")          { bot.say(SlackBot +'Slack ist zur Zeit die beste Chat-Anwendung für Teams. Bedienfreundlich, automatisierbar und operationalisierbar. Über Slack wurde Andreas auf #Robogeddon aufmerksam!');
+            if ((befehl == "--UBER") ||
+                (befehl == "--ÜBER"))          { bot.say(SlackBot +'Slack ist zur Zeit die beste Chat-Anwendung für Teams. Bedienfreundlich, automatisierbar und operationalisierbar. Über Slack wurde Andreas auf #Robogeddon aufmerksam!');
                                                  bot.say(SlackBot +'[Bild:http://sefzig.net/text/seiten/SefzignetSlack/dateien/slack_logo.png]');
                                                  bot.say(SlackBot +'Lesen Sie Andreas --Artikel oder --Blogpost, öffnen Sie seine --Links oder treten Sie Andreas offenem --Team bei.'); }
-            if  (befehl == "--ARTIKEL")        { bot.say(SlackBot +'Andreas hat einen umfangreichen Artikel zu Slack geschrieben: [Text:Slack]'); }
-            if  (befehl == "--BLOGPOST")       { bot.say(SlackBot +'Lesen Sie auch Andreas Blogpost zu Slack: [Text:SefzignetBlogSlack]'); }
-            if  (befehl == "--LINKS")          { bot.say(SlackBot +'Andreas hat viele Links zu Slack gesammelt: [Linkliste:Slack] '); }
-            if  (befehl == "--TEAM")           { bot.say(SlackBot +'Treten Sie dem offenem Slack-Team von Andreas bei, um sich mit ihm zu beraten und um Slack aus nächster Nähe im Betrieb zu sehen: [Text:SlackOffenesTeam] '); }
+            if  (befehl == "--ARTIKEL")        { bot.say(SlackBot +'Andreas hat einen fundierten Artikel zu Slack geschrieben: [Text:Slack] Was Sie als Marketer über Slack wissen müssen.'); }
+            if  (befehl == "--BLOGPOST")       { bot.say(SlackBot +'Lesen Sie auch Andreas Blogpost zu Slack: [Text:SefzignetBlogSlack] Was ist Slack und wie nutzt man es? '); }
+            if  (befehl == "--LINKS")          { bot.say(SlackBot +'Andreas hat viele Artikel zu Slack gesammelt: [Linkliste:Slack;Artikel] '); }
+            if  (befehl == "--TEAM")           { bot.say(SlackBot +'Treten Sie dem offenen Slack-Team von Andreas bei, um sich mit ihm zu beraten und um Slack im laufenden Betrieb zu sehen: [Button:Anmeldung,http://sefzig.net/link/SlackAnmeldung/] '); }
             
          // Konversation fortführen
             return bot.setProp('text', 'gesprochen')
