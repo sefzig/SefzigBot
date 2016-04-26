@@ -312,10 +312,11 @@
           
        // Bots anpassen
           var text_merken = text_neu;
-          text_neu = inhalt("bot", text_neu, "SefzigBot", "Andreas Sefzigs Bot", zufall);
-          text_neu = inhalt("bot", text_neu, "LinkBot",  "Link Bot",  zufall);
-          text_neu = inhalt("bot", text_neu, "TextBot",  "Text Bot",  zufall);
-          text_neu = inhalt("bot", text_neu, "SlackBot", "Slack Bot", zufall);
+          text_neu = inhalt("bot", text_neu, "SefzigBot",     "Andreas Sefzigs Bot", zufall);
+          text_neu = inhalt("bot", text_neu, "LinkBot",       "Link Bot",            zufall);
+          text_neu = inhalt("bot", text_neu, "TextBot",       "Text Bot",            zufall);
+          text_neu = inhalt("bot", text_neu, "SlackBot",      "Slack Bot",           zufall);
+          text_neu = inhalt("bot", text_neu, "AndreasSefzig", "Andreas Sefzig",      zufall);
           
        // Default-Bot
           if (text_neu == text_merken) { text_neu = "[AndreasSefzig] "+text_neu; }

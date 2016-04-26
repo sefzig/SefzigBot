@@ -5,6 +5,7 @@ const SefzigBot = "[SefzigBot] ";
 const LinkBot = "[LinkBot] ";
 const TextBot = "[TextBot] ";
 const SlackBot = "[SlackBot] ";
+const AndreasSefzig = "[AndreasSefzig] ";
 
 module.exports = new Script({
     processing: {
@@ -54,8 +55,8 @@ module.exports = new Script({
             if (antwort == "--JA")   { 
                
                bot.say(SefzigBot+`Prima!`);
-               bot.say('Sie können hier jederzeit eine Nachricht an mich schreiben!');
-               bot.say(SefzigBot+'Oder unterhalten Sie sich mit mir! Bitte schreiben Sie --bot:');
+               bot.say(SefzigBot+'Sie können hier jederzeit eine Nachricht an Andreas schreiben!');
+               bot.say(SefzigBot+'Unterhalten Sie sich mit mir: Bitte schreiben Sie --bot:');
                name_falsch == "nein";
                dann = "register";
                
@@ -64,6 +65,12 @@ module.exports = new Script({
                
                name_falsch == "ja";
                dann = "vorname";
+               
+            }
+            if (antwort == "--BOT") {
+               
+               name_falsch == "";
+               dann = "register";
                
             }
             
