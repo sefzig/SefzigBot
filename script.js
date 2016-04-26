@@ -53,7 +53,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             
             var befehl = message.text.trim().toUpperCase();
-            var gehezu = "register";
+            var dann = "register";
             
          // -----------------
          // Bots
@@ -63,18 +63,18 @@ module.exports = new Script({
                 (~befehl.indexOf("--LINKS")))         { bot.say(LinkBot  +'Andreas speichert viele interessante Links - für sich wie auch für Sie: [Linkliste:Allgemein] 1.000 Links, 6.000 Aufrufe!');
                                                         bot.say(LinkBot  +'Steuern Sie mich mit diesen Befehlen: \n○ --Eingabe \n○ --Liste \n○ --Listen \n○ --Einrichten \n○ --Admin \n○ --Uber');
                                                         bot.say(LinkBot  +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
-                                                        gehezu = "link"; } 
+                                                        dann = "link"; } 
             
             if ((~befehl.indexOf("--TEXT")) ||
                 (~befehl.indexOf("--TEXTE")))         { bot.say(TextBot  +'Andreas verwaltet, bearbeitet und teilt alle seine Texte mit einer eigens entwickelten Software: [Text:Text] ');
                                                         bot.say(TextBot  +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
                                                         bot.say(TextBot  +'Steuern Sie mich mit diesen Befehlen: \n○ --Startseite \n○ --Hilfe \n○ --Uber');
-                                                        gehezu = "text"; } 
+                                                        dann = "text"; } 
             
             if  (~befehl.indexOf("--SLACK"))          { bot.say(SlackBot +'Andreas mag Interne Kommunikation und Automatisierung - er liebt Slack! Das sollte Ihr Team auch tun...');
                                                         bot.say(SlackBot +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
                                                         bot.say(SlackBot +'Lesen Sie Andreas --Artikel oder --Blogpost, öffnen Sie seine --Links oder treten Sie Andreas offenem Slack --Team bei.');
-                                                        gehezu = "slack"; } 
+                                                        dann = "slack"; } 
             
          // -----------------
          // System
@@ -167,7 +167,7 @@ module.exports = new Script({
             
          // .then(function(){ bot.say(''); })
             return bot.setProp('register', 'gesprochen')
-                .then(() => gehezu);
+                .then(() => dann);
         }
     },
 
@@ -182,21 +182,22 @@ module.exports = new Script({
             var befehl = message.text.trim().toUpperCase();
             
          // Nächster Schritt default
-            var gehezu = "link";
+            var dann = "link";
             
          // Befehle
             if ((~befehl.indexOf("--BEFEHLE")) ||
                 (~befehl.indexOf("--LINK")))          { bot.say(LinkBot  +'--Link '
-                                                              +'\n○ --Eingabe '
-                                                              +'\n○ --Liste '
+                                                              +'\n○ --Links '
                                                               +'\n○ --Listen '
+                                                              +'\n○ --Liste '
+                                                              +'\n○ --Eingabe '
                                                               +'\n○ --Einrichten '
                                                               +'\n○ --Admin '
                                                               +'\n○ --Über'),
                                                         bot.say(LinkBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)'); }
             if ((~befehl.indexOf("--BOT")) ||
                 (~befehl.indexOf("--ABBRECHEN")))     { bot.say(LinkBot  +'Zurück an Sefzig --Bot. Bis später!');
-                                                        gehezu = "register"; }
+                                                        dann = "register"; }
             
          // Inhalte
             if ((~befehl.indexOf("--EINGABE")) ||
@@ -204,7 +205,7 @@ module.exports = new Script({
             if  (~befehl.indexOf("--EINRICHTEN"))     { bot.say(LinkBot  +'Jeder kann Link benutzen. Die Einrichtung ist einfach und interaktiv: %[Link: Einrichtung](http://sefzig.net/link/einrichten/)'); }
             if  (~befehl.indexOf("--ADMIN"))          { bot.say(LinkBot  +'In der Administration werden die Links verwaltet: %[Link: Administration](http://sefzig.net/link/admin/)'); }
             if  (~befehl.indexOf("--UBER"))           { bot.say(LinkBot  +'"Link" ist  gut dokumentiert - hier Andreas Text dazu: %[Link: Dokumentation](http://sefzig.net/text/link/)'); }
-            if  (~befehl.indexOf("--LISTE"))          { bot.say(LinkBot  +'Alle Links von Andreas fließen in eine filterbare Linkliste ein: %[Link: Allgemeine Liste](http://sefzig.net/link/liste/)'); }
+            if  (~befehl.indexOf("--LINKS"))          { bot.say(LinkBot  +'Alle Links von Andreas fließen in eine filterbare Linkliste ein: %[Link: Allgemeine Liste](http://sefzig.net/link/liste/)'); }
             if ((~befehl.indexOf("--UBER")) ||
                 (~befehl.indexOf("--ÜBER")))          { bot.say(LinkBot  +'"Link" ist eine Web-Anwendung zur Verwaltung von Links. Hier die Dokumentation: [Text:link] Link basiert auf der Open Source-Software Yourls: %[Externer Link: Yourls](http://yourls.org)'); }
             
@@ -221,16 +222,26 @@ module.exports = new Script({
             if  (~befehl.indexOf("--INNOVATION"))     { bot.say(LinkBot  +'Links zu innovativen Ideen und Techniken aus Marketing und Kultur: %[Linkliste: Innovationen](http://sefzig.net/link/liste/Innovation/)'); }
             if  (~befehl.indexOf("--RTM"))            { bot.say(LinkBot  +'Real Time Messaging wird schon 2016 Robogeddon über das Marketing bringen! %[Linkliste: Rtm](http://sefzig.net/link/liste/Rtm/)'); }
             if  (~befehl.indexOf("--ANHANG"))         { bot.say(LinkBot  +'In dieser Liste hält Andreas Unterhaltsames fest: %[Linkliste: Anhang](http://sefzig.net/link/liste/Anhang/)'); }
+            if  (~befehl.indexOf("--LISTE")))         { dann = "link_liste"; }
             
          // Konversation fortführen
          // .then(function(){ bot.say(''); })
             return bot.setProp('link', 'gesprochen')
-                .then(() => gehezu);
+                .then(() => dann);
             
         }
         
     },
 
+ // URL-Generator 
+    link_liste: { 
+       prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel der Linkliste, um deren URLs zu generieren!'), 
+       receive: (bot, message) => { var kurzel = message.text; return bot.setProp('link_liste', kurzel) .then(() => 
+       bot.say(LinkBot+`Die Linkliste "${kurzel}": http://sefzig.net/link/liste/${kurzel}/.`)) .then(() => 
+       bot.say(LinkBot+`Der RSS-Feed  von "${kurzel}": http://sefzig.net/link/liste/${kurzel}/rss/.`)) .then(() => 
+       bot.say(LinkBot+`Der Json-Feed von "${kurzel}": http://sefzig.net/link/liste/${kurzel}/json/.`)) .then(() => 'link'); } 
+    },
+    
  // -------------------------
  // Text
  // -------------------------
@@ -243,7 +254,7 @@ module.exports = new Script({
             var befehlname = message.text.trim().toLowerCase().replace("--", "");
             
          // Nächster Schritt default
-            var gehezu = "text";
+            var dann = "text";
             
          // Befehle
             if ((~befehl.indexOf("--BEFEHLE")) ||
@@ -255,7 +266,7 @@ module.exports = new Script({
                                                         bot.say(TextBot  +'Andreas schreibt interessante Texte für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/Text/)'); }
             if ((~befehl.indexOf("--BOT")) ||
                 (~befehl.indexOf("--ABBRECHEN")))     { bot.say(TextBot  +'Zurück an Sefzig --Bot. Bis später!');
-                                                        gehezu = "register"; }
+                                                        dann = "register"; }
             
          // Inhalte
             if  (~befehl.indexOf("--STARTSEITE"))     { bot.say(TextBot  +'Auf der Startseite können bestehende Texte geöffnet oder ein neuer Text angelegt werden: %[Startseite öffnen](http://sefzig.net/text/)'); }
@@ -266,34 +277,34 @@ module.exports = new Script({
                                                         bot.say(TextBot  +'Andreas hat Text entwickelt, um sich und seinem Umfeld einen leichteren Umgang mit Texten zu verschaffen.'); }
             
          // URL-Generator
-            if  (~befehl.indexOf("--AUSGABE"))        { gehezu = "text_ausgabe"; }
-            if  (~befehl.indexOf("--DATEIEN"))        { gehezu = "text_dateien"; }
-            if  (~befehl.indexOf("--EDITOR"))         { gehezu = "text_editor"; }
-            if  (~befehl.indexOf("--EINBINDUNG"))     { gehezu = "text_einbindung"; }
-            if  (~befehl.indexOf("--EINGABE"))        { gehezu = "text_eingabe"; }
-            if  (~befehl.indexOf("--EXTERN"))         { gehezu = "text_extern"; }
-            if  (~befehl.indexOf("--HTML"))           { gehezu = "text_html"; }
-            if  (~befehl.indexOf("--MOBIL"))          { gehezu = "text_mobil"; }
-            if  (~befehl.indexOf("--SOLOMO"))         { gehezu = "text_solomo"; }
+            if  (~befehl.indexOf("--AUSGABE"))        { dann = "text_ausgabe"; }
+            if  (~befehl.indexOf("--DATEIEN"))        { dann = "text_dateien"; }
+            if  (~befehl.indexOf("--EDITOR"))         { dann = "text_editor"; }
+            if  (~befehl.indexOf("--EINBINDUNG"))     { dann = "text_einbindung"; }
+            if  (~befehl.indexOf("--EINGABE"))        { dann = "text_eingabe"; }
+            if  (~befehl.indexOf("--EXTERN"))         { dann = "text_extern"; }
+            if  (~befehl.indexOf("--HTML"))           { dann = "text_html"; }
+            if  (~befehl.indexOf("--MOBIL"))          { dann = "text_mobil"; }
+            if  (~befehl.indexOf("--SOLOMO"))         { dann = "text_solomo"; }
             
          // Konversation fortführen
             return bot.setProp('text', 'gesprochen')
-                .then(() => gehezu);
+                .then(() => dann);
             
         }
         
     },
     
  // URL-Generator 
-    text_ausgabe:    { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Ausgabe-URL     zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_ausgabe',    kurzel) .then(() => bot.say(TextBot+`Die Ausgabe-URL     von "${kurzel}": http://sefzig.net/text/${kurzel}/#ausgabe.`))    .then(() => 'text'); } },
-    text_dateien:    { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Dateien-URL     zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_dateien',    kurzel) .then(() => bot.say(TextBot+`Die Dateien-URL     von "${kurzel}": http://sefzig.net/text/${kurzel}/#dateien.`))    .then(() => 'text'); } },
-    text_editor:     { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Editor-URL      zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_editor',     kurzel) .then(() => bot.say(TextBot+`Die Editor-URL      von "${kurzel}": http://sefzig.net/text/${kurzel}/#editor.`))     .then(() => 'text'); } },
-    text_einbindung: { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Einbindungs-URL zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_einbindung', kurzel) .then(() => bot.say(TextBot+`Die Einbindungs-URL von "${kurzel}": http://sefzig.net/text/${kurzel}/#einbindung.`)) .then(() => 'text'); } },
-    text_eingabe:    { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Eingabe-URL     zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_eingabe',    kurzel) .then(() => bot.say(TextBot+`Die Eingabe-URL     von "${kurzel}": http://sefzig.net/text/${kurzel}/#eingabe.`))    .then(() => 'text'); } },
-    text_extern:     { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Extern-URL      zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_extern',     kurzel) .then(() => bot.say(TextBot+`Die Extern-URL      von "${kurzel}": http://sefzig.net/text/${kurzel}/#extern.`))     .then(() => 'text'); } },
-    text_html:       { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Html-URL        zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_html',       kurzel) .then(() => bot.say(TextBot+`Die Html-URL        von "${kurzel}": http://sefzig.net/text/${kurzel}/#html.`))       .then(() => 'text'); } },
-    text_mobil:      { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Mobil-URL       zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_mobil',      kurzel) .then(() => bot.say(TextBot+`Die Mobil-URL       von "${kurzel}": http://sefzig.net/text/${kurzel}/#mobil.`))      .then(() => 'text'); } },
-    text_solomo:     { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Solomo-URL      zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_solomo',     kurzel) .then(() => bot.say(TextBot+`Die Solomo-URL      von "${kurzel}": http://sefzig.net/text/${kurzel}/solomo/.`))     .then(() => 'text'); } },
+    text_ausgabe:    { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Ausgabe-URL     zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_ausgabe',    kurzel) .then(() => bot.say(TextBot+`Die Ausgabe     von "${kurzel}": http://sefzig.net/text/${kurzel}/#ausgabe.`))    .then(() => 'text'); } },
+    text_dateien:    { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Dateien-URL     zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_dateien',    kurzel) .then(() => bot.say(TextBot+`Die Dateien     von "${kurzel}": http://sefzig.net/text/${kurzel}/#dateien.`))    .then(() => 'text'); } },
+    text_editor:     { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Editor-URL      zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_editor',     kurzel) .then(() => bot.say(TextBot+`Die Editor      von "${kurzel}": http://sefzig.net/text/${kurzel}/#editor.`))     .then(() => 'text'); } },
+    text_einbindung: { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Einbindungs-URL zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_einbindung', kurzel) .then(() => bot.say(TextBot+`Die Einbindungs von "${kurzel}": http://sefzig.net/text/${kurzel}/#einbindung.`)) .then(() => 'text'); } },
+    text_eingabe:    { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Eingabe-URL     zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_eingabe',    kurzel) .then(() => bot.say(TextBot+`Die Eingabe     von "${kurzel}": http://sefzig.net/text/${kurzel}/#eingabe.`))    .then(() => 'text'); } },
+    text_extern:     { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Extern-URL      zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_extern',     kurzel) .then(() => bot.say(TextBot+`Die Extern      von "${kurzel}": http://sefzig.net/text/${kurzel}/#extern.`))     .then(() => 'text'); } },
+    text_html:       { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Html-URL        zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_html',       kurzel) .then(() => bot.say(TextBot+`Die Html        von "${kurzel}": http://sefzig.net/text/${kurzel}/#html.`))       .then(() => 'text'); } },
+    text_mobil:      { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Mobil-URL       zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_mobil',      kurzel) .then(() => bot.say(TextBot+`Die Mobil       von "${kurzel}": http://sefzig.net/text/${kurzel}/#mobil.`))      .then(() => 'text'); } },
+    text_solomo:     { prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Solomo-URL      zu generieren!'), receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_solomo',     kurzel) .then(() => bot.say(TextBot+`Die Solomo      von "${kurzel}": http://sefzig.net/text/${kurzel}/solomo/.`))     .then(() => 'text'); } },
     
  // -------------------------
  // Slack
@@ -306,7 +317,7 @@ module.exports = new Script({
             var befehl = message.text.trim().toUpperCase();
             
          // Nächster Schritt default
-            var gehezu = "slack";
+            var dann = "slack";
             
          // Befehle
             if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(SlackBot +'--Slack '
@@ -317,7 +328,7 @@ module.exports = new Script({
                                                               +'\n○ --Team'); }
             if ((~befehl.indexOf("--BOT")) ||
                 (~befehl.indexOf("--ABBRECHEN")))     { bot.say(SlackBot +'Zurück an Sefzig --Bot. Bis später!');
-                                                        gehezu = "register"; }
+                                                        dann = "register"; }
             
          // Inhalte
             if ((~befehl.indexOf("--UBER")) ||
@@ -330,7 +341,7 @@ module.exports = new Script({
             
          // Konversation fortführen
             return bot.setProp('text', 'gesprochen')
-                .then(() => gehezu);
+                .then(() => dann);
             
         }
         
