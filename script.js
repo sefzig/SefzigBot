@@ -250,8 +250,9 @@ module.exports = new Script({
                 (~befehl.indexOf("--TEXT")))          { bot.say(TextBot  +'--Text '
                                                               +'\n○ --Startseite '
                                                               +'\n○ --Hilfe '
+                                                              +'\n○ --URLs '
                                                               +'\n○ --Über');
-                                                        bot.say(TextBot  +'Andreas speichert interessante Links für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/)'); }
+                                                        bot.say(TextBot  +'Andreas schreibt interessante Texte für sich und andere: %[Linkliste öffnen](http://sefzig.net/link/liste/Text/)'); }
             if ((~befehl.indexOf("--BOT")) ||
                 (~befehl.indexOf("--ABBRECHEN")))     { bot.say(TextBot  +'Zurück an Sefzig --Bot. Bis später!');
                                                         gehezu = "register"; }
