@@ -73,7 +73,7 @@ module.exports = new Script({
             
             if  (~befehl.indexOf("--SLACK"))          { bot.say(SlackBot +'Andreas mag Interne Kommunikation und Automatisierung - er liebt Slack! Das sollte Ihr Team auch tun...');
                                                         bot.say(SlackBot +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
-                                                        bot.say(SlackBot +'Ich empfehle Ihnen seinen --Artikel, den --Blogpost und diverse --Links zu Slack. Wollen Sie Andreas offenem Slack --Team beitreten?');
+                                                        bot.say(SlackBot +'Lesen Sie Andreas --Artikel oder --Blogpost, öffnen Sie seine --Links oder treten Sie Andreas offenem Slack --Team bei.');
                                                         gehezu = "slack"; } 
             
          // -----------------
@@ -103,7 +103,7 @@ module.exports = new Script({
                                                               +'\n○ --Kompetenzen '
                                                               +'\n○ --Disziplinen '); }
             
-            if  (~befehl.indexOf("--PERSON"))         { bot.say(SefzigBot+'Lesen Sie den --Lebenslauf von Andreas, eine Liste seiner --Kompetenzen oder über die Marketing --Disziplinen, die er beherrscht.');
+            if  (~befehl.indexOf("--PERSON"))         { bot.say(SefzigBot+'Ich hätte da Andreas --Lebenslauf, eine Liste seiner --Kompetenzen und eine Liste der Marketing --Disziplinen, die er beherrscht.');
                                                         bot.say(SefzigBot+'[Bild:http://sefzig.net/text/seiten/SefzignetStartseite/dateien/SefzignetStartseiteFotoLogos.png]');
                                                         bot.say(SefzigBot+'Andreas ist 38 Jahre alt und lebt in Hamburg.'); }
             if  (~befehl.indexOf("--LEBENSLAUF"))     { bot.say(SefzigBot+'Sein Lebenslauf als druckbares PDF-Dokument: %[Lebenslauf.pdf](http://sefzig.net/text/seiten/Lebenslauf/dateien/Andreas_Sefzig_Lebenslauf.pdf)');
@@ -262,12 +262,25 @@ module.exports = new Script({
                                                         bot.say(TextBot  +'Hier die Dokumentation: [Text:text] ');
                                                         bot.say(TextBot  +'Andreas hat Text entwickelt, um sich und seinem Umfeld einen leichteren Umgang mit Texten zu verschaffen.'); }
             
+         // URL-Generator
+            if  (~befehl.indexOf("--EDITOR"))         { gehezu = "text_editor"; }
+            
          // Konversation fortführen
             return bot.setProp('text', 'gesprochen')
                 .then(() => gehezu);
             
         }
         
+    },
+    
+ // -------------------------
+ // Text: URL-Generator
+ // -------------------------
+    
+    text_editor: {
+        prompt: (bot) => bot.say(SefzigBot+'Schreiben Sie das Kürzel des Texts, um dessen Editor-URL zu generieren!'),
+        receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_editor', kurzel)
+        .then(() => bot.say(SefzigBot+`http://sefzig.net/text/${kurzel}/#editor`)) .then(() => 'text'); }
     },
 
  // -------------------------
@@ -297,8 +310,7 @@ module.exports = new Script({
          // Inhalte
             if ((~befehl.indexOf("--UBER")) ||
                 (~befehl.indexOf("--ÜBER")))          { bot.say(SlackBot +'Slack ist zur Zeit die beste Chat-Anwendung für Teams. Bedienfreundlich, automatisierbar und operationalisierbar. Über Slack wurde Andreas auf #Robogeddon aufmerksam!');
-                                                        bot.say(SlackBot +'[Bild:http://sefzig.net/text/seiten/SefzignetSlack/dateien/slack_logo.png]');
-                                                        bot.say(SlackBot +'Lesen Sie Andreas --Artikel oder --Blogpost, öffnen Sie seine --Links oder treten Sie Andreas offenem --Team bei.'); }
+                                                        bot.say(SlackBot +'[Bild:http://sefzig.net/text/seiten/SefzignetSlack/dateien/slack_logo.png]'); }
             if  (~befehl.indexOf("--ARTIKEL"))        { bot.say(SlackBot +'Andreas hat einen fundierten Artikel zu Slack geschrieben: [Text:Slack] Was Sie als Marketer über Slack wissen müssen.'); }
             if  (~befehl.indexOf("--BLOGPOST"))       { bot.say(SlackBot +'Lesen Sie auch Andreas Blogpost zu Slack: [Text:SefzignetBlogSlack] Was ist Slack und wie nutzt man es? '); }
             if  (~befehl.indexOf("--LINKS"))          { bot.say(SlackBot +'Andreas hat viele Artikel zu Slack gesammelt: [Linkliste:Slack;Artikel] '); }
