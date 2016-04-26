@@ -36,12 +36,39 @@ module.exports = new Script({
     nachname: {
         prompt: (bot) => bot.say(SefzigBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
-            var nachname = message.text; bot.setProp('nachname', nachname)
+            var nachname = message.text; 
+            bot.setProp('nachname', nachname)
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(SefzigBot+`${vorname} ${nachname}, danke.`))
-                .then(() => bot.say(SefzigBot+'Sie können hier jederzeit eine Nachricht an Andreas eingeben.'))
-                .then(() => bot.say(SefzigBot+'Unterhalten Sie sich solange mit mir! Bitte schreiben Sie --bot:'))
-                .then(() => 'register');
+                .then((vorname) => bot.say(SefzigBot+`Sie heissen also ${vorname} ${nachname}, korrekt? Bitte schreiben Sie --ja oder --nein.`))
+                .then(() => 'name');
+        }
+    },
+
+    name: {
+        receive: (bot, message) => {
+            
+            var antwort = message.text.trim().toUpperCase();
+            var name_falsch = "";
+            var dann = "";
+            
+            if (antwort == "--JA")   { 
+               
+               bot.say(SefzigBot+`Prima!`);
+               bot.say(AndreasSefzig+'Sie können hier jederzeit eine Nachricht an mich schreiben!');
+               bot.say(SefzigBot+'Oder unterhalten Sie sich mit mir! Bitte schreiben Sie --bot:');
+               name_falsch == "nein";
+               dann = "register";
+               
+            }
+            if (antwort == "--NEIN") {
+               
+               name_falsch == "ja";
+               dann = "vorname";
+               
+            }
+            
+            return bot.setProp('name_falsch', name_falsch)
+                .then(() => dann);
         }
     },
 
