@@ -40,7 +40,7 @@ module.exports = new Script({
             var nachname = message.text; 
             bot.setProp('nachname', nachname)
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(SefzigBot+`Sie heissen also ${vorname} ${nachname}, korrekt? Bitte schreiben Sie --ja oder --nein.`))
+                .then((vorname) => bot.say(SefzigBot+`Sie heissen ${vorname} ${nachname}, ist das richtig? Bitte schreiben Sie --ja oder --nein.`))
                 .then(() => 'name');
         }
     },
@@ -125,6 +125,7 @@ module.exports = new Script({
             if  (~befehl.indexOf("--ABBRECHEN"))      { bot.say(SefzigBot+'Sie können das Gespräch mit mir beenden'); }
             if  (~befehl.indexOf("--MOBIL"))          { bot.say(SefzigBot+'Diesen Chat mobil öffnen: [Bild:https://zxing.org/w/chart?cht=qr&chs=200x200&chld=L&choe=UTF-8&chl=http%3A%2F%2Fsefzigbot.herokuapp.com%2F]');
                                                         bot.say(SefzigBot+'(Leider werden Sie dort nicht wiedererkannt. Das sollte in einer späteren Version möglich sein...)'); }
+            if  (~befehl.indexOf("--NAME"))           { dann = "name"; }
             
          // -----------------
          // Person
