@@ -37,9 +37,8 @@ module.exports = new Script({
         prompt: (bot) => bot.say(SefzigBot+'Und mit Nachnamen?'),
         receive: (bot, message) => {
             var nachname = message.text;
-            return bot.getProp('vorname')
-                .setProp('nachname', nachname)
-                .then(() => bot.say(SefzigBot+`${vorname} ${nachname}, danke.`))
+            return bot.setProp('nachname', nachname)
+                .then(() => bot.say(SefzigBot+`${nachname}, danke.`))
                 .then(() => bot.say(SefzigBot+'Sie können hier jederzeit eine Nachricht an Andreas eingeben.'))
                 .then(() => bot.say(SefzigBot+'Unterhalten Sie sich solange mit mir! Bitte schreiben Sie --bot:'))
                 .then(() => 'register');
@@ -62,7 +61,7 @@ module.exports = new Script({
             
             if ((~befehl.indexOf("--LINK")) ||
                 (~befehl.indexOf("--LINKS")))         { bot.say(LinkBot  +'Andreas speichert viele interessante Links - für sich wie auch für Sie: [Linkliste:Allgemein] 1.000 Links, 6.000 Aufrufe!');
-                                                        bot.say(LinkBot  +'Steuern Sie mich mit diesen Befehlen: \n○ --Links \n○ --Listen \n○ --Liste \n○ --Eingabe \n○ --Einrichten \n○ --Admin \n○ --Uber');
+                                                        bot.say(LinkBot  +'Steuern Sie mich mit diesen Befehlen: \n○ --Eingabe \n○ --Liste \n○ --Listen \n○ --Einrichten \n○ --Admin \n○ --Uber');
                                                         bot.say(LinkBot  +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
                                                         dann = "link"; } 
             
@@ -206,12 +205,13 @@ module.exports = new Script({
             if  (~befehl.indexOf("--EINRICHTEN"))     { bot.say(LinkBot  +'Jeder kann Link benutzen. Die Einrichtung ist einfach und interaktiv: %[Link: Einrichtung](http://sefzig.net/link/einrichten/)'); }
             if  (~befehl.indexOf("--ADMIN"))          { bot.say(LinkBot  +'In der Administration werden die Links verwaltet: %[Link: Administration](http://sefzig.net/link/admin/)'); }
             if  (~befehl.indexOf("--UBER"))           { bot.say(LinkBot  +'"Link" ist  gut dokumentiert - hier Andreas Text dazu: %[Link: Dokumentation](http://sefzig.net/text/link/)'); }
+            if  (~befehl.indexOf("--LINKS"))          { bot.say(LinkBot  +'Alle Links von Andreas fließen in eine filterbare Linkliste ein: %[Link: Allgemeine Liste](http://sefzig.net/link/liste/)'); }
             if ((~befehl.indexOf("--UBER")) ||
                 (~befehl.indexOf("--ÜBER")))          { bot.say(LinkBot  +'"Link" ist eine Web-Anwendung zur Verwaltung von Links. Hier die Dokumentation: [Text:link] Link basiert auf der Open Source-Software Yourls: %[Externer Link: Yourls](http://yourls.org)'); }
             
          // Linklisten
-            if  (~befehl.indexOf("--LINKS"))          { bot.say(LinkBot  +'Alle Links von Andreas fließen in eine filterbare Linkliste ein: %[Link: Allgemeine Liste](http://sefzig.net/link/liste/)'); }
-            if  (~befehl.indexOf("--LISTEN"))         { bot.say(LinkBot  +'Empfohlene Linklisten '
+            if ((~befehl.indexOf("--LINKS")) ||
+                (~befehl.indexOf("--LISTEN")))        { bot.say(LinkBot  +'Empfohlene Linklisten '
                                                               +'\n○ --Werkzeuge '
                                                               +'\n○ --Mappe '
                                                               +'\n○ --Innovation '
