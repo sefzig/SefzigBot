@@ -36,8 +36,8 @@ module.exports = new Script({
     nachname: {
         prompt: (bot) => bot.say(SefzigBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
-            var nachname = message.text;
-            return bot.setProp('nachname', nachname).getProp('vorname')
+            var nachname = message.text; bot.setProp('nachname', nachname)
+            return bot.getProp('vorname')
                 .then((vorname) => bot.say(SefzigBot+`${vorname} ${nachname}, danke.`))
                 .then(() => bot.say(SefzigBot+'Sie können hier jederzeit eine Nachricht an Andreas eingeben.'))
                 .then(() => bot.say(SefzigBot+'Unterhalten Sie sich solange mit mir! Bitte schreiben Sie --bot:'))
