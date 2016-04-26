@@ -54,7 +54,7 @@ module.exports = new Script({
             if (antwort == "--JA")   { 
                
                bot.say(SefzigBot+`Prima!`);
-               bot.say(AndreasSefzig+'Sie können hier jederzeit eine Nachricht an mich schreiben!');
+               bot.say('Sie können hier jederzeit eine Nachricht an mich schreiben!');
                bot.say(SefzigBot+'Oder unterhalten Sie sich mit mir! Bitte schreiben Sie --bot:');
                name_falsch == "nein";
                dann = "register";
