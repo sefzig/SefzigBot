@@ -9,7 +9,7 @@
        
     // Chat starten
        var starten = "chat";
-       window.setTimeout(function() { start(starten); }, 1000);
+    // window.setTimeout(function() { start(starten); }, 1000);
        
     // Benutzeroberfläche
        $("[data-start]").click(function(e) {

@@ -189,6 +189,17 @@ module.exports = new Script({
                                                         bot.say(SefzigBot+'Schreiben Sie einen Tweet über @sefzig: %[@sefzig twittern](http://sefzig.net/link/TwitterTweet/)'); }
             
          // -----------------
+         // Simon the cat
+         // -----------------
+            
+            if  (~befehl.indexOf("--MAU"))            { bot.say(SefzigBot+'--maudreh, --maukuschel, --maubox, --maukugel, mauohr'); }
+            if  (~befehl.indexOf("--MAUDREH"))        { bot.say(SefzigBot+'[Bild:https://49.media.tumblr.com/14633d451a8cb2642fd644fdd9a0a319/tumblr_meqaedpljZ1qal0zgo1_r1_500.gif ]'); }
+            if  (~befehl.indexOf("--MAUKUSCHEL"))     { bot.say(SefzigBot+'[Bild:http://2.bp.blogspot.com/-A0RNd-nRhyc/UDfcMvTV-MI/AAAAAAAAC6M/cKd3J47vqmg/s1600/tumblr_lvqjn0woFq1qerhg8o1_500_large.gif]'); }
+            if  (~befehl.indexOf("--MAUBOX"))         { bot.say(SefzigBot+'[Bild:http://ic.pics.livejournal.com/akira_001/66442224/134158/134158_900.gif]'); }
+            if  (~befehl.indexOf("--MAUKUGEL"))       { bot.say(SefzigBot+'[Bild:https://media.giphy.com/media/NFRXs0b3DyIve/giphy.gif]'); }
+            if  (~befehl.indexOf("--MAUOHR"))         { bot.say(SefzigBot+'[Bild:https://media.giphy.com/media/k03ZWbT5M7QfC/giphy.gif]'); }
+            
+         // -----------------
          // Tests
          // -----------------
          
