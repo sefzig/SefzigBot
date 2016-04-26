@@ -34,12 +34,11 @@ module.exports = new Script({
     },
 
     nachname: {
-        prompt: (bot) => bot.say(SefzigBot+'Und mit Nachnamen?'),
+        prompt: (bot) => bot.say(SefzigBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
             var nachname = message.text;
-            return bot.getProp('vorname')
-                .setProp('nachname', nachname)
-                .then(() => bot.say(SefzigBot+`${vorname} ${nachname}, danke.`))
+            return bot.setProp('nachname', nachname).getProp('vorname')
+                .then((vorname) => bot.say(SefzigBot+`${vorname} ${nachname}, danke.`))
                 .then(() => bot.say(SefzigBot+'Sie können hier jederzeit eine Nachricht an Andreas eingeben.'))
                 .then(() => bot.say(SefzigBot+'Unterhalten Sie sich solange mit mir! Bitte schreiben Sie --bot:'))
                 .then(() => 'register');
