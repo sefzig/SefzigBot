@@ -40,7 +40,8 @@ module.exports = new Script({
             var nachname = message.text; 
             bot.setProp('nachname', nachname)
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(SefzigBot+`Sie heissen ${vorname} ${nachname}, ist das richtig? Bitte schreiben Sie --ja oder --nein.`))
+                .then((vorname) => bot.say(SefzigBot+`Sie heissen ${vorname} ${nachname}, ist das richtig?`))
+                .then((vorname) => bot.say(SefzigBot+`Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!`))
                 .then(() => 'name');
         }
     },
