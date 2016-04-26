@@ -222,10 +222,11 @@ module.exports = new Script({
             if  (~befehl.indexOf("--INNOVATION"))     { bot.say(LinkBot  +'Links zu innovativen Ideen und Techniken aus Marketing und Kultur: %[Linkliste: Innovationen](http://sefzig.net/link/liste/Innovation/)'); }
             if  (~befehl.indexOf("--RTM"))            { bot.say(LinkBot  +'Real Time Messaging wird schon 2016 Robogeddon über das Marketing bringen! %[Linkliste: Rtm](http://sefzig.net/link/liste/Rtm/)'); }
             if  (~befehl.indexOf("--ANHANG"))         { bot.say(LinkBot  +'In dieser Liste hält Andreas Unterhaltsames fest: %[Linkliste: Anhang](http://sefzig.net/link/liste/Anhang/)'); }
-            if  (~befehl.indexOf("--LISTE")))         { dann = "link_liste"; }
+            
+         // URL-Generator
+            if  (~befehl.indexOf("--LISTE"))          { dann = "link_liste"; }
             
          // Konversation fortführen
-         // .then(function(){ bot.say(''); })
             return bot.setProp('link', 'gesprochen')
                 .then(() => dann);
             
@@ -235,11 +236,12 @@ module.exports = new Script({
 
  // URL-Generator 
     link_liste: { 
-       prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel der Linkliste, um deren URLs zu generieren!'), 
-       receive: (bot, message) => { var kurzel = message.text; return bot.setProp('link_liste', kurzel) .then(() => 
-       bot.say(LinkBot+`Die Linkliste "${kurzel}": http://sefzig.net/link/liste/${kurzel}/.`)) .then(() => 
-       bot.say(LinkBot+`Der RSS-Feed  von "${kurzel}": http://sefzig.net/link/liste/${kurzel}/rss/.`)) .then(() => 
-       bot.say(LinkBot+`Der Json-Feed von "${kurzel}": http://sefzig.net/link/liste/${kurzel}/json/.`)) .then(() => 'link'); } 
+       prompt: (bot) => bot.say(LinkBot+'Schreiben Sie das Kürzel der Linkliste, um deren URLs zu generieren!'), 
+       receive: (bot, message) => { var kurzel = message.text; return bot.setProp('link_liste', kurzel)    .then(() => 
+          bot.say(LinkBot+`Die Linkliste     "${kurzel}": http://sefzig.net/link/liste/${kurzel}/.`))      .then(() => 
+          bot.say(LinkBot+`Der RSS-Feed  von "${kurzel}": http://sefzig.net/link/liste/${kurzel}/rss/.`))  .then(() => 
+          bot.say(LinkBot+`Der Json-Feed von "${kurzel}": http://sefzig.net/link/liste/${kurzel}/json/.`)) .then(() => 'link');
+       }
     },
     
  // -------------------------
