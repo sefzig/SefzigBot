@@ -130,6 +130,24 @@
        border-color: silver !important;
     }
     
+    #sk-container.sk-embedded #sk-wrapper {
+       background-color: white !important;
+    }
+    .sk-msg {
+       background-color: #dddddd !important;
+    }
+    #sk-footer {
+       background-color: #dddddd !important;
+       color: gray !important;
+    }
+    #sk-footer input {
+       background-color: #dddddd !important;
+       color: black !important;
+    }
+    #sk-container.sk-embedded #sk-footer .send.active {
+       color: black !important;
+    }
+    
     #fenster { 
        z-index: 3000;
        position: fixed;
