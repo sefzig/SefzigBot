@@ -278,9 +278,9 @@ module.exports = new Script({
  // -------------------------
     
     text_editor: {
-        prompt: (bot) => bot.say(SefzigBot+'Schreiben Sie das Kürzel des Texts, um dessen Editor-URL zu generieren!'),
-        receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_editor', kurzel)
-        .then(() => bot.say(SefzigBot+`http://sefzig.net/text/${kurzel}/#editor`)) .then(() => 'text'); }
+        prompt: (bot) => bot.say(TextBot+'Schreiben Sie das Kürzel des Texts, um dessen Editor-URL zu generieren!'),
+        receive: (bot, message) => { var kurzel = message.text; return bot.setProp('text_editor', kurzel) .then(() => 
+        bot.say(TextBot+`Die URL des Editors für "${kurzel}" ist http://sefzig.net/text/${kurzel}/#editor.`)) .then(() => 'text'); }
     },
 
  // -------------------------
