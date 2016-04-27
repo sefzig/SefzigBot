@@ -109,22 +109,22 @@ module.exports = new Script({
          // -----------------
             
             if  (~befehl.indexOf("--KREATION"))       { dann = "kreation"; } 
-         // if  (~befehl.indexOf("--BERATUNG"))       { dann = "beratung"; } 
-         // if  (~befehl.indexOf("--TECHNIK"))        { dann = "texhnik";  } 
             
          // -----------------
          // System
          // -----------------
          
-            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot+'--Befehle '
+            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot+'--Empfang '
+                                                              +'\n○ --Befehle '
                                                               +'\n○ --Mobil '
-                                                              +'\n○ --Über ');
-            if  (~befehl.indexOf("--MOBIL"))          { bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Bild:https://zxing.org/w/chart?cht=qr&chs=200x200&chld=L&choe=UTF-8&chl=http%3A%2F%2Fsefzigbot.herokuapp.com?v=chat%2F]');
-                                                        bot.say(EmpfangsBot+'(Leider werden Sie dort nicht wiedererkannt. Das sollte in einer späteren Version möglich sein...)'); }
+                                                              +'\n○ --Über '); }
+            
             if ((~befehl.indexOf("--UBER")) ||
                 (~befehl.indexOf("--ÜBER")))          { bot.say(EmpfangsBot+'#Robogeddon ist auf Bots für externe und interne Unternehmens-Kommunikation spezialisiert.');
                                                         bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig und mehreren Bots.');
                                                         bot.say(EmpfangsBot+'Empfang Befehle: ○ --Folgt.'); }
+            if  (~befehl.indexOf("--MOBIL"))          { bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Bild:https://zxing.org/w/chart?cht=qr&chs=200x200&chld=L&choe=UTF-8&chl=http%3A%2F%2Fsefzigbot.herokuapp.com?v=chat%2F]');
+                                                        bot.say(EmpfangsBot+'(Leider werden Sie dort nicht wiedererkannt. Das sollte in einer späteren Version möglich sein...)'); }
             
          // -----------------
          // Tests
@@ -139,9 +139,9 @@ module.exports = new Script({
          
             if  (~befehl.indexOf("--VORLAGE"))        { bot.say(EmpfangsBot+'Text: Vorlage.'); }
             
-         // Konversation fortführen
+         // .then(function(){ bot.say(''); })
             return bot.setProp('register', 'gesprochen')
-            .then(() => dann);
+                .then(() => dann);
         }
     },
 
@@ -163,18 +163,23 @@ module.exports = new Script({
             if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(KreationsBot +'--Kreation '
                                                               +'\n○ --Folgt '
                                                               +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '); }
+                                                              +'\n○ --Folgt '
+                                                              +'\n○ --Folgt '
+                                                              +'\n○ --Folgt'); }
             if ((~befehl.indexOf("--ZURÜCK")) ||
-                (~befehl.indexOf("--ABBRECHEN")))     { bot.say(KreationsBot+'Zurück an --Empfangs-Bot. Bis später!');
+                (~befehl.indexOf("--ABBRECHEN")))     { bot.say(KreationsBot +'Zurück an --Empfang-s-Bot. Bis später!');
                                                         dann = "register"; }
             
          // Inhalte
+            if ((~befehl.indexOf("--UBER")) ||
+                (~befehl.indexOf("--ÜBER")))          { bot.say(KreationsBot +'Text Über 1.');
+                                                        bot.say(KreationsBot +'Text Über 2.'); }
             if  (~befehl.indexOf("--ARTIKEL"))        { bot.say(KreationsBot +'Text Artikel.'); }
             if  (~befehl.indexOf("--BLOGPOST"))       { bot.say(KreationsBot +'Text Blogpost.'); }
             if  (~befehl.indexOf("--LINKS"))          { bot.say(KreationsBot +'Text Links.'); }
             
          // Konversation fortführen
-            return bot.setProp('text', 'gesprochen') 
+            return bot.setProp('text', 'gesprochen')
                 .then(() => dann);
             
         }
