@@ -109,8 +109,8 @@ module.exports = new Script({
          // -----------------
             
             if  (~befehl.indexOf("--KREATION"))       { dann = "kreation"; } 
-            if  (~befehl.indexOf("--BERATUNG"))       { dann = "beratung"; } 
-            if  (~befehl.indexOf("--TECHNIK"))        { dann = "texhnik";  } 
+         // if  (~befehl.indexOf("--BERATUNG"))       { dann = "beratung"; } 
+         // if  (~befehl.indexOf("--TECHNIK"))        { dann = "texhnik";  } 
             
          // -----------------
          // System
@@ -163,11 +163,9 @@ module.exports = new Script({
             if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(KreationsBot +'--Kreation '
                                                               +'\n○ --Folgt '
                                                               +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt'); }
+                                                              +'\n○ --Folgt '); }
             if ((~befehl.indexOf("--ZURÜCK")) ||
-                (~befehl.indexOf("--ABBRECHEN")))     { bot.say(KreationsBot +'Zurück an --Empfangs-Bot. Bis später!');
+                (~befehl.indexOf("--ABBRECHEN")))     { bot.say(KreationsBot+'Zurück an --Empfangs-Bot. Bis später!');
                                                         dann = "register"; }
             
          // Inhalte
