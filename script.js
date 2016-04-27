@@ -98,6 +98,10 @@ module.exports = new Script({
                                                         bot.say(SlackBot +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
                                                         bot.say(SlackBot +'Lesen Sie Andreas --Artikel oder --Blogpost, öffnen Sie seine --Links oder treten Sie Andreas offenem Slack --Team bei.');
                                                         dann = "slack"; } 
+            if (~befehl.indexOf("--EMPFANG"))         { bot.say(EmpfangsBot+'Empfang 1');
+                                                        bot.say(EmpfangsBot+'Empfang 2');
+                                                        bot.say(EmpfangsBot+'Empfang 3');
+                                                        dann = "empfang"; } 
             
          // -----------------
          // System
