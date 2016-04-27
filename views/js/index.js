@@ -261,26 +261,18 @@
              
           }
           
-       // Alle Absender verbergen
-          $(".sk-from.bot"+zufall).css("display","none");
-          $(".sk-from.bot"+zufall).parent().parent().css("padding-top","10px");
-          
        // Bei folgendem Absender verbergen
-          var vorganger = $(".sk-from.bot"+zufall).parent().parent().prev().children().filter(".sk-from").html();
-          console.log("> Vorganger: "+vorganger+", Name: "+name+"");
-          if (vorganger == name) { 
+          var vorganger = $(".sk-from.bot"+zufall).parent().parent().prev().children().filter(".sk-msg-wrapper").children().filter(".sk-from").html();
+          if (vorganger == name) {
              
+             console.log("> Vorganger verbergen: "+vorganger+", Dieser: "+name+"");
              $(".sk-from.bot"+zufall).css("display","none");
-             $(".sk-from.bot"+zufall).parent().parent().css("padding-top","0px");
-             
-          }
-          else { 
-             
-             $(".sk-from.bot"+zufall).css("display","block");
-             $(".sk-from.bot"+zufall).parent().parent().css("padding-top","30px");
+             $(".sk-from.bot"+zufall).parent().parent().css("padding-top","10px");
              
           }
        // console.log('> ist_erster: '+ist_erster); 
+          vorganger = "";
+          name = "";
           ist_erster = "";
           
        }

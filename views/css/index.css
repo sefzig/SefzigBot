@@ -180,7 +180,7 @@
        height: calc(100% - 98px) !important;
     }
     
-    #sk-container.sk-embedded #sk-conversation .sk-row.sk-left-row .sk-msg-avatar {
+    #sk-conversation .sk-row.sk-left-row .sk-msg-avatar {
        border-radius: 5px;
     }
     
@@ -202,5 +202,11 @@
        width: 40px;
        height: 40px;
        cursor: pointer;
+    }
+    
+    .sk-from {
+       
+       display: block;
+       
     }
     
