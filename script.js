@@ -94,9 +94,9 @@ module.exports = new Script({
          // Bots
          // -----------------
             
-            if  (~befehl.indexOf("--EMPFANG"))        { bot.say(SlackBot +'Andreas mag Interne Kommunikation und Automatisierung - er liebt Slack! Das sollte Ihr Team auch tun...');
-                                                        bot.say(SlackBot +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
-                                                        bot.say(SlackBot +'Lesen Sie Andreas --Artikel oder --Blogpost, öffnen Sie seine --Links oder treten Sie Andreas offenem Slack --Team bei.');
+            if  (~befehl.indexOf("--EMPFANG"))        { bot.say(EmpfangsBot+'Empfang 1.');
+                                                        bot.say(EmpfangsBot+'Empfang 2.');
+                                                        bot.say(EmpfangsBot+'Empfang 3.');
                                                         dann = "empfang"; } 
             
          // -----------------
