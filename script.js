@@ -22,45 +22,7 @@ module.exports = new Script({
     
  // Übergabe an Register
     start: {
-        receive: (bot) => {
-            return bot.say(SefzigBot+'Wenn Andreas gerade online ist, sieht er dieses Gespräch und kann beitreten.')
-                .then(() => 'register'); /* <-- register */
-        }
-    },
-
- // -------------------------
- // Register
- // -------------------------
-         
-    register: {
-        receive: (bot, message) => {
-            
-         // Befehl normalisieren
-            var befehl = message.text.trim().toUpperCase();
-            
-         // Nächster Schritt default
-            var dann = "register";
-            
-         // System
-            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot+'--empfang '
-                                                              +'\n○ --kreation '
-                                                              +'\n○ --beratung '
-                                                              +'\n○ --technik '
-                                                              +'\n○ --sefzig '); }
-            
-         // Bots
-            if (~befehl.indexOf("--EMPFANG"))         { bot.say(EmpfangsBot+'Empfang 1');
-                                                        bot.say(EmpfangsBot+'Empfang 2');
-                                                        bot.say(EmpfangsBot+'Empfang 3');
-                                                        dann = "empfang"; } 
-            
-         // Vorlage
-            if  (~befehl.indexOf("--VORLAGE"))        { bot.say(EmpfangsBot+'Text: Vorlage.'); }
-            
-         // Register Antwort
-            return bot.setProp('register', 'gesprochen')
-            .then(() => dann);
-        }
+        receive: () => 'register'
     },
 
  // -------------------------
@@ -129,6 +91,41 @@ module.exports = new Script({
             .then((vorname) => bot.say(EmpfangsBot+`Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!`))
             .then(() => 'name');
             
+        }
+    },
+
+ // -------------------------
+ // Register
+ // -------------------------
+         
+    register: {
+        receive: (bot, message) => {
+            
+         // Befehl normalisieren
+            var befehl = message.text.trim().toUpperCase();
+            
+         // Nächster Schritt default
+            var dann = "register";
+            
+         // System
+            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot+'--empfang '
+                                                              +'\n○ --kreation '
+                                                              +'\n○ --beratung '
+                                                              +'\n○ --technik '
+                                                              +'\n○ --sefzig '); }
+            
+         // Bots
+            if (~befehl.indexOf("--EMPFANG"))         { bot.say(EmpfangsBot+'Empfang 1');
+                                                        bot.say(EmpfangsBot+'Empfang 2');
+                                                        bot.say(EmpfangsBot+'Empfang 3');
+                                                        dann = "empfang"; } 
+            
+         // Vorlage
+            if  (~befehl.indexOf("--VORLAGE"))        { bot.say(EmpfangsBot+'Text: Vorlage.'); }
+            
+         // Register Antwort
+            return bot.setProp('register', 'gesprochen')
+            .then(() => dann);
         }
     },
 
