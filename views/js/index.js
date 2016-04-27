@@ -9,7 +9,10 @@
        
     // Chat starten
        var starten = "chat";
-       window.setTimeout(function() { start(starten); }, 1000);
+       var ansicht = getParameters("v");
+       if (ansicht == "chat") { starten = "chat"; }
+       if (ansicht == "data") { starten = "daten"; }
+       window.setTimeout(function() { start(starten); }, 100);
        
     // Benutzeroberfläche
        $("[data-start]").click(function(e) {

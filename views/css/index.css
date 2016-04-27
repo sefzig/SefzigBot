@@ -87,7 +87,7 @@
        bottom: 0px;
        padding-top: 3px !important;
        padding-bottom: 7px !important;
-       height: 50px !important;
+       height: 55px !important;
     }
     .sk-messages {
        padding-bottom: 0px !important;
@@ -132,6 +132,11 @@
        background-color: silver !important;
        border-color: silver !important;
     }
+    #sk-container.sk-embedded #sk-conversation .sk-row.sk-left-row .sk-msg-wrapper .sk-msg-image:after, 
+    #sk-container.sk-embedded #sk-conversation .sk-row.sk-left-row .sk-msg-wrapper .sk-msg:after {
+       border-color: transparent !important;
+       border-right-color: #dddddd !important;
+    }
     
     #sk-container.sk-embedded #sk-wrapper {
        background-color: white !important;
@@ -147,16 +152,16 @@
        background-color: #dddddd !important;
        color: black !important;
     }
-    #sk-container.sk-embedded #sk-footer .send.active {
+    #sk-footer .send.active {
        color: black !important;
     }
-    #sk-container.sk-embedded #sk-conversation::-webkit-scrollbar {
-       background-color: white;
+    #sk-conversation::-webkit-scrollbar {
+       background-color: white !important;
     }
-    #sk-container.sk-embedded #sk-conversation::-webkit-scrollbar-thumb {
+    #sk-conversation::-webkit-scrollbar-thumb {
        border-radius: 10px;
        box-shadow: none;
-       background-color: #dddddd;
+       background-color: #dddddd !important;
     }
     
     #fenster { 
