@@ -65,3 +65,26 @@
        }
     }
     
+    function blinken(count) {
+       
+       $("#sk-footer > *").fadeIn(500);
+       var status = $("body").attr("data-blink", count);
+       
+       window.setInterval(function() {
+          
+          var stand = $("body").attr("data-blink");
+          if (stand > 0) {
+          
+             $("#sk-footer > *").fadeOut(500).delay(500).fadeIn(500);
+             $("#sk-footer .message-input").focus();
+             $("body").attr("data-blink", stand - 1);
+             console.log("> Blink: "+stand);
+             
+          }
+          $("#sk-footer .message-input").focus();
+          
+       }, 1000);
+       
+       $("#sk-footer").click(function() { $("body").attr("data-blink", "0"); $("#sk-footer > *").stop( true, true ).css("display", "inline-block").find(".message-input").focus(); });
+             
+    }

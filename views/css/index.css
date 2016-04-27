@@ -159,8 +159,8 @@
        background-color: #dddddd !important;
        color: gray !important;
     }
-    #sk-footer input {
-       background-color: #dddddd !important;
+    #sk-footer .message-input {
+       background-color: #dddddd;
        color: black !important;
     }
     #sk-footer .send.active {

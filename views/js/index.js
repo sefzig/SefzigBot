@@ -38,13 +38,12 @@
        
     // Ansichten anpassen
        $("#seite > div").fadeOut();
-       $("#seite #"+methode).fadeIn();
-       
-    // Konsole beginnen
-       console.log('Neues Gespräch');
        
     // Chat starten
        if (methode == "chat") {
+          
+       // Konsole beginnen
+          console.log('Neues Gespräch');
           
        // Umgebungs-Parameter einsammeln
           var vorname =  Cookies.get('SefzigbotVorname');  if ((!vorname)  || (vorname  == "") || (vorname  == "Vorname"))        { vorname  = "Nicht"; }
@@ -92,9 +91,16 @@
              
           });
           
+       // Fokus auf Eingabe
+          $("#sk-footer form input.message-input").focus();
+          
        }
        
        anpassen();
+       
+       $("#seite #"+methode).fadeIn();
+       window.setTimeout(function() { blinken(3); }, 2000);
+       $(".message-input").focus();
        
     }
     
@@ -338,7 +344,10 @@
  // Klicks auf Befehle
     function befehlen(befehl) {
        
-       $(".input-container .message-input").val(befehl).trigger("keydown", {which: 50});
+       $("#sk-footer form input.message-input").val(befehl);
+       $("#sk-footer form input.message-input").change();
+       $("#sk-footer form input.message-input").focus();
+    // $("#sk-footer form .send").trigger("click");
        
     }
     
