@@ -260,9 +260,6 @@
           
        }
        
-    // Inhalte im Interval anpassen
-       window.setTimeout(function() {
-          
           $(".sk-from").each(function() {
              
              var dieser =    $(this).html();
@@ -285,8 +282,6 @@
              dieser = "";
              
           });
-       
-       }, 1000);
        
        return text_string; 
        
