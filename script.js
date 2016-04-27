@@ -19,8 +19,9 @@ module.exports = new Script({
     start: {
     	
         receive: (bot) => {
-            return bot.say(EmpfangsBot+'Darf ich Ihnen uns kurz vorstellen? Dann schreiben Sie bitte --Empfang!')
+            return bot.say(EmpfangsBot+'Darf ich Ihnen uns kurz vorstellen? Dann schreiben Sie bitte --Agentur!')
                 .then(() => bot.say(EmpfangsBot+'Oder darf ich Ihnen unsere --Kreation,  --Beratung und --Technik vorstellen?'))
+                .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online, wurde aber über Ihr Eintreffen informiert.'))
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
         }
     },
