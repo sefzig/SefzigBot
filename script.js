@@ -98,11 +98,6 @@ module.exports = new Script({
                                                         bot.say(SlackBot +'Lesen Sie Andreas --Artikel oder --Blogpost, öffnen Sie seine --Links oder treten Sie Andreas offenem Slack --Team bei.');
                                                         dann = "slack"; } 
             
-            if (~befehl.indexOf("--EMPFANG"))         { bot.say(EmpfangsBot+'Empfang 1');
-                                                        bot.say(EmpfangsBot+'Empfang 2');
-                                                        bot.say(EmpfangsBot+'Empfang 3');
-                                                        dann = "empfang"; } 
-            
          // -----------------
          // System
          // -----------------
@@ -137,6 +132,47 @@ module.exports = new Script({
             return bot.setProp('register', 'gesprochen')
                 .then(() => dann);
         }
+    },
+
+ // -------------------------
+ // Slack
+ // -------------------------
+    
+    slack: {
+        receive: (bot, message) => {
+            
+         // Befehl normalisieren
+            var befehl = message.text.trim().toUpperCase();
+            
+         // Nächster Schritt default
+            var dann = "slack";
+            
+         // Befehle
+            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(SlackBot +'--Slack '
+                                                              +'\n○ --Über '
+                                                              +'\n○ --Artikel '
+                                                              +'\n○ --Blogpost '
+                                                              +'\n○ --Links '
+                                                              +'\n○ --Team'); }
+            if ((~befehl.indexOf("--BOT")) ||
+                (~befehl.indexOf("--ABBRECHEN")))     { bot.say(SlackBot +'Zurück an Sefzig --Bot. Bis später!');
+                                                        dann = "register"; }
+            
+         // Inhalte
+            if ((~befehl.indexOf("--UBER")) ||
+                (~befehl.indexOf("--ÜBER")))          { bot.say(SlackBot +'Slack ist zur Zeit die beste Chat-Anwendung für Teams. Bedienfreundlich, automatisierbar und operationalisierbar. Über Slack wurde Andreas auf #Robogeddon aufmerksam!');
+                                                        bot.say(SlackBot +'[Bild:http://sefzig.net/text/seiten/SefzignetSlack/dateien/slack_logo.png]'); }
+            if  (~befehl.indexOf("--ARTIKEL"))        { bot.say(SlackBot +'Andreas hat einen fundierten Artikel zu Slack geschrieben: [Text:Slack] Was Sie als Marketer über Slack wissen müssen.'); }
+            if  (~befehl.indexOf("--BLOGPOST"))       { bot.say(SlackBot +'Lesen Sie auch Andreas Blogpost zu Slack: [Text:SefzignetBlogSlack] Was ist Slack und wie nutzt man es? '); }
+            if  (~befehl.indexOf("--LINKS"))          { bot.say(SlackBot +'Andreas hat viele Artikel zu Slack gesammelt: [Linkliste:Slack;Artikel] '); }
+            if  (~befehl.indexOf("--TEAM"))           { bot.say(SlackBot +'Treten Sie dem offenen Slack-Team von Andreas bei, um sich mit ihm zu beraten und um Slack im laufenden Betrieb zu sehen: [Button:Anmeldung,http://sefzig.net/link/SlackAnmeldung/] '); }
+            
+         // Konversation fortführen
+            return bot.setProp('text', 'gesprochen')
+                .then(() => dann);
+            
+        }
+        
     },
 
  // -------------------------
