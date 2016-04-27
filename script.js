@@ -19,7 +19,7 @@ module.exports = new Script({
          
     start: {
         receive: (bot) => {
-            return bot.say(SefzigBot+'Wenn Andreas gerade online ist, sieht er dieses Gespräch und kann beitreten.')
+            return bot.say(SefzigBot+'Neues Skript.')
                 .then(() => 'vorname'); /* <-- register */
         }
     },
