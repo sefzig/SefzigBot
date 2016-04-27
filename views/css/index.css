@@ -80,7 +80,7 @@
        height: 45px;
     }
     #sk-conversation {
-       top: 40px;
+       top: 42px;
        bottom: 0px;
     }
     #sk-footer {
@@ -155,14 +155,17 @@
     #sk-footer .send.active {
        color: black !important;
     }
-    #sk-conversation::-webkit-scrollbar-track,
-    #sk-conversation::-webkit-scrollbar {
+    #sk-conversation::-webkit-scrollbar,
+    #sk-conversation::-webkit-scrollbar-track {
        background-color: white !important;
     }
     #sk-conversation::-webkit-scrollbar-thumb {
        border-radius: 8px !important;
        box-shadow: none !important;
        background-color: #dddddd !important;
+    }
+    #sk-conversation {
+       height: calc(100% - 98px) !important;
     }
     
     #fenster { 
