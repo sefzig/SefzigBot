@@ -6,6 +6,7 @@ const LinkBot = "[LinkBot] ";
 const TextBot = "[TextBot] ";
 const SlackBot = "[SlackBot] ";
 const AndreasSefzig = "[AndreasSefzig] ";
+const Empfangsbot = "[EmpfangsBot] ";
 
 module.exports = new Script({
     processing: {
