@@ -155,12 +155,13 @@
     #sk-footer .send.active {
        color: black !important;
     }
+    #sk-conversation::-webkit-scrollbar-track,
     #sk-conversation::-webkit-scrollbar {
        background-color: white !important;
     }
     #sk-conversation::-webkit-scrollbar-thumb {
-       border-radius: 10px;
-       box-shadow: none;
+       border-radius: 8px !important;
+       box-shadow: none !important;
        background-color: #dddddd !important;
     }
     
