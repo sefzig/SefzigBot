@@ -22,9 +22,7 @@ module.exports = new Script({
     
  // Übergabe an Register
     start: {
-        receive: (bot) => {
-            () => 'register')
-        }
+        receive: () => 'register'
     },
 
  // -------------------------
@@ -60,9 +58,9 @@ module.exports = new Script({
          
             if  (~befehl.indexOf("--VORLAGE"))        { bot.say(EmpfangsBot+'Text: Vorlage.'); }
             
-         // .then(function(){ bot.say(''); })
+         // Register Antwort
             return bot.setProp('register', 'gesprochen')
-                .then(() => dann);
+            .then(() => dann);
         }
     },
 
@@ -71,6 +69,7 @@ module.exports = new Script({
  // -------------------------
     
     name: {
+    	
         receive: (bot, message) => {
             
             var antwort = message.text.trim().toUpperCase();
@@ -98,29 +97,39 @@ module.exports = new Script({
             }
             
             return bot.setProp('name_falsch', name_falsch)
-                .then(() => dann);
+            .then(() => dann);
         }
     },
 
     vorname: {
+        
         prompt: (bot) => bot.say(EmpfangsBot+'Wie heissen Sie mit Vornamen?'),
+        
         receive: (bot, message) => {
+            
             var vorname = message.text;
+            
             return bot.setProp('vorname', vorname)
-                .then(() => bot.say(EmpfangsBot+`${vorname}, prima.`))
-                .then(() => 'nachname');
+            .then(() => bot.say(EmpfangsBot+`${vorname}, prima.`))
+            .then(() => 'nachname');
+            
         }
     },
 
     nachname: {
+    	
         prompt: (bot) => bot.say(EmpfangsBot+'Und wie heissen Sie mit Nachnamen?'),
+        
         receive: (bot, message) => {
+            
             var nachname = message.text; 
             bot.setProp('nachname', nachname)
+            
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(EmpfangsBot+`Sie heissen ${vorname} ${nachname}, ist das richtig?`))
-                .then((vorname) => bot.say(EmpfangsBot+`Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!`))
-                .then(() => 'name');
+            .then((vorname) => bot.say(EmpfangsBot+`Sie heissen ${vorname} ${nachname}, ist das richtig?`))
+            .then((vorname) => bot.say(EmpfangsBot+`Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!`))
+            .then(() => 'name');
+            
         }
     },
 
