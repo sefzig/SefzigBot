@@ -85,6 +85,9 @@
     }
     #sk-footer {
        bottom: 0px;
+       padding-top: 3px !important;
+       padding-bottom: 7px !important;
+       height: 50px !important;
     }
     .sk-messages {
        padding-bottom: 0px !important;
@@ -146,6 +149,14 @@
     }
     #sk-container.sk-embedded #sk-footer .send.active {
        color: black !important;
+    }
+    #sk-container.sk-embedded #sk-conversation::-webkit-scrollbar {
+       background-color: white;
+    }
+    #sk-container.sk-embedded #sk-conversation::-webkit-scrollbar-thumb {
+       border-radius: 10px;
+       box-shadow: none;
+       background-color: #dddddd;
     }
     
     #fenster { 

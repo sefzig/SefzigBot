@@ -55,7 +55,6 @@ module.exports = new Script({
             
             if (antwort == "--JA")   { 
                
-               bot.say(SefzigBot+`Prima!`);
                bot.say(SefzigBot+'Sie können hier jederzeit eine Nachricht an Andreas schreiben!');
                bot.say(SefzigBot+'Unterhalten Sie sich mit mir: Bitte schreiben Sie --bot:');
                name_falsch == "nein";
