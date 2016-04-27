@@ -19,7 +19,7 @@ module.exports = new Script({
     start: {
     	
         receive: (bot) => {
-            return bot.say(EmpfangsBot+'Darf ich uns kurz vorstellen? Dann schreiben Sie bitte --Agentur!')
+            return bot.say(EmpfangsBot+'Darf ich Ihnen kurz unsere Agentur vorstellen? Dann schreiben Sie bitte --Agentur!')
                 .then(() => bot.say(EmpfangsBot+'Oder darf ich Ihnen unsere --Kreation,  --Beratung und --Technik vorstellen?'))
                 .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online, wurde aber über Ihr Eintreffen informiert.'))
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
@@ -109,9 +109,12 @@ module.exports = new Script({
          // Bots
          // -----------------
             
-            if  (~befehl.indexOf("--KREATION"))       { dann = "kreation"; } 
-         // if  (~befehl.indexOf("--BERATUNG"))       { dann = "beratung"; } 
-         // if  (~befehl.indexOf("--TECHNIK"))        { dann = "technik";  } 
+            if  (~befehl.indexOf("--KREATION"))       { bot.say(KreationsBot+'Hallo, ich bin Alice, der Kreations-Bot.');
+                                                        bot.say(KreationsBot+'Schreiben Sie --empfang, um wieder mit Erika zu sprechen.');
+                                                        bot.say(KreationsBot+'Befehle Kreation: --Folgt.');
+                                                        dann = "kreation"; } 
+            if  (~befehl.indexOf("--BERATUNG"))       { dann = "beratung"; } 
+            if  (~befehl.indexOf("--TECHNIK"))        { dann = "technik";  } 
             
          // -----------------
          // System
@@ -126,6 +129,12 @@ module.exports = new Script({
                 (~befehl.indexOf("--ÜBER")))          { bot.say(EmpfangsBot+'#Robogeddon ist auf Bots für externe und interne Unternehmens-Kommunikation spezialisiert.');
                                                         bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig und mehreren Bots.');
                                                         bot.say(EmpfangsBot+'Empfang Befehle: ○ --Folgt.'); }
+            
+         // -----------------
+         // Agentur
+         // -----------------
+            
+            if  (~befehl.indexOf("--AGENTUR"))        { bot.say(EmpfangsBot+'Text Agentur.'); }
             
          // -----------------
          // Tests
@@ -152,9 +161,6 @@ module.exports = new Script({
     
     kreation: {
     	
-        prompt: (bot) => bot.say(KreationsBot+'Hallo, ich bin Kreations-Bot.')
-             .then(() => bot.say(KreationsBot+'Schreiben Sie --empfang, um wieder mit Erika zu sprechen.')),
-        
         receive: (bot, message) => {
             
          // Befehl normalisieren
@@ -170,6 +176,7 @@ module.exports = new Script({
                                                               +'\n○ --Folgt '); }
             if ((~befehl.indexOf("--EMPFANG")) ||
                 (~befehl.indexOf("--ABBRECHEN")))     { bot.say(KreationsBot+'Zurück an Erika. Bis später!');
+                                                        bot.say(EmpfangsBot+'Willkommen zurück. Schreiben Sie --Befehle um zu sehen, was ich Ihnen noch zeigen kann.');
                                                         dann = "register"; }
             
          // Inhalte
