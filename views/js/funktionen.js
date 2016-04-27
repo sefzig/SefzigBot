@@ -64,7 +64,11 @@
           }
        }
     }
-    
+  
+ /* Eingabe blinken lassen
+  * 
+  * Beschreibung
+  */
     function blinken(count) {
        
        $("#sk-footer > *").fadeIn(500);

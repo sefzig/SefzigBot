@@ -9,7 +9,7 @@ const TechnikBot =    "[TechnikBot] ";
 
 module.exports = new Script({
     processing: {
-        prompt: (bot) => bot.say(SefzigBot+'Nicht so schnell bitte...'),
+        prompt: (bot) => bot.say(SefzigBot+'Nicht so schnell bitte...'), 
         receive: () => 'processing'
     },
 
