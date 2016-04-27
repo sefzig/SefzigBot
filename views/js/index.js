@@ -29,7 +29,32 @@
        });
        
     // Inhalte im Interval anpassen
-    // window.setInterval(function() { anpassen(); }, 333);
+       window.setTimeout(function() {
+       
+       $(".sk-from").each(function() {
+          
+          var dieser =    $(this).html();
+          var vorganger = $(this).parent().parent().prev().find(".sk-from").html();
+          console.log("- "+vorganger+" = "+dieser+"?");
+       
+       // Bei folgendem Absender verbergen
+          if (vorganger == dieser) {
+             
+             $(this).css("display","none");
+             $(this).parent().parent().css("padding-top","10px");
+             
+          }
+          else {
+             
+          // console.log("> Anderer Vorganger: "+vorganger+" != "+name+"");
+             
+          }
+          vorganger = "";
+          dieser = "";
+          
+       });
+       
+       }, 100);
        
     });
     
@@ -260,25 +285,6 @@
           // console.log("- Bot angepasst: "+name);
              
           }
-          
-       // Bei folgendem Absender verbergen
-          var vorganger = $(".sk-from.bot"+zufall).parent().parent().prev().find(".sk-from").html();
-          if (vorganger == name) {
-             
-             console.log("> Gleicher Vorganger: "+vorganger+" == "+name+"");
-             $(".sk-from.bot"+zufall).css("display","none");
-             $(".sk-from.bot"+zufall).parent().parent().css("padding-top","10px");
-             
-          }
-          else {
-             
-          // console.log("> Anderer Vorganger: "+vorganger+" != "+name+"");
-             
-          }
-       // console.log('> ist_erster: '+ist_erster); 
-          vorganger = "";
-          name = "";
-          ist_erster = "";
           
        }
        
