@@ -6,7 +6,6 @@ const LinkBot = "[LinkBot] ";
 const TextBot = "[TextBot] ";
 const SlackBot = "[SlackBot] ";
 const AndreasSefzig = "[AndreasSefzig] ";
-const Empfangsbot = "[EmpfangsBot] ";
 
 module.exports = new Script({
     processing: {
@@ -42,7 +41,7 @@ module.exports = new Script({
             bot.setProp('nachname', nachname)
             return bot.getProp('vorname')
                 .then((vorname) => bot.say(SefzigBot+`Sie heissen ${vorname} ${nachname}, ist das richtig?`))
-                .then(() => bot.say(SefzigBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
+                .then((vorname) => bot.say(SefzigBot+`Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!`))
                 .then(() => 'name');
         }
     },
@@ -94,40 +93,40 @@ module.exports = new Script({
          // Bots
          // -----------------
             
-            if  (~befehl.indexOf("--SLACK"))          { bot.say(EmpfangsBot +'Andreas mag Interne Kommunikation und Automatisierung - er liebt Slack! Das sollte Ihr Team auch tun...');
-                                                        bot.say(EmpfangsBot +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
-                                                        bot.say(EmpfangsBot +'Lesen Sie Andreas --Artikel oder --Blogpost, öffnen Sie seine --Links oder treten Sie Andreas offenem Slack --Team bei.');
+            if  (~befehl.indexOf("--SLACK"))          { bot.say(SlackBot +'Andreas mag Interne Kommunikation und Automatisierung - er liebt Slack! Das sollte Ihr Team auch tun...');
+                                                        bot.say(SlackBot +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
+                                                        bot.say(SlackBot +'Lesen Sie Andreas --Artikel oder --Blogpost, öffnen Sie seine --Links oder treten Sie Andreas offenem Slack --Team bei.');
                                                         dann = "slack"; } 
             
          // -----------------
          // System
          // -----------------
          
-            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot+'--bot '
+            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(SefzigBot+'--bot '
                                                               +'\n○ --mobil '
                                                               +'\n○ --befehle '
                                                               +'\n○ --abbrechen '); }
             
             if ((~befehl.indexOf("--BOT")) ||
-                (~befehl.indexOf("--UBER")))          { bot.say(EmpfangsBot+'Ich weiß eine Menge über Andreas - und bin sein Ersatz für eine klassische Webseite. Rufen Sie mein Wissen durch Schreiben der mit -- beginnenden Wörter ab!');
-                                                        bot.say(EmpfangsBot+'Wollen Sie etwas über seine --Person oder --Neues von ihm erfahren? Oder auf anderem Wege --Kontakt  aufnehmen?'); }
-            if  (~befehl.indexOf("--ABBRECHEN"))      { bot.say(EmpfangsBot+'Sie können das Gespräch mit mir beenden'); }
-            if  (~befehl.indexOf("--MOBIL"))          { bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Bild:https://zxing.org/w/chart?cht=qr&chs=200x200&chld=L&choe=UTF-8&chl=http%3A%2F%2Fsefzigbot.herokuapp.com%2F]');
-                                                        bot.say(EmpfangsBot+'(Leider werden Sie dort nicht wiedererkannt. Das sollte in einer späteren Version möglich sein...)'); }
+                (~befehl.indexOf("--UBER")))          { bot.say(SefzigBot+'Ich weiß eine Menge über Andreas - und bin sein Ersatz für eine klassische Webseite. Rufen Sie mein Wissen durch Schreiben der mit -- beginnenden Wörter ab!');
+                                                        bot.say(SefzigBot+'Wollen Sie etwas über seine --Person oder --Neues von ihm erfahren? Oder auf anderem Wege --Kontakt  aufnehmen?'); }
+            if  (~befehl.indexOf("--ABBRECHEN"))      { bot.say(SefzigBot+'Sie können das Gespräch mit mir beenden'); }
+            if  (~befehl.indexOf("--MOBIL"))          { bot.say(SefzigBot+'Diesen Chat mobil öffnen: [Bild:https://zxing.org/w/chart?cht=qr&chs=200x200&chld=L&choe=UTF-8&chl=http%3A%2F%2Fsefzigbot.herokuapp.com%2F]');
+                                                        bot.say(SefzigBot+'(Leider werden Sie dort nicht wiedererkannt. Das sollte in einer späteren Version möglich sein...)'); }
             if  (~befehl.indexOf("--NAME"))           { dann = "name"; }
             
          // -----------------
          // Tests
          // -----------------
          
-            if  (~befehl.indexOf("--JAVASCRIPT"))     { bot.say(EmpfangsBot+'[Javascript:test_alert]'); }
-            if  (~befehl.indexOf("--VIDEO"))          { bot.say(EmpfangsBot+'[Youtube:u07XONlDwX8]'); }
+            if  (~befehl.indexOf("--JAVASCRIPT"))     { bot.say(SefzigBot+'[Javascript:test_alert]'); }
+            if  (~befehl.indexOf("--VIDEO"))          { bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
             
          // -----------------
          // Vorlage
          // -----------------
          
-            if  (~befehl.indexOf("--VORLAGE"))        { bot.say(EmpfangsBot+'Text: Vorlage.'); }
+            if  (~befehl.indexOf("--VORLAGE"))        { bot.say(SefzigBot+'Text: Vorlage.'); }
             
          // .then(function(){ bot.say(''); })
             return bot.setProp('register', 'gesprochen')
@@ -140,7 +139,6 @@ module.exports = new Script({
  // -------------------------
     
     slack: {
-    	
         receive: (bot, message) => {
             
          // Befehl normalisieren
@@ -171,7 +169,7 @@ module.exports = new Script({
             
          // Konversation fortführen
             return bot.setProp('text', 'gesprochen')
-            .then(() => dann);
+                .then(() => dann);
             
         }
         
