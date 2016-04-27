@@ -22,9 +22,12 @@ module.exports = new Script({
     
  // Übergabe an Register
     start: {
-        receive: () => 'register'
+        receive: (bot) => {
+            return bot.say(SefzigBot+'Start.')
+                .then(() => 'vorname'); /* <-- register */
+        }
     },
-
+    
  // -------------------------
  // Onboarding 
  // -------------------------
@@ -128,7 +131,7 @@ module.exports = new Script({
             .then(() => dann);
         }
     },
-
+    
     finish: {
         receive: (bot, message) => {
             return bot.getProp('name')
