@@ -98,10 +98,6 @@ module.exports = new Script({
                                                         bot.say(EmpfangsBot +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
                                                         bot.say(EmpfangsBot +'Lesen Sie Andreas --Artikel oder --Blogpost, öffnen Sie seine --Links oder treten Sie Andreas offenem Slack --Team bei.');
                                                         dann = "slack"; } 
-            if  (~befehl.indexOf("--EMPFANG"))        { bot.say(EmpfangsBot +'Empfang 1.');
-                                                        bot.say(EmpfangsBot +'Empfang 2.');
-                                                        bot.say(EmpfangsBot +'Empfang 3.');
-                                                        dann = "empfang"; } 
             
          // -----------------
          // System
@@ -139,46 +135,6 @@ module.exports = new Script({
         }
     },
 
- // -------------------------
- // Empfangs-Bot
- // -------------------------
-    
-    empfang: {
-    	
-        receive: (bot, message) => {
-            
-         // Befehl normalisieren
-            var befehl = message.text.trim().toUpperCase();
-            
-         // Nächster Schritt default
-            var dann = "empfang";
-            
-         // Befehle
-            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot +'--Empfang '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt'); }
-                                                              
-            if ((~befehl.indexOf("--ZURÜCK")) ||
-                (~befehl.indexOf("--ABBRECHEN")))     { bot.say(EmpfangsBot +'Bis später!');
-                                                        dann = "register"; }
-            
-         // Inhalte
-            if ((~befehl.indexOf("--EMPFANG")) ||
-                (~befehl.indexOf("--BEFEHL")))        { bot.say(EmpfangsBot +'Text Befehl.');
-                                                        bot.say(EmpfangsBot +'Text Befehl.'); }
-            if  (~befehl.indexOf("--ANDERS"))         { bot.say(EmpfangsBot +'Text Anders.'); }
-            
-         // Konversation fortführen
-            return bot.setProp('empfang', 'gesprochen')
-            .then(() => dann);
-            
-        }
-        
-    },
-    
  // -------------------------
  // Slack
  // -------------------------
