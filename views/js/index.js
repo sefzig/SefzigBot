@@ -21,7 +21,7 @@
           var starten = $(this).attr("data-start");
           
        // Navigation
-          start(starten);
+          start(starten); 
           
        // Klick verhindern
           e.preventDefault();
