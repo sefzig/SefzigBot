@@ -1,12 +1,14 @@
 'use strict';
 
 const Script = require('smooch-bot').Script;
-const SefzigBot = "[SefzigBot] ";
-const LinkBot = "[LinkBot] ";
-const TextBot = "[TextBot] ";
-const SlackBot = "[SlackBot] ";
 const AndreasSefzig = "[AndreasSefzig] ";
-const EmpfangsBot = "[EmpfangsBot] ";
+const SefzigBot =     "[SefzigBot] ";
+const EmpfangsBot =   "[EmpfangsBot] ";
+const KreationsBot =  "[KreationsBot] ";
+const BeratungsBot =  "[BeratungsBot] ";
+const LinkBot =       "[LinkBot] ";
+const TextBot =       "[TextBot] ";
+const SlackBot =      "[SlackBot] ";
 
 module.exports = new Script({
     processing: {
@@ -16,8 +18,8 @@ module.exports = new Script({
 
     start: {
         receive: (bot) => {
-            return bot.say(SefzigBot+'[EmpfangsBot] Darf ich Ihnen kurz unsere Agentur vorstellen? Dann schreiben Sie bitte --Empfang!')
-                .then(() => bot.say(EmpfangsBot+'[EmpfangsBot] Oder sprechen Sie mir unserer --Kreation, unserer --Beratung oder der --Technik.'))
+            return bot.say(EmpfangsBot+'Darf ich Ihnen kurz unsere Agentur vorstellen? Ja? Dann schreiben Sie bitte --Empfang!')
+                .then(() => bot.say(EmpfangsBot+'Oder darf ich Ihnen unsere --Kreation,  --Beratung und --Technik vorstellen?'))
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
         }
     },
