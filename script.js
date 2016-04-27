@@ -46,11 +46,13 @@ module.exports = new Script({
                                                               +'\n○ --sefzig '); }
             
          // -----------------
-         // Tests
+         // Bots
          // -----------------
-         
-            if  (~befehl.indexOf("--JAVASCRIPT"))     { bot.say(EmpfangsBot+'[Javascript:test_alert]'); }
-            if  (~befehl.indexOf("--VIDEO"))          { bot.say(EmpfangsBot+'[Youtube:u07XONlDwX8]'); }
+            
+            if (~befehl.indexOf("--EMPFANG"))         { bot.say(LinkBot  +'Empfang 1');
+                                                        bot.say(LinkBot  +'Empfang 2');
+                                                        bot.say(LinkBot  +'Empfang 3');
+                                                        dann = "empfang"; } 
             
          // -----------------
          // Vorlage
@@ -62,6 +64,50 @@ module.exports = new Script({
             return bot.setProp('register', 'gesprochen')
             .then(() => dann);
         }
+    },
+
+ // -------------------------
+ // Empfangs-Bot
+ // -------------------------
+    
+    empfang: {
+    	
+        receive: (bot, message) => {
+            
+         // Befehl normalisieren
+            var befehl = message.text.trim().toUpperCase();
+            
+         // Nächster Schritt default
+            var dann = "empfang";
+            
+         // Befehle
+            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot +'--Empfang '
+                                                              +'\n○ --Folgt '
+                                                              +'\n○ --Folgt '
+                                                              +'\n○ --Folgt '
+                                                              +'\n○ --Folgt '
+                                                              +'\n○ --Folgt'); }
+                                                              
+            if ((~befehl.indexOf("--AUS")) ||
+                (~befehl.indexOf("--ZURÜCK")) ||
+                (~befehl.indexOf("--ABBRECHEN")))     { bot.say(EmpfangsBot +'Bis später!');
+                                                        dann = "register"; }
+            
+         // Inhalte
+            if ((~befehl.indexOf("--BEFEHL")) ||
+                (~befehl.indexOf("--BEFEHL")))        { bot.say(EmpfangsBot +'Text Befehl.');
+                                                        bot.say(EmpfangsBot +'Text Befehl.'); }
+            if  (~befehl.indexOf("--BEFEHL"))         { bot.say(EmpfangsBot +'Text Befehl.'); }
+            if  (~befehl.indexOf("--BEFEHL"))         { bot.say(EmpfangsBot +'Text Befehl.'); }
+            if  (~befehl.indexOf("--BEFEHL"))         { bot.say(EmpfangsBot +'Text Befehl.'); }
+            if  (~befehl.indexOf("--BEFEHL"))         { bot.say(EmpfangsBot +'Text Befehl.'); }
+            
+         // Konversation fortführen
+            return bot.setProp('empfang', 'gesprochen')
+                .then(() => dann);
+            
+        }
+        
     },
 
  // -------------------------
@@ -131,49 +177,6 @@ module.exports = new Script({
             .then(() => 'name');
             
         }
-    },
-
- // -------------------------
- // Empfangs-Bot
- // -------------------------
-    
-    empfang: {
-    	
-        receive: (bot, message) => {
-            
-         // Befehl normalisieren
-            var befehl = message.text.trim().toUpperCase();
-            
-         // Nächster Schritt default
-            var dann = "empfang";
-            
-         // Befehle
-            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot +'--Empfang '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt'); }
-                                                              
-            if ((~befehl.indexOf("--ZURÜCK")) ||
-                (~befehl.indexOf("--ABBRECHEN")))     { bot.say(EmpfangsBot +'Bis später!');
-                                                        dann = "register"; }
-            
-         // Inhalte
-            if ((~befehl.indexOf("--BEFEHL")) ||
-                (~befehl.indexOf("--BEFEHL")))        { bot.say(EmpfangsBot +'Text Befehl.');
-                                                        bot.say(EmpfangsBot +'Text Befehl.'); }
-            if  (~befehl.indexOf("--BEFEHL"))         { bot.say(EmpfangsBot +'Text Befehl.'); }
-            if  (~befehl.indexOf("--BEFEHL"))         { bot.say(EmpfangsBot +'Text Befehl.'); }
-            if  (~befehl.indexOf("--BEFEHL"))         { bot.say(EmpfangsBot +'Text Befehl.'); }
-            if  (~befehl.indexOf("--BEFEHL"))         { bot.say(EmpfangsBot +'Text Befehl.'); }
-            
-         // Konversation fortführen
-            return bot.setProp('empfang', 'gesprochen')
-                .then(() => dann);
-            
-        }
-        
     },
 
     finish: {
