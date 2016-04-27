@@ -265,9 +265,16 @@
           $(".sk-from.bot"+zufall).css("display","none");
           $(".sk-from.bot"+zufall).parent().parent().css("padding-top","10px");
           
-       // Bei erstem Absender anzeigen
-          var ist_erster = $(".sk-from.bot"+zufall).parent().parent().prev().hasClass("sk-right-row");
-          if (ist_erster == true) { 
+       // Bei folgendem Absender verbergen
+          var vorganger = $(".sk-from.bot"+zufall).parent().parent().prev().children().filter(".sk-from").html();
+          console.log("> Vorganger: "+vorganger+", Name: "+name+"");
+          if (vorganger == name) { 
+             
+             $(".sk-from.bot"+zufall).css("display","none");
+             $(".sk-from.bot"+zufall).parent().parent().css("padding-top","0px");
+             
+          }
+          else { 
              
              $(".sk-from.bot"+zufall).css("display","block");
              $(".sk-from.bot"+zufall).parent().parent().css("padding-top","30px");

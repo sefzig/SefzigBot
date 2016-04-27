@@ -109,9 +109,8 @@ module.exports = new Script({
          // Bots
          // -----------------
             
-            if  (~befehl.indexOf("--KREATION"))       { bot.say(KreationsBot+'Hallo, ich bin Alice, der Kreations-Bot.');
-                                                        bot.say(KreationsBot+'Schreiben Sie --empfang, um wieder mit Erika zu sprechen.');
-                                                        bot.say(KreationsBot+'Befehle Kreation: --Folgt.');
+            if  (~befehl.indexOf("--KREATION"))       { bot.say(KreationsBot+'Schreiben Sie --empfang, um wieder mit Erika zu sprechen.');
+                                                        bot.say(KreationsBot+'Hallo, ich bin Alice, der Kreations-Bot. Befehle Kreation: --Folgt.');
                                                         dann = "kreation"; } 
             if  (~befehl.indexOf("--BERATUNG"))       { dann = "beratung"; } 
             if  (~befehl.indexOf("--TECHNIK"))        { dann = "technik";  } 
