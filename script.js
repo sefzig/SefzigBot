@@ -21,7 +21,7 @@ module.exports = new Script({
         receive: (bot) => {
             return bot.say(EmpfangsBot+'Darf ich Ihnen kurz unsere Agentur vorstellen? Dann schreiben Sie bitte --Agentur!')
                 .then(() => bot.say(EmpfangsBot+'Oder darf ich Ihnen unsere --Kreation,  --Beratung und --Technik vorstellen?'))
-                .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online, wurde aber über Ihr Eintreffen informiert.'))
+                .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Benachrichtigen Sie mich, indem Sie --Sefzig schreiben!'))
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
         }
     },
@@ -115,6 +115,7 @@ module.exports = new Script({
                                                         dann = "kreation"; } 
             if  (~befehl.indexOf("--BERATUNG"))       { dann = "beratung"; } 
             if  (~befehl.indexOf("--TECHNIK"))        { dann = "technik";  } 
+            if  (~befehl.indexOf("--SEFZIG"))         { bot.say(AndreasSefzig+'Ich wurde benachrichtigt.'); bot.setProp('persönlich', '@sefzig'); } 
             
          // -----------------
          // System
