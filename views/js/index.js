@@ -28,34 +28,6 @@
           
        });
        
-    // Inhalte im Interval anpassen
-       window.setTimeout(function() {
-       
-       $(".sk-from").each(function() {
-          
-          var dieser =    $(this).html();
-          var vorganger = $(this).parent().parent().prev().find(".sk-from").html();
-          console.log("- "+vorganger+" = "+dieser+"?");
-       
-       // Bei folgendem Absender verbergen
-          if (vorganger == dieser) {
-             
-             $(this).css("display","none");
-             $(this).parent().parent().css("padding-top","10px");
-             
-          }
-          else {
-             
-          // console.log("> Anderer Vorganger: "+vorganger+" != "+name+"");
-             
-          }
-          vorganger = "";
-          dieser = "";
-          
-       });
-       
-       }, 100);
-       
     });
     
  // Chat starten
@@ -287,6 +259,34 @@
           }
           
        }
+       
+    // Inhalte im Interval anpassen
+       window.setTimeout(function() {
+          
+          $(".sk-from").each(function() {
+             
+             var dieser =    $(this).html();
+             var vorganger = $(this).parent().parent().prev().find(".sk-from").html();
+             console.log("- "+vorganger+" = "+dieser+"?");
+          
+          // Bei folgendem Absender verbergen
+             if (vorganger == dieser) {
+                
+                $(this).css("display","none");
+                $(this).parent().parent().css("padding-top","10px");
+                
+             }
+             else {
+                
+             // console.log("> Anderer Vorganger: "+vorganger+" != "+name+"");
+                
+             }
+             vorganger = "";
+             dieser = "";
+             
+          });
+       
+       }, 1000);
        
        return text_string; 
        
