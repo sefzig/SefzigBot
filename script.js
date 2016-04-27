@@ -22,7 +22,10 @@ module.exports = new Script({
     
  // Übergabe an Register
     start: {
-        receive: () => 'register'
+        receive: (bot) => {
+            return bot.say(SefzigBot+'Wenn Andreas gerade online ist, sieht er dieses Gespräch und kann beitreten.')
+                .then(() => 'register'); /* <-- register */
+        }
     },
 
  // -------------------------
