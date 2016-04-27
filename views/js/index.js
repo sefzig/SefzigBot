@@ -43,7 +43,7 @@
        if (methode == "chat") {
           
        // Konsole beginnen
-          console.log('Neues Gespräch');
+       // console.log('Neues Gespräch');
           
        // Umgebungs-Parameter einsammeln
           var vorname =  Cookies.get('SefzigbotVorname');  if ((!vorname)  || (vorname  == "") || (vorname  == "Vorname"))        { vorname  = "Nicht"; }
@@ -82,12 +82,12 @@
              
              window.setTimeout(function() { anpassen(); }, 1);
              
-             console.log('- Nutzer hat eine Nachricht erhalten');
+          // console.log('- Nutzer hat eine Nachricht erhalten');
              
           });
           Smooch.on('message:sent', function(message) {
              
-             console.log('- Nutzer hat eine Nachricht gesendet');
+          // console.log('- Nutzer hat eine Nachricht gesendet');
              
           });
           
@@ -123,7 +123,7 @@
              text_string = text_string.replace("--"+inhalt, '<span class="befehl" onclick="befehlen(\'--'+inhalt+'\')">--'+inhalt+'</span>');
              
           // Debuggen
-             console.log("- Befehl angepasst: "+inhalt);
+          // console.log("- Befehl angepasst: "+inhalt);
              
           // Zurücksetzen
              var inhalt = "";
@@ -146,7 +146,7 @@
           
        // Button-Text von URL trennen
           if (modul == "Button")  { 
-             console.log("> Button Var: "+var1);
+          // console.log("> Button Var: "+var1);
              var buttons = text_string.split("["+modul+":");
              if (buttons[1]) { 
                 var buttons2 = buttons[1].split("]");
@@ -160,8 +160,8 @@
                 }
              }
              else { var button_text = "Link öffnen"; var button_url = "#"+var1; }
-             console.log("> Button Text: "+button_text);
-             console.log("> Button Url: "+button_url);
+          // console.log("> Button Text: "+button_text);
+          // console.log("> Button Url: "+button_url);
           }
           
        // Templates
@@ -197,7 +197,7 @@
              text_string = text_string.replace("["+modul+":"+inhalt+"]", template);
              
           // Debuggen
-             console.log("- "+modul+" angepasst: "+inhalt);
+          // console.log("- "+modul+" angepasst: "+inhalt);
              
           // Zurücksetzen
              var inhalt = "";
@@ -226,7 +226,7 @@
              funktionen[skript]();
              
           // Debuggen
-             console.log("- Javascript ausgeführt: "+skript);
+          // console.log("- Javascript ausgeführt: "+skript);
              
           // Zurücksetzen
              var skript = "";
@@ -257,17 +257,22 @@
              text_string = text_string.replace("["+kurzel+"] ","");
              
           // Debuggen
-             console.log("- Bot angepasst: "+name);
+          // console.log("- Bot angepasst: "+name);
              
           }
           
        // Bei folgendem Absender verbergen
-          var vorganger = $(".sk-from.bot"+zufall).parent().parent().prev().children().filter(".sk-msg-wrapper").children().filter(".sk-from").html();
+          var vorganger = $(".sk-from.bot"+zufall).parent().parent().prev().find(".sk-from").html();
           if (vorganger == name) {
              
-             console.log("> Vorganger verbergen: "+vorganger+", Dieser: "+name+"");
+             console.log("> Gleicher Vorganger: "+vorganger+" == "+name+"");
              $(".sk-from.bot"+zufall).css("display","none");
              $(".sk-from.bot"+zufall).parent().parent().css("padding-top","10px");
+             
+          }
+          else {
+             
+          // console.log("> Anderer Vorganger: "+vorganger+" != "+name+"");
              
           }
        // console.log('> ist_erster: '+ist_erster); 
