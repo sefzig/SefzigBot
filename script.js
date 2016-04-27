@@ -49,9 +49,9 @@ module.exports = new Script({
          // Bots
          // -----------------
             
-            if (~befehl.indexOf("--EMPFANG"))         { bot.say(LinkBot  +'Empfang 1');
-                                                        bot.say(LinkBot  +'Empfang 2');
-                                                        bot.say(LinkBot  +'Empfang 3');
+            if (~befehl.indexOf("--EMPFANG"))         { bot.say(EmpfangsBot+'Empfang 1');
+                                                        bot.say(EmpfangsBot+'Empfang 2');
+                                                        bot.say(EmpfangsBot+'Empfang 3');
                                                         dann = "empfang"; } 
             
          // -----------------
