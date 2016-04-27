@@ -174,7 +174,7 @@ module.exports = new Script({
             if  (~befehl.indexOf("--LINKS"))          { bot.say(KreationsBot +'Text Links.'); }
             
          // Konversation fortführen
-            return bot.setProp('text', 'gesprochen')
+            return bot.setProp('text', 'gesprochen') 
                 .then(() => dann);
             
         }
