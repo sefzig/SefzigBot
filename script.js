@@ -129,47 +129,6 @@ module.exports = new Script({
         }
     },
 
- // -------------------------
- // Empfangs-Bot
- // -------------------------
-    
-    empfang: {
-    	
-        receive: (bot, message) => {
-            
-         // Befehl normalisieren
-            var befehl = message.text.trim().toUpperCase();
-            
-         // Nächster Schritt default
-            var dann = "empfang";
-            
-         // Befehle
-            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot +'--Empfang '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt'); }
-                                                              
-            if ((~befehl.indexOf("--AUS")) ||
-                (~befehl.indexOf("--ZURÜCK")) ||
-                (~befehl.indexOf("--ABBRECHEN")))     { bot.say(EmpfangsBot +'Bis später!');
-                                                        dann = "register"; }
-            
-         // Inhalte
-            if ((~befehl.indexOf("--EMPFANG")) ||
-                (~befehl.indexOf("--BEFEHL")))        { bot.say(EmpfangsBot +'Text Befehl.');
-                                                        bot.say(EmpfangsBot +'Text Befehl.'); }
-         // if  (~befehl.indexOf("--BEFEHL"))         { bot.say(EmpfangsBot +'Text Befehl.'); }
-            
-         // Konversation fortführen
-            return bot.setProp('empfang', 'gesprochen')
-                .then(() => dann);
-            
-        }
-        
-    },
-
     finish: {
         receive: (bot, message) => {
             return bot.getProp('name')
