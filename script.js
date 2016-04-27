@@ -41,10 +41,11 @@ module.exports = new Script({
          // System
          // -----------------
          
-            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(SefzigBot+'--bot '
-                                                              +'\n○ --mobil '
-                                                              +'\n○ --befehle '
-                                                              +'\n○ --abbrechen '); }
+            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(SefzigBot+'--empfang '
+                                                              +'\n○ --kreation '
+                                                              +'\n○ --beratung '
+                                                              +'\n○ --technik '
+                                                              +'\n○ --sefzig '); }
             
          // -----------------
          // Tests
@@ -128,6 +129,7 @@ module.exports = new Script({
  // -------------------------
     
     empfang: {
+    	
         receive: (bot, message) => {
             
          // Befehl normalisieren
