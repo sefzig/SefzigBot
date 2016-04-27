@@ -34,6 +34,16 @@
        bottom: 0px;
        left: 0px;
     }
+    #seite > #chat {
+       position: absolute;
+       top: -30px;
+       right: 0px;
+       bottom: 0px;
+       left: -7px;
+    }
+    #seite > #chat > * {
+       margin-right: 1px;
+    }
     #seite > div {
        display: none;
     }
@@ -88,6 +98,7 @@
        padding-top: 3px !important;
        padding-bottom: 7px !important;
        height: 55px !important;
+       right: -1px;
     }
     .sk-messages {
        padding-bottom: 0px !important;
@@ -157,12 +168,13 @@
     }
     #sk-conversation::-webkit-scrollbar,
     #sk-conversation::-webkit-scrollbar-track {
+       box-shadow: none !important;
        background-color: white !important;
     }
     #sk-conversation::-webkit-scrollbar-thumb {
-       border-radius: 8px !important;
+       border-radius: 10px !important;
        box-shadow: none !important;
-       background-color: #dddddd !important;
+       background-color: #eeeeee !important;
     }
     #sk-conversation {
        height: calc(100% - 98px) !important;

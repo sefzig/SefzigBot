@@ -5,6 +5,7 @@ const SefzigBot = "[SefzigBot] ";
 const LinkBot = "[LinkBot] ";
 const TextBot = "[TextBot] ";
 const SlackBot = "[SlackBot] ";
+const AndreasSefzig = "[AndreasSefzig] ";
 
 module.exports = new Script({
     processing: {
@@ -34,14 +35,47 @@ module.exports = new Script({
     },
 
     nachname: {
-        prompt: (bot) => bot.say(SefzigBot+'Und mit Nachnamen?'),
+        prompt: (bot) => bot.say(SefzigBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
-            var nachname = message.text;
-            return bot.setProp('nachname', nachname)
-                .then(() => bot.say(SefzigBot+`${nachname}, danke.`))
-                .then(() => bot.say(SefzigBot+'Sie können hier jederzeit eine Nachricht an Andreas eingeben.'))
-                .then(() => bot.say(SefzigBot+'Unterhalten Sie sich solange mit mir! Bitte schreiben Sie --bot:'))
-                .then(() => 'register');
+            var nachname = message.text; 
+            bot.setProp('nachname', nachname)
+            return bot.getProp('vorname')
+                .then((vorname) => bot.say(SefzigBot+`Sie heissen ${vorname} ${nachname}, ist das richtig?`))
+                .then((vorname) => bot.say(SefzigBot+`Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!`))
+                .then(() => 'name');
+        }
+    },
+
+    name: {
+        receive: (bot, message) => {
+            
+            var antwort = message.text.trim().toUpperCase();
+            var name_falsch = "";
+            var dann = "";
+            
+            if (antwort == "--JA")   { 
+               
+               bot.say(SefzigBot+'Sie können hier jederzeit eine Nachricht an Andreas schreiben!');
+               bot.say(SefzigBot+'Unterhalten Sie sich mit mir: Bitte schreiben Sie --bot:');
+               name_falsch == "nein";
+               dann = "register";
+               
+            }
+            if (antwort == "--NEIN") {
+               
+               name_falsch == "ja";
+               dann = "vorname";
+               
+            }
+            if (antwort == "--BOT") {
+               
+               name_falsch == "";
+               dann = "register";
+               
+            }
+            
+            return bot.setProp('name_falsch', name_falsch)
+                .then(() => dann);
         }
     },
 
@@ -61,7 +95,7 @@ module.exports = new Script({
             
             if ((~befehl.indexOf("--LINK")) ||
                 (~befehl.indexOf("--LINKS")))         { bot.say(LinkBot  +'Andreas speichert viele interessante Links - für sich wie auch für Sie: [Linkliste:Allgemein] 1.000 Links, 6.000 Aufrufe!');
-                                                        bot.say(LinkBot  +'Steuern Sie mich mit diesen Befehlen: \n○ --Eingabe \n○ --Liste \n○ --Listen \n○ --Einrichten \n○ --Admin \n○ --Uber');
+                                                        bot.say(LinkBot  +'Steuern Sie mich mit diesen Befehlen: \n○ --Links \n○ --Listen \n○ --Liste \n○ --Eingabe \n○ --Einrichten \n○ --Admin \n○ --Uber');
                                                         bot.say(LinkBot  +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
                                                         dann = "link"; } 
             
@@ -91,6 +125,7 @@ module.exports = new Script({
             if  (~befehl.indexOf("--ABBRECHEN"))      { bot.say(SefzigBot+'Sie können das Gespräch mit mir beenden'); }
             if  (~befehl.indexOf("--MOBIL"))          { bot.say(SefzigBot+'Diesen Chat mobil öffnen: [Bild:https://zxing.org/w/chart?cht=qr&chs=200x200&chld=L&choe=UTF-8&chl=http%3A%2F%2Fsefzigbot.herokuapp.com%2F]');
                                                         bot.say(SefzigBot+'(Leider werden Sie dort nicht wiedererkannt. Das sollte in einer späteren Version möglich sein...)'); }
+            if  (~befehl.indexOf("--NAME"))           { dann = "name"; }
             
          // -----------------
          // Person
@@ -153,6 +188,17 @@ module.exports = new Script({
                                                         bot.say(SefzigBot+'Schreiben Sie einen Tweet über @sefzig: %[@sefzig twittern](http://sefzig.net/link/TwitterTweet/)'); }
             
          // -----------------
+         // Simon the cat
+         // -----------------
+            
+            if  (~befehl.indexOf("--MAUNZ"))          { bot.say(SefzigBot+'Befehle: --maunz: --maudreh, --maukuschel, --maubox, --maukugel, --mauohr'); }
+            if  (~befehl.indexOf("--MAUDREH"))        { bot.say(SefzigBot+'[Bild:://49.media.tumblr.com/14633d451a8cb2642fd644fdd9a0a319/tumblr_meqaedpljZ1qal0zgo1_r1_500.gif ]'); }
+            if  (~befehl.indexOf("--MAUKUSCHEL"))     { bot.say(SefzigBot+'[Bild:://2.bp.blogspot.com/-A0RNd-nRhyc/UDfcMvTV-MI/AAAAAAAAC6M/cKd3J47vqmg/s1600/tumblr_lvqjn0woFq1qerhg8o1_500_large.gif]'); }
+            if  (~befehl.indexOf("--MAUBOX"))         { bot.say(SefzigBot+'[Bild:://ic.pics.livejournal.com/akira_001/66442224/134158/134158_900.gif]'); }
+            if  (~befehl.indexOf("--MAUKUGEL"))       { bot.say(SefzigBot+'[Bild:://media.giphy.com/media/NFRXs0b3DyIve/giphy.gif]'); }
+            if  (~befehl.indexOf("--MAUOHR"))         { bot.say(SefzigBot+'[Bild:://media.giphy.com/media/k03ZWbT5M7QfC/giphy.gif]'); }
+            
+         // -----------------
          // Tests
          // -----------------
          
@@ -205,13 +251,12 @@ module.exports = new Script({
             if  (~befehl.indexOf("--EINRICHTEN"))     { bot.say(LinkBot  +'Jeder kann Link benutzen. Die Einrichtung ist einfach und interaktiv: %[Link: Einrichtung](http://sefzig.net/link/einrichten/)'); }
             if  (~befehl.indexOf("--ADMIN"))          { bot.say(LinkBot  +'In der Administration werden die Links verwaltet: %[Link: Administration](http://sefzig.net/link/admin/)'); }
             if  (~befehl.indexOf("--UBER"))           { bot.say(LinkBot  +'"Link" ist  gut dokumentiert - hier Andreas Text dazu: %[Link: Dokumentation](http://sefzig.net/text/link/)'); }
-            if  (~befehl.indexOf("--LINKS"))          { bot.say(LinkBot  +'Alle Links von Andreas fließen in eine filterbare Linkliste ein: %[Link: Allgemeine Liste](http://sefzig.net/link/liste/)'); }
             if ((~befehl.indexOf("--UBER")) ||
                 (~befehl.indexOf("--ÜBER")))          { bot.say(LinkBot  +'"Link" ist eine Web-Anwendung zur Verwaltung von Links. Hier die Dokumentation: [Text:link] Link basiert auf der Open Source-Software Yourls: %[Externer Link: Yourls](http://yourls.org)'); }
             
          // Linklisten
-            if ((~befehl.indexOf("--LINKS")) ||
-                (~befehl.indexOf("--LISTEN")))        { bot.say(LinkBot  +'Empfohlene Linklisten '
+            if  (~befehl.indexOf("--LINKS"))          { bot.say(LinkBot  +'Alle Links von Andreas fließen in eine filterbare Linkliste ein: %[Link: Allgemeine Liste](http://sefzig.net/link/liste/)'); }
+            if  (~befehl.indexOf("--LISTEN"))         { bot.say(LinkBot  +'Empfohlene Linklisten '
                                                               +'\n○ --Werkzeuge '
                                                               +'\n○ --Mappe '
                                                               +'\n○ --Innovation '
