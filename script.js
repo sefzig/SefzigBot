@@ -13,17 +13,17 @@ module.exports = new Script({
         receive: () => 'processing'
     },
 
- // -------------------------
- // Onboarding 
- // -------------------------
-         
     start: {
         receive: (bot) => {
             return bot.say(SefzigBot+'Neues Skript.')
-                .then(() => 'vorname'); /* <-- register */
+                .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
         }
     },
 
+ // -------------------------
+ // Onboarding 
+ // -------------------------
+    
     vorname: {
         prompt: (bot) => bot.say(SefzigBot+'Wie heissen Sie mit Vornamen?'),
         receive: (bot, message) => {
