@@ -19,7 +19,7 @@ module.exports = new Script({
     start: {
     	
         receive: (bot) => {
-            return bot.say(EmpfangsBot+'Darf ich Ihnen uns kurz vorstellen? Dann schreiben Sie bitte --Agentur!')
+            return bot.say(EmpfangsBot+'Darf ich uns kurz vorstellen? Dann schreiben Sie bitte --Agentur!')
                 .then(() => bot.say(EmpfangsBot+'Oder darf ich Ihnen unsere --Kreation,  --Beratung und --Technik vorstellen?'))
                 .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online, wurde aber über Ihr Eintreffen informiert.'))
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
@@ -111,7 +111,7 @@ module.exports = new Script({
             
             if  (~befehl.indexOf("--KREATION"))       { dann = "kreation"; } 
          // if  (~befehl.indexOf("--BERATUNG"))       { dann = "beratung"; } 
-         // if  (~befehl.indexOf("--TECHNIK"))        { dann = "texhnik";  } 
+         // if  (~befehl.indexOf("--TECHNIK"))        { dann = "technik";  } 
             
          // -----------------
          // System
@@ -152,6 +152,8 @@ module.exports = new Script({
     
     kreation: {
     	
+        prompt: (bot) => bot.say(KreationsBot+'Hallo, ich bin Kreations-Bot. Text Folgt.'),
+        
         receive: (bot, message) => {
             
          // Befehl normalisieren
