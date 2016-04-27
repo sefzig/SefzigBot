@@ -152,7 +152,8 @@ module.exports = new Script({
     
     kreation: {
     	
-        prompt: (bot) => bot.say(KreationsBot+'Hallo, ich bin Kreations-Bot. Text Folgt.'),
+        prompt: (bot) => bot.say(KreationsBot+'Hallo, ich bin Kreations-Bot.')
+             .then(() => bot.say(KreationsBot+'Schreiben Sie --empfang, um wieder mit Erika zu sprechen.')),
         
         receive: (bot, message) => {
             
@@ -167,8 +168,8 @@ module.exports = new Script({
                                                               +'\n○ --Folgt '
                                                               +'\n○ --Folgt '
                                                               +'\n○ --Folgt '); }
-            if ((~befehl.indexOf("--ZURÜCK")) ||
-                (~befehl.indexOf("--ABBRECHEN")))     { bot.say(KreationsBot+'Zurück an --Empfangs-Bot. Bis später!');
+            if ((~befehl.indexOf("--EMPFANG")) ||
+                (~befehl.indexOf("--ABBRECHEN")))     { bot.say(KreationsBot+'Zurück an Erika. Bis später!');
                                                         dann = "register"; }
             
          // Inhalte
