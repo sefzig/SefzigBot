@@ -28,45 +28,6 @@ module.exports = new Script({
     },
 
  // -------------------------
- // Register
- // -------------------------
-         
-    register: {
-        receive: (bot, message) => {
-            
-            var befehl = message.text.trim().toUpperCase();
-            var dann = "register";
-            
-         // -----------------
-         // System
-         // -----------------
-         
-            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(SefzigBot+'--empfang '
-                                                              +'\n○ --kreation '
-                                                              +'\n○ --beratung '
-                                                              +'\n○ --technik '
-                                                              +'\n○ --sefzig '); }
-            
-         // -----------------
-         // Tests
-         // -----------------
-         
-            if  (~befehl.indexOf("--JAVASCRIPT"))     { bot.say(SefzigBot+'[Javascript:test_alert]'); }
-            if  (~befehl.indexOf("--VIDEO"))          { bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
-            
-         // -----------------
-         // Vorlage
-         // -----------------
-         
-            if  (~befehl.indexOf("--VORLAGE"))        { bot.say(SefzigBot+'Text: Vorlage.'); }
-            
-         // .then(function(){ bot.say(''); })
-            return bot.setProp('register', 'gesprochen')
-                .then(() => dann);
-        }
-    },
-
- // -------------------------
  // Onboarding 
  // -------------------------
     
