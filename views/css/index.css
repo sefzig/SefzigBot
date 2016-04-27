@@ -180,6 +180,10 @@
        height: calc(100% - 98px) !important;
     }
     
+    #sk-container.sk-embedded #sk-conversation .sk-row.sk-left-row .sk-msg-avatar {
+       border-radius: 5px;
+    }
+    
     #fenster { 
        z-index: 3000;
        position: fixed;

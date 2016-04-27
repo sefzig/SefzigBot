@@ -16,7 +16,7 @@ module.exports = new Script({
 
     start: {
         receive: (bot) => {
-            return bot.say(SefzigBot+'Neues Skript.')
+            return bot.say(SefzigBot+'[EmpfangsBot] Darf ich Ihnen #Robogeddon vorstellen? Bitte schreiben Sie --Empfang!')
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
         }
     },
