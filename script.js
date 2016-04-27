@@ -9,7 +9,7 @@ const TechnikBot =    "[TechnikBot] ";
 
 module.exports = new Script({
     processing: {
-        prompt: (bot) => bot.say(SefzigBot+'Nicht so schnell bitte...'), 
+        prompt: (bot) => bot.say(AndreasSefzig+'Nicht so schnell bitte...'), 
         receive: () => 'processing'
     },
 
@@ -28,6 +28,45 @@ module.exports = new Script({
     },
 
  // -------------------------
+ // Register
+ // -------------------------
+         
+    register: {
+        receive: (bot, message) => {
+            
+            var befehl = message.text.trim().toUpperCase();
+            var dann = "register";
+            
+         // -----------------
+         // System
+         // -----------------
+         
+            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot+'--empfang '
+                                                              +'\n○ --kreation '
+                                                              +'\n○ --beratung '
+                                                              +'\n○ --technik '
+                                                              +'\n○ --sefzig '); }
+            
+         // -----------------
+         // Tests
+         // -----------------
+         
+            if  (~befehl.indexOf("--JAVASCRIPT"))     { bot.say(EmpfangsBot+'[Javascript:test_alert]'); }
+            if  (~befehl.indexOf("--VIDEO"))          { bot.say(EmpfangsBot+'[Youtube:u07XONlDwX8]'); }
+            
+         // -----------------
+         // Vorlage
+         // -----------------
+         
+            if  (~befehl.indexOf("--VORLAGE"))        { bot.say(EmpfangsBot+'Text: Vorlage.'); }
+            
+         // .then(function(){ bot.say(''); })
+            return bot.setProp('register', 'gesprochen')
+                .then(() => dann);
+        }
+    },
+
+ // -------------------------
  // Onboarding 
  // -------------------------
     
@@ -40,7 +79,7 @@ module.exports = new Script({
             
             if (antwort == "--JA")   { 
                
-               bot.say(SefzigBot+'Ich kenne Sie nun als');
+               bot.say(EmpfangsBot+'Ich kenne Sie nun als');
                name_falsch == "nein";
                dann = "register";
                
@@ -64,23 +103,23 @@ module.exports = new Script({
     },
 
     vorname: {
-        prompt: (bot) => bot.say(SefzigBot+'Wie heissen Sie mit Vornamen?'),
+        prompt: (bot) => bot.say(EmpfangsBot+'Wie heissen Sie mit Vornamen?'),
         receive: (bot, message) => {
             var vorname = message.text;
             return bot.setProp('vorname', vorname)
-                .then(() => bot.say(SefzigBot+`${vorname}, prima.`))
+                .then(() => bot.say(EmpfangsBot+`${vorname}, prima.`))
                 .then(() => 'nachname');
         }
     },
 
     nachname: {
-        prompt: (bot) => bot.say(SefzigBot+'Und wie heissen Sie mit Nachnamen?'),
+        prompt: (bot) => bot.say(EmpfangsBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
             var nachname = message.text; 
             bot.setProp('nachname', nachname)
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(SefzigBot+`Sie heissen ${vorname} ${nachname}, ist das richtig?`))
-                .then((vorname) => bot.say(SefzigBot+`Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!`))
+                .then((vorname) => bot.say(EmpfangsBot+`Sie heissen ${vorname} ${nachname}, ist das richtig?`))
+                .then((vorname) => bot.say(EmpfangsBot+`Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!`))
                 .then(() => 'name');
         }
     },
