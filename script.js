@@ -141,7 +141,7 @@ module.exports = new Script({
                                                                         bot.setProp('persönlich', '@sefzig');
                                                                         bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); } 
             if ((~befehl.indexOf("--EMPFANG")) ||
-                (~befehl.indexOf("--ALICE"))          { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Technik oder der --Beratung.'); }
+                (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Technik oder der --Beratung.'); }
             
             if ((~befehl.indexOf("--KREATION")) ||
                 (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(KreationsBot+'Schreiben Sie --empfang, um wieder mit Alice zu sprechen.');
@@ -174,6 +174,22 @@ module.exports = new Script({
          // -----------------
          
             if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+'Text: Vorlage.'); }
+            
+         // -----------------
+         // Irrläufer
+         // -----------------
+         
+            var versuche = 0;
+            var versuchen = 3;
+            if (versuch == true) { bot.setProp('versuch', 0); }
+            else { 
+               var versuche = bot.getProp('versuch'); 
+               bot.setProp('versuch', versuche++);
+               if (versuche < versuchen) {
+                  bot.say(EmpfangsBot+'Wollen Sie zurück zum --Empfang?');
+                  bot.setProp('versuch', 0);
+               }
+            }
             
          // -----------------
          // Konversation fortführen
