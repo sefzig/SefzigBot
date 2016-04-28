@@ -20,7 +20,7 @@ module.exports = new Script({
     	
         receive: (bot) => {
             return bot.say(EmpfangsBot+'Darf ich Ihnen kurz unsere Agentur vorstellen? Dann schreiben Sie bitte --Agentur!')
-                .then(() => bot.say(EmpfangsBot+'Gerne stelle ich Ihnen unsere --Kreation, die --Beratung oder unsere --Technik vor.'))
+                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen unsere --Kreation, die --Beratung oder unsere --Technik vorstellen.'))
                 .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben!'))
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
         }
@@ -96,7 +96,7 @@ module.exports = new Script({
     	
         receive: (bot, message) => {
             
-            var befehl = message.text.trim().toUpperCase();
+            var befehl = befehlWort(message.text.trim().toUpperCase());
             var dann = "register";
             
          // -----------------
@@ -203,3 +203,24 @@ module.exports = new Script({
         }
     }
 });
+
+    function befehlWort(befehl) {
+       
+         // Wenn die Nachricht nur ein Wort ist
+            var test = befehl.split(" "); 
+            if ((!test[1]) || (test[1] == "")) {
+               
+            // In Befehl umwandeln
+               befehl = befehl.replace("--", "");
+               befehl = "--"+befehl;
+               
+            // Satzzeichen entfernen
+               befehl = befehl.replace(".", "");
+               befehl = befehl.replace("!", "");
+               befehl = befehl.replace("?", "");
+               
+            }
+            
+            return befehl;
+            
+    }
