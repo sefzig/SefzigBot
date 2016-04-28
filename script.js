@@ -103,75 +103,90 @@ module.exports = new Script({
          // Nächster Schritt default
             var dann = "register";
             
+         // Fehler-Toleranz
+            var versuch = false;
+            
          // -----------------
          // Onboarding
          // -----------------
             
-            if  (~befehl.indexOf("--NAME"))           { dann = "name"; }
+            if  (~befehl.indexOf("--NAME"))           { versuch = true; dann = "name"; }
             
          // -----------------
          // System
          // -----------------
          
-            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot+'Diese --Befehle unterstützen Sie beim Nutzen von #Robogeddon:'
-                                                              +'\n○ --Mobil '
-                                                              +'\n○ --Newsletter '
-                                                              +'\n○ --Über ');
-                                                        befehl = "--THEMEN"; }
-            if  (~befehl.indexOf("--THEMEN"))         { bot.say(EmpfangsBot+'Diese Themen haben wir zur Zeit für Sie:'
-                                                              +'\n○ Alice: --Agentur '
-                                                              +'\n○ Barbara: --Beratung '
-                                                              +'\n○ Cynthia: --Technik '
-                                                              +'\n○ Doris: --Kreation '
-                                                              +'\n○ --Über '); }
-            if  (~befehl.indexOf("--EMPFANG"))        { bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Technik oder der --Beratung.'); }
-            if  (~befehl.indexOf("--MOBIL"))          { bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Bild:http://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=L&chl=http%3A%2F%2Fsefzigbot.herokuapp.com?v=chat%2F&chf=bg,s,65432100] ');
-                                                        bot.say(TechnikBot+'Leider werden Sie dort nicht wiedererkannt. Wir arbeiten an einer Lösung...'); }
+            if  (~befehl.indexOf("--BEFEHLE"))        { versuch = true; bot.say(EmpfangsBot+'Diese --Befehle unterstützen Sie beim Nutzen von #Robogeddon:'
+                                                                              +'\n○ --Mobil '
+                                                                              +'\n○ --Newsletter '
+                                                                              +'\n○ --Über ');
+                                                                        befehl = "--THEMEN"; }
+            if  (~befehl.indexOf("--THEMEN"))         { versuch = true; bot.say(EmpfangsBot+'Diese Themen haben wir zur Zeit für Sie:'
+                                                                              +'\n○ Alice: --Agentur '
+                                                                              +'\n○ Barbara: --Beratung '
+                                                                              +'\n○ Cynthia: --Technik '
+                                                                              +'\n○ Doris: --Kreation '
+                                                                              +'\n○ --Über '); }
+            if  (~befehl.indexOf("--EMPFANG"))        { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Technik oder der --Beratung.'); }
+            if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Bild:http://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=L&chl=http%3A%2F%2Fsefzigbot.herokuapp.com?v=chat%2F&chf=bg,s,65432100] ');
+                                                                        bot.say(TechnikBot+'Leider werden Sie dort nicht wiedererkannt. Wir arbeiten an einer Lösung...'); }
             if ((~befehl.indexOf("--UBER")) ||
-                (~befehl.indexOf("--ÜBER")))          { bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.');
-                                                        bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }
+                (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.');
+                                                                        bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }
             
          // -----------------
          // Bots
          // -----------------
             
-            if  (~befehl.indexOf("--SEFZIG"))         { bot.say(AndreasSefzig+'Ich werde benachrichtigt.'); 
-                                                        bot.setProp('persönlich', '@sefzig');
-                                                        bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); } 
+            if  (~befehl.indexOf("--SEFZIG"))         { versuch = true; bot.say(AndreasSefzig+'Ich werde benachrichtigt.'); 
+                                                                        bot.setProp('persönlich', '@sefzig');
+                                                                        bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); } 
             if ((~befehl.indexOf("--KREATION")) ||
-                (~befehl.indexOf("--DORIS")))         { bot.say(KreationsBot+'Schreiben Sie --empfang, um wieder mit Alice zu sprechen.');
-                                                        bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Befehle Kreation: --Folgt.');
-                                                        dann = "kreation"; } 
+                (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(KreationsBot+'Schreiben Sie --empfang, um wieder mit Alice zu sprechen.');
+                                                                        bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Befehle Kreation: --Folgt.');
+                                                                        dann = "kreation"; } 
             if ((~befehl.indexOf("--BERATUNG")) ||
-                (~befehl.indexOf("--BARBARA")))       { bot.say(BeratungsBot+'Schreiben Sie --empfang, um zum Empfang zurückzukehren.');
-                                                        dann = "beratung"; } 
+                (~befehl.indexOf("--BARBARA")))       { versuch = true; bot.say(BeratungsBot+'Schreiben Sie --empfang, um zum Empfang zurückzukehren.');
+                                                                        dann = "beratung"; } 
             if ((~befehl.indexOf("--TECHNIK")) ||
-                (~befehl.indexOf("--CYNTHIA")))       { bot.say(TechnikBot+'Schreiben Sie --empfang, wenn Sie zum Empfang wollen');
-                                                        dann = "technik";  } 
+                (~befehl.indexOf("--CYNTHIA")))       { versuch = true; bot.say(TechnikBot+'Schreiben Sie --empfang, wenn Sie zum Empfang wollen');
+                                                                        dann = "technik";  } 
             
          // -----------------
          // Agentur
          // -----------------
             
-            if  (~befehl.indexOf("--AGENTUR"))        { bot.say(EmpfangsBot+'#Robogeddon ist auf Bots für externe und interne Unternehmens-Kommunikation spezialisiert.');
-                                                        bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig und mehreren Bots.');
-                                                        bot.say(EmpfangsBot+'Mehr über uns: ○ --Folgt.'); }
+            if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist auf Bots für externe und interne Unternehmens-Kommunikation spezialisiert.');
+                                                                        bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig und mehreren Bots.');
+                                                                        bot.say(EmpfangsBot+'Mehr über uns: ○ --Folgt.'); }
             
          // -----------------
          // Tests
          // -----------------
          
-            if  (~befehl.indexOf("--JAVASCRIPT"))     { bot.say(SefzigBot+'[Javascript:test_alert]'); }
-            if  (~befehl.indexOf("--VIDEO"))          { bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
+            if  (~befehl.indexOf("--JAVASCRIPT"))     { versuch = true; bot.say(SefzigBot+'[Javascript:test_alert]'); }
+            if  (~befehl.indexOf("--VIDEO"))          { versuch = true; bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
             
          // -----------------
          // Vorlage
          // -----------------
          
-            if  (~befehl.indexOf("--VORLAGE"))        { bot.say(EmpfangsBot+'Text: Vorlage.'); }
+            if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+'Text: Vorlage.'); }
+            
+            var versuche = 0;
+            var versuchen = 5;
+            if (versuch == true) { bot.setProp('versuch', 0); }
+            else { 
+               var versuche = bot.getProp('versuch'); 
+               bot.setProp('versuch', versuche++);
+               if (versuche < versuchen) {
+                  bot.say(EmpfangsBot+'Schreiben Sie --Empfang, um mit mir zu sprechen.');
+                  bot.setProp('versuch', 0);
+               }
+            }
             
          // Konversation fortführen
-            return bot.setProp('register', 'gesprochen')
+            return bot.setProp('versuch', '1')
             .then(() => dann);
         }
     },
@@ -193,14 +208,14 @@ module.exports = new Script({
          // Befehle
             if ((~befehl.indexOf("--DORIS")) ||
                 (~befehl.indexOf("--BEFEHLE")))       { bot.say(KreationsBot +'--Kreation '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '
-                                                              +'\n○ --Folgt '); }
+                                                                              +'\n○ --Folgt '
+                                                                              +'\n○ --Folgt '
+                                                                              +'\n○ --Folgt '); }
             if ((~befehl.indexOf("--ALICE")) ||
                 (~befehl.indexOf("--EMPFANG")) ||
                 (~befehl.indexOf("--ABBRECHEN")))     { bot.say(KreationsBot+'Zurück an Alice. Bis später!');
-                                                        bot.say(EmpfangsBot+'Willkommen zurück. Schreiben Sie --Befehle um zu sehen, was ich Ihnen noch zeigen kann.');
-                                                        dann = "register"; }
+                                                                        bot.say(EmpfangsBot+'Willkommen zurück. Schreiben Sie --Befehle um zu sehen, was ich Ihnen noch zeigen kann.');
+                                                                        dann = "register"; }
             
          // Inhalte
             if  (~befehl.indexOf("--ARTIKEL"))        { bot.say(KreationsBot +'Text Artikel.'); }
