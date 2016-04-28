@@ -260,6 +260,7 @@
           
        }
        
+       window.setTimeout(function() { 
        $(".sk-from").each(function() {
           
           var dieser =    $(this).html();
@@ -289,6 +290,7 @@
           dieser = "";
           
        });
+       }, 333);
        
        return text_string; 
        
