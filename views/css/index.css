@@ -1,7 +1,8 @@
 
+ /* ----------------- */
  /* Allgemein */ 
  /* ----------------- */
-
+    
  /* Normalisieren */ 
     html, body, #seite {
        background-color: white;
@@ -23,10 +24,30 @@
     h5 { font-size: 15px; }
     h6 { font-size: 14px; }
     
+ /* Ios Zoom */
+    select, textarea, 
+    input[type="text"], 
+    input[type="password"], 
+    input[type="datetime"], 
+    input[type="datetime-local"], 
+    input[type="date"], 
+    input[type="month"], 
+    input[type="time"], 
+    input[type="week"], 
+    input[type="number"], 
+    input[type="email"], 
+    input[type="url"], 
+    input[type="search"], 
+    input[type="tel"], 
+    input[type="color"] { 
+       font-size: 16px;
+    }
+    
+ /* ----------------- */
  /* Seite */
  /* ----------------- */
-
- /* Layout */
+    
+ /* Dimensionen */
     #seite, #seite > div {
        position: absolute;
        top: -30px;
@@ -53,29 +74,11 @@
        border: 0px black solid;
     }
     
- /* Ios Zoom */
-    select, textarea, 
-    input[type="text"], 
-    input[type="password"], 
-    input[type="datetime"], 
-    input[type="datetime-local"], 
-    input[type="date"], 
-    input[type="month"], 
-    input[type="time"], 
-    input[type="week"], 
-    input[type="number"], 
-    input[type="email"], 
-    input[type="url"], 
-    input[type="search"], 
-    input[type="tel"], 
-    input[type="color"] { 
-       font-size: 16px;
-    }
-    
- /* Smooch Web Widget */
  /* ----------------- */
-
- /* Layout */
+ /* Web Widget */
+ /* ----------------- */
+    
+ /* Dimensionen */
     #sk-wrapper, #sk-header, #sk-conversation, #sk-footer {
        position: absolute !important;
        right: 0px;
@@ -92,6 +95,7 @@
     #sk-conversation {
        top: 42px;
        bottom: 0px;
+       height: calc(100% - 98px) !important;
     }
     #sk-footer {
        bottom: 0px;
@@ -107,68 +111,9 @@
        padding-top: 10px !important;
     }
     
- /* Kopfzeile */
-    #sk-header > span:before {
-       content: ".!,,!";
-       display: inline;
-       background: url("http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_displaybild.jpg") no-repeat;
-       width: 20px;
-       height: 20px;
-       margin: 0 6px 0 0;
-    }
-    
- /* Inhalt */
-    
- /* Fusszeile */
-    
- /* Smooch Web Widget Anpassungen */
-    .sk-messages span.befehl { 
-       margin-top: 1px;
-       margin-bottom: 1px;
-       padding-left: 3px;
-       padding-right: 3px;
-       display: inline-block;
-       border-radius: 2px;
-       background-color: #00aeff;
-       color: white;
-       cursor: pointer;
-    }
-    .sk-messages img.bild { 
-       max-width: 200px;
-    }
-    .sk-messages a.btn-sk-primary {
-       margin-top: 5px !important;
-       margin-bottom: 5px !important;
-       color: black !important;
-       background-color: silver !important;
-       border-color: silver !important;
-    }
-    #sk-conversation .sk-row.sk-left-row .sk-msg-image:after, 
-    #sk-conversation .sk-row.sk-left-row .sk-msg:after {
-       border-color: transparent !important;
-       border-right-color: #dddddd !important;
-    }
-    
+ /* Farben */
     #sk-container.sk-embedded #sk-wrapper {
        background-color: white !important;
-    }
-    .sk-left-row .sk-msg {
-       background-color: #dddddd !important;
-    }
-    .sk-left-row .sk-msg
-    .sk-right-row .sk-msg {
-       max-width: 230px !important;
-    }
-    #sk-footer {
-       background-color: #dddddd !important;
-       color: gray !important;
-    }
-    #sk-footer .message-input {
-       background-color: #dddddd;
-       color: black !important;
-    }
-    #sk-footer .send.active {
-       color: black !important;
     }
     #sk-conversation::-webkit-scrollbar,
     #sk-conversation::-webkit-scrollbar-track {
@@ -180,14 +125,90 @@
        box-shadow: none !important;
        background-color: #eeeeee !important;
     }
-    #sk-conversation {
-       height: calc(100% - 98px) !important;
+    
+ /* ----------------- */
+ /* Kopfzeile */
+ /* ----------------- */
+    
+    #sk-header > span:before {
+       content: ".!,,!";
+       display: inline;
+       background: url("http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_displaybild.jpg") no-repeat;
+       width: 20px;
+       height: 20px;
+       margin: 0 6px 0 0;
     }
     
+ /* ----------------- */
+ /* Nachrichten */
+ /* ----------------- */
+    
+ /* Dimensionen */
+    .sk-messages img.bild { 
+       max-width: 200px;
+    }
     #sk-conversation .sk-row.sk-left-row .sk-msg-avatar {
        border-radius: 5px;
     }
+    .sk-from {
+       display: block;
+    }
     
+ /* Farben */
+    #sk-conversation .sk-row.sk-left-row .sk-msg-image:after, 
+    #sk-conversation .sk-row.sk-left-row .sk-msg:after {
+       border-color: transparent !important;
+       border-right-color: #dddddd !important;
+    }
+    .sk-left-row .sk-msg {
+       background-color: #dddddd !important;
+    }
+    .sk-left-row .sk-msg
+    .sk-right-row .sk-msg {
+       max-width: 230px !important;
+    }
+    
+ /* Buttons */
+    .sk-messages span.befehl { 
+       margin-top: 1px;
+       margin-bottom: 1px;
+       padding-left: 3px;
+       padding-right: 3px;
+       display: inline-block;
+       border-radius: 2px;
+       background-color: #00aeff;
+       color: white;
+       cursor: pointer;
+    }
+    .sk-messages a.btn-sk-primary {
+       margin-top: 5px !important;
+       margin-bottom: 5px !important;
+       color: black !important;
+       background-color: silver !important;
+       border-color: silver !important;
+    }
+    
+ /* ----------------- */
+ /* Fusszeile */
+ /* ----------------- */
+    
+    #sk-footer {
+       background-color: #dddddd !important;
+       color: gray !important;
+    }
+    #sk-footer .message-input {
+       background-color: #dddddd;
+       color: black !important;
+    }
+    #sk-footer .send.active {
+       color: black !important;
+    }
+    
+ /* ----------------- */
+ /* Schaufenster */
+ /* ----------------- */
+    
+ /* Dimensionen */
     #fenster { 
        z-index: 3000;
        position: fixed;
@@ -206,11 +227,5 @@
        width: 40px;
        height: 40px;
        cursor: pointer;
-    }
-    
-    .sk-from {
-       
-       display: block;
-       
     }
     
