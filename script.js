@@ -114,13 +114,16 @@ module.exports = new Script({
                                                         dann = "kreation"; } 
          // if  (~befehl.indexOf("--BERATUNG"))       { dann = "beratung"; } 
          // if  (~befehl.indexOf("--TECHNIK"))        { dann = "technik";  } 
-            if  (~befehl.indexOf("--SEFZIG"))         { bot.say(AndreasSefzig+'Ich wurde benachrichtigt.'); bot.setProp('persönlich', '@sefzig'); } 
+            if  (~befehl.indexOf("--SEFZIG"))         { bot.say(AndreasSefzig+'Ich wurde benachrichtigt.'); 
+                                                        bot.setProp('persönlich', '@sefzig');
+                                                        bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Schreiben Sie --Empfang.'); } 
             
          // -----------------
          // System
          // -----------------
          
-            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot+'--Befehle '
+            if ((~befehl.indexOf("--EMPFANG")) ||
+                (~befehl.indexOf("--BEFEHLE")))       { bot.say(EmpfangsBot+'--Befehle '
                                                               +'\n○ --Mobil '
                                                               +'\n○ --Über '); }
             if  (~befehl.indexOf("--MOBIL"))          { bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Bild:https://zxing.org/w/chart?cht=qr&chs=200x200&chld=L&choe=UTF-8&chl=http%3A%2F%2Fsefzigbot.herokuapp.com?v=chat%2F]');
