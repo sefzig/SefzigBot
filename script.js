@@ -20,8 +20,8 @@ module.exports = new Script({
     	
         receive: (bot) => {
             return bot.say(EmpfangsBot+'Darf ich Ihnen kurz unsere Agentur vorstellen? Dann schreiben Sie bitte --Agentur!')
-                .then(() => bot.say(EmpfangsBot+'Wollen Sie unsere --Kreation,  --Beratung oder --Technik kennenlernen?'))
-                .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Benachrichtigen Sie mich, indem Sie --Sefzig schreiben!'))
+                .then(() => bot.say(EmpfangsBot+'Gerne stelle ich Ihnen unsere --Kreation, die --Beratung oder unsere --Technik vor.'))
+                .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben!'))
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
         }
     },
@@ -30,6 +30,40 @@ module.exports = new Script({
  // Onboarding 
  // -------------------------
     
+    name: {
+    	
+        receive: (bot, message) => {
+            
+            var antwort = message.text.trim().toUpperCase();
+            var name_falsch = "";
+            var dann = "";
+            
+            if (antwort == "--JA")   { 
+               
+               bot.say(EmpfangsBot+'Unterhalten Sie sich mit mir: Bitte schreiben Sie --Empfang!');
+               name_falsch == "nein";
+               dann = "register";
+               
+            }
+            if (antwort == "--NEIN") {
+               
+               bot.say(EmpfangsBot+'Hm. Wie war das nochmal?');
+               name_falsch == "ja";
+               dann = "vorname";
+               
+            }
+            if (antwort == "--ABBRECHEN") {
+               
+               name_falsch == "";
+               dann = "register";
+               
+            }
+            
+            return bot.setProp('name_falsch', name_falsch)
+                .then(() => dann);
+        }
+    },
+
     vorname: {
     	
         prompt: (bot) => bot.say(SefzigBot+'Wie heissen Sie mit Vornamen?'),
@@ -51,40 +85,6 @@ module.exports = new Script({
                 .then((vorname) => bot.say(SefzigBot+`Sie heissen ${vorname} ${nachname}, ist das richtig?`))
                 .then((vorname) => bot.say(SefzigBot+`Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!`))
                 .then(() => 'name');
-        }
-    },
-
-    name: {
-    	
-        receive: (bot, message) => {
-            
-            var antwort = message.text.trim().toUpperCase();
-            var name_falsch = "";
-            var dann = "";
-            
-            if (antwort == "--JA")   { 
-               
-               bot.say(SefzigBot+'Sie können hier jederzeit eine Nachricht an Andreas schreiben!');
-               bot.say(SefzigBot+'Unterhalten Sie sich mit mir: Bitte schreiben Sie --bot:');
-               name_falsch == "nein";
-               dann = "register";
-               
-            }
-            if (antwort == "--NEIN") {
-               
-               name_falsch == "ja";
-               dann = "vorname";
-               
-            }
-            if (antwort == "--ABBRECHEN") {
-               
-               name_falsch == "";
-               dann = "register";
-               
-            }
-            
-            return bot.setProp('name_falsch', name_falsch)
-                .then(() => dann);
         }
     },
 
@@ -116,7 +116,7 @@ module.exports = new Script({
          // if  (~befehl.indexOf("--TECHNIK"))        { dann = "technik";  } 
             if  (~befehl.indexOf("--SEFZIG"))         { bot.say(AndreasSefzig+'Ich wurde benachrichtigt.'); 
                                                         bot.setProp('persönlich', '@sefzig');
-                                                        bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Schreiben Sie --Empfang.'); } 
+                                                        bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); } 
             
          // -----------------
          // System

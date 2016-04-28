@@ -155,6 +155,10 @@
     .sk-left-row .sk-msg {
        background-color: #dddddd !important;
     }
+    .sk-left-row .sk-msg
+    .sk-right-row .sk-msg {
+       max-width: 230px !important;
+    }
     #sk-footer {
        background-color: #dddddd !important;
        color: gray !important;
