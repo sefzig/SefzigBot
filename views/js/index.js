@@ -277,7 +277,7 @@
              $(this).parent().parent().prev().find(".sk-msg-avatar").css("display", "none;");
              
           // Pfeilchen davor verbergen
-             $(this).parent().parent().prev().find(".sk-msg:after").css("border-color", "transparent");
+          // $(this).parent().parent().prev().find(".sk-msg:after").css("border-color", "transparent");
              
           }
           else {
