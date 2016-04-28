@@ -275,10 +275,10 @@
              $(this).parent().parent().css("padding-top","10px");
              
           // Avatar davor verbergen
-             $(this).parent().parent().prev().find(".sk-msg-avatar").css("display", "none;");
+             $(this).parent().parent().prev().children().filter("img.sk-msg-avatar").attr("src", "img/bots/Displaybild_LeerBot.png");
              
           // Pfeilchen davor verbergen
-          // $(this).parent().parent().prev().find(".sk-msg:after").css("border-color", "transparent");
+             $(this).parent().parent().prev().children().filter(".sk-msg-wrapper").children().filter(".sk-msg:after").css("display", "none");
              
           }
           else {
