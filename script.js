@@ -21,7 +21,7 @@ module.exports = new Script({
     	
         receive: (bot) => {
             return bot.say(EmpfangsBot+'Darf ich Ihnen kurz unsere Agentur vorstellen? Dann schreiben Sie bitte --Agentur!')
-                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen unsere --Kreation, die --Beratung oder unsere --Technik vorstellen.'))
+                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen unsere --Kreation, die --Beratung und unsere --Technik vorstellen.'))
                 .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben!'))
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
         }
@@ -173,6 +173,10 @@ module.exports = new Script({
          
             if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+'Text: Vorlage.'); }
             
+         // -----------------
+         // Irrläufer
+         // -----------------
+         
             var versuche = 0;
             var versuchen = 5;
             if (versuch == true) { bot.setProp('versuch', 0); }
@@ -185,7 +189,10 @@ module.exports = new Script({
                }
             }
             
+         // -----------------
          // Konversation fortführen
+         // -----------------
+         
             return bot.setProp('versuch', '1')
             .then(() => dann);
         }
