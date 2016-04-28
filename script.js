@@ -176,22 +176,6 @@ module.exports = new Script({
             if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+'Text: Vorlage.'); }
             
          // -----------------
-         // Irrläufer
-         // -----------------
-         
-            var versuche = 0;
-            var versuchen = 3;
-            if (versuch == true) { bot.setProp('versuch', 0); }
-            else { 
-               var versuche = bot.getProp('versuch'); 
-               bot.setProp('versuch', versuche++);
-               if (versuche < versuchen) {
-                  bot.say(EmpfangsBot+'Wollen Sie zurück zum --Empfang?');
-                  bot.setProp('versuch', 0);
-               }
-            }
-            
-         // -----------------
          // Konversation fortführen
          // -----------------
          
