@@ -122,22 +122,23 @@ module.exports = new Script({
          // System
          // -----------------
          
-            if ((~befehl.indexOf("--EMPFANG")) ||
-                (~befehl.indexOf("--BEFEHLE")))       { bot.say(EmpfangsBot+'--Befehle '
+            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot+'--Befehle '
                                                               +'\n○ --Mobil '
                                                               +'\n○ --Über '); }
+            if  (~befehl.indexOf("--EMPFANG"))        { bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen. Oder sprechen Sie direkt mit unserer --Kreation, --Technik oder der --Beratung.'); }
             if  (~befehl.indexOf("--MOBIL"))          { bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Bild:https://zxing.org/w/chart?cht=qr&chs=200x200&chld=L&choe=UTF-8&chl=http%3A%2F%2Fsefzigbot.herokuapp.com?v=chat%2F]');
                                                         bot.say(EmpfangsBot+'(Leider werden Sie dort nicht wiedererkannt. Das sollte in einer späteren Version möglich sein...)'); }
             if ((~befehl.indexOf("--UBER")) ||
-                (~befehl.indexOf("--ÜBER")))          { bot.say(EmpfangsBot+'#Robogeddon ist auf Bots für externe und interne Unternehmens-Kommunikation spezialisiert.');
-                                                        bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig und mehreren Bots.');
-                                                        bot.say(EmpfangsBot+'Empfang Befehle: ○ --Folgt.'); }
+                (~befehl.indexOf("--ÜBER")))          { bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.');
+                                                        bot.say(EmpfangsBot+'Sprechen Sie unsere --Technik an, um mehr zu erfahren!'); }
             
          // -----------------
          // Agentur
          // -----------------
             
-            if  (~befehl.indexOf("--AGENTUR"))        { bot.say(EmpfangsBot+'Text Agentur.'); }
+            if  (~befehl.indexOf("--AGENTUR"))        { bot.say(EmpfangsBot+'#Robogeddon ist auf Bots für externe und interne Unternehmens-Kommunikation spezialisiert.');
+                                                        bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig und mehreren Bots.');
+                                                        bot.say(EmpfangsBot+'Mehr über uns: ○ --Folgt.'); }
             
          // -----------------
          // Tests
