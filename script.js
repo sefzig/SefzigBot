@@ -127,7 +127,6 @@ module.exports = new Script({
                                                                               +'\n○ Cynthia: --Technik '
                                                                               +'\n○ Doris: --Kreation '
                                                                               +'\n○ --Über '); }
-            if  (~befehl.indexOf("--EMPFANG"))        { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Technik oder der --Beratung.'); }
             if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Bild:http://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=L&chl=http%3A%2F%2Fsefzigbot.herokuapp.com?v=chat%2F&chf=bg,s,65432100] ');
                                                                         bot.say(TechnikBot+'Leider werden Sie dort nicht wiedererkannt. Wir arbeiten an einer Lösung...'); }
             if ((~befehl.indexOf("--UBER")) ||
@@ -141,6 +140,9 @@ module.exports = new Script({
             if  (~befehl.indexOf("--SEFZIG"))         { versuch = true; bot.say(AndreasSefzig+'Ich werde benachrichtigt.'); 
                                                                         bot.setProp('persönlich', '@sefzig');
                                                                         bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); } 
+            if ((~befehl.indexOf("--EMPFANG")) ||
+                (~befehl.indexOf("--ALICE"))          { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Technik oder der --Beratung.'); }
+            
             if ((~befehl.indexOf("--KREATION")) ||
                 (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(KreationsBot+'Schreiben Sie --empfang, um wieder mit Alice zu sprechen.');
                                                                         bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Befehle Kreation: --Folgt.');
@@ -178,13 +180,13 @@ module.exports = new Script({
          // -----------------
          
             var versuche = 0;
-            var versuchen = 5;
+            var versuchen = 3;
             if (versuch == true) { bot.setProp('versuch', 0); }
             else { 
                var versuche = bot.getProp('versuch'); 
                bot.setProp('versuch', versuche++);
                if (versuche < versuchen) {
-                  bot.say(EmpfangsBot+'Schreiben Sie --Empfang, um mit mir zu sprechen.');
+                  bot.say(EmpfangsBot+'Wollen Sie zurück zum --Empfang?');
                   bot.setProp('versuch', 0);
                }
             }
