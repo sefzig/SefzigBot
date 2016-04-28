@@ -260,28 +260,35 @@
           
        }
        
-          $(".sk-from").each(function() {
-             
-             var dieser =    $(this).html();
-             var vorganger = $(this).parent().parent().prev().find(".sk-from").html();
-             console.log("- "+vorganger+" = "+dieser+"?");
+       $(".sk-from").each(function() {
           
-          // Bei folgendem Absender verbergen
-             if (vorganger == dieser) {
-                
-                $(this).css("display","none");
-                $(this).parent().parent().css("padding-top","10px");
-                
-             }
-             else {
-                
-             // console.log("> Anderer Vorganger: "+vorganger+" != "+name+"");
-                
-             }
-             vorganger = "";
-             dieser = "";
+          var dieser =    $(this).html();
+          var vorganger = $(this).parent().parent().prev().find(".sk-from").html();
+          console.log("- "+vorganger+" = "+dieser+"?");
+       
+       // Bei folgendem Absender
+          if (vorganger == dieser) {
              
-          });
+          // Namen hier verbergen
+             $(this).css("display","none");
+             $(this).parent().parent().css("padding-top","10px");
+             
+          // Avatar davor verbergen
+             $(this).parent().parent().prev().find(".sk-msg-avatar").css("display", "none;");
+             
+          // Pfeilchen davor verbergen
+             $(this).parent().parent().prev().find(".sk-msg:after").css("border-color", "transparent");
+             
+          }
+          else {
+             
+          // console.log("> Anderer Vorganger: "+vorganger+" != "+name+"");
+             
+          }
+          vorganger = "";
+          dieser = "";
+          
+       });
        
        return text_string; 
        

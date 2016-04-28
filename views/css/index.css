@@ -143,8 +143,8 @@
        background-color: silver !important;
        border-color: silver !important;
     }
-    #sk-container.sk-embedded #sk-conversation .sk-row.sk-left-row .sk-msg-wrapper .sk-msg-image:after, 
-    #sk-container.sk-embedded #sk-conversation .sk-row.sk-left-row .sk-msg-wrapper .sk-msg:after {
+    #sk-conversation .sk-row.sk-left-row .sk-msg-image:after, 
+    #sk-conversation .sk-row.sk-left-row .sk-msg:after {
        border-color: transparent !important;
        border-right-color: #dddddd !important;
     }
