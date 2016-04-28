@@ -6,6 +6,7 @@ const SefzigBot =     "[SefzigBot] ";
 const EmpfangsBot =   "[EmpfangsBot] ";
 const KreationsBot =  "[KreationsBot] ";
 const BeratungsBot =  "[BeratungsBot] ";
+const TechnikBot =    "[TechnikBot] ";
 const LinkBot =       "[LinkBot] ";
 const TextBot =       "[TextBot] ";
 const SlackBot =      "[SlackBot] ";
@@ -96,7 +97,10 @@ module.exports = new Script({
     	
         receive: (bot, message) => {
             
+         // Befehl normalisieren
             var befehl = befehlWort(message.text.trim().toUpperCase());
+            
+         // Nächster Schritt default
             var dann = "register";
             
          // -----------------
@@ -106,23 +110,10 @@ module.exports = new Script({
             if  (~befehl.indexOf("--NAME"))           { dann = "name"; }
             
          // -----------------
-         // Bots
-         // -----------------
-            
-            if  (~befehl.indexOf("--KREATION"))       { bot.say(KreationsBot+'Schreiben Sie --empfang, um wieder mit Alice zu sprechen.');
-                                                        bot.say(KreationsBot+'Hallo, ich bin Alice, der Kreations-Bot. Befehle Kreation: --Folgt.');
-                                                        dann = "kreation"; } 
-         // if  (~befehl.indexOf("--BERATUNG"))       { dann = "beratung"; } 
-         // if  (~befehl.indexOf("--TECHNIK"))        { dann = "technik";  } 
-            if  (~befehl.indexOf("--SEFZIG"))         { bot.say(AndreasSefzig+'Ich wurde benachrichtigt.'); 
-                                                        bot.setProp('persönlich', '@sefzig');
-                                                        bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); } 
-            
-         // -----------------
          // System
          // -----------------
          
-            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot+'Diese --Befehle unterstützen Sie beim Nutzen des Chats:'
+            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(EmpfangsBot+'Diese --Befehle unterstützen Sie beim Nutzen von #Robogeddon:'
                                                               +'\n○ --Mobil '
                                                               +'\n○ --Newsletter '
                                                               +'\n○ --Über ');
@@ -134,11 +125,29 @@ module.exports = new Script({
                                                               +'\n○ Doris: --Kreation '
                                                               +'\n○ --Über '); }
             if  (~befehl.indexOf("--EMPFANG"))        { bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Technik oder der --Beratung.'); }
-            if  (~befehl.indexOf("--MOBIL"))          { bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Bild:https://zxing.org/w/chart?cht=qr&chs=200x200&chld=L&choe=UTF-8&chl=http%3A%2F%2Fsefzigbot.herokuapp.com?v=chat%2F]');
+            if  (~befehl.indexOf("--MOBIL"))          { bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Bild://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=L&chl=http%3A%2F%2Fsefzigbot.herokuapp.com?v=chat%2F&chf=bg,s,65432100] ');
                                                         bot.say(TechnikBot+'Leider werden Sie dort nicht wiedererkannt. Andreas arbeitet an einer Lösung...'); }
             if ((~befehl.indexOf("--UBER")) ||
                 (~befehl.indexOf("--ÜBER")))          { bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.');
                                                         bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }
+            
+         // -----------------
+         // Bots
+         // -----------------
+            
+            if  (~befehl.indexOf("--SEFZIG"))         { bot.say(AndreasSefzig+'Ich werde benachrichtigt.'); 
+                                                        bot.setProp('persönlich', '@sefzig');
+                                                        bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); } 
+            if ((~befehl.indexOf("--KREATION")) ||
+                (~befehl.indexOf("--DORIS")))         { bot.say(KreationsBot+'Schreiben Sie --empfang, um wieder mit Alice zu sprechen.');
+                                                        bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Befehle Kreation: --Folgt.');
+                                                        dann = "kreation"; } 
+            if ((~befehl.indexOf("--BERATUNG")) ||
+                (~befehl.indexOf("--BARBARA")))       { bot.say(BeratungsBot+'Schreiben Sie --empfang, um zum Empfang zurückzukehren.');
+                                                        dann = "beratung"; } 
+            if ((~befehl.indexOf("--TECHNIK")) ||
+                (~befehl.indexOf("--CYNTHIA")))       { bot.say(TechnikBot+'Schreiben Sie --empfang, wenn Sie zum Empfang wollen');
+                                                        dann = "technik";  } 
             
          // -----------------
          // Agentur
@@ -182,11 +191,13 @@ module.exports = new Script({
             var dann = "kreation";
             
          // Befehle
-            if  (~befehl.indexOf("--BEFEHLE"))        { bot.say(KreationsBot +'--Kreation '
+            if ((~befehl.indexOf("--DORIS")) ||
+                (~befehl.indexOf("--BEFEHLE")))       { bot.say(KreationsBot +'--Kreation '
                                                               +'\n○ --Folgt '
                                                               +'\n○ --Folgt '
                                                               +'\n○ --Folgt '); }
-            if ((~befehl.indexOf("--EMPFANG")) ||
+            if ((~befehl.indexOf("--ALICE")) ||
+                (~befehl.indexOf("--EMPFANG")) ||
                 (~befehl.indexOf("--ABBRECHEN")))     { bot.say(KreationsBot+'Zurück an Alice. Bis später!');
                                                         bot.say(EmpfangsBot+'Willkommen zurück. Schreiben Sie --Befehle um zu sehen, was ich Ihnen noch zeigen kann.');
                                                         dann = "register"; }
