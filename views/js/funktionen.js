@@ -77,28 +77,28 @@
     
     function blinken(selektor) {
        
-       $(selektor).not(".stopped").animate({opacity:0}, 300, "linear", function(){
+       $(selektor).animate({opacity:0}, 300, "linear", function(){
           
-          menge = $(selektor).attr("data-menge");
+          menge = $("body").attr("data-blink");
           if ((!menge) || (menge == "")) { menge = 1; }
              
           $(this).delay(300);
           
           $(this).animate({opacity:1}, 300, function(){
              
-             menge = $(selektor).attr("data-menge");
+             menge = $("body").attr("data-blink");
              if (menge <= 5) { blinken(selektor); }
              
           });
        
           $(this).delay(300);
           menge = menge - (-1);
-          $(selektor).attr("data-menge", menge);
+          $("body").attr("data-blink", menge);
        
        });
        
-       $("#sk-footer").click(function()  { $(selektor).off().attr("data-menge", 5); });
-       $("#sk-footer").change(function() { $(selektor).off().attr("data-menge", 5); });
+       $("#sk-footer").click(function()  { $(selektor).off(); $("body").attr("data-blink", 5); });
+       $("#sk-footer").change(function() { $(selektor).off(); $("body").attr("data-blink", 5); });
         
     /*
        $("#sk-footer > *").fadeIn(500);
