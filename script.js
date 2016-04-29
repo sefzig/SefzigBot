@@ -208,19 +208,33 @@ module.exports = new Script({
             }
             else { 
                
-               bot.say(SefzigBot+'Max. Versuche: '+versuche_max+'.');
+            // bot.say(SefzigBot+'Max. Versuche: '+versuche_max+'.');
                
+            // return bot.getProp('versuch')
+            // .then((versuch) => bot.say(`Hello again, ${versuch}!`))
+            // .then(() => 'register');
+               
+               return bot.getProp('versuch')
+               .then((versuch) => function(versuch) { bot.say(SefzigBot+'Es funktioniert: '+versuch); })
+               .then(() => 'register');
+               
+               
+               
+               
+               
+               
+            /* 
                var versuche_objekt = bot.getProp('versuch');
                var versuche_text = JSON.stringify(versuche_objekt, null, 4); 
-               bot.say(SefzigBot+'Versuche bisher Objekt: '+versuche_text+'.');
+            // bot.say(SefzigBot+'Versuche bisher Objekt: '+versuche_text+'.');
                
                var versuche_bisher = versuche_objekt["_s"];
                if ((!versuche_bisher) || (versuche_bisher == "")) { versuche_bisher = 0; }
-               bot.say(SefzigBot+'Versuche bisher Wert: '+versuche_bisher+'.');
+            // bot.say(SefzigBot+'Versuche bisher Wert: '+versuche_bisher+'.');
                
                var versuch = versuche_bisher - (-1);
                bot.setProp('versuch', versuch);
-               bot.say(SefzigBot+'Versuch hochgezählt: '+versuch+'.');
+            // bot.say(SefzigBot+'Versuch hochgezählt: '+versuch+'.');
                
                if (versuch >= versuche_max) {
                   
@@ -231,7 +245,7 @@ module.exports = new Script({
                   bot.say(SefzigBot+'Versuch auf 0 zurückgesetzt.');
                   
                }
-               
+             */
             }
             
          // -----------------
