@@ -281,6 +281,7 @@
              
           // Pfeilchen davor verbergen
              $(this).parent().parent().prev().find(".sk-msg").addClass("frei");
+             $('head').append("<style>.sk-msg.frei::after{ border: none !important }</style>");
              
           }
           else {

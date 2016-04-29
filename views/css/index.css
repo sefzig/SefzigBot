@@ -157,19 +157,20 @@
        border-radius: 5px;
     }
  /* Farben */
-    .sk-msg.frei:after { border-right-color: transparent !important; }
-    
-    #sk-conversation .sk-row.sk-left-row .sk-msg-image:after, 
-    #sk-conversation .sk-row.sk-left-row .sk-msg:after {
-       border-color: transparent !important;
-       border-right-color: #dddddd !important;
-    }
     .sk-left-row .sk-msg {
        background-color: #dddddd !important;
     }
     .sk-left-row .sk-msg
     .sk-right-row .sk-msg {
        max-width: 230px !important;
+    }
+    #sk-conversation .sk-row.sk-left-row .sk-msg-image:after, 
+    #sk-conversation .sk-row.sk-left-row .sk-msg:after {
+       border-color: transparent !important;
+       border-right-color: #dddddd !important;
+    }
+    .sk-msg.frei::after {
+       border: none !important;
     }
     
  /* Buttons */
