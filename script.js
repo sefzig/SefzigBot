@@ -203,7 +203,7 @@ module.exports = new Script({
             if (versuch == true) { 
                
                bot.setProp('versuch', 0);
-               bot.say(SefzigBot+`Versuch auf 0 gesetzt.`);
+               bot.say(SefzigBot+'Versuch auf 0 gesetzt.');
                
             }
             else { 
@@ -217,11 +217,11 @@ module.exports = new Script({
                
                if (versuchet >= versuchen) {
                   
-                  bot.say(SefzigBot+`Versuche größer als Versuchen.`);
+                  bot.say(SefzigBot+'Versuche größer als Versuchen.');
                   bot.say(EmpfangsBot+'Wollen Sie zurück zum --Empfang?');
                   
                   bot.setProp('versuch', 0);
-                  bot.say(SefzigBot+`Versuch auf 0 zurückgesetzt.`);
+                  bot.say(SefzigBot+'Versuch auf 0 zurückgesetzt.');
                   
                }
                
