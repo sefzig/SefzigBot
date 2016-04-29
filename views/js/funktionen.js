@@ -71,12 +71,15 @@
   */
     function blink() {
        
-       blinken(".sk-intro, #sk-footer .input-container");
+       window.setTimeout(function() { blinken(5); }, 1000);
        
     }
     
-    function blinken(selektor) {
+    function blinken(max) {
        
+       selektor = ".sk-intro, #sk-footer .input-container";
+       max = max * 2;
+          
        $(selektor).animate({opacity:0}, 300, "linear", function(){
           
           menge = $("body").attr("data-blink");
@@ -87,18 +90,19 @@
           $(this).animate({opacity:1}, 300, function(){
              
              menge = $("body").attr("data-blink");
-             if (menge <= 10) { blinken(selektor); }
+             if (menge <= max) { blinken(max); }
              
           });
        
           $(this).delay(300);
+          
           menge = menge - (-1);
           $("body").attr("data-blink", menge);
        
        });
        
-       $("#sk-footer").click(function()  { $(selektor).off(); $("body").attr("data-blink", 5); });
-       $("#sk-footer").change(function() { $(selektor).off(); $("body").attr("data-blink", 5); });
+       $("#sk-footer").click(function()  { $(selektor).off(); $("body").attr("data-blink", max); });
+       $("#sk-footer").change(function() { $(selektor).off(); $("body").attr("data-blink", max); });
         
     /*
        $("#sk-footer > *").fadeIn(500);
