@@ -71,15 +71,41 @@
   */
     function blinken(count) {
        
-       $(".sk-intro").animate({opacity:0}, 50, "linear", function(){
-          $(this).delay(800);
-          $(this).animate({opacity:1}, 50, function(){
-          blink(this);
+       $(".sk-intro").animate({opacity:0}, 300, "linear", function(){
+          
+          $(this).delay(300);
+          
+          $(this).animate({opacity:1}, 300, function(){
+             
+             $(this).animate({opacity:0}, 300, "linear", function(){
+          
+                $(this).delay(300);
+                $(this).animate({opacity:1}, 300, function(){
+                   
+                   $(this).animate({opacity:0}, 300, "linear", function(){
+          
+                      $(this).delay(300);
+                      $(this).animate({opacity:1}, 300, function(){
+                         
+                         blinken(this);
+                         
+                      });
+       
+                      $(this).delay(300);
+       
+                   });
+                   
+                });
+       
+                $(this).delay(300);
+       
+             });
+             
+          });
+       
+          $(this).delay(300);
+       
        });
-       
-       $(this).delay(800);
-       
-    });
        
     /*
        $("#sk-footer > *").fadeIn(500);
