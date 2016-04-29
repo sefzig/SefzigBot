@@ -94,7 +94,9 @@
        
           $(this).delay(300);
           
-          menge = menge - (-1); console.log("menge: "+menge);
+          menge = $("body").attr("data-blink");
+          menge = menge - (-1); 
+          console.log("menge: "+menge);
           $("body").attr("data-blink", menge);
        
        });
