@@ -252,7 +252,7 @@ module.exports = new Script({
          // Konversation fortführen
          // -----------------
          
-            return bot.setProp('versuch', '1')
+            return bot.setProp('versuch_tmp', '1')
             .then(() => dann);
         }
     },
