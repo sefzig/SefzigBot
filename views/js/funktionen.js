@@ -77,14 +77,12 @@
     
     function blinken(max) {
        
+       $("body").attr("data-blink", 1);
        selektor = ".sk-intro"; // , #sk-footer .input-container
-       max = max * 2;
+    // max = max * 2;
           
        $(selektor).animate({opacity:0}, 300, "linear", function(){
           
-          menge = $("body").attr("data-blink");
-          if ((!menge) || (menge == "")) { menge = 1; }
-             
           $(this).delay(300);
           
           $(this).animate({opacity:1}, 300, function(){
@@ -96,13 +94,13 @@
        
           $(this).delay(300);
           
-          menge = menge - (-1);
+          menge = menge - (-1); console.log("menge: "+menge);
           $("body").attr("data-blink", menge);
        
        });
        
-       $("#sk-footer").click(function()  { $(selektor).off(); $("body").attr("data-blink", max); });
-       $("#sk-footer").change(function() { $(selektor).off(); $("body").attr("data-blink", max); });
+       $("#sk-footer").click(function()  { $(selektor).off(); $("body").attr("data-blink", menge); });
+       $("#sk-footer").change(function() { $(selektor).off(); $("body").attr("data-blink", menge); });
         
     /*
        $("#sk-footer > *").fadeIn(500);
