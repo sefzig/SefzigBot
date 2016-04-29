@@ -105,7 +105,7 @@
        
        });
        
-       $("#sk-footer, #sk-footer *").click(function()  { $(selektor).off().slideUp({ direction: "up" }, 500); $("body").attr("data-blink", max); });
-       $("#sk-footer, #sk-footer *").change(function() { $(selektor).off().slideUp({ direction: "up" }, 500); $("body").attr("data-blink", max); });
+       $("#sk-footer, #sk-footer *").click(function()  { $(selektor).slideUp({ direction: "up" }, 500); $("body").attr("data-blink", max); });
+       $("#sk-footer, #sk-footer *").change(function() { $(selektor).slideUp({ direction: "up" }, 500); $("body").attr("data-blink", max); });
        
     }

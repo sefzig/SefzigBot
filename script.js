@@ -215,7 +215,7 @@ module.exports = new Script({
             // .then(() => 'register');
                
                return bot.getProp('versuch')
-               .then((versuch) => function(versuch) { bot.say(SefzigBot+'Es funktioniert: '+versuch); })
+               .then((versuch) => bot.say(SefzigBot+'Es funktioniert: '+versuch))
                .then(() => 'register');
                
                
