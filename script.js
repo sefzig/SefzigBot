@@ -14,7 +14,7 @@ var versuche = 0;
 
 module.exports = new Script({
     processing: {
-        prompt: (bot) => bot.say(SefzigBot+'Nicht so schnell bitte...'),
+        prompt: (bot) => bot.say(TechnikBot+'Nicht so schnell bitte...'),
         receive: () => 'processing'
     },
 
@@ -117,19 +117,18 @@ module.exports = new Script({
          // System
          // -----------------
          
-            if  (~befehl.indexOf("--BEFEHLE"))        { versuch = true; bot.say(EmpfangsBot+'Diese --Befehle unterstützen Sie beim Nutzen dieser Seite:'
+            if  (~befehl.indexOf("--BEFEHLE"))        { versuch = true; bot.say(EmpfangsBot+'--Befehle dieser Seite:'
                                                                               +'\n○ --Mobil '
                                                                               +'\n○ --Newsletter '
                                                                               +'\n○ --Kontakt '
                                                                               +'\n○ --Über ');
                                                                         befehl = "--THEMEN"; }
-            if  (~befehl.indexOf("--THEMEN"))         { versuch = true; bot.say(EmpfangsBot+'Lassen Sie sich von Alice die --Agentur zeigen:'
+            if  (~befehl.indexOf("--THEMEN"))         { versuch = true; bot.say(EmpfangsBot+'Die Gewerke der --Agentur:'
                                                                               +'\n○ Andreas: --Strategie '
                                                                               +'\n○ Barbara: --Beratung '
                                                                               +'\n○ Cynthia: --Technik '
-                                                                              +'\n○ Doris: --Kreation '
-                                                                              +'\n○ Erika: --Assistenz ');
-                                                                        bot.say(AndreasSefzig+'Erfahren Sie Hintergründe zu --Robogeddon:'
+                                                                              +'\n○ Doris: --Kreation ');
+                                                                        bot.say(AndreasSefzig+'Mehr über --Robogeddon:'
                                                                               +'\n○ --Gründung '
                                                                               +'\n○ --Vision '
                                                                               +'\n○ --Über '); }
@@ -144,7 +143,7 @@ module.exports = new Script({
          // -----------------
             
             if  (~befehl.indexOf("--SEFZIG"))         { versuch = true; bot.setProp('persönlich', '@sefzig')
-                                               .then(function(){ return bot.say(AndreasSefzig+'Ich werde benachrichtigt.') })
+                                               .then(function(){ return bot.say(EmpfangsBot+'Ich habe Andreas benachrichtigt.') })
                                                .then(function(){ return bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); }); } 
             if ((~befehl.indexOf("--EMPFANG")) ||
                 (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Technik oder der --Beratung.'); }
@@ -152,7 +151,7 @@ module.exports = new Script({
             if ((~befehl.indexOf("--KREATION")) ||
                 (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.')
                                                .then(function(){ return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren.') })
-                                               .then(function(){ return bot.say(KreationsBot+'Für ein Plus an --Persönlichkeit weben wir --Geschichten und reichhaltige --Inhalte ein. Letztendlich wollen wir --Mehrwerte für die Nutzer schaffen.') });
+                                               .then(function(){ return bot.say(KreationsBot+'Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in das Gespräch ein. Letztendlich wollen wir --Mehrwerte für die Nutzer schaffen.') });
                                                                         dann = "kreation"; } 
             if ((~befehl.indexOf("--BERATUNG")) ||
                 (~befehl.indexOf("--BARBARA")))       { versuch = true; bot.say(BeratungsBot+'Schreiben Sie --empfang, um zum Empfang zurückzukehren.');

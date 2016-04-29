@@ -75,16 +75,18 @@
           
        // Smooch.open();
           Smooch.render(document.getElementById('chat'));
-          Smooch.on('message:received', function(message) {
-             
-             window.setTimeout(function() { anpassen(); }, 1);
-             
-          // console.log('- Nutzer hat eine Nachricht erhalten');
-             
-          });
           Smooch.on('message:sent', function(message) {
              
           // console.log('- Nutzer hat eine Nachricht gesendet');
+             $(".sk-messages").append('<img src="img/ui/Schreiben.gif" class="typing" />');
+             
+          });
+          Smooch.on('message:received', function(message) {
+             
+             window.setTimeout(function() { anpassen(); }, 1);
+             $(".typing").destroy();
+             
+          // console.log('- Nutzer hat eine Nachricht erhalten');
              
           });
           
@@ -165,7 +167,7 @@
           var text =      '<div class="sk-action" style="margin-bottom:0px"><a class="btn btn-sk-primary" href="http://sefzig.net/text/%inhalt%/" onclick="fenster(\'text\',\'%inhalt%\'); return false;">Text:      %inhalt%</a></div>';
           var linkliste = '<div class="sk-action" style="margin-bottom:0px"><a class="btn btn-sk-primary" href="http://sefzig.net/link/liste/"    onclick="fenster(\'link\',\'%inhalt%\'); return false;">Linkliste: %inhalt%</a></div>';
           var button =    '<div class="sk-action" style="margin-bottom:0px"><a class="btn btn-sk-primary" href="'+button_url+'" target="_blank">'+button_text+'</a></div>';
-          var qr =        '<center><img class="%klasse%" src="http://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=L&chf=bg,s,65432100&chl=%inhalt%" /></center>';
+          var qr =        '<center><img class="%klasse%" src="http://chart.apis.google.com/chart?chs=250x250&cht=qr&chld=L&chf=bg,s,65432100&chl=%inhalt%" /></center> http://sefzigbot.herokuapp.com/ ';
           var bild =      '<center><img class="%klasse%" src="%inhalt%" /></center>';
           var audio =     '<audio class="%klasse%" controls="true" style="width: 100%; max-width: 500px; margin-top: 10px;" x-webkit-airplay="allow"><source src="%inhalt%" type="audio/mpeg">Lade Audio...</audio>';
           var iframe =    '<iframe src="%inhalt%" width="180" height="102" frameborder="0">Frame laden</iframe>';
@@ -303,7 +305,7 @@
     function anpassen() {
        
     // Noch nicht angepasste anpassen
-       var selektor = ".sk-messages .sk-msg > span > span > span:not([data-angepasst])";
+       var selektor = ".sk-msg > span > span > span:not([data-angepasst])";
        $(selektor).each(function() {
           
        // Inhalte lesen
@@ -312,7 +314,7 @@
        // Neuen Inhalt beginnen // String wird von allen folgenden Funktionen angepasst
           var text_neu = text_alt;
           
-       // 1 Zufallszahl für jede Blase
+       // 1 Zufallszahl für jede Nachricht
           var zufall = Math.floor(Math.random()*999999);
           
        // Zugelassene Javascript-Funktionen
