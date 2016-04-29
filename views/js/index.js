@@ -96,7 +96,7 @@
        anpassen();
        
        $("#seite #"+methode).fadeIn();
-       window.setTimeout(function() { blinken(".sk-intro"); blinken("#sk-footer > *"); }, 2000);
+    // window.setTimeout(function() { blink(); }, 2000);
        $(".message-input").focus();
        
     }
@@ -317,7 +317,8 @@
        // Zugelassene Javascript-Funktionen
           var funktionen = {
              test_alert:   function () { alert('Hallo Welt!'); },
-             test_console: function () { console.log('> Hallo Welt!'); }
+             test_console: function () { console.log('> Hallo Welt!'); },
+             blinken:      function () { blink(); }
           };
           
        // Bot-Inhalte markieren :/

@@ -69,6 +69,13 @@
   * 
   * Beschreibung
   */
+    function blink() {
+       
+       blinken(".sk-intro"); 
+       blinken("#sk-footer > *");
+       
+    }
+    
     function blinken(selektor) {
        
        $(selektor).not(".stopped").animate({color:red}, 300, "linear", function(){
