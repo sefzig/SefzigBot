@@ -183,6 +183,9 @@ module.exports = new Script({
          
             if  (~befehl.indexOf("--JAVASCRIPT"))     { versuch = true; bot.say(SefzigBot+'[Javascript:test_alert]'); }
             if  (~befehl.indexOf("--VIDEO"))          { versuch = true; bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
+            if  (~befehl.indexOf("--REIHE"))          { versuch = true; bot.say('Sentence #1')
+                                               .then(function(){ return bot.say('Sentence #2'); })
+                                               .then(function(){ return bot.say('Sentence #3'); }); }
             
          // -----------------
          // Vorlage
