@@ -92,7 +92,7 @@
              menge = $("body").attr("data-blink");
              if (menge < max) { blinken(max); }
              
-             $("#sk-footer .input-container").animate({backgroundColor:#ffffff}, 300, "linear");
+             $("#sk-footer .input-container").animate({backgroundColor:"#ffffff"}, 300, "linear");
              
           });
        
