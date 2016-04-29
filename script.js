@@ -264,7 +264,47 @@ module.exports = new Script({
             if  (~befehl.indexOf("--LINKS"))          { bot.say(KreationsBot +'Text Links.'); }
             
          // Konversation fortführen
-            return bot.setProp('text', 'gesprochen') 
+            return bot.setProp('kreation', 'gesprochen') 
+                .then(() => dann);
+            
+        }
+        
+    },
+
+ // -------------------------
+ // Beratung
+ // -------------------------
+    
+    beratung: {
+    	
+        receive: (bot, message) => {
+            
+         // Befehl normalisieren
+            var befehl = befehlWort(message.text.trim().toUpperCase());
+            
+         // Nächster Schritt default
+            var dann = "beratung";
+            
+         // Konversation fortführen
+            return bot.setProp('beratung', 'gesprochen') 
+                .then(() => dann);
+            
+        }
+        
+    },
+
+    technik: {
+    	
+        receive: (bot, message) => {
+            
+         // Befehl normalisieren
+            var befehl = befehlWort(message.text.trim().toUpperCase());
+            
+         // Nächster Schritt default
+            var dann = "technik";
+            
+         // Konversation fortführen
+            return bot.setProp('technik', 'gesprochen') 
                 .then(() => dann);
             
         }
