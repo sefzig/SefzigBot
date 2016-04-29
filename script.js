@@ -209,7 +209,8 @@ module.exports = new Script({
             else { 
                
                var versuche = bot.getProp('versuch');
-               bot.say(SefzigBot+'Versuche '+JSON.stringify(versuche, null, 4)+'.');
+               versuche = JSON.stringify(versuche, null, 4);
+               bot.say(SefzigBot+'Versuche '+versuche+'.');
                
                var versuchet = versuche - (-1);
                bot.setProp('versuch', versuchet);
@@ -296,6 +297,10 @@ module.exports = new Script({
         
     },
 
+ // -------------------------
+ // Technik
+ // -------------------------
+    
     technik: {
     	
         receive: (bot, message) => {
@@ -314,6 +319,10 @@ module.exports = new Script({
         
     },
 
+ // -------------------------
+ // Ende
+ // -------------------------
+    
     finish: {
         receive: (bot, message) => {
             return bot.getProp('name')
