@@ -79,20 +79,20 @@
     function blinken(max) {
        
        selektor = ".blink"; // , #sk-footer .input-container
-    // max = max * 2;
+       max = max - (-1);
           
-       $(selektor).animate({opacity:0}, 300, "linear", function(){
+       $(selektor).animate({opacity:1}, 300, "linear", function(){
           
-          $("#sk-footer input.message-input").animate({opacity:0.33}, 300, "linear");
+          $("#sk-footer input.message-input").animate({opacity:1}, 300, "linear");
           
           $(this).delay(300);
           
-          $(this).animate({opacity:1}, 300, function(){
+          $(this).animate({opacity:0}, 300, function(){
              
              menge = $("body").attr("data-blink");
              if (menge < max) { blinken(max); }
              
-             $("#sk-footer .message-input").animate({opacity:1}, 300, "linear");
+             $("#sk-footer .message-input").animate({opacity:0.33}, 300, "linear");
              
           });
        

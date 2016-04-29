@@ -369,7 +369,11 @@
  // Klicks auf Befehle
     function befehlen(befehl) {
        
-       window.Smooch.sendMessage(befehl);
+       $("#sk-footer form input.message-input").val(befehl);
+       $("#sk-footer form input.message-input").change();
+       $("#sk-footer form input.message-input").focus();
+    // $("#sk-footer form .send").trigger("click");
+       window.Smooch.sendMessage('my text');
        
     }
     
