@@ -71,8 +71,7 @@
   */
     function blink() {
        
-       blinken(".sk-intro"); 
-       blinken("#sk-footer > *");
+       blinken(".sk-intro, #sk-footer > *"); 
        
     }
     
