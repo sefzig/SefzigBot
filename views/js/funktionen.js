@@ -81,7 +81,7 @@
           $(this).animate({opacity:1}, 300, function(){
              
              menge = $(selektor).attr("data-menge");
-             if (menge < 5) { blinken(selektor); }
+             if (menge <= 5) { blinken(selektor); }
              
           });
        
@@ -91,8 +91,8 @@
        
        });
        
-       $("#sk-footer").click(function()  { $(selektor).addClass("stopped").off(); });
-       $("#sk-footer").change(function() { $(selektor).addClass("stopped").off(); });
+       $("#sk-footer").click(function()  { $(selektor).off().attr("data-menge", 5); });
+       $("#sk-footer").change(function() { $(selektor).off().attr("data-menge", 5); });
         
     /*
        $("#sk-footer > *").fadeIn(500);
