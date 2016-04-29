@@ -71,7 +71,7 @@
   */
     function blink() {
        
-       blinken(".sk-intro, #sk-footer > *"); 
+       blinken(".sk-intro, #sk-footer .input-container");
        
     }
     
