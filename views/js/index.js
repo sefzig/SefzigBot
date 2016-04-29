@@ -89,7 +89,7 @@
           });
           
        // Fokus auf Eingabe
-          $("#sk-footer form input.message-input").focus();
+          $("#sk-footer .message-input").focus();
           
        }
        

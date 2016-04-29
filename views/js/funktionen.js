@@ -85,14 +85,14 @@
           
           $(this).delay(300);
           
-          $("#sk-container.sk-embedded .input").animate({backgroundColor:"#ee1133 !important"}, 300, "linear");
+          $("#sk-footer .input-container").animate({opacity:0.33}, 300, "linear");
           
           $(this).animate({opacity:1}, 300, function(){
              
              menge = $("body").attr("data-blink");
              if (menge < max) { blinken(max); }
              
-             $("#sk-container.sk-embedded .input").animate({backgroundColor:"#fbfbfb !important"}, 300, "linear");
+             $("#sk-footer .input-container").animate({opacity:1}, 300, "linear");
              
           });
        
@@ -100,13 +100,13 @@
           
           menge = $("body").attr("data-blink");
           menge = menge - (-1); 
-          console.log("menge: "+menge);
+       // console.log("menge: "+menge);
           $("body").attr("data-blink", menge);
        
        });
        
-    // $("#sk-footer, #sk-footer *").click(function()  { $(selektor).off(); $("body").attr("data-blink", max); });
-       $("#sk-footer, #sk-footer *").change(function() { $(selektor).off(); $("body").attr("data-blink", max); });
+    // $("#sk-footer, #sk-footer *").click(function()  { $(selektor).off().slideUp(500); $("body").attr("data-blink", max); });
+       $("#sk-footer, #sk-footer *").change(function() { $(selektor).off().slideUp(500); $("body").attr("data-blink", max); });
         
     /*
        $("#sk-footer > *").fadeIn(500);
