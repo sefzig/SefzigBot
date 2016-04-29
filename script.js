@@ -145,8 +145,9 @@ module.exports = new Script({
                 (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Technik oder der --Beratung.'); }
             
             if ((~befehl.indexOf("--KREATION")) ||
-                (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(KreationsBot+'Schreiben Sie --empfang, um wieder mit Alice zu sprechen.')
-                                               .then(function(){ return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Befehle Kreation: --Folgt.'); });
+                (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.')
+                                               .then(function(){ return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Wir hauchen Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren. ')
+                                               .then(function(){ return bot.say(KreationsBot+'Für ein Extra an --Persönlichkeit weben wir --Geschichten und reichhaltige --Inhalte ein. Letztendlich wollen wir --Mehrwerte für die Nutzer.'); });
                                                                         dann = "kreation"; } 
             if ((~befehl.indexOf("--BERATUNG")) ||
                 (~befehl.indexOf("--BARBARA")))       { versuch = true; bot.say(BeratungsBot+'Schreiben Sie --empfang, um zum Empfang zurückzukehren.');
