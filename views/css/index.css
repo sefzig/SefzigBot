@@ -110,6 +110,9 @@
     .sk-intro {
        padding-top: 10px !important;
     }
+    #sk-footer .input-container {
+       background-color: #ffffff !important;
+    }
     
  /* Farben */
     #sk-container.sk-embedded #sk-wrapper {

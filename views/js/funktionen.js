@@ -71,7 +71,7 @@
   */
     function blink() {
        
-       window.setTimeout(function() { blinken(5); }, 1000);
+       window.setTimeout(function() { blinken(10); }, 1000);
        $("body").attr("data-blink", 0);
        
     }
@@ -105,7 +105,7 @@
        
        });
        
-       $("#sk-footer, #sk-footer *").click(function()  { $(selektor).off().slideUp(500); $("body").attr("data-blink", max); });
-       $("#sk-footer, #sk-footer *").change(function() { $(selektor).off().slideUp(500); $("body").attr("data-blink", max); });
+       $("#sk-footer, #sk-footer *").click(function()  { $(selektor).off().slideUp({ direction: "up" }, 500); $("body").attr("data-blink", max); });
+       $("#sk-footer, #sk-footer *").change(function() { $(selektor).off().slideUp({ direction: "up" }, 500); $("body").attr("data-blink", max); });
        
     }

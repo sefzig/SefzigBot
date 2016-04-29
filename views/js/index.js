@@ -117,7 +117,7 @@
              var inhalt = inhalte[i].split(/,|;|:|\.|\<|!|\?| /)[0];
              
           // Neuen Text anpassen
-             text_string = text_string.replace("--"+inhalt, '<span class="befehl" onclick="befehlen(\'--'+inhalt+'\')">--'+inhalt+'</span>');
+             text_string = text_string.replace("--"+inhalt, '<span class="befehl" onclick="befehlen(\'--'+inhalt+'\')">'+inhalt+'</span>');
              
           // Debuggen
           // console.log("- Befehl angepasst: "+inhalt);

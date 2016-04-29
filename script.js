@@ -103,7 +103,7 @@ module.exports = new Script({
          // Nächster Schritt default
             var dann = "register";
             
-         // Fehler-Toleranz
+         // Nicht-Befehl-eingaben mitzählen
             var versuch = false;
             
          // -----------------
@@ -196,14 +196,31 @@ module.exports = new Script({
          
             var versuche = 0;
             var versuchen = 3;
-            if (versuch == true) { bot.setProp('versuch', 0); }
+            
+            if (versuch == true) { 
+               
+               bot.setProp('versuch', 0);
+               bot.say(SefzigBot+`Versuch auf 0 gesetzt.`);
+               
+            }
             else { 
-               var versuche = bot.getProp('versuch'); 
-               bot.setProp('versuch', versuche++);
-               if (versuche < versuchen) {
+               
+               var versuche = bot.getProp('versuch');
+               bot.say(SefzigBot+'Versuche '+versuche+'.');
+               
+               var versuchet = versuche - (-1);
+               bot.setProp('versuch', versuchet);
+               
+               if (versuchet >= versuchen) {
+                  
+                  bot.say(SefzigBot+`Versuche größer als Versuchen.`);
                   bot.say(EmpfangsBot+'Wollen Sie zurück zum --Empfang?');
+                  
                   bot.setProp('versuch', 0);
+                  bot.say(SefzigBot+`Versuch auf 0 zurückgesetzt.`);
+                  
                }
+               
             }
             
          // -----------------
@@ -237,7 +254,7 @@ module.exports = new Script({
                                                                               +'\n○ --Folgt '); }
             if ((~befehl.indexOf("--ALICE")) ||
                 (~befehl.indexOf("--EMPFANG")) ||
-                (~befehl.indexOf("--ABBRECHEN")))     { bot.say(KreationsBot+'Zurück an Alice. Bis später!');
+                (~befehl.indexOf("--ABBRECHEN")))     { bot.say(KreationsBot+'Bis später!');
                                                                         bot.say(EmpfangsBot+'Willkommen zurück. Schreiben Sie --Befehle um zu sehen, was ich Ihnen noch zeigen kann.');
                                                                         dann = "register"; }
             
