@@ -199,69 +199,12 @@ module.exports = new Script({
          // -----------------
          
             var versuche_max = 3;
-            
-            if (versuch == true) { 
-               
-               versuche = 0;
-               bot.say(SefzigBot+'Versuch auf 0 gesetzt.');
-               
-            }
-            else { 
-               
-               versuche++;
-               bot.say(SefzigBot+'Versuch hochgezählt: '+versuche+'.');
-               
+            if (versuch == true) { versuche = 0; }
+            else {  versuche++;
                if (versuche == versuche_max) {
-                  
-                  bot.say(SefzigBot+'Versuche größer als Versuchen.');
                   bot.say(EmpfangsBot+'Wollen Sie zurück zum --Empfang?');
-                  
                   versuche = 0;
-                  bot.say(SefzigBot+'Versuch auf 0 zurückgesetzt.');
-                  
                }
-               
-               
-               
-               
-               
-               
-               
-            /* 
-               
-            // bot.say(SefzigBot+'Max. Versuche: '+versuche_max+'.');
-               
-            // return bot.getProp('versuch')
-            // .then((versuch) => bot.say(`Hello again, ${versuch}!`))
-            // .then(() => 'register');
-               
-               return bot.getProp('versuch')
-               .then((versuch) => bot.say(SefzigBot+'Es funktioniert: '+versuch))
-               .then(() => 'register');
-               
-               var versuche_objekt = bot.getProp('versuch');
-               var versuche_text = JSON.stringify(versuche_objekt, null, 4); 
-            // bot.say(SefzigBot+'Versuche bisher Objekt: '+versuche_text+'.');
-               
-               var versuche_bisher = versuche_objekt["_s"];
-               if ((!versuche_bisher) || (versuche_bisher == "")) { versuche_bisher = 0; }
-            // bot.say(SefzigBot+'Versuche bisher Wert: '+versuche_bisher+'.');
-               
-               var versuch = versuche_bisher - (-1);
-               bot.setProp('versuch', versuch);
-            // bot.say(SefzigBot+'Versuch hochgezählt: '+versuch+'.');
-               
-               if (versuch >= versuche_max) {
-                  
-                  bot.say(SefzigBot+'Versuche größer als Versuchen.');
-                  bot.say(EmpfangsBot+'Wollen Sie zurück zum --Empfang?');
-                  
-                  bot.setProp('versuch', 0);
-                  bot.say(SefzigBot+'Versuch auf 0 zurückgesetzt.');
-                  
-               }
-             */
-            
             }
             
          // -----------------
