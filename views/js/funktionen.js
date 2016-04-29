@@ -72,12 +72,12 @@
     function blink() {
        
        window.setTimeout(function() { blinken(5); }, 1000);
+       $("body").attr("data-blink", 0);
        
     }
     
     function blinken(max) {
        
-       $("body").attr("data-blink", 0);
        selektor = ".sk-intro"; // , #sk-footer .input-container
     // max = max * 2;
           
@@ -101,8 +101,8 @@
        
        });
        
-       $("#sk-footer").click(function()  { $(selektor).off(); $("body").attr("data-blink", max); });
-       $("#sk-footer").change(function() { $(selektor).off(); $("body").attr("data-blink", max); });
+       $("#sk-footer, #sk-footer *").click(function()  { $(selektor).off(); $("body").attr("data-blink", max); });
+       $("#sk-footer, #sk-footer *").change(function() { $(selektor).off(); $("body").attr("data-blink", max); });
         
     /*
        $("#sk-footer > *").fadeIn(500);
