@@ -156,8 +156,9 @@
     #sk-conversation .sk-row.sk-left-row .sk-msg-avatar {
        border-radius: 5px;
     }
-    
  /* Farben */
+    .sk-msg.frei:after { border-right-color: transparent !important; }
+    
     #sk-conversation .sk-row.sk-left-row .sk-msg-image:after, 
     #sk-conversation .sk-row.sk-left-row .sk-msg:after {
        border-color: transparent !important;

@@ -280,7 +280,7 @@
              $(this).parent().parent().prev().children().filter("img.sk-msg-avatar").attr("src", "img/bots/Displaybild_LeerBot.png");
              
           // Pfeilchen davor verbergen
-             $(this).parent().parent().prev().find(".sk-msg:after").css("display", "none");
+             $(this).parent().parent().prev().find(".sk-msg").addClass("frei");
              
           }
           else {

@@ -71,7 +71,7 @@
   */
     function blink() {
        
-       window.setTimeout(function() { blinken(7); }, 1000);
+       window.setTimeout(function() { blinken(5); }, 1000);
        $("body").attr("data-blink", 0);
        
     }
