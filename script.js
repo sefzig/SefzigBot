@@ -128,24 +128,24 @@ module.exports = new Script({
                                                                               +'\n○ Doris: --Kreation '
                                                                               +'\n○ --Über '); }
             if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ')
-                                               .then(function(){ return bot.say(TechnikBot+'Leider werden Sie dort nicht wiedererkannt. Wir arbeiten an einer Lösung...'); }
+                                               .then(function(){ return bot.say(TechnikBot+'Leider werden Sie dort nicht wiedererkannt. Wir arbeiten an einer Lösung...'); }); }
             if ((~befehl.indexOf("--UBER")) ||
                 (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }
+                                               .then(function(){ return bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }); }
             
          // -----------------
          // Bots
          // -----------------
             
             if  (~befehl.indexOf("--SEFZIG"))         { versuch = true; bot.setProp('persönlich', '@sefzig')
-                                               .then(function(){ return bot.say(AndreasSefzig+'Ich werde benachrichtigt.')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); } 
+                                               .then(function(){ return bot.say(AndreasSefzig+'Ich werde benachrichtigt.') })
+                                               .then(function(){ return bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); }); } 
             if ((~befehl.indexOf("--EMPFANG")) ||
                 (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Technik oder der --Beratung.'); }
             
             if ((~befehl.indexOf("--KREATION")) ||
                 (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(KreationsBot+'Schreiben Sie --empfang, um wieder mit Alice zu sprechen.')
-                                               .then(function(){ return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Befehle Kreation: --Folgt.');
+                                               .then(function(){ return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Befehle Kreation: --Folgt.'); });
                                                                         dann = "kreation"; } 
             if ((~befehl.indexOf("--BERATUNG")) ||
                 (~befehl.indexOf("--BARBARA")))       { versuch = true; bot.say(BeratungsBot+'Schreiben Sie --empfang, um zum Empfang zurückzukehren.');
@@ -159,23 +159,23 @@ module.exports = new Script({
          // -----------------
             
             if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist auf Bots für externe und interne Unternehmens-Kommunikation spezialisiert.')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Technologien und einem Team aus mehreren Bots.')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Mehr über uns: ○ --Folgt.'); }
+                                               .then(function(){ return bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Technologien und einem Team aus mehreren Bots.') })
+                                               .then(function(){ return bot.say(EmpfangsBot+'Mehr über uns: ○ --Folgt.'); }); }
             
          // -----------------
          // Strategie
          // -----------------
             
             if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(EmpfangsBot+'Für --Strategie ist Andreas zuständig, das können wir Bots nicht gut.')
-                                               .then(function(){ return bot.say(AndreasSefzig+'Chatten ist bereits die häufigste digitale Beschäftigung in Deutschland (wie auch dem Rest der Welt, Quelle: Folgt).')
-                                               .then(function(){ return bot.say(AndreasSefzig+'Auch wenn es Chat-Bots schon lange gibt, werden sie auch gerade jetzt interessant, da Facebook, Slack, Telegram u.a. ihre Plattformen für Bots öffnen.')
-                                               .then(function(){ return bot.say(AndreasSefzig+'Interessieren Sie sich eher für Bots, die --intern (z.B. im Team) oder --extern (z.B. für Kunden) eingesetzt werden?'); }
+                                               .then(function(){ return bot.say(AndreasSefzig+'Chatten ist bereits die häufigste digitale Beschäftigung in Deutschland (wie auch dem Rest der Welt, Quelle: Folgt).') })
+                                               .then(function(){ return bot.say(AndreasSefzig+'Auch wenn es Chat-Bots schon lange gibt, werden sie auch gerade jetzt interessant, da Facebook, Slack, Telegram u.a. ihre Plattformen für Bots öffnen.') })
+                                               .then(function(){ return bot.say(AndreasSefzig+'Interessieren Sie sich eher für Bots, die --intern (z.B. im Team) oder --extern (z.B. für Kunden) eingesetzt werden?'); }); }
             if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.')
-                                               .then(function(){ return bot.say(AndreasSefzig+'Folgt.')
-                                               .then(function(){ return bot.say(TechnikBot+'Wir in der Technik kommunizieren am liebsten über --Slack. Wir steuern darin sogar unsere Server! Aber auch HipChat bietet eine schöne Plattform für #ChatOps.'); }
+                                               .then(function(){ return bot.say(AndreasSefzig+'Folgt.') })
+                                               .then(function(){ return bot.say(TechnikBot+'Wir in der Technik kommunizieren am liebsten über --Slack. Wir steuern darin sogar unsere Server! Aber auch HipChat bietet eine schöne Plattform für #ChatOps.'); }); }
             if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.')
-                                               .then(function(){ return bot.say(AndreasSefzig+'Folgt.')
-                                               .then(function(){ return bot.say(KreationsBot+'Wir in der Kreation lieben es, interessante Dialoge zu erschaffen, die Nutzern einen konkreten Mehrwert bieten und sie mit reichhaltigen Inhalten unterhalten.'); }
+                                               .then(function(){ return bot.say(AndreasSefzig+'Folgt.') })
+                                               .then(function(){ return bot.say(KreationsBot+'Wir in der Kreation lieben es, interessante Dialoge zu erschaffen, die Nutzern einen konkreten Mehrwert bieten und sie mit reichhaltigen Inhalten unterhalten.'); }); }
             
          // -----------------
          // Tests
@@ -258,7 +258,7 @@ module.exports = new Script({
             if ((~befehl.indexOf("--ALICE")) ||
                 (~befehl.indexOf("--EMPFANG")) ||
                 (~befehl.indexOf("--ABBRECHEN")))     { bot.say(KreationsBot+'Bis später!')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Willkommen zurück. Schreiben Sie --Befehle um zu sehen, was ich Ihnen noch zeigen kann.');
+                                               .then(function(){ return bot.say(EmpfangsBot+'Willkommen zurück. Schreiben Sie --Befehle um zu sehen, was ich Ihnen noch zeigen kann.'); });
                                                                         dann = "register"; }
             
          // Inhalte
