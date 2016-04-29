@@ -165,18 +165,20 @@
           var text =      '<div class="sk-action" style="margin-bottom:0px"><a class="btn btn-sk-primary" href="http://sefzig.net/text/%inhalt%/" onclick="fenster(\'text\',\'%inhalt%\'); return false;">Text:      %inhalt%</a></div>';
           var linkliste = '<div class="sk-action" style="margin-bottom:0px"><a class="btn btn-sk-primary" href="http://sefzig.net/link/liste/"    onclick="fenster(\'link\',\'%inhalt%\'); return false;">Linkliste: %inhalt%</a></div>';
           var button =    '<div class="sk-action" style="margin-bottom:0px"><a class="btn btn-sk-primary" href="'+button_url+'" target="_blank">'+button_text+'</a></div>';
-          var bild =      '<img class="%klasse%" src="%inhalt%" />';
+          var qr =        '<center><img class="%klasse%" src="http://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=L&chf=bg,s,65432100&chl=%inhalt%" /></center>';
+          var bild =      '<center><img class="%klasse%" src="%inhalt%" /></center>';
           var audio =     '<audio class="%klasse%" controls="true" style="width: 100%; max-width: 500px; margin-top: 10px;" x-webkit-airplay="allow"><source src="%inhalt%" type="audio/mpeg">Lade Audio...</audio>';
           var iframe =    '<iframe src="%inhalt%" width="180" height="102" frameborder="0">Frame laden</iframe>';
           var youtube =   '<iframe width="180" height="102" class="%klasse%" src="http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
           
        // Template auswählen
-          if (modul == "Text")      { var template = text; }
-          if (modul == "Audio")     { var template = audio; }
-          if (modul == "Iframe")    { var template = iframe; }
-          if (modul == "Button")    { var template = button; }
-          if (modul == "Bild")      { var template = bild; }
-          if (modul == "Youtube")   { var template = youtube; }
+          if (modul == "Text")      { var template = text;      }
+          if (modul == "Audio")     { var template = audio;     }
+          if (modul == "Iframe")    { var template = iframe;    }
+          if (modul == "Button")    { var template = button;    }
+          if (modul == "Bild")      { var template = bild;      }
+          if (modul == "Qr")        { var template = qr;        }
+          if (modul == "Youtube")   { var template = youtube;   }
           if (modul == "Linkliste") { var template = linkliste; }
              
        // Modul anpassen
@@ -265,7 +267,7 @@
           
           var dieser =    $(this).html();
           var vorganger = $(this).parent().parent().prev().find(".sk-from").html();
-          console.log("- "+vorganger+" = "+dieser+"?");
+       // console.log("- "+vorganger+" = "+dieser+"?");
        
        // Bei folgendem Absender
           if (vorganger == dieser) {
@@ -326,6 +328,7 @@
           text_neu = inhalt("befehl", text_neu);
           text_neu = inhalt("modul", text_neu, "Text");
           text_neu = inhalt("modul", text_neu, "Bild");
+          text_neu = inhalt("modul", text_neu, "Qr");
           text_neu = inhalt("modul", text_neu, "Button");
           text_neu = inhalt("modul", text_neu, "Iframe");
           text_neu = inhalt("modul", text_neu, "Audio");

@@ -127,7 +127,7 @@ module.exports = new Script({
                                                                               +'\n○ Cynthia: --Technik '
                                                                               +'\n○ Doris: --Kreation '
                                                                               +'\n○ --Über '); }
-            if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Bild:http://chart.apis.google.com/chart?chs=200x200&cht=qr&chld=L&chl=http%3A%2F%2Fsefzigbot.herokuapp.com?v=chat%2F&chf=bg,s,65432100] ');
+            if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ');
                                                                         bot.say(TechnikBot+'Leider werden Sie dort nicht wiedererkannt. Wir arbeiten an einer Lösung...'); }
             if ((~befehl.indexOf("--UBER")) ||
                 (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.');
