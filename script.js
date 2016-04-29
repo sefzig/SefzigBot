@@ -117,16 +117,21 @@ module.exports = new Script({
          // System
          // -----------------
          
-            if  (~befehl.indexOf("--BEFEHLE"))        { versuch = true; bot.say(EmpfangsBot+'Diese --Befehle unterstützen Sie beim Nutzen von #Robogeddon:'
+            if  (~befehl.indexOf("--BEFEHLE"))        { versuch = true; bot.say(EmpfangsBot+'Diese --Befehle unterstützen Sie beim Nutzen dieser Seite:'
                                                                               +'\n○ --Mobil '
                                                                               +'\n○ --Newsletter '
+                                                                              +'\n○ --Kontakt '
                                                                               +'\n○ --Über ');
                                                                         befehl = "--THEMEN"; }
-            if  (~befehl.indexOf("--THEMEN"))         { versuch = true; bot.say(EmpfangsBot+'Diese Themen haben wir zur Zeit für Sie:'
-                                                                              +'\n○ Alice: --Agentur '
+            if  (~befehl.indexOf("--THEMEN"))         { versuch = true; bot.say(EmpfangsBot+'Lassen Sie sich von Alice die --Agentur zeigen:'
+                                                                              +'\n○ Andreas: --Strategie '
                                                                               +'\n○ Barbara: --Beratung '
                                                                               +'\n○ Cynthia: --Technik '
                                                                               +'\n○ Doris: --Kreation '
+                                                                              +'\n○ Erika: --Assistenz ');
+                                                                        bot.say(AndreasSefzig+'Erfahren Sie Hintergründe zu --Robogeddon:'
+                                                                              +'\n○ --Gründung '
+                                                                              +'\n○ --Vision '
                                                                               +'\n○ --Über '); }
             if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ')
                                                .then(function(){ return bot.say(TechnikBot+'Leider werden Sie dort nicht wiedererkannt. Wir arbeiten an einer Lösung...'); }); }
@@ -146,7 +151,7 @@ module.exports = new Script({
             
             if ((~befehl.indexOf("--KREATION")) ||
                 (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.')
-                                               .then(function(){ return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren. ') })
+                                               .then(function(){ return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren.') })
                                                .then(function(){ return bot.say(KreationsBot+'Für ein Plus an --Persönlichkeit weben wir --Geschichten und reichhaltige --Inhalte ein. Letztendlich wollen wir --Mehrwerte für die Nutzer schaffen.') });
                                                                         dann = "kreation"; } 
             if ((~befehl.indexOf("--BERATUNG")) ||
