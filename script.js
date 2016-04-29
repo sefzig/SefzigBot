@@ -211,7 +211,7 @@ module.exports = new Script({
                bot.say(SefzigBot+'Max. Versuche: '+versuche_max+'.');
                
                var versuche_bisher = bot.getProp('versuch');
-               versuche_text = JSON.stringify(versuche_prop, null, 4); 
+               versuche_text = JSON.stringify(versuche_bisher, null, 4); 
                bot.say(SefzigBot+'Versuche bisher Objekt: '+versuche_text+'.');
                
                versuche_bisher = versuche_bisher._s;
