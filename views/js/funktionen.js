@@ -87,7 +87,7 @@
           $(this).animate({opacity:1}, 300, function(){
              
              menge = $("body").attr("data-blink");
-             if (menge <= 5) { blinken(selektor); }
+             if (menge <= 10) { blinken(selektor); }
              
           });
        
