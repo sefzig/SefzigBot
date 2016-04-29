@@ -10,6 +10,7 @@ const TechnikBot =    "[TechnikBot] ";
 const LinkBot =       "[LinkBot] ";
 const TextBot =       "[TextBot] ";
 const SlackBot =      "[SlackBot] ";
+const versuche = 0;
 
 module.exports = new Script({
     processing: {
@@ -197,7 +198,6 @@ module.exports = new Script({
          // Irrläufer
          // -----------------
          
-            var versuche = 0;
             var versuche_max = 3;
             
             if (versuch == true) { 
@@ -227,6 +227,8 @@ module.exports = new Script({
                
                
                
+            /* 
+               
             // bot.say(SefzigBot+'Max. Versuche: '+versuche_max+'.');
                
             // return bot.getProp('versuch')
@@ -237,7 +239,6 @@ module.exports = new Script({
                .then((versuch) => bot.say(SefzigBot+'Es funktioniert: '+versuch))
                .then(() => 'register');
                
-            /* 
                var versuche_objekt = bot.getProp('versuch');
                var versuche_text = JSON.stringify(versuche_objekt, null, 4); 
             // bot.say(SefzigBot+'Versuche bisher Objekt: '+versuche_text+'.');
@@ -260,6 +261,7 @@ module.exports = new Script({
                   
                }
              */
+            
             }
             
          // -----------------
