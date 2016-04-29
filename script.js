@@ -203,25 +203,25 @@ module.exports = new Script({
             if (versuch == true) { 
                
                bot.setProp('versuch', 0);
-               bot.say(SefzigBot+`Versuch auf 0 gesetzt.`);
+               bot.say(SefzigBot+'Versuch auf 0 gesetzt.');
                
             }
             else { 
                
                bot.say(SefzigBot+'Max. Versuche: '+versuche_max+'.');
                
-               var versuche_bisher = bot.getProp('versuch');
-               versuche_text = JSON.stringify(versuche_bisher, null, 4); 
+               var versuche_objekt = bot.getProp('versuch');
+               var versuche_text = JSON.stringify(versuche_objekt, null, 4); 
                bot.say(SefzigBot+'Versuche bisher Objekt: '+versuche_text+'.');
                
-               versuche_bisher = versuche_bisher._s;
+               var versuche_bisher = versuche_objekt["_s"];
                bot.say(SefzigBot+'Versuche bisher Wert: '+versuche_bisher+'.');
                
-               var versuche_hoch = versuche_bisher - (-1);
-               bot.setProp('versuch', versuche_hoch);
-               bot.say(SefzigBot+'Versuch hochgezählt: '+versuche_hoch+'.');
+               var versuch = versuche_bisher - (-1);
+               bot.setProp('versuch', versuch);
+               bot.say(SefzigBot+'Versuch hochgezählt: '+versuch+'.');
                
-               if (versuche_hoch >= versuche_max) {
+               if (versuch >= versuche_max) {
                   
                   bot.say(SefzigBot+'Versuche größer als Versuchen.');
                   bot.say(EmpfangsBot+'Wollen Sie zurück zum --Empfang?');
