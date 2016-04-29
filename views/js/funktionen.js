@@ -85,14 +85,14 @@
           
           $(this).delay(300);
           
-          $("#sk-footer .input-container").animate({opacity:0}, 300, "linear");
+          $("#sk-footer .input-container").animate({backgroundColor:"#ee1133"}, 300, "linear");
           
           $(this).animate({opacity:1}, 300, function(){
              
              menge = $("body").attr("data-blink");
              if (menge < max) { blinken(max); }
              
-             $("#sk-footer .input-container").animate({opacity:1}, 300, "linear");
+             $("#sk-footer .input-container").animate({backgroundColor:#ffffff}, 300, "linear");
              
           });
        
