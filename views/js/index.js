@@ -335,7 +335,7 @@
           text_neu = inhalt("modul", text_neu, "Audio");
           text_neu = inhalt("modul", text_neu, "Youtube");
           text_neu = inhalt("modul", text_neu, "Linkliste"); 
-          text_neu = inhalt("javascript", text_neu, funktionen, "Ich habe ein Javascript ausgeführt.");
+          text_neu = inhalt("javascript", text_neu, funktionen, "");
           
        // Bots anpassen
           var text_merken = text_neu;
