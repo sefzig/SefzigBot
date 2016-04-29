@@ -71,7 +71,7 @@
   */
     function blink() {
        
-       window.setTimeout(function() { blinken(5); }, 1000);
+       window.setTimeout(function() { blinken(7); }, 1000);
        $("body").attr("data-blink", 0);
        
     }
@@ -85,10 +85,14 @@
           
           $(this).delay(300);
           
+          $("#sk-footer .input-container").animate({opacity:0}, 300, "linear");
+          
           $(this).animate({opacity:1}, 300, function(){
              
              menge = $("body").attr("data-blink");
              if (menge < max) { blinken(max); }
+             
+             $("#sk-footer .input-container").animate({opacity:1}, 300, "linear");
              
           });
        
@@ -101,7 +105,7 @@
        
        });
        
-       $("#sk-footer, #sk-footer *").click(function()  { $(selektor).off(); $("body").attr("data-blink", max); });
+    // $("#sk-footer, #sk-footer *").click(function()  { $(selektor).off(); $("body").attr("data-blink", max); });
        $("#sk-footer, #sk-footer *").change(function() { $(selektor).off(); $("body").attr("data-blink", max); });
         
     /*
