@@ -10,7 +10,7 @@ const TechnikBot =    "[TechnikBot] ";
 const LinkBot =       "[LinkBot] ";
 const TextBot =       "[TextBot] ";
 const SlackBot =      "[SlackBot] ";
-const versuche = 0;
+var versuche = 0;
 
 module.exports = new Script({
     processing: {
