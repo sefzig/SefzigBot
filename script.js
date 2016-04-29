@@ -145,9 +145,9 @@ module.exports = new Script({
                 (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Technik oder der --Beratung.'); }
             
             if ((~befehl.indexOf("--KREATION")) ||
-                (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.')
-                                               .then(function(){ return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Wir hauchen Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren. ')
-                                               .then(function(){ return bot.say(KreationsBot+'Für ein Extra an --Persönlichkeit weben wir --Geschichten und reichhaltige --Inhalte ein. Letztendlich wollen wir --Mehrwerte für die Nutzer.'); });
+                (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.') })
+                                               .then(function(){ return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Wir hauchen Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren. ') })
+                                               .then(function(){ return bot.say(KreationsBot+'Für ein Plus an --Persönlichkeit weben wir --Geschichten und reichhaltige --Inhalte ein. Letztendlich wollen wir --Mehrwerte für die Nutzer schaffen.'); });
                                                                         dann = "kreation"; } 
             if ((~befehl.indexOf("--BERATUNG")) ||
                 (~befehl.indexOf("--BARBARA")))       { versuch = true; bot.say(BeratungsBot+'Schreiben Sie --empfang, um zum Empfang zurückzukehren.');
@@ -196,22 +196,20 @@ module.exports = new Script({
             if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+'Text: Vorlage.'); }
             
          // -----------------
-         // Irrläufer
+         // Konversation fortführen
          // -----------------
          
+         // Irrläufer
             var versuche_max = 3;
             if (versuch == true) { versuche = 0; }
             else {  versuche++;
                if (versuche == versuche_max) {
-                  bot.say(EmpfangsBot+'Wollen Sie zurück zum --Empfang?');
+                  bot.say(EmpfangsBot+'Suchen Sie die --Befehle?');
                   versuche = 0;
                }
             }
             
-         // -----------------
-         // Konversation fortführen
-         // -----------------
-         
+         // Weiterleiten
             return bot.setProp('versuch_tmp', '1')
             .then(() => dann);
         }
