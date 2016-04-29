@@ -21,7 +21,7 @@ module.exports = new Script({
     	
         receive: (bot) => {
             return bot.say(EmpfangsBot+'Darf ich Ihnen kurz unsere Agentur vorstellen? Dann schreiben Sie bitte --Agentur!')
-                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen unsere --Kreation, die --Beratung und unsere --Technik vorstellen.'))
+                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen gerne unsere --Kreation, die --Beratung und unsere --Technik vorstellen.'))
                 .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben!'))
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
         }
@@ -159,8 +159,23 @@ module.exports = new Script({
          // -----------------
             
             if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist auf Bots für externe und interne Unternehmens-Kommunikation spezialisiert.');
-                                                                        bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig und mehreren Bots.');
+                                                                        bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Technologien und einem Team aus mehreren Bots.');
                                                                         bot.say(EmpfangsBot+'Mehr über uns: ○ --Folgt.'); }
+            
+         // -----------------
+         // Strategie
+         // -----------------
+            
+            if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(EmpfangsBot+'Für --Strategie ist Andreas zuständig, das können wir Bots nicht gut.');
+                                                                        bot.say(AndreasSefzig+'Chatten ist bereits die häufigste digitale Beschäftigung in Deutschland (wie auch dem Rest der Welt, Quelle: Folgt).');
+                                                                        bot.say(AndreasSefzig+'Auch wenn es Chat-Bots schon lange gibt, werden sie auch gerade jetzt interessant, da Facebook, Slack, Telegram u.a. ihre Plattformen für Bots öffnen.');
+                                                                        bot.say(AndreasSefzig+'Interessieren Sie sich eher für Bots, die --intern (z.B. im Team) oder --extern (z.B. für Kunden) eingesetzt werden?'); }
+            if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.');
+                                                                        bot.say(AndreasSefzig+'Folgt.');
+                                                                        bot.say(TechnikBot+'Wir in der Technik kommunizieren am liebsten über --Slack. Wir steuern darin sogar unsere Server! Aber auch HipChat bietet eine schöne Plattform für #ChatOps.'); }
+            if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.');
+                                                                        bot.say(AndreasSefzig+'Folgt.');
+                                                                        bot.say(KreationsBot+'Wir in der Kreation lieben es, interessante Dialoge zu erschaffen, die Nutzern einen konkreten Mehrwert bieten und sie mit reichhaltigen Inhalten unterhalten.'); }
             
          // -----------------
          // Tests
