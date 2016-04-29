@@ -77,7 +77,7 @@
     
     function blinken(max) {
        
-       $("body").attr("data-blink", 1);
+       $("body").attr("data-blink", 0);
        selektor = ".sk-intro"; // , #sk-footer .input-container
     // max = max * 2;
           
@@ -88,7 +88,7 @@
           $(this).animate({opacity:1}, 300, function(){
              
              menge = $("body").attr("data-blink");
-             if (menge <= max) { blinken(max); }
+             if (menge < max) { blinken(max); }
              
           });
        
@@ -101,8 +101,8 @@
        
        });
        
-       $("#sk-footer").click(function()  { $(selektor).off(); $("body").attr("data-blink", menge); });
-       $("#sk-footer").change(function() { $(selektor).off(); $("body").attr("data-blink", menge); });
+       $("#sk-footer").click(function()  { $(selektor).off(); $("body").attr("data-blink", max); });
+       $("#sk-footer").change(function() { $(selektor).off(); $("body").attr("data-blink", max); });
         
     /*
        $("#sk-footer > *").fadeIn(500);
