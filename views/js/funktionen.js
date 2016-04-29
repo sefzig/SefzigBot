@@ -71,17 +71,23 @@
   */
     function blinken(selektor) {
        
-       $(selektor+":not(.stopped)").animate({opacity:0}, 300, "linear", function(){
+       $(selektor).not(".stopped").animate({opacity:0}, 300, "linear", function(){
           
+          menge = $(selektor).attr("data-menge");
+          if ((!menge) || (menge == "")) { menge = 1; }
+             
           $(this).delay(300);
           
           $(this).animate({opacity:1}, 300, function(){
              
-             blinken(this);
+             menge = $(selektor).attr("data-menge");
+             if (menge < 5) { blinken(selektor); }
              
           });
        
           $(this).delay(300);
+          menge = menge - (-1);
+          $(selektor).attr("data-menge", menge);
        
        });
        
