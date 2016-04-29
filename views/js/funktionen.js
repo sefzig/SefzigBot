@@ -78,21 +78,21 @@
     
     function blinken(max) {
        
-       selektor = ".sk-intro"; // , #sk-footer .input-container
+       selektor = ".blink"; // , #sk-footer .input-container
     // max = max * 2;
           
        $(selektor).animate({opacity:0}, 300, "linear", function(){
           
           $(this).delay(300);
           
-          $("#sk-footer .input-container").animate({backgroundColor:"#ee1133 !important"}, 300, "linear");
+          $("#sk-container.sk-embedded .input").animate({backgroundColor:"#ee1133 !important"}, 300, "linear");
           
           $(this).animate({opacity:1}, 300, function(){
              
              menge = $("body").attr("data-blink");
              if (menge < max) { blinken(max); }
              
-             $("#sk-footer .input-container").animate({backgroundColor:"inherit"}, 300, "linear");
+             $("#sk-container.sk-embedded .input").animate({backgroundColor:"#fbfbfb !important"}, 300, "linear");
              
           });
        
