@@ -203,13 +203,12 @@ module.exports = new Script({
             if (versuch == true) { 
                
                bot.setProp('versuch', 0);
-               bot.say(SefzigBot+'Versuch auf 0 gesetzt.');
+               bot.say(SefzigBot+`Versuch auf 0 gesetzt.`);
                
             }
             else { 
                
                var versuche = bot.getProp('versuch');
-            // versuche = JSON.stringify(versuche, null, 4);
                bot.say(SefzigBot+'Versuche '+versuche+'.');
                
                var versuchet = versuche - (-1);
@@ -217,11 +216,11 @@ module.exports = new Script({
                
                if (versuchet >= versuchen) {
                   
-                  bot.say(SefzigBot+'Versuche größer als Versuchen.');
+                  bot.say(SefzigBot+`Versuche größer als Versuchen.`);
                   bot.say(EmpfangsBot+'Wollen Sie zurück zum --Empfang?');
                   
                   bot.setProp('versuch', 0);
-                  bot.say(SefzigBot+'Versuch auf 0 zurückgesetzt.');
+                  bot.say(SefzigBot+`Versuch auf 0 zurückgesetzt.`);
                   
                }
                
@@ -297,10 +296,6 @@ module.exports = new Script({
         
     },
 
- // -------------------------
- // Technik
- // -------------------------
-    
     technik: {
     	
         receive: (bot, message) => {
@@ -319,10 +314,6 @@ module.exports = new Script({
         
     },
 
- // -------------------------
- // Ende
- // -------------------------
-    
     finish: {
         receive: (bot, message) => {
             return bot.getProp('name')
