@@ -133,7 +133,7 @@
     #sk-header > span:before {
        content: ".!,,!";
        display: inline;
-       background: url("http://sefzig.net/text/seiten/SefzigBot/dateien/sefzigbot_displaybild.jpg") no-repeat;
+       background: url("http://sefzig.net/text/seiten/SefzigBot/dateien/Displaybild_SefzigBot.png") no-repeat;
        width: 20px;
        height: 20px;
        margin: 0 6px 0 0;
@@ -144,18 +144,17 @@
  /* ----------------- */
     
  /* Dimensionen */
-    .sk-messages img.bild { 
-       max-width: 200px;
-    }
     .sk-msg,
     .sk-messages img.bild { 
-       max-width: 250px;
+       max-width: 250px !important;
+    }
+    
+ /* Bots */
+    .sk-from {
+       display: block;
     }
     #sk-conversation .sk-row.sk-left-row .sk-msg-avatar {
        border-radius: 5px;
-    }
-    .sk-from {
-       display: block;
     }
     
  /* Farben */

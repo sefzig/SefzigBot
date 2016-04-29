@@ -96,7 +96,7 @@
        anpassen();
        
        $("#seite #"+methode).fadeIn();
-    // window.setTimeout(function() { blinken(5); }, 2000);
+       window.setTimeout(function() { blinken(5); }, 2000);
        $(".message-input").focus();
        
     }

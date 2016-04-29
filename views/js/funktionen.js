@@ -71,6 +71,17 @@
   */
     function blinken(count) {
        
+       $(".sk-intro").animate({opacity:0}, 50, "linear", function(){
+          $(this).delay(800);
+          $(this).animate({opacity:1}, 50, function(){
+          blink(this);
+       });
+       
+       $(this).delay(800);
+       
+    });
+       
+    /*
        $("#sk-footer > *").fadeIn(500);
        var status = $("body").attr("data-blink", count);
        
@@ -91,5 +102,5 @@
        
        $("#sk-footer").click(function()  { $("body").attr("data-blink", "0"); $("#sk-footer > *").stop( true, true ).css("display", "inline-block").find(".message-input").focus(); });
        $("#sk-footer").change(function() { $("body").attr("data-blink", "0"); $("#sk-footer > *").stop( true, true ).css("display", "inline-block").find(".message-input").focus(); });
-             
+     */
     }
