@@ -77,7 +77,7 @@
     
     function blinken(max) {
        
-       selektor = ".sk-intro, #sk-footer .input-container";
+       selektor = ".sk-intro"; // , #sk-footer .input-container
        max = max * 2;
           
        $(selektor).animate({opacity:0}, 300, "linear", function(){
