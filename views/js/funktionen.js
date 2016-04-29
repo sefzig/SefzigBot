@@ -83,7 +83,7 @@
           
        $(selektor).animate({opacity:0}, 300, "linear", function(){
           
-          $("#sk-footer .input-container").animate({opacity:0.33}, 300, "linear");
+          $("#sk-footer input.message-input").animate({opacity:0.33}, 300, "linear");
           
           $(this).delay(300);
           
@@ -92,7 +92,7 @@
              menge = $("body").attr("data-blink");
              if (menge < max) { blinken(max); }
              
-             $("#sk-footer .input-container").animate({opacity:1}, 300, "linear");
+             $("#sk-footer .message-input").animate({opacity:1}, 300, "linear");
              
           });
        
