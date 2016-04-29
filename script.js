@@ -209,6 +209,8 @@ module.exports = new Script({
             else { 
                
                var versuche = bot.getProp('versuch');
+               var versuche_text = versuche;
+               versuche_text = JSON.stringify(versuche, null, 4);
                bot.say(SefzigBot+'Versuche '+versuche+'.');
                
                var versuchet = versuche - (-1);
