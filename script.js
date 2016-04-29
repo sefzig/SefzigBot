@@ -202,11 +202,30 @@ module.exports = new Script({
             
             if (versuch == true) { 
                
-               bot.setProp('versuch', 0);
+               versuche = 0;
                bot.say(SefzigBot+'Versuch auf 0 gesetzt.');
                
             }
             else { 
+               
+               versuche++;
+               bot.say(SefzigBot+'Versuch hochgezählt: '+versuche+'.');
+               
+               if (versuche == versuche_max) {
+                  
+                  bot.say(SefzigBot+'Versuche größer als Versuchen.');
+                  bot.say(EmpfangsBot+'Wollen Sie zurück zum --Empfang?');
+                  
+                  versuche = 0;
+                  bot.say(SefzigBot+'Versuch auf 0 zurückgesetzt.');
+                  
+               }
+               
+               
+               
+               
+               
+               
                
             // bot.say(SefzigBot+'Max. Versuche: '+versuche_max+'.');
                
@@ -217,11 +236,6 @@ module.exports = new Script({
                return bot.getProp('versuch')
                .then((versuch) => bot.say(SefzigBot+'Es funktioniert: '+versuch))
                .then(() => 'register');
-               
-               
-               
-               
-               
                
             /* 
                var versuche_objekt = bot.getProp('versuch');
