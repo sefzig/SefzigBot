@@ -215,6 +215,7 @@ module.exports = new Script({
                bot.say(SefzigBot+'Versuche bisher Objekt: '+versuche_text+'.');
                
                var versuche_bisher = versuche_objekt["_s"];
+               if ((!versuche_bisher) || (versuche_bisher == "")) { versuche_bisher = 0; }
                bot.say(SefzigBot+'Versuche bisher Wert: '+versuche_bisher+'.');
                
                var versuch = versuche_bisher - (-1);
