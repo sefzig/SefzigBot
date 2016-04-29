@@ -78,13 +78,13 @@
           Smooch.on('message:sent', function(message) {
              
           // console.log('- Nutzer hat eine Nachricht gesendet');
-             $(".sk-messages").append('<img src="img/ui/Schreiben.gif" class="typing" />');
+          // $(".sk-messages").append('<img src="img/ui/Schreiben.gif" class="typing" />');
              
           });
           Smooch.on('message:received', function(message) {
              
+          // $(".typing").remove();
              window.setTimeout(function() { anpassen(); }, 1);
-             $(".typing").destroy();
              
           // console.log('- Nutzer hat eine Nachricht erhalten');
              
