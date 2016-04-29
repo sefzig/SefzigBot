@@ -69,37 +69,15 @@
   * 
   * Beschreibung
   */
-    function blinken(count) {
+    function blinken(selektor) {
        
-       $(".sk-intro").animate({opacity:0}, 300, "linear", function(){
+       $(selektor+":not(.stopped)").animate({opacity:0}, 300, "linear", function(){
           
           $(this).delay(300);
           
           $(this).animate({opacity:1}, 300, function(){
              
-             $(this).animate({opacity:0}, 300, "linear", function(){
-          
-                $(this).delay(300);
-                $(this).animate({opacity:1}, 300, function(){
-                   
-                   $(this).animate({opacity:0}, 300, "linear", function(){
-          
-                      $(this).delay(300);
-                      $(this).animate({opacity:1}, 300, function(){
-                         
-                         blinken(this);
-                         
-                      });
-       
-                      $(this).delay(300);
-       
-                   });
-                   
-                });
-       
-                $(this).delay(300);
-       
-             });
+             blinken(this);
              
           });
        
@@ -107,6 +85,9 @@
        
        });
        
+       $("#sk-footer").click(function()  { $(selektor).addClass("stopped").off(); });
+       $("#sk-footer").change(function() { $(selektor).addClass("stopped").off(); });
+        
     /*
        $("#sk-footer > *").fadeIn(500);
        var status = $("body").attr("data-blink", count);
