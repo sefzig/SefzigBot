@@ -28,7 +28,7 @@ module.exports = new Script({
     	
         receive: (bot) => {
             return bot.say(EmpfangsBot+'Darf ich Ihnen kurz unsere Agentur vorstellen? Dann schreiben (oder klicken) Sie bitte --Agentur!')
-                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen auch unsere --Kreation, die --Beratung und unsere --Technik vorstellen. <br /> Oder lassen Sie uns über --Strategie und --Konzeption reden.'))
+                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen auch unsere --Kreation, die --Beratung und unsere --Technik vorstellen. \n Oder lassen Sie uns über --Strategie und --Konzeption reden.'))
                 .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben!'))
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
         }
@@ -46,6 +46,20 @@ module.exports = new Script({
             var name_falsch = "";
             var dann = "";
             
+            if (antwort == "--ÄNDERN")   { 
+               
+               bot.say(EmpfangsBot+'Gut, ändern wir Ihren Namen.');
+               name_falsch == "ändern";
+               dann = "vorname";
+               
+            }
+            if (antwort == "--NAGUT")   { 
+               
+               bot.say(EmpfangsBot+'Wir werden Ihre Daten nicht missbrauchen.');
+               name_falsch == "neu";
+               dann = "vorname";
+               
+            }
             if (antwort == "--JA")   { 
                
                bot.say(EmpfangsBot+'Unterhalten Sie sich mit mir: Bitte schreiben Sie --Empfang!');
@@ -90,7 +104,7 @@ module.exports = new Script({
             nachname = message.text; 
             bot.setProp('nachname', nachname)
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(SefzigBot+'Sie heissen ${vorname} '+nachname+', habe ich Sie richtig verstanden?'))
+                .then((vorname) => bot.say(SefzigBot+'Sie heissen '+vorname+' '+nachname+', habe ich Sie richtig verstanden?'))
                 .then(() => bot.say(SefzigBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
                 .then(() => 'name');
         }
@@ -169,16 +183,16 @@ module.exports = new Script({
             	                                                        var aussage = "";
             	                                                        
             	                                                        if ((vorname) && (vorname != "") && (nachname) && (nachname != "")) {
-            	                                                           aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn ändern? Bitte antworten Sie mit --ja oder --nein.';
+            	                                                           aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn ändern? Dann schreiben Sie bitte --ändern.';
                                                                         }
                                                                         else if ((vorname) && (vorname != "")) {
-            	                                                           aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen ändern? Bitte antworten Sie mit --ja oder --nein.';
+            	                                                           aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen ändern? Dann schreiben Sie bitte --ändern.';
                                                                         }
                                                                         else if ((nachname) && (nachname != "")) {
-            	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern? Bitte antworten Sie mit --ja oder --nein.';
+            	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern? Dann schreiben Sie bitte --ändern.';
                                                                         }
                                                                         else {
-            	                                                           aussage = EmpfangsBot+'Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Bitte antworten Sie mit --ja oder --nein.';
+            	                                                           aussage = EmpfangsBot+'Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Dann schreiben Sie bitte --nagut.';
                                                                         }
                                                                         
                                                                         bot.say(aussage);
