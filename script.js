@@ -255,14 +255,13 @@ module.exports = new Script({
                                                .then(function(){ return bot.say(SefzigBot+'Facebook Text 2.'); })
                                                .then(function(){ return bot.say(SefzigBot+'Facebook Text 3.'); }); }
             
-            if  (~befehl.indexOf("--SLACK"))          { bot.say(SlackBot +'Andreas mag Interne Kommunikation und Automatisierung - er liebt Slack! Das sollte Ihr Team auch tun...');
-                                                        bot.say(SlackBot +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
-                                                        bot.say(SlackBot +'Lesen Sie Andreas --Artikel oder --Blogpost, öffnen Sie seine --Links oder treten Sie Andreas offenem Slack --Team bei.');
-                                                        dann = "slack"; } 
-            
             if  (~befehl.indexOf("--SLACK"))          { versuch = true; bot.say(SefzigBot+'Slack ist die fantastische neue Kommunikationsplattform für Teams!')
-                                               .then(function(){ return bot.say(SefzigBot+'Wenn Sie Slack noch nicht kennen, lesen Sie Andreas --SlackArtikel für Marketer, seinen --SlackPost für Anwender, öffnen Sie seine --SlackLinks oder treten Sie seinem --SlackTeam bei.'); })
+                                               .then(function(){ return bot.say(SefzigBot+'Wenn Sie Slack noch nicht kennen, lesen Sie Andreas --SlackArtikel für Marketer, seinen --SlackBlogpost für Anwender, öffnen Sie seine --SlackLinks oder treten Sie seinem --SlackTeam bei.'); })
                                                .then(function(){ return bot.say(SefzigBot+'Mit Slack lassen sich die effizienz-steigernden Prinzipien der --ChatOps auf ein Team oder Unternehmen am besten anwenden.'); }); }
+            if  (~befehl.indexOf("--SLACKARTIKEL"))   { versuch = true; bot.say(AndreasSefzig+'Ich habe einen fundierten Artikel zu Slack geschrieben: [Text:Slack] Was Sie als Marketer über Slack wissen müssen.'); }
+            if  (~befehl.indexOf("--SLACKBLOGPOST"))  { versuch = true; bot.say(AndreasSefzig+'Lesen Sie auch meinen Blogpost zu Slack: [Text:SefzignetBlogSlack] Was ist Slack und wie nutzt man es?'); }
+            if  (~befehl.indexOf("--SLACKLINKS"))     { versuch = true; bot.say(AndreasSefzig+'Ich habe viele Artikel zu Slack gespeichert: [Linkliste:Slack;Artikel] '); }
+            if  (~befehl.indexOf("--SLACKTEAM"))      { versuch = true; bot.say(AndreasSefzig+'Treten Sie meinem offenen Slack-Team  bei, um sich mit mir zu beraten und um Slack im laufenden Betrieb zu sehen: [Button:Anmeldung,http://sefzig.net/link/SlackAnmeldung/] '); }
             
             if  (~befehl.indexOf("--HIPCHAT"))        { versuch = true; bot.say(SefzigBot+'HipChat Text 1.')
                                                .then(function(){ return bot.say(SefzigBot+'HipChat Text 2.'); })
@@ -280,6 +279,7 @@ module.exports = new Script({
          // -----------------
          
             if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+'Text: Vorlage.'); }
+            
             if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+'Vorlage Text 1.')
                                                .then(function(){ return bot.say(EmpfangsBot+'Vorlage Text 2.'); })
                                                .then(function(){ return bot.say(EmpfangsBot+'Vorlage Text 3.'); }); }
