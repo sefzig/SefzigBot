@@ -78,8 +78,17 @@
              var sagen = getParameters("m");
              if ((sagen) && (sagen != "")) { 
              
-                window.setTimeout(function() { Smooch.sendMessage("Weiterleiten:"); }, 1000);
-                window.setTimeout(function() { Smooch.sendMessage(sagen); }, 2000);
+                window.setTimeout(function() { 
+                   
+                   Smooch.sendMessage("Weiterleiten:");
+                   window.setTimeout(function() { 
+                      
+                      Smooch.sendMessage(sagen);
+                      
+                   }, 1000);
+                   
+                }, 1000);
+                
              }
        
           }, 100); }); 

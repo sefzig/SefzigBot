@@ -285,7 +285,7 @@ module.exports = new Script({
             
             if  (~befehl.indexOf("--SLACK"))          { versuch = true; bot.say(SlackBot+'Slack ist eine fantastische neue Kommunikationsplattform für Teams!')
                                                .then(function(){ return bot.say(SefzigBot+'Wenn Sie Slack noch nicht kennen, erwägen Sie, es für Ihre Interne Kommunikation zu nutzen! Lesen Sie dazu Andreas --Slack-Artikel für Marketer, seinen --Slack-Blogpost für Anwender, öffnen Sie seine --Slack-Links oder treten Sie seinem --Slack-Team bei.'); })
-                                               .then(function(){ return bot.say(SefzigBot+'Mit Slack lassen sich die effizienz-steigernden Prinzipien der --ChatOps auf ein Team oder Unternehmen am besten anwenden.'); }); }
+                                               .then(function(){ return bot.say(SefzigBot+'Mit Slack lässt sich --intern die effizienz-steigernde --Strategie von --ChatOps am besten auf ein Team oder Unternehmen anwenden.'); }); }
             
             if  (~befehl.indexOf("--HIPCHAT"))        { versuch = true; bot.say(SefzigBot+'HipChat Text 1.')
                                                .then(function(){ return bot.say(SefzigBot+'HipChat Text 2.'); })
