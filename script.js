@@ -10,6 +10,7 @@ const TechnikBot =    "[TechnikBot] ";
 const LinkBot =       "[LinkBot] ";
 const TextBot =       "[TextBot] ";
 const SlackBot =      "[SlackBot] ";
+var versuche_max = 3;
 var versuche = 0;
 
 module.exports = new Script({
@@ -104,7 +105,7 @@ module.exports = new Script({
          // Nächster Schritt default
             var dann = "register";
             
-         // Nicht-Befehl-eingaben mitzählen
+         // Nicht-Befehl-Eingaben mitzählen
             var versuch = false;
             
          // -----------------
@@ -151,7 +152,8 @@ module.exports = new Script({
             if ((~befehl.indexOf("--KREATION")) ||
                 (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.')
                                                .then(function(){ return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren.') })
-                                               .then(function(){ return bot.say(KreationsBot+'Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in das Gespräch ein. Letztendlich wollen wir --Mehrwerte für die Nutzer schaffen.') });
+                                               .then(function(){ return bot.say(KreationsBot+'Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in das Gespräch ein.') })
+                                               .then(function(){ return bot.say(KreationsBot+'Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer.') });
                                                                         dann = "kreation"; } 
             if ((~befehl.indexOf("--BERATUNG")) ||
                 (~befehl.indexOf("--BARBARA")))       { versuch = true; bot.say(BeratungsBot+'Schreiben Sie --empfang, um zum Empfang zurückzukehren.');
@@ -204,13 +206,10 @@ module.exports = new Script({
          // -----------------
          
          // Irrläufer
-            var versuche_max = 3;
             if (versuch == true) { versuche = 0; }
-            else {  versuche++;
-               if (versuche == versuche_max) {
-                  bot.say(EmpfangsBot+'Suchen Sie die --Befehle?');
-                  versuche = 0;
-               }
+            else { versuche++; if (versuche == versuche_max) {
+               bot.say(EmpfangsBot+'Suchen Sie die --Befehle?');
+               versuche = 0; }
             }
             
          // Weiterleiten
@@ -233,65 +232,51 @@ module.exports = new Script({
          // Nächster Schritt default
             var dann = "kreation";
             
+         // Nicht-Befehl-Eingaben mitzählen
+            var versuch = false;
+            
+         // -----------------
          // Befehle
+         // -----------------
+         
             if ((~befehl.indexOf("--DORIS")) ||
-                (~befehl.indexOf("--BEFEHLE")))       { bot.say(KreationsBot +'--Kreation '
+                (~befehl.indexOf("--BEFEHLE")))       { versuch = true; bot.say(KreationsBot +'--Kreation '
                                                                               +'\n○ --Folgt '
                                                                               +'\n○ --Folgt '
                                                                               +'\n○ --Folgt '); }
             if ((~befehl.indexOf("--ALICE")) ||
                 (~befehl.indexOf("--EMPFANG")) ||
-                (~befehl.indexOf("--ABBRECHEN")))     { bot.say(KreationsBot+'Bis später!')
+                (~befehl.indexOf("--ABBRECHEN")))     { versuch = true; bot.say(KreationsBot+'Bis später!')
                                                .then(function(){ return bot.say(EmpfangsBot+'Willkommen zurück. Schreiben Sie --Befehle um zu sehen, was ich Ihnen noch zeigen kann.'); });
                                                                         dann = "register"; }
             
+         // -----------------
          // Inhalte
-            if  (~befehl.indexOf("--ARTIKEL"))        { bot.say(KreationsBot +'Text Artikel.'); }
-            if  (~befehl.indexOf("--BLOGPOST"))       { bot.say(KreationsBot +'Text Blogpost.'); }
-            if  (~befehl.indexOf("--LINKS"))          { bot.say(KreationsBot +'Text Links.'); }
+         // -----------------
+         
+            if  (~befehl.indexOf("--LEBEN"))          { versuch = true; bot.say(KreationsBot +'Text Leben.'); }
+            if  (~befehl.indexOf("--DIALOGE"))        { versuch = true; bot.say(KreationsBot +'Text Dialoge.'); }
+            if  (~befehl.indexOf("--PERSÖNLICHKEIT")) { versuch = true; bot.say(KreationsBot +'Text Persönlichkeit.'); }
+            if  (~befehl.indexOf("--GESCHICHTEN"))    { versuch = true; bot.say(KreationsBot +'Text Geschichten.'); }
+            if  (~befehl.indexOf("--INHALTE"))        { versuch = true; bot.say(KreationsBot +'Text Inhalte.'); }
+            if  (~befehl.indexOf("--MEHRWERTE"))      { versuch = true; bot.say(KreationsBot +'Text Mehrwerte.'); }
+            if  (~befehl.indexOf("--KANÄLE"))         { versuch = true; bot.say(KreationsBot +'Text Kanäle.'); }
+            if  (~befehl.indexOf("--FORMATE"))        { versuch = true; bot.say(KreationsBot +'Text Formate.'); }
             
+         // -----------------
          // Konversation fortführen
+         // -----------------
+         
+         // Irrläufer
+            if (versuch == true) { versuche = 0; }
+            else { versuche++; if (versuche == versuche_max) {
+               bot.say(KreationsBot+'Suchen Sie die --Befehle?');
+               bot.say(EmpfangsBot+'Wollen Sie zum --Empfang?');
+               versuche = 0; }
+            }
+            
+         // Weiterleiten
             return bot.setProp('kreation', 'gesprochen') 
-                .then(() => dann);
-            
-        }
-        
-    },
-
- // -------------------------
- // Beratung
- // -------------------------
-    
-    beratung: {
-    	
-        receive: (bot, message) => {
-            
-         // Befehl normalisieren
-            var befehl = befehlWort(message.text.trim().toUpperCase());
-            
-         // Nächster Schritt default
-            var dann = "beratung";
-            
-         // Konversation fortführen
-            return bot.setProp('beratung', 'gesprochen') 
-                .then(() => dann);
-            
-        }
-        
-    },
-
-    technik: {
-    	
-        receive: (bot, message) => {
-            
-         // Befehl normalisieren
-            var befehl = befehlWort(message.text.trim().toUpperCase());
-            
-         // Nächster Schritt default
-            var dann = "technik";
-            
-         // Konversation fortführen
-            return bot.setProp('technik', 'gesprochen') 
                 .then(() => dann);
             
         }
