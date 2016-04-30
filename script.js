@@ -190,7 +190,7 @@ module.exports = new Script({
             
             if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist auf Bots für externe und interne Unternehmens-Kommunikation spezialisiert.').then(function(){ return
                                                                         bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots.') }).then(function(){ return 
-                                                                        bot.say(EmpfangsBot+'Mehr über uns: ○ --Folgt.'); }); }
+                                                                        bot.say(EmpfangsBot+'Mehr über uns: --Folgt.'); }); }
             
          // -----------------
          // Strategie
