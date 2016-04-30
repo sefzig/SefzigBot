@@ -75,7 +75,7 @@
              
              anpassen();
              
-             var sagen = getParameters("strategie");
+             var sagen = getParameters("m");
              if ((sagen) && (sagen != "")) { 
              
                 window.setTimeout(function() { Smooch.sendMessage("--weiterleiten"); }, 1000);
