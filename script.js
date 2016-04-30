@@ -166,17 +166,19 @@ module.exports = new Script({
          // -----------------
          
             if  (~befehl.indexOf("--NAME"))           { versuch = true; dann = "name";
+            	                                                        var aussage = "";
+            	                                                        
             	                                                        if ((vorname) && (vorname != "") && (nachname) && (nachname != "")) {
-            	                                                           aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn ändern?  Bitte antworten Sie mit --ja oder --nein.';
+            	                                                           aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn ändern? Bitte antworten Sie mit --ja oder --nein.';
                                                                         }
                                                                         else if ((vorname) && (vorname != "")) {
-            	                                                           aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen ändern?  Bitte antworten Sie mit --ja oder --nein.';
+            	                                                           aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen ändern? Bitte antworten Sie mit --ja oder --nein.';
                                                                         }
                                                                         else if ((nachname) && (nachname != "")) {
-            	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern?  Bitte antworten Sie mit --ja oder --nein.';
+            	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern? Bitte antworten Sie mit --ja oder --nein.';
                                                                         }
                                                                         else {
-            	                                                           aussage = EmpfangsBot+'Wir kennen Ihren Namen noch nicht.';
+            	                                                           aussage = EmpfangsBot+'Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Bitte antworten Sie mit --ja oder --nein.';
                                                                         }
                                                                         
                                                                         bot.say(aussage);
