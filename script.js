@@ -76,7 +76,7 @@ module.exports = new Script({
     	
         prompt: (bot) => bot.say(SefzigBot+'Wie heissen Sie mit Vornamen?'),
         receive: (bot, message) => {
-            var vorname = message.text;
+            vorname = message.text;
             return bot.setProp('vorname', vorname)
                 .then(() => bot.say(SefzigBot+`${vorname}, prima.`))
                 .then(() => 'nachname');
@@ -87,11 +87,11 @@ module.exports = new Script({
     	
         prompt: (bot) => bot.say(SefzigBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
-            var nachname = message.text; 
+            nachname = message.text; 
             bot.setProp('nachname', nachname)
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(SefzigBot+`Sie heissen ${vorname} ${nachname}, ist das richtig?`))
-                .then((vorname) => bot.say(SefzigBot+`Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!`))
+                .then((vorname) => bot.say(SefzigBot+'Sie heissen ${vorname} '+nachname+', habe ich Sie richtig verstanden?'))
+                .then(() => bot.say(SefzigBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
                 .then(() => 'name');
         }
     },
@@ -165,21 +165,22 @@ module.exports = new Script({
          // Onboarding
          // -----------------
          
-            if  (~befehl.indexOf("--NAME"))           { versuch = true; dann = "name"; }
-            
-            if  (~befehl.indexOf("--NAME"))           { versuch = true; if ((vorname) && (vorname != "") && (nachname) && (nachname != "")) {
-            	                                                           bot.say(EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn ändern?  Bitte antworten Sie mit --ja oder --nein.');
+            if  (~befehl.indexOf("--NAME"))           { versuch = true; dann = "name";
+            	                                                        if ((vorname) && (vorname != "") && (nachname) && (nachname != "")) {
+            	                                                           aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn ändern?  Bitte antworten Sie mit --ja oder --nein.';
                                                                         }
                                                                         else if ((vorname) && (vorname != "")) {
-            	                                                           bot.say(EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen ändern?  Bitte antworten Sie mit --ja oder --nein.');
+            	                                                           aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen ändern?  Bitte antworten Sie mit --ja oder --nein.';
                                                                         }
                                                                         else if ((nachname) && (nachname != "")) {
-            	                                                           bot.say(EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern?  Bitte antworten Sie mit --ja oder --nein.');
+            	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern?  Bitte antworten Sie mit --ja oder --nein.';
                                                                         }
                                                                         else {
-            	                                                           bot.say(EmpfangsBot+'Wir kennen Ihren Namen noch nicht.');
+            	                                                           aussage = EmpfangsBot+'Wir kennen Ihren Namen noch nicht.';
                                                                         }
-                                                                        dann = "name"; }
+                                                                        
+                                                                        bot.say(aussage);
+                                                                     }
             
          // -----------------
          // Agentur
