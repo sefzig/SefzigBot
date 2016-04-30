@@ -110,10 +110,6 @@ module.exports = new Script({
     },
 
  // -------------------------
- // Onboarding: E-Mail
- // -------------------------
-    
- // -------------------------
  // Register
  // -------------------------
     
@@ -209,9 +205,10 @@ module.exports = new Script({
          // Agentur
          // -----------------
             
-            if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist auf Bots für externe und interne Unternehmens-Kommunikation spezialisiert.')
+            if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist Deutschlands erste Werbe-Agentur, die Bots für ihre Kunden entwickelt und mit --Leben füllt. Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern wie --extern.')
                                                .then(function(){ return bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots.') })
-                                               .then(function(){ return bot.say(EmpfangsBot+'Mehr über uns: ○ --Folgt.'); }); }
+                                               .then(function(){ return bot.say(EmpfangsBot+'Sprechen Sie mit Andreas über die --Strategie und --Konzeption Ihres eigenen Chat-Bots!') })
+                                               .then(function(){ return bot.say(EmpfangsBot+'Wir sind eine junge Agentur auf einem jungen Markt. Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen! '); }); }
             
          // -----------------
          // Strategie
