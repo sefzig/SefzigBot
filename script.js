@@ -55,14 +55,14 @@ module.exports = new Script({
             }
             if (antwort == "--NAGUT")   { 
                
-               bot.say(AndreasSefzig+'Wir werden Ihre Daten nicht missbrauchen.');
+               bot.say(EmpfangsBot+'Wir werden Ihre Daten nicht missbrauchen.');
                name_falsch == "neu";
                dann = "vorname";
                
             }
             if (antwort == "--EMAIL")   { 
                
-               bot.say(AndreasSefzig+'Wir senden keinen Spam.');
+               bot.say(EmpfangsBot+'Wir senden keinen Spam.');
                name_falsch == "email";
                dann = "email";
                
@@ -95,37 +95,37 @@ module.exports = new Script({
 
     vorname: {
     	
-        prompt: (bot) => bot.say(EmpfangsBot+'Wie heissen Sie mit Vornamen?'),
+        prompt: (bot) => bot.say(SefzigBot+'Wie heissen Sie mit Vornamen?'),
         receive: (bot, message) => {
             vorname = message.text;
             return bot.setProp('vorname', vorname)
-                .then(() => bot.say(EmpfangsBot+`${vorname}, prima.`))
+                .then(() => bot.say(SefzigBot+`${vorname}, prima.`))
                 .then(() => 'nachname');
         }
     },
 
     nachname: {
     	
-        prompt: (bot) => bot.say(EmpfangsBot+'Und wie heissen Sie mit Nachnamen?'),
+        prompt: (bot) => bot.say(SefzigBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
             nachname = message.text; 
-            bot.setProp('nachname', nachname);
+            bot.setProp('nachname', nachname)
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen '+vorname+' '+nachname+', habe ich Sie richtig verstanden?'))
-                .then(() => bot.say(EmpfangsBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
+                .then((vorname) => bot.say(SefzigBot+'Sie heissen '+vorname+' '+nachname+', habe ich Sie richtig verstanden?'))
+                .then(() => bot.say(SefzigBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
                 .then(() => 'name');
         }
     },
 
     email: {
     	
-        prompt: (bot) => bot.say(EmpfangsBot+Was ist Ihre E-Mail-Adresse?'),
+        prompt: (bot) => bot.say(SefzigBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
             email = message.text; 
-            bot.setProp('email', email);
-            return bot.getProp('email')
-                .then((email) => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+email+', korrekt?'))
-                .then(() => bot.say(SefzigBot+'Wenn nicht, schreiben Sie bitte --Email.'))
+            bot.setProp('email', email)
+            return bot.getProp('vorname')
+                .then((vorname) => bot.say(SefzigBot+'Ihre E-Mail-Adresse ist '+email+', korrekt?'))
+                .then(() => bot.say(SefzigBot+'Bitte schreiben Sie --ja oder --nein!'))
                 .then(() => 'name');
         }
     },
