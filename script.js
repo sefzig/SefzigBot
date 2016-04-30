@@ -69,10 +69,10 @@ module.exports = new Script({
             }
             if (antwort == "--JA")   { 
                
-               bot.say(EmpfangsBot+'Danke. Dürfte ich noch Ihre E-Mail-Adresse bekommen?');
-               bot.say(EmpfangsBot+'Ansonsten assen Sie uns zurück zum --Empfang gehen.');
+               bot.say(EmpfangsBot+'Danke für Ihre Daten.');
+               bot.say(EmpfangsBot+'Wo waren wir stehengeblieben? Lassen Sie uns zurück zum --Empfang gehen.');
                name_falsch == "nein";
-               dann = "email";
+               dann = "register";
                
             }
             if (antwort == "--NEIN") {
