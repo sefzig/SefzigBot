@@ -119,7 +119,6 @@ module.exports = new Script({
 
     email: {
     	
-        prompt: (bot) => bot.say(EmpfangsBot+'Wie ist Ihre E-Mail-Adresse?'),
         receive: (bot, message) => {
             email = message.text; 
          // bot.setProp('email', email);
