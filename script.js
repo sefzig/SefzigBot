@@ -72,7 +72,7 @@ module.exports = new Script({
                bot.say(EmpfangsBot+'Danke. Dürfte ich noch Ihre E-Mail-Adresse bekommen? Wenn ja, schreiben Sie bitte --Email.').then( function(){ return
                bot.say(EmpfangsBot+'Ansonsten lassen Sie uns zurück zum --Empfang gehen.'); });
                name_falsch == "nein";
-               dann = "email";
+               dann = "name";
                
             }
             if (antwort == "--NEIN") {
