@@ -69,8 +69,7 @@ module.exports = new Script({
             }
             if (antwort == "--JA")   { 
                
-               bot.say(EmpfangsBot+'Danke. Dürfte ich noch Ihre E-Mail-Adresse bekommen? Wenn ja, schreiben Sie bitte --Email.').then( function(){ return
-               bot.say(EmpfangsBot+'Ansonsten lassen Sie uns zurück zum --Empfang gehen.'); });
+               bot.say(EmpfangsBot+'Danke. Dürfte ich noch Ihre E-Mail-Adresse bekommen? Wenn ja, schreiben Sie bitte --Email. Ansonsten lassen Sie uns zurück zum --Empfang gehen.');
                name_falsch == "nein";
                dann = "name";
                
@@ -213,7 +212,7 @@ module.exports = new Script({
             	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern? Dann schreiben Sie bitte --ändern.';
                                                                         }
                                                                         else {
-            	                                                           aussage = EmpfangsBot+'Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Dann schreiben Sie bitte --nagut.';
+            	                                                           aussage = EmpfangsBot+'Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Dann schreiben Sie bitte --nagut.';
                                                                         }
                                                                         
                                                                         bot.say(aussage);
