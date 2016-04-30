@@ -29,14 +29,14 @@ module.exports = new Script({
         receive: (bot, message) => {
             
          // Befehl normalisieren
-            var befehl = befehlWort(message.text.trim().toUpperCase());
+            var befehl = befehlWort(message.text.trim());
             
          // Nächster Schritt default
             var dann = "register";
             
-            if (~befehl.indexOf("--WEITERLEITEN")) {
+            if (~befehl.indexOf("Weiterleiten:")) {
                
-               bot.say(EmpfangsBot+'Ich leite Sie weiter.');
+            // bot.say(EmpfangsBot+'Ich leite Sie weiter.');
                
             }
             else {
