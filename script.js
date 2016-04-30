@@ -27,8 +27,9 @@ module.exports = new Script({
     	
         receive: (bot) => {
             return bot.say(EmpfangsBot+'Darf ich Ihnen kurz unsere Agentur vorstellen? Dann schreiben (oder klicken/tippen) Sie bitte --Agentur!')
-                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen auch unsere --Kreation, die --Beratung und unsere --Technik vorstellen. \n Oder lassen Sie uns über --Strategie und --Konzeption reden.'))
-                .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben!'))
+                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen auch unsere --Kreation, die --Beratung und unsere --Technik vorstellen.'))
+                .then(() => bot.say(EmpfangsBot+'Oder sprechen Sie mit Andreas über --Strategie und --Konzeption im Jahr des Real Time Messaging #Rtm.'))
+                .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. Bitte sprechen Sie solange mit meinem Bot über --Strategie und --Konzeption!'))
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
         }
     },
@@ -214,19 +215,20 @@ module.exports = new Script({
          // Strategie
          // -----------------
             
-            if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(AndreasSefzig+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:RobogeddonChatten] Ein weltweiter Trend mit erheblichen Auswirkungen auf die Benutzeroberflächen des Internets!')
-                                               .then(function(){ return bot.say(AndreasSefzig+'Chat-Bots gibt es schon --lange. Aber sie werden genau jetzt interessant, wo die meisten Menschen mit Chatten vertraut sind und große Anwendungen wie --Facebook, --Slack und andere ihre Plattformen für Bots öffnen.') })
-                                               .then(function(){ return bot.say(AndreasSefzig+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
-            if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.')
-                                               .then(function(){ return bot.say(AndreasSefzig+'Folgt.') })
+            if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:RobogeddonChatten] Ein weltweiter Trend mit erheblichen absehbaren Auswirkungen auf die Benutzeroberflächen des Internets.')
+                                               .then(function(){ return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange. Aber sie werden genau jetzt interessant, wo die meisten Menschen mit Chatten vertraut sind und große Anwendungen wie --Facebook, --Slack und andere ihre Plattformen für Bots öffnen.') })
+                                               .then(function(){ return bot.say(SefzigBot+'Text.') })
+                                               .then(function(){ return bot.say(SefzigBot+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
+            if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(SefzigBot+'Folgt.')
+                                               .then(function(){ return bot.say(SefzigBot+'Folgt.') })
                                                .then(function(){ return bot.say(TechnikBot+'Wir in der Technik kommunizieren am liebsten über --Slack. Wir steuern darin sogar unsere Server! Aber auch HipChat bietet eine schöne Plattform für #ChatOps.'); }); }
-            if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.')
-                                               .then(function(){ return bot.say(AndreasSefzig+'Folgt.') })
+            if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(SefzigBot+'Folgt.')
+                                               .then(function(){ return bot.say(SefzigBot+'Folgt.') })
                                                .then(function(){ return bot.say(KreationsBot+'Unsere Kreation liebt es, interessante Dialoge zu erschaffen, die Nutzern einen konkreten Mehrwert bieten und sie mit Reichhaltigen Inhalten erfreuen.'); }); }
-            if  (~befehl.indexOf("--LANGE"))          { versuch = true; bot.say(AndreasSefzig+'1966 entstand mit dem Chatbot ELIZA die erste künstliche Intelligenz: %[Ein Nachbau von ELIZA](http://sefzig.net/link/ElizaMedai/) ').then(function(){ 
-                                                              // return bot.say(AndreasSefzig+'1999 chattete Prince (The artist formerly known usw.) regelmäßig im AOL Messenger: %[Artikel auf Medium (engl)](http://sefzig.net/link/ChattingWithPrince/) ') }).then(function(){
-                                                                 return bot.say(AndreasSefzig+'2001 setzt das Marketing erstmals im großen Stil einen Chatbot ein - für Radioheads neues Album: %[Artikel auf Medium (engl)](http://sefzig.net/link/GooglyMinotaur/) ') }).then(function(){
-                                                                 return bot.say(AndreasSefzig+'Text zur --Strategie.'); }); }
+            if  (~befehl.indexOf("--LANGE"))          { versuch = true; bot.say(SefzigBot+'1966 entstand mit dem Chatbot ELIZA die erste künstliche Intelligenz: %[Ein Nachbau von ELIZA](http://sefzig.net/link/ElizaMedai/) ').then(function(){ 
+                                                              // return bot.say(SefzigBot+'1999 chattete Prince (The artist formerly known usw.) regelmäßig im AOL Messenger: %[Artikel auf Medium (engl)](http://sefzig.net/link/ChattingWithPrince/) ') }).then(function(){
+                                                                 return bot.say(SefzigBot+'2001 setzt das Marketing erstmals im großen Stil einen Chatbot ein - für Radioheads neues Album: %[Artikel auf Medium (engl)](http://sefzig.net/link/GooglyMinotaur/) ') }).then(function(){
+                                                                 return bot.say(SefzigBot+'Text zur --Strategie.'); }); }
             
          // -----------------
          // Tests
