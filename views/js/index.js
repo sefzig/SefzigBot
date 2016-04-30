@@ -90,6 +90,9 @@
              
           });
           
+          var sagen = getParameters("m");
+          if ((sagen) && (sagen != "")) { Smooch.sendMessage(sagen); }
+       
        // Fokus auf Eingabe
           $("#sk-footer .message-input").focus();
           
