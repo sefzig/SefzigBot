@@ -193,7 +193,7 @@
           // Template anpassen
              template = template.replace(/%klasse%/g, klasse);
              template = template.replace(/%inhalt%/g, inhalt);
-             template = template.replace(/%cta%/g, cta);
+          // template = template.replace(/%cta%/g, cta);
              
           // Neuen Text anpassen
              text_string = text_string.replace("["+modul+":"+inhalt+"]", template);
