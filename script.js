@@ -69,7 +69,7 @@ module.exports = new Script({
             }
             if (antwort == "--JA")   { 
                
-               bot.say(EmpfangsBot+'Danke. Dürfte ich noch Ihre E-Mail-Adresse bekommen? Wenn ja, schreiben Sie bitte --Email. Ansonsten lassen Sie uns zurück zum --Empfang gehen.');
+               bot.say(EmpfangsBot+'Danke. Dürfte ich noch Ihre E-Mail-Adresse haben? Wenn ja, schreiben Sie bitte --Email. Ansonsten lassen Sie uns zurück zum --Empfang gehen.');
                name_falsch == "nein";
                dann = "name";
                
@@ -119,12 +119,11 @@ module.exports = new Script({
 
     email: {
     	
-        prompt: (bot) => bot.say(EmpfangsBot+'Was ist Ihre E-Mail-Adresse?'),
+        prompt: (bot) => bot.say(EmpfangsBot+'Wie ist Ihre E-Mail-Adresse?'),
         receive: (bot, message) => {
             email = message.text; 
-            bot.setProp('email', email);
-            return bot.getProp('email')
-                .then((email) => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+email+', korrekt?'))
+         // bot.setProp('email', email);
+            return bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+email+', korrekt?'))
                 .then(() => bot.say(EmpfangsBot+'Wenn nicht, schreiben Sie bitte --Email.'))
                 .then(() => 'name');
         }
