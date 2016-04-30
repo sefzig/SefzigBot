@@ -34,7 +34,7 @@ module.exports = new Script({
     },
 
  // -------------------------
- // Onboarding 
+ // Onboarding: Name
  // -------------------------
     
     name: {
@@ -63,7 +63,7 @@ module.exports = new Script({
                
                bot.say(EmpfangsBot+'Danke. Mögen Sie mir Ihre E-Mail-Adresse geben? Wenn ja, schreiben Sie --Email. Ansonsten lassen Sie uns zurück zum --Empfang gehen.');
                name_falsch == "nein";
-               dann = "name";
+               dann = "register";
                
             }
             if (antwort == "--NEIN") {
@@ -109,6 +109,10 @@ module.exports = new Script({
         }
     },
 
+ // -------------------------
+ // Onboarding: E-Mail
+ // -------------------------
+    
  // -------------------------
  // Register
  // -------------------------
@@ -195,6 +199,10 @@ module.exports = new Script({
                                                                         }
                                                                         
                                                                         bot.say(aussage);
+                                                                     }
+            
+            if  (~befehl.indexOf("--EMAIL"))          { versuch = true; dann = "email";
+            	                                                        bot.say('Email-Eingabe folgt.');
                                                                      }
             
          // -----------------
