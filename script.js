@@ -174,6 +174,9 @@ module.exports = new Script({
                                                                         else if ((nachname) && (nachname != ""))
             	                                                           bot.say(EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern?  Bitte antworten Sie mit --ja oder --nein.');
                                                                         }
+                                                                        else 
+            	                                                           bot.say(EmpfangsBot+'Wir kennen Ihren Namen noch nicht.');
+                                                                        }
                                                                         dann = "name"; }
             
          // -----------------
