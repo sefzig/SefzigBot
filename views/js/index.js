@@ -78,8 +78,8 @@
              var sagen = getParameters("strategie");
              if ((sagen) && (sagen != "")) { 
              
-                window.setTimeout(function() { Smooch.sendMessage("Hallo."); }, 1000);
-                window.setTimeout(function() { Smooch.sendMessage(sagen); }, 1500);
+                window.setTimeout(function() { Smooch.sendMessage("--weiterleiten"); }, 1000);
+                window.setTimeout(function() { Smooch.sendMessage(sagen); }, 2000);
              }
        
           }, 100); }); 
