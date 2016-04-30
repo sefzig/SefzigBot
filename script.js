@@ -214,20 +214,59 @@ module.exports = new Script({
          // Strategie
          // -----------------
             
-            if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:RobogeddonChatten] Ein weltweiter Trend mit erheblichen absehbaren Auswirkungen auf die Benutzeroberflächen des Internets.')
+            if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:RobogeddonChatten] Ein weltweiter Trend mit erheblichen absehbaren --Auswirkungen auf die Benutzeroberflächen des Internets.')
                                                .then(function(){ return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange. Aber sie werden genau jetzt interessant, wo die meisten Menschen mit Chatten vertraut sind und große Anwendungen wie --Facebook, --Slack und andere ihre Plattformen für Bots öffnen.') })
-                                               .then(function(){ return bot.say(SefzigBot+'Text.') })
                                                .then(function(){ return bot.say(SefzigBot+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
+            
             if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(SefzigBot+'Folgt.')
                                                .then(function(){ return bot.say(SefzigBot+'Folgt.') })
-                                               .then(function(){ return bot.say(TechnikBot+'Wir in der Technik kommunizieren am liebsten über --Slack. Wir steuern darin sogar unsere Server! Aber auch HipChat bietet eine schöne Plattform für #ChatOps.'); }); }
+                                               .then(function(){ return bot.say(TechnikBot+'Wir in der Technik kommunizieren am liebsten über --Slack. Wir steuern im Chat unsere Server! Aber auch --HipChat ist eine schöne Plattform für --ChatOps.'); }); }
+            
             if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(SefzigBot+'Folgt.')
                                                .then(function(){ return bot.say(SefzigBot+'Folgt.') })
                                                .then(function(){ return bot.say(KreationsBot+'Unsere Kreation liebt es, interessante Dialoge zu erschaffen, die Nutzern einen konkreten Mehrwert bieten und sie mit Reichhaltigen Inhalten erfreuen.'); }); }
+            
             if  (~befehl.indexOf("--LANGE"))          { versuch = true; bot.say(SefzigBot+'1966 entstand mit dem Chatbot ELIZA die erste künstliche Intelligenz: %[Ein Nachbau von ELIZA](http://sefzig.net/link/ElizaMedai/) ').then(function(){ 
-                                                              // return bot.say(SefzigBot+'1999 chattete Prince (The artist formerly known usw.) regelmäßig im AOL Messenger: %[Artikel auf Medium (engl)](http://sefzig.net/link/ChattingWithPrince/) ') }).then(function(){
-                                                                 return bot.say(SefzigBot+'2001 setzt das Marketing erstmals im großen Stil einen Chatbot ein - für Radioheads neues Album: %[Artikel auf Medium (engl)](http://sefzig.net/link/GooglyMinotaur/) ') }).then(function(){
+                                                              // return bot.say(SefzigBot+'1999 chattete Prince (The artist formerly known usw.) regelmäßig im AOL Messenger: %[Artikel auf Medium (englisch)](http://sefzig.net/link/ChattingWithPrince/) ') }).then(function(){
+                                                                 return bot.say(SefzigBot+'2001 setzt das Marketing erstmals im großen Stil einen Chatbot ein - für Radioheads neues Album: %[Artikel auf Medium (englisch)](http://sefzig.net/link/GooglyMinotaur/) ') }).then(function(){
                                                                  return bot.say(SefzigBot+'Text zur --Strategie.'); }); }
+            
+            if  (~befehl.indexOf("--AUSWIRKUNGEN"))   { versuch = true; bot.say(SefzigBot+'Auswirkungen Text 1.')
+                                               .then(function(){ return bot.say(SefzigBot+'Auswirkungen Text 2.'); })
+                                               .then(function(){ return bot.say(SefzigBot+'Auswirkungen Text 3.'); }); }
+            
+            if  (~befehl.indexOf("--CHATOPS"))        { versuch = true; bot.say(SefzigBot+'ChatOps Text 1.')
+                                               .then(function(){ return bot.say(SefzigBot+'ChatOps Text 2.'); })
+                                               .then(function(){ return bot.say(SefzigBot+'ChatOps Text 3.'); }); }
+            
+         // -----------------
+         // Konzeption
+         // -----------------
+            
+            if  (~befehl.indexOf("--KONZEPTION"))     { versuch = true; bot.say(SefzigBot+'Konzeption Text 1.')
+                                               .then(function(){ return bot.say(SefzigBot+'Konzeption Text 2.'); })
+                                               .then(function(){ return bot.say(SefzigBot+'Konzeption Text 3.'); }); }
+            
+         // -----------------
+         // Plattformen
+         // -----------------
+            
+            if  (~befehl.indexOf("--FACEBOOK"))       { versuch = true; bot.say(SefzigBot+'Facebook Text 1.')
+                                               .then(function(){ return bot.say(SefzigBot+'Facebook Text 2.'); })
+                                               .then(function(){ return bot.say(SefzigBot+'Facebook Text 3.'); }); }
+            
+            if  (~befehl.indexOf("--SLACK"))          { bot.say(SlackBot +'Andreas mag Interne Kommunikation und Automatisierung - er liebt Slack! Das sollte Ihr Team auch tun...');
+                                                        bot.say(SlackBot +'(Schreiben Sie --bot, um wieder mit SefzigBot zu sprechen.)');
+                                                        bot.say(SlackBot +'Lesen Sie Andreas --Artikel oder --Blogpost, öffnen Sie seine --Links oder treten Sie Andreas offenem Slack --Team bei.');
+                                                        dann = "slack"; } 
+            
+            if  (~befehl.indexOf("--SLACK"))          { versuch = true; bot.say(SefzigBot+'Slack ist die fantastische neue Kommunikationsplattform für Teams!')
+                                               .then(function(){ return bot.say(SefzigBot+'Wenn Sie Slack noch nicht kennen, lesen Sie Andreas --SlackArtikel für Marketer, seinen --SlackPost für Anwender, öffnen Sie seine --SlackLinks oder treten Sie seinem --SlackTeam bei.'); })
+                                               .then(function(){ return bot.say(SefzigBot+'Mit Slack lassen sich die effizienz-steigernden Prinzipien der --ChatOps auf ein Team oder Unternehmen am besten anwenden.'); }); }
+            
+            if  (~befehl.indexOf("--HIPCHAT"))        { versuch = true; bot.say(SefzigBot+'HipChat Text 1.')
+                                               .then(function(){ return bot.say(SefzigBot+'HipChat Text 2.'); })
+                                               .then(function(){ return bot.say(SefzigBot+'HipChat Text 3.'); }); }
             
          // -----------------
          // Tests
@@ -235,15 +274,15 @@ module.exports = new Script({
          
             if  (~befehl.indexOf("--JAVASCRIPT"))     { versuch = true; bot.say(SefzigBot+'[Javascript:test_alert]'); }
             if  (~befehl.indexOf("--VIDEO"))          { versuch = true; bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
-            if  (~befehl.indexOf("--REIHE"))          { versuch = true; bot.say('Sentence #1')
-                                               .then(function(){ return bot.say('Sentence #2'); })
-                                               .then(function(){ return bot.say('Sentence #3'); }); }
             
          // -----------------
          // Vorlage
          // -----------------
          
             if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+'Text: Vorlage.'); }
+            if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+'Vorlage Text 1.')
+                                               .then(function(){ return bot.say(EmpfangsBot+'Vorlage Text 2.'); })
+                                               .then(function(){ return bot.say(EmpfangsBot+'Vorlage Text 3.'); }); }
             
          // -----------------
          // Konversation fortführen
