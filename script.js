@@ -188,10 +188,10 @@ module.exports = new Script({
          // Strategie
          // -----------------
             
-            if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(EmpfangsBot+'Für --Strategie ist Andreas zuständig, das können wir Bots nicht gut.').then(function(){ return
-                                                                        bot.say(AndreasSefzig+'Chatten ist bereits die häufigste digitale Beschäftigung in Deutschland (wie auch dem Rest der Welt, Quelle: Folgt).') }).then(function(){ return
-                                                                        bot.say(AndreasSefzig+'Auch wenn es Chat-Bots schon lange gibt, werden sie auch gerade jetzt interessant, da Facebook, Slack, Telegram u.a. ihre Plattformen für Bots öffnen.') }).then(function(){ return
-                                                                        bot.say(AndreasSefzig+'Interessieren Sie sich eher für Bots, die --intern (z.B. im Team) oder --extern (z.B. für Kunden) eingesetzt werden?'); }); }
+            if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(EmpfangsBot+'Für --Strategie ist Andreas zuständig, das können wir Bots nicht gut.')
+                                               .then(function(){ return bot.say(AndreasSefzig+'Chatten ist bereits die häufigste digitale Beschäftigung in Deutschland (wie auch dem Rest der Welt, Quelle: Folgt).') })
+                                               .then(function(){ return bot.say(AndreasSefzig+'Auch wenn es Chat-Bots schon lange gibt, werden sie auch gerade jetzt interessant, da Facebook, Slack, Telegram u.a. ihre Plattformen für Bots öffnen.') })
+                                               .then(function(){ return bot.say(AndreasSefzig+'Interessieren Sie sich eher für Bots, die --intern (z.B. im Team) oder --extern (z.B. für Kunden) eingesetzt werden?'); }); }
             if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.')
                                                .then(function(){ return bot.say(AndreasSefzig+'Folgt.') })
                                                .then(function(){ return bot.say(TechnikBot+'Wir in der Technik kommunizieren am liebsten über --Slack. Wir steuern darin sogar unsere Server! Aber auch HipChat bietet eine schöne Plattform für #ChatOps.'); }); }
