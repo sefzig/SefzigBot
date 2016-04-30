@@ -205,25 +205,25 @@ module.exports = new Script({
          // Agentur
          // -----------------
             
-            if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist Deutschlands erste Werbe-Agentur, die Bots für ihre Kunden entwickelt und mit --Leben füllt. Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern wie --extern.')
+            if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist Deutschlands erste Agentur, die Bots für ihre Kunden entwickelt und mit --Leben füllt. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern wie --extern.')
                                                .then(function(){ return bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots.') })
-                                               .then(function(){ return bot.say(EmpfangsBot+'Sprechen Sie mit Andreas über die --Strategie und --Konzeption Ihres eigenen Chat-Bots!') })
-                                               .then(function(){ return bot.say(EmpfangsBot+'Wir sind eine junge Agentur auf einem jungen Markt. Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen! '); }); }
+                                               .then(function(){ return bot.say(EmpfangsBot+'Sprechen Sie mit Andreas über die --Strategie und --Konzeption Ihres eigenen Chat-Bots.') })
+                                               .then(function(){ return bot.say(EmpfangsBot+'Wir sind eine junge Agentur auf einem jungen Markt. Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen: Innovativ! '); }); }
             
          // -----------------
          // Strategie
          // -----------------
             
             if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(EmpfangsBot+'Für --Strategie ist Andreas zuständig, das können wir Bots nicht gut.')
-                                               .then(function(){ return bot.say(AndreasSefzig+'Chatten ist bereits die häufigste digitale Beschäftigung in Deutschland (wie auch dem Rest der Welt, Quelle: Folgt).') })
-                                               .then(function(){ return bot.say(AndreasSefzig+'Auch wenn es Chat-Bots schon lange gibt, werden sie auch gerade jetzt interessant, da Facebook, Slack, Telegram u.a. ihre Plattformen für Bots öffnen.') })
-                                               .then(function(){ return bot.say(AndreasSefzig+'Interessieren Sie sich eher für Bots, die --intern (z.B. im Team) oder --extern (z.B. für Kunden) eingesetzt werden?'); }); }
+                                               .then(function(){ return bot.say(BeratungsBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland - wie auch im Rest der Welt. Quelle: [Text:RobogeddonChatten]') })
+                                               .then(function(){ return bot.say(AndreasSefzig+'Chat-Bots gibt es schon --lange. Aber sie werden jetzt interessant, wo große Anwendungen wie Facebook, Slack und andere ihre Plattformen für Bots öffnen.') })
+                                               .then(function(){ return bot.say(AndreasSefzig+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
             if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.')
                                                .then(function(){ return bot.say(AndreasSefzig+'Folgt.') })
                                                .then(function(){ return bot.say(TechnikBot+'Wir in der Technik kommunizieren am liebsten über --Slack. Wir steuern darin sogar unsere Server! Aber auch HipChat bietet eine schöne Plattform für #ChatOps.'); }); }
             if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.')
                                                .then(function(){ return bot.say(AndreasSefzig+'Folgt.') })
-                                               .then(function(){ return bot.say(KreationsBot+'Wir in der Kreation lieben es, interessante Dialoge zu erschaffen, die Nutzern einen konkreten Mehrwert bieten und sie mit reichhaltigen Inhalten unterhalten.'); }); }
+                                               .then(function(){ return bot.say(KreationsBot+'Unsere Kreation liebt es, interessante Dialoge zu erschaffen, die Nutzern einen konkreten Mehrwert bieten und sie mit Reichhaltigen Inhalten erfreuen.'); }); }
             
          // -----------------
          // Tests
