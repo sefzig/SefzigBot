@@ -28,8 +28,7 @@ module.exports = new Script({
         receive: (bot) => {
             return bot.say(EmpfangsBot+'Darf ich Ihnen kurz unsere Agentur vorstellen? Dann schreiben (oder klicken/tippen) Sie bitte --Agentur!')
                 .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen auch unsere --Kreation, die --Beratung und unsere --Technik vorstellen.'))
-                .then(() => bot.say(EmpfangsBot+'Oder sprechen Sie mit Andreas über --Strategie und --Konzeption im Jahr des Real Time Messaging #Rtm.'))
-                .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. Bitte sprechen Sie solange mit meinem Bot über --Strategie und --Konzeption!'))
+                .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. \n Bitte sprechen Sie solange mit meinem Bot über --Strategie und --Konzeption.'))
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
         }
     },
