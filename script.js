@@ -10,8 +10,13 @@ const TechnikBot =    "[TechnikBot] ";
 const LinkBot =       "[LinkBot] ";
 const TextBot =       "[TextBot] ";
 const SlackBot =      "[SlackBot] ";
+
 var versuche_max = 3;
 var versuche = 0;
+
+var vorname = "";
+var nachname = "";
+var email = "";
 
 module.exports = new Script({
     processing: {
@@ -23,7 +28,7 @@ module.exports = new Script({
     	
         receive: (bot) => {
             return bot.say(EmpfangsBot+'Darf ich Ihnen kurz unsere Agentur vorstellen? Dann schreiben Sie bitte --Agentur!')
-                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen gerne unsere --Kreation, die --Beratung und unsere --Technik vorstellen.'))
+                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen auch unsere --Kreation, die --Beratung und unsere --Technik vorstellen. Oder lassen Sie uns über --Strategie und --Konzeption reden.'))
                 .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben!'))
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
         }
@@ -109,12 +114,6 @@ module.exports = new Script({
             var versuch = false;
             
          // -----------------
-         // Onboarding
-         // -----------------
-            
-            if  (~befehl.indexOf("--NAME"))           { versuch = true; dann = "name"; }
-            
-         // -----------------
          // System
          // -----------------
          
@@ -133,27 +132,27 @@ module.exports = new Script({
                                                                               +'\n○ --Gründung '
                                                                               +'\n○ --Vision '
                                                                               +'\n○ --Über '); }
-            if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ')
-                                               .then(function(){ return bot.say(TechnikBot+'Leider werden Sie dort nicht wiedererkannt. Wir arbeiten an einer Lösung...'); }); }
+            if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(function(){ return
+                                                                        bot.say(TechnikBot+'Leider werden Sie dort nicht wiedererkannt. Wir arbeiten an einer Lösung...'); }); }
             if ((~befehl.indexOf("--UBER")) ||
-                (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }); }
+                (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.').then(function(){ return
+                                                                        bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }); }
             
          // -----------------
          // Bots
          // -----------------
             
-            if  (~befehl.indexOf("--SEFZIG"))         { versuch = true; bot.setProp('persönlich', '@sefzig')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Ich habe Andreas benachrichtigt.') })
+            if  (~befehl.indexOf("--SEFZIG"))         { versuch = true; bot.setProp('persönlich', '@sefzig').then(function(){ return
+                                                                        bot.say(EmpfangsBot+'Ich habe Andreas benachrichtigt.') })
                                                .then(function(){ return bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); }); } 
             if ((~befehl.indexOf("--EMPFANG")) ||
                 (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Technik oder der --Beratung.'); }
             
             if ((~befehl.indexOf("--KREATION")) ||
-                (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.')
-                                               .then(function(){ return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren.') })
+                (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){ return
+                                                                        bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren.') })
                                                .then(function(){ return bot.say(KreationsBot+'Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in das Gespräch ein.') })
-                                               .then(function(){ return bot.say(KreationsBot+'Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer.') });
+                                               .then(function(){ return bot.say(KreationsBot+'Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer!') });
                                                                         dann = "kreation"; } 
             if ((~befehl.indexOf("--BERATUNG")) ||
                 (~befehl.indexOf("--BARBARA")))       { versuch = true; bot.say(BeratungsBot+'Schreiben Sie --empfang, um zum Empfang zurückzukehren.');
@@ -163,26 +162,41 @@ module.exports = new Script({
                                                                         dann = "technik";  } 
             
          // -----------------
+         // Onboarding
+         // -----------------
+         
+            if  (~befehl.indexOf("--NAME"))           { versuch = true; if ((vorname) && (vorname != "") && (nachname) && (nachname != ""))
+            	                                                           bot.say(EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn ändern?  Bitte antworten Sie mit --ja oder --nein.');
+                                                                        }
+                                                                        else if ((vorname) && (vorname != ""))
+            	                                                           bot.say(EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen ändern?  Bitte antworten Sie mit --ja oder --nein.');
+                                                                        }
+                                                                        else if ((nachname) && (nachname != ""))
+            	                                                           bot.say(EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern?  Bitte antworten Sie mit --ja oder --nein.');
+                                                                        }
+                                                                        dann = "name"; }
+            
+         // -----------------
          // Agentur
          // -----------------
             
-            if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist auf Bots für externe und interne Unternehmens-Kommunikation spezialisiert.')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Technologien und einem Team aus mehreren Bots.') })
-                                               .then(function(){ return bot.say(EmpfangsBot+'Mehr über uns: ○ --Folgt.'); }); }
+            if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist auf Bots für externe und interne Unternehmens-Kommunikation spezialisiert.').then(function(){ return
+                                                                        bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Technologien und einem Team aus mehreren Bots.') }).then(function(){ return 
+                                                                        bot.say(EmpfangsBot+'Mehr über uns: ○ --Folgt.'); }); }
             
          // -----------------
          // Strategie
          // -----------------
             
-            if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(EmpfangsBot+'Für --Strategie ist Andreas zuständig, das können wir Bots nicht gut.')
-                                               .then(function(){ return bot.say(AndreasSefzig+'Chatten ist bereits die häufigste digitale Beschäftigung in Deutschland (wie auch dem Rest der Welt, Quelle: Folgt).') })
-                                               .then(function(){ return bot.say(AndreasSefzig+'Auch wenn es Chat-Bots schon lange gibt, werden sie auch gerade jetzt interessant, da Facebook, Slack, Telegram u.a. ihre Plattformen für Bots öffnen.') })
-                                               .then(function(){ return bot.say(AndreasSefzig+'Interessieren Sie sich eher für Bots, die --intern (z.B. im Team) oder --extern (z.B. für Kunden) eingesetzt werden?'); }); }
-            if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.')
-                                               .then(function(){ return bot.say(AndreasSefzig+'Folgt.') })
+            if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(EmpfangsBot+'Für --Strategie ist Andreas zuständig, das können wir Bots nicht gut.').then(function(){ return
+                                                                        bot.say(AndreasSefzig+'Chatten ist bereits die häufigste digitale Beschäftigung in Deutschland (wie auch dem Rest der Welt, Quelle: Folgt).') }).then(function(){ return
+                                                                        bot.say(AndreasSefzig+'Auch wenn es Chat-Bots schon lange gibt, werden sie auch gerade jetzt interessant, da Facebook, Slack, Telegram u.a. ihre Plattformen für Bots öffnen.') }).then(function(){ return
+                                                                        bot.say(AndreasSefzig+'Interessieren Sie sich eher für Bots, die --intern (z.B. im Team) oder --extern (z.B. für Kunden) eingesetzt werden?'); }); }
+            if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.').then(function(){ return
+                                                                        bot.say(AndreasSefzig+'Folgt.') })
                                                .then(function(){ return bot.say(TechnikBot+'Wir in der Technik kommunizieren am liebsten über --Slack. Wir steuern darin sogar unsere Server! Aber auch HipChat bietet eine schöne Plattform für #ChatOps.'); }); }
-            if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.')
-                                               .then(function(){ return bot.say(AndreasSefzig+'Folgt.') })
+            if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.').then(function(){ return
+                                                                        bot.say(AndreasSefzig+'Folgt.') })
                                                .then(function(){ return bot.say(KreationsBot+'Wir in der Kreation lieben es, interessante Dialoge zu erschaffen, die Nutzern einen konkreten Mehrwert bieten und sie mit reichhaltigen Inhalten unterhalten.'); }); }
             
          // -----------------
@@ -191,8 +205,8 @@ module.exports = new Script({
          
             if  (~befehl.indexOf("--JAVASCRIPT"))     { versuch = true; bot.say(SefzigBot+'[Javascript:test_alert]'); }
             if  (~befehl.indexOf("--VIDEO"))          { versuch = true; bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
-            if  (~befehl.indexOf("--REIHE"))          { versuch = true; bot.say('Sentence #1')
-                                               .then(function(){ return bot.say('Sentence #2'); })
+            if  (~befehl.indexOf("--REIHE"))          { versuch = true; bot.say('Sentence #1').then(function(){ return
+                                                                        bot.say('Sentence #2'); })
                                                .then(function(){ return bot.say('Sentence #3'); }); }
             
          // -----------------
@@ -246,8 +260,8 @@ module.exports = new Script({
                                                                               +'\n○ --Folgt '); }
             if ((~befehl.indexOf("--ALICE")) ||
                 (~befehl.indexOf("--EMPFANG")) ||
-                (~befehl.indexOf("--ABBRECHEN")))     { versuch = true; bot.say(KreationsBot+'Bis später!')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Willkommen zurück. Schreiben Sie --Befehle um zu sehen, was ich Ihnen noch zeigen kann.'); });
+                (~befehl.indexOf("--ABBRECHEN")))     { versuch = true; bot.say(KreationsBot+'Bis später!').then(function(){ return
+                                                                        bot.say(EmpfangsBot+'Willkommen zurück! Schreiben Sie --Befehle um zu sehen, was ich Ihnen noch zeigen kann.'); });
                                                                         dann = "register"; }
             
          // -----------------
@@ -270,8 +284,8 @@ module.exports = new Script({
          // Irrläufer
             if (versuch == true) { versuche = 0; }
             else { versuche++; if (versuche == versuche_max) {
-               bot.say(KreationsBot+'Suchen Sie die --Befehle?');
-               bot.say(EmpfangsBot+'Wollen Sie zum --Empfang?');
+               bot.say(KreationsBot+'Suchen Sie die --Befehle?').then(function(){ return 
+               bot.say(EmpfangsBot+'Oder wollen Sie zum --Empfang?'); });
                versuche = 0; }
             }
             
