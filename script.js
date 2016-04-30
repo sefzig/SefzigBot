@@ -164,14 +164,30 @@ module.exports = new Script({
          // -----------------
          // Onboarding
          // -----------------
+         
+            if  (~befehl.indexOf("--NAME"))           { versuch = true; dann = "name"; }
+            
+            if  (~befehl.indexOf("--NAME"))           { versuch = true; if ((vorname) && (vorname != "") && (nachname) && (nachname != "")) {
+            	                                                           bot.say(EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn ändern?  Bitte antworten Sie mit --ja oder --nein.');
+                                                                        }
+                                                                        else if ((vorname) && (vorname != "")) {
+            	                                                           bot.say(EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen ändern?  Bitte antworten Sie mit --ja oder --nein.');
+                                                                        }
+                                                                        else if ((nachname) && (nachname != "")) {
+            	                                                           bot.say(EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern?  Bitte antworten Sie mit --ja oder --nein.');
+                                                                        }
+                                                                        else {
+            	                                                           bot.say(EmpfangsBot+'Wir kennen Ihren Namen noch nicht.');
+                                                                        }
+                                                                        dann = "name"; }
             
          // -----------------
          // Agentur
          // -----------------
             
-            if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist auf Bots für externe und interne Unternehmens-Kommunikation spezialisiert.').then(function(){ return
-                                                                        bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Technologien und einem Team aus mehreren Bots.') }).then(function(){ return 
-                                                                        bot.say(EmpfangsBot+'Mehr über uns: ○ --Folgt.'); }); }
+            if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist auf Bots für externe und interne Unternehmens-Kommunikation spezialisiert.')
+                                               .then(function(){ return bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Technologien und einem Team aus mehreren Bots.') })
+                                               .then(function(){ return bot.say(EmpfangsBot+'Mehr über uns: ○ --Folgt.'); }); }
             
          // -----------------
          // Strategie
