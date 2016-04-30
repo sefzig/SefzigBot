@@ -14,8 +14,8 @@ const SlackBot =      "[SlackBot] ";
 var versuche_max = 3;
 var versuche = 0;
 
-var vorname = "";
-var nachname = "";
+var vorname = "Unbekannter";
+var nachname = "Besucher";
 var email = "";
 
 module.exports = new Script({
@@ -60,9 +60,16 @@ module.exports = new Script({
                dann = "vorname";
                
             }
+            if (antwort == "--EMAIL")   { 
+               
+               bot.say(EmpfangsBot+'Wir senden keinen Spam.');
+               name_falsch == "email";
+               dann = "email";
+               
+            }
             if (antwort == "--JA")   { 
                
-               bot.say(EmpfangsBot+'Unterhalten Sie sich mit mir: Bitte schreiben Sie --Empfang!');
+               bot.say(EmpfangsBot+'Wo waren wir stehengeblieben? Lassen Sie uns zurück zum --Empfang gehen.');
                name_falsch == "nein";
                dann = "register";
                
@@ -102,10 +109,23 @@ module.exports = new Script({
         prompt: (bot) => bot.say(SefzigBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
             nachname = message.text; 
-            bot.setProp('nachname', nachname)
+            bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
                 .then((vorname) => bot.say(SefzigBot+'Sie heissen '+vorname+' '+nachname+', habe ich Sie richtig verstanden?'))
                 .then(() => bot.say(SefzigBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
+                .then(() => 'name');
+        }
+    },
+
+    email: {
+    	
+        prompt: (bot) => bot.say(SefzigBot+'Und wie heissen Sie mit Nachnamen?'),
+        receive: (bot, message) => {
+            email = message.text; 
+            bot.setProp('email', email);
+            return bot.getProp('email')
+                .then((email) => bot.say(SefzigBot+'Ihre E-Mail-Adresse ist '+email+', korrekt?'))
+                .then(() => bot.say(SefzigBot+'Wenn nicht, schreiben Sie bitte --Email.'))
                 .then(() => 'name');
         }
     },
@@ -182,13 +202,13 @@ module.exports = new Script({
             if  (~befehl.indexOf("--NAME"))           { versuch = true; dann = "name";
             	                                                        var aussage = "";
             	                                                        
-            	                                                        if ((vorname) && (vorname != "") && (nachname) && (nachname != "")) {
+            	                                                        if ((vorname) && (vorname != "") && (vorname != "Unbekannter") && (nachname) && (nachname != "") && (nachname != "Besucher")) {
             	                                                           aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn ändern? Dann schreiben Sie bitte --ändern.';
                                                                         }
-                                                                        else if ((vorname) && (vorname != "")) {
+                                                                        else if ((vorname) && (vorname != "") && (vorname != "Unbekannter")) {
             	                                                           aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen ändern? Dann schreiben Sie bitte --ändern.';
                                                                         }
-                                                                        else if ((nachname) && (nachname != "")) {
+                                                                        else if ((nachname) && (nachname != "") && (nachname != "Besucher")) {
             	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern? Dann schreiben Sie bitte --ändern.';
                                                                         }
                                                                         else {
