@@ -1,15 +1,16 @@
 'use strict';
 
 const Script = require('smooch-bot').Script;
-const AndreasSefzig = "[AndreasSefzig] ";
-const SefzigBot =     "[SefzigBot] ";
-const EmpfangsBot =   "[EmpfangsBot] ";
-const KreationsBot =  "[KreationsBot] ";
-const BeratungsBot =  "[BeratungsBot] ";
-const TechnikBot =    "[TechnikBot] ";
-const LinkBot =       "[LinkBot] ";
-const TextBot =       "[TextBot] ";
-const SlackBot =      "[SlackBot] ";
+const AndreasSefzig =  "[AndreasSefzig] ";
+const SefzigBot =      "[SefzigBot] ";
+const EmpfangsBot =    "[EmpfangsBot] ";
+const KreationsBot =   "[KreationsBot] ";
+const BeratungsBot =   "[BeratungsBot] ";
+const KonzeptionsBot = "[KonzeptionsBot] ";
+const TechnikBot =     "[TechnikBot] ";
+const LinkBot =        "[LinkBot] ";
+const TextBot =        "[TextBot] ";
+const SlackBot =       "[SlackBot] ";
 
 var versuche_max = 3;
 var versuche = 0;
@@ -27,7 +28,7 @@ module.exports = new Script({
     	
         receive: (bot) => {
             return bot.say(EmpfangsBot+'Darf ich Ihnen kurz unsere Agentur vorstellen? Dann schreiben (oder klicken/berühren) Sie bitte --Agentur!')
-                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen auch unsere --Kreation, die --Beratung und unsere --Technik vorstellen.'))
+                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen unsere  --Beratung, die --Kreation, die --Konzeption und unsere --Technik vorstellen.'))
                 .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. \n Bitte sprechen Sie solange mit meinem Bot über --Strategie und --Konzeption.'))
                 .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
         }
@@ -173,6 +174,9 @@ module.exports = new Script({
             if ((~befehl.indexOf("--TECHNIK")) ||
                 (~befehl.indexOf("--CYNTHIA")))       { versuch = true; bot.say(TechnikBot+'Schreiben Sie --empfang, wenn Sie zum Empfang wollen');
                                                                         dann = "technik";  } 
+            if ((~befehl.indexOf("--KONZEPTION")) ||
+                (~befehl.indexOf("--ERIKA")))         { versuch = true; bot.say(KonzeptionsBot+'Schreiben Sie --empfang, wenn Sie zum Empfang wollen');
+                                                                        dann = "konzeption";  } 
             
          // -----------------
          // Onboarding
@@ -261,7 +265,7 @@ module.exports = new Script({
             if  (~befehl.indexOf("--SLACK-TEAM"))     { versuch = true; befehl = "leer"; bot.say(AndreasSefzig+'Treten Sie meinem offenen Slack-Team  bei, um sich mit mir zu beraten und um --Slack im laufenden Betrieb zu sehen: [Button:Anmeldung,http://sefzig.net/link/SlackAnmeldung/]'); }
             
             if  (~befehl.indexOf("--SLACK"))          { versuch = true; bot.say(SlackBot+'Slack ist eine fantastische neue Kommunikationsplattform für Teams!')
-                                               .then(function(){ return bot.say(SefzigBot+'Wenn Sie Slack noch nicht kennen, lesen Sie Andreas --Slack-Artikel für Marketer, seinen --Slack-Blogpost für Anwender, öffnen Sie seine --Slack-Links oder treten Sie seinem --Slack-Team bei.'); })
+                                               .then(function(){ return bot.say(SefzigBot+'Wenn Sie Slack noch nicht kennen, erwägen Sie, es für Ihre Interne Kommunikation zu nutzen! Lesen Sie dazu Andreas --Slack-Artikel für Marketer, seinen --Slack-Blogpost für Anwender, öffnen Sie seine --Slack-Links oder treten Sie seinem --Slack-Team bei.'); })
                                                .then(function(){ return bot.say(SefzigBot+'Mit Slack lassen sich die effizienz-steigernden Prinzipien der --ChatOps auf ein Team oder Unternehmen am besten anwenden.'); }); }
             
             if  (~befehl.indexOf("--HIPCHAT"))        { versuch = true; bot.say(SefzigBot+'HipChat Text 1.')
