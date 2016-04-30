@@ -71,7 +71,18 @@
                 messageIndicatorTitlePlural: '({count}) neue Nachrichten'
              }
           })
-          .then(function () { window.setTimeout(function() { anpassen(); }, 100); }); 
+          .then(function () { window.setTimeout(function() { 
+             
+             anpassen();
+             
+             var sagen = getParameters("strategie");
+             if ((sagen) && (sagen != "")) { 
+             
+                window.setTimeout(function() { Smooch.sendMessage("Hallo."); }, 1000);
+                window.setTimeout(function() { Smooch.sendMessage(sagen); }, 1500);
+             }
+       
+          }, 100); }); 
           
        // Smooch.open();
           Smooch.render(document.getElementById('chat'));
@@ -90,13 +101,6 @@
              
           });
           
-          window.setTimeout(function() {
-             
-             var sagen = getParameters("m");
-             if ((sagen) && (sagen != "")) { Smooch.sendMessage(sagen); } 
-             
-          }, 3000);
-       
        // Fokus auf Eingabe
           $("#sk-footer .message-input").focus();
           

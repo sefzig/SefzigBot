@@ -27,6 +27,9 @@ module.exports = new Script({
     start: {
     	
         receive: (bot) => {
+            
+            
+            
             return bot.say(EmpfangsBot+'Darf ich Ihnen kurz unsere Agentur vorstellen? Dann schreiben (oder klicken/berühren) Sie bitte --Agentur!')
                 .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen unsere  --Beratung, die --Kreation, die --Konzeption und unsere --Technik vorstellen.'))
                 .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. \n Bitte sprechen Sie solange mit meinem Bot über --Strategie und --Konzeption.'))
