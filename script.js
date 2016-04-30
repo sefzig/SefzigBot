@@ -34,7 +34,7 @@ module.exports = new Script({
          // Nächster Schritt default
             var dann = "register";
             
-            if (~befehl.indexOf("--weiterleiten")) {
+            if (~befehl.indexOf("--WEITERLEITEN")) {
                
                bot.say(EmpfangsBot+'Ich leite Sie weiter.');
                
