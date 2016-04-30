@@ -90,8 +90,12 @@
              
           });
           
-          var sagen = getParameters("m");
-          if ((sagen) && (sagen != "")) { Smooch.sendMessage(sagen); }
+          window.setTimeout(function() {
+             
+             var sagen = getParameters("m");
+             if ((sagen) && (sagen != "")) { Smooch.sendMessage(sagen); } 
+             
+          }, 3000);
        
        // Fokus auf Eingabe
           $("#sk-footer .message-input").focus();
