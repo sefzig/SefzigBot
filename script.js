@@ -55,14 +55,14 @@ module.exports = new Script({
             }
             if (antwort == "--NAGUT")   { 
                
-               bot.say(AndreasSefzig+'Wir werden Ihre Daten nicht missbrauchen.');
+               bot.say(EmpfangsBot+'Wir werden sorgsam mit Ihren Daten umgehen.');
                name_falsch == "neu";
                dann = "vorname";
                
             }
             if (antwort == "--EMAIL")   { 
                
-               bot.say(AndreasSefzig+'Wir senden keinen Spam.');
+               bot.say(EmpfangsBot+'Wir senden Ihnen keinen Spam.');
                name_falsch == "email";
                dann = "email";
                
@@ -123,7 +123,8 @@ module.exports = new Script({
         receive: (bot, message) => {
             email = message.text; 
          // bot.setProp('email', email);
-            return bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+email+', korrekt?'))
+            return bot.getProp('email')
+                .then((email) => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+email+', korrekt?'))
                 .then(() => bot.say(EmpfangsBot+'Wenn nicht, schreiben Sie bitte --Email.'))
                 .then(() => 'name');
         }
