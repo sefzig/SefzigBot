@@ -52,7 +52,7 @@ module.exports = new Script({
                dann = "vorname";
                
             }
-            if (antwort == "--NAGUT")   { 
+            if (antwort == "--BITTE")   { 
                
                bot.say(EmpfangsBot+'Wir werden sorgsam mit Ihren Daten umgehen.');
                name_falsch == "neu";
@@ -191,7 +191,7 @@ module.exports = new Script({
             	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern? Dann schreiben Sie bitte --ändern.';
                                                                         }
                                                                         else {
-            	                                                           aussage = EmpfangsBot+'Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Dann schreiben Sie bitte --nagut.';
+            	                                                           aussage = EmpfangsBot+'Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Dann schreiben Sie bitte --Bitte.';
                                                                         }
                                                                         
                                                                         bot.say(aussage);
