@@ -28,6 +28,12 @@ module.exports = new Script({
     	
         receive: (bot, message) => {
             
+         // Befehl normalisieren
+            var befehl = befehlWort(message.text.trim().toUpperCase());
+            
+         // Nächster Schritt default
+            var dann = "register";
+            
             if (~befehl.indexOf("--weiterleiten")) {
                
                bot.say(EmpfangsBot+'Ich leite Sie weiter.');
@@ -42,7 +48,7 @@ module.exports = new Script({
             }
             
             return bot.setProp('empfangen', 'ja')
-            .then(() => 'register'); /* <-- vorname: automatisches Onboarding */
+            .then(() => dann);
             
         }
     },
