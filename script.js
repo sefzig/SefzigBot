@@ -215,7 +215,7 @@ module.exports = new Script({
          // -----------------
             
             if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(EmpfangsBot+'Für --Strategie ist Andreas zuständig, das können wir Bots nicht gut.')
-                                               .then(function(){ return bot.say(BeratungsBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland - wie auch im Rest der Welt. Quelle: [Text:RobogeddonChatten]') })
+                                               .then(function(){ return bot.say(BeratungsBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:RobogeddonChatten] Dies ist ein weltweiter Trend.') })
                                                .then(function(){ return bot.say(AndreasSefzig+'Chat-Bots gibt es schon --lange. Aber sie werden jetzt interessant, wo große Anwendungen wie Facebook, Slack und andere ihre Plattformen für Bots öffnen.') })
                                                .then(function(){ return bot.say(AndreasSefzig+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
             if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.')
@@ -224,6 +224,9 @@ module.exports = new Script({
             if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.')
                                                .then(function(){ return bot.say(AndreasSefzig+'Folgt.') })
                                                .then(function(){ return bot.say(KreationsBot+'Unsere Kreation liebt es, interessante Dialoge zu erschaffen, die Nutzern einen konkreten Mehrwert bieten und sie mit Reichhaltigen Inhalten erfreuen.'); }); }
+            if  (~befehl.indexOf("--LANGE"))          { versuch = true; bot.say(AndreasSefzig+'Folgt.').then(function(){ 
+                                                                 return bot.say(AndreasSefzig+'Folgt.') }).then(function(){
+                                                                 return bot.say(AndreasSefzig+'Text zum Alter.'); }); }
             
          // -----------------
          // Tests
@@ -310,8 +313,8 @@ module.exports = new Script({
          // Irrläufer
             if (versuch == true) { versuche = 0; }
             else { versuche++; if (versuche == versuche_max) {
-               bot.say(KreationsBot+'Suchen Sie die --Befehle?').then(function(){ return 
-               bot.say(EmpfangsBot+'Oder wollen Sie zum --Empfang?'); });
+               bot.say(KreationsBot+'Suchen Sie die --Befehle?').then(function(){ 
+               return bot.say(EmpfangsBot+'Oder wollen Sie zum --Empfang?'); });
                versuche = 0; }
             }
             
@@ -370,8 +373,8 @@ module.exports = new Script({
          // Irrläufer
             if (versuch == true) { versuche = 0; }
             else { versuche++; if (versuche == versuche_max) {
-               bot.say(BeratungsBot+'Suchen Sie die --Befehle?').then(function(){ return 
-               bot.say(EmpfangsBot+'Oder wollen Sie zum --Empfang?'); });
+               bot.say(BeratungsBot+'Suchen Sie die --Befehle?').then(function(){ 
+               return bot.say(EmpfangsBot+'Oder wollen Sie zum --Empfang?'); });
                versuche = 0; }
             }
             
