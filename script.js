@@ -69,7 +69,6 @@ module.exports = new Script({
             }
             if (antwort == "--JA")   { 
                
-               bot.say(EmpfangsBot+'Danke für Ihre Daten.');
                bot.say(EmpfangsBot+'Wo waren wir stehengeblieben? Lassen Sie uns zurück zum --Empfang gehen.');
                name_falsch == "nein";
                dann = "register";
@@ -112,7 +111,7 @@ module.exports = new Script({
             nachname = message.text; 
             bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+', habe ich das richtig verstanden?'))
+                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen '+vorname+' '+nachname+', habe ich Sie richtig verstanden?'))
                 .then(() => bot.say(EmpfangsBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
                 .then(() => 'name');
         }
