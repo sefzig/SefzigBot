@@ -223,9 +223,9 @@ module.exports = new Script({
             if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(AndreasSefzig+'Folgt.')
                                                .then(function(){ return bot.say(AndreasSefzig+'Folgt.') })
                                                .then(function(){ return bot.say(KreationsBot+'Unsere Kreation liebt es, interessante Dialoge zu erschaffen, die Nutzern einen konkreten Mehrwert bieten und sie mit Reichhaltigen Inhalten erfreuen.'); }); }
-            if  (~befehl.indexOf("--LANGE"))          { versuch = true; bot.say(AndreasSefzig+'1966 entstand mit dem Chatbot ELIZA die erste künstliche Intelligenz: [Link:Ein Nachbau von ELIZA,http://sefzig.net/link/ElizaMedai/] ').then(function(){ 
-                                                                 return bot.say(AndreasSefzig+'1999 chattete Prince (The artist formerly known usw.) regelmäßig im AOL Messenger: [Link:Artikel auf Medium (engl),http://sefzig.net/link/ChattingWithPrince/]') }).then(function(){
-                                                                 return bot.say(AndreasSefzig+'2001 setzt das Marketing erstmals im großen Stil einen Chatbot ein - für Radioheads neues Album: [Link:Artikel auf Medium (engl),http://sefzig.net/link/GooglyMinotaur/]') }).then(function(){
+            if  (~befehl.indexOf("--LANGE"))          { versuch = true; bot.say(AndreasSefzig+'1966 entstand mit dem Chatbot ELIZA die erste künstliche Intelligenz: %[Ein Nachbau von ELIZA](http://sefzig.net/link/ElizaMedai/) ').then(function(){ 
+                                                              // return bot.say(AndreasSefzig+'1999 chattete Prince (The artist formerly known usw.) regelmäßig im AOL Messenger: %[Artikel auf Medium (engl)](http://sefzig.net/link/ChattingWithPrince/) ') }).then(function(){
+                                                                 return bot.say(AndreasSefzig+'2001 setzt das Marketing erstmals im großen Stil einen Chatbot ein - für Radioheads neues Album: %[Artikel auf Medium (engl)](http://sefzig.net/link/GooglyMinotaur/) ') }).then(function(){
                                                                  return bot.say(AndreasSefzig+'Text zur --Strategie.'); }); }
             
          // -----------------
