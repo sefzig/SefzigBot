@@ -109,7 +109,7 @@ module.exports = new Script({
         prompt: (bot) => bot.say(SefzigBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
             nachname = message.text; 
-            bot.setProp('nachname', nachname)
+            bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
                 .then((vorname) => bot.say(SefzigBot+'Sie heissen '+vorname+' '+nachname+', habe ich Sie richtig verstanden?'))
                 .then(() => bot.say(SefzigBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
@@ -122,9 +122,9 @@ module.exports = new Script({
         prompt: (bot) => bot.say(SefzigBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
             email = message.text; 
-            bot.setProp('email', email)
-            return bot.getProp('vorname')
-                .then((vorname) => bot.say(SefzigBot+'Ihre E-Mail-Adresse ist '+email+', korrekt?'))
+            bot.setProp('email', email);
+            return bot.getProp('email')
+                .then((email) => bot.say(SefzigBot+'Ihre E-Mail-Adresse ist '+email+', korrekt?'))
                 .then(() => bot.say(SefzigBot+'Bitte schreiben Sie --ja oder --nein!'))
                 .then(() => 'name');
         }
