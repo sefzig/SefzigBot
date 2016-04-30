@@ -143,8 +143,8 @@
           var klasse = var1;
           klasse = klasse.toLowerCase();
           
-       // Button-Text von URL trennen
-          if (modul == "Button")  { 
+       // Cta-Text von URL trennen
+          if ((modul == "Button") || (modul == "Text") || (modul == "Linkliste"))  { 
           // console.log("> Button Var: "+var1);
              var buttons = text_string.split("["+modul+":");
              if (buttons[1]) { 
@@ -155,17 +155,17 @@
                       var button_text = buttons3[0];
                       var button_url = buttons3[1];
                    }
-                   else { var button_text = "Link öffnen"; var button_url = "#"+buttons2[0]; }
+                   else { var button_text = "Link öffnen"; var button_url = ""+buttons2[0]; }
                 }
              }
-             else { var button_text = "Link öffnen"; var button_url = "#"+var1; }
+             else { var button_text = "Link öffnen"; var button_url = ""+var1; }
           // console.log("> Button Text: "+button_text);
           // console.log("> Button Url: "+button_url);
           }
           
        // Templates
-          var text =      '<div class="sk-action" style="margin-bottom:0px; display: inline-block; width: 100%;"><a class="btn btn-sk-primary" href="http://sefzig.net/text/%inhalt%/" onclick="fenster(\'text\',\'%inhalt%\'); return false;">Text:      %inhalt%</a></div>';
-          var linkliste = '<div class="sk-action" style="margin-bottom:0px; display: inline-block; width: 100%;"><a class="btn btn-sk-primary" href="http://sefzig.net/link/liste/"    onclick="fenster(\'link\',\'%inhalt%\'); return false;">Linkliste: %inhalt%</a></div>';
+          var text =      '<div class="sk-action" style="margin-bottom:0px; display: inline-block; width: 100%;"><a class="btn btn-sk-primary" href="http://sefzig.net/text'+button_url+'/" onclick="fenster(\'text\',\''+button_url+'\'); return false;">'+button_text+'</a></div>';
+          var linkliste = '<div class="sk-action" style="margin-bottom:0px; display: inline-block; width: 100%;"><a class="btn btn-sk-primary" href="http://sefzig.net/link/liste/"    onclick="fenster(\'link\',\''+button_url+'\'); return false;">'+button_text+'</a></div>';
           var button =    '<div class="sk-action" style="margin-bottom:0px; display: inline-block; width: 100%;"><a class="btn btn-sk-primary" href="'+button_url+'" target="_blank">'+button_text+'</a></div>';
           var qr =        '<center><img class="%klasse%" src="http://chart.apis.google.com/chart?chs=250x250&cht=qr&chld=L&chf=bg,s,65432100&chl=%inhalt%" /></center> http://sefzigbot.herokuapp.com/ ';
           var bild =      '<center><img class="%klasse%" src="%inhalt%" /></center>';
@@ -193,6 +193,7 @@
           // Template anpassen
              template = template.replace(/%klasse%/g, klasse);
              template = template.replace(/%inhalt%/g, inhalt);
+             template = template.replace(/%cta%/g, cta);
              
           // Neuen Text anpassen
              text_string = text_string.replace("["+modul+":"+inhalt+"]", template);
