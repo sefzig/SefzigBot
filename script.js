@@ -16,7 +16,6 @@ var versuche = 0;
 
 var vorname = "Unbekannter";
 var nachname = "Besucher";
-var email = "";
 
 module.exports = new Script({
     processing: {
@@ -60,16 +59,9 @@ module.exports = new Script({
                dann = "vorname";
                
             }
-            if (antwort == "--EMAIL")   { 
-               
-               bot.say(EmpfangsBot+'Wir senden Ihnen keinen Spam.');
-               name_falsch == "email";
-               dann = "email";
-               
-            }
             if (antwort == "--JA")   { 
                
-               bot.say(EmpfangsBot+'Danke. Dürfte ich noch Ihre E-Mail-Adresse haben? Wenn ja, schreiben Sie bitte --Email. Ansonsten lassen Sie uns zurück zum --Empfang gehen.');
+               bot.say(EmpfangsBot+'Danke. Mögen Sie mir Ihre E-Mail-Adresse geben? Wenn ja, schreiben Sie --Email. Ansonsten lassen Sie uns zurück zum --Empfang gehen.');
                name_falsch == "nein";
                dann = "name";
                
@@ -113,18 +105,6 @@ module.exports = new Script({
             return bot.getProp('vorname')
                 .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+', habe ich das richtig verstanden?'))
                 .then(() => bot.say(EmpfangsBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
-                .then(() => 'name');
-        }
-    },
-
-    email: {
-    	
-        receive: (bot, message) => {
-            email = message.text; 
-         // bot.setProp('email', email);
-            return bot.getProp('email')
-                .then((email) => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+email+', korrekt?'))
-                .then(() => bot.say(EmpfangsBot+'Wenn nicht, schreiben Sie bitte --Email.'))
                 .then(() => 'name');
         }
     },
