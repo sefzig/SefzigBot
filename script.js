@@ -160,7 +160,8 @@ module.exports = new Script({
                                                                             +'\n○ Andreas: --Strategie '
                                                                             +'\n○ Barbara: --Beratung '
                                                                             +'\n○ Cynthia: --Technik '
-                                                                            +'\n○ Doris: --Kreation ');
+                                                                            +'\n○ Doris: --Kreation '
+                                                                            +'\n○ Erika: --Konzeption ');
                                                                       bot.say(AndreasSefzig+'Mehr über --Robogeddon:'
                                                                             +'\n○ --Gründung '
                                                                             +'\n○ --Vision '
@@ -266,7 +267,7 @@ module.exports = new Script({
           if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(SefzigBot+'Bots erleichtern Nutzern den Zugang zu den Marketing-Aktivitäten Ihres Unternehmens. Verstehen Sie Ihren Bot als virtuellen Mitarbeiter, der Nutzer in Empfang nimmt, einfache Fragen beantwortet und sie bei Bedarf direkt in Ihre digitalen Marketing-Maßnahmen verlinkt.').then(function(){
                                                                return bot.say(SefzigBot+'Dabei können Bots alle möglichen zusätzlichen --Aufgaben übernehmen: Von der Newsletter-Registrierung über einen Produkt-Finder bis zum Support mit oder ohne menschliche Unterstützung.') }).then(function(){
                                                                return bot.say(SefzigBot+'Bots sind leicht aufzusetzen. Vor allem aber sind sie leicht in die unterschiedlichsten Marketing- --Kanäle integrierbar!') }).then(function(){
-                                                               return bot.say(KreationsBot+'Wir in der Kreation liebt es, interessante Dialoge zu erschaffen, die Nutzern einen konkreten Mehrwert bieten und sie mit reichhaltigen Inhalten erfreuen.'); }); }
+                                                               return bot.say(KreationsBot+'Wir in der --Kreation liebt es, interessante --Dialoge zu erschaffen, die Nutzern einen konkreten --Mehrwert bieten und sie mit reichhaltigen --Inhalten erfreuen.'); }); }
           
        // Allgemein
        
@@ -419,14 +420,7 @@ module.exports = new Script({
        // Inhalte
        // -----------------
        
-          if  (~befehl.indexOf("--LEBEN"))          { versuch = true; bot.say(KreationsBot +'Text Leben.'); }
-          if  (~befehl.indexOf("--DIALOGE"))        { versuch = true; bot.say(KreationsBot +'Text Dialoge.'); }
-          if  (~befehl.indexOf("--PERSÖNLICHKEIT")) { versuch = true; bot.say(KreationsBot +'Text Persönlichkeit.'); }
-          if  (~befehl.indexOf("--GESCHICHTEN"))    { versuch = true; bot.say(KreationsBot +'Text Geschichten.'); }
-          if  (~befehl.indexOf("--INHALTE"))        { versuch = true; bot.say(KreationsBot +'Text Inhalte.'); }
-          if  (~befehl.indexOf("--MEHRWERTE"))      { versuch = true; bot.say(KreationsBot +'Text Mehrwerte.'); }
-          if  (~befehl.indexOf("--KANÄLE"))         { versuch = true; bot.say(KreationsBot +'Text Kanäle.'); }
-          if  (~befehl.indexOf("--FORMATE"))        { versuch = true; bot.say(KreationsBot +'Text Formate.'); }
+          if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(KreationsBot +'Text Vorlage.'); }
           
        // -----------------
        // Konversation fortführen
