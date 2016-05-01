@@ -165,27 +165,27 @@ module.exports = new Script({
                                                                               +'\n○ --Gründung '
                                                                               +'\n○ --Vision '
                                                                               +'\n○ --Über '); }
-            if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ')
-                                               .then(function(){ return bot.say(TechnikBot+'Leider werden Sie dort nicht wiedererkannt. Wir arbeiten an einer Lösung...'); }); }
+            if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(function(){
+                                                                 return bot.say(TechnikBot+'Leider werden Sie dort nicht wiedererkannt. Wir arbeiten an einer Lösung...'); }); }
             if ((~befehl.indexOf("--UBER")) ||
-                (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }); }
+                (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.').then(function(){
+                                                                 return bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }); }
             
          // -----------------
          // Bots
          // -----------------
             
-            if  (~befehl.indexOf("--SEFZIG"))         { versuch = true; bot.setProp('persönlich', '@sefzig')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Ich habe Andreas benachrichtigt.') })
-                                               .then(function(){ return bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); }); } 
+            if  (~befehl.indexOf("--SEFZIG"))         { versuch = true; bot.setProp('persönlich', '@sefzig').then(function(){
+                                                                 return bot.say(EmpfangsBot+'Ich habe Andreas benachrichtigt.') }).then(function(){
+                                                                 return bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); }); } 
             if ((~befehl.indexOf("--EMPFANG")) ||
                 (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Technik oder der --Beratung.'); }
             
             if ((~befehl.indexOf("--KREATION")) ||
-                (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.')
-                                               .then(function(){ return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren.') })
-                                               .then(function(){ return bot.say(KreationsBot+'Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in das Gespräch ein.') })
-                                               .then(function(){ return bot.say(KreationsBot+'Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer!') });
+                (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
+                                                                 return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren.') }).then(function(){
+                                                                 return bot.say(KreationsBot+'Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in das Gespräch ein.') }).then(function(){
+                                                                 return bot.say(KreationsBot+'Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer!') });
                                                                         dann = "kreation"; } 
             if ((~befehl.indexOf("--BERATUNG")) ||
                 (~befehl.indexOf("--BARBARA")))       { versuch = true; bot.say(BeratungsBot+'Schreiben Sie --empfang, um zum Empfang zurückzukehren.');
@@ -228,39 +228,39 @@ module.exports = new Script({
          // Agentur
          // -----------------
             
-            if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist Deutschlands erste Agentur, die Bots für ihre Kunden entwickelt und mit --Leben füllt. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation, --intern und --extern.')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots.') })
-                                               .then(function(){ return bot.say(EmpfangsBot+'Sprechen Sie mit Andreas über die --Strategie und --Konzeption Ihres eigenen Chat-Bots.') })
-                                               .then(function(){ return bot.say(EmpfangsBot+'Wir sind eine junge Agentur auf einem jungen Markt. Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen: Innovativ! '); }); }
+            if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist Deutschlands erste Agentur, die Bots für ihre Kunden entwickelt und mit --Leben füllt. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation, --intern und --extern.').then(function(){
+                                                                 return bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots.') }).then(function(){
+                                                                 return bot.say(EmpfangsBot+'Sprechen Sie mit Andreas über die --Strategie und --Konzeption Ihres eigenen Chat-Bots.') }).then(function(){
+                                                                 return bot.say(EmpfangsBot+'Wir sind eine junge Agentur auf einem jungen Markt. Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen: Innovativ! '); }); }
             
          // -----------------
          // Strategie
          // -----------------
             
-            if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:Aktuelle Statistiken,RobogeddonChatten] Ein weltweiter Trend mit erheblichen absehbaren --Auswirkungen auf die Benutzeroberflächen des Internets.')
-                                               .then(function(){ return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange. Aber sie werden genau jetzt interessant, wo die meisten Menschen mit Chatten vertraut sind und große Anwendungen wie --Facebook, --Slack und andere ihre Plattformen für Bots öffnen.') })
-                                               .then(function(){ return bot.say(SefzigBot+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
+            if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:Aktuelle Statistiken,RobogeddonChatten] Ein weltweiter Trend mit erheblichen absehbaren --Auswirkungen auf die Benutzeroberflächen des Internets.').then(function(){
+                                                                 return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange. Aber sie werden genau jetzt interessant, wo die meisten Menschen mit Chatten vertraut sind und große Anwendungen wie --Facebook, --Slack und andere ihre Plattformen für Bots öffnen.') }).then(function(){
+                                                                 return bot.say(SefzigBot+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
             
-            if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(SefzigBot+'Es empfiehlt sich (in den meisten Szenarien), die interne Kommunikation auf Chat umzustellen: Nach eigenen Angaben haben Teams einen Produktivitäts-Gewinn von bis zu 32% durch den Einsatz von Slack, 80% sehen mehr Transparenz und fast 50% weniger Emails [Button:Studie von Slack,http://slack.com/results]. ')
-                                               .then(function(){ return bot.say(SefzigBot+'Und wenn Ihr Team schon den ganzen Tag einen Chat-Client nutzt, dann lohnt es sich, mit Bots und Erweiterungen diverse Marketing-Technologien in den Chat einzubinden: Von Werkzeugen wie Google Analytics über Dienste wie Mailchimp bis hin zu eigenen Technologien, die mit Webhooks verbunden werden.') })
-                                               .then(function(){ return bot.say(TechnikBot+'Wir in der Technik kommunizieren am liebsten über --Slack. Wir steuern im Chat unsere Server! Aber auch --HipChat ist eine schöne Plattform für --ChatOps.'); }); }
+            if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(SefzigBot+'Es empfiehlt sich (in den meisten Szenarien), die interne Kommunikation auf Chat umzustellen: Nach eigenen Angaben haben Teams einen Produktivitäts-Gewinn von bis zu 32% durch den Einsatz von Slack, 80% sehen mehr Transparenz und fast 50% weniger Emails [Button:Studie von Slack,http://slack.com/results]. ').then(function(){
+                                                                 return bot.say(SefzigBot+'Und wenn Ihr Team schon den ganzen Tag einen Chat-Client nutzt, dann lohnt es sich, mit Bots und Erweiterungen diverse Marketing-Technologien in den Chat einzubinden: Von Werkzeugen wie Google Analytics über Dienste wie Mailchimp bis hin zu eigenen Technologien, die mit Webhooks verbunden werden.') }).then(function(){
+                                                                 return bot.say(TechnikBot+'Wir in der Technik kommunizieren am liebsten über --Slack. Wir steuern im Chat unsere Server! Aber auch --HipChat ist eine schöne Plattform für --ChatOps.'); }); }
             
-            if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(SefzigBot+'Folgt.')
-                                               .then(function(){ return bot.say(SefzigBot+'Folgt.') })
-                                               .then(function(){ return bot.say(KreationsBot+'Unsere Kreation liebt es, interessante Dialoge zu erschaffen, die Nutzern einen konkreten Mehrwert bieten und sie mit Reichhaltigen Inhalten erfreuen.'); }); }
+            if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(SefzigBot+'Folgt.').then(function(){
+                                                                 return bot.say(SefzigBot+'Folgt.') }).then(function(){
+                                                                 return bot.say(KreationsBot+'Unsere Kreation liebt es, interessante Dialoge zu erschaffen, die Nutzern einen konkreten Mehrwert bieten und sie mit Reichhaltigen Inhalten erfreuen.'); }); }
             
             if  (~befehl.indexOf("--LANGE"))          { versuch = true; bot.say(SefzigBot+'1966 entstand mit dem Chatbot ELIZA die erste künstliche Intelligenz: %[Ein Nachbau von ELIZA](http://sefzig.net/link/ElizaMedai/) ').then(function(){ 
                                                               // return bot.say(SefzigBot+'1999 chattete Prince (The artist formerly known usw.) regelmäßig im AOL Messenger: %[Artikel auf Medium (englisch)](http://sefzig.net/link/ChattingWithPrince/) ') }).then(function(){
                                                                  return bot.say(SefzigBot+'2001 setzt das Marketing erstmals im großen Stil einen Chatbot ein - für Radioheads neues Album: %[Artikel auf Medium (englisch)](http://sefzig.net/link/GooglyMinotaur/) ') }).then(function(){
                                                                  return bot.say(SefzigBot+'Text zur --Strategie.'); }); }
             
-            if  (~befehl.indexOf("--AUSWIRKUNGEN"))   { versuch = true; bot.say(SefzigBot+'Auswirkungen Text 1.')
-                                               .then(function(){ return bot.say(SefzigBot+'Auswirkungen Text 2.'); })
-                                               .then(function(){ return bot.say(SefzigBot+'Auswirkungen Text 3.'); }); }
+            if  (~befehl.indexOf("--AUSWIRKUNGEN"))   { versuch = true; bot.say(SefzigBot+'Auswirkungen Text 1.').then(function(){
+                                                                 return bot.say(SefzigBot+'Auswirkungen Text 2.'); }).then(function(){
+                                                                 return bot.say(SefzigBot+'Auswirkungen Text 3.'); }); }
             
-            if  (~befehl.indexOf("--CHATOPS"))        { versuch = true; bot.say(SefzigBot+'ChatOps Text 1.')
-                                               .then(function(){ return bot.say(SefzigBot+'ChatOps Text 2.'); })
-                                               .then(function(){ return bot.say(SefzigBot+'ChatOps Text 3.'); }); }
+            if  (~befehl.indexOf("--CHATOPS"))        { versuch = true; bot.say(SefzigBot+'ChatOps Text 1.').then(function(){
+                                                                 return bot.say(SefzigBot+'ChatOps Text 2.'); }).then(function(){
+                                                                 return bot.say(SefzigBot+'ChatOps Text 3.'); }); }
             
          // -----------------
          // Konzeption
@@ -274,22 +274,22 @@ module.exports = new Script({
          // Plattformen
          // -----------------
             
-            if  (~befehl.indexOf("--FACEBOOK"))       { versuch = true; bot.say(SefzigBot+'Facebook Text 1.')
-                                               .then(function(){ return bot.say(SefzigBot+'Facebook Text 2.'); })
-                                               .then(function(){ return bot.say(SefzigBot+'Facebook Text 3.'); }); }
+            if  (~befehl.indexOf("--FACEBOOK"))       { versuch = true; bot.say(SefzigBot+'Facebook Text 1.').then(function(){
+                                                                 return bot.say(SefzigBot+'Facebook Text 2.'); }).then(function(){
+                                                                 return bot.say(SefzigBot+'Facebook Text 3.'); }); }
             
             if  (~befehl.indexOf("--SLACK-ARTIKEL"))  { versuch = true; befehl = "leer"; bot.say(AndreasSefzig+'Ich habe einen fundierten Artikel zu --Slack geschrieben: Was Sie als Marketer über Slack wissen müssen. [Text:Slack-Artikel öffnen,SefzignetBlogSlack] '); }
             if  (~befehl.indexOf("--SLACK-BLOGPOST")) { versuch = true; befehl = "leer"; bot.say(AndreasSefzig+'Lesen Sie auch meinen Blogpost zu --Slack: Was ist Slack und wie nutzt man es? [Text:Slack-Artikel öffnen,SefzignetBlogSlack] '); }
             if  (~befehl.indexOf("--SLACK-LINKS"))    { versuch = true; befehl = "leer"; bot.say(AndreasSefzig+'Ich habe eine Menge Artikel zu --Slack gelesen. Empfehlenswerte habe ich in meiner Linkliste gespeichert: [Linkliste:Linkliste Slack-Artikel öffnen,Slack;Artikel]'); }
             if  (~befehl.indexOf("--SLACK-TEAM"))     { versuch = true; befehl = "leer"; bot.say(AndreasSefzig+'Treten Sie meinem offenen Slack-Team  bei, um sich mit mir zu beraten und um --Slack im laufenden Betrieb zu sehen: [Button:Anmeldung,http://sefzig.net/link/SlackAnmeldung/]'); }
             
-            if  (~befehl.indexOf("--SLACK"))          { versuch = true; bot.say(SlackBot+'Slack ist eine fantastische neue Kommunikationsplattform für Teams!')
-                                               .then(function(){ return bot.say(SefzigBot+'Wenn Sie Slack noch nicht kennen, erwägen Sie, es für Ihre Interne Kommunikation zu nutzen! Lesen Sie dazu Andreas --Slack-Artikel für Marketer, seinen --Slack-Blogpost für Anwender, öffnen Sie seine --Slack-Links oder treten Sie seinem --Slack-Team bei.'); })
-                                               .then(function(){ return bot.say(SefzigBot+'Mit Slack lässt sich --intern die effizienz-steigernde --Strategie von --ChatOps am besten auf ein Team oder Unternehmen anwenden.'); }); }
+            if  (~befehl.indexOf("--SLACK"))          { versuch = true; bot.say(SlackBot+'Slack ist eine fantastische neue Kommunikationsplattform für Teams!').then(function(){
+                                                                 return bot.say(SefzigBot+'Wenn Sie Slack noch nicht kennen, erwägen Sie, es für Ihre Interne Kommunikation zu nutzen! Lesen Sie dazu Andreas --Slack-Artikel für Marketer, seinen --Slack-Blogpost für Anwender, öffnen Sie seine --Slack-Links oder treten Sie seinem --Slack-Team bei.'); }).then(function(){
+                                                                 return bot.say(SefzigBot+'Mit Slack lässt sich --intern die effizienz-steigernde --Strategie von --ChatOps am besten auf ein Team oder Unternehmen anwenden.'); }); }
             
-            if  (~befehl.indexOf("--HIPCHAT"))        { versuch = true; bot.say(SefzigBot+'HipChat Text 1.')
-                                               .then(function(){ return bot.say(SefzigBot+'HipChat Text 2.'); })
-                                               .then(function(){ return bot.say(SefzigBot+'HipChat Text 3.'); }); }
+            if  (~befehl.indexOf("--HIPCHAT"))        { versuch = true; bot.say(SefzigBot+'HipChat Text 1.').then(function(){
+                                                                 return bot.say(SefzigBot+'HipChat Text 2.'); }).then(function(){
+                                                                 return bot.say(SefzigBot+'HipChat Text 3.'); }); }
             
          // -----------------
          // Tests
@@ -304,9 +304,9 @@ module.exports = new Script({
          
             if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+'Text: Vorlage.'); }
             
-            if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+'Vorlage Text 1.')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Vorlage Text 2.'); })
-                                               .then(function(){ return bot.say(EmpfangsBot+'Vorlage Text 3.'); }); }
+            if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+'Vorlage Text 1.').then(function(){
+                                                                 return bot.say(EmpfangsBot+'Vorlage Text 2.'); }).then(function(){
+                                                                 return bot.say(EmpfangsBot+'Vorlage Text 3.'); }); }
             
          // -----------------
          // Konversation fortführen
@@ -353,8 +353,8 @@ module.exports = new Script({
                                                                               +'\n○ --Folgt '); }
             if ((~befehl.indexOf("--ALICE")) ||
                 (~befehl.indexOf("--EMPFANG")) ||
-                (~befehl.indexOf("--ABBRECHEN")))     { versuch = true; bot.say(KreationsBot+'Bis später!')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Willkommen zurück! Schreiben Sie --Befehle um zu sehen, was ich Ihnen noch zeigen kann.'); });
+                (~befehl.indexOf("--ABBRECHEN")))     { versuch = true; bot.say(KreationsBot+'Bis später!').then(function(){
+                                                                 return bot.say(EmpfangsBot+'Willkommen zurück! Schreiben Sie --Befehle um zu sehen, was ich Ihnen noch zeigen kann.'); });
                                                                         dann = "register"; }
             
          // -----------------
@@ -418,8 +418,8 @@ module.exports = new Script({
                                                                               +'\n○ --Folgt '); }
             if ((~befehl.indexOf("--ALICE")) ||
                 (~befehl.indexOf("--EMPFANG")) ||
-                (~befehl.indexOf("--ABBRECHEN")))     { versuch = true; bot.say(BeratungsBot+'Bis später!')
-                                               .then(function(){ return bot.say(EmpfangsBot+'Willkommen zurück! Schreiben Sie --Befehle um zu sehen, was ich Ihnen noch zeigen kann.'); });
+                (~befehl.indexOf("--ABBRECHEN")))     { versuch = true; bot.say(BeratungsBot+'Bis später!').then(function(){
+                                                                 return bot.say(EmpfangsBot+'Willkommen zurück! Schreiben Sie --Befehle um zu sehen, was ich Ihnen noch zeigen kann.'); });
                                                                         dann = "register"; }
             
          // -----------------
