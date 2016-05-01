@@ -280,20 +280,6 @@ module.exports = new Script({
                                                                return bot.say(SefzigBot+'Auswirkungen Text 3.'); }); }
           
        // -----------------
-       // Konzeption
-       // -----------------
-          
-          if  (~befehl.indexOf("--KONZEPTION"))     { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Erika. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
-                                                               return bot.say(KonzeptionsBot+'Hallo, ich bin Erika, der Konzeptions-Bot.'); }).then(function(){
-                                                               return bot.say(KonzeptionsBot+'Konzeption Text 3.'); }); }
-          
-          if  (~befehl.indexOf("--KANÄLE"))         { versuch = true; bot.say(KonzeptionsBot+'Ein Bot lässt sich einfach in Ihre bestehenden Marketing-Kanäle einbinden - letztlich ist er nur die URL einer für alle Geräte optimierten Webseite.').then(function(){
-                                                               return bot.say(KonzeptionsBot+'CRM/Dialog: Link in Newslettern, Kurzlink/QR-Code auf Drucksachen.') }).then(function(){
-                                                               return bot.say(KonzeptionsBot+'Marke: Webseiten-Widget, Link in Social Media und E-Mail-Signaturen, Kurzlink/QR-Code auf Visitenkarten.') }).then(function(){
-                                                               return bot.say(KonzeptionsBot+'Vor Ort: Kurzlink/QR-Code auf Plakat, Aufsteller, Schaufenster, Produkt.') }).then(function(){
-                                                               return bot.say(KonzeptionsBot+'Text mit --Konzeption und --extern.'); }); }
-          
-       // -----------------
        // Kreation
        // -----------------
           
@@ -309,6 +295,30 @@ module.exports = new Script({
           if  (~befehl.indexOf("--LEBEN"))          { versuch = true; bot.say(KreationsBot +'Das Leben der Bots ist ein einfaches Leben: Sie verarbeiten Informationen. Aber ihre --Persönlichkeit und --Geschichte macht sie einzigartig - mithilfe reichhaltiger --Inhalte.'); }
           if  (~befehl.indexOf("--INHALTE"))        { versuch = true; bot.say(KreationsBot +'Unsere Techniker haben einen Blumenstrauß möglicher Inhalts-Formate entwickelt, mit denen unsere Bots kommunizieren: Bilder, Videos, Microsites und natürlich Texte. Damit werden die --Mehrwerte unserer Bots leicht und unterhaltsam.'); }
           if  (~befehl.indexOf("--MEHRWERTE"))      { versuch = true; bot.say(KreationsBot +'Ein Bot mag eine nette --Persönlichkeit und eine interessante --Geschichte transportieren - relevant für den Nutzer werden sie nur durch konkrete Mehrwerte. Wir achten darauf, dass unsere Bots den nutzern nützliche Hilfestellungen, wertvolle Inhalte und echte Vorteile verschaffen.'); }
+          
+       // -----------------
+       // Beratung
+       // -----------------
+          
+          if  (~befehl.indexOf("--BERATUNG"))       { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Barbara. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
+                                                               return bot.say(BeratungsBot+'Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen.'); }).then(function(){
+                                                               return bot.say(BeratungsBot+'Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot!'); }); }
+          
+          if  (~befehl.indexOf("--PRODUKTE"))       { versuch = true; bot.say(BeratungsBot +'Text Produkte.'); }
+          if  (~befehl.indexOf("--LEISTUNGEN"))     { versuch = true; bot.say(BeratungsBot +'Text Leistungen.'); }
+          if  (~befehl.indexOf("--KALKULATION"))    { versuch = true; bot.say(BeratungsBot +'Text Kalkulation.'); }
+          
+       // -----------------
+       // Technik
+       // -----------------
+          
+          if  (~befehl.indexOf("--TECHNIK"))        { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Cynthia. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
+                                                               return bot.say(TechnikBot+'Hallo, ich bin Cynthia, der Technik-Bot.'); }).then(function(){
+                                                               return bot.say(TechnikBot+'Schreiben Sie: --Technik1, --Technik2 und --Technik3.'); }); }
+          
+          if  (~befehl.indexOf("--TECHNIK1"))       { versuch = true; bot.say(BeratungsBot +'Text Technik 1.'); }
+          if  (~befehl.indexOf("--TECHNIK2"))       { versuch = true; bot.say(BeratungsBot +'Text Technik 2.'); }
+          if  (~befehl.indexOf("--TECHNIK3"))       { versuch = true; bot.say(BeratungsBot +'Text Technik 3.'); }
           
        // -----------------
        // Plattformen
