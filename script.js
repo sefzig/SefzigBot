@@ -294,23 +294,6 @@ module.exports = new Script({
                                                                return bot.say(KonzeptionsBot+'Text mit --Konzeption und --extern.'); }); }
           
        // -----------------
-       // Kreation
-       // -----------------
-          
-          if  (~befehl.indexOf("--KREATION"))       { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
-                                                               return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren.') }).then(function(){
-                                                               return bot.say(KreationsBot+'Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in das Gespräch ein.') }).then(function(){
-                                                               return bot.say(KreationsBot+'Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer!') });
-                                                                      dann = "kreation"; }
-          
-          if  (~befehl.indexOf("--DIALOGE"))        { versuch = true; bot.say(KreationsBot +'Dialoge mit Bots können durch Wiederholungen dröge werden. Wir bringen unseren Bots verschiedene Ausdrucksweisen entlang ihrer --Persönlichkeit bei, um Konversationen trotz möglicher Wiederholungen lebendig zu gestalten.'); }
-          if  (~befehl.indexOf("--PERSÖNLICHKEIT")) { versuch = true; bot.say(KreationsBot +'Mit Bots chattet man wie mit Menschen. Um --Dialoge abwechslungsreich zu gestalten, erhalten unsere Bots eine Persönlichkeit und eine --Geschichte.'); }
-          if  (~befehl.indexOf("--GESCHICHTEN"))    { versuch = true; bot.say(KreationsBot +'Menschen chatten nicht nur, um Informationen weiterzugeben. Unsere Bots haben eine Geschichte, die ihre --Persönlichkeit illustriert und den Bots --Leben einhaucht. '); }
-          if  (~befehl.indexOf("--LEBEN"))          { versuch = true; bot.say(KreationsBot +'Das Leben der Bots ist ein einfaches Leben: Sie verarbeiten Informationen. Aber ihre --Persönlichkeit und --Geschichte macht sie einzigartig - mithilfe reichhaltiger --Inhalte.'); }
-          if  (~befehl.indexOf("--INHALTE"))        { versuch = true; bot.say(KreationsBot +'Unsere Techniker haben einen Blumenstrauß möglicher Inhalts-Formate entwickelt, mit denen unsere Bots kommunizieren: Bilder, Videos, Microsites und natürlich Texte. Damit werden die --Mehrwerte unserer Bots leicht und unterhaltsam.'); }
-          if  (~befehl.indexOf("--MEHRWERTE"))      { versuch = true; bot.say(KreationsBot +'Ein Bot mag eine nette --Persönlichkeit und eine interessante --Geschichte transportieren - relevant für den Nutzer werden sie nur durch konkrete Mehrwerte. Wir achten darauf, dass unsere Bots den nutzern nützliche Hilfestellungen, wertvolle Inhalte und echte Vorteile verschaffen.'); }
-          
-       // -----------------
        // Beratung
        // -----------------
           
