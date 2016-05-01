@@ -241,8 +241,8 @@ module.exports = new Script({
                                                .then(function(){ return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange. Aber sie werden genau jetzt interessant, wo die meisten Menschen mit Chatten vertraut sind und große Anwendungen wie --Facebook, --Slack und andere ihre Plattformen für Bots öffnen.') })
                                                .then(function(){ return bot.say(SefzigBot+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
             
-            if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(SefzigBot+'Folgt.')
-                                               .then(function(){ return bot.say(SefzigBot+'Folgt.') })
+            if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(SefzigBot+'Es empfiehlt sich (in den meisten Szenarien), die interne Kommunikation auf Chat umzustellen: Nach eigenen Angaben haben Teams einen Produktivitäts-Gewinn von bis zu 32% durch den Einsatz von Slack, 80% sehen mehr Transparenz und fast 50% weniger Emails [Button:Studie von Slack,http://slack.com/results]. ')
+                                               .then(function(){ return bot.say(SefzigBot+'Und wenn Ihr Team schon den ganzen Tag einen Chat-Client nutzt, dann lohnt es sich, mit Bots und Erweiterungen diverse Marketing-Technologien in den Chat einzubinden: Von Werkzeugen wie Google Analytics über Dienste wie Mailchimp bis hin zu eigenen Technologien, die mit Webhooks verbunden werden.') })
                                                .then(function(){ return bot.say(TechnikBot+'Wir in der Technik kommunizieren am liebsten über --Slack. Wir steuern im Chat unsere Server! Aber auch --HipChat ist eine schöne Plattform für --ChatOps.'); }); }
             
             if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(SefzigBot+'Folgt.')
@@ -266,9 +266,9 @@ module.exports = new Script({
          // Konzeption
          // -----------------
             
-            if  (~befehl.indexOf("--KONZEPTION"))     { versuch = true; bot.say(SefzigBot+'Konzeption Text 1.')
-                                               .then(function(){ return bot.say(SefzigBot+'Konzeption Text 2.'); })
-                                               .then(function(){ return bot.say(SefzigBot+'Konzeption Text 3.'); }); }
+            if  (~befehl.indexOf("--KONZEPTION"))     { versuch = true; bot.say(SefzigBot+'Konzeption Text 1.').then(function(){
+                                                                 return bot.say(SefzigBot+'Konzeption Text 2.'); }).then(function(){
+                                                                 return bot.say(SefzigBot+'Konzeption Text 3.'); }); }
             
          // -----------------
          // Plattformen
