@@ -237,11 +237,9 @@ module.exports = new Script({
          // Strategie
          // -----------------
             
-            sagenhaft('Strategie', dann, bot,
-                      SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:Aktuelle Statistiken,RobogeddonChatten] Ein weltweiter Trend mit erheblichen absehbaren --Auswirkungen auf die Benutzeroberflächen des Internets.',
-                      SefzigBot+'Chat-Bots gibt es schon --lange. Aber sie werden genau jetzt interessant, wo die meisten Menschen mit Chatten vertraut sind und große Anwendungen wie --Facebook, --Slack und andere ihre Plattformen für Bots öffnen.',
-                      SefzigBot+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'
-                     );
+            if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:Aktuelle Statistiken,RobogeddonChatten] Ein weltweiter Trend mit erheblichen absehbaren --Auswirkungen auf die Benutzeroberflächen des Internets.').then(function(){
+                                                                 return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange. Aber sie werden genau jetzt interessant, wo die meisten Menschen mit Chatten vertraut sind und große Anwendungen wie --Facebook, --Slack und andere ihre Plattformen für Bots öffnen.') }).then(function(){
+                                                                 return bot.say(SefzigBot+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
             
             if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(SefzigBot+'Es empfiehlt sich (in den meisten Szenarien), die interne Kommunikation auf Chat umzustellen: Nach eigenen Angaben haben Teams einen Produktivitäts-Gewinn von bis zu 32% durch den Einsatz von Slack, 80% sehen mehr Transparenz und fast 50% weniger Emails [Button:Studie von Slack,http://slack.com/results]. ').then(function(){
                                                                  return bot.say(SefzigBot+'Und wenn Ihr Team schon den ganzen Tag einen Chat-Client nutzt, dann lohnt es sich, mit Bots und Erweiterungen diverse Marketing-Technologien in den Chat einzubinden: Von Werkzeugen wie Google Analytics über Dienste wie Mailchimp bis hin zu eigenen Technologien, die mit Webhooks verbunden werden.') }).then(function(){
@@ -393,6 +391,33 @@ module.exports = new Script({
     }
 });
 
+    function befehlWort(befehl) {
+       
+         // Wenn die Nachricht nur ein Wort ist
+            var test = befehl.split(" "); 
+            if ((!test[1]) || (test[1] == "")) {
+               
+            // In Befehl umwandeln
+               befehl = befehl.replace("--", "");
+               befehl = "--"+befehl;
+               
+            // Satzzeichen entfernen
+               befehl = befehl.replace(".", "");
+               befehl = befehl.replace("!", "");
+               befehl = befehl.replace("?", "");
+               
+            }
+            
+            return befehl;
+            
+    }
+
+         // sagenhaft('Strategie', dann, bot,
+         //           SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:Aktuelle Statistiken,RobogeddonChatten] Ein weltweiter Trend mit erheblichen absehbaren --Auswirkungen auf die Benutzeroberflächen des Internets.',
+         //           SefzigBot+'Chat-Bots gibt es schon --lange. Aber sie werden genau jetzt interessant, wo die meisten Menschen mit Chatten vertraut sind und große Anwendungen wie --Facebook, --Slack und andere ihre Plattformen für Bots öffnen.',
+         //           SefzigBot+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'
+         //          );
+            
             function sagenhaft(befehl, dann, bot, text1, text2, text3, text4, text5) {
                
                if  (~befehl.indexOf("--STRATEGIE")) { 
@@ -429,23 +454,3 @@ module.exports = new Script({
                
             }
             
-    function befehlWort(befehl) {
-       
-         // Wenn die Nachricht nur ein Wort ist
-            var test = befehl.split(" "); 
-            if ((!test[1]) || (test[1] == "")) {
-               
-            // In Befehl umwandeln
-               befehl = befehl.replace("--", "");
-               befehl = "--"+befehl;
-               
-            // Satzzeichen entfernen
-               befehl = befehl.replace(".", "");
-               befehl = befehl.replace("!", "");
-               befehl = befehl.replace("?", "");
-               
-            }
-            
-            return befehl;
-            
-    }
