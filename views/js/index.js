@@ -141,12 +141,12 @@
              
           // Template laden und anpassen
              befehl_button = templates["anpassen"]["befehlButton"];
-             for(var i=0; i < templates.length; i++) {
+             for (var j=0; j < templates.length; j++) {
                 
-                letztes = templates[i].slice(-1);
+                letztes = templates[j].slice(-1);
                 console.log("letztes zeichen: "+letztes);
-                if (letztes == ",") { templates[i] = templates[i].slice(0, -1); }
-             // templates[i] = templates[i].replace(/,/g, '');
+                if (letztes == ",") { templates[j] = templates[j].slice(0, -1); console.log("template: "+templates[j]); }
+             // templates[j] = templates[j].replace(/,/g, '');
                 
              }
              
