@@ -80,7 +80,7 @@
              
                 window.setTimeout(function() { 
                    
-                   Smooch.sendMessage("Weiterleiten:");
+                   Smooch.sendMessage(texte["chat"]["weiterleiten"]);
                    window.setTimeout(function() { 
                       
                       Smooch.sendMessage(sagen);
@@ -138,8 +138,10 @@
           // Befehl freistellen
              var inhalt = inhalte[i].split(/,|;|:|\.|\<|!|\?| /)[0];
              
-          // Neuen Text anpassen
-             text_string = text_string.replace("--"+inhalt, '<span class="befehl" onclick="befehlen(\'--'+inhalt+'\')">'+inhalt+'</span>');
+          // Befehl-Buttons einsetzen
+             befehl_button = templates["anpassen"]["befehlButton"];
+             befehl_button = befehl_button.replace("%inhalt%", inhalt);
+             text_string = text_string.replace(config["syntax"]["befehlPrefix"]+""+inhalt, befehl_button);
              
           // Debuggen
           // console.log("- Befehl angepasst: "+inhalt);
@@ -183,26 +185,11 @@
           // console.log("> Button Url: "+button_url);
           }
           
-       // Templates
-          var text =      '<div class="sk-action" style="margin-bottom:0px; display: inline-block; width: 100%;"><a class="btn btn-sk-primary" href="http://sefzig.net/text'+button_url+'/" onclick="fenster(\'text\',\''+button_url+'\'); return false;">'+button_text+'</a></div>';
-          var linkliste = '<div class="sk-action" style="margin-bottom:0px; display: inline-block; width: 100%;"><a class="btn btn-sk-primary" href="http://sefzig.net/link/liste/"    onclick="fenster(\'link\',\''+button_url+'\'); return false;">'+button_text+'</a></div>';
-          var button =    '<div class="sk-action" style="margin-bottom:0px; display: inline-block; width: 100%;"><a class="btn btn-sk-primary" href="'+button_url+'" target="_blank">'+button_text+'</a></div>';
-          var qr =        '<center><img class="%klasse%" src="http://chart.apis.google.com/chart?chs=250x250&cht=qr&chld=L&chf=bg,s,65432100&chl=%inhalt%" /></center> http://sefzigbot.herokuapp.com/ ';
-          var bild =      '<center><img class="%klasse%" src="%inhalt%" /></center>';
-          var audio =     '<audio class="%klasse%" controls="true" style="width: 100%; max-width: 500px; margin-top: 10px;" x-webkit-airplay="allow"><source src="%inhalt%" type="audio/mpeg">Lade Audio...</audio>';
-          var iframe =    '<iframe src="%inhalt%" width="180" height="102" frameborder="0">Frame laden</iframe>';
-          var youtube =   '<iframe width="180" height="102" class="%klasse%" src="http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
+       // Template laden und ausfüllen
+          var template = templates["modul"][modul];
+          template = template.replace("%button_text%", button_text);
+          template = template.replace("%button_url%",  button_url);
           
-       // Template auswählen
-          if (modul == "Text")      { var template = text;      }
-          if (modul == "Audio")     { var template = audio;     }
-          if (modul == "Iframe")    { var template = iframe;    }
-          if (modul == "Button")    { var template = button;    }
-          if (modul == "Bild")      { var template = bild;      }
-          if (modul == "Qr")        { var template = qr;        }
-          if (modul == "Youtube")   { var template = youtube;   }
-          if (modul == "Linkliste") { var template = linkliste; }
-             
        // Modul anpassen
           inhalte = inhalte.split("["+modul+":");
           for (i = 1; i < inhalte.length; i++) {
