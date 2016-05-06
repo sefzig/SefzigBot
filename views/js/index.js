@@ -200,8 +200,8 @@
              }
              else {                   var button_text = "Link öffnen"; var button_url = ""+var1; }
              
-             console.log("> Button Text: "+button_text);
-             console.log("> Button Url: "+button_url);
+          // console.log("> Button Text: "+button_text);
+          // console.log("> Button Url: "+button_url);
              
           }
           
@@ -424,10 +424,10 @@
        
     // Iframe laden
        $("#fenster > iframe").attr("src", url);
-          
+       
     // Ebene öffnen
        $("#fenster").fadeIn(500);
-          
+       
        return false;
        
     }
