@@ -205,7 +205,11 @@
           
        // Template laden und anpassen
           var template = templates["modul"][modul];
-          if ($.isArray(template)) { template = template.join(); }
+          
+          if ($.isArray(template)) {
+             template = template.join("a-f-z");
+             template = template.replace(/a-f-z/g, "");
+          }
           template = template.replace("%button_text%", button_text);
           template = template.replace("%button_url%",  button_url);
           
