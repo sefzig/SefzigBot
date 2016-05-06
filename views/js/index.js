@@ -157,7 +157,7 @@
              befehl_button = befehl_button.replace(/%inhalt%/g, inhalt);
              console.log("befehl_button neu: "+befehl_button);
              
-             console.log("befehl: "+config["syntax"]["befehlPrefix"]+"%inhalt%")");
+             console.log("befehl: "+config["syntax"]["befehlPrefix"]+"%inhalt%");
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
