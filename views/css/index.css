@@ -150,9 +150,11 @@
  /* ----------------- */
     
  /* Dimensionen */
-    .sk-msg,
-    .sk-messages img.bild { 
+    .sk-msg { 
        max-width: 250px !important;
+    }
+    .sk-messages img.bild { 
+       max-width: 230px !important;
     }
     
  /* Bots */

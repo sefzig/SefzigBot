@@ -1,6 +1,7 @@
 'use strict';
 
 const Script = require('smooch-bot').Script;
+
 const AndreasSefzig =  "[AndreasSefzig] ";
 const SefzigBot =      "[SefzigBot] ";
 const EmpfangsBot =    "[EmpfangsBot] ";
@@ -43,7 +44,7 @@ module.exports = new Script({
                
                bot.say(EmpfangsBot+'Darf ich Ihnen unsere Agentur vorstellen? Dann schreiben (oder klicken/berühren) Sie bitte --Agentur!')
                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen unsere  --Beratung, die --Kreation, die --Konzeption und unsere --Technik vorstellen.'))
-               .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben! \n Bitte sprechen Sie solange mit meinem Bot über die --Strategie hinter Bots.'));
+               .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. Bitte sprechen Sie solange mit meinem Bot über die --Strategie hinter Bots!'));
                
             }
             
@@ -154,15 +155,14 @@ module.exports = new Script({
                                                                             +'\n○ --Mobil '
                                                                             +'\n○ --Newsletter '
                                                                             +'\n○ --Kontakt '
-                                                                            +'\n○ --Über ');
-                                                                      befehl = "--THEMEN"; }
-          if  (~befehl.indexOf("--THEMEN"))         { versuch = true; bot.say(EmpfangsBot+'Die Gewerke der --Agentur:'
+                                                                            +'\n○ --Über '
+                                                                            +'\n\nDie Gewerke der --Agentur:'
                                                                             +'\n○ Andreas: --Strategie '
                                                                             +'\n○ Barbara: --Beratung '
                                                                             +'\n○ Cynthia: --Technik '
                                                                             +'\n○ Doris: --Kreation '
-                                                                            +'\n○ Erika: --Konzeption ');
-                                                                      bot.say(AndreasSefzig+'Mehr über --Robogeddon:'
+                                                                            +'\n○ Erika: --Konzeption ''
+                                                                            +'\n\nMehr über --Robogeddon:'
                                                                             +'\n○ --Gründung '
                                                                             +'\n○ --Vision '
                                                                             +'\n○ --Über '); }
@@ -245,7 +245,7 @@ module.exports = new Script({
        // Strategie
        // -----------------
           
-          if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:Aktuelle Statistiken,RobogeddonChatten] Seit 2015 verbringen die AMerikaner mehr Zeit mit Messaging-Diensten als mit Sozialen Netzwerken: [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Chats sind ein weltweiter Trend mit erheblichen --Auswirkungen auf die Benutzeroberflächen des Internets.').then(function(){
+          if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:Aktuelle Statistiken,RobogeddonChatten] Seit 2015 verbringen die Amerikaner mehr Zeit mit Messaging-Apps als mit Apps von Sozialen Netzwerken: [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/€Mesaging_vs_Social.png] Chats sind ein weltweiter Trend mit erheblichen --Auswirkungen auf die Benutzeroberflächen des Internets.').then(function(){
                                                                return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange. Sie werden gerade jetzt interessant, weil die meisten Menschen mit Chatten vertraut sind und große Anwendungen wie --Facebook, --Slack u.a. ihre Plattformen für Bots öffnen.') }).then(function(){
                                                                return bot.say(SefzigBot+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
           
@@ -270,8 +270,8 @@ module.exports = new Script({
        // Extern
        
           if ((~befehl.indexOf("--EXTERN")) ||
-              (~befehl.indexOf("--EXTERNE")))       { versuch = true; bot.say(SefzigBot+'Bots erleichtern Nutzern den Zugang zu den Marketing-Aktivitäten Ihres Unternehmens. Verstehen Sie Ihren Bot als virtuellen Mitarbeiter, der Nutzer in Empfang nimmt, einfache Fragen beantwortet und sie bei Bedarf direkt in Ihre digitalen Marketing-Maßnahmen verlinkt.').then(function(){
-                                                               return bot.say(SefzigBot+'Dabei können Bots alle möglichen zusätzlichen --Aufgaben übernehmen: Von der Newsletter-Registrierung über einen Produkt-Finder bis zum Support mit oder ohne menschliche Unterstützung.') }).then(function(){
+              (~befehl.indexOf("--EXTERNE")))       { versuch = true; bot.say(SefzigBot+'Bots erleichtern Nutzern den Zugang zu den Marketing-Aktivitäten Ihres Unternehmens. Verstehen Sie Ihren Bot als virtuellen Mitarbeiter, der Nutzer in Empfang nimmt, einfache Fragen beantwortet und sie - bei Bedarf! - direkt in Ihre digitalen Marketing-Maßnahmen verlinkt.').then(function(){
+                                                               return bot.say(SefzigBot+'Bots können alle möglichen zusätzlichen --Aufgaben übernehmen: Von der Newsletter-Registrierung über einen Produkt-Finder bis zum Support mit oder ohne menschliche Unterstützung.') }).then(function(){
                                                                return bot.say(SefzigBot+'Bots sind leicht aufzusetzen. Vor allem aber sind sie leicht in die unterschiedlichsten Marketing- --Kanäle integrierbar!') }).then(function(){
                                                                return bot.say(KreationsBot+'Wir in der --Kreation liebt es, interessante --Dialoge zu erschaffen, die Nutzern einen konkreten --Mehrwert bieten und sie mit reichhaltigen --Inhalten erfreuen.'); }); }
           
