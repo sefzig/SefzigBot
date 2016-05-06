@@ -143,7 +143,8 @@
           template = template.replace("%button_text%", button_text);
           
           // Template laden und anpassen
-             befehl_button = templates["anpassen"]["befehlButton"].join();
+             befehl_button = templates["anpassen"]["befehlButton"];
+             befehl_button = befehl_button.join();
              befehl_button = befehl_button.replace("%inhalt%", inhalt);
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+""+inhalt, befehl_button);
              
@@ -190,7 +191,8 @@
           }
           
        // Template laden und anpassen
-          var template = templates["modul"][modul].join();
+          var template = templates["modul"][modul];
+          var template = template.join();
           template = template.replace("%button_text%", button_text);
           template = template.replace("%button_url%",  button_url);
           
