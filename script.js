@@ -43,7 +43,7 @@ module.exports = new Script({
                
                bot.say(EmpfangsBot+'Darf ich Ihnen unsere Agentur vorstellen? Dann schreiben (oder klicken/berühren) Sie bitte --Agentur!')
                .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen unsere  --Beratung, die --Kreation, die --Konzeption und unsere --Technik vorstellen.'))
-               .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. \n Bitte sprechen Sie solange mit meinem Bot über --Strategie und --Konzeption.'));
+               .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben! \n Bitte sprechen Sie solange mit meinem Bot über die --Strategie hinter Bots.'));
                
             }
             
@@ -225,29 +225,34 @@ module.exports = new Script({
                                                                    }
           
           if  (~befehl.indexOf("--EMAIL"))          { versuch = true; dann = "email";
-          	                                                        bot.say('Email-Eingabe folgt.');
+          	                                                          bot.say('Email-Eingabe folgt.');
                                                                    }
           
        // -----------------
        // Agentur
        // -----------------
           
-          if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon ist Deutschlands erste Agentur, die Bots für und mit ihren Kunden Bots entwickelt. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.').then(function(){
-                                                               return bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).') }).then(function(){
-                                                               return bot.say(EmpfangsBot+'Sprechen Sie mit Andreas über die --Strategie und --Konzeption Ihres eigenen Chat-Bots.') }).then(function(){
-                                                               return bot.say(EmpfangsBot+'Wir sind eine junge Agentur auf einem jungen Markt. Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen: Innovation! '); }); }
+          if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon sind Andreas Sefzig, mehrere freie Mitarbeiter, eine Handvoll Marketing-Technologien und ein Team aus Bots.').then(function(){
+                                                               return bot.say(EmpfangsBot+'Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation.') }).then(function(){
+                                                               return bot.say(EmpfangsBot+'Wir sind eine junge Agentur auf einem jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen!') }).then(function(){
+                                                            // return bot.say(EmpfangsBot+'Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!') }).then(function(){
+                                                            // return bot.say(EmpfangsBot+'#Robogeddon ist Deutschlands erste Agentur, die Bots für und mit ihren Kunden Bots entwickelt. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.') }).then(function(){
+                                                            // return bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).') }).then(function(){
+                                                            // return bot.say(EmpfangsBot+'Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.') }).then(function(){
+                                                               return bot.say(EmpfangsBot+'Sprechen Sie mit Andreas über die --Strategie und --Konzeption Ihres eigenen Chat-Bots. '); }); }
           
        // -----------------
        // Strategie
        // -----------------
           
-          if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:Aktuelle Statistiken,RobogeddonChatten] Ein weltweiter Trend mit erheblichen absehbaren --Auswirkungen auf die Benutzeroberflächen des Internets.').then(function(){
+          if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:Aktuelle Statistiken,RobogeddonChatten] Seit 2015 verbringen die AMerikaner mehr Zeit mit Messaging-Diensten als mit Sozialen Netzwerken: [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Chats sind ein weltweiter Trend mit erheblichen --Auswirkungen auf die Benutzeroberflächen des Internets.').then(function(){
                                                                return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange. Sie werden gerade jetzt interessant, weil die meisten Menschen mit Chatten vertraut sind und große Anwendungen wie --Facebook, --Slack u.a. ihre Plattformen für Bots öffnen.') }).then(function(){
                                                                return bot.say(SefzigBot+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
           
        // Intern
        
-          if  (~befehl.indexOf("--INTERN"))         { versuch = true; bot.say(SefzigBot+'Es lohnt sich, die interne Kommunikation auf Chat umzustellen. \n Dies zeigt eine --Studie von Slack und wir können das von uns und unseren Kunden bestätigen.').then(function(){
+          if ((~befehl.indexOf("--INTERN")) ||
+              (~befehl.indexOf("--INTERNE")))        { versuch = true; bot.say(SefzigBot+'Es lohnt sich, die interne Kommunikation auf Chat umzustellen. \n Dies zeigt eine --Studie von Slack und wir können das von uns und unseren Kunden bestätigen.').then(function(){
                                                                return bot.say(SefzigBot+'Wenn Ihr Team dann schon den ganzen Tag einen Chat-Client nutzt, können Sie viele interne und externe --Daten in den Chat holen.') }).then(function(){
                                                                return bot.say(SefzigBot+'Mit den Prinzipien der --ChatOps als Teil Ihrer --Strategie erleichtern Sie Ihrem Team die Arbeit immens!'); }); }
           
@@ -264,7 +269,8 @@ module.exports = new Script({
           
        // Extern
        
-          if  (~befehl.indexOf("--EXTERN"))         { versuch = true; bot.say(SefzigBot+'Bots erleichtern Nutzern den Zugang zu den Marketing-Aktivitäten Ihres Unternehmens. Verstehen Sie Ihren Bot als virtuellen Mitarbeiter, der Nutzer in Empfang nimmt, einfache Fragen beantwortet und sie bei Bedarf direkt in Ihre digitalen Marketing-Maßnahmen verlinkt.').then(function(){
+          if ((~befehl.indexOf("--EXTERN")) ||
+              (~befehl.indexOf("--EXTERNE")))       { versuch = true; bot.say(SefzigBot+'Bots erleichtern Nutzern den Zugang zu den Marketing-Aktivitäten Ihres Unternehmens. Verstehen Sie Ihren Bot als virtuellen Mitarbeiter, der Nutzer in Empfang nimmt, einfache Fragen beantwortet und sie bei Bedarf direkt in Ihre digitalen Marketing-Maßnahmen verlinkt.').then(function(){
                                                                return bot.say(SefzigBot+'Dabei können Bots alle möglichen zusätzlichen --Aufgaben übernehmen: Von der Newsletter-Registrierung über einen Produkt-Finder bis zum Support mit oder ohne menschliche Unterstützung.') }).then(function(){
                                                                return bot.say(SefzigBot+'Bots sind leicht aufzusetzen. Vor allem aber sind sie leicht in die unterschiedlichsten Marketing- --Kanäle integrierbar!') }).then(function(){
                                                                return bot.say(KreationsBot+'Wir in der --Kreation liebt es, interessante --Dialoge zu erschaffen, die Nutzern einen konkreten --Mehrwert bieten und sie mit reichhaltigen --Inhalten erfreuen.'); }); }
