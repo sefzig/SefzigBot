@@ -46,14 +46,39 @@
        "modul": {
           
        // Befehl
-          "Text":      "<div class='sk-action' style='margin-bottom:0px; display: inline-block; width: 100%;'><a class='btn btn-sk-primary' href='http://sefzig.net/text%button_url%/' onclick='fenster(\"text\",\"%button_url%\"); return false;'>%button_text%</a></div>",
-          "Linkliste": "<div class='sk-action' style='margin-bottom:0px; display: inline-block; width: 100%;'><a class='btn btn-sk-primary' href='http://sefzig.net/link/liste/'    onclick='fenster(\"link\",\"%button_url%\"); return false;'>%button_text%</a></div>",
-          "Button":    "<div class='sk-action' style='margin-bottom:0px; display: inline-block; width: 100%;'><a class='btn btn-sk-primary' href='%button_url%' target='_blank'>%button_text%</a></div>",
-          "Qr":        "<center><img class='%klasse%' src='http://chart.apis.google.com/chart?chs=250x250&cht=qr&chld=L&chf=bg,s,65432100&chl=%inhalt%' /></center> http://sefzigbot.herokuapp.com/ ",
-          "Bild":      "<center><img class='%klasse%' src='%inhalt%' /></center>",
-          "Audio":     "<audio class='%klasse%' controls='true' style='width: 100%; max-width: 500px; margin-top: 10px;' x-webkit-airplay='allow'><source src='%inhalt%' type='audio/mpeg'>Lade Audio...</audio>",
-          "Iframe":    "<iframe src='%inhalt%' width='180' height='102' frameborder='0'>Frame laden</iframe>",
-          "Youtube":   "<iframe width='180' height='102' class='%klasse%' src='http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>"
+          "Text":       "<div "+
+                           +"class='sk-action' "+
+                           +"style='margin-bottom:0px; "+
+                           +"display: inline-block; "+
+                           +"width: 100%;'>"+
+                           +"<a "+
+                              +"class='btn btn-sk-primary' "+
+                              +"href='http://sefzig.net/text%button_url%/' "+
+                              +"onclick='"+
+                                 +"fenster(\"text\",\"%button_url%\"); "+
+                                 +"return false;'>"+
+                              +"%button_text%"+
+                           +"</a>"+
+                        +"</div>",
+          "Linkliste":  "<div class='sk-action' "+
+                           +"style='margin-bottom:0px; "+
+                           +"display: inline-block; "+
+                           +"width: 100%;'>"+
+                              +"<a "+
+                              +"class='btn btn-sk-primary' "+
+                              +"href='http://sefzig.net/link/liste/' "+
+                              +"onclick='"+
+                                 +"fenster(\"link\",\"%button_url%\"); "+
+                                 +"return false;'>"+
+                              +"%button_text%"+
+                           +"</a>"+
+                        +"</div>",
+          "Button":     "<div class='sk-action' style='margin-bottom:0px; display: inline-block; width: 100%;'><a class='btn btn-sk-primary' href='%button_url%' target='_blank'>%button_text%</a></div>",
+          "Qr":         "<center><img class='%klasse%' src='http://chart.apis.google.com/chart?chs=250x250&cht=qr&chld=L&chf=bg,s,65432100&chl=%inhalt%' /></center> http://sefzigbot.herokuapp.com/ ",
+          "Bild":       "<center><img class='%klasse%' src='%inhalt%' /></center>",
+          "Audio":      "<audio class='%klasse%' controls='true' style='width: 100%; max-width: 500px; margin-top: 10px;' x-webkit-airplay='allow'><source src='%inhalt%' type='audio/mpeg'>Lade Audio...</audio>",
+          "Iframe":     "<iframe src='%inhalt%' width='180' height='102' frameborder='0'>Frame laden</iframe>",
+          "Youtube":    "<iframe width='180' height='102' class='%klasse%' src='http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>"
           
        }
        
