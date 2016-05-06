@@ -184,7 +184,7 @@
           klasse = klasse.toLowerCase();
           
        // Cta-Text von URL trennen
-          if ((modul == "Button") || (modul == "Text") || (modul == "Linkliste"))  { 
+          if ((modul == "Button") || (modul == "Text") || (modul == "Link") || (modul == "Linkliste"))  { 
           // console.log("> Button Var: "+var1);
              var buttons = text_string.split("["+modul+":");
              if (buttons[1]) { 
@@ -357,6 +357,7 @@
              
        // Inhalte anpassen
           text_neu = inhalt("befehl", text_neu);
+          text_neu = inhalt("modul", text_neu, "Link");
           text_neu = inhalt("modul", text_neu, "Text");
           text_neu = inhalt("modul", text_neu, "Bild");
           text_neu = inhalt("modul", text_neu, "Qr");
@@ -371,15 +372,15 @@
           var text_merken = text_neu;
           text_neu = inhalt("bot", text_neu, "SefzigBot",     "Andreas Sefzigs Bot", zufall);
           
-          text_neu = inhalt("bot", text_neu, "LinkBot",       "Link Bot",            zufall);
-          text_neu = inhalt("bot", text_neu, "TextBot",       "Text Bot",            zufall);
-          text_neu = inhalt("bot", text_neu, "SlackBot",      "Slack Bot",           zufall);
-          text_neu = inhalt("bot", text_neu, "AndreasSefzig", "Andreas Sefzig",      zufall);
+          text_neu = inhalt("bot", text_neu, "LinkBot",       "Link Bot",               zufall);
+          text_neu = inhalt("bot", text_neu, "TextBot",       "Text Bot",               zufall);
+          text_neu = inhalt("bot", text_neu, "SlackBot",      "Slack Bot",              zufall);
+          text_neu = inhalt("bot", text_neu, "AndreasSefzig", "Andreas Sefzig",         zufall);
           
-          text_neu = inhalt("bot", text_neu, "EmpfangsBot",   "Empfangs-Bot",        zufall);
-          text_neu = inhalt("bot", text_neu, "KreationsBot",  "Kreations-Bot",       zufall);
-          text_neu = inhalt("bot", text_neu, "BeratungsBot",  "Beratungs-Bot",       zufall);
-          text_neu = inhalt("bot", text_neu, "TechnikBot",    "Technik-Bot",         zufall);
+          text_neu = inhalt("bot", text_neu, "EmpfangsBot",   "Alice, Empfangs-Bot",    zufall);
+          text_neu = inhalt("bot", text_neu, "KreationsBot",  "Doris, Kreations-Bot",   zufall);
+          text_neu = inhalt("bot", text_neu, "BeratungsBot",  "Barbara, Beratungs-Bot", zufall);
+          text_neu = inhalt("bot", text_neu, "TechnikBot",    "Cynthia, Technik-Bot",   zufall);
           
        // Default-Bot
           if (text_neu == text_merken) { text_neu = "[AndreasSefzig] "+text_neu; }
@@ -411,8 +412,9 @@
     function fenster(methode, kurzel) {
        
     // URL errechnen
-       if (methode == "linkliste") { var url = "http://sefzig.net/link/liste/"+kurzel+"/"; }
-       if (methode == "text")      { var url = "http://sefzig.net/text/"+kurzel+"/"; }
+       if (methode == "link")  { var url = "http://sefzig.net/link/"+kurzel+"/"; }
+       if (methode == "links") { var url = "http://sefzig.net/link/liste/"+kurzel+"/"; }
+       if (methode == "text")  { var url = "http://sefzig.net/text/"+kurzel+"/"; }
        
     // Iframe laden
        $("#fenster > iframe").attr("src", url);

@@ -22,6 +22,7 @@ var vorname = "Unbekannter";
 var nachname = "Besucher";
 
 module.exports = new Script({
+    
     processing: {
         prompt: (bot) => bot.say(TechnikBot+'Nicht so schnell bitte...'),
         receive: () => 'processing'
@@ -178,7 +179,7 @@ module.exports = new Script({
                                                                             +'\n○ --Vision '
                                                                             +'\n○ --Über '); }
           if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(function(){
-                                                               return bot.say(TechnikBot+'Leider werden Sie dort nicht wiedererkannt. Wir arbeiten an einer Lösung...'); }); }
+                                                               return bot.say(TechnikBot+'Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung...'); }); }
           if ((~befehl.indexOf("--UBER")) ||
               (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.').then(function(){
                                                                return bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }); }
@@ -378,6 +379,7 @@ module.exports = new Script({
        
           if  (~befehl.indexOf("--JAVASCRIPT"))     { versuch = true; bot.say(SefzigBot+'[Javascript:test_alert]'); }
           if  (~befehl.indexOf("--VIDEO"))          { versuch = true; bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
+          if  (~befehl.indexOf("--LINKTEST"))       { versuch = true; bot.say(SefzigBot+'Ein Link: [Link:Testlink,ThinMedia]'); }
           
        // -----------------
        // Vorlage

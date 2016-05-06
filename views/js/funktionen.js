@@ -75,7 +75,6 @@
        $("body").attr("data-blink", 0);
        
     }
-    
     function blinken(max) {
        
        selektor = ".blink"; // , #sk-footer .input-container

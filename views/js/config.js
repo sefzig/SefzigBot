@@ -32,6 +32,21 @@
  // Texte
     var texte = {
        
+    // Texte der Dateneingabe
+       "daten": {
+       	
+       // Labels
+          "vorname": "Vorname",
+          "nachname": "Nachname",
+          "email": "E-Mail-Adresse",
+          
+       // Defaults
+          "vorname_defaut": "Nicht",
+          "nachname_defaut": "Bekannt",
+          "email_defaut": "unbekannt@sefzig.net"
+          
+       },
+       
     // Texte des Chats
        "chat": {
        	
@@ -61,21 +76,6 @@
           
        // URL-Parameter übernehmen
           "weiterleiten": "Weiterleiten:"
-       },
-       
-    // Texte der Dateneingabe
-       "daten": {
-       	
-       // Labels
-          "vorname": "Vorname",
-          "nachname": "Nachname",
-          "email": "E-Mail-Adresse",
-          
-       // Defaults
-          "vorname_defaut": "Nicht",
-          "nachname_defaut": "Bekannt",
-          "email_defaut": "unbekannt@sefzig.net"
-          
        }
        
     };
@@ -124,13 +124,33 @@
        // Button zu Linkliste
           "Linkliste":
           [
-             "<div class='sk-action' ",
+             "<div ",
+                "class='sk-action' ",
                 "style='margin-bottom:0px; ",
                 "display: inline-block; ",
                 "width: 100%;'>",
                    "<a ",
                    "class='btn btn-sk-primary' ",
-                   "href='http://sefzig.net/link/liste/' ",
+                   "href='http://sefzig.net/link/liste/%button_url%/' ",
+                   "onclick='",
+                      "fenster(\"links\",\"%button_url%\"); ",
+                      "return false;'>",
+                   "%button_text%",
+                "</a>",
+             "</div>"
+          ],
+          
+       // Link aus Linkliste
+          "Link":
+          [
+             "<div ",
+                "class='sk-action' ",
+                "style='margin-bottom:0px; ",
+                "display: inline-block; ",
+                "width: 100%;'>",
+                   "<a ",
+                   "class='btn btn-sk-primary' ",
+                   "href='http://sefzig.net/link/%button_url%/' ",
                    "onclick='",
                       "fenster(\"link\",\"%button_url%\"); ",
                       "return false;'>",
@@ -140,22 +160,82 @@
           ],
           
        // Button mit Link
-          "Button":     [ "<div class='sk-action' style='margin-bottom:0px; display: inline-block; width: 100%;'><a class='btn btn-sk-primary' href='%button_url%' target='_blank'>%button_text%</a></div>" ],
+          "Button":
+          [
+             "<div ",
+                "class='sk-action' ",
+                "style='margin-bottom:0px; ",
+                "display: inline-block; ",
+                "width: 100%;'>",
+                "<a ",
+                   "class='btn btn-sk-primary' ",
+                   "href='%button_url%' ",
+                   "target='_blank'",
+                   "onclick='",
+                      "fenster(\"link\",\"%button_url%\"); ",
+                      "return false;'>",
+                   "%button_text%",
+                "</a>",
+             "</div>"
+          ],
           
        // QR-Code als Bild
-          "Qr":         [ "<center><img class='%klasse%' src='http://chart.apis.google.com/chart?chs=250x250&cht=qr&chld=L&chf=bg,s,65432100&chl=%inhalt%' /></center> http://sefzigbot.herokuapp.com/ " ],
+          "Qr":
+          [
+             "<center>",
+                "<img class='%klasse%' ",
+                   "src='http://chart.apis.google.com/chart?chs=225x225&cht=qr&chld=L&chf=bg,s,65432100&chl=%inhalt%' />",
+             "</center> ",
+             "http://sefzigbot.herokuapp.com/ "
+          ],
           
        // Bild-Datei
-          "Bild":       [ "<center><img class='%klasse%' src='%inhalt%' /></center>" ],
+          "Bild": 
+          [
+             "<center>",
+                "<img class='%klasse%' src='%inhalt%' />",
+             "</center>"
+          ],
           
        // Audio-Player
-          "Audio":      [ "<audio class='%klasse%' controls='true' style='width: 100%; max-width: 500px; margin-top: 10px;' x-webkit-airplay='allow'><source src='%inhalt%' type='audio/mpeg'>Lade Audio...</audio>" ],
+          "Audio":
+          [
+             "<audio ",
+                "class='%klasse%' ",
+                "controls='true' ",
+                "style='width: 100%; ",
+                "max-width: 500px; ",
+                "margin-top: 10px;' ",
+                "x-webkit-airplay='allow'>",
+                "<source src='%inhalt%' type='audio/mpeg'>",
+                   "Lade Audio...",
+             "</audio>"
+          ],
           
        // Iframe
-          "Iframe":     [ "<iframe src='%inhalt%' width='180' height='102' frameborder='0'>Frame laden</iframe>" ],
+          "Iframe":
+          [
+             "<iframe ",
+                "src='%inhalt%' ",
+                "width='225' ",
+                "height='127' ",
+                "frameborder='0'>",
+                "Frame laden",
+             "</iframe>"
+          ],
           
        // Youtube-Player
-          "Youtube":    [ "<iframe width='180' height='102' class='%klasse%' src='http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>" ]
+          "Youtube":
+          [
+             "<iframe ",
+                "width='225' ",
+                "height='127' ",
+                "class='%klasse%' ",
+                "src='http://www.youtube.com/embed/%inhalt%?rel=0&amp;showinfo=0' ",
+                "frameborder='0' ",
+                "allowfullscreen>",
+             "</iframe>"
+          ]
           
        }
        
