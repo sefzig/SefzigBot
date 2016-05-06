@@ -185,9 +185,15 @@
           // console.log("> Button Url: "+button_url);
           }
           
-       // Template laden und ausfüllen
-          var template = templates["modul"][modul]; console.log("Aus Datei, "+modul+": "+template); 
-          if ($.isArray(template)) { template = template.join(); console.log("Aus Array: "+template); }
+       // Template laden
+          var template = templates["modul"][modul];
+       // console.log("Aus Datei, "+modul+": "+template);
+          
+       // Template Zeilen verbinden
+          if ($.isArray(template)) { template = template.join(); console.log("Aus Array, "+modul+": "+template); }
+          else { console.log("Nicht aus Array, "+modul+": "+template); }
+          
+       // Template ausfüllen
           template = template.replace("%button_text%", button_text);
           template = template.replace("%button_url%",  button_url);
           

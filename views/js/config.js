@@ -86,7 +86,7 @@
     // Templates der Anwendung
        "anpassen": {
        	
-       // Folgt
+       // Befehle
           "befehlButton":
           [
              "<span ",
