@@ -141,6 +141,15 @@
              
           // Template laden und anpassen
              befehl_button = templates["anpassen"]["befehlButton"];
+             for(var i=0; i < templates.length; i++) {
+                
+                letztes = templates[i].slice(-1);
+                console.log("letztes zeichen: "+letztes);
+                if (letztes == ",") { templates[i] = templates[i].slice(0, -1); }
+             // templates[i] = templates[i].replace(/,/g, '');
+                
+             }
+             
              console.log("befehl_button, "+inhalt+": "+befehl_button);
              if ($.isArray(befehl_button)) { befehl_button = befehl_button.join(); console.log("array befehl_button, "+inhalt+": "+befehl_button); }
              befehl_button = befehl_button.replace("%inhalt%", inhalt);
