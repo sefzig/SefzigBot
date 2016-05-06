@@ -137,10 +137,11 @@
              
           // Befehl freistellen
              var inhalt = inhalte[i].split(/,|;|:|\.|\<|!|\?| /)[0];
+             console.log("inhalt: "+inhalt);
              
           // Template laden und anpassen
              befehl_button = templates["anpassen"]["befehlButton"];
-             befehl_button = befehl_button.join();
+             if ($.isArray(befehl_button)) { befehl_button = befehl_button.join(); }
              befehl_button = befehl_button.replace("%inhalt%", inhalt);
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+""+inhalt, befehl_button);
              
