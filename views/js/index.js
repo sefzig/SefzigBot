@@ -197,6 +197,7 @@
                    }
                    else { var button_text = "Link öffnen"; var button_url = ""+buttons2[0]; }
                 }
+                else {    var button_text = "Link öffnen"; var button_url = ""+var2; }
              }
              else {       var button_text = "Link öffnen"; var button_url = ""+var1; }
           // console.log("> Button Text: "+button_text);
