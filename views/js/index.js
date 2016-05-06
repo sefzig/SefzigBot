@@ -186,8 +186,8 @@
           }
           
        // Template laden und ausfüllen
-          var template = templates["modul"][modul]; console.log("Aus Datei: "+template); 
-          if (template[1]) { template = template.join(); console.log("Aus Array: "+template); }
+          var template = templates["modul"][modul]; console.log("Aus Datei, "+modul+": "+template); 
+          if ($.isArray(template)) { template = template.join(); console.log("Aus Array: "+template); }
           template = template.replace("%button_text%", button_text);
           template = template.replace("%button_url%",  button_url);
           
