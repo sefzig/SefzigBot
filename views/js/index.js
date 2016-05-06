@@ -212,8 +212,8 @@
              template = template.join("a-f-z");
              template = template.replace(/a-f-z/g, "");
           }
-          template = template.replace("%button_text%", button_text);
-          template = template.replace("%button_url%",  button_url);
+          template = template.replace(/%button_text%/g, button_text);
+          template = template.replace(/%button_url%/g,  button_url);
           
        // Modul anpassen
           inhalte = inhalte.split("["+modul+":");

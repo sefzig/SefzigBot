@@ -153,7 +153,6 @@
                    "href='http://sefzig.net/link/%button_url%/' ",
                    "onclick='",
                       "fenster(\"link\",\"%button_url%\"); ",
-                      "alert(\"button_url: %button_url%\"); ",
                       "return false;'>",
                    "%button_text%",
                 "</a>",
