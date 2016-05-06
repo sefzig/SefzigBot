@@ -141,7 +141,8 @@
              
           // Template laden und anpassen
              befehl_button = templates["anpassen"]["befehlButton"];
-             if ($.isArray(befehl_button)) { befehl_button = befehl_button.join(); }
+             console.log("befehl_button, "+inhalt+": "+befehl_button);
+             if ($.isArray(befehl_button)) { befehl_button = befehl_button.join(); console.log("array befehl_button, "+inhalt+": "+befehl_button); }
              befehl_button = befehl_button.replace("%inhalt%", inhalt);
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
              
