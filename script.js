@@ -16,6 +16,8 @@ const SlackBot =       "[SlackBot] ";
 var versuche_max = 3;
 var versuche = 0;
 
+var bekannt = false;
+
 var vorname = "Unbekannter";
 var nachname = "Besucher";
 
@@ -42,10 +44,19 @@ module.exports = new Script({
             }
             else {
                
-               bot.say(EmpfangsBot+'Darf ich Ihnen unsere Agentur vorstellen? Dann schreiben (oder klicken/berühren) Sie bitte --Agentur!')
-               .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen unsere  --Beratung, die --Kreation, die --Konzeption und unsere --Technik vorstellen.'))
-               .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. Bitte sprechen Sie solange mit meinem Bot über die --Strategie hinter Bots!'));
+               if (bekannt == false) {
                
+                  bot.say(EmpfangsBot+'Darf ich Ihnen unsere Agentur vorstellen? Dann schreiben (oder klicken/berühren) Sie bitte --Agentur!')
+                  .then(() => bot.say(EmpfangsBot+'Ich möchte Sie mit den Bots aus unserer  --Beratung, der --Kreation, der --Konzeption und unserer --Technik bekannt machen.'))
+                  .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. Bitte sprechen Sie solange mit meinem Bot über die --Strategie hinter Bots!'));
+               
+               }
+               else {
+               
+                  bot.say(EmpfangsBot+'Darf ich Ihnen unsere Agentur zeigen? Dann schreiben Sie bitte --Agentur!')
+                  .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen unsere  --Beratung, die --Kreation, die --Konzeption und unsere --Technik vorstellen!'));
+               
+               }
             }
             
             return bot.setProp('empfangen', 'ja')
@@ -245,7 +256,7 @@ module.exports = new Script({
        // Strategie
        // -----------------
           
-          if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:Aktuelle Statistiken,RobogeddonChatten] Seit 2015 verbringen die Amerikaner mehr Zeit mit Messaging-Apps als mit Apps von Sozialen Netzwerken: [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/€Mesaging_vs_Social.png] Chats sind ein weltweiter Trend mit erheblichen --Auswirkungen auf die Benutzeroberflächen des Internets.').then(function(){
+          if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland: [Text:Aktuelle Statistiken,RobogeddonChatten] Seit 2015 verbringen die Amerikaner mehr Zeit mit Messaging-Apps als mit Apps von Sozialen Netzwerken: [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Chats sind ein weltweiter Trend mit erheblichen --Auswirkungen auf die Benutzeroberflächen des Internets.').then(function(){
                                                                return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange. Sie werden gerade jetzt interessant, weil die meisten Menschen mit Chatten vertraut sind und große Anwendungen wie --Facebook, --Slack u.a. ihre Plattformen für Bots öffnen.') }).then(function(){
                                                                return bot.say(SefzigBot+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
           

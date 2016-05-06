@@ -43,32 +43,32 @@
        // console.log('Neues Gespräch');
           
        // Umgebungs-Parameter einsammeln
-          var vorname =  Cookies.get('SefzigbotVorname');  if ((!vorname)  || (vorname  == "") || (vorname  == "Vorname"))        { vorname  = "Nicht"; }
-          var nachname = Cookies.get('SefzigbotNachname'); if ((!nachname) || (nachname == "") || (nachname == "Nachname"))       { nachname = "Bekannt"; }
-          var email =    Cookies.get('SefzigbotEmail');    if ((!email)    || (email    == "") || (email    == "E-Mail-Adresse")) { email    = "unbekannt@sefzig.net"; }
+          var vorname =  Cookies.get('SefzigbotVorname');  if ((!vorname)  || (vorname  == "") || (vorname  == texte["daten"]["vorname"]))  { vorname  = texte["daten"]["vorname_default"];  }
+          var nachname = Cookies.get('SefzigbotNachname'); if ((!nachname) || (nachname == "") || (nachname == texte["daten"]["nachname"])) { nachname = texte["daten"]["nachname_default"]; }
+          var email =    Cookies.get('SefzigbotEmail');    if ((!email)    || (email    == "") || (email    == texte["daten"]["email"]))    { email    = texte["daten"]["email_default"];    }
           
        // Smooch Js
        // https://github.com/smooch/smooch-js
           var skPromise = Smooch.init({ 
-             appToken: 'd9k415y76nk8ab2croifjshpv',
+             appToken: config["smooch"]["appToken"],
              embedded: true,
              customText: {
-                headerText: 'Andreas Sefzigs #Robogeddon',
-                inputPlaceholder: 'Schreiben Sie eine Nachricht...',
-                sendButtonText: 'Absenden',
-                introText: 'Dies ist der Anfang unseres Gesprächs.<br/><span class="blink">Schreiben Sie irgendetwas, um zu beginnen!</span>',
-                settingsText: 'Hinterlassen Sie Ihre E-Mail-Adresse, damit ich Kontakt zu Ihnen aufnehmen kann.',
-                settingsReadOnlyText: 'Ich schreibe Ihnen an diese E-Mail-Adresse, sollen wir uns verpasst haben.',
-                settingsInputPlaceholder: 'Ihre E-Mail-Adresse',
-                settingsSaveButtonText: 'Speichern',
-                settingsHeaderText: 'E-Mail-Einstellungen',
-                settingsNotificationText: 'Sollte ich Ihnen nicht schnell genug antworten, <a href data-ui-settings-link>hinterlassen Sie mir bitte Ihre E-Mail-Adresse</a>.',
-                actionPaymentError: 'Es ist ein Fehler im Bezahlvorgang aufgetreten. <br> Bitte versuchen Sie es nochmal (oder mit einer anderen Karte).',
-                actionPaymentCompleted: 'Bezahlvorgang abgeschlossen',
-                messageError: 'Beim Versenden ist ein Fehler aufgetreten. Bitte versuchen Sie es nochmal.',
-                invalidFileError: 'Es tut mir leid, zur Zeit können nur Bild-Dateien hochgeladen werden. Bitte laden Sie ein Jpg, Png, Gif oder Bmp hoch.',
-                messageIndicatorTitleSingular: '({count}) neue Nachricht',
-                messageIndicatorTitlePlural: '({count}) neue Nachrichten'
+                headerText:                    texte["chat"]["headerText"],
+                inputPlaceholder:              texte["chat"]["inputPlaceholder"],
+                sendButtonText:                texte["chat"]["sendButtonText"],
+                introText:                     texte["chat"]["introText"],
+                settingsText:                  texte["chat"]["settingsText"],
+                settingsReadOnlyText:          texte["chat"]["settingsReadOnlyText"],
+                settingsInputPlaceholder:      texte["chat"]["settingsInputPlaceholder"],
+                settingsSaveButtonText:        texte["chat"]["settingsSaveButtonText"],
+                settingsHeaderText:            texte["chat"]["settingsHeaderText"],
+                settingsNotificationText:      texte["chat"]["settingsNotificationText"],
+                actionPaymentError:            texte["chat"]["actionPaymentError"],
+                actionPaymentCompleted:        texte["chat"]["actionPaymentCompleted"],
+                messageError:                  texte["chat"]["messageError"],
+                invalidFileError:              texte["chat"]["invalidFileError"],
+                messageIndicatorTitleSingular: texte["chat"]["messageIndicatorTitleSingular"],
+                messageIndicatorTitlePlural:   texte["chat"]["messageIndicatorTitlePlural"]
              }
           })
           .then(function () { window.setTimeout(function() { 
