@@ -143,7 +143,7 @@
              befehl_button = templates["anpassen"]["befehlButton"];
              if ($.isArray(befehl_button)) { befehl_button = befehl_button.join(); }
              befehl_button = befehl_button.replace("%inhalt%", inhalt);
-             text_string = text_string.replace(config["syntax"]["befehlPrefix"]+""+inhalt, befehl_button);
+             text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
              
           // Debuggen
           // console.log("- Befehl angepasst: "+inhalt);
@@ -182,14 +182,14 @@
                    else { var button_text = "Link öffnen"; var button_url = ""+buttons2[0]; }
                 }
              }
-             else { var button_text = "Link öffnen"; var button_url = ""+var1; }
+             else {       var button_text = "Link öffnen"; var button_url = ""+var1; }
           // console.log("> Button Text: "+button_text);
           // console.log("> Button Url: "+button_url);
           }
           
        // Template laden und anpassen
           var template = templates["modul"][modul];
-          var template = template.join();
+          if ($.isArray(template)) { template = template.join(); }
           template = template.replace("%button_text%", button_text);
           template = template.replace("%button_url%",  button_url);
           
