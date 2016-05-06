@@ -146,23 +146,23 @@
              console.log("\ninhalt: "+inhalt);
              
           // Template laden und anpassen
-             befehl_button = templates["anpassen"]["befehlButton"];
+             var befehl_button = templates["anpassen"]["befehlButton"];
              console.log("befehl_button alt: "+befehl_button);
              
              if ($.isArray(befehl_button)) { befehl_button = befehl_button.join("a-f-z"); }
              befehl_button = befehl_button.replace(/a-f-z/g, "");
              befehl_button = befehl_button.replace(/%inhalt%/g, inhalt);
-             console.log("befehl_button neu, "+inhalt+": "+befehl_button);
              
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button); // ..?
              
           // Debuggen
-          // console.log("- Befehl angepasst: "+inhalt);
+             console.log("text_string: "+text_string);
              
           // Zurücksetzen
-             var inhalt = "";
+             inhalt = "";
+             befehl_button = "";
              
           }
           
