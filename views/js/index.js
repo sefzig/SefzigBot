@@ -149,10 +149,10 @@
              befehl_button = templates["anpassen"]["befehlButton"];
           // console.log("befehl_button: "+befehl_button);
              
-             for (var j=0; j < befehl_button.length; j++) {
+             for (var j = 0; j < befehl_button.length; j++) {
                 
                 console.log("befehl_button: "+befehl_button[j]);
-                letztes = befehl_button[j].slice(-1);
+                letztes = befehl_button[j].slice(0, 1);
                 console.log("letztes zeichen: "+letztes);
                 if (letztes == ",") { befehl_button[j] = befehl_button[j].slice(0, -1); }
              // befehl_button[j] = befehl_button[j].replace(/,/g, '');
