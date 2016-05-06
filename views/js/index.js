@@ -160,8 +160,7 @@
              }
              
              console.log("befehl_button, "+inhalt+": "+befehl_button);
-             if ($.isArray(befehl_button)) { befehl_button = befehl_button.join("afz"); console.log("array befehl_button, "+inhalt+": "+befehl_button); }
-          // befehl_button = befehl_button.replace("afz,", "");
+             if ($.isArray(befehl_button)) { befehl_button = befehl_button.join("a-f-z"); befehl_button = befehl_button.replace("a-f-z", ""); console.log("array befehl_button, "+inhalt+": "+befehl_button); }
              befehl_button = befehl_button.replace("%inhalt%", inhalt);
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
              
