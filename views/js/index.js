@@ -152,12 +152,11 @@
              if ($.isArray(befehl_button)) { befehl_button = befehl_button.join("a-f-z"); }
              befehl_button = befehl_button.replace(/a-f-z/g, "");
              befehl_button = befehl_button.replace(/%inhalt%/g, inhalt);
+             console.log("befehl_button neu: "+befehl_button);
              
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button); // ..?
-             
-          // Debuggen
              console.log("text_string: "+text_string);
              
           // Zurücksetzen
