@@ -186,7 +186,7 @@
           }
           
        // Template laden und ausfüllen
-          var template = templates["modul"][modul].join();
+          var template = templates["modul"][modul];
           if (template[1]) { template = template.join(); }
           template = template.replace("%button_text%", button_text);
           template = template.replace("%button_url%",  button_url);
