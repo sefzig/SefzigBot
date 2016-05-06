@@ -123,6 +123,12 @@
        
     }
     
+    function template() {
+       
+       
+       
+    }
+    
  // Texte anpassen
     function inhalt(methode, text_string, var1, var2, var3) {
        
@@ -141,12 +147,14 @@
              
           // Template laden und anpassen
              befehl_button = templates["anpassen"]["befehlButton"];
-             for (var j=0; j < templates.length; j++) {
+          // console.log("befehl_button: "+befehl_button);
+             
+             for (var j=0; j < befehl_button.length; j++) {
                 
-                letztes = templates[j].slice(-1);
+                letztes = befehl_button[j].slice(-1);
                 console.log("letztes zeichen: "+letztes);
-                if (letztes == ",") { templates[j] = templates[j].slice(0, -1); console.log("template: "+templates[j]); }
-             // templates[j] = templates[j].replace(/,/g, '');
+                if (letztes == ",") { befehl_button[j] = befehl_button[j].slice(0, -1); console.log("befehl_button: "+befehl_button[j]); }
+             // befehl_button[j] = befehl_button[j].replace(/,/g, '');
                 
              }
              
