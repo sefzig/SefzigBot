@@ -151,18 +151,18 @@ module.exports = new Script({
        // System
        // -----------------
        
-          if  (~befehl.indexOf("--BEFEHLE"))        { versuch = true; bot.say(EmpfangsBot+'--Befehle dieser Seite:'
+          if  (~befehl.indexOf("--BEFEHLE"))        { versuch = true; bot.say(EmpfangsBot+'--Befehle dieser Seite: '
                                                                             +'\n○ --Mobil '
                                                                             +'\n○ --Newsletter '
                                                                             +'\n○ --Kontakt '
                                                                             +'\n○ --Über '
-                                                                            +'\n\nDie Gewerke der --Agentur:'
+                                                                            +'\n\nDie Gewerke der --Agentur: '
                                                                             +'\n○ Andreas: --Strategie '
                                                                             +'\n○ Barbara: --Beratung '
                                                                             +'\n○ Cynthia: --Technik '
                                                                             +'\n○ Doris: --Kreation '
-                                                                            +'\n○ Erika: --Konzeption ''
-                                                                            +'\n\nMehr über --Robogeddon:'
+                                                                            +'\n○ Erika: --Konzeption '
+                                                                            +'\n\nMehr über --Robogeddon: '
                                                                             +'\n○ --Gründung '
                                                                             +'\n○ --Vision '
                                                                             +'\n○ --Über '); }
