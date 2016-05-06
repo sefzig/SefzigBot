@@ -138,8 +138,12 @@
           // Befehl freistellen
              var inhalt = inhalte[i].split(/,|;|:|\.|\<|!|\?| /)[0];
              
-          // Befehl-Buttons einsetzen
-             befehl_button = templates["anpassen"]["befehlButton"];
+       // Template laden und anpassen
+          var template = templates["modul"][modul].join();
+          template = template.replace("%button_text%", button_text);
+          
+          // Template laden und anpassen
+             befehl_button = templates["anpassen"]["befehlButton"].join();
              befehl_button = befehl_button.replace("%inhalt%", inhalt);
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+""+inhalt, befehl_button);
              
@@ -185,15 +189,8 @@
           // console.log("> Button Url: "+button_url);
           }
           
-       // Template laden
-          var template = templates["modul"][modul];
-       // console.log("Aus Datei, "+modul+": "+template);
-          
-       // Template Zeilen verbinden
-          if ($.isArray(template)) { template = template.join(); console.log("Aus Array, "+modul+": "+template); }
-          else { console.log("Nicht aus Array, "+modul+": "+template); }
-          
-       // Template ausfüllen
+       // Template laden und anpassen
+          var template = templates["modul"][modul].join();
           template = template.replace("%button_text%", button_text);
           template = template.replace("%button_url%",  button_url);
           

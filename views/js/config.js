@@ -87,13 +87,14 @@
        "anpassen": {
        	
        // Befehle
-          "befehlButton":
-          [
+          "befehlButton": [
+             
              "<span ",
                 "class='befehl' ",
                 "onclick='befehlen(\""+config["syntax"]["befehlPrefix"]+"%inhalt%\");'>",
                 ""+config["syntax"]["befehlErsatz"]+"%inhalt%",
              "</span>"
+             
           ]
        },
        
