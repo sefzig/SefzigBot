@@ -138,7 +138,7 @@
        if (methode == "befehl") {
        
        // Befehle anpassen
-          inhalte = inhalte.split("--");
+          inhalte = inhalte.split(config["syntax"]["befehlPrefix"]);
           for (i = 1; i < inhalte.length; i++) {
              
           // Befehl freistellen
@@ -149,15 +149,21 @@
              var befehl_button = templates["anpassen"]["befehlButton"];
              console.log("befehl_button alt: "+befehl_button);
              
-             if ($.isArray(befehl_button)) { befehl_button = befehl_button.join("a-f-z"); }
-             befehl_button = befehl_button.replace(/a-f-z/g, "");
+             if ($.isArray(befehl_button)) { 
+                befehl_button = befehl_button.join("a-f-z");
+                befehl_button = befehl_button.replace(/a-f-z/g, "");
+                console.log("befehl_button array: "+befehl_button);
+             }
              befehl_button = befehl_button.replace(/%inhalt%/g, inhalt);
              console.log("befehl_button neu: "+befehl_button);
              
+             console.log("befehl: "+config["syntax"]["befehlPrefix"]+"%inhalt%")");
+             text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
+             text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
              text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button); // ..?
-             console.log("text_string: "+text_string);
+             console.log("text_string: "+text_string+"");
              
           // Zurücksetzen
              inhalt = "";
