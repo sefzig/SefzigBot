@@ -157,12 +157,14 @@
              befehl_button = befehl_button.replace(/%inhalt%/g, inhalt);
              console.log("befehl_button neu: "+befehl_button);
              
-             console.log("befehl: "+config["syntax"]["befehlPrefix"]+"%inhalt%");
-             text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
-             text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
-             text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
-             text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button);
-             text_string = text_string.replace(config["syntax"]["befehlPrefix"]+"%inhalt%", befehl_button); // ..?
+             var suche = config["syntax"]["befehlPrefix"]+""+inhalt;
+             console.log("suche: "+config["syntax"]["befehlPrefix"]+""+inhalt);
+             
+             text_string = text_string.replace(suche, befehl_button);
+             text_string = text_string.replace(suche, befehl_button);
+             text_string = text_string.replace(suche, befehl_button);
+             text_string = text_string.replace(suche, befehl_button);
+             text_string = text_string.replace(suche, befehl_button); // ..?
              console.log("text_string: "+text_string+"");
              
           // Zurücksetzen
