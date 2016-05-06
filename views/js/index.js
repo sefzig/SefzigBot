@@ -138,10 +138,6 @@
           // Befehl freistellen
              var inhalt = inhalte[i].split(/,|;|:|\.|\<|!|\?| /)[0];
              
-       // Template laden und anpassen
-          var template = templates["modul"][modul].join();
-          template = template.replace("%button_text%", button_text);
-          
           // Template laden und anpassen
              befehl_button = templates["anpassen"]["befehlButton"];
              befehl_button = befehl_button.join();
