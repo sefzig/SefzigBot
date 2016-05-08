@@ -205,13 +205,12 @@
     
  /* Button */
     .sk-msg .modulButton { 
-       margin-bottom: 0px;
        display: inline-block;
        width: 100%;
     }
     .sk-msg .modulButton > a { 
        margin-top: 5px !important;
-       margin-bottom: 5px !important;
+       margin-bottom: 3px !important;
        color: black !important;
        background-color: silver !important;
        border-color: silver !important;
@@ -251,16 +250,17 @@
     
  /* Dimensionen */
     #fenster { 
-       z-index: 3000;
-       position: fixed;
-       top: 30px;
-       bottom: 0px;
        display: none;
-       background-color: white;
+       position: fixed;
+       z-index: 3000;
+       top: 30px;
+       bottom: 40px;
+       padding: 10px;
+       background-color:rgba(255,255,255,0.5);
     }
     #fenster > div { 
-       z-index: 3001;
        position: fixed;
+       z-index: 3001;
        top: 10px;
        right: 10px;
     }
