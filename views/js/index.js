@@ -420,18 +420,22 @@
        
        if ((methode == "link") || (methode == "links") || (methode == "text")) {
           
+       // Bild verbergen
+          $("#fenster td > img").css("display", "none");
+          
        // Iframe laden
-          $("#fenster > iframe").attr("src", url);
-          $("#fenster > img").css("display", "none");
-          $("#fenster > iframe").css("display", "block");
+          $("#fenster td > iframe").attr("src", url);
+          $("#fenster td > iframe").css("display", "block");
           
        }
        else if (methode == "bild") {
           
+       // Iframe verbergen
+          $("#fenster td > iframe").css("display", "none");
+          
        // Bild laden
-          $("#fenster > img").attr("src", url);
-          $("#fenster > iframe").css("display", "none");
-          $("#fenster > img").css("display", "block");
+          $("#fenster td > img").attr("src", url);
+          $("#fenster td > img").css("display", "block");
           
        }
        
