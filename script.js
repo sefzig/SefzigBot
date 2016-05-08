@@ -258,9 +258,9 @@ module.exports = new Script({
        // Strategie
        // -----------------
           
-          if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland. Hier ein paar Statistiken: [Text:Aktuelle Statistiken,RobogeddonChatten]').then(function(){
+          if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland. Hier ein paar Statistiken: [Text:Aktuelle Statistiken,RobogeddonChatten] Chatten wird normale Kommunikation.').then(function(){
                                                             // return bot.say(SefzigBot+'Seit 2015 verbringt die Welt mehr Zeit mit Messaging-Apps als mit Apps den von Sozialen Netzwerken! [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png]') }).then(function(){
-                                                               return bot.say(SefzigBot+'Chats sind ein weltweiter --Trend - Chat-Bots wiederum sind die naheliegende Schnittstelle für das --Marketing.') }).then(function(){
+                                                               return bot.say(SefzigBot+'Chats sind ein weltweiter --Trend - auch dank ihrer super-einfachen Benutzeroberfläche. Chat-Bots wiederum sind die naheliegende Schnittstelle für das --Marketing. Chat-Bots gibt es übrigens schon recht --lange.') }).then(function(){
                                                             // return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange. Sie werden aber gerade jetzt interessant, da die meisten Menschen mit Chatten vertraut sind und große Anwendungen wie --Facebook, --Slack u.a. ihre Plattformen für Bots öffnen.') }).then(function(){
                                                                return bot.say(SefzigBot+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
           
