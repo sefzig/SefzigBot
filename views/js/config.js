@@ -181,7 +181,11 @@
           "Bild": 
           [
              "<center>",
-                "<img class='%klasse%' src='%inhalt%' />",
+                "<img class='%klasse%' ",
+                "src='%inhalt%' ",
+                "onclick='",
+                   "fenster(\"bild\",\"%inhalt%\");",
+                   "return false;' />",
              "</center>"
           ],
           

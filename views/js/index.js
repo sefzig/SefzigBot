@@ -416,6 +416,7 @@
        if (methode == "link")  { var url = "http://sefzig.net/link/"+kurzel+"/"; }
        if (methode == "links") { var url = "http://sefzig.net/link/liste/"+kurzel+"/"; }
        if (methode == "text")  { var url = "http://sefzig.net/text/"+kurzel+"/"; }
+       if (methode == "bild")  { var url = kurzel; }
        
     // Iframe laden
        $("#fenster > iframe").attr("src", url);
