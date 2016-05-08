@@ -184,7 +184,8 @@
                 "<img class='%klasse%' ",
                 "src='%inhalt%' ",
                 "onclick='",
-                   "fenster(\"bild\",\"%inhalt%\");",
+                   "fenster(\"bild\",\"%inhalt%\"); ",
+                   "console.log(\"bild: %inhalt%\"); ",
                    "return false;' />",
              "</center>"
           ],
