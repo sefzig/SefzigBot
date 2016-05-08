@@ -413,17 +413,34 @@
     function fenster(methode, kurzel) {
        
     // URL errechnen
-       if (methode == "link")  { var url = "http://sefzig.net/link/"+kurzel+"/"; }
-       if (methode == "links") { var url = "http://sefzig.net/link/liste/"+kurzel+"/"; }
-       if (methode == "text")  { var url = "http://sefzig.net/text/"+kurzel+"/"; }
-       if (methode == "bild")  { var url = kurzel; }
+       if (methode == "link")  { var ort = "iframe"; var url = "http://sefzig.net/link/"+kurzel+"/"; }
+       if (methode == "links") { var ort = "iframe"; var url = "http://sefzig.net/link/liste/"+kurzel+"/"; }
+       if (methode == "text")  { var ort = "iframe"; var url = "http://sefzig.net/text/"+kurzel+"/"; }
+       if (methode == "bild")  { var ort = "bild";   var url = kurzel; }
        
-    // Iframe laden
-       $("#fenster > iframe").attr("src", url);
+       if (ort == "iframe") {
+          
+       // Iframe laden
+          $("#fenster > iframe").attr("src", url);
+          $("#fenster > iframe").css("display", "block");
+          $("#fenster > img").css("display", "none");
+          
+       // Ebene öffnen
+          $("#fenster").fadeIn(500);
+          
+       }
+       else if (ort == "bild") {
+          
+       // Bild laden
+          $("#fenster > img").attr("src", url);
+          $("#fenster > img").css("display", "block");
+          $("#fenster > iframe").css("display", "none");
+          
+       }
        
     // Ebene öffnen
        $("#fenster").fadeIn(500);
-       
+          
        return false;
        
     }
