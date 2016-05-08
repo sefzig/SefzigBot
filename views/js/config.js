@@ -134,7 +134,7 @@
              "</div>"
           ],
           
-       // Link aus Linkliste
+       // Link aus Linkliste (Button)
           "Link":
           [
              "<div class='modulButton sk-action'>",
@@ -147,6 +147,19 @@
                    "%button_text%",
                 "</a>",
              "</div>"
+          ],
+          
+       // Link aus Linkliste (Textlink)
+          "Textlink":
+          [
+             "<a class='textLink' ",
+                "href='http://sefzig.net/link/%button_url%/' ",
+                "target='_blank' ",
+                "onclick='",
+                   "fenster(\"link\",\"%button_url%\"); ",
+                   "return false;'>",
+                "%button_text%",
+             "</a>",
           ],
           
        // Button mit Link

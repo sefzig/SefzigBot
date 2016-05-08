@@ -178,7 +178,7 @@
           klasse = klasse.toLowerCase();
           
        // Cta-Text von URL trennen
-          if ((modul == "Button") || (modul == "Text") || (modul == "Link") || (modul == "Linkliste"))  { 
+          if ((modul == "Button") || (modul == "Text") || (modul == "Link") || (modul == "Textlink") || (modul == "Linkliste")) { 
              
           // console.log("> Button Var: "+var1);
              var buttons = text_string.split("["+modul+":");
@@ -358,6 +358,7 @@
        // Inhalte anpassen
           text_neu = inhalt("befehl", text_neu);
           text_neu = inhalt("modul", text_neu, "Link");
+          text_neu = inhalt("modul", text_neu, "Textlink");
           text_neu = inhalt("modul", text_neu, "Text");
           text_neu = inhalt("modul", text_neu, "Bild");
           text_neu = inhalt("modul", text_neu, "Qr");

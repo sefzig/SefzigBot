@@ -258,7 +258,7 @@ module.exports = new Script({
        // Strategie
        // -----------------
           
-          if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Dank ihrer wirklich einfachen Kommunikation sind Chats ein weltweiter --Trend, Tendenz zunehmend.').then(function(){
+          if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Dank ihrer einfachen und direkten Kommunikation sind Chats ein weltweiter --Trend, Tendenz stark zunehmend.').then(function(){
                                                                return bot.say(SefzigBot+'Für das --Marketing sind Chat-Bots ein naheliegender Kanal für den Dialog mit den Menschen.') }).then(function(){
                                                                return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange. Aber sie sind plötzlich interessant, da nun alle* mobil und mit Chatten vertraut sind (und sich die großen --Plattformen für Bots öffnen).') }).then(function(){
                                                             // return bot.say(SefzigBot+'') }).then(function(){
@@ -267,8 +267,8 @@ module.exports = new Script({
        // Intern
        
           if ((~befehl.indexOf("--INTERN")) ||
-              (~befehl.indexOf("--INTERNE")))        { versuch = true; bot.say(SefzigBot+'Es lohnt sich, die interne Kommunikation auf Chat umzustellen. \n Dies zeigt eine --Studie von Slack und wir können das von uns und unseren Kunden bestätigen.').then(function(){
-                                                               return bot.say(SefzigBot+'Wenn Ihr Team dann schon den ganzen Tag einen Chat-Client nutzt, können Sie viele interne und externe --Daten in den Chat holen.') }).then(function(){
+              (~befehl.indexOf("--INTERNE")))        { versuch = true; bot.say(SefzigBot+'Es lohnt, die interne Kommunikation auf Chat umzustellen. Dies zeigt eine --Studie von Slack.').then(function(){
+                                                               return bot.say(SefzigBot+'Wenn Ihr Team dann schon den ganzen Tag einen Chat-Client nutzt, können Sie über Erweiterungen und Bots viele interne und externe --Daten in die Konversation holen.') }).then(function(){
                                                                return bot.say(SefzigBot+'Mit den Prinzipien der --ChatOps als Teil Ihrer --Strategie erleichtern Sie Ihrem Team die Arbeit immens!'); }); }
           
           if  (~befehl.indexOf("--CHATOPS"))        { versuch = true; bot.say(SefzigBot+'ChatOps Text 1.').then(function(){
@@ -285,9 +285,9 @@ module.exports = new Script({
        // Extern
        
           if ((~befehl.indexOf("--EXTERN")) ||
-              (~befehl.indexOf("--EXTERNE")))       { versuch = true; bot.say(SefzigBot+'Bots erleichtern Nutzern den Zugang zu den Marketing-Aktivitäten Ihres Unternehmens. Verstehen Sie Ihren Bot als virtuellen Mitarbeiter, der Nutzer in Empfang nimmt, einfache Fragen beantwortet und sie - bei Bedarf! - direkt in Ihre digitalen Marketing-Maßnahmen verlinkt.').then(function(){
-                                                               return bot.say(SefzigBot+'Bots können alle möglichen zusätzlichen --Aufgaben übernehmen: Von der Newsletter-Registrierung über einen Produkt-Finder bis zum Support mit oder ohne menschliche Unterstützung.') }).then(function(){
-                                                               return bot.say(SefzigBot+'Bots sind leicht aufzusetzen. Vor allem aber sind sie leicht in die unterschiedlichsten Marketing- --Kanäle integrierbar!') }).then(function(){
+              (~befehl.indexOf("--EXTERNE")))       { versuch = true; bot.say(SefzigBot+'Bots ermöglichen einen eleganten Zugang zu Ihren Marketing-Aktivitäten. Verstehen Sie einen Bot als virtuellen Mitarbeiter, der Nutzer in Empfang nimmt, einfache Fragen beantwortet und sie - bei Bedarf! - direkt in Ihre Marketing-Maßnahmen verlinkt.').then(function(){
+                                                               return bot.say(SefzigBot+'Bots können auch alle möglichen --Aufgaben übernehmen: Von der Newsletter-Registrierung über einen Produkt-Finder bis zum Support mit oder ohne menschliche Unterstützung.') }).then(function(){
+                                                               return bot.say(SefzigBot+'Bots sind leicht aufzusetzen (wenn man weiß wie es geht ;). Vor allem aber sind sie leicht in alle Marketing- --Kanäle integrierbar!') }).then(function(){
                                                                return bot.say(KreationsBot+'Wir in der --Kreation liebt es, interessante --Dialoge zu erschaffen, die Nutzern einen konkreten --Mehrwert bieten und sie mit reichhaltigen --Inhalten erfreuen.'); }); }
           
        // Allgemein
@@ -298,7 +298,7 @@ module.exports = new Script({
                                                                return bot.say(SefzigBot+'Ah, Geschichte, immer spannend. Zurück zur --Strategie?'); }); }
           
           if  (~befehl.indexOf("--TREND"))          { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland. Hier ein paar Statistiken: [Text:Aktuelle Statistiken,RobogeddonChatten]').then(function(){
-                                                               return bot.say(SefzigBot+'Seit 2015 verbringt man mehr Zeit mit Messaging-Apps als mit Apps den von Sozialen Netzwerken! [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png]'); }).then(function(){
+                                                               return bot.say(SefzigBot+'Seit 2015 verbringt man in den Usa mehr Zeit mit Messaging-Apps als mit den Apps der Sozialen Netzwerke: [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Quelle: [Textlink:BI Intelligence Report,MessagingVsSocial]'); }).then(function(){
                                                                return bot.say(SefzigBot+'Trend Text 3.'); }); }
           
        // -----------------

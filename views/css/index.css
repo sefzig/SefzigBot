@@ -212,6 +212,11 @@
        border-color: silver !important;
     }
     
+ /* Textlink */
+    .sk-msg a.textLink { 
+       
+    }
+    
  /* Bilder */
     .sk-msg img.bild {
        width: 225px;
