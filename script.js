@@ -259,8 +259,8 @@ module.exports = new Script({
        // -----------------
           
           if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Dank ihrer einfachen und direkten Kommunikation sind Chats ein weltweiter --Trend, Tendenz stark zunehmend.').then(function(){
-                                                               return bot.say(SefzigBot+'Für das --Marketing sind Chat-Bots ein naheliegender Kanal für den Dialog mit den Menschen.') }).then(function(){
-                                                               return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange. Aber sie sind plötzlich interessant, da nun alle* mobil und mit Chatten vertraut sind (und sich die großen --Plattformen für Bots öffnen).') }).then(function(){
+                                                               return bot.say(SefzigBot+'Für das --Marketing sind Chat-Bots ein naheliegender Kanal für den Dialog mit den Menschen. Die Herausforderung ist, Bots nützlich zu machen.') }).then(function(){
+                                                               return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange - aber sie werden plötzlich interessant, da nun alle* mobil und mit Chatten vertraut sind (und sich die großen --Plattformen für Bots öffnen). \n alle "modernen" Menschen') }).then(function(){
                                                             // return bot.say(SefzigBot+'') }).then(function(){
                                                                return bot.say(SefzigBot+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
           
@@ -297,9 +297,9 @@ module.exports = new Script({
                                                                return bot.say(SefzigBot+'2001 setzte das Marketing erstmals im großen Stil einen Chatbot ein - für Radioheads neues Album: %[Artikel auf Medium (englisch)](http://sefzig.net/link/GooglyMinotaur/) ') }).then(function(){
                                                                return bot.say(SefzigBot+'Ah, Geschichte, immer spannend. Zurück zur --Strategie?'); }); }
           
-          if  (~befehl.indexOf("--TREND"))          { versuch = true; bot.say(SefzigBot+'Chatten ist die häufigste digitale Beschäftigung in Deutschland. Hier ein paar Statistiken: [Text:Aktuelle Statistiken,RobogeddonChatten]').then(function(){
+          if  (~befehl.indexOf("--TREND"))          { versuch = true; bot.say(SefzigBot+'Chatten ist inzwischen die häufigste digitale Beschäftigung, auch in Deutschland. Ein paar Statistiken: [Text:Aktuelle Statistiken,RobogeddonChatten]').then(function(){
                                                                return bot.say(SefzigBot+'Seit 2015 verbringt man in den Usa mehr Zeit mit Messaging-Apps als mit den Apps der Sozialen Netzwerke: [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Quelle: [Textlink:BI Intelligence Report,MessagingVsSocial]'); }).then(function(){
-                                                               return bot.say(SefzigBot+'Trend Text 3.'); }); }
+                                                               return bot.say(SefzigBot+'Eine Liste von lesenswerten Artikeln: [Linkliste:Linkliste öffnen,Digitalisierung;Rtm;Artikel] Oder wollen Sie zurück zur --Strategie?'); }); }
           
        // -----------------
        // Konzeption
