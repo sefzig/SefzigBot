@@ -265,8 +265,8 @@
     #fenster div { 
        position: fixed;
        z-index: 3001;
-       top: 10px;
-       right: 10px;
+       top: 20px;
+       right: 20px;
     }
     #fenster > div > img { 
        width: 40px;

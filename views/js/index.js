@@ -414,8 +414,8 @@
        
     // URL errechnen
        if (methode == "link")  { var url = "http://sefzig.net/link/"+kurzel+"/"; }
-       if (methode == "links") { var url = "http://sefzig.net/link/liste/"+kurzel+"/"; }
-       if (methode == "text")  { var url = "http://sefzig.net/text/"+kurzel+"/"; }
+       if (methode == "links") { var url = "http://sefzig.net/link/liste/"+kurzel+"/?ansicht=ansehen"; }
+       if (methode == "text")  { var url = "http://sefzig.net/text/"+kurzel+"/#einbindung"; }
        if (methode == "bild")  { var url = kurzel; }
        
        if ((methode == "link") || (methode == "links") || (methode == "text")) {
