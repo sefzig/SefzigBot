@@ -47,14 +47,14 @@ module.exports = new Script({
                
                if (bekannt == false) {
                
-                  bot.say(EmpfangsBot+'Darf ich Ihnen unsere Agentur vorstellen? Dann schreiben (oder klicken/berühren) Sie bitte --Agentur!')
+                  bot.say(EmpfangsBot+'Darf ich uns Ihnen kurz vorstellen? Dann schreiben (oder klicken oder berühren) Sie bitte --Robogeddon!')
                   .then(() => bot.say(EmpfangsBot+'Ich möchte Sie mit den Bots aus unserer  --Beratung, der --Kreation, der --Konzeption und unserer --Technik bekannt machen.'))
                   .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. Bitte sprechen Sie solange mit meinem Bot über die --Strategie hinter Bots!'));
                
                }
                else {
                
-                  bot.say(EmpfangsBot+'Darf ich Ihnen unsere Agentur zeigen? Dann schreiben Sie bitte --Agentur!')
+                  bot.say(EmpfangsBot+'Darf ich Ihnen mehr über uns zeigen? Dann schreiben Sie bitte --Robogeddon!')
                   .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen unsere  --Beratung, die --Kreation, die --Konzeption und unsere --Technik vorstellen!'));
                
                }
@@ -168,7 +168,7 @@ module.exports = new Script({
                                                                             +'\n○ --Newsletter '
                                                                             +'\n○ --Kontakt '
                                                                             +'\n○ --Über '
-                                                                            +'\n\nDie Gewerke der --Agentur: '
+                                                                            +'\n\nDie Gewerke von --Robogeddon: '
                                                                             +'\n○ Andreas: --Strategie '
                                                                             +'\n○ Barbara: --Beratung '
                                                                             +'\n○ Cynthia: --Technik '
@@ -192,7 +192,7 @@ module.exports = new Script({
                                                                return bot.say(EmpfangsBot+'Ich habe Andreas benachrichtigt.') }).then(function(){
                                                                return bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); }); } 
           if ((~befehl.indexOf("--EMPFANG")) ||
-              (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne unsere --Agentur vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Konzeption, --Technik oder --Beratung.').then(function(){
+              (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne --Robogeddon vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Konzeption, --Technik oder --Beratung.').then(function(){
                                                                return bot.say(EmpfangsBot+'Und ich habe noch mehr --Befehle...'); }); }
           
        // if ((~befehl.indexOf("--KREATION")) ||
@@ -244,11 +244,12 @@ module.exports = new Script({
        // Agentur
        // -----------------
           
-          if  (~befehl.indexOf("--AGENTUR"))        { versuch = true; bot.say(EmpfangsBot+'#Robogeddon sind Andreas Sefzig, mehrere freie Mitarbeiter, eine Handvoll Marketing-Technologien und ein Team aus Bots.').then(function(){
+          if ((~befehl.indexOf("--ROBOGEDON")) ||
+              (~befehl.indexOf("--ROBOGEDDON")))    { versuch = true; bot.say(EmpfangsBot+'#Robogeddon sind Andreas Sefzig, mehrere freie Mitarbeiter, eine Handvoll Marketing-Technologien und ein Team aus Bots.').then(function(){
                                                                return bot.say(EmpfangsBot+'Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation.') }).then(function(){
-                                                               return bot.say(EmpfangsBot+'Wir sind eine junge Agentur auf einem jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen!') }).then(function(){
+                                                               return bot.say(EmpfangsBot+'Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen!') }).then(function(){
                                                             // return bot.say(EmpfangsBot+'Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!') }).then(function(){
-                                                            // return bot.say(EmpfangsBot+'#Robogeddon ist Deutschlands erste Agentur, die Bots für und mit ihren Kunden Bots entwickelt. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.') }).then(function(){
+                                                            // return bot.say(EmpfangsBot+'#Robogeddon sind die ersten in Deutschland, die Chat-Bots für und mit ihren Kunden entwickeln. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.') }).then(function(){
                                                             // return bot.say(EmpfangsBot+'Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).') }).then(function(){
                                                             // return bot.say(EmpfangsBot+'Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.') }).then(function(){
                                                                return bot.say(EmpfangsBot+'Sprechen Sie mit Andreas über die --Strategie und --Konzeption Ihres eigenen Chat-Bots. '); }); }
@@ -325,7 +326,7 @@ module.exports = new Script({
           if  (~befehl.indexOf("--PERSÖNLICHKEIT")) { versuch = true; bot.say(KreationsBot +'Mit Bots chattet man wie mit Menschen. Um --Dialoge abwechslungsreich zu gestalten, erhalten unsere Bots eine Persönlichkeit und eine --Geschichte.'); }
           if  (~befehl.indexOf("--GESCHICHTEN"))    { versuch = true; bot.say(KreationsBot +'Menschen chatten nicht nur, um Informationen weiterzugeben. Unsere Bots haben eine Geschichte, die ihre --Persönlichkeit illustriert und den Bots --Leben einhaucht. '); }
           if  (~befehl.indexOf("--LEBEN"))          { versuch = true; bot.say(KreationsBot +'Das Leben der Bots ist ein einfaches Leben: Sie verarbeiten Informationen. Aber ihre --Persönlichkeit und --Geschichte macht sie einzigartig - mithilfe reichhaltiger --Inhalte.'); }
-          if  (~befehl.indexOf("--INHALTE"))        { versuch = true; bot.say(KreationsBot +'Unsere Techniker haben einen Blumenstrauß möglicher Inhalts-Formate entwickelt, mit denen unsere Bots kommunizieren: Bilder, Videos, Microsites und natürlich Texte. Damit werden die --Mehrwerte unserer Bots leicht und unterhaltsam.'); }
+          if  (~befehl.indexOf("--INHALTE"))        { versuch = true; bot.say(KreationsBot +'Die Techniker haben alle möglichen Inhalts-Formate entwickelt, mit denen unsere Bots kommunizieren: Bilder, Videos, Microsites und natürlich Texte. So sind die --Mehrwerte unserer Bots unterhaltsam und leicht zu konsumieren.'); }
           if  (~befehl.indexOf("--MEHRWERTE"))      { versuch = true; bot.say(KreationsBot +'Ein Bot mag eine nette --Persönlichkeit und eine interessante --Geschichte transportieren - relevant für den Nutzer werden sie nur durch konkrete Mehrwerte. Wir achten darauf, dass unsere Bots den nutzern nützliche Hilfestellungen, wertvolle Inhalte und echte Vorteile verschaffen.'); }
           
        // -----------------

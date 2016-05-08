@@ -123,12 +123,6 @@
        
     }
     
-    function template() {
-       
-       
-       
-    }
-    
  // Texte anpassen
     function inhalt(methode, text_string, var1, var2, var3) {
        
