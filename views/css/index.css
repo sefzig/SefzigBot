@@ -86,13 +86,14 @@
        bottom: 0px;
     }
     #sk-header {
+       display: none;
        top: 0px;
        height: 45px;
     }
     #sk-conversation {
-       top: 42px;
-       bottom: 0px;
-       height: calc(100% - 98px) !important;
+       top: 12px !important;
+       bottom: 0px !important;
+       height: calc(100% - 68px) !important;
     }
     #sk-footer {
        bottom: 0px;
