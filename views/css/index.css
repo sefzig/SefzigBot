@@ -181,8 +181,12 @@
        border: none !important;
     }
     
- /* Buttons */
-    .sk-messages span.befehl { 
+ /* ----------------- */
+ /* Module */
+ /* ----------------- */
+    
+ /* Befehl */
+    .sk-msg span.befehl { 
        margin-top: 1px;
        margin-bottom: 1px;
        padding-left: 3px;
@@ -193,12 +197,26 @@
        color: white;
        cursor: pointer;
     }
-    .sk-messages a.btn-sk-primary {
+    
+ /* Button */
+    .sk-msg .modulButton { 
+       margin-bottom: 0px;
+       display: inline-block;
+       width: 100%;
+    }
+    .sk-msg .modulButton > a { 
        margin-top: 5px !important;
        margin-bottom: 5px !important;
        color: black !important;
        background-color: silver !important;
        border-color: silver !important;
+    }
+    
+ /* Bilder */
+    .sk-msg img.bild {
+       width: 225px;
+       margin-top: 10px;
+       margin-bottom: 5px;
     }
     
  /* ----------------- */

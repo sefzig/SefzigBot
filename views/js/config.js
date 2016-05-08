@@ -84,18 +84,20 @@
     var templates = {
        
     // Templates der Anwendung
-       "anpassen": {
+       "befehl": {
        	
        // Befehle
-          "befehlButton": [
+          "link": [
              
-             "<span ",
-                "class='befehl' ",
-                "onclick='befehlen(\""+config["syntax"]["befehlPrefix"]+"%inhalt%\");'>",
+             "<span class='befehl' ",
+                "onclick='",
+                   "befehlen(\""+config["syntax"]["befehlPrefix"]+"%inhalt%\");",
+                "'>",
                 ""+config["syntax"]["befehlErsatz"]+"%inhalt%",
              "</span>"
              
           ]
+          
        },
        
     // Module
@@ -105,14 +107,10 @@
        // Button zu Text
           "Text":
           [
-             "<div ",
-                "class='sk-action' ",
-                "style='margin-bottom: 0px; ",
-                "display: inline-block; ",
-                "width: 100%;'>",
-                "<a ",
-                   "class='btn btn-sk-primary' ",
-                   "href='http://sefzig.net/text%button_url%/' ",
+             "<div class='modulButton sk-action'>",
+                "<a class='btn btn-sk-primary' ",
+                   "href='http://sefzig.net/text/%button_url%/' ",
+                   "target='_blank' ",
                    "onclick='",
                       "fenster(\"text\",\"%button_url%\"); ",
                       "return false;'>",
@@ -124,15 +122,10 @@
        // Button zu Linkliste
           "Linkliste":
           [
-             "<div ",
-                "class='sk-action' ",
-                "style='margin-bottom: 0px; ",
-                "display: inline-block; ",
-                "width: 100%;'>",
-                   "<a ",
-                   "class='btn btn-sk-primary' ",
+             "<div class='modulButton sk-action'>",
+                "<a class='btn btn-sk-primary' ",
                    "href='http://sefzig.net/link/liste/%button_url%/' ",
-                   "target='_blank'",
+                   "target='_blank' ",
                    "onclick='",
                       "fenster(\"links\",\"%button_url%\"); ",
                       "return false;'>",
@@ -144,15 +137,10 @@
        // Link aus Linkliste
           "Link":
           [
-             "<div ",
-                "class='sk-action' ",
-                "style='margin-bottom: 0px; ",
-                "display: inline-block; ",
-                "width: 100%;'>",
-                "<a ",
-                   "class='btn btn-sk-primary' ",
+             "<div class='modulButton sk-action'>",
+                "<a class='btn btn-sk-primary' ",
                    "href='http://sefzig.net/link/%button_url%/' ",
-                   "target='_blank'",
+                   "target='_blank' ",
                    "onclick='",
                       "fenster(\"link\",\"%button_url%\"); ",
                       "return false;'>",
@@ -164,21 +152,24 @@
        // Button mit Link
           "Button":
           [
-             "<div ",
-                "class='sk-action' ",
-                "style='margin-bottom:0px; ",
-                "display: inline-block; ",
-                "width: 100%;'>",
-                "<a ",
-                   "class='btn btn-sk-primary' ",
+             "<div class='modulButton sk-action'>",
+                "<a class='btn btn-sk-primary' ",
                    "href='%button_url%' ",
-                   "target='_blank'",
+                   "target='_blank' ",
                    "onclick='",
                       "fenster(\"link\",\"%button_url%\"); ",
                       "return false;'>",
                    "%button_text%",
                 "</a>",
              "</div>"
+          ],
+          
+       // Bild-Datei
+          "Bild": 
+          [
+             "<center>",
+                "<img class='%klasse%' src='%inhalt%' />",
+             "</center>"
           ],
           
        // QR-Code als Bild
@@ -191,12 +182,16 @@
              "http://sefzigbot.herokuapp.com/ "
           ],
           
-       // Bild-Datei
-          "Bild": 
+       // Iframe
+          "Iframe":
           [
-             "<center>",
-                "<img class='%klasse%' src='%inhalt%' />",
-             "</center>"
+             "<iframe ",
+                "src='%inhalt%' ",
+                "width='225' ",
+                "height='127' ",
+                "frameborder='0'>",
+                "Frame laden",
+             "</iframe>"
           ],
           
        // Audio-Player
@@ -212,18 +207,6 @@
                 "<source src='%inhalt%' type='audio/mpeg'>",
                    "Lade Audio...",
              "</audio>"
-          ],
-          
-       // Iframe
-          "Iframe":
-          [
-             "<iframe ",
-                "src='%inhalt%' ",
-                "width='225' ",
-                "height='127' ",
-                "frameborder='0'>",
-                "Frame laden",
-             "</iframe>"
           ],
           
        // Youtube-Player

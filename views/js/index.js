@@ -146,7 +146,7 @@
           // console.log("\ninhalt: "+inhalt);
              
           // Template laden und anpassen
-             var befehl_button = templates["anpassen"]["befehlButton"];
+             var befehl_button = templates["befehl"]["link"];
           // console.log("befehl_button alt: "+befehl_button);
              
              if ($.isArray(befehl_button)) { 
