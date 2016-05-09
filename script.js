@@ -298,7 +298,7 @@ module.exports = new Script({
           
           if  (~befehl.indexOf("--TREND"))          { versuch = true; bot.say(SefzigBot+'Chatten ist inzwischen die häufigste digitale Beschäftigung, auch in Deutschland. Ein paar Statistiken: [Text:Aktuelle Statistiken,RobogeddonChatten]').then(function(){
                                                                return bot.say(SefzigBot+'Seit 2015 verbringt man in den Usa mehr Zeit mit Messaging-Apps als mit den Apps der Sozialen Netzwerke: [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Quelle: [Textlink:BI Intelligence Report,MessagingVsSocial]'); }).then(function(){
-                                                               return bot.say(SefzigBot+'Eine Liste lesenswerter Artikel: [Linkliste:Linkliste öffnen,Rtm:Strategie:Artikel] Wollen Sie zurück zur --Strategie?'); }); }
+                                                               return bot.say(SefzigBot+'Eine Liste lesenswerter Artikel zur --Strategie in Real Time Messaging: [Linkliste:Linkliste öffnen,Rtm:Strategie:Artikel]'); }); }
           
           if  (~befehl.indexOf("--MARKETING"))      { versuch = true; bot.say(SefzigBot+'Marketing Text 1.').then(function(){
                                                                return bot.say(SefzigBot+'Marketing Text 2.'); }).then(function(){

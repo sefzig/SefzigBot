@@ -86,9 +86,9 @@
                       
                       Smooch.sendMessage(sagen);
                       
-                   }, 333);
+                   }, 1000);
                    
-                }, 1333);
+                }, 1000);
                 
              }
        
@@ -451,7 +451,7 @@
     }
     function fensterSchliessen() {
               
-       $('#fenster > iframe, #fenster iframe > img').attr('src',''); 
+       $('#fenster td > iframe, #fenster td > img').attr('src',''); 
        $('#fenster').css('display','none');
               
     }
