@@ -84,7 +84,7 @@
                    
                    window.setTimeout(function() { 
                       
-                      Smooch.sendMessage(texte["chat"]["weiterleiten"]+" "+sagen);
+                      Smooch.sendMessage(texte["chat"]["weiterleiten"]+""+sagen);
                       
                    }, 333);
                    
