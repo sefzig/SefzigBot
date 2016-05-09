@@ -136,8 +136,21 @@ module.exports = new Script({
             nachname = message.text; 
             bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+', habe ich das richtig verstanden?'))
+                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+', habe ich das richtig verstanden? [Javascript:cookies(nachname,'+nachname+')] '))
                 .then(() => bot.say(EmpfangsBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
+                .then(() => 'name');
+        }
+    },
+
+    email: {
+    	
+        prompt: (bot) => bot.say(EmpfangsBot+'Wie lautet Ihre E-Mail-Adresse?'),
+        receive: (bot, message) => {
+            email = message.text; 
+            bot.setProp('email', email);
+            return bot.getProp('vorname')
+                .then((vorname) => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+email+'. [Javascript:cookies(email,'+email+')] '))
+                .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern.'))
                 .then(() => 'name');
         }
     },
@@ -193,7 +206,7 @@ module.exports = new Script({
                                                                return bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); }); } 
           if ((~befehl.indexOf("--EMPFANG")) ||
               (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne --Robogeddon vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Konzeption, --Technik oder --Beratung.').then(function(){
-                                                               return bot.say(EmpfangsBot+'Und ich habe noch mehr --Befehle...'); }); }
+                                                               return bot.say(EmpfangsBot+'Ich habe noch mehr --Befehle.'); }); }
           
        // if ((~befehl.indexOf("--KREATION")) ||
        //     (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){

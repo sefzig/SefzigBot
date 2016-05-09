@@ -356,7 +356,7 @@
        var wert = parameter[1];
        
        Cookies.set(name, wert, { expires: 365 }); // 1 Jahr
-       alert("Cookie '"+name+"': "+wert);
+       console.log("Cookie '"+name+"' gesetzt: "+wert);
        
     }
     
