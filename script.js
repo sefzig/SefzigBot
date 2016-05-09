@@ -146,11 +146,11 @@ module.exports = new Script({
     	
         prompt: (bot) => bot.say(EmpfangsBot+'Wie lautet Ihre E-Mail-Adresse?'),
         receive: (bot, message) => {
-            email = message.text; 
-            return bot.setProp('email', email)
-                .then(() => bot.say(EmpfangsBot+`Ihre E-Mail-Adresse ist ${email}. [Javascript:cookies(email,${email})] `))
-                .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern. Ansonsten lassen Sie uns zurück zum --Empfang gehen. '))
-                .then(() => 'name');
+            emailz = message.text; 
+            return bot.setProp('email', emailz)
+                .then(() => bot.say(EmpfangsBot+`Ihre E-Mail-Adresse ist ${emailz}. [Javascript:cookies(email,${emailz})] `))
+                .then(() => bot.say(EmpfangsBot+`Schreiben Sie --Email, um sie zu ändern.`))
+                .then(() => 'register');
         }
     },
 
