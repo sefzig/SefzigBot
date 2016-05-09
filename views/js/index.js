@@ -248,9 +248,12 @@
              
           // Funktions-Namen freistellen
              var skript = inhalte[i].split("]")[0];
+             var funktion = skript[0];
+             
+             console.log("funktion: "+funktion);
              
           // Neuen Text anpassen
-             text_string = text_string.replace("[Javascript:"+skript+""+meldungString+""+parameterString+"]", meldung);
+             text_string = text_string.replace("[Javascript:"+funktion+""+meldungString+""+parameterString+"]", meldung);
              
           // Bekannte Funktionen ausführen
              funktionen[skript](parameter);
