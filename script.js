@@ -272,7 +272,7 @@ module.exports = new Script({
           
           if  (~befehl.indexOf("--CHATOPS"))        { versuch = true; bot.say(SefzigBot+'ChatOps Text 1.').then(function(){
                                                                return bot.say(SefzigBot+'ChatOps Text 2.'); }).then(function(){
-                                                               return bot.say(SefzigBot+'ChatOps Text 3.'); }); }
+                                                               return bot.say(SefzigBot+'Zurück zu --Strategie --intern.'); }); }
           
           if  (~befehl.indexOf("--DATEN"))          { versuch = true; bot.say(SefzigBot+'Mit Bots und Erweiterungen geben Sie Ihrem Team rollen-basierten Zugriff auf diverse Daten-Quellen und Marketing-Technologien, deren Daten aufgrund der Natur des Chats immer nur ein, zwei Wörter weit entfernt sind.').then(function(){
                                                                return bot.say(SefzigBot+'Viele Erweiterungen, z.B. von Slack, erlauben auch die (eingeschränkte) Steuerung von Diensten wie Jira, Skype oder Mailchimp.') }).then(function(){

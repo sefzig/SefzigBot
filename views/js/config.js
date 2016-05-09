@@ -75,7 +75,7 @@
           "messageIndicatorTitlePlural": "({count}) neue Nachrichten",
           
        // URL-Parameter übernehmen
-          "weiterleiten": "Weiterleiten:"
+          "weiterleiten": "Bitte leiten Sie mich weiter:"
        }
        
     };

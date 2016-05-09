@@ -80,12 +80,13 @@
              
                 window.setTimeout(function() { 
                    
-                   Smooch.receiveMessage(texte["chat"]["weiterleiten"]);
+                // Smooch.sendMessage(texte["chat"]["weiterleiten"]);
+                   
                    window.setTimeout(function() { 
                       
-                      Smooch.sendMessage(sagen);
+                      Smooch.sendMessage(texte["chat"]["weiterleiten"]+" "+sagen);
                       
-                   }, 1000);
+                   }, 333);
                    
                 }, 1000);
                 
@@ -132,6 +133,7 @@
        if (methode == "befehl") {
        
        // Befehle anpassen
+          inhalte = inhalte.replace(texte["chat"]["weiterleiten"], "");
           inhalte = inhalte.split(config["syntax"]["befehlPrefix"]);
           for (i = 1; i < inhalte.length; i++) {
              
