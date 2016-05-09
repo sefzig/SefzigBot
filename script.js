@@ -124,7 +124,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             vorname = message.text;
             return bot.setProp('vorname', vorname)
-                .then(() => bot.say(EmpfangsBot+`${vorname}, prima. [Javascript:cookies(`+vorname+`)]`))
+                .then(() => bot.say(EmpfangsBot+`${vorname}, prima. [Javascript:cookies(vorname,`+vorname+`)]`))
                 .then(() => 'nachname');
         }
     },

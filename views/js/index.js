@@ -351,7 +351,12 @@
  // Cookies
     function cookies(params) {
        
-       alert("Cookie: "+params);
+       parameter = params.split(",");
+       var name = daten["cookie"][parameter[0]];
+       var wert = parameter[1];
+       
+       Cookies.set(name, wert, { expires: 365 }); // 1 Jahr
+       alert("Cookie '"+name+"': "+wert);
        
     }
     
