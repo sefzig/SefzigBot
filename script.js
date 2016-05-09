@@ -146,13 +146,12 @@ module.exports = new Script({
     	
         prompt: (bot) => bot.say(EmpfangsBot+'Wie lautet Ihre E-Mail-Adresse?'),
         receive: (bot, message) => {
-            vorname = message.text;
-            return bot.setProp('vorname', vorname)
-                .then(() => bot.say(EmpfangsBot+`${vorname}, prima. [Javascript:cookies(email,`+vorname+`)]`))
+            email = message.text;
+            return bot.setProp('email', email)
+                .then(() => bot.say(EmpfangsBot+`${email}, prima. [Javascript:cookies(email,`+email+`)]`))
                 .then(() => 'register');
         }
     },
-
  // -------------------------
  // Register
  // -------------------------
