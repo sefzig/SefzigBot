@@ -3,9 +3,9 @@
     $(document).ready(function(){
        
     // Konto füllen
-       var vorname =  Cookies.get('SefzigbotVorname');  if ((vorname)  && (vorname != ""))  { $("#vorname").val(vorname);   } else { vorname  = texte["daten"]["vorname"];  } $("#vorname").change(function(){  Cookies.set('SefzigbotVorname',  $(this).val()); });
-       var nachname = Cookies.get('SefzigbotNachname'); if ((nachname) && (nachname != "")) { $("#nachname").val(nachname); } else { nachname = texte["daten"]["nachname"]; } $("#nachname").change(function(){ Cookies.set('SefzigbotNachname', $(this).val()); });
-       var email =    Cookies.get('SefzigbotEmail');    if ((email)    && (email != ""))    { $("#email").val(email);       } else { email    = texte["daten"]["email"];    } $("#email").change(function(){    Cookies.set('SefzigbotEmail',    $(this).val()); });
+       var vorname =  Cookies.get(daten["cookie"]["vorname"]);  if ((vorname)  && (vorname != ""))  { $("#vorname").val(vorname);   } else { vorname  = daten["label"]["vorname"];  } $("#vorname").change(function(){  Cookies.set(daten["cookie"]["vorname"],  $(this).val()); });
+       var nachname = Cookies.get(daten["cookie"]["nachname"]); if ((nachname) && (nachname != "")) { $("#nachname").val(nachname); } else { nachname = daten["label"]["nachname"]; } $("#nachname").change(function(){ Cookies.set(daten["cookie"]["nachname"], $(this).val()); });
+       var email =    Cookies.get(daten["cookie"]["email"]);    if ((email)    && (email != ""))    { $("#email").val(email);       } else { email    = daten["label"]["email"];    } $("#email").change(function(){    Cookies.set(daten["cookie"]["email"],    $(this).val()); });
        
     // Chat starten
        var starten = config["anwendung"]["defaultAnsicht"];
@@ -39,13 +39,13 @@
     // Chat starten
        if (methode == "chat") {
           
-       // Konsole beginnen
-       // console.log('Neues Gespräch');
+       // Debuggen
+       // console.log('\n\nNeues Gespräch\n');
           
-       // Umgebungs-Parameter einsammeln
-          var vorname =  Cookies.get('SefzigbotVorname');  if ((!vorname)  || (vorname  == "") || (vorname  == texte["daten"]["vorname"]))  { vorname  = texte["daten"]["vorname_default"];  }
-          var nachname = Cookies.get('SefzigbotNachname'); if ((!nachname) || (nachname == "") || (nachname == texte["daten"]["nachname"])) { nachname = texte["daten"]["nachname_default"]; }
-          var email =    Cookies.get('SefzigbotEmail');    if ((!email)    || (email    == "") || (email    == texte["daten"]["email"]))    { email    = texte["daten"]["email_default"];    }
+       // Umgebungs-Parameter und Defaults
+          var vorname =  Cookies.get(daten["cookie"]["vorname"]);  if ((!vorname)  || (vorname  == "") || (vorname  == daten["label"]["vorname"]))  { vorname  = daten["default"]["vorname"];  }
+          var nachname = Cookies.get(daten["cookie"]["nachname"]); if ((!nachname) || (nachname == "") || (nachname == daten["label"]["nachname"])) { nachname = daten["default"]["nachname"]; }
+          var email =    Cookies.get(daten["cookie"]["email"]);    if ((!email)    || (email    == "") || (email    == daten["label"]["email"]))    { email    = daten["default"]["email"];    }
           
        // Smooch Js
        // https://github.com/smooch/smooch-js
@@ -293,36 +293,38 @@
        }
        
        window.setTimeout(function() { 
-       $(".sk-from").each(function() {
           
-          var dieser =    $(this).html();
-          var vorganger = $(this).parent().parent().prev().find(".sk-from").html();
-       // console.log("- "+vorganger+" = "+dieser+"?");
-       
-       // Bei folgendem Absender
-          if (vorganger == dieser) {
+          $(".sk-from").each(function() {
              
-          // Namen hier verbergen
-             $(this).css("display","none");
-             $(this).parent().parent().css("padding-top","10px");
-             
-          // Avatar davor verbergen
-             $(this).parent().parent().prev().children().filter("img.sk-msg-avatar").attr("src", "img/bots/Displaybild_LeerBot.png");
-             
-          // Pfeilchen davor verbergen
-             $(this).parent().parent().prev().find(".sk-msg").addClass("frei");
-             $('head').append("<style>.sk-msg.frei::after{ border: none !important }</style>");
-             
-          }
-          else {
-             
-          // console.log("> Anderer Vorganger: "+vorganger+" != "+name+"");
-             
-          }
-          vorganger = "";
-          dieser = "";
+             var dieser =    $(this).html();
+             var vorganger = $(this).parent().parent().prev().find(".sk-from").html();
+          // console.log("- "+vorganger+" = "+dieser+"?");
           
-       });
+          // Bei folgendem Absender
+             if (vorganger == dieser) {
+                
+             // Namen hier verbergen
+                $(this).css("display","none");
+                $(this).parent().parent().css("padding-top","10px");
+                
+             // Avatar davor verbergen
+                $(this).parent().parent().prev().children().filter("img.sk-msg-avatar").attr("src", "img/bots/Displaybild_LeerBot.png");
+                
+             // Pfeilchen davor verbergen
+                $(this).parent().parent().prev().find(".sk-msg").addClass("frei");
+                $('head').append("<style>.sk-msg.frei::after{ border: none !important }</style>");
+                
+             }
+             else {
+                
+             // console.log("> Anderer Vorganger: "+vorganger+" != "+name+"");
+                
+             }
+             vorganger = "";
+             dieser = "";
+             
+          });
+          
        }, 333);
        
        return text_string; 

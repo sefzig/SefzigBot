@@ -2,10 +2,12 @@
  // Einstellungen
     var config = {
        
-    // Smooch-Bot
-       "smooch": {
+    // Ansichten
+       "anwendung": {
           
-          "appToken": "d9k415y76nk8ab2croifjshpv"
+          "id": "Sefzigbot", // Robogeddon
+          "name": "Andreas Sefzigs Robogeddon",
+          "defaultAnsicht": "chat" // data
           
        },
        
@@ -18,32 +20,52 @@
           
        },
        
-    // Ansichten
-       "anwendung": {
+    // Smooch-Bot
+       "smooch": {
           
-          "defaultAnsicht": "chat"
+          "appToken": "d9k415y76nk8ab2croifjshpv"
           
        }
        
     };
     
- // Texte
-    var texte = {
+ // Nutzerdaten
+    var daten = {
        
-    // Texte der Dateneingabe
-       "daten": {
+    // Labels
+       "label": {
        	
-       // Labels
+       // Datensatz
           "vorname": "Vorname",
           "nachname": "Nachname",
-          "email": "E-Mail-Adresse",
-          
-       // Defaults
-          "vorname_defaut": "Nicht",
-          "nachname_defaut": "Bekannt",
-          "email_defaut": "unbekannt@sefzig.net"
+          "email": "E-Mail-Adresse"
           
        },
+       
+    // Defaults
+       "default": {
+       	
+       // Datensatz
+          "vorname": "Nicht",
+          "nachname": "Bekannt",
+          "email": "unbekannt@sefzig.net"
+          
+       },
+       
+    // Cookies
+       "cookie": {
+       	
+       // Namen
+          "vorname":  ""+config["anwendung"]["id"]+"Vorname",
+          "nachname": ""+config["anwendung"]["id"]+"Nachname",
+          "email":    ""+config["anwendung"]["id"]+"Email"
+          
+       }
+       
+    };
+       
+ // Texte
+    var texte = {
        
     // Texte des Chats
        "chat": {
