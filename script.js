@@ -167,14 +167,14 @@ module.exports = new Script({
                                                                             +'\n○ --Mobil '
                                                                             +'\n○ --Newsletter '
                                                                             +'\n○ --Kontakt '
-                                                                            +'\n○ --Über '
-                                                                            +'\n\nDie Gewerke von --Robogeddon: '
+                                                                            +'\n○ --Über') }).then(function(){
+                                                               return bot.say(EmpfangsBot+'Die Gewerke von --Robogeddon: '
                                                                             +'\n○ Andreas: --Strategie '
                                                                             +'\n○ Barbara: --Beratung '
                                                                             +'\n○ Cynthia: --Technik '
                                                                             +'\n○ Doris: --Kreation '
-                                                                            +'\n○ Erika: --Konzeption '
-                                                                            +'\n\nMehr über --Robogeddon: '
+                                                                            +'\n○ Erika: --Konzeption') }).then(function(){
+                                                               return bot.say(EmpfangsBot+'Mehr über --Robogeddon: '
                                                                             +'\n○ --Gründung '
                                                                             +'\n○ --Vision '
                                                                             +'\n○ --Über '); }

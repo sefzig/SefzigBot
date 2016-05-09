@@ -3,12 +3,12 @@
     $(document).ready(function(){
        
     // Konto füllen
-       var vorname =  Cookies.get('SefzigbotVorname');  if ((vorname)  && (vorname != ""))  { $("#vorname").val(vorname);   } else { vorname  = "Vorname";        } $("#vorname").change(function(){  Cookies.set('SefzigbotVorname',  $(this).val()); });
-       var nachname = Cookies.get('SefzigbotNachname'); if ((nachname) && (nachname != "")) { $("#nachname").val(nachname); } else { nachname = "Nachname";       } $("#nachname").change(function(){ Cookies.set('SefzigbotNachname', $(this).val()); });
-       var email =    Cookies.get('SefzigbotEmail');    if ((email)    && (email != ""))    { $("#email").val(email);       } else { email    = "E-Mail-Adresse"; } $("#email").change(function(){    Cookies.set('SefzigbotEmail',    $(this).val()); });
+       var vorname =  Cookies.get('SefzigbotVorname');  if ((vorname)  && (vorname != ""))  { $("#vorname").val(vorname);   } else { vorname  = texte["daten"]["vorname"];  } $("#vorname").change(function(){  Cookies.set('SefzigbotVorname',  $(this).val()); });
+       var nachname = Cookies.get('SefzigbotNachname'); if ((nachname) && (nachname != "")) { $("#nachname").val(nachname); } else { nachname = texte["daten"]["nachname"]; } $("#nachname").change(function(){ Cookies.set('SefzigbotNachname', $(this).val()); });
+       var email =    Cookies.get('SefzigbotEmail');    if ((email)    && (email != ""))    { $("#email").val(email);       } else { email    = texte["daten"]["email"];    } $("#email").change(function(){    Cookies.set('SefzigbotEmail',    $(this).val()); });
        
     // Chat starten
-       var starten = "chat";
+       var starten = config["anwendung"]["defaultAnsicht"];
        var ansicht = getParameters("v");
        if (ansicht == "chat") { starten = "chat"; }
        if (ansicht == "data") { starten = "daten"; }
@@ -80,15 +80,15 @@
              
                 window.setTimeout(function() { 
                    
-                // Smooch.sendMessage(texte["chat"]["weiterleiten"]);
+                   Smooch.sendMessage(texte["chat"]["weiterleiten"]);
                    
                    window.setTimeout(function() { 
                       
-                      Smooch.sendMessage(texte["chat"]["weiterleiten"]+""+sagen);
+                      Smooch.sendMessage(sagen);
                       
                    }, 333);
                    
-                }, 1000);
+                }, 1333);
                 
              }
        
@@ -133,7 +133,6 @@
        if (methode == "befehl") {
        
        // Befehle anpassen
-          inhalte = inhalte.replace(texte["chat"]["weiterleiten"], "");
           inhalte = inhalte.split(config["syntax"]["befehlPrefix"]);
           for (i = 1; i < inhalte.length; i++) {
              

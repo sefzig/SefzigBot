@@ -18,12 +18,10 @@
           
        },
        
-    // Folgt
-       "folgt": {
+    // Ansichten
+       "anwendung": {
           
-          "folgt": "folgt",
-          "folgt": "folgt",
-          "folgt": "folgt"
+          "defaultAnsicht": "chat"
           
        }
        
@@ -75,7 +73,7 @@
           "messageIndicatorTitlePlural": "({count}) neue Nachrichten",
           
        // URL-Parameter übernehmen
-          "weiterleiten": "Bitte leiten Sie mich weiter: "
+          "weiterleiten": "Weiterleiten zu: "
        }
        
     };
