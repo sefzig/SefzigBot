@@ -21,6 +21,8 @@ var bekannt = false;
 var vorname = "Unbekannter";
 var nachname = "Besucher";
 var email = "test@sefzig.net";
+var emailkorrekt = false;
+var emailregex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 module.exports = new Script({
     
@@ -148,10 +150,24 @@ module.exports = new Script({
         prompt: (bot) => bot.say(EmpfangsBot+'Wie lautet Ihre E-Mail-Adresse?'),
         receive: (bot, message) => {
             email = message.text;
-            return bot.setProp('email', email)
-                .then(() => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+email+', prima. [Javascript:cookies(email,'+email+')]'))
-                .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern. Oder lassen Sie uns zurück zum --Empfang gehen.'))
-                .then(() => 'register');
+            
+            emailkorrekt = email.test(emailregex);
+            
+            if (emailkorrekt == true) {
+            	
+               return bot.setProp('email', email)
+                  .then(() => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+email+', prima. [Javascript:cookies(email,'+email+')]'))
+                  .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern. Oder lassen Sie uns zurück zum --Empfang gehen.'))
+                  .then(() => 'register');
+               
+            }
+            else {
+            	
+               return bot.say(EmpfangsBot+''+email+' ist keine valide E-Mail-Adresse.')
+                  .then(() => bot.say(EmpfangsBot+'Bitte geben Sie Ihre E-Mail-Adresse nochmal ein - oder lassen Sie uns zum --Empfang zurückkehren.'))
+                  .then(() => 'emailadresse');
+               
+            }
         }
     },
 
