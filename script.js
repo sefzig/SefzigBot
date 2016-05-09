@@ -148,9 +148,9 @@ module.exports = new Script({
         receive: (bot, message) => {
             email = message.text; 
             bot.setProp('email', email);
-            return bot.getProp('vorname')
-                .then((vorname) => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+email+'. [Javascript:cookies(email,'+email+')] '))
-                .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern.'))
+            return bot.getProp('email')
+                .then((email) => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+email+'. [Javascript:cookies(email,'+email+')] '))
+                .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern. Ansonsten lassen Sie uns zurück zum --Empfang gehen.'))
                 .then(() => 'name');
         }
     },
@@ -250,7 +250,7 @@ module.exports = new Script({
                                                                    }
           
           if  (~befehl.indexOf("--EMAIL"))          { versuch = true; dann = "email";
-          	                                                          bot.say('Email-Eingabe folgt.');
+          	                                                          bot.say(EmpfangsBot+'Wir geben Ihre E-Mail-Adresse nicht weiter. ');
                                                                    }
           
        // -----------------
