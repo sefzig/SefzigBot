@@ -149,10 +149,11 @@ module.exports = new Script({
             vorname = message.text;
             return bot.setProp('vorname', vorname)
                 .then(() => bot.say(EmpfangsBot+`Ihre E-Mail-Adresse ist ${vorname}, prima. [Javascript:cookies(email,`+vorname+`)]`))
+                .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern.'))
                 .then(() => 'register');
         }
     },
-    
+
  // -------------------------
  // Register
  // -------------------------
