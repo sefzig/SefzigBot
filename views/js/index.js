@@ -86,7 +86,7 @@
                       
                       Smooch.sendMessage(sagen);
                       
-                   }, 300);
+                   }, 1000);
                    
                 }, 1000);
                 
