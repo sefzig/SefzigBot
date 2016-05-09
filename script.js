@@ -260,14 +260,13 @@ module.exports = new Script({
           
           if  (~befehl.indexOf("--STRATEGIE"))      { versuch = true; bot.say(SefzigBot+'Dank ihrer einfachen und direkten Kommunikation sind Chats ein weltweiter --Trend, Tendenz stark zunehmend.').then(function(){
                                                                return bot.say(SefzigBot+'Für das --Marketing sind Chat-Bots ein naheliegender Kanal für den Dialog mit den Menschen. Die Herausforderung ist, Bots nützlich zu machen.') }).then(function(){
-                                                               return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange - aber sie werden plötzlich interessant, da nun alle* mobil und mit Chatten vertraut sind (und sich die großen --Plattformen für Bots öffnen). \n alle "modernen" Menschen') }).then(function(){
-                                                            // return bot.say(SefzigBot+'') }).then(function(){
+                                                               return bot.say(SefzigBot+'Chat-Bots gibt es schon --lange. Sie werden plötzlich interessant, da nun alle "modernen" Menschen mobil und mit Chatten vertraut sind und sich die großen --Plattformen wie Facebook Messenger für Bots öffnen.') }).then(function(){
                                                                return bot.say(SefzigBot+'Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren?'); }); }
           
        // Intern
        
           if ((~befehl.indexOf("--INTERN")) ||
-              (~befehl.indexOf("--INTERNE")))        { versuch = true; bot.say(SefzigBot+'Es lohnt, die interne Kommunikation auf Chat umzustellen. Dies zeigt eine --Studie von Slack.').then(function(){
+              (~befehl.indexOf("--INTERNE")))       { versuch = true; bot.say(SefzigBot+'Die Erfahrung und eine --Studie von Slack zeigen, dass es sich lohnt, die interne Kommunikation auf Chat umzustellen.').then(function(){
                                                                return bot.say(SefzigBot+'Wenn Ihr Team dann schon den ganzen Tag einen Chat-Client nutzt, können Sie über Erweiterungen und Bots viele interne und externe --Daten in die Konversation holen.') }).then(function(){
                                                                return bot.say(SefzigBot+'Mit den Prinzipien der --ChatOps als Teil Ihrer --Strategie erleichtern Sie Ihrem Team die Arbeit immens!'); }); }
           
@@ -277,7 +276,7 @@ module.exports = new Script({
           
           if  (~befehl.indexOf("--DATEN"))          { versuch = true; bot.say(SefzigBot+'Mit Bots und Erweiterungen geben Sie Ihrem Team rollen-basierten Zugriff auf diverse Daten-Quellen und Marketing-Technologien, deren Daten aufgrund der Natur des Chats immer nur ein, zwei Wörter weit entfernt sind.').then(function(){
                                                                return bot.say(SefzigBot+'Viele Erweiterungen, z.B. von Slack, erlauben auch die (eingeschränkte) Steuerung von Diensten wie Jira, Skype oder Mailchimp.') }).then(function(){
-                                                               return bot.say(SefzigBot+'Daten in Konversationen haben zudem einen --intern lehrreichen Charakter: Man sieht im Chat, wie die Kollegen Daten abfragen und Ihre Tools steuern. Gut für Ihre --Strategie!'); }); }
+                                                               return bot.say(SefzigBot+'Daten in Konversationen haben zudem einen --intern lehrreichen Charakter: Man sieht im Chat, wie die Kollegen Daten abfragen und Ihre Werkzeuge steuern. Gut für Ihre --Strategie!'); }); }
           
           if  (~befehl.indexOf("--STUDIE"))         { versuch = true; bot.say(SefzigBot+'Der führende Chat-Anbieter Slack hat im Juli 2015 eine Studie durchgeführt: [Button:Studie von Slack,http://slack.com/results] Nach eigenen Angaben haben Teams einen Produktivitäts-Gewinn von bis zu 32% durch den Einsatz von Slack, 80% sehen mehr Transparenz und fast 50% weniger Emails.').then(function(){
                                                                return bot.say(TechnikBot+'Wir in der Technik setzen auf --ChatOps und haben --intern eine eigene Studie durchgeführt: Wir kommunizieren schriftlich zu 100% über --Slack und steuern unsere Marketing-Technologien zu 80% im Chat.'); }); }
@@ -300,6 +299,10 @@ module.exports = new Script({
           if  (~befehl.indexOf("--TREND"))          { versuch = true; bot.say(SefzigBot+'Chatten ist inzwischen die häufigste digitale Beschäftigung, auch in Deutschland. Ein paar Statistiken: [Text:Aktuelle Statistiken,RobogeddonChatten]').then(function(){
                                                                return bot.say(SefzigBot+'Seit 2015 verbringt man in den Usa mehr Zeit mit Messaging-Apps als mit den Apps der Sozialen Netzwerke: [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Quelle: [Textlink:BI Intelligence Report,MessagingVsSocial]'); }).then(function(){
                                                                return bot.say(SefzigBot+'Eine Liste lesenswerter Artikel: [Linkliste:Linkliste öffnen,Rtm:Strategie:Artikel] Wollen Sie zurück zur --Strategie?'); }); }
+          
+          if  (~befehl.indexOf("--MARKETING"))      { versuch = true; bot.say(SefzigBot+'Marketing Text 1.').then(function(){
+                                                               return bot.say(SefzigBot+'Marketing Text 2.'); }).then(function(){
+                                                               return bot.say(SefzigBot+'Zurück zur --Strategie.'); }); }
           
        // -----------------
        // Konzeption

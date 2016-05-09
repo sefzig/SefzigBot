@@ -80,7 +80,7 @@
              
                 window.setTimeout(function() { 
                    
-                   Smooch.sendMessage(texte["chat"]["weiterleiten"]);
+                   Smooch.receiveMessage(texte["chat"]["weiterleiten"]);
                    window.setTimeout(function() { 
                       
                       Smooch.sendMessage(sagen);
@@ -371,17 +371,18 @@
           
        // Bots anpassen
           var text_merken = text_neu;
-          text_neu = inhalt("bot", text_neu, "SefzigBot",     "Andreas Sefzigs Bot", zufall);
+          text_neu = inhalt("bot", text_neu, "SefzigBot",      "Andreas Sefzigs Bot", zufall);
           
-          text_neu = inhalt("bot", text_neu, "LinkBot",       "Link Bot",               zufall);
-          text_neu = inhalt("bot", text_neu, "TextBot",       "Text Bot",               zufall);
-          text_neu = inhalt("bot", text_neu, "SlackBot",      "Slack Bot",              zufall);
-          text_neu = inhalt("bot", text_neu, "AndreasSefzig", "Andreas Sefzig",         zufall);
+          text_neu = inhalt("bot", text_neu, "LinkBot",        "Link Bot",               zufall);
+          text_neu = inhalt("bot", text_neu, "TextBot",        "Text Bot",               zufall);
+          text_neu = inhalt("bot", text_neu, "SlackBot",       "Slack Bot",              zufall);
+          text_neu = inhalt("bot", text_neu, "AndreasSefzig",  "Andreas Sefzig",         zufall);
           
-          text_neu = inhalt("bot", text_neu, "EmpfangsBot",   "Alice, Empfangs-Bot",    zufall);
-          text_neu = inhalt("bot", text_neu, "KreationsBot",  "Doris, Kreations-Bot",   zufall);
-          text_neu = inhalt("bot", text_neu, "BeratungsBot",  "Barbara, Beratungs-Bot", zufall);
-          text_neu = inhalt("bot", text_neu, "TechnikBot",    "Cynthia, Technik-Bot",   zufall);
+          text_neu = inhalt("bot", text_neu, "EmpfangsBot",    "Alice, Empfangs-Bot",    zufall);
+          text_neu = inhalt("bot", text_neu, "KreationsBot",   "Doris, Kreations-Bot",   zufall);
+          text_neu = inhalt("bot", text_neu, "BeratungsBot",   "Barbara, Beratungs-Bot", zufall);
+          text_neu = inhalt("bot", text_neu, "TechnikBot",     "Cynthia, Technik-Bot",   zufall);
+          text_neu = inhalt("bot", text_neu, "KonzeptionsBot", "Erika, Konzeptions-Bot", zufall);
           
        // Default-Bot
           if (text_neu == text_merken) { text_neu = "[AndreasSefzig] "+text_neu; }
