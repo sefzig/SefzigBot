@@ -235,11 +235,12 @@
           
        }
        
-       if ((methode == "javascript") && (var1) && (var1 != "") && (var2) && (var2 != "")) {
+       if ((methode == "javascript") && (var1) && (var1 != "") && (var2) && (var2 != "") && (var3) && (var3 != "")) {
           
        // Funktions-Parameter
           var funktionen = var1;
-          var meldung = var2;
+          var meldung = var2;    if ((meldung)   && (meldung != ""))   { meldungString =   ","+meldung;   } else { meldungString   = ""; }
+          var parameter = var3;  if ((parameter) && (parameter != "")) { parameterString = ","+parameter; } else { parameterString = ""; }
              
        // Javascript ausführen
           inhalte = inhalte.split("[Javascript:");
@@ -249,10 +250,10 @@
              var skript = inhalte[i].split("]")[0];
              
           // Neuen Text anpassen
-             text_string = text_string.replace("[Javascript:"+skript+"]", meldung);
+             text_string = text_string.replace("[Javascript:"+skript+""+meldungString+""+parameterString+"]", meldung);
              
           // Bekannte Funktionen ausführen
-             funktionen[skript]();
+             funktionen[skript](parameter);
              
           // Debuggen
           // console.log("- Javascript ausgeführt: "+skript);
@@ -349,7 +350,7 @@
           
        // Zugelassene Javascript-Funktionen
           var funktionen = {
-             test_alert:   function () { alert('Hallo Welt!'); },
+             test_alert:   function (b) { alert(b); },
              test_console: function () { console.log('> Hallo Welt!'); },
              blinken:      function () { blink(); }
           };
