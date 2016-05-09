@@ -20,7 +20,7 @@ var bekannt = false;
 
 var vorname = "Unbekannter";
 var nachname = "Besucher";
-var emailangabe = "test@sefzig.net";
+var email = "test@sefzig.net";
 
 module.exports = new Script({
     
@@ -147,9 +147,9 @@ module.exports = new Script({
     	
         prompt: (bot) => bot.say(EmpfangsBot+'Wie lautet Ihre E-Mail-Adresse?'),
         receive: (bot, message) => {
-            emailangabe = message.text;
-            return bot.setProp('email', emailangabe)
-                .then(() => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+emailangabe+', prima. [Javascript:cookies(email,'+emailangabe+')]'))
+            email = message.text;
+            return bot.setProp('email', email)
+                .then(() => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+email+', prima. [Javascript:cookies(email,'+email+')]'))
                 .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern. Oder lassen Sie uns zurück zum --Empfang gehen.'))
                 .then(() => 'register');
         }
