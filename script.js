@@ -20,6 +20,7 @@ var bekannt = false;
 
 var vorname = "Unbekannter";
 var nachname = "Besucher";
+var emailangabe = "test@sefzig.net";
 
 module.exports = new Script({
     
