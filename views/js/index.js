@@ -81,10 +81,11 @@
                 window.setTimeout(function() { 
                    
                    Smooch.sendMessage(texte["chat"]["weiterleiten"]);
+                   Smooch.sendMessage(sagen);
                    
                    window.setTimeout(function() { 
                       
-                      Smooch.sendMessage(sagen);
+                      
                       
                    }, 1000);
                    
