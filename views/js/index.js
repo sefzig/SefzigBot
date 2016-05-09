@@ -438,7 +438,7 @@
           $("#fenster td > iframe").css("display", "none");
           
        // Bild laden
-          $("#fenster td > img:not(.fensterSchliessen)").attr("src", url);
+          $("#fenster td > img").attr("src", url);
           $("#fenster td > img").css("display", "block");
           
        }
