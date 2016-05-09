@@ -146,9 +146,9 @@ module.exports = new Script({
     	
         prompt: (bot) => bot.say(EmpfangsBot+'Wie lautet Ihre E-Mail-Adresse?'),
         receive: (bot, message) => {
-            vorname = message.text;
-            return bot.setProp('email', vorname)
-                .then(() => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+vorname+', prima. [Javascript:cookies(email,'+vorname+')]'))
+            emailangabe = message.text;
+            return bot.setProp('email', emailangabe)
+                .then(() => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+emailangabe+', prima. [Javascript:cookies(email,'+vorname+')]'))
                 .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern. Oder lassen Sie uns zurück zum --Empfang gehen.'))
                 .then(() => 'register');
         }
