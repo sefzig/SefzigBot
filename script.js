@@ -142,14 +142,14 @@ module.exports = new Script({
         }
     },
 
-    email1: {
+    emailadresse: {
     	
         prompt: (bot) => bot.say(EmpfangsBot+'Wie lautet Ihre E-Mail-Adresse?'),
         receive: (bot, message) => {
-            vorname = message.text;
-            return bot.setProp('vorname', vorname)
-                .then(() => bot.say(EmpfangsBot+`Ihre E-Mail-Adresse ist ${vorname}, prima. [Javascript:cookies(email,`+vorname+`)]`))
-                .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern.'))
+            emailadresse = message.text;
+            return bot.setProp('email', emailadresse)
+                .then(() => bot.say(EmpfangsBot+`Ihre E-Mail-Adresse ist ${emailadresse}, prima. [Javascript:cookies(email,`+vorname+`)]`))
+                .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern. Oder lassen Sie uns zurück zum --Empfang gehen.'))
                 .then(() => 'register');
         }
     },
@@ -248,7 +248,7 @@ module.exports = new Script({
                                                                       bot.say(aussage);
                                                                    }
           
-          if  (~befehl.indexOf("--EMAIL"))          { versuch = true; dann = "email1";
+          if  (~befehl.indexOf("--EMAIL"))          { versuch = true; dann = "emailadresse";
           	                                                          bot.say(EmpfangsBot+'Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter!');
                                                                    }
           
