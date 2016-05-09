@@ -177,7 +177,7 @@ module.exports = new Script({
                                                                return bot.say(EmpfangsBot+'Mehr über --Robogeddon: '
                                                                             +'\n○ --Gründung '
                                                                             +'\n○ --Vision '
-                                                                            +'\n○ --Über '); }
+                                                                            +'\n○ --Über '); }); }
           if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(function(){
                                                                return bot.say(TechnikBot+'Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung...'); }); }
           if ((~befehl.indexOf("--UBER")) ||
