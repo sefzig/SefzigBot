@@ -193,7 +193,7 @@ module.exports = new Script({
                                                                return bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); }); } 
           if ((~befehl.indexOf("--EMPFANG")) ||
               (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne --Robogeddon vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Konzeption, --Technik oder --Beratung.').then(function(){
-                                                               return bot.say(EmpfangsBot+'Und ich habe noch mehr --Befehle...'); }); }
+                                                               return bot.say(EmpfangsBot+'Ich habe noch mehr --Befehle...'); }); }
           
        // if ((~befehl.indexOf("--KREATION")) ||
        //     (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
