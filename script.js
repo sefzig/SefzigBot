@@ -148,7 +148,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             emailadresse = message.text;
             bot.setProp('emailadresse', emailadresse);
-            return bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+emailadresse+', prima. [Javascript:cookies(email,'+emailadresse+')]'))
+            return bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+emailadresse+', prima. [Javascript:cookies(email,'+emailadresse+')]')
                 .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern. Oder lassen Sie uns zurück zum --Empfang gehen.'))
                 .then(() => 'register');
         }
