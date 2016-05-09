@@ -383,7 +383,7 @@ module.exports = new Script({
        // Tests
        // -----------------
        
-          if  (~befehl.indexOf("--JAVASCRIPT"))     { versuch = true; bot.say(SefzigBot+'[Javascript:test_alert,Läuft.,Alert-Text.]'); }
+          if  (~befehl.indexOf("--JAVASCRIPT"))     { versuch = true; bot.say(SefzigBot+'[Javascript:test_alert(123)]'); }
           if  (~befehl.indexOf("--VIDEO"))          { versuch = true; bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
           if  (~befehl.indexOf("--LINKTEST"))       { versuch = true; bot.say(SefzigBot+'Ein Link: [Link:Testlink,ThinMedia]'); }
           

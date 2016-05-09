@@ -235,12 +235,11 @@
           
        }
        
-       if ((methode == "javascript") && (var1) && (var1 != "") && (var2) && (var2 != "") && (var3) && (var3 != "")) {
+       if ((methode == "javascript") && (var1) && (var1 != "") && (var2) && (var2 != "")) {
           
        // Funktions-Parameter
           var funktionen = var1;
-          var meldung = var2;    if ((meldung)   && (meldung != ""))   { meldungString =   ","+meldung;   } else { meldungString   = ""; }
-          var parameter = var3;  if ((parameter) && (parameter != "")) { parameterString = ","+parameter; } else { parameterString = ""; }
+          var meldung = var2;
              
        // Javascript ausführen
           inhalte = inhalte.split("[Javascript:");
@@ -248,21 +247,35 @@
              
           // Funktions-Namen freistellen
              var skript = inhalte[i].split("]")[0];
-             var funktion = skript[0];
              
-             console.log("funktion: "+funktion);
+             var aufruf = skript.split("(");
+             if (aufruf[1]) { 
+                var funktion = aufruf[0];
+                var params = aufruf[1];
+                params = params.replace(")", "");
+                
+                var ersetzen = funktion+"("+params+")";
+             }
+             else { 
+                var funktion = skript;
+                var params = "";
+                
+                var ersetzen = skript;
+             }
              
           // Neuen Text anpassen
-             text_string = text_string.replace("[Javascript:"+funktion+""+meldungString+""+parameterString+"]", meldung);
+             text_string = text_string.replace("[Javascript:"+ersetzen+"]", meldung);
              
           // Bekannte Funktionen ausführen
-             funktionen[skript](parameter);
+             funktionen[funktion](params);
              
           // Debuggen
           // console.log("- Javascript ausgeführt: "+skript);
              
           // Zurücksetzen
              var skript = "";
+             var funktion = "";
+             var params = "";
              
           }
           
