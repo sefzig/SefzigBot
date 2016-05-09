@@ -348,6 +348,13 @@
        
     }
     
+ // Cookies
+    function cookies(params) {
+       
+       alert("Cookie: "+params);
+       
+    }
+    
  // Inhalte anpassen
     function anpassen() {
        
@@ -367,8 +374,9 @@
        // Zugelassene Javascript-Funktionen
           var funktionen = {
              test_alert:   function (b) { alert(b); },
-             test_console: function () { console.log('> Hallo Welt!'); },
-             blinken:      function () { blink(); }
+             test_console: function (b) { console.log('> '+b); },
+             blinken:      function ()  { blink(); },
+             cookies:      function (b) { cookies(b); }
           };
           
        // Bot-Inhalte markieren :/
