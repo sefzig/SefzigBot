@@ -561,6 +561,7 @@
              
           });
           
+          console.log("cookie input wert: "+wert);
           return wert;
           
        }
