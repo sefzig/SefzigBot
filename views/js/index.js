@@ -163,6 +163,7 @@
  // Texte anpassen
     function inhalt(methode, text_string, var1, var2, var3) {
        
+       console.log("> inhalt()");
        text_string = " "+text_string+" ";
        var inhalte = text_string;
        
@@ -339,7 +340,7 @@
              text_string = text_string.replace("["+kurzel+"] ","");
              
           // Debuggen
-          // console.log("- Bot angepasst: "+name);
+             console.log("- Bot angepasst: "+kurzel);
              
           }
           
