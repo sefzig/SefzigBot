@@ -136,7 +136,7 @@
        margin-bottom: 10px;
     }
     
-    @media (min-width:   1px) { #seite > #menu, #seite > #menu #formular input { font-size:  8px !important; } #seite > #menu h2 { font-size: 12px; } #seite > #menu h3 { font-size: 10px !important; } }
+    @media (min-width:   1px) { #seite > #menu { font-size:  8px !important; } #seite > #menu h2 { font-size: 12px; } #seite > #menu h3 { font-size: 10px !important; } }
     @media (min-width: 400px) { #seite > #menu, #seite > #menu #formular input { font-size:  9px !important; } #seite > #menu h2 { font-size: 13px; } #seite > #menu h3 { font-size: 11px !important; } }
     @media (min-width: 430px) { #seite > #menu, #seite > #menu #formular input { font-size: 10px !important; } #seite > #menu h2 { font-size: 14px; } #seite > #menu h3 { font-size: 12px !important; } }
     @media (min-width: 460px) { #seite > #menu, #seite > #menu #formular input { font-size: 11px !important; } #seite > #menu h2 { font-size: 15px; } #seite > #menu h3 { font-size: 13px !important; } }
@@ -154,6 +154,10 @@
        background-color: #00aeff;
        color: white;
        cursor: pointer;
+    }
+    #seite > #menu div > div span.aktiv { 
+       background-color: #ffffff !important;
+       color: black !important;
     }
     
     #seite > #menu #formular li {

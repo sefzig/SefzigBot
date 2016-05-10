@@ -161,9 +161,8 @@
     }
     
  // Texte anpassen
-    function inhalt(methode, text_string, var1, var2, var3) {
+    function inhalt(methode, text_string, var1, var2, var3, var4) {
        
-       console.log("> inhalt()");
        text_string = " "+text_string+" ";
        var inhalte = text_string;
        
@@ -318,12 +317,13 @@
           
        }
        
-       if ((methode == "bot") && (var1) && (var1 != "") && (var2) && (var2 != "") && (var3) && (var3 != "")) {
+       if ((methode == "bot") && (var1) && (var1 != "") && (var2) && (var2 != "") && (var3) && (var3 != "") && (var4) && (var4 != "")) {
           
        // Funktions-Parameter
           var kurzel = var1;
           var name = var2;
           var zufall = var3;
+          var id = var4;
              
        // Wenn Text den Botnamen enthält
           bot_alt = inhalte; bot_neu = inhalte.replace("["+var1+"] ","");
@@ -340,7 +340,10 @@
              text_string = text_string.replace("["+kurzel+"] ","");
              
           // Debuggen
-             console.log("- Bot angepasst: "+kurzel);
+             console.log("- Bot angepasst: "+id);
+             
+             $("#seite > #menu li span").removeClass("aktiv");
+             $("#seite > #menu li span:contains('"+id+"')").addClass("aktiv");
              
           }
           
@@ -453,22 +456,22 @@
           
        // Bots anpassen
           var text_merken = text_neu;
-          text_neu = inhalt("bot", text_neu, "SefzigBot",      "Andreas Sefzigs Bot", zufall);
+          text_neu = inhalt("bot", text_neu, "SefzigBot",      "Andreas Sefzigs Bot",    zufall, "Sefzig");
           
-          text_neu = inhalt("bot", text_neu, "LinkBot",        "Link Bot",               zufall);
-          text_neu = inhalt("bot", text_neu, "TextBot",        "Text Bot",               zufall);
-          text_neu = inhalt("bot", text_neu, "SlackBot",       "Slack Bot",              zufall);
-          text_neu = inhalt("bot", text_neu, "AndreasSefzig",  "Andreas Sefzig",         zufall);
+          text_neu = inhalt("bot", text_neu, "LinkBot",        "Link Bot",               zufall, "Link");
+          text_neu = inhalt("bot", text_neu, "TextBot",        "Text Bot",               zufall, "Text");
+          text_neu = inhalt("bot", text_neu, "SlackBot",       "Slack Bot",              zufall, "Slack");
+          text_neu = inhalt("bot", text_neu, "AndreasSefzig",  "Andreas Sefzig",         zufall, "Sefzig");
           
-          text_neu = inhalt("bot", text_neu, "EmpfangsBot",    "Alice, Empfangs-Bot",    zufall);
-          text_neu = inhalt("bot", text_neu, "KreationsBot",   "Doris, Kreations-Bot",   zufall);
-          text_neu = inhalt("bot", text_neu, "BeratungsBot",   "Barbara, Beratungs-Bot", zufall);
-          text_neu = inhalt("bot", text_neu, "TechnikBot",     "Cynthia, Technik-Bot",   zufall);
-          text_neu = inhalt("bot", text_neu, "KonzeptionsBot", "Erika, Konzeptions-Bot", zufall);
+          text_neu = inhalt("bot", text_neu, "EmpfangsBot",    "Alice, Empfangs-Bot",    zufall, "Empfang");
+          text_neu = inhalt("bot", text_neu, "KreationsBot",   "Doris, Kreations-Bot",   zufall, "Kreation");
+          text_neu = inhalt("bot", text_neu, "BeratungsBot",   "Barbara, Beratungs-Bot", zufall, "Beratung");
+          text_neu = inhalt("bot", text_neu, "TechnikBot",     "Cynthia, Technik-Bot",   zufall, "Technik");
+          text_neu = inhalt("bot", text_neu, "KonzeptionsBot", "Erika, Konzeptions-Bot", zufall, "Konzeption");
           
        // Default-Bot
           if (text_neu == text_merken) { text_neu = "[AndreasSefzig] "+text_neu; }
-          text_neu = inhalt("bot", text_neu, "AndreasSefzig", "Andreas Sefzig", zufall);
+          text_neu = inhalt("bot", text_neu, "AndreasSefzig",  "Andreas Sefzig",         zufall, "Sefzig");
           
        // Angepasste Inhalte schreiben
           $(this).html(text_neu);
