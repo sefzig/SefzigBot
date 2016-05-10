@@ -542,7 +542,7 @@
           var wert = Cookies.get(daten["cookie"][name]);  
           if ((wert)  && (wert != ""))  { wert = wert; } 
           else { wert = daten["label"][name]; } 
-          $("#"+name).val(wert);
+          $("#"+name).val(wert).trigger("change");
           
           $("#"+name).change(function(){  
              
@@ -555,7 +555,7 @@
              }
              else {
                 
-                $("#"+name).val(daten["label"][name]);
+                $("#"+name).val(daten["label"][name]).trigger("change");
                 
              }
              
