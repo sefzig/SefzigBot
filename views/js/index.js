@@ -2,16 +2,11 @@
  // Anwendung starten
     $(document).ready(function(){
        
-    // Daten ausfüllen
-       var vorname =  Cookies.get(daten["cookie"]["vorname"]);  if ((vorname)  && (vorname != ""))  { $("#vorname").val(vorname);   } else { vorname  = daten["label"]["vorname"];  } $("#vorname").change(function(){  Cookies.set(daten["cookie"]["vorname"],  $(this).val()); });
-       var nachname = Cookies.get(daten["cookie"]["nachname"]); if ((nachname) && (nachname != "")) { $("#nachname").val(nachname); } else { nachname = daten["label"]["nachname"]; } $("#nachname").change(function(){ Cookies.set(daten["cookie"]["nachname"], $(this).val()); });
-       var email =    Cookies.get(daten["cookie"]["email"]);    if ((email)    && (email != ""))    { $("#email").val(email);       } else { email    = daten["label"]["email"];    } $("#email").change(function(){    Cookies.set(daten["cookie"]["email"],    $(this).val()); });
+    // Datenfelder ausfüllen
+       cookie("vorname");
+       cookie("nachname");
+       cookie("email");
        
-    // Umgebungs-Parameter und Defaults [aus start(chat)]
-    // var vorname =  Cookies.get(daten["cookie"]["vorname"]);  if ((!vorname)  || (vorname  == "") || (vorname  == daten["label"]["vorname"]))  { vorname  = daten["default"]["vorname"];  }
-    // var nachname = Cookies.get(daten["cookie"]["nachname"]); if ((!nachname) || (nachname == "") || (nachname == daten["label"]["nachname"])) { nachname = daten["default"]["nachname"]; }
-    // var email =    Cookies.get(daten["cookie"]["email"]);    if ((!email)    || (email    == "") || (email    == daten["label"]["email"]))    { email    = daten["default"]["email"];    }
-          
     // Chat starten
        var starten = config["anwendung"]["defaultAnsicht"];
        var ansicht = getParameters("v");
@@ -132,9 +127,25 @@
        if (methode == "menu") {
           
        // Debuggen
-          console.log('\n\nNeues Menü\n');
+          console.log('\n\nMenü geklickt\n');
           
-          $("#seite > #menu").fadeToggle();
+          var status = $("body").attr("data-menu");
+          
+          if (status == "an") {
+             
+             status_neu = "aus";
+             left_neu = "+=40%";
+             
+          }
+          else {
+             
+             status_neu = "an";
+             left_neu = "-=40%";
+             
+          }
+          
+          $("#seite > #menu").animate({ right: left_neu }, 300);
+          $("body").attr("data-menu", status_neu);
           
        }
        
@@ -501,4 +512,37 @@
        $('#fenster').css('display','none');
               
     }
-     
+    
+ // Helper: Cookie
+    function cookie(name) {
+       
+       if (name) {
+          
+          var wert = Cookies.get(daten["cookie"][name]);  
+          if ((wert)  && (wert != ""))  { wert = wert; } 
+          else { wert = daten["label"][name]; } 
+          $("#"+name).val(wert);
+          
+          $("#"+name).change(function(){  
+             
+             var wert_neu = $(this).val();
+             
+             if ((wert_neu) && (wert_neu != "") && (wert_neu != daten["label"][name]) && (wert_neu != daten["default"][name])) {
+                
+                Cookies.set(daten["cookie"][name], wert_neu);
+                
+             }
+             else {
+                
+                $("#"+name).val(daten["label"][name]);
+                
+             }
+             
+          });
+          
+          return wert;
+          
+       }
+       
+    }
+    

@@ -62,6 +62,10 @@
        left: 0px;
        right: 0px;
     }
+    #seite > #daten > div,
+    #seite > #menu > div {
+       margin: 10px;
+    }
     #seite > #daten {
        z-index: 101;
        background:red;
@@ -72,13 +76,13 @@
     }
     #seite > #menu {
        z-index: 103;
-       right: 0px;
+       right: -40%;
+       bottom: 55px;
        width: 40%;
        max-width: 250px;
     }
-    #seite > #daten > div,
     #seite > #menu > div {
-       margin: 10px;
+       overflow: hidden;
     }
     
  /* Burger-Menü */
@@ -115,6 +119,16 @@
        background: black;
        color: white;
     }
+    @media (min-width:   1px) { #seite > #menu { font-size:  8px; } #seite > #menu h2 { font-size: 12px; } #seite > #menu h3 { font-size: 10px !important; } }
+    @media (min-width: 400px) { #seite > #menu { font-size:  9px; } #seite > #menu h2 { font-size: 13px; } #seite > #menu h3 { font-size: 11px !important; } }
+    @media (min-width: 430px) { #seite > #menu { font-size: 10px; } #seite > #menu h2 { font-size: 14px; } #seite > #menu h3 { font-size: 12px !important; } }
+    @media (min-width: 460px) { #seite > #menu { font-size: 11px; } #seite > #menu h2 { font-size: 15px; } #seite > #menu h3 { font-size: 13px !important; } }
+    @media (min-width: 500px) { #seite > #menu { font-size: 12px; } #seite > #menu h2 { font-size: 16px; } #seite > #menu h3 { font-size: 14px !important; } }
+    @media (min-width: 550px) { #seite > #menu { font-size: 13px; } #seite > #menu h2 { font-size: 17px; } #seite > #menu h3 { font-size: 15px !important; } }
+    @media (min-width: 600px) { #seite > #menu { font-size: 14px; } #seite > #menu h2 { font-size: 18px; } #seite > #menu h3 { font-size: 16px !important; } }
+    
+    body[data-menu="an"]  .sk-right-row .sk-msg { margin-right: 0%;  transition: all 0.3s linear; }
+    body[data-menu="aus"] .sk-right-row .sk-msg { margin-right: 40%; transition: all 0.3s linear; }
     
  /* ----------------- */
  /* Web Widget        */

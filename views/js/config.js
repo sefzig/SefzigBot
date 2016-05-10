@@ -46,9 +46,9 @@
        "default": {
        	
        // Datensatz
-          "vorname": "Nicht",
-          "nachname": "Bekannt",
-          "email": "unbekannt@sefzig.net"
+          "vorname": "Daniel",
+          "nachname": "Tester",
+          "email": "daniel.tester@sefzig.net"
           
        },
        
