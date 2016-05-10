@@ -52,7 +52,7 @@ module.exports = new Script({
                
                   bot.say(EmpfangsBot+'Darf ich uns Ihnen kurz vorstellen? Dann schreiben (oder klicken oder berühren) Sie bitte --Robogeddon.')
                   .then(() => bot.say(EmpfangsBot+'Ich möchte Sie mit den Bots aus unserer  --Beratung, der --Kreation, der --Konzeption und unserer --Technik bekannt machen!'))
-                  .then(() => bot.say());
+                  .then(() => bot.say(EmpfangsBot+'Beachten Sie das Menü und dessen Button rechts oben für eine "klassische" Ansicht der Inhalte dieser Seite.'));
                // AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. Bitte sprechen Sie solange mit meinem Bot über die --Strategie hinter Bots!'
                }
                else {

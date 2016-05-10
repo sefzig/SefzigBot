@@ -7,7 +7,7 @@
           
           "id": "Sefzigbot", // Robogeddon
           "name": "Andreas Sefzigs Robogeddon",
-          "defaultAnsicht": "daten" // chat, daten
+          "defaultAnsicht": "chat" // chat, daten
           
        },
        

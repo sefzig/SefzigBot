@@ -156,6 +156,28 @@
        cursor: pointer;
     }
     
+    #seite > #menu #formular li {
+       margin: 0px;
+       width: 100%;
+    }
+    #seite > #menu #formular input {
+       display: inline-block;
+       margin: 0px;
+       margin-top: 1px;
+       margin-left: 0px;
+       margin-bottom: 1px;
+       padding-left: 3px;
+       padding-right: 3px;
+       background-color: #ff00ff;
+       border: 0px white solid;
+       border-radius: 2px;
+       color: white;
+       font-size: 14px;
+    }
+    #seite > #menu #formular input[type="submit"] {
+       display: none;
+    }
+    
  /* ----------------- */
  /* Web Widget        */
  /* ----------------- */
