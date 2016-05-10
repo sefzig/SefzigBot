@@ -20,41 +20,57 @@
     <script src="js/cookies.js"></script>
     <script src="js/funktionen.js"></script>
   </head>
-  <body>
+  <body data-menu="an">
     <div id="seite">
       <div id="intro" style="display:none">
         <!--
         <h2>Funktionen</h2>
         <ul>
+          <li><a href="#daten"    data-start="daten">   Einstellungen</a></li>
           <li><a href="#chat"     data-start="chat"    >Andreas Sefzigs Bot</a></li>
           <li><a href="#facebook" data-start="facebook">Facebook Messenger</a></li>
           <li><a href="#slack"    data-start="slack"   >Offenes Slack-Team</a></li>
           <li><a href="#webseite" data-start="webseite">Klassische Webseite</a></li>
-          <li><a href="#daten"    data-start="daten">   Einstellungen</a></li>
         </ul>
         -->
       </div>
-      <div id="uber">
-        <iframe src="http://sefzig.net/text/Robogeddon/#einbindung"></iframe>
-      </div>
       <div id="daten">
-        <h2>Einstellungen</h2>
-        <input type="text" id="vorname"  value="Ihr Vorname"><br />
-        <input type="text" id="nachname" value="Ihr Nachname"><br />
-        <input type="text" id="email"    value="Ihre E-Mail-Adresse"><br /><br />
-        <input type="submit" value="Gespräch beginnen" onclick="chatStarten();" />
+        <h2>Daten</h2>
+        <div id="formular">
+          <input type="text" id="vorname"  value="a"><br />
+          <input type="text" id="nachname" value="b"><br />
+          <input type="text" id="email"    value="c"><br /><br />
+          <input type="submit" value="Gespräch beginnen" data-start="chat" />
+        </div>
       </div>
-      <div id="chat" style="top:-12px">
-        Lade Chat...
+      <div id="menu">
+        <h2>Menü</h2>
+        <div>
+          Text.
+        </div>
+        <div>
+          Text.
+        </div>
+        <div>
+          Text.
+        </div>
+      </div>
+      <div id="chat" style="display:none;">
+        <div id="chatContainer">
+          Lade Chat...
+        </div>
       </div>
       <div id="fenster" onclick="fensterSchliessen();">
         <table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"><tr width="100%"><td height="40"></tr><tr><td align="center" valign="center">
           <iframe src=""></iframe>
           <img src="" />
-        </td></tr><!--<tr><td height="55"></td></tr>--></table>
+        </td></tr><!--<tr><td height="55">Fusszeile</td></tr>--></table>
         <div>
           <img src="img/ui/Schliessen.png" onclick="fensterSchliessen();" />
         </div>
+      </div>
+      <div id="start" style="">
+        <img src="img/ui/Menu.png" data-start="menu" style="" />
       </div>
     </div>
     <script src="https://cdn.smooch.io/smooch.min.js"></script>

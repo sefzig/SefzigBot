@@ -47,32 +47,77 @@
  /* Seite */
  /* ----------------- */
     
- /* Default nicht anzeigen */
-    #seite > div {
-       display: none;
-    }
-    
  /* Dimensionen */
-    #seite, #seite > div {
+    #seite > #daten, 
+    #seite > #chat, 
+    #seite > #menu, 
+    #seite > #fenster {
        position: absolute;
        top: 0px;
-       right: 0px;
        bottom: 0px;
+    }
+    #seite > #daten,
+    #seite > #chat,
+    #seite > #fenster {
        left: 0px;
+       right: 0px;
+    }
+    #seite > #daten {
+       z-index: 101;
+       background:red;
     }
     #seite > #chat {
-       position: absolute;
-       top: -30px;
-       right: 0px;
-       bottom: 0px;
-       left: -7px;
+       z-index: 102;
+       top: -10px; /* :/ */
     }
-    #seite > #chat > * {
-       margin-right: 1px;
+    #seite > #menu {
+       z-index: 103;
+       right: 0px;
+       width: 40%;
+       max-width: 250px;
+    }
+    #seite > #daten > div,
+    #seite > #menu > div {
+       margin: 10px;
+    }
+    
+ /* Burger-Menü */
+    #seite > #start {
+       z-index: 104;
+       position: absolute; 
+       top: 10px; 
+       right: 10px; 
+       left: none; 
+       bottom: none;
+    }
+    #seite > #start > img {
+       width: 25px; 
+       height: 25px; 
+       cursor: pointer;
     }
     
  /* ----------------- */
- /* Web Widget */
+ /* Seiten            */
+ /* ----------------- */
+    
+ /* Daten */
+    #seite > #daten {
+       background: transparent;
+    }
+    
+ /* Chat */
+    #seite > #chat {
+       background: white;
+    }
+    
+ /* Menü */
+    #seite > #menu {
+       background: black;
+       color: white;
+    }
+    
+ /* ----------------- */
+ /* Web Widget        */
  /* ----------------- */
     
  /* Dimensionen */

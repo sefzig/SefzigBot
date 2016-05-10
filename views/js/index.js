@@ -2,16 +2,21 @@
  // Anwendung starten
     $(document).ready(function(){
        
-    // Konto füllen
+    // Daten ausfüllen
        var vorname =  Cookies.get(daten["cookie"]["vorname"]);  if ((vorname)  && (vorname != ""))  { $("#vorname").val(vorname);   } else { vorname  = daten["label"]["vorname"];  } $("#vorname").change(function(){  Cookies.set(daten["cookie"]["vorname"],  $(this).val()); });
        var nachname = Cookies.get(daten["cookie"]["nachname"]); if ((nachname) && (nachname != "")) { $("#nachname").val(nachname); } else { nachname = daten["label"]["nachname"]; } $("#nachname").change(function(){ Cookies.set(daten["cookie"]["nachname"], $(this).val()); });
        var email =    Cookies.get(daten["cookie"]["email"]);    if ((email)    && (email != ""))    { $("#email").val(email);       } else { email    = daten["label"]["email"];    } $("#email").change(function(){    Cookies.set(daten["cookie"]["email"],    $(this).val()); });
        
+    // Umgebungs-Parameter und Defaults [aus start(chat)]
+    // var vorname =  Cookies.get(daten["cookie"]["vorname"]);  if ((!vorname)  || (vorname  == "") || (vorname  == daten["label"]["vorname"]))  { vorname  = daten["default"]["vorname"];  }
+    // var nachname = Cookies.get(daten["cookie"]["nachname"]); if ((!nachname) || (nachname == "") || (nachname == daten["label"]["nachname"])) { nachname = daten["default"]["nachname"]; }
+    // var email =    Cookies.get(daten["cookie"]["email"]);    if ((!email)    || (email    == "") || (email    == daten["label"]["email"]))    { email    = daten["default"]["email"];    }
+          
     // Chat starten
        var starten = config["anwendung"]["defaultAnsicht"];
        var ansicht = getParameters("v");
-       if (ansicht == "chat") { starten = "chat"; }
-       if (ansicht == "data") { starten = "daten"; }
+       if (ansicht == "chat")  { starten = "chat"; }
+       if (ansicht == "daten") { starten = "daten"; }
        window.setTimeout(function() { start(starten); }, 100);
        
     // Benutzeroberfläche
@@ -21,7 +26,8 @@
           var starten = $(this).attr("data-start");
           
        // Navigation
-          start(starten); 
+          start(starten);
+          console.log("> Start: "+starten);
           
        // Klick verhindern
           e.preventDefault();
@@ -34,7 +40,7 @@
     function start(methode) {
        
     // Ansichten anpassen
-       $("#seite > div").fadeOut();
+    // $("#seite > div").fadeOut();
        
     // Chat starten
        if (methode == "chat") {
@@ -43,9 +49,9 @@
        // console.log('\n\nNeues Gespräch\n');
           
        // Umgebungs-Parameter und Defaults
-          var vorname =  Cookies.get(daten["cookie"]["vorname"]);  if ((!vorname)  || (vorname  == "") || (vorname  == daten["label"]["vorname"]))  { vorname  = daten["default"]["vorname"];  }
-          var nachname = Cookies.get(daten["cookie"]["nachname"]); if ((!nachname) || (nachname == "") || (nachname == daten["label"]["nachname"])) { nachname = daten["default"]["nachname"]; }
-          var email =    Cookies.get(daten["cookie"]["email"]);    if ((!email)    || (email    == "") || (email    == daten["label"]["email"]))    { email    = daten["default"]["email"];    }
+          var vorname =  $("#vorname").val();
+          var nachname = $("#nachname").val();
+          var email =    $("#email").val();
           
        // Smooch Js
        // https://github.com/smooch/smooch-js
@@ -95,7 +101,7 @@
           }, 100); }); 
           
        // Smooch.open();
-          Smooch.render(document.getElementById('chat'));
+          Smooch.render(document.getElementById('chatContainer'));
           Smooch.on('message:sent', function(message) {
              
           // console.log('- Nutzer hat eine Nachricht gesendet');
@@ -111,16 +117,26 @@
              
           });
           
+       // Konversation rendern
+          anpassen();
+          
+          $("#seite > #chat").fadeIn();
+       
        // Fokus auf Eingabe
           $("#sk-footer .message-input").focus();
+       // window.setTimeout(function() { blink(); }, 2000);
           
        }
        
-       anpassen();
-       
-       $("#seite #"+methode).fadeIn();
-    // window.setTimeout(function() { blink(); }, 2000);
-       $(".message-input").focus();
+    // Menü anzeigen starten
+       if (methode == "menu") {
+          
+       // Debuggen
+          console.log('\n\nNeues Menü\n');
+          
+          $("#seite > #menu").fadeToggle();
+          
+       }
        
     }
     
