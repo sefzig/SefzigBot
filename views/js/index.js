@@ -425,7 +425,7 @@
           var funktionen = {
              test_alert:   function (b) { alert(b); },
              test_console: function (b) { console.log('> '+b); },
-          // blinken:      function ()  { blink(); },
+             blinken:      function ()  { blink(); },
              cookies:      function (b) { cookies(b); },
              menu:         function ()  { menu(); }
           };
