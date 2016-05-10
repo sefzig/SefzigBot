@@ -29,6 +29,13 @@
           
        });
        
+       $("#seite > #menu div > div span").click(function() {
+          
+          var befehl = $(this).text();
+          Smooch.sendMessage("--"+befehl);
+          
+       });
+       
     });
     
  // Chat starten
@@ -387,6 +394,17 @@
        
     }
     
+    function menu() {
+       
+       var status = $("body").attr("data-menu");
+       if (status == "an") {
+          
+          $("#start img").trigger("click");
+          
+       }
+       
+    }
+    
  // Inhalte anpassen
     function anpassen() {
        
@@ -408,7 +426,8 @@
              test_alert:   function (b) { alert(b); },
              test_console: function (b) { console.log('> '+b); },
              blinken:      function ()  { blink(); },
-             cookies:      function (b) { cookies(b); }
+             cookies:      function (b) { cookies(b); },
+             menu:         function ()  { menu(); }
           };
           
        // Bot-Inhalte markieren :/

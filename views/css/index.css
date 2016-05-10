@@ -63,8 +63,13 @@
        right: 0px;
     }
     #seite > #daten > div,
+    #seite > #menu > div > div {
+       margin: 15px;
+       margin-bottom: 0px;
+    }
     #seite > #menu > div {
-       margin: 10px;
+       width: 100%;
+       max-width: 250px;
     }
     #seite > #daten {
        z-index: 101;
@@ -72,16 +77,15 @@
     }
     #seite > #chat {
        z-index: 102;
-       top: -10px; /* :/ */
+       top: -12px; /* :/ */
     }
     #seite > #menu {
        z-index: 103;
        right: -40%;
        bottom: 55px;
        width: 40%;
-       max-width: 250px;
     }
-    #seite > #menu > div {
+    #seite > #menu > div > div {
        overflow: hidden;
     }
     
@@ -118,17 +122,35 @@
     #seite > #menu {
        background: black;
        color: white;
+       line-height: 20px;
     }
-    @media (min-width:   1px) { #seite > #menu { font-size:  8px; } #seite > #menu h2 { font-size: 12px; } #seite > #menu h3 { font-size: 10px !important; } }
-    @media (min-width: 400px) { #seite > #menu { font-size:  9px; } #seite > #menu h2 { font-size: 13px; } #seite > #menu h3 { font-size: 11px !important; } }
-    @media (min-width: 430px) { #seite > #menu { font-size: 10px; } #seite > #menu h2 { font-size: 14px; } #seite > #menu h3 { font-size: 12px !important; } }
-    @media (min-width: 460px) { #seite > #menu { font-size: 11px; } #seite > #menu h2 { font-size: 15px; } #seite > #menu h3 { font-size: 13px !important; } }
-    @media (min-width: 500px) { #seite > #menu { font-size: 12px; } #seite > #menu h2 { font-size: 16px; } #seite > #menu h3 { font-size: 14px !important; } }
-    @media (min-width: 550px) { #seite > #menu { font-size: 13px; } #seite > #menu h2 { font-size: 17px; } #seite > #menu h3 { font-size: 15px !important; } }
-    @media (min-width: 600px) { #seite > #menu { font-size: 14px; } #seite > #menu h2 { font-size: 18px; } #seite > #menu h3 { font-size: 16px !important; } }
+    #seite > #menu h2 {
+       margin: 10px;
+    }
+    #seite > #menu h3 {
+       margin: 0px;
+       margin-bottom: 10px;
+    }
     
-    body[data-menu="an"]  .sk-right-row .sk-msg { margin-right: 0%;  transition: all 0.3s linear; }
-    body[data-menu="aus"] .sk-right-row .sk-msg { margin-right: 40%; transition: all 0.3s linear; }
+    @media (min-width:   1px) { #seite > #menu { font-size:  8px !important; } #seite > #menu h2 { font-size: 12px; } #seite > #menu h3 { font-size: 10px !important; } }
+    @media (min-width: 400px) { #seite > #menu { font-size:  9px !important; } #seite > #menu h2 { font-size: 13px; } #seite > #menu h3 { font-size: 11px !important; } }
+    @media (min-width: 430px) { #seite > #menu { font-size: 10px !important; } #seite > #menu h2 { font-size: 14px; } #seite > #menu h3 { font-size: 12px !important; } }
+    @media (min-width: 460px) { #seite > #menu { font-size: 11px !important; } #seite > #menu h2 { font-size: 15px; } #seite > #menu h3 { font-size: 13px !important; } }
+    @media (min-width: 500px) { #seite > #menu { font-size: 12px !important; } #seite > #menu h2 { font-size: 16px; } #seite > #menu h3 { font-size: 14px !important; } }
+    @media (min-width: 550px) { #seite > #menu { font-size: 13px !important; } #seite > #menu h2 { font-size: 17px; } #seite > #menu h3 { font-size: 15px !important; } }
+    @media (min-width: 600px) { #seite > #menu { font-size: 14px !important; } #seite > #menu h2 { font-size: 18px; } #seite > #menu h3 { font-size: 16px !important; } }
+    
+    #seite > #menu div > div span { 
+       margin-top: 1px;
+       margin-bottom: 1px;
+       padding-left: 3px;
+       padding-right: 3px;
+       display: inline-block;
+       border-radius: 2px;
+       background-color: #00aeff;
+       color: white;
+       cursor: pointer;
+    }
     
  /* ----------------- */
  /* Web Widget        */
@@ -335,4 +357,19 @@
        max-height: 30px;
        cursor: pointer;
     }
+    
+ /* ----------------- */
+ /* Umgebung */
+ /* ----------------- */
+    
+    @media (min-width:   1px) { body[data-menu="aus"] .sk-msg { max-width: 150px !important; transition: all 0.3s linear; font-size: 11px !important; } }
+    @media (min-width: 410px) { body[data-menu="aus"] .sk-msg { max-width: 170px !important; transition: all 0.3s linear; font-size: 12px !important; } }
+    @media (min-width: 440px) { body[data-menu="aus"] .sk-msg { max-width: 190px !important; transition: all 0.3s linear; font-size: 12px !important; } }
+    @media (min-width: 470px) { body[data-menu="aus"] .sk-msg { max-width: 210px !important; transition: all 0.3s linear; font-size: 13px !important; } }
+    @media (min-width: 510px) { body[data-menu="aus"] .sk-msg { max-width: 230px !important; transition: all 0.3s linear; font-size: 13px !important; } }
+    @media (min-width: 560px) { body[data-menu="aus"] .sk-msg { max-width: 250px !important; transition: all 0.3s linear; font-size: 14px !important; } }
+    @media (min-width: 610px) { body[data-menu="aus"] .sk-msg { max-width: 250px !important; transition: all 0.3s linear; font-size: 14px !important; } }
+    
+    body[data-menu="an"]  .sk-right-row .sk-msg { margin-right: 0%;  transition: all 0.3s linear; }
+    body[data-menu="aus"] .sk-right-row .sk-msg { margin-right: 40%; transition: all 0.3s linear; }
     

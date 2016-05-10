@@ -412,6 +412,7 @@ module.exports = new Script({
        // Tests
        // -----------------
        
+          if  (~befehl.indexOf("--MENU"))           { versuch = true; bot.say(SefzigBot+'Menü öffnen. [Javascript:menu]'); }
           if  (~befehl.indexOf("--ALERT"))          { versuch = true; bot.say(SefzigBot+'[Javascript:test_alert(123)]'); }
           if  (~befehl.indexOf("--COOKIE"))         { versuch = true; bot.say(SefzigBot+'[Javascript:cookies(test,123)]'); }
           if  (~befehl.indexOf("--YOUTUBE"))        { versuch = true; bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
