@@ -65,11 +65,17 @@
     #seite > #daten > div,
     #seite > #menu > div > div {
        margin: 15px;
-       margin-bottom: 0px;
+       margin-bottom: 15px;
     }
     #seite > #menu > div {
+       position: absolute;
+       top: 0px;
+       left: 0px; 
+       right: 0px; 
+       bottom: 0px;
        width: 100%;
        max-width: 250px;
+       overflow: auto;
     }
     #seite > #daten {
        z-index: 101;
@@ -82,11 +88,8 @@
     #seite > #menu {
        z-index: 103;
        right: -40%;
-       bottom: 55px;
+       bottom: 56px;
        width: 40%;
-    }
-    #seite > #menu > div > div {
-       overflow: hidden;
     }
     
  /* Burger-Menü */
@@ -123,6 +126,7 @@
        background: black;
        color: white;
        line-height: 20px;
+       overflow: hidden;
     }
     #seite > #menu h2 {
        margin: 10px;
@@ -159,6 +163,7 @@
  /* Dimensionen */
     #sk-wrapper, #sk-header, #sk-conversation, #sk-footer {
        position: absolute !important;
+       z-index: 1000;
        right: 0px;
        left: 0px;
     }
