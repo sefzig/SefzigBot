@@ -396,6 +396,12 @@
        
     }
     
+    function konsolen(b) {
+       
+       console.log('> '+b);
+       
+    }
+    
  // Inhalte anpassen
     function anpassen() {
        
@@ -415,7 +421,7 @@
        // Zugelassene Javascript-Funktionen
           var funktionen = {
              alert:        function (b) { alert(b); },
-             console:      function (b) { console.log('> '+b); },
+             konsole:      function (b) { konsolen(b); },
              blinken:      function ()  { blink(); },
              cookies:      function (b) { cookies(b); },
              menu:         function ()  { menu(); }

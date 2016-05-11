@@ -59,14 +59,14 @@
                
                if (bekannt == false) {
                
-                  bot.say(EmpfangsBot+' [Javascript:console(start>bekannt>false)] Darf ich uns Ihnen kurz vorstellen? Dann schreiben (oder klicken oder berühren) Sie bitte --Robogeddon.')
+                  bot.say(EmpfangsBot+' [Javascript:konsole(start>bekannt>false)] Darf ich uns Ihnen kurz vorstellen? Dann schreiben (oder klicken oder berühren) Sie bitte --Robogeddon.')
                   .then(() => bot.say(EmpfangsBot+'Ich möchte Sie mit den Bots aus unserer  --Beratung, der --Kreation, der --Konzeption und unserer --Technik bekannt machen!'))
                   .then(() => bot.say(EmpfangsBot+'Beachten Sie das Menü und dessen Button rechts oben für eine "klassische" Ansicht der Inhalte dieser Seite.'));
                // AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. Bitte sprechen Sie solange mit meinem Bot über die --Strategie hinter Bots!'
                }
                else {
                
-                  bot.say(EmpfangsBot+'[Javascript:console(start>bekannt>true)] Darf ich Ihnen mehr über uns zeigen? Dann schreiben Sie bitte --Robogeddon!')
+                  bot.say(EmpfangsBot+'[Javascript:konsole(start>bekannt>true)] Darf ich Ihnen mehr über uns zeigen? Dann schreiben Sie bitte --Robogeddon!')
                   .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen unsere  --Beratung, die --Kreation, die --Konzeption und unsere --Technik vorstellen!'));
                
                }
@@ -136,7 +136,7 @@
         receive: (bot, message) => {
             vorname = message.text;
             return bot.setProp('vorname', vorname)
-                .then(() => bot.say(EmpfangsBot+`${vorname}, prima. [Javascript:cookies(vorname,`+vorname+`)] [Javascript:console(vorname>erhalten)]  `))
+                .then(() => bot.say(EmpfangsBot+`${vorname}, prima. [Javascript:cookies(vorname,`+vorname+`)] [Javascript:konsole(vorname>erhalten)]  `))
                 .then(() => 'nachname');
         }
     },
@@ -149,7 +149,7 @@
             nachname = message.text; 
             bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+', habe ich das richtig verstanden? [Javascript:cookies(nachname,'+nachname+')] [Javascript:console(n)]  '))
+                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+', habe ich das richtig verstanden? [Javascript:cookies(nachname,'+nachname+')] [Javascript:konsole(n)]  '))
                 .then(() => bot.say(EmpfangsBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
                 .then(() => 'name');
             
@@ -169,14 +169,14 @@
             if (emailkorrekt == true) {
             	
                return bot.setProp('email', email)
-                  .then(() => bot.say(TechnikBot+'E-Mail-Adresse '+email+' verifiziert. [Javascript:cookies(email,'+email+')] [Javascript:console(emailadresse>valide)]  '))
+                  .then(() => bot.say(TechnikBot+'E-Mail-Adresse '+email+' verifiziert. [Javascript:cookies(email,'+email+')] [Javascript:konsole(emailadresse>valide)]  '))
                   .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern. Oder lassen Sie uns zurück zum --Empfang gehen.'))
                   .then(() => 'empfang');
                
             }
             else {
             	
-               return bot.say(TechnikBot+''+email+' wird nicht als E-Mail-Adresse erkannt. [Javascript:console(emailadresse>invalide)]  ')
+               return bot.say(TechnikBot+''+email+' wird nicht als E-Mail-Adresse erkannt. [Javascript:konsole(emailadresse>invalide)]  ')
                   .then(() => bot.say(EmpfangsBot+'Bitte geben Sie Ihre E-Mail-Adresse nochmal ein - oder lassen Sie uns zum --Empfang zurückkehren.'))
                   .then(() => 'emailadresse');
                
@@ -310,7 +310,7 @@
        // Module / Tests
           if  (~befehl.indexOf("--MENU"))           { versuch = true; bot.say(SefzigBot+'Menü öffnen. [Javascript:menu]'); }
           if  (~befehl.indexOf("--ALERT"))          { versuch = true; bot.say(SefzigBot+'[Javascript:alert(123)]'); }
-          if  (~befehl.indexOf("--KONSOLE"))        { versuch = true; bot.say(SefzigBot+'[Javascript:console(123)]'); }
+          if  (~befehl.indexOf("--KONSOLE"))        { versuch = true; bot.say(SefzigBot+'[Javascript:konsole(123)]'); }
           if  (~befehl.indexOf("--COOKIE"))         { versuch = true; bot.say(SefzigBot+'[Javascript:cookies(test,123)]'); }
           if  (~befehl.indexOf("--YOUTUBE"))        { versuch = true; bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
           if  (~befehl.indexOf("--LINKTEST"))       { versuch = true; bot.say(SefzigBot+'Ein Link: [Link:Testlink,ThinMedia]'); }
