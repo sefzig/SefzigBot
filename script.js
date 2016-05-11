@@ -136,12 +136,14 @@ module.exports = new Script({
     	
         prompt: (bot) => bot.say(EmpfangsBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
+            
             nachname = message.text; 
             bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
                 .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+', habe ich das richtig verstanden? [Javascript:cookies(nachname,'+nachname+')] '))
                 .then(() => bot.say(EmpfangsBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
                 .then(() => 'name');
+            
         }
     },
 
@@ -149,6 +151,7 @@ module.exports = new Script({
     	
         prompt: (bot) => bot.say(EmpfangsBot+'Wie lautet Ihre E-Mail-Adresse?'),
         receive: (bot, message) => {
+            
             email = message.text;
             
          // emailkorrekt = email.test(emailregex);
@@ -157,14 +160,14 @@ module.exports = new Script({
             if (emailkorrekt == true) {
             	
                return bot.setProp('email', email)
-                  .then(() => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+email+', prima. [Javascript:cookies(email,'+email+')]'))
+                  .then(() => bot.say(TechnikBot+'E-Mail-Adresse '+email+' verifiziert. [Javascript:cookies(email,'+email+')]'))
                   .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern. Oder lassen Sie uns zurück zum --Empfang gehen.'))
                   .then(() => 'register');
                
             }
             else {
             	
-               return bot.say(EmpfangsBot+''+email+' ist keine valide E-Mail-Adresse.')
+               return bot.say(TechnikBot+''+email+' wird nicht als E-Mail-Adresse erkannt.')
                   .then(() => bot.say(EmpfangsBot+'Bitte geben Sie Ihre E-Mail-Adresse nochmal ein - oder lassen Sie uns zum --Empfang zurückkehren.'))
                   .then(() => 'emailadresse');
                
