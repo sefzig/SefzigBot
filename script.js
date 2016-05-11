@@ -87,7 +87,7 @@
         receive: (bot, message) => {
             
             var antwort = befehlWort(message.text.trim().toUpperCase());
-            var dann = "";
+            var dann = "name";
             
             if ((antwort == "--JA") ||
                 (antwort == "--ÄNDERN")) { 
