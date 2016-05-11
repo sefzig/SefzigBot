@@ -24,7 +24,7 @@
     var vorname = "Unbekannter";
     var nachname = "Besucher";
     var email = "test@sefzig.net";
- // var emailkorrekt = true;
+    var emailkorrekt = true;
  // var emailregex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     
  // Konversationen
@@ -41,7 +41,7 @@
 
     start: {
     	
-        prompt: (bot) => bot.say(TechnikBot+'Starte...'),
+     // prompt: (bot) => bot.say(TechnikBot+'Starte...'),
         receive: (bot, message) => {
             
          // Befehl normalisieren
