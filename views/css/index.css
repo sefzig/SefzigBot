@@ -390,9 +390,10 @@
     }
     
  /* ----------------- */
- /* Interaktive Klassen */
+ /* Js Klassen */
  /* ----------------- */
     
+ /* Anzeigen/verbergen */
     .anzeigenB { display: block; }
     .anzeigenI { display: inline; }
     .verbergen { display: none; }

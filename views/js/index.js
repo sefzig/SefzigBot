@@ -4,6 +4,8 @@
        
        var selektor = "";
        var befehl = "";
+       var starten = "";
+       var ansicht = "";
        
     // Datenfelder ausfüllen
        cookie("vorname");
@@ -11,8 +13,8 @@
        cookie("email");
        
     // Chat starten
-       var starten = config["anwendung"]["defaultAnsicht"];
-       var ansicht = getParameters("v");
+       starten = config["anwendung"]["defaultAnsicht"];
+       ansicht = getParameters("v");
        if (ansicht == "chat")  { starten = "chat"; }
        if (ansicht == "daten") { starten = "daten"; }
        window.setTimeout(function() { start(starten); }, 100);
@@ -22,7 +24,7 @@
        $(selektor).click(function(e) {
           
        // Elemente
-          var starten = $(this).attr("data-start");
+          starten = $(this).attr("data-start");
           
        // Navigation
           start(starten);
@@ -48,6 +50,11 @@
  // Chat starten
     function start(methode) {
        
+       var vorname = "";
+       var nachname = "";
+       var email = "";
+       var sagen = "";
+          
     // Ansichten anpassen
     // $("#seite > div").fadeOut();
        
@@ -57,10 +64,10 @@
        // Debuggen
        // console.log('\n\nNeues Gespräch\n');
           
-       // Umgebungs-Parameter und Defaults
-          var vorname =  $("#vorname").val();
-          var nachname = $("#nachname").val();
-          var email =    $("#email").val();
+       // Daten aus Formular übernehmen
+          vorname =  $("#vorname").val();
+          nachname = $("#nachname").val();
+          email =    $("#email").val();
           
        // Smooch Js
        // https://github.com/smooch/smooch-js
@@ -90,7 +97,7 @@
              
              anpassen();
              
-             var sagen = getParameters("m");
+             sagen = getParameters("m");
              if ((sagen) && (sagen != "")) { 
              
                 window.setTimeout(function() { 
@@ -140,10 +147,10 @@
     // Menü anzeigen starten
        if (methode == "menu") {
           
+          var status = $("body").attr("data-menu");
+          
        // Debuggen
           console.log('\n\nMenü geklickt\n');
-          
-          var status = $("body").attr("data-menu");
           
           if (status == "an") {
              
@@ -170,20 +177,28 @@
        
        text_string = " "+text_string+" ";
        var inhalte = text_string;
+       var inhalt = "";
        
        if (methode == "befehl") {
        
+       // Konfiguration übernehmen
+          var befehl_template = templates["befehl"]["link"];
+       // console.log("befehl_template: "+befehl_template);
+          var befehl_prefix = config["syntax"]["befehlPrefix"];
+             
        // Befehle anpassen
-          inhalte = inhalte.split(config["syntax"]["befehlPrefix"]);
+          inhalte = inhalte.split(befehl_prefix);
           for (i = 1; i < inhalte.length; i++) {
              
-          // Befehl freistellen
-             var inhalt = inhalte[i].split(/,|;|:|\.|\<|!|\?| /)[0];
-          // console.log("\ninhalt: "+inhalt);
+          // Befehl-Template übernehmen
+             befehl_button = befehl_template;
              
-          // Template laden und anpassen
-             var befehl_button = templates["befehl"]["link"];
-          // console.log("befehl_button alt: "+befehl_button);
+          // Inhalt zurücksetzen
+             inhalt = "";
+             
+          // Befehl freistellen
+             inhalt = inhalte[i].split(/,|;|:|\.|\<|!|\?| /)[0];
+          // console.log("\ninhalt: "+inhalt);
              
              if ($.isArray(befehl_button)) { 
                 befehl_button = befehl_button.join("a-f-z");
@@ -193,15 +208,8 @@
              befehl_button = befehl_button.replace(/%inhalt%/g, inhalt);
           // console.log("befehl_button neu: "+befehl_button);
              
-             var suche = config["syntax"]["befehlPrefix"]+""+inhalt;
-          // console.log("suche: "+suche);
-             
-             text_string = text_string.replace(suche, befehl_button); // ..?
+             text_string = text_string.replace(befehl_prefix+""+inhalt, befehl_button); // ..?
           // console.log("text_string: "+text_string+"");
-             
-          // Zurücksetzen
-             inhalt = "";
-             befehl_button = "";
              
           }
           
