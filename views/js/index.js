@@ -608,10 +608,10 @@
        Cookies.set(name, wert, { expires: 365 }); // 1 Jahr
        console.log("Cookie '"+name+"' gesetzt: "+wert);
        
-       if      (id == "vorname")  { update = { givenName: wert };
-       else if (id == "nachname") { update = { surname:   wert };
-       else if (id == "email")    { update = { email:     wert };
-       else              { update = { properties: { id: wert } };
+       if      (id == "vorname")  { update = { givenName: wert }; }
+       else if (id == "nachname") { update = { surname:   wert }; }
+       else if (id == "email")    { update = { email:     wert }; }
+       else              { update = { properties: { id: wert } }; }
        Smooch.updateUser(update);
        console.log("Cookies: Smooch-User '"+id+"' Info: "+wert);
        
