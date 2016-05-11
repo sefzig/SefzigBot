@@ -151,7 +151,8 @@ module.exports = new Script({
         receive: (bot, message) => {
             email = message.text;
             
-            emailkorrekt = email.test(emailregex);
+         // emailkorrekt = email.test(emailregex);
+            emailkorrekt = true;
             
             if (emailkorrekt == true) {
             	
