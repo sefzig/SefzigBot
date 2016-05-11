@@ -178,6 +178,10 @@
        color: white;
        font-size: 14px;
     }
+    #seite > #menu #formular input:focus {
+       background-color: #ffffff;
+       color: black;
+    }
     #seite > #menu #formular input[type="submit"] {
        display: none;
     }

@@ -33,6 +33,7 @@ module.exports = new Script({
 
     start: {
     	
+        prompt: (bot) => bot.say(TechnikBot+'Starte...'),
         receive: (bot, message) => {
             
          // Befehl normalisieren
@@ -320,7 +321,7 @@ module.exports = new Script({
               (~befehl.indexOf("--EXTERNE")))       { versuch = true; bot.say(SefzigBot+'Bots ermöglichen einen eleganten Zugang zu Ihren Marketing-Aktivitäten. Verstehen Sie einen Bot als virtuellen Mitarbeiter, der Nutzer in Empfang nimmt, einfache Fragen beantwortet und sie - bei Bedarf! - direkt in Ihre Marketing-Maßnahmen verlinkt.').then(function(){
                                                                return bot.say(SefzigBot+'Bots können auch alle möglichen --Aufgaben übernehmen: Von der Newsletter-Registrierung über einen Produkt-Finder bis zum Support mit oder ohne menschliche Unterstützung.') }).then(function(){
                                                                return bot.say(SefzigBot+'Bots sind leicht aufzusetzen (wenn man weiß wie es geht ;). Vor allem aber sind sie leicht in alle Marketing- --Kanäle integrierbar!') }).then(function(){
-                                                               return bot.say(KreationsBot+'Wir in der --Kreation liebt es, interessante --Dialoge zu erschaffen, die Nutzern einen konkreten --Mehrwert bieten und sie mit reichhaltigen --Inhalten erfreuen.'); }); }
+                                                               return bot.say(KreationsBot+'Wir in der --Kreation legen Wert darauf, interessante --Dialoge zu erschaffen, die Nutzern einen konkreten --Mehrwert bieten und sie mit reichhaltigen --Inhalten erfreuen.'); }); }
           
        // Allgemein
        
