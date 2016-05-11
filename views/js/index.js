@@ -414,8 +414,8 @@
           
        // Zugelassene Javascript-Funktionen
           var funktionen = {
-             test_alert:   function (b) { alert(b); },
-             test_console: function (b) { console.log('> '+b); },
+             alert:        function (b) { alert(b); },
+             console:      function (b) { console.log('> '+b); },
              blinken:      function ()  { blink(); },
              cookies:      function (b) { cookies(b); },
              menu:         function ()  { menu(); }
@@ -453,6 +453,7 @@
           text_neu = inhalt("bot", text_neu, "BeratungsBot",   "Barbara, Beratungs-Bot", zufall, "Beratung");
           text_neu = inhalt("bot", text_neu, "TechnikBot",     "Cynthia, Technik-Bot",   zufall, "Technik");
           text_neu = inhalt("bot", text_neu, "KonzeptionsBot", "Erika, Konzeptions-Bot", zufall, "Konzeption");
+          text_neu = inhalt("bot", text_neu, "StrategieBot",   "Feline, Strategie-Bot",  zufall, "Strategie");
           
        // Bots zusammenfassen
           window.setTimeout(function() { 
