@@ -148,7 +148,7 @@
        margin-top: 1px;
        margin-bottom: 1px;
        padding-left: 3px;
-       padding-right: 3px;
+       padding-right: 4px;
        display: inline-block;
        border-radius: 2px;
        background-color: #00aeff;
@@ -388,6 +388,14 @@
        max-height: 30px;
        cursor: pointer;
     }
+    
+ /* ----------------- */
+ /* Interaktive Klassen */
+ /* ----------------- */
+    
+    .anzeigenB { display: block; }
+    .anzeigenI { display: inline; }
+    .verbergen { display: none; }
     
  /* ----------------- */
  /* Umgebung */

@@ -2,6 +2,9 @@
  // Anwendung starten
     $(document).ready(function(){
        
+       var selektor = "";
+       var befehl = "";
+       
     // Datenfelder ausfüllen
        cookie("vorname");
        cookie("nachname");
@@ -15,23 +18,25 @@
        window.setTimeout(function() { start(starten); }, 100);
        
     // Benutzeroberfläche
-       $("[data-start]").click(function(e) {
+       selektor = "input[data-start], img[data-start], a[data-start]";
+       $(selektor).click(function(e) {
           
        // Elemente
           var starten = $(this).attr("data-start");
           
        // Navigation
           start(starten);
-          console.log("> Start: "+starten);
+       // console.log("> Start: "+starten);
           
        // Klick verhindern
           e.preventDefault();
           
        });
        
-       $("#seite > #menu div > div span").click(function() {
+       selektor = "#seite > #menu div > div span";
+       $(selektor).click(function() {
           
-          var befehl = $(this).text();
+          befehl = $(this).text();
           Smooch.sendMessage("--"+befehl);
           
        });
@@ -343,7 +348,8 @@
              console.log("- Bot angepasst: "+id);
              
              $("#seite > #menu li span").removeClass("aktiv");
-             $("#seite > #menu li span:contains('"+id+"')").addClass("aktiv");
+          // $("#seite > #menu li span:contains('"+id+"')").addClass("aktiv");
+             $("#seite > #menu li span").filter(function() { return ($(this).text() === id); }).addClass("aktiv");
              
           }
           
