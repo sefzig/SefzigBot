@@ -455,9 +455,6 @@
           text_neu = inhalt("bot", text_neu, "KonzeptionsBot", "Erika, Konzeptions-Bot", zufall, "Konzeption");
           text_neu = inhalt("bot", text_neu, "StrategieBot",   "Feline, Strategie-Bot",  zufall, "Strategie");
           
-       // Bots zusammenfassen
-          window.setTimeout(function() { 
-             
              $(".sk-from").each(function() {
                 
                 var dieser =    $(this).html();
@@ -489,8 +486,6 @@
                 
              });
              
-          }, 333);
-       
        // Default-Bot
           if (text_neu == text_merken) { text_neu = "[AndreasSefzig] "+text_neu; }
           text_neu = inhalt("bot", text_neu, "AndreasSefzig",  "Andreas Sefzig",         zufall, "Sefzig");

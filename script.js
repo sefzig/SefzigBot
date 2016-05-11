@@ -245,20 +245,21 @@
                                                                return bot.say(KreationsBot+'Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer!') });
                                                                       dann = "kreation"; } 
           
-       // if ((~befehl.indexOf("--BERATUNG")) ||
-       //     (~befehl.indexOf("--BARBARA")))       { versuch = true; bot.say(BeratungsBot+'Schreiben Sie --empfang, um zum Empfang zurückzukehren.');
-       //                                                             dann = "beratung"; } 
-       // if ((~befehl.indexOf("--TECHNIK")) ||
-       //     (~befehl.indexOf("--CYNTHIA")))       { versuch = true; bot.say(TechnikBot+'Schreiben Sie --empfang, wenn Sie zum Empfang wollen');
-       //                                                             dann = "technik";  } 
-       // 
-       // if ((~befehl.indexOf("--KONZEPTION")) ||
-       //     (~befehl.indexOf("--ERIKA")))         { versuch = true; bot.say(KonzeptionsBot+'Schreiben Sie --empfang, wenn Sie zum Empfang wollen');
-       //                                                             dann = "konzeption";  } 
-       // 
-       // if ((~befehl.indexOf("--STRATEGIE")) ||
-       //     (~befehl.indexOf("--FELINE")))        { versuch = true; bot.say(StrategieBot+'Schreiben Sie --empfang, wenn Sie zum Empfang wollen');
-       //                                                             dann = "konzeption";  } 
+          if ((~befehl.indexOf("--BERATUNG")) ||
+              (~befehl.indexOf("--BARBARA")))       { versuch = true; bot.say(EmpfangsBot+'Schreiben Sie --Empfang, um zum Empfang zurückzukehren.');
+                                                                      dann = "beratung"; } 
+          
+          if ((~befehl.indexOf("--TECHNIK")) ||
+              (~befehl.indexOf("--CYNTHIA")))       { versuch = true; bot.say(EmpfangsBot+'Schreiben Sie --Empfang, um zum Empfang zurückzukehren.');
+                                                                      dann = "technik";  } 
+          
+          if ((~befehl.indexOf("--KONZEPTION")) ||
+              (~befehl.indexOf("--ERIKA")))         { versuch = true; bot.say(EmpfangsBot+'Schreiben Sie --Empfang, um zum Empfang zurückzukehren.');
+                                                                      dann = "konzeption";  } 
+          
+          if ((~befehl.indexOf("--STRATEGIE")) ||
+              (~befehl.indexOf("--FELINE")))        { versuch = true; bot.say(EmpfangsBot+'Schreiben Sie --Empfang, um zum Empfang zurückzukehren.');
+                                                                      dann = "konzeption";  } 
           
        // -----------------
        // Onboarding
@@ -286,6 +287,14 @@
           if  (~befehl.indexOf("--EMAIL"))          { versuch = true; dann = "emailadresse";
           	                                                          bot.say(EmpfangsBot+'Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter!');
                                                                    }
+          
+          
+          
+          
+          
+          
+          
+          
           
           
           
