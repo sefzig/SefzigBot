@@ -59,15 +59,15 @@
                
                if (bekannt == false) {
                
-                  bot.say(EmpfangsBot+' [Javascript:konsole(start bekannt false)] Darf ich uns Ihnen kurz vorstellen? Dann schreiben (oder klicken oder berühren) Sie bitte --Robogeddon.')
-                  .then(() => bot.say(EmpfangsBot+'Ich möchte Sie mit den Bots aus unserer  --Beratung, der --Kreation, der --Konzeption und unserer --Technik bekannt machen!'))
-                  .then(() => bot.say(EmpfangsBot+'Beachten Sie das Menü und dessen Button rechts oben für eine "klassische" Ansicht der Inhalte dieser Seite.'));
-               // AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. Bitte sprechen Sie solange mit meinem Bot über die --Strategie hinter Bots!'
+                  bot.say(EmpfangsBot+' [Javascript:konsole(start bekannt false)] Start Unbekannt Text 1: --Robogeddon.')
+                  .then(() => bot.say(EmpfangsBot+' Start Empfang Text 2: --Beratung, --Kreation, --Konzeption, --Strategie, --Technik.'))
+                  .then(() => bot.say(EmpfangsBot+'Start Empfang Text 3. Hinweis Burger-Button.'));
+                  
                }
                else {
                
-                  bot.say(EmpfangsBot+'[Javascript:konsole(start bekannt true)] Darf ich Ihnen mehr über uns zeigen? Dann schreiben Sie bitte --Robogeddon!')
-                  .then(() => bot.say(EmpfangsBot+'Ich möchte Ihnen unsere  --Beratung, die --Kreation, die --Konzeption und unsere --Technik vorstellen!'));
+                  bot.say(EmpfangsBot+'[Javascript:konsole(start bekannt true)] Start Bekannt Text 1: --Robogeddon.')
+                  .then(() => bot.say(EmpfangsBot+'Start Bekannt Text 2: --Beratung, --Kreation, --Konzeption, --Strategie, --Technik vorstellen.'));
                
                }
             }
@@ -90,13 +90,6 @@
             var name_falsch = "";
             var dann = "";
             
-            if (antwort == "--ÄNDERN")   { 
-               
-               bot.say(EmpfangsBot+'Gut, ändern wir Ihren Namen.');
-               name_falsch == "ändern";
-               dann = "vorname";
-               
-            }
             if (antwort == "--BITTE")   { 
                
                bot.say(EmpfangsBot+'Wir werden sorgsam mit Ihren Daten umgehen.');
@@ -149,8 +142,7 @@
             nachname = message.text; 
             bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+', habe ich das richtig verstanden? [Javascript:cookies(nachname,'+nachname+')] [Javascript:konsole(nachname erhalten)]  '))
-                .then(() => bot.say(EmpfangsBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
+                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+'. [Javascript:cookies(nachname,'+nachname+')] [Javascript:konsole(nachname erhalten)]  '))
                 .then(() => 'name');
             
         }
@@ -222,12 +214,12 @@
        // -----------------
           
           if  (~befehl.indexOf("--SEFZIG"))         { versuch = true; bot.setProp('persönlich', '@sefzig').then(function(){
-                                                               return bot.say(EmpfangsBot+'Ich habe Andreas benachrichtigt.') }).then(function(){
-                                                               return bot.say(EmpfangsBot+'Sprechen Sie solange mit mir! Bitte schreiben Sie --Empfang.'); }); } 
+                                                               return bot.say(EmpfangsBot+'Sefzig Text 1.') }).then(function(){
+                                                               return bot.say(EmpfangsBot+'Sefzig Text 2: --Empfang.'); }); } 
           
           if ((~befehl.indexOf("--EMPFANG")) ||
-              (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Ich würde Ihnen gerne --Robogeddon vorstellen! Oder sprechen Sie direkt mit unserer --Kreation, --Konzeption, --Technik oder --Beratung.').then(function(){
-                                                               return bot.say(EmpfangsBot+'Ich habe noch mehr --Befehle.'); }); }
+              (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung.').then(function(){
+                                                               return bot.say(EmpfangsBot+'Empfang Text 2: --Befehle.'); }); }
           
           if ((~befehl.indexOf("--KREATION")) ||
               (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
@@ -260,13 +252,13 @@
           	                                                        var aussage = "";
           	                                                        
           	                                                        if ((vorname) && (vorname != "") && (vorname != "Unbekannter") && (nachname) && (nachname != "") && (nachname != "Besucher")) {
-          	                                                           aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn ändern? Dann schreiben Sie bitte --ändern.';
+          	                                                           aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn --ändern?';
                                                                       }
                                                                       else if ((vorname) && (vorname != "") && (vorname != "Unbekannter")) {
-          	                                                           aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen ändern? Dann schreiben Sie bitte --ändern.';
+          	                                                           aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen --ändern?';
                                                                       }
                                                                       else if ((nachname) && (nachname != "") && (nachname != "Besucher")) {
-          	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern? Dann schreiben Sie bitte --ändern.';
+          	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen --ändern?';
                                                                       }
                                                                       else {
           	                                                           aussage = EmpfangsBot+'Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Dann schreiben Sie bitte --Bitte.';

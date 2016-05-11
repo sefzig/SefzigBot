@@ -373,27 +373,6 @@
        
     }
     
- // Cookies
-    function cookies(params) {
-       
-       parameter = params.split(",");
-       var id =   parameter[0];
-       var name = daten["cookie"][parameter[0]];
-       var wert = parameter[1];
-       
-       Cookies.set(name, wert, { expires: 365 }); // 1 Jahr
-       console.log("Cookie '"+name+"' gesetzt: "+wert);
-       
-       if      (id == "vorname")  { Smooch.updateUser({ givenName: wert }); }
-       else if (id == "nachname") { Smooch.updateUser({ surname:   wert }); }
-       else if (id == "email")    { Smooch.updateUser({ email:     wert }); }
-       else                       { Smooch.updateUser({ properties: { id: wert } }); }
-       console.log("Smooch-User '"+id+"' Info: "+wert);
-       
-       $("#menu #formular #"+id).val(wert).trigger("change");
-       
-    }
-    
     function menu() {
        
        var status = $("body").attr("data-menu");
@@ -600,12 +579,42 @@
                 
              }
              
+       if      (id == "vorname")  { update = { givenName: wert };
+       else if (id == "nachname") { update = { surname:   wert };
+       else if (id == "email")    { update = { email:     wert };
+       else              { update = { properties: { id: wert } };
+       Smooch.updateUser(update);
+       console.log("Cookie (change): Smooch-User '"+id+"' Info: "+wert);
+       
           });
           
        // console.log("cookie input wert: "+wert);
           return wert;
           
        }
+       
+    }
+    
+ // Cookies
+    function cookies(params) {
+       
+       parameter = params.split(",");
+       var id =   parameter[0];
+       var name = daten["cookie"][parameter[0]];
+       var wert = parameter[1];
+       var update = "";
+       
+       Cookies.set(name, wert, { expires: 365 }); // 1 Jahr
+       console.log("Cookie '"+name+"' gesetzt: "+wert);
+       
+       if      (id == "vorname")  { update = { givenName: wert };
+       else if (id == "nachname") { update = { surname:   wert };
+       else if (id == "email")    { update = { email:     wert };
+       else              { update = { properties: { id: wert } };
+       Smooch.updateUser(update);
+       console.log("Cookies: Smooch-User '"+id+"' Info: "+wert);
+       
+       $("#menu #formular #"+id).val(wert).trigger("change");
        
     }
     
