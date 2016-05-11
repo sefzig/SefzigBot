@@ -157,16 +157,19 @@
              
              status_neu = "aus";
              left_neu = "+=40%";
+             breite_neu = "60%";
              
           }
           else {
              
              status_neu = "an";
              left_neu = "-=40%";
+             breite_neu = "100%";
              
           }
           
           $("#seite > #menu").animate({ right: left_neu }, 300);
+          $("#seite .sk-logo").animate({ width: breite_neu }, 300);
           $("body").attr("data-menu", status_neu);
           
        }

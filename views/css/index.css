@@ -227,6 +227,13 @@
        background-color: white !important;
     }
     
+ /* Logo-Einbindung */
+    .sk-messages-container .sk-logo {
+       text-align: center;
+       margin-left: 0px !important;
+       width: 60%;
+    }
+    
  /* Farben */
     #sk-container.sk-embedded #sk-wrapper {
        background-color: white !important;
