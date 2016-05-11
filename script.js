@@ -90,9 +90,10 @@
             var dann = "name";
             
             if ((antwort == "--JA") ||
+                (antwort == "--NAME") ||
                 (antwort == "--ÄNDERN")) { 
                
-               bot.say(EmpfangsBot+'Wir werden sorgsam mit Ihren Daten umgehen.');
+            // bot.say(EmpfangsBot+'Wir werden sorgsam mit Ihren Daten umgehen.');
                dann = "vorname";
                
             }
@@ -100,13 +101,13 @@
                 (antwort == "--EMPFANG") ||
                 (antwort == "--ABBRECHEN")) {
                
-               bot.say(EmpfangsBot+'Gehen wir zurück zum Empfang.');
+               bot.say(EmpfangsBot+'Gehen wir zurück zum --Empfang.');
                dann = "empfang";
                
             }
             if ((antwort == "--EMAIL")) {
                
-               bot.say(EmpfangsBot+'Wir geben Ihre Adresse nicht weiter.');
+            // bot.say(EmpfangsBot+'Wir geben Ihre Adresse nicht weiter.');
                dann = "emailadresse";
                
             }
@@ -120,22 +121,26 @@
     	
         prompt: (bot) => bot.say(EmpfangsBot+'Wie heissen Sie mit Vornamen?'),
         receive: (bot, message) => {
+            
             vorname = message.text;
+            vorname = vorname.toLowerCase().replace( /\b./g, function(a){ return a.toUpperCase(); } );
+            
             return bot.setProp('vorname', vorname)
-                .then(() => bot.say(EmpfangsBot+`${vorname}, prima. [Javascript:cookies(vorname,`+vorname+`)] [Javascript:konsole(vorname erhalten)] `))
+                .then(() => bot.say(EmpfangsBot+`${vorname}, prima. Und wie heissen Sie mit Nachnamen? [Javascript:cookies(vorname,`+vorname+`)] [Javascript:konsole(vorname erhalten)] `))
                 .then(() => 'nachname');
         }
     },
 
     nachname: {
     	
-        prompt: (bot) => bot.say(EmpfangsBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
             
             nachname = message.text; 
+            nachname = nachname.toLowerCase().replace( /\b./g, function(a){ return a.toUpperCase(); } );
+            
             bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+'. Mögen Sie auch Ihre --Email -Adresse hinterlassen? Ansonsten lassen Sie uns zum --Empfang zurückgehen. [Javascript:cookies(nachname,'+nachname+')] [Javascript:konsole(nachname erhalten)] '))
+                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+'. Mögen Sie auch Ihre --Email -Adresse hinterlassen? Ansonsten lassen Sie uns zum --Empfang zurückkehren. [Javascript:cookies(nachname,'+nachname+')] [Javascript:konsole(nachname erhalten)] '))
                 .then(() => 'name');
             
         }
