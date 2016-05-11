@@ -377,13 +377,14 @@
     function cookies(params) {
        
        parameter = params.split(",");
+       var id =   parameter[0];
        var name = daten["cookie"][parameter[0]];
        var wert = parameter[1];
        
        Cookies.set(name, wert, { expires: 365 }); // 1 Jahr
        console.log("Cookie '"+name+"' gesetzt: "+wert);
        
-       $("#menu #formular #"+name).val(wert).trigger("change");
+       $("#menu #formular #"+id).val(wert).trigger("change");
        
     }
     
