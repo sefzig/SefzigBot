@@ -87,31 +87,38 @@
         receive: (bot, message) => {
             
             var antwort = befehlWort(message.text.trim().toUpperCase());
-            var dann = "name";
+            var name_falsch = "";
+            var dann = "";
             
-            if ((antwort == "--JA") ||
-                (antwort == "--ÄNDERN")) { 
+            if (antwort == "--BITTE")   { 
                
                bot.say(EmpfangsBot+'Wir werden sorgsam mit Ihren Daten umgehen.');
+               name_falsch == "neu";
                dann = "vorname";
                
             }
-            if ((antwort == "--NEIN") ||
-                (antwort == "--EMPFANG") ||
-                (antwort == "--ABBRECHEN")) {
+            if (antwort == "--JA")   { 
                
-               bot.say(EmpfangsBot+'Gehen wir zurück zum Empfang.');
+               bot.say(EmpfangsBot+'Danke. Mögen Sie mir Ihre E-Mail-Adresse geben? Wenn ja, schreiben Sie --Email. Ansonsten lassen Sie uns zurück zum --Empfang gehen.');
+               name_falsch == "nein";
                dann = "empfang";
                
             }
-            if (antwort == "--EMAIL") {
+            if (antwort == "--NEIN") {
                
-               bot.say(EmpfangsBot+'Wir geben Ihre Adresse nicht weiter.');
-               dann = "emailadresse";
+               bot.say(EmpfangsBot+'Hm. Wie war das nochmal?');
+               name_falsch == "ja";
+               dann = "vorname";
+               
+            }
+            if (antwort == "--ABBRECHEN") {
+               
+               name_falsch == "";
+               dann = "empfang";
                
             }
             
-            return bot.setProp('name_eingabe', 'tmp')
+            return bot.setProp('name_falsch', name_falsch)
                 .then(() => dann);
         }
     },
@@ -122,7 +129,7 @@
         receive: (bot, message) => {
             vorname = message.text;
             return bot.setProp('vorname', vorname)
-                .then(() => bot.say(EmpfangsBot+`${vorname}, prima. [Javascript:cookies(vorname,`+vorname+`)] [Javascript:konsole(vorname erhalten)] `))
+                .then(() => bot.say(EmpfangsBot+`${vorname}, prima. [Javascript:cookies(vorname,`+vorname+`)] [Javascript:konsole(vorname erhalten)]  `))
                 .then(() => 'nachname');
         }
     },
@@ -132,10 +139,10 @@
         prompt: (bot) => bot.say(EmpfangsBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
             
-            nachname = message.text;
+            nachname = message.text; 
             bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+'. Mögen Sie auch Ihre --Email -Adresse hinterlassen? Ansonsten lassen Sie uns zum --Empfang zurückgehen. [Javascript:cookies(nachname,'+nachname+')] [Javascript:konsole(nachname erhalten)] '))
+                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+'. [Javascript:cookies(nachname,'+nachname+')] [Javascript:konsole(nachname erhalten)]  '))
                 .then(() => 'name');
             
         }
