@@ -562,6 +562,14 @@
           var wert = Cookies.get(daten["cookie"][name]);  
           if ((wert)  && (wert != ""))  { wert = wert; } 
           else { wert = daten["label"][name]; } 
+          
+          if      (name == "vorname")  { update = { givenName: wert };
+          else if (name == "nachname") { update = { surname:   wert };
+          else if (name == "email")    { update = { email:     wert };
+          else              { update = { properties: { name: wert } };
+          Smooch.updateUser(update);
+          console.log("Cookie (change): Smooch-User '"+name+"' Info: "+wert);
+          
           $("#"+name).val(wert).trigger("change");
           
           $("#"+name).change(function(){  
@@ -579,13 +587,6 @@
                 
              }
              
-       if      (id == "vorname")  { update = { givenName: wert };
-       else if (id == "nachname") { update = { surname:   wert };
-       else if (id == "email")    { update = { email:     wert };
-       else              { update = { properties: { id: wert } };
-       Smooch.updateUser(update);
-       console.log("Cookie (change): Smooch-User '"+id+"' Info: "+wert);
-       
           });
           
        // console.log("cookie input wert: "+wert);
