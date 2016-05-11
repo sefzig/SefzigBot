@@ -563,10 +563,10 @@
           if ((wert)  && (wert != ""))  { wert = wert; } 
           else { wert = daten["label"][name]; } 
           
-          if      (name == "vorname")  { update = { givenName: wert };
-          else if (name == "nachname") { update = { surname:   wert };
-          else if (name == "email")    { update = { email:     wert };
-          else              { update = { properties: { name: wert } };
+          if      (name == "vorname")  { update = { givenName: wert }; }
+          else if (name == "nachname") { update = { surname:   wert }; }
+          else if (name == "email")    { update = { email:     wert }; }
+          else              { update = { properties: { name: wert } }; } 
           Smooch.updateUser(update);
           console.log("Cookie (change): Smooch-User '"+name+"' Info: "+wert);
           
