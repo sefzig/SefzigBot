@@ -169,7 +169,7 @@
             if (emailkorrekt == true) {
             	
                return bot.setProp('email', email)
-                  .then(() => bot.say(TechnikBot+'E-Mail-Adresse '+email+' verifiziert. [Javascript:cookies(email,'+email+')] [Javascript:konsole(emailadresse valide)]  '))
+                  .then(() => bot.say(TechnikBot+''+email+' ist eine valide E-Mail-Adresse. [Javascript:cookies(email,'+email+')] [Javascript:konsole(emailadresse valide)] '))
                   .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern. Oder lassen Sie uns zurück zum --Empfang gehen.'))
                   .then(() => 'empfang');
                

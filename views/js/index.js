@@ -384,6 +384,9 @@
        Cookies.set(name, wert, { expires: 365 }); // 1 Jahr
        console.log("Cookie '"+name+"' gesetzt: "+wert);
        
+       Smooch.updateUser({ properties: { id: wert } });
+       console.log("Smooch-Prop '"+id+"' gesetzt: "+wert);
+       
        $("#menu #formular #"+id).val(wert).trigger("change");
        
     }
