@@ -104,7 +104,7 @@
                dann = "empfang";
                
             }
-            if ((antwort == "--EMAIL")) {
+            if (antwort == "--EMAIL") {
                
                bot.say(EmpfangsBot+'Wir geben Ihre Adresse nicht weiter.');
                dann = "emailadresse";
@@ -132,7 +132,7 @@
         prompt: (bot) => bot.say(EmpfangsBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
             
-            nachname = message.text; 
+            nachname = message.text;
             bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
                 .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+'. Mögen Sie auch Ihre --Email -Adresse hinterlassen? Ansonsten lassen Sie uns zum --Empfang zurückgehen. [Javascript:cookies(nachname,'+nachname+')] [Javascript:konsole(nachname erhalten)] '))
