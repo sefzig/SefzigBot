@@ -90,6 +90,13 @@
             var name_falsch = "";
             var dann = "";
             
+            if (antwort == "--ÄNDERN")   { 
+               
+               bot.say(EmpfangsBot+'Gut, ändern wir Ihren Namen.');
+               name_falsch == "ändern";
+               dann = "vorname";
+               
+            }
             if (antwort == "--BITTE")   { 
                
                bot.say(EmpfangsBot+'Wir werden sorgsam mit Ihren Daten umgehen.');
@@ -142,7 +149,8 @@
             nachname = message.text; 
             bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+'. [Javascript:cookies(nachname,'+nachname+')] [Javascript:konsole(nachname erhalten)]  '))
+                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+', habe ich das richtig verstanden? [Javascript:cookies(nachname,'+nachname+')] [Javascript:konsole(nachname erhalten)]  '))
+                .then(() => bot.say(EmpfangsBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
                 .then(() => 'name');
             
         }
@@ -252,16 +260,16 @@
           	                                                        var aussage = "";
           	                                                        
           	                                                        if ((vorname) && (vorname != "") && (vorname != "Unbekannter") && (nachname) && (nachname != "") && (nachname != "Besucher")) {
-          	                                                           aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn --ändern?';
+          	                                                           aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn ändern? Dann schreiben Sie bitte --ändern.';
                                                                       }
                                                                       else if ((vorname) && (vorname != "") && (vorname != "Unbekannter")) {
-          	                                                           aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen --ändern oder --abbrechen?';
+          	                                                           aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen ändern? Dann schreiben Sie bitte --ändern.';
                                                                       }
                                                                       else if ((nachname) && (nachname != "") && (nachname != "Besucher")) {
-          	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen --ändern oder --abbrechen?';
+          	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern? Dann schreiben Sie bitte --ändern.';
                                                                       }
                                                                       else {
-          	                                                           aussage = EmpfangsBot+'Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein.';
+          	                                                           aussage = EmpfangsBot+'Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Dann schreiben Sie bitte --Bitte.';
                                                                       }
                                                                       
                                                                       bot.say(aussage);
