@@ -6,6 +6,7 @@
        var befehl = "";
        var starten = "";
        var ansicht = "";
+       var startklick = "";
        
     // Datenfelder ausfüllen
        cookie("vorname");
@@ -24,11 +25,11 @@
        $(selektor).click(function(e) {
           
        // Elemente
-          starten = $(this).attr("data-start");
+          startklick = $(this).attr("data-start");
           
        // Navigation
-          start(starten);
-       // console.log("> Start: "+starten);
+          start(startklick);
+       // console.log("> Start: "+startklick);
           
        // Klick verhindern
           e.preventDefault();
@@ -150,7 +151,7 @@
           var status = $("body").attr("data-menu");
           
        // Debuggen
-          console.log('\n\nMenü geklickt\n');
+       // console.log('\n\nMenü geklickt\n');
           
           if (status == "an") {
              
@@ -221,7 +222,9 @@
           var modul = var1;
           
        // Modulnamen kamelisieren
-          modul = modul.charAt(0).toUpperCase() + modul.slice(1);
+       // console.log("modul: "+modul);
+       // modul = modul.charAt(0).toUpperCase() + modul.slice(1);
+       // console.log("-> modul: "+modul);
           
        // Klasse in Kleinbuchstaben
           var klasse = var1;
@@ -353,7 +356,7 @@
              text_string = text_string.replace("["+kurzel+"] ","");
              
           // Debuggen
-             console.log("- Bot angepasst: "+id);
+          // console.log("- Bot angepasst: "+id);
              
              $("#seite > #menu li span").removeClass("aktiv");
           // $("#seite > #menu li span:contains('"+id+"')").addClass("aktiv");
@@ -362,41 +365,6 @@
           }
           
        }
-       
-       window.setTimeout(function() { 
-          
-          $(".sk-from").each(function() {
-             
-             var dieser =    $(this).html();
-             var vorganger = $(this).parent().parent().prev().find(".sk-from").html();
-          // console.log("- "+vorganger+" = "+dieser+"?");
-          
-          // Bei folgendem Absender
-             if (vorganger == dieser) {
-                
-             // Namen hier verbergen
-                $(this).css("display","none");
-                $(this).parent().parent().css("padding-top","10px");
-                
-             // Avatar davor verbergen
-                $(this).parent().parent().prev().children().filter("img.sk-msg-avatar").attr("src", "img/bots/Displaybild_LeerBot.png");
-                
-             // Pfeilchen davor verbergen
-                $(this).parent().parent().prev().find(".sk-msg").addClass("frei");
-                $('head').append("<style>.sk-msg.frei::after{ border: none !important }</style>");
-                
-             }
-             else {
-                
-             // console.log("> Anderer Vorganger: "+vorganger+" != "+name+"");
-                
-             }
-             vorganger = "";
-             dieser = "";
-             
-          });
-          
-       }, 333);
        
        return text_string; 
        
@@ -483,6 +451,42 @@
           text_neu = inhalt("bot", text_neu, "TechnikBot",     "Cynthia, Technik-Bot",   zufall, "Technik");
           text_neu = inhalt("bot", text_neu, "KonzeptionsBot", "Erika, Konzeptions-Bot", zufall, "Konzeption");
           
+       // Bots zusammenfassen
+          window.setTimeout(function() { 
+             
+             $(".sk-from").each(function() {
+                
+                var dieser =    $(this).html();
+                var vorganger = $(this).parent().parent().prev().find(".sk-from").html();
+             // console.log("- "+vorganger+" = "+dieser+"?");
+             
+             // Bei folgendem Absender
+                if (vorganger == dieser) {
+                   
+                // Namen hier verbergen
+                   $(this).css("display","none");
+                   $(this).parent().parent().css("padding-top","10px");
+                   
+                // Avatar davor verbergen
+                   $(this).parent().parent().prev().children().filter("img.sk-msg-avatar").attr("src", "img/bots/Displaybild_LeerBot.png");
+                   
+                // Pfeilchen davor verbergen
+                   $(this).parent().parent().prev().find(".sk-msg").addClass("frei");
+                   $('head').append("<style>.sk-msg.frei::after{ border: none !important }</style>");
+                   
+                }
+                else {
+                   
+                // console.log("> Anderer Vorganger: "+vorganger+" != "+name+"");
+                   
+                }
+                vorganger = "";
+                dieser = "";
+                
+             });
+             
+          }, 333);
+       
        // Default-Bot
           if (text_neu == text_merken) { text_neu = "[AndreasSefzig] "+text_neu; }
           text_neu = inhalt("bot", text_neu, "AndreasSefzig",  "Andreas Sefzig",         zufall, "Sefzig");
@@ -579,7 +583,7 @@
              
           });
           
-          console.log("cookie input wert: "+wert);
+       // console.log("cookie input wert: "+wert);
           return wert;
           
        }
