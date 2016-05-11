@@ -33,6 +33,7 @@ module.exports = new Script({
 
     start: {
     	
+        prompt: (bot) => bot.say(TechnikBot+'Starte...'),
         receive: (bot, message) => {
             
          // Befehl normalisieren
@@ -52,8 +53,8 @@ module.exports = new Script({
                
                   bot.say(EmpfangsBot+'Darf ich uns Ihnen kurz vorstellen? Dann schreiben (oder klicken oder berühren) Sie bitte --Robogeddon.')
                   .then(() => bot.say(EmpfangsBot+'Ich möchte Sie mit den Bots aus unserer  --Beratung, der --Kreation, der --Konzeption und unserer --Technik bekannt machen!'))
-                  .then(() => bot.say(AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. Bitte sprechen Sie solange mit meinem Bot über die --Strategie hinter Bots!'));
-               
+                  .then(() => bot.say(EmpfangsBot+'Beachten Sie das Menü und dessen Button rechts oben für eine "klassische" Ansicht der Inhalte dieser Seite.'));
+               // AndreasSefzig+'Ich bin gerade nicht online. Lassen Sie mich benachrichtigen, indem Sie --Sefzig schreiben. Bitte sprechen Sie solange mit meinem Bot über die --Strategie hinter Bots!'
                }
                else {
                
@@ -136,12 +137,14 @@ module.exports = new Script({
     	
         prompt: (bot) => bot.say(EmpfangsBot+'Und wie heissen Sie mit Nachnamen?'),
         receive: (bot, message) => {
+            
             nachname = message.text; 
             bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
                 .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+', habe ich das richtig verstanden? [Javascript:cookies(nachname,'+nachname+')] '))
                 .then(() => bot.say(EmpfangsBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
                 .then(() => 'name');
+            
         }
     },
 
@@ -149,21 +152,23 @@ module.exports = new Script({
     	
         prompt: (bot) => bot.say(EmpfangsBot+'Wie lautet Ihre E-Mail-Adresse?'),
         receive: (bot, message) => {
+            
             email = message.text;
             
-            emailkorrekt = email.test(emailregex);
+         // emailkorrekt = email.test(emailregex);
+            emailkorrekt = true;
             
             if (emailkorrekt == true) {
             	
                return bot.setProp('email', email)
-                  .then(() => bot.say(EmpfangsBot+'Ihre E-Mail-Adresse ist '+email+', prima. [Javascript:cookies(email,'+email+')]'))
+                  .then(() => bot.say(TechnikBot+'E-Mail-Adresse '+email+' verifiziert. [Javascript:cookies(email,'+email+')]'))
                   .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern. Oder lassen Sie uns zurück zum --Empfang gehen.'))
                   .then(() => 'register');
                
             }
             else {
             	
-               return bot.say(EmpfangsBot+''+email+' ist keine valide E-Mail-Adresse.')
+               return bot.say(TechnikBot+''+email+' wird nicht als E-Mail-Adresse erkannt.')
                   .then(() => bot.say(EmpfangsBot+'Bitte geben Sie Ihre E-Mail-Adresse nochmal ein - oder lassen Sie uns zum --Empfang zurückkehren.'))
                   .then(() => 'emailadresse');
                
@@ -316,7 +321,7 @@ module.exports = new Script({
               (~befehl.indexOf("--EXTERNE")))       { versuch = true; bot.say(SefzigBot+'Bots ermöglichen einen eleganten Zugang zu Ihren Marketing-Aktivitäten. Verstehen Sie einen Bot als virtuellen Mitarbeiter, der Nutzer in Empfang nimmt, einfache Fragen beantwortet und sie - bei Bedarf! - direkt in Ihre Marketing-Maßnahmen verlinkt.').then(function(){
                                                                return bot.say(SefzigBot+'Bots können auch alle möglichen --Aufgaben übernehmen: Von der Newsletter-Registrierung über einen Produkt-Finder bis zum Support mit oder ohne menschliche Unterstützung.') }).then(function(){
                                                                return bot.say(SefzigBot+'Bots sind leicht aufzusetzen (wenn man weiß wie es geht ;). Vor allem aber sind sie leicht in alle Marketing- --Kanäle integrierbar!') }).then(function(){
-                                                               return bot.say(KreationsBot+'Wir in der --Kreation liebt es, interessante --Dialoge zu erschaffen, die Nutzern einen konkreten --Mehrwert bieten und sie mit reichhaltigen --Inhalten erfreuen.'); }); }
+                                                               return bot.say(KreationsBot+'Wir in der --Kreation legen Wert darauf, interessante --Dialoge zu erschaffen, die Nutzern einen konkreten --Mehrwert bieten und sie mit reichhaltigen --Inhalten erfreuen.'); }); }
           
        // Allgemein
        
