@@ -383,6 +383,8 @@
        Cookies.set(name, wert, { expires: 365 }); // 1 Jahr
        console.log("Cookie '"+name+"' gesetzt: "+wert);
        
+       $("#menu #formular #"+name).val(wert).trigger("change");
+       
     }
     
     function menu() {
