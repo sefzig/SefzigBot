@@ -87,45 +87,31 @@
         receive: (bot, message) => {
             
             var antwort = befehlWort(message.text.trim().toUpperCase());
-            var name_falsch = "";
-            var dann = "";
+            var dann = "name";
             
-            if (antwort == "--ÄNDERN")   { 
-               
-               bot.say(EmpfangsBot+'Gut, ändern wir Ihren Namen.');
-               name_falsch == "ändern";
-               dann = "vorname";
-               
-            }
-            if (antwort == "--BITTE")   { 
+            if ((antwort == "--JA") ||
+                (antwort == "--ÄNDERN")) { 
                
                bot.say(EmpfangsBot+'Wir werden sorgsam mit Ihren Daten umgehen.');
-               name_falsch == "neu";
                dann = "vorname";
                
             }
-            if (antwort == "--JA")   { 
+            if ((antwort == "--NEIN") ||
+                (antwort == "--EMPFANG") ||
+                (antwort == "--ABBRECHEN")) {
                
-               bot.say(EmpfangsBot+'Danke. Mögen Sie mir Ihre E-Mail-Adresse geben? Wenn ja, schreiben Sie --Email. Ansonsten lassen Sie uns zurück zum --Empfang gehen.');
-               name_falsch == "nein";
+               bot.say(EmpfangsBot+'Gehen wir zurück zum Empfang.');
                dann = "empfang";
                
             }
-            if (antwort == "--NEIN") {
+            if ((antwort == "--EMAIL")) {
                
-               bot.say(EmpfangsBot+'Hm. Wie war das nochmal?');
-               name_falsch == "ja";
-               dann = "vorname";
-               
-            }
-            if (antwort == "--ABBRECHEN") {
-               
-               name_falsch == "";
-               dann = "empfang";
+               bot.say(EmpfangsBot+'Wir geben Ihre Adresse nicht weiter.');
+               dann = "emailadresse";
                
             }
             
-            return bot.setProp('name_falsch', name_falsch)
+            return bot.setProp('name_eingabe', 'tmp')
                 .then(() => dann);
         }
     },
@@ -136,7 +122,7 @@
         receive: (bot, message) => {
             vorname = message.text;
             return bot.setProp('vorname', vorname)
-                .then(() => bot.say(EmpfangsBot+`${vorname}, prima. [Javascript:cookies(vorname,`+vorname+`)] [Javascript:konsole(vorname erhalten)]  `))
+                .then(() => bot.say(EmpfangsBot+`${vorname}, prima. [Javascript:cookies(vorname,`+vorname+`)] [Javascript:konsole(vorname erhalten)] `))
                 .then(() => 'nachname');
         }
     },
@@ -149,8 +135,7 @@
             nachname = message.text; 
             bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+', habe ich das richtig verstanden? [Javascript:cookies(nachname,'+nachname+')] [Javascript:konsole(nachname erhalten)]  '))
-                .then(() => bot.say(EmpfangsBot+'Bitte bestätigen Sie, indem Sie --ja oder --nein schreiben!'))
+                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+'. Mögen Sie auch Ihre --Email -Adresse hinterlassen? Ansonsten lassen Sie uns zum --Empfang zurückgehen. [Javascript:cookies(nachname,'+nachname+')] [Javascript:konsole(nachname erhalten)] '))
                 .then(() => 'name');
             
         }
@@ -260,16 +245,16 @@
           	                                                        var aussage = "";
           	                                                        
           	                                                        if ((vorname) && (vorname != "") && (vorname != "Unbekannter") && (nachname) && (nachname != "") && (nachname != "Besucher")) {
-          	                                                           aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn ändern? Dann schreiben Sie bitte --ändern.';
+          	                                                           aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn --ändern?';
                                                                       }
                                                                       else if ((vorname) && (vorname != "") && (vorname != "Unbekannter")) {
-          	                                                           aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen ändern? Dann schreiben Sie bitte --ändern.';
+          	                                                           aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen --ändern oder --abbrechen?';
                                                                       }
                                                                       else if ((nachname) && (nachname != "") && (nachname != "Besucher")) {
-          	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen ändern? Dann schreiben Sie bitte --ändern.';
+          	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen --ändern oder --abbrechen?';
                                                                       }
                                                                       else {
-          	                                                           aussage = EmpfangsBot+'Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Dann schreiben Sie bitte --Bitte.';
+          	                                                           aussage = EmpfangsBot+'Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein.';
                                                                       }
                                                                       
                                                                       bot.say(aussage);
