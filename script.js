@@ -317,13 +317,24 @@
                                                                return bot.say(EmpfangsBot+'Vorlage Text 2.'); }).then(function(){
                                                                return bot.say(EmpfangsBot+'Vorlage Text 3.'); }); }
           
-       // Module / Tests
-          if  (~befehl.indexOf("--MENU"))           { versuch = true; bot.say(SefzigBot+'Menü öffnen. [Javascript:menu]'); }
-          if  (~befehl.indexOf("--ALERT"))          { versuch = true; bot.say(SefzigBot+'[Javascript:alert(123)]'); }
-          if  (~befehl.indexOf("--KONSOLE"))        { versuch = true; bot.say(SefzigBot+'[Javascript:konsole(123)]'); }
-          if  (~befehl.indexOf("--COOKIE"))         { versuch = true; bot.say(SefzigBot+'[Javascript:cookies(test,123)]'); }
-          if  (~befehl.indexOf("--YOUTUBE"))        { versuch = true; bot.say(SefzigBot+'[Youtube:u07XONlDwX8]'); }
-          if  (~befehl.indexOf("--LINKTEST"))       { versuch = true; bot.say(SefzigBot+'Ein Link: [Link:Testlink,ThinMedia]'); }
+       // Module: Inhalte
+          if  (~befehl.indexOf("--TESTTEXT"))       { versuch = true; bot.say(SefzigBot+' [Text:Slack-Blogpost öffnen,SefzignetBlogSlack] Text.'); }
+          if  (~befehl.indexOf("--TESTBILD"))       { versuch = true; bot.say(SefzigBot+' [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Bild.'); }
+          if  (~befehl.indexOf("--TESTQR"))         { versuch = true; bot.say(SefzigBot+' [Qr:https://sefzigbot.herokuapp.com/] QR-Code..'); }
+          if  (~befehl.indexOf("--TESTYOUTUBE"))    { versuch = true; bot.say(SefzigBot+' [Youtube:u07XONlDwX8] Youtube.'); }
+          
+       // Module: Links
+          if  (~befehl.indexOf("--TESTLINK"))       { versuch = true; bot.say(SefzigBot+' [Link:Testlink,ThinMedia] Link.'); }
+          if  (~befehl.indexOf("--TESTTEXTLINK"))   { versuch = true; bot.say(SefzigBot+' [Textlink:BI Intelligence Report,MessagingVsSocial] Textlink.'); }
+          if  (~befehl.indexOf("--TESTLINKLISTE"))  { versuch = true; bot.say(SefzigBot+' [Linkliste:Linkliste öffnen,Rtm:Strategie:Artikel] Linkliste.'); }
+          if  (~befehl.indexOf("--TESTBUTTON"))     { versuch = true; bot.say(SefzigBot+' [Button:Studie von Slack,http://slack.com/results] Button.'); }
+          if  (~befehl.indexOf("--TESTACTION"))     { versuch = true; bot.say(SefzigBot+' %[Ein Nachbau von ELIZA](http://sefzig.net/link/ElizaMedai/) Action.'); }
+          
+       // Module: Javascript
+          if  (~befehl.indexOf("--TESTMENU"))       { versuch = true; bot.say(SefzigBot+' [Javascript:menu] Javascript Menü.'); }
+          if  (~befehl.indexOf("--TESTALERT"))      { versuch = true; bot.say(SefzigBot+' [Javascript:alert(123)] Javascript Alert.'); }
+          if  (~befehl.indexOf("--TESTKONSOLE"))    { versuch = true; bot.say(SefzigBot+' [Javascript:konsole(123)] Javascript Konsole.'); }
+          if  (~befehl.indexOf("--TESTCOOKIE"))     { versuch = true; bot.say(SefzigBot+' [Javascript:cookies(test,123)] Javascript Cookies.'); }
           
        // -----------------
        // Konversation fortführen
