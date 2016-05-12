@@ -18,6 +18,7 @@
  // Zähler
     var versuche_max = 3;
     var versuche = 0;
+    var zuletzt = "";
     var bekannt = false;
     
  // Daten
@@ -59,15 +60,15 @@
                
                if (bekannt == false) {
                
-                  bot.say(EmpfangsBot+' [Javascript:konsole(start bekannt false)] Start Unbekannt Text 1: --Robogeddon.')
-                  .then(() => bot.say(EmpfangsBot+' Start Empfang Text 2: --Beratung, --Kreation, --Konzeption, --Strategie, --Technik.'))
-                  .then(() => bot.say(EmpfangsBot+'Start Empfang Text 3. Hinweis Burger-Button.'));
+                  bot.say(EmpfangsBot+' Start Unbekannt Text 1. ')
+                  .then(() => bot.say(EmpfangsBot+' Start Empfang Text 2:  --Robogeddon, --Beratung, --Kreation, --Konzeption, --Strategie, --Technik. '))
+                  .then(() => bot.say(EmpfangsBot+' Start Empfang Text 3. Hinweis Burger-Button. [Javascript:menu(an)] '));
                   
                }
                else {
                
-                  bot.say(EmpfangsBot+'[Javascript:konsole(start bekannt true)] Start Bekannt Text 1: --Robogeddon.')
-                  .then(() => bot.say(EmpfangsBot+'Start Bekannt Text 2: --Beratung, --Kreation, --Konzeption, --Strategie, --Technik vorstellen.'));
+                  bot.say(EmpfangsBot+' Start Bekannt Text 1: --Robogeddon. ')
+                  .then(() => bot.say(EmpfangsBot+' Start Bekannt Text 2: --Beratung, --Kreation, --Konzeption, --Strategie, --Technik vorstellen. '));
                
                }
             }
@@ -201,7 +202,7 @@
                                                                             +'\n○ --Kontakt '
                                                                             +'\n○ --Über').then(function(){
                                                                return bot.say(EmpfangsBot+'Text Empfang Befehle.') }); }
-                                                               
+          
           if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(function(){
                                                                return bot.say(TechnikBot+'Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung...'); }).then(function(){
                                                                return bot.say(EmpfangsBot+'Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser.'); }); }
@@ -209,6 +210,8 @@
           if ((~befehl.indexOf("--UBER")) ||
               (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.').then(function(){
                                                                return bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }); }
+          
+          if  (~befehl.indexOf("--ZURÜCK"))         { versuch = true; bot.say(EmpfangsBot+'Wollen Sie zurück zu --'+zuletzt+'?'); }
           
        // -----------------
        // Bots
@@ -292,6 +295,10 @@
           	                                                          bot.say(EmpfangsBot+'Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter!');
                                                                    }
           
+       // -----------------
+       // Inhalte
+       // -----------------
+       
           
           
           
@@ -315,12 +322,12 @@
        // -----------------
        
        // Einzeilig
-          if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+'Text: Vorlage.'); }
+          if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+' Text: Vorlage. '); }
           
        // Mehrzeilig
-          if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+'Vorlage Text 1.').then(function(){
-                                                               return bot.say(EmpfangsBot+'Vorlage Text 2.'); }).then(function(){
-                                                               return bot.say(EmpfangsBot+'Vorlage Text 3.'); }); }
+          if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+' Vorlage Text 1. ').then(function(){
+                                                               return bot.say(EmpfangsBot+' Vorlage Text 2. '); }).then(function(){
+                                                               return bot.say(EmpfangsBot+' Vorlage Text 3. '); }); }
           
        // -----------------
        // Tests
@@ -348,7 +355,10 @@
        // -----------------
        // Konversation fortführen
        // -----------------
-       
+          
+       // Zurück merken
+          zuletzt = "Empfang";
+          
        // Irrläufer
           if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
              bot.say(EmpfangsBot+'Suchen Sie meine --Befehle?'); versuche = 0; }
@@ -388,6 +398,12 @@
                                                                return bot.say(EmpfangsBot+'Willkommen zurück! Wie war es in der Kreation? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann.'); });
                                                                       dann = "empfang"; }
           
+          if  (~befehl.indexOf("--ZURÜCK"))         { versuch = true; bot.say(KreationsBot+'Wollen Sie zurück zu --'+zuletzt+'?'); }
+          
+       // -----------------
+       // Inhalte
+       // -----------------
+       
           
           
           
@@ -400,6 +416,9 @@
        // Konversation fortführen
        // -----------------
        
+       // Zurück merken
+          zuletzt = "Kreation";
+          
        // Irrläufer
           if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
              bot.say(KreationsBot+'Suchen Sie die --Befehle?').then(function(){ 
