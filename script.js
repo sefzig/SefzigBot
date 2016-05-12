@@ -219,104 +219,54 @@
                                                                       else { bot.say(EmpfangsBot+' Wollen Sie zurück zum --Empfang? '); } }
           
        // -----------------
-       // Vorlagen
-       // -----------------
-       
-       // Einzeilig
-       // if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+' Text: Vorlage. '); }
-          
-          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(EmpfangsBot+' Text 1. ').then(() => 'Empfang'); }
-       // Mehrzeilig
-       // if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+' Vorlage Text 1. ').then(function(){
-       //                                                      return bot.say(EmpfangsBot+' Vorlage Text 2. '); }).then(function(){
-       //                                                      return bot.say(EmpfangsBot+' Vorlage Text 3. '); }); }
-          
-          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(EmpfangsBot+' Text 1. ').then(() => bot.say(EmpfangsBot+' Text 2. ')).then(() => 'Empfang'); }
-       // -----------------
        // System
        // -----------------
        
-          if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(EmpfangsBot+' --Befehle dieser Seite: %li% --Mobil %li% --Newsletter %li% --Kontakt %li% --Über ').then(() => bot.say(EmpfangsBot+' Text Empfang Befehle. ')).then(() => 'Empfang'); }          
+          if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(EmpfangsBot+' --Befehle dieser Seite:  ○ --Mobil  ○ --Newsletter  ○ --Kontakt  ○ --Über ').then(() => bot.say(EmpfangsBot+' Text Empfang Befehle. ')).then(() => 'Empfang'); }          
           if  (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(EmpfangsBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(EmpfangsBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'Empfang'); }
           if  (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(EmpfangsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => bot.say(EmpfangsBot+' Sprechen Sie mit unserer --Technik, um mehr zu erfahren. ')).then(() => 'Empfang'); }if  (~befehl.indexOf("--üBER")) { versuch = true; return bot.say(EmpfangsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => bot.say(EmpfangsBot+' Sprechen Sie mit unserer --Technik, um mehr zu erfahren. ')).then(() => 'Empfang'); }          
        // -----------------
        // Bots
        // -----------------
           
+       // Vorlage (Gewerk, Name)
+          if  (~befehl.indexOf("--GEWERK")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Name. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk'); }if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Name. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk'); }
           if  (~befehl.indexOf("--SEFZIG")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Sefzig Text 1. ').then(() => bot.say(EmpfangsBot+' Hallo Sefzig Text 2: --Empfang. ')).then(() => 'Empfang'); }
           if  (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'Empfang'); }if  (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'Empfang'); }          
-       // Vorlage (Gewerk, Name)
-       /* if  (~befehl.indexOf("--GEWERK")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Name. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk'); }if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Name. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk'); } */
-
-       // Vorlage (Gewerk, Name)
-       // if ((~befehl.indexOf("--GEWERK")) ||
-       //     (~befehl.indexOf("--NAME")))          { versuch = true; bot.say(EmpfangsBot+'').then(function(){
-       //                                                      return bot.say(GewerksBot+'') }).then(function(){
-       //                                                      return bot.say(GewerksBot+'') }).then(function(){
-       //                                                      return bot.say(GewerksBot+'') });
-       //                                                             dann = "gewerk"; } 
-          
-          if ((~befehl.indexOf("--BERATUNG")) ||
-              (~befehl.indexOf("--BARBARA")))       { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Barbara. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
-                                                               return bot.say(BeratungsBot+'Hallo Beratung Text 1: Hallo, ich bin Barbara, der Beratungs-Bot.') }).then(function(){
-                                                               return bot.say(BeratungsBot+'Hallo Beratung Text 2: Befehle: --Folgt.') }).then(function(){
-                                                               return bot.say(BeratungsBot+'Hallo Beratung Text 3.') });
-                                                                      dann = "beratung"; } 
-          
-          if ((~befehl.indexOf("--TECHNIK")) ||
-              (~befehl.indexOf("--CYNTHIA")))       { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Cynthia. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
-                                                               return bot.say(TechnikBot+'Hallo Technik Text 1: Hallo, ich bin Cynthia, der Technik-Bot.') }).then(function(){
-                                                               return bot.say(TechnikBot+'Hallo Technik Text 2: Befehle: --Folgt.') }).then(function(){
-                                                               return bot.say(TechnikBot+'Hallo Technik Text 3.') });
-                                                                      dann = "technik"; } 
-          
-          if  (~befehl.indexOf("--KREATION")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo Kreation Text 1: Hallo, ich bin Doris, der Kreations-Bot. ')).then(() => bot.say(KreationsBot+' Hallo Kreation Text 2: Befehle: --Leben, --Dialoge, --Persönlichkeit, --Geschichten, --Inhalte, --Mehrwerte. ')).then(() => bot.say(KreationsBot+' Hallo Kreation Text 3. ')).then(() => 'kreation'); }if  (~befehl.indexOf("--DORIS")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo Kreation Text 1: Hallo, ich bin Doris, der Kreations-Bot. ')).then(() => bot.say(KreationsBot+' Hallo Kreation Text 2: Befehle: --Leben, --Dialoge, --Persönlichkeit, --Geschichten, --Inhalte, --Mehrwerte. ')).then(() => bot.say(KreationsBot+' Hallo Kreation Text 3. ')).then(() => 'kreation'); }
-          if ((~befehl.indexOf("--KONZEPTION")) ||
-              (~befehl.indexOf("--ERIKA")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Erika. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
-                                                               return bot.say(KonzeptionsBot+'Hallo Konzeption Text 1: Hallo, ich bin Erika, der Konzeptions-Bot.') }).then(function(){
-                                                               return bot.say(KonzeptionsBot+'Hallo Konzeption Text 2: Befehle: --Folgt.') }).then(function(){
-                                                               return bot.say(KonzeptionsBot+'Hallo Konzeption Text 3.') });
-                                                                      dann = "konzeption"; } 
-          
-          if ((~befehl.indexOf("--STRATEGIE")) ||
-              (~befehl.indexOf("--FELINE")))        { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Feline. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
-                                                               return bot.say(StrategieBot+'Hallo Strategie Text 1: Hallo, ich bin Feline, der Strategie-Bot.') }).then(function(){
-                                                               return bot.say(StrategieBot+'Hallo Strategie Text 2: Befehle: --Folgt.') }).then(function(){
-                                                               return bot.say(StrategieBot+'Hallo Strategie Text 3.') });
-                                                                      dann = "strategie"; } 
-          
+          if  (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Barbara. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo Beratung Text 1: Hallo, ich bin Barbara, der Beratungs-Bot. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung'); }if  (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Barbara. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo Beratung Text 1: Hallo, ich bin Barbara, der Beratungs-Bot. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung'); }		   
+		    if  (~befehl.indexOf("--TECHNIK")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Cynthia. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(TechnikBot+' Hallo Technik Text 1: Hallo, ich bin Cynthia, der Technik-Bot. ')).then(() => bot.say(TechnikBot+' Hallo Technik Text 2: --Befehle folgt. ')).then(() => bot.say(TechnikBot+' Hallo Technik Text 3. ')).then(() => 'technik'); }if  (~befehl.indexOf("--CYNTHIA")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Cynthia. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(TechnikBot+' Hallo Technik Text 1: Hallo, ich bin Cynthia, der Technik-Bot. ')).then(() => bot.say(TechnikBot+' Hallo Technik Text 2: --Befehle folgt. ')).then(() => bot.say(TechnikBot+' Hallo Technik Text 3. ')).then(() => 'technik'); }		    
+          if  (~befehl.indexOf("--KREATION")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo Kreation Text 1: Hallo, ich bin Doris, der Kreations-Bot. ')).then(() => bot.say(KreationsBot+' Hallo Kreation Text 2: Befehle: --Leben, --Dialoge, --Persönlichkeit, --Geschichten, --Inhalte, --Mehrwerte. ')).then(() => bot.say(KreationsBot+' Hallo Kreation Text 3. ')).then(() => 'kreation'); }if  (~befehl.indexOf("--DORIS")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo Kreation Text 1: Hallo, ich bin Doris, der Kreations-Bot. ')).then(() => bot.say(KreationsBot+' Hallo Kreation Text 2: Befehle: --Leben, --Dialoge, --Persönlichkeit, --Geschichten, --Inhalte, --Mehrwerte. ')).then(() => bot.say(KreationsBot+' Hallo Kreation Text 3. ')).then(() => 'kreation'); }		    
+		    if  (~befehl.indexOf("--KONZEPTION")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Erika. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 1: Hallo, ich bin Erika, der Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }if  (~befehl.indexOf("--ERIKA")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Erika. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 1: Hallo, ich bin Erika, der Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }		    
+		    if  (~befehl.indexOf("--STRATEGIE")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Feline. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo Strategie Text 1: Hallo, ich bin Feline, der Strategie-Bot. ')).then(() => bot.say(StrategieBot+' Hallo Strategie Text 2: --Befehle folgt. ')).then(() => bot.say(StrategieBot+' Hallo Strategie Text 3. ')).then(() => 'strategie'); }if  (~befehl.indexOf("--FELINE")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Feline. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo Strategie Text 1: Hallo, ich bin Feline, der Strategie-Bot. ')).then(() => bot.say(StrategieBot+' Hallo Strategie Text 2: --Befehle folgt. ')).then(() => bot.say(StrategieBot+' Hallo Strategie Text 3. ')).then(() => 'strategie'); }
        // -----------------
        // Onboarding
        // -----------------
        
-          if  (~befehl.indexOf("--NAME"))           { versuch = true; dann = "name";
-          	                                                        var aussage = "";
-          	                                                        
-          	                                                        if ((vorname) && (vorname != "") && (vorname != "Unbekannter") && (nachname) && (nachname != "") && (nachname != "Besucher")) {
-          	                                                           aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn --ändern?';
-                                                                      }
-                                                                      else if ((vorname) && (vorname != "") && (vorname != "Unbekannter")) {
-          	                                                           aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen --ändern oder --abbrechen?';
-                                                                      }
-                                                                      else if ((nachname) && (nachname != "") && (nachname != "Besucher")) {
-          	                                                           aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen --ändern oder --abbrechen?';
-                                                                      }
-                                                                      else {
-          	                                                           aussage = EmpfangsBot+'Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein.';
-                                                                      }
-                                                                      
-                                                                      bot.say(aussage);
-                                                                   }
+          if  (~befehl.indexOf("--NAME")) { 
+             
+             versuch = true; dann = "name";
+          	 var aussage = "";
+          	 
+          	 if ((vorname) && (vorname != "") && (vorname != "Unbekannter") && (nachname) && (nachname != "") && (nachname != "Besucher")) {
+          	    aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn --ändern?';
+             }
+             else if ((vorname) && (vorname != "") && (vorname != "Unbekannter")) {
+          	    aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen --ändern oder --abbrechen?';
+             }
+             else if ((nachname) && (nachname != "") && (nachname != "Besucher")) {
+          	    aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen --ändern oder --abbrechen?';
+             }
+             else {
+          	    aussage = EmpfangsBot+'Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein.';
+             }
+               
+             bot.say(aussage);
+          }
           
-          if  (~befehl.indexOf("--EMAIL"))          { versuch = true; dann = "emailadresse";
-          	                                                          bot.say(EmpfangsBot+'Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter!');
-                                                                   }
-          
-       // -----------------
-       // Inhalte
-       // -----------------
-          
-          
+          if  (~befehl.indexOf("--EMAIL")) { 
+          	 versuch = true; dann = "emailadresse";
+          	 bot.say(EmpfangsBot+'Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter!');
+          }
           
        // -----------------
        // Tests
@@ -340,6 +290,10 @@
           else if  (~befehl.indexOf("--TESTALERT"))      { versuch = true; bot.say(SefzigBot+' [Javascript:alert(123)] Javascript ausgeführt: Alert.'); }
           else if  (~befehl.indexOf("--TESTKONSOLE"))    { versuch = true; bot.say(SefzigBot+' [Javascript:konsole(123)] Javascript ausgeführt: Konsole.'); }
           else if  (~befehl.indexOf("--TESTCOOKIE"))     { versuch = true; bot.say(SefzigBot+' [Javascript:cookies(test,123)] Javascript ausgeführt: Cookies.'); }
+          
+       // -----------------
+       // Inhalte
+       // -----------------
           
        // -----------------
        // Bot aus
@@ -411,9 +365,18 @@
           
           if  (~befehl.indexOf("--ZURÜCK"))         { versuch = true; if (zuletzt != "Kreation") { bot.say(KreationsBot+' Wollen Sie zurück zu --'+zuletzt+'? '); } 
                                                                       else { bot.say(KreationsBot+' Wollen Sie zurück zum --Empfang? '); } }
-          
-          if  (~befehl.indexOf("--ANTWORTEN")) { versuch = true; return bot.say(+'  ').then(() => bot.say(KreationsBot+' Kreation Antwort 1 ')).then(() => bot.say(KreationsBot+' Kreation Antwort 2 ')).then(() => 'kreation'); }          
-          if  (~befehl.indexOf("--TESTEN")) { versuch = true; return bot.say(+'  ').then(() => bot.say(KreationsBot+' Kreation Test 1 ')).then(() => bot.say(KreationsBot+' Kreation Test 2 ')).then(() => 'kreation'); }
+                 
+    // -----------------
+    // BEFEHLE
+    // -----------------
+       
+       if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(KreationsBot+' Text Kreation 1. Befehle: --folgt. ').then(() => bot.say(KreationsBot+' Text Kreation 2. ')).then(() => 'Kreation'); }if  (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(KreationsBot+' Text Kreation 1. Befehle: --folgt. ').then(() => bot.say(KreationsBot+' Text Kreation 2. ')).then(() => 'Kreation'); }       
+    // -----------------
+    // Inhalte
+    // -----------------
+       
+       if  (~befehl.indexOf("--ANTWORTEN")) { versuch = true; return bot.say(KreationsBot+' Kreation Antwort 1 ').then(() => bot.say(KreationsBot+' Kreation Antwort 2 ')).then(() => 'kreation'); }          
+       if  (~befehl.indexOf("--TESTEN")) { versuch = true; return bot.say(KreationsBot+' Kreation Test 1 ').then(() => bot.say(KreationsBot+' Kreation Test 2 ')).then(() => 'kreation'); }       
        // -----------------
        // Bot aus
        // -----------------
