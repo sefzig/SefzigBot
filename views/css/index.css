@@ -101,7 +101,7 @@
        left: none; 
        bottom: none;
     }
-    #seite > #start > img {
+    #seite > #start > a > img {
        width: 25px; 
        height: 25px; 
        cursor: pointer;
@@ -158,6 +158,11 @@
     }
     #seite > #menu div > div button.aktiv { 
        background-color: #ffffff !important;
+       color: black !important;
+    }
+    #seite > #menu div > div button:active,
+    #seite > #menu div > div button:focus { 
+       background-color: #00ff00 !important;
        color: black !important;
     }
     
