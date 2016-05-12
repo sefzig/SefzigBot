@@ -101,10 +101,11 @@
        left: none; 
        bottom: none;
     }
-    #seite > #start > a > img {
+    #seite > #start > input {
        width: 25px; 
        height: 25px; 
        cursor: pointer;
+       border: 0px;
     }
     
  /* ----------------- */

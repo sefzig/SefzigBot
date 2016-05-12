@@ -378,7 +378,7 @@
        var status = $("body").attr("data-menu");
        if (status == "an") {
           
-          $("#start img").trigger("click");
+          $("#start > input").trigger("click");
           
        }
        
