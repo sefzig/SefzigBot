@@ -365,18 +365,30 @@
           
           if  (~befehl.indexOf("--ZURÜCK"))         { versuch = true; if (zuletzt != "Kreation") { bot.say(KreationsBot+' Wollen Sie zurück zu --'+zuletzt+'? '); } 
                                                                       else { bot.say(KreationsBot+' Wollen Sie zurück zum --Empfang? '); } }
-                 
-    // -----------------
-    // BEFEHLE
-    // -----------------
+          
+       // -----------------
+       // Vorlagen
+       // -----------------
        
-       if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(KreationsBot+' Text Kreation 1. Befehle: --folgt. ').then(() => bot.say(KreationsBot+' Text Kreation 2. ')).then(() => 'Kreation'); }if  (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(KreationsBot+' Text Kreation 1. Befehle: --folgt. ').then(() => bot.say(KreationsBot+' Text Kreation 2. ')).then(() => 'Kreation'); }       
-    // -----------------
-    // Inhalte
-    // -----------------
+       // Einzeilig
+       // if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+' Text: Vorlage. '); }
+          
+          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(KreationsBot+' Text 1. ').then(() => 'Kreation'); }          
+       // Mehrzeilig
+       // if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+' Vorlage Text 1. ').then(function(){
+       //                                                      return bot.say(EmpfangsBot+' Vorlage Text 2. '); }).then(function(){
+       //                                                      return bot.say(EmpfangsBot+' Vorlage Text 3. '); }); }
+          
+          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(KreationsBot+' Text 1. ').then(() => bot.say(KreationsBot+' Text 2. ')).then(() => 'Kreation'); }          
+       // -----------------
+       // BEFEHLE
+       // -----------------
        
-       if  (~befehl.indexOf("--ANTWORTEN")) { versuch = true; return bot.say(KreationsBot+' Kreation Antwort 1 ').then(() => bot.say(KreationsBot+' Kreation Antwort 2 ')).then(() => 'kreation'); }          
-       if  (~befehl.indexOf("--TESTEN")) { versuch = true; return bot.say(KreationsBot+' Kreation Test 1 ').then(() => bot.say(KreationsBot+' Kreation Test 2 ')).then(() => 'kreation'); }       
+          if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(KreationsBot+' Text Kreation 1. Befehle: --folgt. ').then(() => bot.say(KreationsBot+' Text Kreation 2. ')).then(() => 'Kreation'); }if  (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(KreationsBot+' Text Kreation 1. Befehle: --folgt. ').then(() => bot.say(KreationsBot+' Text Kreation 2. ')).then(() => 'Kreation'); }
+       // -----------------
+       // Inhalte
+       // -----------------
+          
        // -----------------
        // Bot aus
        // -----------------
