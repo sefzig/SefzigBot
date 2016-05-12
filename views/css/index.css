@@ -161,7 +161,6 @@
        background-color: #ffffff !important;
        color: black !important;
     }
-    #seite > #menu div > div button:active,
     #seite > #menu div > div button:focus { 
        background-color: #00ff00 !important;
        color: black !important;

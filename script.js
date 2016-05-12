@@ -201,8 +201,11 @@
                                                                             +'\n○ --Kontakt '
                                                                             +'\n○ --Über').then(function(){
                                                                return bot.say(EmpfangsBot+'Text Empfang Befehle.') }); }
+                                                               
           if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(function(){
-                                                               return bot.say(TechnikBot+'Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung...'); }); }
+                                                               return bot.say(TechnikBot+'Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung...'); }).then(function(){
+                                                               return bot.say(EmpfangsBot+'Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser.'); }); }
+          
           if ((~befehl.indexOf("--UBER")) ||
               (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.').then(function(){
                                                                return bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }); }
@@ -218,6 +221,14 @@
           if ((~befehl.indexOf("--EMPFANG")) ||
               (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung.').then(function(){
                                                                return bot.say(EmpfangsBot+'Hallo Empfang Text 2: --Befehle.'); }); }
+          
+       // Vorlage (Gewerk, Name)
+       // if ((~befehl.indexOf("--GEWERK")) ||
+       //     (~befehl.indexOf("--NAME")))          { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Name. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
+       //                                                      return bot.say(GewerksBot+'Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot.') }).then(function(){
+       //                                                      return bot.say(GewerksBot+'Hallo Gewerk Text 2: Befehle: --Folgt.') }).then(function(){
+       //                                                      return bot.say(GewerksBot+'Hallo Gewerk Text 3.') });
+       //                                                             dann = "gewerk"; } 
           
           if ((~befehl.indexOf("--BERATUNG")) ||
               (~befehl.indexOf("--BARBARA")))       { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Barbara. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
@@ -253,14 +264,6 @@
                                                                return bot.say(StrategieBot+'Hallo Strategie Text 2: Befehle: --Folgt.') }).then(function(){
                                                                return bot.say(StrategieBot+'Hallo Strategie Text 3.') });
                                                                       dann = "strategie"; } 
-          
-       // Vorlage (Gewerk, Name)
-       // if ((~befehl.indexOf("--GEWERK")) ||
-       //     (~befehl.indexOf("--BOTNAME")))       { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Name. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
-       //                                                      return bot.say(GewerksBot+'Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot.') }).then(function(){
-       //                                                      return bot.say(GewerksBot+'Hallo Gewerk Text 2: Befehle: --Folgt.') }).then(function(){
-       //                                                      return bot.say(GewerksBot+'Hallo Gewerk Text 3.') });
-       //                                                             dann = "gewerk"; } 
           
        // -----------------
        // Onboarding
