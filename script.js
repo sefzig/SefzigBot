@@ -230,12 +230,10 @@
        // -----------------
        
           if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; bot.say(EmpfangsBot+' --Befehle dieser Seite: %li% --Mobil %li% --Newsletter %li% --Kontakt %li% --Über ')
-                  .then(() => bot.say(EmpfangsBot+' Text Empfang Befehle. ')); }
-          
-          if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(function(){
-                                                               return bot.say(TechnikBot+'Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung...'); }).then(function(){
-                                                               return bot.say(EmpfangsBot+'Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser.'); }); }
-          
+                  .then(() => bot.say(EmpfangsBot+' Text Empfang Befehle. ')); }          
+          if  (~befehl.indexOf("--MOBIL")) { versuch = true; bot.say(EmpfangsBot+' Diesen Chatz mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ')
+                  .then(() => bot.say(TechnikBot+' Leider werdenz Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... '))
+                  .then(() => bot.say(EmpfangsBot+' Oder öffnenz Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser.. ')); }
           if ((~befehl.indexOf("--UBER")) ||
               (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.').then(function(){
                                                                return bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }); }
@@ -335,11 +333,14 @@
        // Einzeilig
           if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+' Text: Vorlage. '); }
           
+          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; bot.say(EmpfangsBot+' Text 1. '); }
        // Mehrzeilig
           if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+' Vorlage Text 1. ').then(function(){
                                                                return bot.say(EmpfangsBot+' Vorlage Text 2. '); }).then(function(){
                                                                return bot.say(EmpfangsBot+' Vorlage Text 3. '); }); }
           
+          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; bot.say(EmpfangsBot+' Text 1. ')
+                  .then(() => bot.say(EmpfangsBot+' Text 2. ')); }
        // -----------------
        // Tests
        // -----------------
