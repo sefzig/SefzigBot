@@ -222,21 +222,20 @@
                                                                       else { bot.say(EmpfangsBot+' Wollen Sie zurück zum --Empfang? '); } }
           
        // -----------------
-       // Inhalte
-       // -----------------
-       
-       // -----------------
        // System
        // -----------------
        
           if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; bot.say(EmpfangsBot+' --Befehle dieser Seite: %li% --Mobil %li% --Newsletter %li% --Kontakt %li% --Über ')
                   .then(() => bot.say(EmpfangsBot+' Text Empfang Befehle. ')); }          
-          if  (~befehl.indexOf("--MOBIL")) { versuch = true; bot.say(EmpfangsBot+' Diesen Chatz mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ')
-                  .then(() => bot.say(TechnikBot+' Leider werdenz Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... '))
-                  .then(() => bot.say(EmpfangsBot+' Oder öffnenz Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser.. ')); }
+          if  (~befehl.indexOf("--MOBIL")) { versuch = true; bot.say(EmpfangsBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ')
+                  .then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... '))
+                  .then(() => bot.say(EmpfangsBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser.. ')); }
+          if  (~befehl.indexOf("--UBER")) { versuch = true; bot.say(EmpfangsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ')
+                  .then(() => bot.say(EmpfangsBot+' Sprechen Sie mit unserer --Technik, um mehr zu erfahren. ')); }if  (~befehl.indexOf("--üBER")) { versuch = true; bot.say(EmpfangsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ')
+                  .then(() => bot.say(EmpfangsBot+' Sprechen Sie mit unserer --Technik, um mehr zu erfahren. ')); }          
           if ((~befehl.indexOf("--UBER")) ||
-              (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.').then(function(){
-                                                               return bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }); }
+              (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'').then(function(){
+                                                               return bot.say(EmpfangsBot+''); }); }
           
        // -----------------
        // Bots
@@ -435,10 +434,6 @@
           if  (~befehl.indexOf("--ZURÜCK"))         { versuch = true; if (zuletzt != "Kreation") { bot.say(KreationsBot+' Wollen Sie zurück zu --'+zuletzt+'? '); } 
                                                                       else { bot.say(KreationsBot+' Wollen Sie zurück zum --Empfang? '); } }
           
-       // -----------------
-       // Inhalte
-       // -----------------
-       
           if  (~befehl.indexOf("--ANTWORTEN")) { versuch = true; bot.say(KreationsBot+' Kreation Antwort 1 ')
                   .then(() => bot.say(KreationsBot+' Kreation Antwort 2 ')); }          
           if  (~befehl.indexOf("--TESTEN")) { versuch = true; bot.say(KreationsBot+' Kreation Test 1 ')
