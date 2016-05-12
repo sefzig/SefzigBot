@@ -157,12 +157,12 @@
        color: white;
        cursor: pointer;
     }
-    #seite > #menu div > div button.aktiv { 
-       background-color: #ffffff !important;
+    #seite > #menu div > div button:focus { 
+       background-color: #00ff00;
        color: black !important;
     }
-    #seite > #menu div > div button:focus { 
-       background-color: #00ff00 !important;
+    #seite > #menu div > div button.aktiv { 
+       background-color: #ffffff !important;
        color: black !important;
     }
     
