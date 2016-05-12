@@ -174,13 +174,24 @@
         }
     },
    
- // -------------------------
- // Empfang
- // -------------------------
-    
+ // ---------------------------
+ // Empfang (Alice)
+ // ---------------------------
+ // - name_klein: empfang
+ // - name_kamel: Empfang
+ // - name_gross: EMPFANG
+ // - frau_klein: alice
+ // - frau_kamel: Alice
+ // - frau_gross: ALICE
+ // - bot_name:   EmpfangsBot
+ // - bot_klein:  empfangsbot
+ // - bot_kamel:  Empfangsbot
+ // - bot_gross:  EMPFANGSBOT
+ // ---------------------------
+ 
     empfang: {
-       
-       receive: (bot, message) => {
+  	
+      receive: (bot, message) => {
           
        // Befehl normalisieren
           var befehl = befehlWort(message.text.trim().toUpperCase());
@@ -194,6 +205,26 @@
        // Default-Zurück
           var zuruck = "Empfang";
           
+       // -----------------
+       // Befehle
+       // -----------------
+          
+          if ("empfang" != "empfang") {
+          	
+             if ((~befehl.indexOf("--ALICE")) ||
+                 (~befehl.indexOf("--EMPFANG")) ||
+                 (~befehl.indexOf("--ABBRECHEN")))  { versuch = true; bot.say(EmpfangsBot+' Bis später! ').then(function(){
+                                                               return bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Empfang? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. '); });
+                                                                      dann = "empfang"; }
+          }
+          
+          if  (~befehl.indexOf("--ZURÜCK"))         { versuch = true; if (zuletzt != "Empfang") { bot.say(EmpfangsBot+' Wollen Sie zurück zu --'+zuletzt+'? '); } 
+                                                                      else { bot.say(EmpfangsBot+' Wollen Sie zurück zum --Empfang? '); } }
+          
+       // -----------------
+       // Inhalte
+       // -----------------
+       
        // -----------------
        // System
        // -----------------
@@ -212,8 +243,6 @@
           if ((~befehl.indexOf("--UBER")) ||
               (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text.').then(function(){
                                                                return bot.say(EmpfangsBot+'Sprechen Sie mit unserer --Technik, um mehr zu erfahren!'); }); }
-          
-          if  (~befehl.indexOf("--ZURÜCK"))         { versuch = true; bot.say(EmpfangsBot+'Wollen Sie zurück zu --'+zuletzt+'?'); }
           
        // -----------------
        // Bots
@@ -355,52 +384,72 @@
           else if  (~befehl.indexOf("--TESTCOOKIE"))     { versuch = true; bot.say(SefzigBot+' [Javascript:cookies(test,123)] Javascript ausgeführt: Cookies.'); }
           
        // -----------------
-       // Konversation fortführen
+       // Bot aus
        // -----------------
-          
+       
        // Zurück merken
           zuletzt = zuruck;
           
        // Irrläufer
+       // if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
+       //    bot.say(EmpfangsBot+'Suchen Sie meine --Befehle?').then(function(){ 
+       //    return bot.say(EmpfangsBot+'Wollen Sie zurück zum --Empfang?'); }); versuche = 0; }
+       // }
           if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
              bot.say(EmpfangsBot+'Suchen Sie meine --Befehle?'); versuche = 0; }
           }
           
        // Weiterleiten
-          return bot.setProp('versuch_tmp', '1')
-          .then(() => dann);
+          return bot.setProp('empfang', 'gesprochen')
+              .then(() => dann);
+          
        }
+        
     },
    
- // -------------------------
- // Kreation (Linda)
- // -------------------------
-    
+ // ---------------------------
+ // Kreation (Doris)
+ // ---------------------------
+ // - name_klein: kreation
+ // - name_kamel: Kreation
+ // - name_gross: KREATION
+ // - frau_klein: doris
+ // - frau_kamel: Doris
+ // - frau_gross: DORIS
+ // - bot_name:   KreationsBot
+ // - bot_klein:  kreationsbot
+ // - bot_kamel:  Kreationsbot
+ // - bot_gross:  KREATIONSBOT
+ // ---------------------------
+ 
     kreation: {
   	
       receive: (bot, message) => {
           
-       // Initialisierung
-          var befehl = befehlWort(message.text.trim().toUpperCase()); // Befehl normalisieren
-          var dann = "kreation"; // Nächster Schritt default
-          var versuch = false; // Nicht-Befehl-Eingaben mitzählen
+       // Befehl normalisieren
+          var befehl = befehlWort(message.text.trim().toUpperCase());
+          
+       // Nächster Schritt default
+          var dann = "kreation";
+          
+       // Nicht-Befehl-Eingaben mitzählen
+          var versuch = false;
+          
+       // Default-Zurück
           var zuruck = "Kreation";
           
        // -----------------
        // Befehle
        // -----------------
-       
-          if ((~befehl.indexOf("--LINDA")) ||
-              (~befehl.indexOf("--KREATION")) ||
-              (~befehl.indexOf("--BEFEHLE")))       { versuch = true; bot.say(KreationsBot +'--Kreation '
-                                                                            +'\n○ --Folgt '
-                                                                            +'\n○ --Folgt '
-                                                                            +'\n○ --Folgt '); }
-          if ((~befehl.indexOf("--ALICE")) ||
-              (~befehl.indexOf("--EMPFANG")) ||
-              (~befehl.indexOf("--ABBRECHEN")))     { versuch = true; bot.say(KreationsBot+' Bis später! ').then(function(){
+          
+          if ("kreation" != "empfang") {
+          	
+             if ((~befehl.indexOf("--ALICE")) ||
+                 (~befehl.indexOf("--EMPFANG")) ||
+                 (~befehl.indexOf("--ABBRECHEN")))  { versuch = true; bot.say(KreationsBot+' Bis später! ').then(function(){
                                                                return bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Kreation? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. '); });
                                                                       dann = "empfang"; }
+          }
           
           if  (~befehl.indexOf("--ZURÜCK"))         { versuch = true; if (zuletzt != "Kreation") { bot.say(KreationsBot+' Wollen Sie zurück zu --'+zuletzt+'? '); } 
                                                                       else { bot.say(KreationsBot+' Wollen Sie zurück zum --Empfang? '); } }
@@ -409,25 +458,27 @@
        // Inhalte
        // -----------------
        
-          
-          
-          
           if  (~befehl.indexOf("--ANTWORTEN")) { versuch = true; bot.say(KreationsBot+' Kreation Antwort 1 ')
                   .then(() => bot.say(KreationsBot+' Kreation Antwort 2 ')); }          
           if  (~befehl.indexOf("--TESTEN")) { versuch = true; bot.say(KreationsBot+' Kreation Test 1 ')
-                  .then(() => bot.say(KreationsBot+' Kreation Test 2 ')); }          
-          
-          
-          
+                  .then(() => bot.say(KreationsBot+' Kreation Test 2 ')); }
        // -----------------
        // Bot aus
        // -----------------
        
+       // Zurück merken
           zuletzt = zuruck;
+          
+       // Irrläufer
+       // if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
+       //    bot.say(KreationsBot+'Suchen Sie meine --Befehle?').then(function(){ 
+       //    return bot.say(KreationsBot+'Wollen Sie zurück zum --Empfang?'); }); versuche = 0; }
+       // }
           if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
-             bot.say(KreationsBot+'Suchen Sie meine --Befehle?').then(function(){ 
-             return bot.say(KreationsBot+'Wollen Sie zurück zum --Empfang?'); }); versuche = 0; }
+             bot.say(KreationsBot+'Suchen Sie meine --Befehle?'); versuche = 0; }
           }
+          
+       // Weiterleiten
           return bot.setProp('kreation', 'gesprochen')
               .then(() => dann);
           
