@@ -3,8 +3,7 @@
 
    const Script = require('smooch-bot').Script; 
 
-// Bots
-   const AndreasSefzig = "[AndreasSefzig] "; 
+// Bots   const AndreasSefzig = "[AndreasSefzig] "; 
    const SefzigBot = "[SefzigBot] "; 
    const EmpfangsBot = "[EmpfangsBot] "; 
    const KreationsBot = "[KreationsBot] "; 
@@ -27,7 +26,6 @@
    var nachname = "Besucher";
    var email = "test@sefzig.net";
    var emailkorrekt = true;
-
 // Konversationen 
    module.exports = new Script({ 
    
@@ -375,7 +373,7 @@
     },
    
  // -------------------------
- // Kreation (Doris)
+ // Kreation (Linda)
  // -------------------------
     
     kreation: {
@@ -392,7 +390,8 @@
        // Befehle
        // -----------------
        
-          if ((~befehl.indexOf("--DORIS")) ||
+          if ((~befehl.indexOf("--LINDA")) ||
+              (~befehl.indexOf("--KREATION")) ||
               (~befehl.indexOf("--BEFEHLE")))       { versuch = true; bot.say(KreationsBot +'--Kreation '
                                                                             +'\n○ --Folgt '
                                                                             +'\n○ --Folgt '
@@ -414,12 +413,14 @@
           
           
           if  (~befehl.indexOf("--ANTWORTEN")) { versuch = true; bot.say(KreationsBot+' Kreation Antwort 1 ')
-                  .then(() => bot.say(KreationsBot+' Kreation Antwort 2 '));}          
+                  .then(() => bot.say(KreationsBot+' Kreation Antwort 2 ')); }          
+          if  (~befehl.indexOf("--TESTEN")) { versuch = true; bot.say(KreationsBot+' Kreation Test 1 ')
+                  .then(() => bot.say(KreationsBot+' Kreation Test 2 ')); }          
           
           
           
        // -----------------
-       // Konversation aus
+       // Bot aus
        // -----------------
        
           zuletzt = zuruck;
@@ -433,7 +434,7 @@
        }
         
     },
-   
+      
     finish: {
        receive: (bot, message) => {
           return bot.getProp('name')
@@ -446,7 +447,7 @@
    // -------------- 
 
    });
-
+   
  // Befehle
     function befehlWort(befehl) {
        
