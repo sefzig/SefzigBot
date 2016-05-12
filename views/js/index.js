@@ -36,7 +36,7 @@
           
        });
        
-       selektor = "#seite > #menu div > div span";
+       selektor = "#seite > #menu div > div button";
        $(selektor).click(function() {
           
           befehl = $(this).text();
@@ -361,9 +361,9 @@
           // Debuggen
           // console.log("- Bot angepasst: "+id);
              
-             $("#seite > #menu li span").removeClass("aktiv");
-          // $("#seite > #menu li span:contains('"+id+"')").addClass("aktiv");
-             $("#seite > #menu li span").filter(function() { return ($(this).text() === id); }).addClass("aktiv");
+             $("#seite > #menu li button").removeClass("aktiv");
+          // $("#seite > #menu li button:contains('"+id+"')").addClass("aktiv");
+             $("#seite > #menu li button").filter(function() { return ($(this).text() === id); }).addClass("aktiv");
              
           }
           
