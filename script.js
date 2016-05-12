@@ -370,25 +370,26 @@
        // Vorlagen
        // -----------------
        
-       // Einzeilig
-       // if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+' Text: Vorlage. '); }
-          
-          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(KreationsBot+' Text 1. ').then(() => 'kreation'); }          
        // Mehrzeilig
-       // if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+' Vorlage Text 1. ').then(function(){
-       //                                                      return bot.say(EmpfangsBot+' Vorlage Text 2. '); }).then(function(){
-       //                                                      return bot.say(EmpfangsBot+' Vorlage Text 3. '); }); }
-          
-          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(KreationsBot+' Text 1. ').then(() => bot.say(KreationsBot+' Text 2. ')).then(() => 'kreation'); }          
+          if  (~befehl.indexOf("--VORLAGEN")) { versuch = true; return bot.say(KreationsBot+' Text Vorlage 1. ').then(() => bot.say(KreationsBot+' Text Vorlage 2. ')).then(() => 'kreation'); }          
+       // Einzeilig
+          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(KreationsBot+' Text Vorlage 1. ').then(() => 'kreation'); }          
        // -----------------
-       // BEFEHLE
+       // System
        // -----------------
        
-          if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(KreationsBot+' Text Kreation 1. Befehle: --folgt. ').then(() => bot.say(KreationsBot+' Text Kreation 2. ')).then(() => 'kreation'); }if  (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(KreationsBot+' Text Kreation 1. Befehle: --folgt. ').then(() => bot.say(KreationsBot+' Text Kreation 2. ')).then(() => 'kreation'); }
+          if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(KreationsBot+' Kreation Befehle: ○--Uber ○--Dialoge ○--Persönlichkeit ○--Geschichten ○--Leben ○--Inhalte ○--Mehrwerte. ').then(() => bot.say(KreationsBot+' Kreation Befehle Text. ')).then(() => 'kreation'); }if  (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(KreationsBot+' Kreation Befehle: ○--Uber ○--Dialoge ○--Persönlichkeit ○--Geschichten ○--Leben ○--Inhalte ○--Mehrwerte. ').then(() => bot.say(KreationsBot+' Kreation Befehle Text. ')).then(() => 'kreation'); }
        // -----------------
        // Inhalte
        // -----------------
           
+          if  (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(KreationsBot+' Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren. ').then(() => bot.say(KreationsBot+' Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in die Konversationen ein. ')).then(() => bot.say(KreationsBot+' Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer! ')).then(() => 'kreation'); }if  (~befehl.indexOf("--üBER")) { versuch = true; return bot.say(KreationsBot+' Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren. ').then(() => bot.say(KreationsBot+' Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in die Konversationen ein. ')).then(() => bot.say(KreationsBot+' Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer! ')).then(() => 'kreation'); }if  (~befehl.indexOf("--KREATION")) { versuch = true; return bot.say(KreationsBot+' Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren. ').then(() => bot.say(KreationsBot+' Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in die Konversationen ein. ')).then(() => bot.say(KreationsBot+' Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer! ')).then(() => 'kreation'); }          
+          if  (~befehl.indexOf("--DIALOGE")) { versuch = true; return bot.say(KreationsBot+' Dialoge mit Bots können durch Wiederholungen dröge werden. Wir bringen unseren Bots verschiedene Ausdrucksweisen entlang ihrer --Persönlichkeit bei, um Konversationen trotz möglicher Wiederholungen lebendig zu gestalten. ').then(() => 'kreation'); }          
+          if  (~befehl.indexOf("--PERSöNLICHKEIT")) { versuch = true; return bot.say(KreationsBot+' Mit Bots chattet man wie mit Menschen. Um --Dialoge abwechslungsreich zu gestalten, erhalten unsere Bots eine Persönlichkeit und eine --Geschichte. ').then(() => 'kreation'); }          
+          if  (~befehl.indexOf("--GESCHICHTEN")) { versuch = true; return bot.say(KreationsBot+' Menschen chatten nicht nur, um Informationen weiterzugeben. Unsere Bots haben eine Geschichte, die ihre --Persönlichkeit illustriert und den Bots --Leben einhaucht. ').then(() => 'kreation'); }          
+          if  (~befehl.indexOf("--LEBEN")) { versuch = true; return bot.say(KreationsBot+' Das Leben der Bots ist ein einfaches Leben: Sie verarbeiten Informationen. Aber ihre --Persönlichkeit und --Geschichte macht sie einzigartig - mithilfe reichhaltiger --Inhalte. ').then(() => 'kreation'); }          
+          if  (~befehl.indexOf("--INHALTE")) { versuch = true; return bot.say(KreationsBot+' Die Techniker haben alle möglichen Inhalts-Formate entwickelt, mit denen unsere Bots kommunizieren: Bilder, Videos, Microsites und natürlich Texte. So sind die --Mehrwerte unserer Bots unterhaltsam und leicht zu konsumieren. ').then(() => 'kreation'); }          
+          if  (~befehl.indexOf("--MEHRWERTE")) { versuch = true; return bot.say(KreationsBot+' Ein Bot mag eine nette --Persönlichkeit und eine interessante --Geschichte transportieren - relevant für den Nutzer werden sie nur durch konkrete Mehrwerte. Wir achten darauf, dass unsere Bots den nutzern nützliche Hilfestellungen, wertvolle Inhalte und echte Vorteile verschaffen. ').then(() => 'kreation'); }          
        // -----------------
        // Bot aus
        // -----------------
