@@ -60,14 +60,12 @@
              
              if (bekannt == false) {
                 
-                                bot.say(EmpfangsBot+' Start Unbekannt Text 1. ')
-                  .then(() => bot.say(EmpfangsBot+' Start Unbekannt Text 2:  --Robogeddon, --Beratung, --Kreation, --Konzeption, --Strategie, --Technik. '))
+                                bot.say(EmpfangsBot+' Start Unbekannt Text 2:  --Robogeddon, --Beratung, --Kreation, --Konzeption, --Strategie, --Technik. ')
                   .then(() => bot.say(EmpfangsBot+' Start Unbekannt Text 3. Hinweis Burger-Button. [Javascript:menu(an)] '));                
              }
              else {
                 
-                                bot.say(EmpfangsBot+' Start Bekannt Text 1: --Robogeddon. ')
-                  .then(() => bot.say(EmpfangsBot+' Start Bekannt Text 2: --Beratung, --Kreation, --Konzeption, --Strategie, --Technik vorstellen. '));                
+                                bot.say(EmpfangsBot+' Start Bekannt Text 2: --Beratung, --Kreation, --Konzeption, --Strategie, --Technik vorstellen. ');                
              }
              
           }
@@ -222,6 +220,21 @@
                                                                       else { bot.say(EmpfangsBot+' Wollen Sie zurück zum --Empfang? '); } }
           
        // -----------------
+       // Vorlagen
+       // -----------------
+       
+       // Einzeilig
+       // if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+' Text: Vorlage. '); }
+          
+          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; bot.say(EmpfangsBot+' Text 1. '); }
+       // Mehrzeilig
+       // if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+' Vorlage Text 1. ').then(function(){
+       //                                                      return bot.say(EmpfangsBot+' Vorlage Text 2. '); }).then(function(){
+       //                                                      return bot.say(EmpfangsBot+' Vorlage Text 3. '); }); }
+          
+          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; bot.say(EmpfangsBot+' Text 1. ')
+                  .then(() => bot.say(EmpfangsBot+' Text 2. ')); }
+       // -----------------
        // System
        // -----------------
        
@@ -239,18 +252,24 @@
           
           if  (~befehl.indexOf("--SEFZIG")) { versuch = true; bot.say(EmpfangsBot+' Hallo Sefzig Text 1. ')
                   .then(() => bot.say(EmpfangsBot+' Hallo Sefzig Text 2: --Empfang. ')); }
-          if  (~befehl.indexOf("--SEFZIG"))         { versuch = true; bot.setProp('persönlich', '@sefzig'); } 
-          
-          if ((~befehl.indexOf("--EMPFANG")) ||
-              (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung.').then(function(){
-                                                               return bot.say(EmpfangsBot+'Hallo Empfang Text 2: --Befehle.'); }); }
-          
+          if  (~befehl.indexOf("--EMPFANG")) { versuch = true; bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')
+                  .then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')); }if  (~befehl.indexOf("--ALICE")) { versuch = true; bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')
+                  .then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')); }          
+       // Vorlage (Gewerk, Name)
+       /* if  (~befehl.indexOf("--GEWERK")) { versuch = true; bot.say(EmpfangsBot+' Ich übergebe an Name. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ')
+                  .then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. '))
+                  .then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. '))
+                  .then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')); }if  (~befehl.indexOf("--NAME")) { versuch = true; bot.say(EmpfangsBot+' Ich übergebe an Name. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ')
+                  .then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. '))
+                  .then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. '))
+                  .then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')); } */
+
        // Vorlage (Gewerk, Name)
        // if ((~befehl.indexOf("--GEWERK")) ||
-       //     (~befehl.indexOf("--NAME")))          { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Name. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
-       //                                                      return bot.say(GewerksBot+'Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot.') }).then(function(){
-       //                                                      return bot.say(GewerksBot+'Hallo Gewerk Text 2: Befehle: --Folgt.') }).then(function(){
-       //                                                      return bot.say(GewerksBot+'Hallo Gewerk Text 3.') });
+       //     (~befehl.indexOf("--NAME")))          { versuch = true; bot.say(EmpfangsBot+'').then(function(){
+       //                                                      return bot.say(GewerksBot+'') }).then(function(){
+       //                                                      return bot.say(GewerksBot+'') }).then(function(){
+       //                                                      return bot.say(GewerksBot+'') });
        //                                                             dann = "gewerk"; } 
           
           if ((~befehl.indexOf("--BERATUNG")) ||
@@ -321,21 +340,6 @@
           
           
           
-       // -----------------
-       // Vorlagen
-       // -----------------
-       
-       // Einzeilig
-          if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+' Text: Vorlage. '); }
-          
-          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; bot.say(EmpfangsBot+' Text 1. '); }
-       // Mehrzeilig
-          if  (~befehl.indexOf("--VORLAGE"))        { versuch = true; bot.say(EmpfangsBot+' Vorlage Text 1. ').then(function(){
-                                                               return bot.say(EmpfangsBot+' Vorlage Text 2. '); }).then(function(){
-                                                               return bot.say(EmpfangsBot+' Vorlage Text 3. '); }); }
-          
-          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; bot.say(EmpfangsBot+' Text 1. ')
-                  .then(() => bot.say(EmpfangsBot+' Text 2. ')); }
        // -----------------
        // Tests
        // -----------------
@@ -430,9 +434,11 @@
           if  (~befehl.indexOf("--ZURÜCK"))         { versuch = true; if (zuletzt != "Kreation") { bot.say(KreationsBot+' Wollen Sie zurück zu --'+zuletzt+'? '); } 
                                                                       else { bot.say(KreationsBot+' Wollen Sie zurück zum --Empfang? '); } }
           
-          if  (~befehl.indexOf("--ANTWORTEN")) { versuch = true; bot.say(KreationsBot+' Kreation Antwort 1 ')
+          if  (~befehl.indexOf("--ANTWORTEN")) { versuch = true; bot.say(+'  ')
+                  .then(() => bot.say(KreationsBot+' Kreation Antwort 1 '))
                   .then(() => bot.say(KreationsBot+' Kreation Antwort 2 ')); }          
-          if  (~befehl.indexOf("--TESTEN")) { versuch = true; bot.say(KreationsBot+' Kreation Test 1 ')
+          if  (~befehl.indexOf("--TESTEN")) { versuch = true; bot.say(+'  ')
+                  .then(() => bot.say(KreationsBot+' Kreation Test 1 '))
                   .then(() => bot.say(KreationsBot+' Kreation Test 2 ')); }
        // -----------------
        // Bot aus
