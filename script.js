@@ -395,10 +395,11 @@
           if ((~befehl.indexOf("--ALICE")) ||
               (~befehl.indexOf("--EMPFANG")) ||
               (~befehl.indexOf("--ABBRECHEN")))     { versuch = true; bot.say(KreationsBot+'Bis später!').then(function(){
-                                                               return bot.say(EmpfangsBot+'Willkommen zurück! Wie war es in der Kreation? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann.'); });
+                                                               return bot.say(EmpfangsBot+'Willkommen zurück! Wie war es in der --Kreation? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann.'); });
                                                                       dann = "empfang"; }
           
-          if  (~befehl.indexOf("--ZURÜCK"))         { versuch = true; bot.say(KreationsBot+'Wollen Sie zurück zu --'+zuletzt+'?'); }
+          if  (~befehl.indexOf("--ZURÜCK"))         { versuch = true; if (zuletzt != "Kreation") { bot.say(KreationsBot+'Wollen Sie zurück zu --'+zuletzt+'?'); } 
+                                                                      else { bot.say(KreationsBot+'Wollen Sie zurück zum --Empfang?'); } }
           
        // -----------------
        // Inhalte
