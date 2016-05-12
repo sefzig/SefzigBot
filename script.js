@@ -1,84 +1,85 @@
-'use strict';
 
-    const Script = require('smooch-bot').Script;
-    
- // Bots
-    const AndreasSefzig =  "[AndreasSefzig] ";
-    const SefzigBot =      "[SefzigBot] ";
-    const EmpfangsBot =    "[EmpfangsBot] ";
-    const KreationsBot =   "[KreationsBot] ";
-    const BeratungsBot =   "[BeratungsBot] ";
-    const KonzeptionsBot = "[KonzeptionsBot] ";
-    const StrategieBot =   "[StrategieBot] ";
-    const TechnikBot =     "[TechnikBot] ";
-    const LinkBot =        "[LinkBot] ";
-    const TextBot =        "[TextBot] ";
-    const SlackBot =       "[SlackBot] ";
-    
- // Zähler
-    var versuche_max = 3;
-    var versuche = 0;
-    var zuletzt = "";
-    var bekannt = false;
-    
- // Daten
-    var vorname = "Unbekannter";
-    var nachname = "Besucher";
-    var email = "test@sefzig.net";
-    var emailkorrekt = true;
- // var emailregex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    
- // Konversationen
-    module.exports = new Script({
-       
-    // --------------
-    // GESPRÄCH AN
-    // --------------
-       
+'use strict'; 
+
+   const Script = require('smooch-bot').Script; 
+
+// Bots
+   const AndreasSefzig = "[AndreasSefzig] "; 
+   const SefzigBot = "[SefzigBot] "; 
+   const EmpfangsBot = "[EmpfangsBot] "; 
+   const KreationsBot = "[KreationsBot] "; 
+   const BeratungsBot = "[BeratungsBot] "; 
+   const KonzeptionsBot = "[KonzeptionsBot] "; 
+   const StrategieBot = "[StrategieBot] "; 
+   const TechnikBot = "[TechnikBot] "; 
+   const LinkBot = "[LinkBot] "; 
+   const TextBot = "[TextBot] "; 
+   const SlackBot = "[SlackBot] "; 
+
+// Variablen 
+   var versuche_max = 3; 
+   var versuche = 0; 
+   var zuletzt = ""; 
+   var bekannt = false;
+
+// Daten 
+   var vorname = "Unbekannter";
+   var nachname = "Besucher";
+   var email = "test@sefzig.net";
+   var emailkorrekt = true;
+
+// Konversationen 
+   module.exports = new Script({ 
+   
+   // ---------------
+   // GESPRÄCH ANFANG
+   // ---------------
+     
     processing: {
+        
         prompt: (bot) => bot.say(TechnikBot+'Nicht so schnell bitte...'),
         receive: () => 'processing'
+        
     },
-
+   
     start: {
-    	
-     // prompt: (bot) => bot.say(TechnikBot+'Starte...'),
-        receive: (bot, message) => {
+    
+    // prompt: (bot) => bot.say(TechnikBot+'Starte...'),
+       receive: (bot, message) => {
             
-         // Befehl normalisieren
-            var befehl = befehlWort(message.text.trim());
-            
-         // Nächster Schritt default
-            var dann = "empfang";
-            
-            if (~befehl.indexOf("Weiterleiten:")) {
-               
-            // bot.say(EmpfangsBot+'Ich leite Sie weiter.');
-               
-            }
-            else {
-               
-               if (bekannt == false) {
-               
-                  bot.say(EmpfangsBot+' Start Unbekannt Text 1. ')
+       // Befehl normalisieren
+          var befehl = befehlWort(message.text.trim());
+          
+       // Nächster Schritt default
+          var dann = "empfang";
+          
+          if (~befehl.indexOf("Weiterleiten:")) {
+             
+          // bot.say(EmpfangsBot+'Ich leite Sie weiter.');
+             
+          }
+          else {
+             
+             if (bekannt == false) {
+                
+                                bot.say(EmpfangsBot+' var1 ')
                   .then(() => bot.say(EmpfangsBot+' Start Empfang Text 2:  --Robogeddon, --Beratung, --Kreation, --Konzeption, --Strategie, --Technik. '))
-                  .then(() => bot.say(EmpfangsBot+' Start Empfang Text 3. Hinweis Burger-Button. [Javascript:menu(an)] '));
-                  
-               }
-               else {
-               
-                  bot.say(EmpfangsBot+' Start Bekannt Text 1: --Robogeddon. ')
-                  .then(() => bot.say(EmpfangsBot+' Start Bekannt Text 2: --Beratung, --Kreation, --Konzeption, --Strategie, --Technik vorstellen. '));
-               
-               }
-            }
-            
-            return bot.setProp('empfangen', 'ja')
-            .then(() => dann);
-            
-        }
+                  .then(() => bot.say(EmpfangsBot+' Start Empfang Text 3. Hinweis Burger-Button. [Javascript:menu(an)] '));                
+             }
+             else {
+                
+                                bot.say(EmpfangsBot+' var1 ')
+                  .then(() => bot.say(EmpfangsBot+' Start Bekannt Text 2: --Beratung, --Kreation, --Konzeption, --Strategie, --Technik vorstellen. '));                
+             }
+             
+          }
+          
+          return bot.setProp('empfangen', 'ja')
+          .then(() => dann);
+          
+       }
     },
-
+   
  // -------------------------
  // Onboarding
  // -------------------------
@@ -174,7 +175,7 @@
             }
         }
     },
-
+   
  // -------------------------
  // Empfang
  // -------------------------
@@ -440,11 +441,12 @@
        }
     }
     
-    // --------------
-    // GESPRÄCH AUS
-    // --------------
-       
-    });
+
+   // --------------
+   // GESPRÄCH AUS 
+   // -------------- 
+
+   });
 
  // Befehle
     function befehlWort(befehl) {
@@ -508,4 +510,4 @@
        }
        
     }
-            
+      
