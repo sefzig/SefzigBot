@@ -62,13 +62,13 @@
              
              if (bekannt == false) {
                 
-                                bot.say(EmpfangsBot+' var1 ')
-                  .then(() => bot.say(EmpfangsBot+' Start Empfang Text 2:  --Robogeddon, --Beratung, --Kreation, --Konzeption, --Strategie, --Technik. '))
-                  .then(() => bot.say(EmpfangsBot+' Start Empfang Text 3. Hinweis Burger-Button. [Javascript:menu(an)] '));                
+                                bot.say(EmpfangsBot+' Start Unbekannt Text 1. ')
+                  .then(() => bot.say(EmpfangsBot+' Start Unbekannt Text 2:  --Robogeddon, --Beratung, --Kreation, --Konzeption, --Strategie, --Technik. '))
+                  .then(() => bot.say(EmpfangsBot+' Start Unbekannt Text 3. Hinweis Burger-Button. [Javascript:menu(an)] '));                
              }
              else {
                 
-                                bot.say(EmpfangsBot+' var1 ')
+                                bot.say(EmpfangsBot+' Start Bekannt Text 1: --Robogeddon. ')
                   .then(() => bot.say(EmpfangsBot+' Start Bekannt Text 2: --Beratung, --Kreation, --Konzeption, --Strategie, --Technik vorstellen. '));                
              }
              
@@ -373,7 +373,7 @@
           .then(() => dann);
        }
     },
-
+   
  // -------------------------
  // Kreation (Doris)
  // -------------------------
@@ -413,8 +413,8 @@
           
           
           
-          
-          
+          if  (~befehl.indexOf("--ANTWORTEN")) { versuch = true; bot.say(KreationsBot+' Kreation Antwort 1 ')
+                  .then(() => bot.say(KreationsBot+' Kreation Antwort 2 '));}          
           
           
           
@@ -433,7 +433,7 @@
        }
         
     },
-
+   
     finish: {
        receive: (bot, message) => {
           return bot.getProp('name')
@@ -441,7 +441,6 @@
        }
     }
     
-
    // --------------
    // GESPRÄCH AUS 
    // -------------- 
