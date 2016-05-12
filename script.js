@@ -229,12 +229,12 @@
        // System
        // -----------------
        
-          if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; bot.say(EmpfangsBot+' --Befehlez dieser Seite: 
-○ --Mobil 
-○ --Newsletter 
-○ --Kontakt 
-○ --Über ')
-                  .then(() => bot.say(EmpfangsBot+' Text Empfang Befehle. ')); }
+          if  (~befehl.indexOf("--BEFEHLE"))        { versuch = true; bot.say(EmpfangsBot+'--Befehle dieser Seite: '
+                                                                            +'\n○ --Mobil '
+                                                                            +'\n○ --Newsletter '
+                                                                            +'\n○ --Kontakt '
+                                                                            +'\n○ --Über').then(function(){
+                                                               return bot.say(EmpfangsBot+'Text Empfang Befehle.') }); }
           
           if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(function(){
                                                                return bot.say(TechnikBot+'Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung...'); }).then(function(){
