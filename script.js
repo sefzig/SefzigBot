@@ -229,21 +229,17 @@
                   .then(() => bot.say(EmpfangsBot+' Text Empfang Befehle. ')); }          
           if  (~befehl.indexOf("--MOBIL")) { versuch = true; bot.say(EmpfangsBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ')
                   .then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... '))
-                  .then(() => bot.say(EmpfangsBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser.. ')); }
+                  .then(() => bot.say(EmpfangsBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')); }
           if  (~befehl.indexOf("--UBER")) { versuch = true; bot.say(EmpfangsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ')
                   .then(() => bot.say(EmpfangsBot+' Sprechen Sie mit unserer --Technik, um mehr zu erfahren. ')); }if  (~befehl.indexOf("--üBER")) { versuch = true; bot.say(EmpfangsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ')
                   .then(() => bot.say(EmpfangsBot+' Sprechen Sie mit unserer --Technik, um mehr zu erfahren. ')); }          
-          if ((~befehl.indexOf("--UBER")) ||
-              (~befehl.indexOf("--ÜBER")))          { versuch = true; bot.say(EmpfangsBot+'').then(function(){
-                                                               return bot.say(EmpfangsBot+''); }); }
-          
        // -----------------
        // Bots
        // -----------------
           
-          if  (~befehl.indexOf("--SEFZIG"))         { versuch = true; bot.setProp('persönlich', '@sefzig').then(function(){
-                                                               return bot.say(EmpfangsBot+'Hallo Sefzig Text 1.') }).then(function(){
-                                                               return bot.say(EmpfangsBot+'Hallo Sefzig Text 2: --Empfang.'); }); } 
+          if  (~befehl.indexOf("--SEFZIG")) { versuch = true; bot.say(EmpfangsBot+' Hallo Sefzig Text 1. ')
+                  .then(() => bot.say(EmpfangsBot+' Hallo Sefzig Text 2: --Empfang. ')); }
+          if  (~befehl.indexOf("--SEFZIG"))         { versuch = true; bot.setProp('persönlich', '@sefzig'); } 
           
           if ((~befehl.indexOf("--EMPFANG")) ||
               (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung.').then(function(){
