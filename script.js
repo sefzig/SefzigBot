@@ -212,35 +212,55 @@
        // -----------------
           
           if  (~befehl.indexOf("--SEFZIG"))         { versuch = true; bot.setProp('persönlich', '@sefzig').then(function(){
-                                                               return bot.say(EmpfangsBot+'Sefzig Text 1.') }).then(function(){
-                                                               return bot.say(EmpfangsBot+'Sefzig Text 2: --Empfang.'); }); } 
+                                                               return bot.say(EmpfangsBot+'Hallo Sefzig Text 1.') }).then(function(){
+                                                               return bot.say(EmpfangsBot+'Hallo Sefzig Text 2: --Empfang.'); }); } 
           
           if ((~befehl.indexOf("--EMPFANG")) ||
-              (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung.').then(function(){
-                                                               return bot.say(EmpfangsBot+'Empfang Text 2: --Befehle.'); }); }
-          
-          if ((~befehl.indexOf("--KREATION")) ||
-              (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
-                                                               return bot.say(KreationsBot+'Hallo, ich bin Doris, der Kreations-Bot. Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren.') }).then(function(){
-                                                               return bot.say(KreationsBot+'Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in die Konversationen ein.') }).then(function(){
-                                                               return bot.say(KreationsBot+'Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer!') });
-                                                                      dann = "kreation"; } 
+              (~befehl.indexOf("--ALICE")))         { versuch = true; bot.say(EmpfangsBot+'Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung.').then(function(){
+                                                               return bot.say(EmpfangsBot+'Hallo Empfang Text 2: --Befehle.'); }); }
           
           if ((~befehl.indexOf("--BERATUNG")) ||
-              (~befehl.indexOf("--BARBARA")))       { versuch = true; bot.say(EmpfangsBot+'Schreiben Sie --Empfang, um zum Empfang zurückzukehren.');
+              (~befehl.indexOf("--BARBARA")))       { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Barbara. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
+                                                               return bot.say(BeratungsBot+'Hallo Beratung Text 1: Hallo, ich bin Barbara, der Beratungs-Bot.') }).then(function(){
+                                                               return bot.say(BeratungsBot+'Hallo Beratung Text 2: Befehle: --Folgt.') }).then(function(){
+                                                               return bot.say(BeratungsBot+'Hallo Beratung Text 3.') });
                                                                       dann = "beratung"; } 
           
           if ((~befehl.indexOf("--TECHNIK")) ||
-              (~befehl.indexOf("--CYNTHIA")))       { versuch = true; bot.say(EmpfangsBot+'Schreiben Sie --Empfang, um zum Empfang zurückzukehren.');
-                                                                      dann = "technik";  } 
+              (~befehl.indexOf("--CYNTHIA")))       { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Cynthia. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
+                                                               return bot.say(TechnikBot+'Hallo Technik Text 1: Hallo, ich bin Cynthia, der Technik-Bot.') }).then(function(){
+                                                               return bot.say(TechnikBot+'Hallo Technik Text 2: Befehle: --Folgt.') }).then(function(){
+                                                               return bot.say(TechnikBot+'Hallo Technik Text 3.') });
+                                                                      dann = "technik"; } 
+          
+          if ((~befehl.indexOf("--KREATION")) ||
+              (~befehl.indexOf("--DORIS")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
+                                                               return bot.say(KreationsBot+'Hallo Kreation Text 1: Hallo, ich bin Doris, der Kreations-Bot.') }).then(function(){
+                                                               return bot.say(KreationsBot+'Hallo Kreation Text 2: Befehle: --Leben, --Dialoge, --Persönlichkeit, --Geschichten, --Inhalte, --Mehrwerte.') }).then(function(){
+                                                               return bot.say(KreationsBot+'Hallo Kreation Text 3.') });
+                                                                      dann = "kreation"; } 
           
           if ((~befehl.indexOf("--KONZEPTION")) ||
-              (~befehl.indexOf("--ERIKA")))         { versuch = true; bot.say(EmpfangsBot+'Schreiben Sie --Empfang, um zum Empfang zurückzukehren.');
-                                                                      dann = "konzeption";  } 
+              (~befehl.indexOf("--ERIKA")))         { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Erika. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
+                                                               return bot.say(KonzeptionsBot+'Hallo Konzeption Text 1: Hallo, ich bin Erika, der Konzeptions-Bot.') }).then(function(){
+                                                               return bot.say(KonzeptionsBot+'Hallo Konzeption Text 2: Befehle: --Folgt.') }).then(function(){
+                                                               return bot.say(KonzeptionsBot+'Hallo Konzeption Text 3.') });
+                                                                      dann = "konzeption"; } 
           
           if ((~befehl.indexOf("--STRATEGIE")) ||
-              (~befehl.indexOf("--FELINE")))        { versuch = true; bot.say(EmpfangsBot+'Schreiben Sie --Empfang, um zum Empfang zurückzukehren.');
-                                                                      dann = "konzeption";  } 
+              (~befehl.indexOf("--FELINE")))        { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Feline. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
+                                                               return bot.say(StrategieBot+'Hallo Strategie Text 1: Hallo, ich bin Feline, der Strategie-Bot.') }).then(function(){
+                                                               return bot.say(StrategieBot+'Hallo Strategie Text 2: Befehle: --Folgt.') }).then(function(){
+                                                               return bot.say(StrategieBot+'Hallo Strategie Text 3.') });
+                                                                      dann = "strategie"; } 
+          
+       // Vorlage (Gewerk, Name)
+       // if ((~befehl.indexOf("--GEWERK")) ||
+       //     (~befehl.indexOf("--BOTNAME")))       { versuch = true; bot.say(EmpfangsBot+'Ich übergebe an Name. Schreiben Sie --Empfang, um wieder mit mir zu sprechen.').then(function(){
+       //                                                      return bot.say(GewerksBot+'Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot.') }).then(function(){
+       //                                                      return bot.say(GewerksBot+'Hallo Gewerk Text 2: Befehle: --Folgt.') }).then(function(){
+       //                                                      return bot.say(GewerksBot+'Hallo Gewerk Text 3.') });
+       //                                                             dann = "gewerk"; } 
           
        // -----------------
        // Onboarding
