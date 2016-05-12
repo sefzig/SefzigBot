@@ -229,7 +229,11 @@
        // System
        // -----------------
        
-          if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; bot.say(EmpfangsBot+' --Befehlez dieser Seite: ○ --Mobil ○ --Newsletter ○ --Kontakt ○ --Über ')
+          if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; bot.say(EmpfangsBot+' --Befehle dieser Seite: 
+○ --Mobil 
+○ --Newsletter 
+○ --Kontakt 
+○ --Über ')
                   .then(() => bot.say(EmpfangsBot+' Text Empfang Befehle. ')); }
           
           if  (~befehl.indexOf("--MOBIL"))          { versuch = true; bot.say(EmpfangsBot+'Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(function(){
