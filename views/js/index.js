@@ -584,7 +584,7 @@
              else if (name == "nachname") { update = { surname:   wert_neu }; }
              else if (name == "email")    { update = { email:     wert_neu }; }
              else              { update = { properties: { name: wert_neu } }; } 
-             Smooch.updateUser(update);
+             window.Smooch.updateUser(update);
              console.log("Cookie (change): Smooch-User '"+name+"' Info: "+wert_neu);
              
           });
@@ -612,7 +612,7 @@
        else if (id == "nachname") { update = { surname:   wert }; }
        else if (id == "email")    { update = { email:     wert }; }
        else              { update = { properties: { id: wert } }; }
-       Smooch.updateUser(update);
+       window.Smooch.updateUser(update);
        console.log("Cookies: Smooch-User '"+id+"' Info: "+wert);
        
        $("#menu #formular #"+id).val(wert).trigger("change");
