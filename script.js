@@ -188,7 +188,7 @@
  
     empfang: {
   	
-      receive: (bot, message) => {
+       receive: (bot, message) => {
           
        // Befehl normalisieren
           var befehl = befehlWort(message.text.trim().toUpperCase());
@@ -207,17 +207,41 @@
        // -----------------
           
           if ("empfang" != "empfang") {
-          	
-             if ((~befehl.indexOf("--ALICE")) ||
-                 (~befehl.indexOf("--EMPFANG")) ||
-                 (~befehl.indexOf("--ABBRECHEN")))  { versuch = true; bot.say(EmpfangsBot+' Bis später! ').then(function(){
-                                                               return bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Empfang? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. '); });
-                                                                      dann = "empfang"; }
+          	 
+             if  (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Empfang? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Empfang? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ABBRECHEN")) { versuch = true; return bot.say(EmpfangsBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Empfang? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }             
           }
           
-          if  (~befehl.indexOf("--ZURÜCK"))         { versuch = true; if (zuletzt != "Empfang") { bot.say(EmpfangsBot+' Wollen Sie zurück zu --'+zuletzt+'? '); } 
-                                                                      else { bot.say(EmpfangsBot+' Wollen Sie zurück zum --Empfang? '); } }
+          if (zuletzt != "Empfang") { 
+             
+             if  (~befehl.indexOf("--ZURüCK")) { versuch = true; return bot.say(+' 0 ').then(() => 'empfang'); }             
+          } 
+          else {
+             
+             if  (~befehl.indexOf("--ZURüCK")) { versuch = true; return bot.say(EmpfangsBot+' Wollen Sie zurück zum --Empfang? ').then(() => 'empfang'); }             
+          }
           
+       // -----------------
+       // Onboarding
+       // -----------------
+          
+       	 if ((vorname) && (vorname != "") && (vorname != "Unbekannter") && (nachname) && (nachname != "") && (nachname != "Besucher")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else if ((vorname) && (vorname != "") && (vorname != "Unbekannter")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else if ((nachname) && (nachname != "") && (nachname != "Besucher")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(EmpfangsBot+' Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name'); }             
+          }
+          
+          if  (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(EmpfangsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse'); }          
        // -----------------
        // System
        // -----------------
@@ -238,36 +262,6 @@
           if  (~befehl.indexOf("--KREATION")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo Kreation Text 1: Hallo, ich bin Doris, der Kreations-Bot. ')).then(() => bot.say(KreationsBot+' Hallo Kreation Text 2: Befehle: --Leben, --Dialoge, --Persönlichkeit, --Geschichten, --Inhalte, --Mehrwerte. ')).then(() => bot.say(KreationsBot+' Hallo Kreation Text 3. ')).then(() => 'kreation'); }if  (~befehl.indexOf("--DORIS")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo Kreation Text 1: Hallo, ich bin Doris, der Kreations-Bot. ')).then(() => bot.say(KreationsBot+' Hallo Kreation Text 2: Befehle: --Leben, --Dialoge, --Persönlichkeit, --Geschichten, --Inhalte, --Mehrwerte. ')).then(() => bot.say(KreationsBot+' Hallo Kreation Text 3. ')).then(() => 'kreation'); }		    
 		    if  (~befehl.indexOf("--KONZEPTION")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Erika. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 1: Hallo, ich bin Erika, der Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }if  (~befehl.indexOf("--ERIKA")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Erika. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 1: Hallo, ich bin Erika, der Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }		    
 		    if  (~befehl.indexOf("--STRATEGIE")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Feline. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo Strategie Text 1: Hallo, ich bin Feline, der Strategie-Bot. ')).then(() => bot.say(StrategieBot+' Hallo Strategie Text 2: --Befehle folgt. ')).then(() => bot.say(StrategieBot+' Hallo Strategie Text 3. ')).then(() => 'strategie'); }if  (~befehl.indexOf("--FELINE")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Feline. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo Strategie Text 1: Hallo, ich bin Feline, der Strategie-Bot. ')).then(() => bot.say(StrategieBot+' Hallo Strategie Text 2: --Befehle folgt. ')).then(() => bot.say(StrategieBot+' Hallo Strategie Text 3. ')).then(() => 'strategie'); }
-       // -----------------
-       // Onboarding
-       // -----------------
-       
-          if  (~befehl.indexOf("--NAME")) { 
-             
-             versuch = true; dann = "name";
-          	 var aussage = "";
-          	 
-          	 if ((vorname) && (vorname != "") && (vorname != "Unbekannter") && (nachname) && (nachname != "") && (nachname != "Besucher")) {
-          	    aussage = EmpfangsBot+'Ihr Name ist '+vorname+' '+nachname+'. Wollen Sie ihn --ändern?';
-             }
-             else if ((vorname) && (vorname != "") && (vorname != "Unbekannter")) {
-          	    aussage = EmpfangsBot+'Ihr Vorname ist '+vorname+'. Wollen Sie Ihren Namen --ändern oder --abbrechen?';
-             }
-             else if ((nachname) && (nachname != "") && (nachname != "Besucher")) {
-          	    aussage = EmpfangsBot+'Ihr Nachname ist '+nachname+'. Wollen Sie Ihren Namen --ändern oder --abbrechen?';
-             }
-             else {
-          	    aussage = EmpfangsBot+'Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein.';
-             }
-               
-             bot.say(aussage);
-          }
-          
-          if  (~befehl.indexOf("--EMAIL")) { 
-          	 versuch = true; dann = "emailadresse";
-          	 bot.say(EmpfangsBot+'Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter!');
-          }
-          
        // -----------------
        // Tests
        // -----------------
@@ -336,7 +330,7 @@
  
     kreation: {
   	
-      receive: (bot, message) => {
+       receive: (bot, message) => {
           
        // Befehl normalisieren
           var befehl = befehlWort(message.text.trim().toUpperCase());
@@ -355,17 +349,41 @@
        // -----------------
           
           if ("kreation" != "empfang") {
-          	
-             if ((~befehl.indexOf("--ALICE")) ||
-                 (~befehl.indexOf("--EMPFANG")) ||
-                 (~befehl.indexOf("--ABBRECHEN")))  { versuch = true; bot.say(KreationsBot+' Bis später! ').then(function(){
-                                                               return bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Kreation? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. '); });
-                                                                      dann = "empfang"; }
+          	 
+             if  (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(KreationsBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Kreation? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(KreationsBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Kreation? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ABBRECHEN")) { versuch = true; return bot.say(KreationsBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Kreation? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }             
           }
           
-          if  (~befehl.indexOf("--ZURÜCK"))         { versuch = true; if (zuletzt != "Kreation") { bot.say(KreationsBot+' Wollen Sie zurück zu --'+zuletzt+'? '); } 
-                                                                      else { bot.say(KreationsBot+' Wollen Sie zurück zum --Empfang? '); } }
+          if (zuletzt != "Kreation") { 
+             
+             if  (~befehl.indexOf("--ZURüCK")) { versuch = true; return bot.say(+' 0 ').then(() => 'kreation'); }             
+          } 
+          else {
+             
+             if  (~befehl.indexOf("--ZURüCK")) { versuch = true; return bot.say(KreationsBot+' Wollen Sie zurück zum --Empfang? ').then(() => 'kreation'); }             
+          }
           
+       // -----------------
+       // Onboarding
+       // -----------------
+          
+       	 if ((vorname) && (vorname != "") && (vorname != "Unbekannter") && (nachname) && (nachname != "") && (nachname != "Besucher")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else if ((vorname) && (vorname != "") && (vorname != "Unbekannter")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else if ((nachname) && (nachname != "") && (nachname != "Besucher")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(KreationsBot+' Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name'); }             
+          }
+          
+          if  (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(KreationsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse'); }          
        // -----------------
        // Vorlagen
        // -----------------
