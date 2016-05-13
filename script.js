@@ -314,6 +314,114 @@
     },
    
  // ---------------------------
+ // Beratung (Barbara)
+ // ---------------------------
+ // - name_klein: beratung
+ // - name_kamel: Beratung
+ // - name_gross: BERATUNG
+ // - frau_klein: barbara
+ // - frau_kamel: Barbara
+ // - frau_gross: BARBARA
+ // - bot_name:   BeratungsBot
+ // - bot_klein:  beratungsbot
+ // - bot_kamel:  Beratungsbot
+ // - bot_gross:  BERATUNGSBOT
+ // ---------------------------
+ 
+    beratung: {
+  	
+       receive: (bot, message) => {
+          
+       // Befehl normalisieren
+          var befehl = befehlWort(message.text.trim().toUpperCase());
+          
+       // Nächster Schritt default
+          var dann = "beratung";
+          
+       // Nicht-Befehl-Eingaben mitzählen
+          var versuch = false;
+          
+       // Default-Zurück
+          var zuruck = "Beratung";
+          
+       // -----------------
+       // Befehle
+       // -----------------
+          
+          if ("beratung" != "empfang") {
+          	 
+             if  (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(BeratungsBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Beratung? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(BeratungsBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Beratung? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ABBRECHEN")) { versuch = true; return bot.say(BeratungsBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Beratung? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }             
+          }
+          
+          if (zuletzt != "Beratung") { 
+             
+             if  (~befehl.indexOf("--ZURüCK")) { versuch = true; return bot.say(+' 0 ').then(() => 'beratung'); }             
+          } 
+          else {
+             
+             if  (~befehl.indexOf("--ZURüCK")) { versuch = true; return bot.say(BeratungsBot+' Wollen Sie zurück zum --Empfang? ').then(() => 'beratung'); }             
+          }
+          
+       // -----------------
+       // Onboarding
+       // -----------------
+          
+       	 if ((vorname) && (vorname != "") && (vorname != "Unbekannter") && (nachname) && (nachname != "") && (nachname != "Besucher")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else if ((vorname) && (vorname != "") && (vorname != "Unbekannter")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else if ((nachname) && (nachname != "") && (nachname != "Besucher")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(BeratungsBot+' Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name'); }             
+          }
+          
+          if  (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(BeratungsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse'); }                    
+       // -----------------
+       // System
+       // -----------------
+       
+          if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung 1. Befehle: --Produkte, --Leistungen, --Kalkulation. ').then(() => bot.say(BeratungsBot+' Text Beratung 2. ')).then(() => 'beratung'); }if  (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung 1. Befehle: --Produkte, --Leistungen, --Kalkulation. ').then(() => bot.say(BeratungsBot+' Text Beratung 2. ')).then(() => 'beratung'); }
+          if  (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Über 1. ').then(() => bot.say(BeratungsBot+' Text Beratung Über 2. ')).then(() => bot.say(BeratungsBot+' Text Beratung Über 3. ')).then(() => 'beratung'); }if  (~befehl.indexOf("--üBER")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Über 1. ').then(() => bot.say(BeratungsBot+' Text Beratung Über 2. ')).then(() => bot.say(BeratungsBot+' Text Beratung Über 3. ')).then(() => 'beratung'); }if  (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Über 1. ').then(() => bot.say(BeratungsBot+' Text Beratung Über 2. ')).then(() => bot.say(BeratungsBot+' Text Beratung Über 3. ')).then(() => 'beratung'); }if  (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Über 1. ').then(() => bot.say(BeratungsBot+' Text Beratung Über 2. ')).then(() => bot.say(BeratungsBot+' Text Beratung Über 3. ')).then(() => 'beratung'); }          
+       // -----------------
+       // Inhalte
+       // -----------------
+          
+          if  (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Produkte. ').then(() => 'beratung'); }          
+          if  (~befehl.indexOf("--LEISTUNGEN")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Leistungen. ').then(() => 'beratung'); }          
+          if  (~befehl.indexOf("--KALKULATION")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Kalkulation. ').then(() => 'beratung'); }          
+       // -----------------
+       // Bot aus
+       // -----------------
+       
+       // Zurück merken
+          zuletzt = zuruck;
+          
+       // Irrläufer
+       // if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
+       //    bot.say(BeratungsBot+'Suchen Sie meine --Befehle?').then(function(){ 
+       //    return bot.say(BeratungsBot+'Wollen Sie zurück zum --Empfang?'); }); versuche = 0; }
+       // }
+          if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
+             bot.say(BeratungsBot+'Suchen Sie meine --Befehle?'); versuche = 0; }
+          }
+          
+       // Weiterleiten
+          return bot.setProp('beratung', 'gesprochen')
+              .then(() => dann);
+          
+       }
+        
+    },
+   
+ // ---------------------------
  // Kreation (Doris)
  // ---------------------------
  // - name_klein: kreation
