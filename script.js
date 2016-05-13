@@ -238,7 +238,7 @@
           }
           else {
        	    
-             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(EmpfangsBot+' Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name'); }             
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(EmpfangsBot+' Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name'); }             
           }
           
           if  (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(EmpfangsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse'); }          
@@ -380,18 +380,10 @@
           }
           else {
        	    
-             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(KreationsBot+' Ich kenne Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name'); }             
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(KreationsBot+' Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name'); }             
           }
           
-          if  (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(KreationsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse'); }          
-       // -----------------
-       // Vorlagen
-       // -----------------
-       
-       // Mehrzeilig
-          if  (~befehl.indexOf("--VORLAGEN")) { versuch = true; return bot.say(KreationsBot+' Text Vorlage 1. ').then(() => bot.say(KreationsBot+' Text Vorlage 2. ')).then(() => 'kreation'); }          
-       // Einzeilig
-          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(KreationsBot+' Text Vorlage 1. ').then(() => 'kreation'); }          
+          if  (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(KreationsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse'); }                    
        // -----------------
        // System
        // -----------------
