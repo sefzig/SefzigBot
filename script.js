@@ -981,7 +981,7 @@
        }
         
     },
-      
+   
     finish: {
        receive: (bot, message) => {
           return bot.getProp('name')
