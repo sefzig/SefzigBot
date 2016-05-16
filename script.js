@@ -474,6 +474,140 @@
         
     },
    
+ // ---------------------------
+ // Technik (Cynthia)
+ // ---------------------------
+ // - name_klein: technik
+ // - name_kamel: Technik
+ // - name_gross: TECHNIK
+ // - frau_klein: cynthia
+ // - frau_kamel: Cynthia
+ // - frau_gross: CYNTHIA
+ // - bot_name:   TechnikBot
+ // - bot_klein:  technikbot
+ // - bot_kamel:  Technikbot
+ // - bot_gross:  TECHNIKBOT
+ // ---------------------------
+ 
+    technik: {
+  	
+       receive: (bot, message) => {
+          
+       // Befehl normalisieren
+          var befehl = befehlWort(message.text.trim().toUpperCase());
+          
+       // Nächster Schritt default
+          var dann = "technik";
+          
+       // Nicht-Befehl-Eingaben mitzählen
+          var versuch = false;
+          
+       // Default-Zurück
+          var zuruck = "Technik";
+          
+       // -----------------
+       // Befehle
+       // -----------------
+          
+          if ("technik" != "empfang") {
+          	 
+             if  (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(TechnikBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Technik? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(TechnikBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Technik? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ABBRECHEN")) { versuch = true; return bot.say(TechnikBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Technik? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }             
+          }
+          
+          if (zuletzt != "Technik") { 
+             
+             if  (~befehl.indexOf("--ZURüCK")) { versuch = true; return bot.say(+' 0 ').then(() => 'technik'); }             
+          } 
+          else {
+             
+             if  (~befehl.indexOf("--ZURüCK")) { versuch = true; return bot.say(TechnikBot+' Wollen Sie zurück zum --Empfang? ').then(() => 'technik'); }             
+          }
+          
+       // -----------------
+       // Onboarding
+       // -----------------
+          
+       	 if ((vorname) && (vorname != "") && (vorname != "Unbekannter") && (nachname) && (nachname != "") && (nachname != "Besucher")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else if ((vorname) && (vorname != "") && (vorname != "Unbekannter")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else if ((nachname) && (nachname != "") && (nachname != "Besucher")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(TechnikBot+' Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name'); }             
+          }
+          
+          if  (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(TechnikBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse'); }                    
+       // -----------------
+       // System
+       // -----------------
+          
+          if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(TechnikBot+' Text Technik 1. Befehle: --folgt. ').then(() => bot.say(TechnikBot+' Text Technik 2. ')).then(() => 'technik'); }if  (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(TechnikBot+' Text Technik 1. Befehle: --folgt. ').then(() => bot.say(TechnikBot+' Text Technik 2. ')).then(() => 'technik'); }          
+          if  (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(TechnikBot+' Hallo, ich bin Cynthia, der Technik-Bot. ').then(() => bot.say(TechnikBot+' Schreiben Sie: --Slack, --Folgt und --HipChat. ')).then(() => 'technik'); }if  (~befehl.indexOf("--üBER")) { versuch = true; return bot.say(TechnikBot+' Hallo, ich bin Cynthia, der Technik-Bot. ').then(() => bot.say(TechnikBot+' Schreiben Sie: --Slack, --Folgt und --HipChat. ')).then(() => 'technik'); }if  (~befehl.indexOf("--TECHNIK")) { versuch = true; return bot.say(TechnikBot+' Hallo, ich bin Cynthia, der Technik-Bot. ').then(() => bot.say(TechnikBot+' Schreiben Sie: --Slack, --Folgt und --HipChat. ')).then(() => 'technik'); }if  (~befehl.indexOf("--CYNTHIA")) { versuch = true; return bot.say(TechnikBot+' Hallo, ich bin Cynthia, der Technik-Bot. ').then(() => bot.say(TechnikBot+' Schreiben Sie: --Slack, --Folgt und --HipChat. ')).then(() => 'technik'); }          
+       // -----------------
+       // Inhalte
+       // -----------------
+          
+          if  (~befehl.indexOf("--SLACK"))          { versuch = true; bot.say(SlackBot+'Slack ist eine fantastische neue Kommunikationsplattform für Teams!').then(function(){
+                                                               return bot.say(SefzigBot+'Wenn Sie Slack noch nicht kennen, erwägen Sie, es für Ihre Interne Kommunikation zu nutzen! Lesen Sie dazu Andreas --Slack-Artikel für Marketer, seinen --Slack-Blogpost für Anwender, öffnen Sie seine --Slack-Links oder treten Sie seinem --Slack-Team bei.'); }).then(function(){
+                                                               return bot.say(SefzigBot+'Mit Slack lässt sich --intern die effizienz-steigernde --Strategie von --ChatOps am besten auf ein Team oder Unternehmen anwenden.'); }); }
+          
+          if  (~befehl.indexOf("--HIPCHAT"))        { versuch = true; bot.say(SefzigBot+'HipChat Text 1.').then(function(){
+                                                               return bot.say(SefzigBot+'HipChat Text 2.'); }).then(function(){
+                                                               return bot.say(SefzigBot+'HipChat Text 3.'); }); }
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+       // -----------------
+       // Vorlagen
+       // -----------------
+          
+       // Einzeilig
+          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(TechnikBot+' Text Technik 1. ').then(() => 'technik'); }          
+       // Mehrzeilig
+          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(TechnikBot+' Text Technik 1. ').then(() => bot.say(TechnikBot+' Text Technik 2. ')).then(() => 'technik'); }          
+
+       // -----------------
+       // Bot aus
+       // -----------------
+       
+       // Zurück merken
+          zuletzt = zuruck;
+          
+       // Irrläufer
+       // if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
+       //    bot.say(TechnikBot+'Suchen Sie meine --Befehle?').then(function(){ 
+       //    return bot.say(TechnikBot+'Wollen Sie zurück zum --Empfang?'); }); versuche = 0; }
+       // }
+          if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
+             bot.say(TechnikBot+'Suchen Sie meine --Befehle?'); versuche = 0; }
+          }
+          
+       // Weiterleiten
+          return bot.setProp('technik', 'gesprochen')
+              .then(() => dann);
+          
+       }
+        
+    },
+   
     finish: {
        receive: (bot, message) => {
           return bot.getProp('name')
