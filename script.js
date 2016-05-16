@@ -940,6 +940,11 @@
           
           if  (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(StrategieBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse'); }          
        // -----------------
+       // System
+       // -----------------
+       
+          if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(StrategieBot+' Text Strategie 1. Befehle: --folgt. ').then(() => bot.say(StrategieBot+' Text Strategie 2. ')).then(() => 'strategie'); }if  (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(StrategieBot+' Text Strategie 1. Befehle: --folgt. ').then(() => bot.say(StrategieBot+' Text Strategie 2. ')).then(() => 'strategie'); }
+       // -----------------
        // Inhalte
        // -----------------
           
