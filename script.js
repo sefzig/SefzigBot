@@ -868,6 +868,126 @@
         
     },
    
+ // ---------------------------
+ // Strategie (Feline)
+ // ---------------------------
+ // - name_klein: strategie
+ // - name_kamel: Strategie
+ // - name_gross: STRATEGIE
+ // - frau_klein: feline
+ // - frau_kamel: Feline
+ // - frau_gross: FELINE
+ // - bot_name:   StrategieBot
+ // - bot_klein:  strategiebot
+ // - bot_kamel:  Strategiebot
+ // - bot_gross:  STRATEGIEBOT
+ // ---------------------------
+ 
+    strategie: {
+  	
+       receive: (bot, message) => {
+          
+       // Befehl normalisieren
+          var befehl = befehlWort(message.text.trim().toUpperCase());
+          
+       // Nächster Schritt default
+          var dann = "strategie";
+          
+       // Nicht-Befehl-Eingaben mitzählen
+          var versuch = false;
+          
+       // Default-Zurück
+          var zuruck = "Strategie";
+          
+       // -----------------
+       // Befehle
+       // -----------------
+          
+          if ("strategie" != "empfang") {
+          	 
+             if  (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(StrategieBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Strategie? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(StrategieBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Strategie? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ABBRECHEN")) { versuch = true; return bot.say(StrategieBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Strategie? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }             
+          }
+          
+          if (zuletzt != "Strategie") { 
+             
+             if  (~befehl.indexOf("--ZURüCK")) { versuch = true; return bot.say(+' 0 ').then(() => 'strategie'); }             
+          } 
+          else {
+             
+             if  (~befehl.indexOf("--ZURüCK")) { versuch = true; return bot.say(StrategieBot+' Wollen Sie zurück zum --Empfang? ').then(() => 'strategie'); }             
+          }
+          
+       // -----------------
+       // Onboarding
+       // -----------------
+          
+       	 if ((vorname) && (vorname != "") && (vorname != "Unbekannter") && (nachname) && (nachname != "") && (nachname != "Besucher")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else if ((vorname) && (vorname != "") && (vorname != "Unbekannter")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else if ((nachname) && (nachname != "") && (nachname != "Besucher")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(StrategieBot+' Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name'); }             
+          }
+          
+          if  (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(StrategieBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse'); }          
+       // -----------------
+       // System
+       // -----------------
+       
+          if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(StrategieBot+' Text Strategie 1. Befehle: --folgt. ').then(() => bot.say(StrategieBot+' Text Strategie 2. ')).then(() => 'strategie'); }if  (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(StrategieBot+' Text Strategie 1. Befehle: --folgt. ').then(() => bot.say(StrategieBot+' Text Strategie 2. ')).then(() => 'strategie'); }
+          if  (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(StrategieBot+' Dank ihrer einfachen und direkten Kommunikation sind Chats ein weltweiter --Trend, Tendenz stark zunehmend. ').then(() => bot.say(StrategieBot+' Chat-Bots gibt es schon --lange. Sie werden plötzlich interessant, da nun alle 'modernen' Menschen mobil und mit Chatten vertraut sind und sich die großen --Plattformen wie Facebook Messenger für Bots öffnen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }if  (~befehl.indexOf("--üBER")) { versuch = true; return bot.say(StrategieBot+' Dank ihrer einfachen und direkten Kommunikation sind Chats ein weltweiter --Trend, Tendenz stark zunehmend. ').then(() => bot.say(StrategieBot+' Chat-Bots gibt es schon --lange. Sie werden plötzlich interessant, da nun alle 'modernen' Menschen mobil und mit Chatten vertraut sind und sich die großen --Plattformen wie Facebook Messenger für Bots öffnen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }if  (~befehl.indexOf("--STRATEGIE")) { versuch = true; return bot.say(StrategieBot+' Dank ihrer einfachen und direkten Kommunikation sind Chats ein weltweiter --Trend, Tendenz stark zunehmend. ').then(() => bot.say(StrategieBot+' Chat-Bots gibt es schon --lange. Sie werden plötzlich interessant, da nun alle 'modernen' Menschen mobil und mit Chatten vertraut sind und sich die großen --Plattformen wie Facebook Messenger für Bots öffnen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }if  (~befehl.indexOf("--FELINE")) { versuch = true; return bot.say(StrategieBot+' Dank ihrer einfachen und direkten Kommunikation sind Chats ein weltweiter --Trend, Tendenz stark zunehmend. ').then(() => bot.say(StrategieBot+' Chat-Bots gibt es schon --lange. Sie werden plötzlich interessant, da nun alle 'modernen' Menschen mobil und mit Chatten vertraut sind und sich die großen --Plattformen wie Facebook Messenger für Bots öffnen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich eher für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }          
+       // -----------------
+       // Inhalte
+       // -----------------
+          
+       // Intern
+          if  (~befehl.indexOf("--INTERN")) { versuch = true; return bot.say(StrategieBot+' Die Erfahrung und eine --Studie von Slack zeigen, dass es sich lohnt, die interne Kommunikation auf Chat umzustellen. ').then(() => bot.say(StrategieBot+' Wenn Ihr Team dann schon den ganzen Tag einen Chat-Client nutzt, können Sie über Erweiterungen und Bots viele interne und externe --Daten in die Konversation holen. ')).then(() => bot.say(StrategieBot+' Mit den Prinzipien der --ChatOps als Teil Ihrer --Strategie erleichtern Sie Ihrem Team die Arbeit immens! ')).then(() => 'strategie'); }          if  (~befehl.indexOf("--CHATOPS")) { versuch = true; return bot.say(StrategieBot+' ChatOps Text 1. ').then(() => bot.say(StrategieBot+' ChatOps Text 2. ')).then(() => bot.say(StrategieBot+' Zurück zu --Strategie --intern. ')).then(() => 'strategie'); }          if  (~befehl.indexOf("--DATEN")) { versuch = true; return bot.say(StrategieBot+' Mit Bots und Erweiterungen geben Sie Ihrem Team rollen-basierten Zugriff auf diverse Daten-Quellen und Marketing-Technologien, deren Daten aufgrund der Natur des Chats immer nur ein, zwei Wörter weit entfernt sind. ').then(() => bot.say(StrategieBot+' Viele Erweiterungen, z.B. von Slack, erlauben auch die (eingeschränkte) Steuerung von Diensten wie Jira, Skype oder Mailchimp. ')).then(() => bot.say(StrategieBot+' Daten in Konversationen haben zudem einen --intern lehrreichen Charakter: Man sieht im Chat, wie die Kollegen Daten abfragen und Ihre Werkzeuge steuern. Gut für Ihre --Strategie! ')).then(() => 'strategie'); }          if  (~befehl.indexOf("--STUDIE")) { versuch = true; return bot.say(TechnikBot+' Wir in der Technik setzen --intern auf --ChatOps und stellen fest: Wir kommunizieren schriftlich zu 100% über --Slack und steuern unsere Marketing-Technologien zu 80% im Chat. ').then(() => bot.say(StrategieBot+' Der führende Chat-Anbieter Slack hat im Juli 2015 eine Studie durchgeführt: [Button:Studie von Slack,http://slack.com/results] Nach eigenen Angaben haben Teams einen Produktivitäts-Gewinn von bis zu 32% durch den Einsatz von Slack, 80% sehen mehr Transparenz und fast 50% weniger Emails. ')).then(() => 'strategie'); }          
+       // Extern
+          if  (~befehl.indexOf("--EXTERN")) { versuch = true; return bot.say(StrategieBot+' Bots ermöglichen einen eleganten Zugang zu Ihren Marketing-Aktivitäten. Verstehen Sie einen Bot als virtuellen Mitarbeiter, der Nutzer in Empfang nimmt, einfache Fragen beantwortet und sie - bei Bedarf! - direkt in Ihre Marketing-Maßnahmen verlinkt. ').then(() => bot.say(KreationsBot+' Wir in der --Kreation legen Wert darauf, interessante --Dialoge zu erschaffen, die Nutzern einen konkreten --Mehrwert bieten und sie mit reichhaltigen --Inhalten erfreuen. ')).then(() => bot.say(StrategieBot+' Bots sind leicht aufzusetzen (wenn man weiß wie es geht ;). Vor allem aber sind sie leicht in alle Marketing- --Kanäle integrierbar! ')).then(() => 'strategie'); }if  (~befehl.indexOf("--EXTERNE")) { versuch = true; return bot.say(StrategieBot+' Bots ermöglichen einen eleganten Zugang zu Ihren Marketing-Aktivitäten. Verstehen Sie einen Bot als virtuellen Mitarbeiter, der Nutzer in Empfang nimmt, einfache Fragen beantwortet und sie - bei Bedarf! - direkt in Ihre Marketing-Maßnahmen verlinkt. ').then(() => bot.say(KreationsBot+' Wir in der --Kreation legen Wert darauf, interessante --Dialoge zu erschaffen, die Nutzern einen konkreten --Mehrwert bieten und sie mit reichhaltigen --Inhalten erfreuen. ')).then(() => bot.say(StrategieBot+' Bots sind leicht aufzusetzen (wenn man weiß wie es geht ;). Vor allem aber sind sie leicht in alle Marketing- --Kanäle integrierbar! ')).then(() => 'strategie'); }          
+       // Allgemein
+          if  (~befehl.indexOf("--LANGE")) { versuch = true; return bot.say(StrategieBot+' 1966 entstand mit dem Chatbot ELIZA die erste künstliche Intelligenz: %[Ein Nachbau von ELIZA](http://sefzig.net/link/ElizaMedai/)  ').then(() => bot.say(StrategieBot+' 2001 setzte das Marketing erstmals im großen Stil einen Chatbot ein - für Radioheads neues Album: %[Artikel auf Medium (englisch)](http://sefzig.net/link/GooglyMinotaur/)  ')).then(() => bot.say(StrategieBot+' Ah, Geschichte, immer spannend. Zurück zur --Strategie? ')).then(() => 'strategie'); }if  (~befehl.indexOf("--LäNGE")) { versuch = true; return bot.say(StrategieBot+' 1966 entstand mit dem Chatbot ELIZA die erste künstliche Intelligenz: %[Ein Nachbau von ELIZA](http://sefzig.net/link/ElizaMedai/)  ').then(() => bot.say(StrategieBot+' 2001 setzte das Marketing erstmals im großen Stil einen Chatbot ein - für Radioheads neues Album: %[Artikel auf Medium (englisch)](http://sefzig.net/link/GooglyMinotaur/)  ')).then(() => bot.say(StrategieBot+' Ah, Geschichte, immer spannend. Zurück zur --Strategie? ')).then(() => 'strategie'); }          if  (~befehl.indexOf("--TRENDS")) { versuch = true; return bot.say(StrategieBot+' Chatten ist inzwischen die häufigste digitale Beschäftigung, auch in Deutschland. Ein paar Statistiken: [Text:Aktuelle Statistiken,RobogeddonChatten]  ').then(() => bot.say(StrategieBot+' Seit 2015 verbringt man in den Usa mehr Zeit mit Messaging-Apps als mit den Apps der Sozialen Netzwerke: [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Quelle: [Textlink:BI Intelligence Report,MessagingVsSocial] ')).then(() => bot.say(StrategieBot+' Eine Liste lesenswerter Artikel zur --Strategie in Real Time Messaging: [Linkliste:Linkliste öffnen,Rtm:Strategie:Artikel] ')).then(() => 'strategie'); }if  (~befehl.indexOf("--TREND")) { versuch = true; return bot.say(StrategieBot+' Chatten ist inzwischen die häufigste digitale Beschäftigung, auch in Deutschland. Ein paar Statistiken: [Text:Aktuelle Statistiken,RobogeddonChatten]  ').then(() => bot.say(StrategieBot+' Seit 2015 verbringt man in den Usa mehr Zeit mit Messaging-Apps als mit den Apps der Sozialen Netzwerke: [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Quelle: [Textlink:BI Intelligence Report,MessagingVsSocial] ')).then(() => bot.say(StrategieBot+' Eine Liste lesenswerter Artikel zur --Strategie in Real Time Messaging: [Linkliste:Linkliste öffnen,Rtm:Strategie:Artikel] ')).then(() => 'strategie'); }          if  (~befehl.indexOf("--MARKETING")) { versuch = true; return bot.say(StrategieBot+' Marketing Text 1. ').then(() => bot.say(StrategieBot+' Marketing Text 2. ')).then(() => bot.say(StrategieBot+' Zurück zur --Strategie. ')).then(() => 'strategie'); }          
+       // -----------------
+       // Vorlagen
+       // -----------------
+       
+       // Einzeilig
+          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(StrategieBot+' Text Strategie 1. ').then(() => 'strategie'); }          
+       // Mehrzeilig
+          if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(StrategieBot+' Text Strategie 1. ').then(() => bot.say(StrategieBot+' Text Strategie 2. ')).then(() => 'strategie'); }          
+
+       // -----------------
+       // Bot aus
+       // -----------------
+       
+       // Zurück merken
+          zuletzt = zuruck;
+          
+       // Irrläufer
+       // if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
+       //    bot.say(StrategieBot+'Suchen Sie meine --Befehle?').then(function(){ 
+       //    return bot.say(StrategieBot+'Wollen Sie zurück zum --Empfang?'); }); versuche = 0; }
+       // }
+          if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
+             bot.say(StrategieBot+'Suchen Sie meine --Befehle?'); versuche = 0; }
+          }
+          
+       // Weiterleiten
+          return bot.setProp('strategie', 'gesprochen')
+              .then(() => dann);
+          
+       }
+        
+    },
+   
     finish: {
        receive: (bot, message) => {
           return bot.getProp('name')
