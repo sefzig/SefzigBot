@@ -739,6 +739,135 @@
         
     },
    
+ // ---------------------------
+ // Konzeption (Erika)
+ // ---------------------------
+ // - name_klein: konzeption
+ // - name_kamel: Konzeption
+ // - name_gross: KONZEPTION
+ // - frau_klein: erika
+ // - frau_kamel: Erika
+ // - frau_gross: ERIKA
+ // - bot_name:   KonzeptionsBot
+ // - bot_klein:  konzeptionsbot
+ // - bot_kamel:  Konzeptionsbot
+ // - bot_gross:  KONZEPTIONSBOT
+ // ---------------------------
+ 
+    konzeption: {
+  	
+       receive: (bot, message) => {
+          
+       // Befehl normalisieren
+          var befehl = befehlWort(message.text.trim().toUpperCase());
+          
+       // Nächster Schritt default
+          var dann = "konzeption";
+          
+       // Nicht-Befehl-Eingaben mitzählen
+          var versuch = false;
+          
+       // Default-Zurück
+          var zuruck = "Konzeption";
+          
+       // -----------------
+       // Befehle
+       // -----------------
+          
+          if ("konzeption" != "empfang") {
+          	 
+             if  (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(KonzeptionsBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Konzeption? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(KonzeptionsBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Konzeption? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ABBRECHEN")) { versuch = true; return bot.say(KonzeptionsBot+' Bis später! ').then(() => bot.say(EmpfangsBot+' Willkommen zurück! Wie war es in der --Konzeption? Schreiben Sie --Befehle um zu sehen, was ich Ihnen sonst noch zeigen kann. ')).then(() => 'empfang'); }             
+          }
+          
+          if (zuletzt != "Konzeption") { 
+             
+             if  (~befehl.indexOf("--ZURüCK")) { versuch = true; return bot.say(+' 0 ').then(() => 'konzeption'); }             
+          } 
+          else {
+             
+             if  (~befehl.indexOf("--ZURüCK")) { versuch = true; return bot.say(KonzeptionsBot+' Wollen Sie zurück zum --Empfang? ').then(() => 'konzeption'); }             
+          }
+          
+       // -----------------
+       // Onboarding
+       // -----------------
+          
+       	 if ((vorname) && (vorname != "") && (vorname != "Unbekannter") && (nachname) && (nachname != "") && (nachname != "Besucher")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else if ((vorname) && (vorname != "") && (vorname != "Unbekannter")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else if ((nachname) && (nachname != "") && (nachname != "Besucher")) {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(+' 0 ').then(() => 'name'); }             
+          }
+          else {
+       	    
+             if  (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(KonzeptionsBot+' Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name'); }             
+          }
+          
+          if  (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(KonzeptionsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse'); }          
+       // -----------------
+       // System
+       // -----------------
+       
+          if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption 1. Befehle: --Kanäle, --Facebook. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption 2. ')).then(() => 'konzeption'); }if  (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption 1. Befehle: --Kanäle, --Facebook. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption 2. ')).then(() => 'konzeption'); }
+          if  (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption Über 1. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 2. ')).then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 3. ')).then(() => 'konzeption'); }if  (~befehl.indexOf("--üBER")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption Über 1. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 2. ')).then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 3. ')).then(() => 'konzeption'); }if  (~befehl.indexOf("--KONZEPTION")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption Über 1. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 2. ')).then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 3. ')).then(() => 'konzeption'); }if  (~befehl.indexOf("--ERIKA")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption Über 1. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 2. ')).then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 3. ')).then(() => 'konzeption'); }          
+       // -----------------
+       // Inhalte
+       // -----------------
+          
+          if  (~befehl.indexOf("--KANäLE")) { versuch = true; return bot.say(KonzeptionsBot+' Ein Bot lässt sich einfach in Ihre bestehenden Marketing-Kanäle einbinden - letztlich ist er nur die URL einer für alle Geräte optimierten Webseite. ').then(() => bot.say(KonzeptionsBot+' CRM/Dialog: Link in Newslettern, Kurzlink/QR-Code auf Drucksachen. ')).then(() => bot.say(KonzeptionsBot+' Marke: Webseiten-Widget, Link in Social Media und E-Mail-Signaturen, Kurzlink/QR-Code auf Visitenkarten. ')).then(() => bot.say(KonzeptionsBot+' Vor Ort: Kurzlink/QR-Code auf Plakat, Aufsteller, Schaufenster, Produkt. ')).then(() => bot.say(KonzeptionsBot+' Text mit --Konzeption und --extern. ')).then(() => 'konzeption'); }          
+          if  (~befehl.indexOf("--FACEBOOK"))       { versuch = true; bot.say(SefzigBot+'Facebook Text 1.').then(function(){
+                                                               return bot.say(SefzigBot+'Facebook Text 2.'); }).then(function(){
+                                                               return bot.say(SefzigBot+'Facebook Text 3.'); }); }
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+       // -----------------
+       // Vorlagen
+       // -----------------
+       
+       // Einzeilig
+          if  (~befehl.indexOf("--KONZEPTION")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption 1. ').then(() => 'konzeption'); }          
+       // Mehrzeilig
+          if  (~befehl.indexOf("--KONZEPTION")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption 1. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption 2. ')).then(() => 'konzeption'); }          
+
+       // -----------------
+       // Bot aus
+       // -----------------
+       
+       // Zurück merken
+          zuletzt = zuruck;
+          
+       // Irrläufer
+       // if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
+       //    bot.say(KonzeptionsBot+'Suchen Sie meine --Befehle?').then(function(){ 
+       //    return bot.say(KonzeptionsBot+'Wollen Sie zurück zum --Empfang?'); }); versuche = 0; }
+       // }
+          if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
+             bot.say(KonzeptionsBot+'Suchen Sie meine --Befehle?'); versuche = 0; }
+          }
+          
+       // Weiterleiten
+          return bot.setProp('konzeption', 'gesprochen')
+              .then(() => dann);
+          
+       }
+        
+    },
+   
     finish: {
        receive: (bot, message) => {
           return bot.getProp('name')
