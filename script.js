@@ -317,6 +317,7 @@
        // Mehrzeilig
           if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(EmpfangsBot+' Text Empfang 1. ').then(() => bot.say(EmpfangsBot+' Text Empfang 2. ')).then(() => 'empfang'); }          
           
+
        // -----------------
        // Bot aus
        // -----------------
@@ -448,6 +449,7 @@
           if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung 1. ').then(() => 'beratung'); }          
        // Mehrzeilig
           if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung 1. ').then(() => bot.say(BeratungsBot+' Text Beratung 2. ')).then(() => 'beratung'); }          
+
        // -----------------
        // Bot aus
        // -----------------
@@ -581,6 +583,7 @@
           if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(TechnikBot+' Text Technik 1. ').then(() => 'technik'); }          
        // Mehrzeilig
           if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(TechnikBot+' Text Technik 1. ').then(() => bot.say(TechnikBot+' Text Technik 2. ')).then(() => 'technik'); }          
+
        // -----------------
        // Bot aus
        // -----------------
@@ -711,6 +714,7 @@
           if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(KreationsBot+' Text Kreation 1. ').then(() => 'kreation'); }          
        // Mehrzeilig
           if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(KreationsBot+' Text Kreation 1. ').then(() => bot.say(KreationsBot+' Text Kreation 2. ')).then(() => 'kreation'); }          
+
        // -----------------
        // Bot aus
        // -----------------
@@ -839,6 +843,7 @@
           if  (~befehl.indexOf("--KONZEPTION")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption 1. ').then(() => 'konzeption'); }          
        // Mehrzeilig
           if  (~befehl.indexOf("--KONZEPTION")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption 1. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption 2. ')).then(() => 'konzeption'); }          
+
        // -----------------
        // Bot aus
        // -----------------
@@ -958,6 +963,7 @@
           if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(StrategieBot+' Text Strategie 1. ').then(() => 'strategie'); }          
        // Mehrzeilig
           if  (~befehl.indexOf("--VORLAGE")) { versuch = true; return bot.say(StrategieBot+' Text Strategie 1. ').then(() => bot.say(StrategieBot+' Text Strategie 2. ')).then(() => 'strategie'); }          
+
        // -----------------
        // Bot aus
        // -----------------
