@@ -266,7 +266,7 @@
           
           if  (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(EmpfangsBot+' Über Produkte Text 1. ').then(() => bot.say(EmpfangsBot+' Über Produkte Text 2. ')).then(() => bot.say(EmpfangsBot+' Über Produkte Text 3. ')).then(() => 'empfang'); }	       
           if  (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(EmpfangsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => 'empfang'); }if  (~befehl.indexOf("--üBER")) { versuch = true; return bot.say(EmpfangsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => 'empfang'); }          
-          if  (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(EmpfangsBot+' Über Kontakt Text 1. ').then(() => bot.say(EmpfangsBot+' Über Kontakt Text 2. ')).then(() => bot.say(EmpfangsBot+' Über Kontakt Text 3. ')).then(() => 'empfang'); }          
+          if  (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(EmpfangsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie uns eine Email: [Email:andreas@sefzig.net]. ').then(() => bot.say(EmpfangsBot+' Über Kontakt Text 2. ')).then(() => bot.say(EmpfangsBot+' Über Kontakt Text 3. ')).then(() => 'empfang'); }          
        // -----------------
        // Vorlage (Gewerk, Name)
        // -----------------
@@ -278,7 +278,7 @@
        
           if  (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(EmpfangsBot+' --Befehle dieser Seite:, --Mobil, --Newsletter, --Kontakt, --Über ').then(() => 'empfang'); }          
           if  (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(EmpfangsBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(EmpfangsBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang'); }
-          if  (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(EmpfangsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => bot.say(EmpfangsBot+' Sprechen Sie mit unserer --Technik, um mehr zu erfahren. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--üBER")) { versuch = true; return bot.say(EmpfangsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => bot.say(EmpfangsBot+' Sprechen Sie mit unserer --Technik, um mehr zu erfahren. ')).then(() => 'empfang'); }          
+          if  (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit unserer --Technik, um mehr über diese Seite zu erfahren. ').then(() => 'empfang'); }if  (~befehl.indexOf("--üBER")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit unserer --Technik, um mehr über diese Seite zu erfahren. ').then(() => 'empfang'); }          
        // -----------------
        // Inhalte
        // -----------------
@@ -446,7 +446,7 @@
           
           if  (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(BeratungsBot+' Über Produkte Text 1. ').then(() => bot.say(BeratungsBot+' Über Produkte Text 2. ')).then(() => bot.say(BeratungsBot+' Über Produkte Text 3. ')).then(() => 'beratung'); }	       
           if  (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(BeratungsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => 'beratung'); }if  (~befehl.indexOf("--üBER")) { versuch = true; return bot.say(BeratungsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => 'beratung'); }          
-          if  (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(BeratungsBot+' Über Kontakt Text 1. ').then(() => bot.say(BeratungsBot+' Über Kontakt Text 2. ')).then(() => bot.say(BeratungsBot+' Über Kontakt Text 3. ')).then(() => 'beratung'); }          
+          if  (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(BeratungsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie uns eine Email: [Email:andreas@sefzig.net]. ').then(() => bot.say(BeratungsBot+' Über Kontakt Text 2. ')).then(() => bot.say(BeratungsBot+' Über Kontakt Text 3. ')).then(() => 'beratung'); }          
        // -----------------
        // Vorlage (Gewerk, Name)
        // -----------------
@@ -606,7 +606,7 @@
           
           if  (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(TechnikBot+' Über Produkte Text 1. ').then(() => bot.say(TechnikBot+' Über Produkte Text 2. ')).then(() => bot.say(TechnikBot+' Über Produkte Text 3. ')).then(() => 'technik'); }	       
           if  (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(TechnikBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => 'technik'); }if  (~befehl.indexOf("--üBER")) { versuch = true; return bot.say(TechnikBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => 'technik'); }          
-          if  (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(TechnikBot+' Über Kontakt Text 1. ').then(() => bot.say(TechnikBot+' Über Kontakt Text 2. ')).then(() => bot.say(TechnikBot+' Über Kontakt Text 3. ')).then(() => 'technik'); }          
+          if  (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(TechnikBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie uns eine Email: [Email:andreas@sefzig.net]. ').then(() => bot.say(TechnikBot+' Über Kontakt Text 2. ')).then(() => bot.say(TechnikBot+' Über Kontakt Text 3. ')).then(() => 'technik'); }          
        // -----------------
        // Vorlage (Gewerk, Name)
        // -----------------
@@ -768,7 +768,7 @@
           
           if  (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(KreationsBot+' Über Produkte Text 1. ').then(() => bot.say(KreationsBot+' Über Produkte Text 2. ')).then(() => bot.say(KreationsBot+' Über Produkte Text 3. ')).then(() => 'kreation'); }	       
           if  (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(KreationsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => 'kreation'); }if  (~befehl.indexOf("--üBER")) { versuch = true; return bot.say(KreationsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => 'kreation'); }          
-          if  (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(KreationsBot+' Über Kontakt Text 1. ').then(() => bot.say(KreationsBot+' Über Kontakt Text 2. ')).then(() => bot.say(KreationsBot+' Über Kontakt Text 3. ')).then(() => 'kreation'); }          
+          if  (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(KreationsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie uns eine Email: [Email:andreas@sefzig.net]. ').then(() => bot.say(KreationsBot+' Über Kontakt Text 2. ')).then(() => bot.say(KreationsBot+' Über Kontakt Text 3. ')).then(() => 'kreation'); }          
        // -----------------
        // Vorlage (Gewerk, Name)
        // -----------------
@@ -927,7 +927,7 @@
           
           if  (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(KonzeptionsBot+' Über Produkte Text 1. ').then(() => bot.say(KonzeptionsBot+' Über Produkte Text 2. ')).then(() => bot.say(KonzeptionsBot+' Über Produkte Text 3. ')).then(() => 'konzeption'); }	       
           if  (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(KonzeptionsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => 'konzeption'); }if  (~befehl.indexOf("--üBER")) { versuch = true; return bot.say(KonzeptionsBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => 'konzeption'); }          
-          if  (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(KonzeptionsBot+' Über Kontakt Text 1. ').then(() => bot.say(KonzeptionsBot+' Über Kontakt Text 2. ')).then(() => bot.say(KonzeptionsBot+' Über Kontakt Text 3. ')).then(() => 'konzeption'); }          
+          if  (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(KonzeptionsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie uns eine Email: [Email:andreas@sefzig.net]. ').then(() => bot.say(KonzeptionsBot+' Über Kontakt Text 2. ')).then(() => bot.say(KonzeptionsBot+' Über Kontakt Text 3. ')).then(() => 'konzeption'); }          
        // -----------------
        // Vorlage (Gewerk, Name)
        // -----------------
@@ -1084,7 +1084,7 @@
           
           if  (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(StrategieBot+' Über Produkte Text 1. ').then(() => bot.say(StrategieBot+' Über Produkte Text 2. ')).then(() => bot.say(StrategieBot+' Über Produkte Text 3. ')).then(() => 'strategie'); }	       
           if  (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(StrategieBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => 'strategie'); }if  (~befehl.indexOf("--üBER")) { versuch = true; return bot.say(StrategieBot+' Diese Seite setzt sich aus verschiedenen Technologien zusammen: Ein Website-Container in Html5, ein Chat-Widget von Smooch.io (realisiert in Node.js, gehostet auf Heroku) und den statischen Inhalten, geschrieben in Text. ').then(() => 'strategie'); }          
-          if  (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(StrategieBot+' Über Kontakt Text 1. ').then(() => bot.say(StrategieBot+' Über Kontakt Text 2. ')).then(() => bot.say(StrategieBot+' Über Kontakt Text 3. ')).then(() => 'strategie'); }          
+          if  (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(StrategieBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie uns eine Email: [Email:andreas@sefzig.net]. ').then(() => bot.say(StrategieBot+' Über Kontakt Text 2. ')).then(() => bot.say(StrategieBot+' Über Kontakt Text 3. ')).then(() => 'strategie'); }          
        // -----------------
        // Vorlage (Gewerk, Name)
        // -----------------

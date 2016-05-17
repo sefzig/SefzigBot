@@ -247,6 +247,28 @@
              "</audio>"
           ],
           
+       // Email
+          "Email":
+          [
+             "<div class='modulButton sk-action'>",
+                "<a class='btn btn-sk-primary email' ",
+                   "href='mailto:%button_url%?subject=Robogeddon' ",
+                   "%button_text%",
+                "</a>",
+             "</div>"
+          ],
+          
+       // Telefon
+          "Telefon":
+          [
+             "<div class='modulButton sk-action'>",
+                "<a class='btn btn-sk-primary telefon' ",
+                   "href='tel:%button_url%' ",
+                   "%button_text%",
+                "</a>",
+             "</div>"
+          ],
+          
        // Youtube-Player
           "Youtube":
           [
