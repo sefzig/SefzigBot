@@ -148,7 +148,7 @@
     // Menü anzeigen starten
        if (methode == "menu") {
           
-       // menu("an");
+          menu("");
           
        }
        
