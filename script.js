@@ -269,7 +269,7 @@
        // -----------------
           
        // Über uns
-          if  (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(EmpfangsBot+' #Robogeddon sind Andreas Sefzig, mehrere freie Mitarbeiter, eine Handvoll Marketing-Technologien und ein Team aus Bots. ').then(() => bot.say(EmpfangsBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(EmpfangsBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(EmpfangsBot+' Sprechen Sie mit Andreas über die --Strategie und --Konzeption Ihres eigenen Chat-Bots. ')).then(() => 'empfang'); }	       // Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!
+          if  (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(EmpfangsBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und ein Team aus Bots. ').then(() => bot.say(EmpfangsBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(EmpfangsBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(EmpfangsBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'empfang'); }	       // Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!
 	       // #Robogeddon sind die ersten in Deutschland, die Chat-Bots für und mit ihren Kunden entwickeln. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.
           // Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).
           // Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.
@@ -303,7 +303,9 @@
           else if  (~befehl.indexOf("--TESTACTION"))     { versuch = true; bot.say(SefzigBot+' %[Ein Nachbau von ELIZA](http://sefzig.net/link/ElizaMedai/) Action.'); }
           
        // Javascript
-          else if  (~befehl.indexOf("--TESTMENU"))       { versuch = true; bot.say(SefzigBot+' [Javascript:menu] Javascript ausgeführt: Menü.'); }
+          else if  (~befehl.indexOf("--TESTMENUE"))      { versuch = true; bot.say(SefzigBot+' [Javascript:menu()] Javascript ausgeführt: Menü getoggelt.'); }
+          else if  (~befehl.indexOf("--TESTMENUAN"))     { versuch = true; bot.say(SefzigBot+' [Javascript:menu(an)] Javascript ausgeführt: Menü an.'); }
+          else if  (~befehl.indexOf("--TESTMENUAUS"))    { versuch = true; bot.say(SefzigBot+' [Javascript:menu(aus)] Javascript ausgeführt: Menü aus.'); }
           else if  (~befehl.indexOf("--TESTALERT"))      { versuch = true; bot.say(SefzigBot+' [Javascript:alert(123)] Javascript ausgeführt: Alert.'); }
           else if  (~befehl.indexOf("--TESTKONSOLE"))    { versuch = true; bot.say(SefzigBot+' [Javascript:konsole(123)] Javascript ausgeführt: Konsole.'); }
           else if  (~befehl.indexOf("--TESTCOOKIE"))     { versuch = true; bot.say(SefzigBot+' [Javascript:cookies(test,123)] Javascript ausgeführt: Cookies.'); }

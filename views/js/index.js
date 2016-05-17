@@ -44,7 +44,7 @@
           
        });
        
-       menu();
+    // menu("an");
        
     });
     
@@ -148,29 +148,7 @@
     // Menü anzeigen starten
        if (methode == "menu") {
           
-          var status = $("body").attr("data-menu");
-          
-       // Debuggen
-       // console.log('\n\nMenü geklickt\n');
-          
-          if (status == "an") {
-             
-             status_neu = "aus";
-             left_neu = "+=40%";
-             breite_neu = "60%";
-             
-          }
-          else {
-             
-             status_neu = "an";
-             left_neu = "-=40%";
-             breite_neu = "100%";
-             
-          }
-          
-          $("#seite > #menu").animate({ right: left_neu }, 300);
-          $("#seite .sk-logo").animate({ width: breite_neu }, 300);
-          $("body").attr("data-menu", status_neu);
+       // menu("an");
           
        }
        
@@ -373,12 +351,69 @@
        
     }
     
-    function menu() {
+    function menu(methode) {
        
-       var status = $("body").attr("data-menu");
-       if (status == "an") {
+       console.log("\n\nmenu('"+methode+"')");
+       
+    // Toggle ermitteln
+       if ((methode == "an") || (methode == "aus")) {
           
-          $("#start > input").trigger("click");
+          methode = methode;
+          console.log("methode übernommen: '"+methode+"'");
+          
+       }
+       else {
+          
+          var status = $("body").attr("data-menu");
+          if (status == "an") {
+             
+             methode = "an";
+             
+          }
+          else {
+             
+             methode = "aus";
+             
+          }
+          console.log("methode aus body-attr: '"+methode+"'");
+          
+       }
+       
+    // Aktuelle und gespeicherte Zeit nehmen
+       zeit = new Date().getTime();
+       zeitClient = $("body").attr("data-menu-zeit");
+       
+    // Zwei Sekunden abwarten (Konversation laden)
+       if ((!zeitClient) || (zeitClient == "")) { zeitClient = 0; }
+       else { zeitClient = zeitClient - (-2000); }
+       
+       if (zeit > zeitClient) {
+          
+       // Animation vorbreiten
+          if (methode == "an") {
+                
+             methode_neu = "aus";
+             left_neu = "0%";
+             breite_neu = "60%";
+             console.log("neue methode (an): '"+methode+"'");
+                
+          }
+          else {
+             
+             methode_neu = "an";
+             left_neu = "-40%";
+             breite_neu = "100%";
+             console.log("neue methode (aus): '"+methode+"'");
+             
+          }
+          
+       // Animieren
+          $("#seite > #menu").animate({ right: left_neu }, 300);
+          $("#seite .sk-logo").animate({ width: breite_neu }, 300);
+          $("body").attr("data-menu", methode_neu);
+          
+       // Zeit speichern
+          $("body").attr("data-menu-zeit", zeit);
           
        }
        
@@ -412,7 +447,7 @@
              konsole:      function (b) { konsolen(b); },
              blinken:      function ()  { blink(); },
              cookies:      function (b) { cookies(b); },
-             menu:         function ()  { menu(); }
+             menu:         function (b) { menu(b); }
           };
           
        // Bot-Inhalte markieren :/
