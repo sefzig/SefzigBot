@@ -37,7 +37,7 @@
      
     processing: {
         
-        prompt: (bot) => bot.say(%bot_name%+'Nicht so schnell bitte...'),
+        prompt: (bot) => bot.say(TechnikBot+'Nicht so schnell bitte...'),
         receive: () => 'processing'
         
     },
