@@ -385,7 +385,7 @@
        
     // Zwei Sekunden abwarten (Konversation laden)
        if ((!zeitClient) || (zeitClient == "")) { zeitClient = 0; }
-       else { zeitClient = zeitClient - (-100); }
+       else { zeitClient = zeitClient - (-333); }
        
        if (zeit > zeitClient) {
           
