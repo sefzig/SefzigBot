@@ -252,7 +252,7 @@
           [
              "<div class='modulButton sk-action'>",
                 "<a class='btn btn-sk-primary email' ",
-                   "href='mailto:%button_url%?subject=Robogeddon' ",
+                   "href='mailto:%button_url%?subject=Robogeddon'> ",
                    "%button_text%",
                 "</a>",
              "</div>"
@@ -263,7 +263,7 @@
           [
              "<div class='modulButton sk-action'>",
                 "<a class='btn btn-sk-primary telefon' ",
-                   "href='tel:%button_url%' ",
+                   "href='tel:%button_url%'> ",
                    "%button_text%",
                 "</a>",
              "</div>"

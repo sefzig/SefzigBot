@@ -212,7 +212,7 @@
           klasse = klasse.toLowerCase();
           
        // Cta-Text von URL trennen
-          if ((modul == "Button") || (modul == "Text") || (modul == "Link") || (modul == "Textlink") || (modul == "Linkliste")) { 
+          if ((modul == "Button") || (modul == "Text") || (modul == "Link") || (modul == "Textlink") || (modul == "Linkliste") || (modul == "Email") || (modul == "Telefon")) { 
              
           // console.log("> Button Var: "+var1);
              var buttons = text_string.split("["+modul+":");
@@ -228,8 +228,8 @@
              }
              else {                   var button_text = "Link öffnen"; var button_url = ""+var1; }
              
-          // console.log("> Button Text: "+button_text);
-          // console.log("> Button Url: "+button_url);
+             console.log("> Button Text: "+button_text);
+             console.log("> Button Url: "+button_url);
              
           }
           
