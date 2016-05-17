@@ -212,7 +212,7 @@
           klasse = klasse.toLowerCase();
           
        // Cta-Text von URL trennen
-          if ((modul == "Button") || (modul == "Text") || (modul == "Link") || (modul == "Textlink") || (modul == "Linkliste") || (modul == "Email") || (modul == "Telefon")) { 
+          if ((modul == "Button") || (modul == "Text") || (modul == "Link") || (modul == "Textlink") || (modul == "Linkliste")) { 
              
           // console.log("> Button Var: "+var1);
              var buttons = text_string.split("["+modul+":");
