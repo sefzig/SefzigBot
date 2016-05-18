@@ -249,9 +249,9 @@
        // Bots
        // -----------------
           
-          if (zuletzt != "Empfang") { 
+          if (dann != "empfang") { 
           
-          bot.say(EmpfangsBot+' Test dann: '+dann+'');
+          bot.say(EmpfangsBot+' dann ('+dann+') != name_klein (empfang)');
           
           if  (~befehl.indexOf("--SEFZIG")) { versuch = true; return bot.say(EmpfangsBot+' Ich habe Andreas benachrichtigt. ').then(() => bot.say(EmpfangsBot+' Sprechen Sie solange mit mir, indem Sie --Empfang schreiben! ')).then(() => 'empfang'); }
           if  (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang'); }          
@@ -260,6 +260,11 @@
           if  (~befehl.indexOf("--KREATION")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo, ich bin Doris, der Kreations-Bot. Ich möchte Ihnen erzählen, wie wir den trockenen, ach so technischen Bots --Leben einhauchen! ')).then(() => bot.say(KreationsBot+' Oder wollen Sie sehen, wie reichhaltig unsere --Inhalte und --Formate sind? ')).then(() => bot.say(KreationsBot+' Ihre Entscheidung :D ')).then(() => 'kreation'); }if  (~befehl.indexOf("--DORIS")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Doris. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo, ich bin Doris, der Kreations-Bot. Ich möchte Ihnen erzählen, wie wir den trockenen, ach so technischen Bots --Leben einhauchen! ')).then(() => bot.say(KreationsBot+' Oder wollen Sie sehen, wie reichhaltig unsere --Inhalte und --Formate sind? ')).then(() => bot.say(KreationsBot+' Ihre Entscheidung :D ')).then(() => 'kreation'); }		    
 		    if  (~befehl.indexOf("--KONZEPTION")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Erika. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo, ich bin Erika, Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }if  (~befehl.indexOf("--ERIKA")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Erika. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo, ich bin Erika, Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }		    
 		    if  (~befehl.indexOf("--STRATEGIE")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Feline. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo, ich bin Feline, der Strategie-Bot. Ich möchte Ihnen erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ')).then(() => bot.say(StrategieBot+' Chats und Chat-Bots sind seit Neustem interessant, da die meisten Leute mit --Plattformen wie Sms, Messenger oder Chat kennen und häufig/gerne nutzen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }if  (~befehl.indexOf("--FELINE")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Feline. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo, ich bin Feline, der Strategie-Bot. Ich möchte Ihnen erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ')).then(() => bot.say(StrategieBot+' Chats und Chat-Bots sind seit Neustem interessant, da die meisten Leute mit --Plattformen wie Sms, Messenger oder Chat kennen und häufig/gerne nutzen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }		    
+		    }
+		    else {
+		       
+             bot.say(EmpfangsBot+' dann ('+dann+') == name_klein (empfang)');
+             
 		    }
 
        // -----------------
@@ -436,9 +441,9 @@
        // Bots
        // -----------------
           
-          if (zuletzt != "Beratung") { 
+          if (dann != "beratung") { 
           
-          bot.say(EmpfangsBot+' Test dann: '+dann+'');
+          bot.say(EmpfangsBot+' dann ('+dann+') != name_klein (beratung)');
           
           if  (~befehl.indexOf("--SEFZIG")) { versuch = true; return bot.say(EmpfangsBot+' Ich habe Andreas benachrichtigt. ').then(() => bot.say(BeratungsBot+' Sprechen Sie solange mit mir, indem Sie --Beratung schreiben! ')).then(() => 'empfang'); }
           if  (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang'); }          
@@ -447,6 +452,11 @@
           if  (~befehl.indexOf("--KREATION")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Doris. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo, ich bin Doris, der Kreations-Bot. Ich möchte Ihnen erzählen, wie wir den trockenen, ach so technischen Bots --Leben einhauchen! ')).then(() => bot.say(KreationsBot+' Oder wollen Sie sehen, wie reichhaltig unsere --Inhalte und --Formate sind? ')).then(() => bot.say(KreationsBot+' Ihre Entscheidung :D ')).then(() => 'kreation'); }if  (~befehl.indexOf("--DORIS")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Doris. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo, ich bin Doris, der Kreations-Bot. Ich möchte Ihnen erzählen, wie wir den trockenen, ach so technischen Bots --Leben einhauchen! ')).then(() => bot.say(KreationsBot+' Oder wollen Sie sehen, wie reichhaltig unsere --Inhalte und --Formate sind? ')).then(() => bot.say(KreationsBot+' Ihre Entscheidung :D ')).then(() => 'kreation'); }		    
 		    if  (~befehl.indexOf("--KONZEPTION")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Erika. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo, ich bin Erika, Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }if  (~befehl.indexOf("--ERIKA")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Erika. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo, ich bin Erika, Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }		    
 		    if  (~befehl.indexOf("--STRATEGIE")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Feline. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo, ich bin Feline, der Strategie-Bot. Ich möchte Ihnen erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ')).then(() => bot.say(StrategieBot+' Chats und Chat-Bots sind seit Neustem interessant, da die meisten Leute mit --Plattformen wie Sms, Messenger oder Chat kennen und häufig/gerne nutzen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }if  (~befehl.indexOf("--FELINE")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Feline. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo, ich bin Feline, der Strategie-Bot. Ich möchte Ihnen erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ')).then(() => bot.say(StrategieBot+' Chats und Chat-Bots sind seit Neustem interessant, da die meisten Leute mit --Plattformen wie Sms, Messenger oder Chat kennen und häufig/gerne nutzen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }		    
+		    }
+		    else {
+		       
+             bot.say(EmpfangsBot+' dann ('+dann+') == name_klein (beratung)');
+             
 		    }
 
        // -----------------
@@ -603,9 +613,9 @@
        // Bots
        // -----------------
           
-          if (zuletzt != "Technik") { 
+          if (dann != "technik") { 
           
-          bot.say(EmpfangsBot+' Test dann: '+dann+'');
+          bot.say(EmpfangsBot+' dann ('+dann+') != name_klein (technik)');
           
           if  (~befehl.indexOf("--SEFZIG")) { versuch = true; return bot.say(EmpfangsBot+' Ich habe Andreas benachrichtigt. ').then(() => bot.say(TechnikBot+' Sprechen Sie solange mit mir, indem Sie --Technik schreiben! ')).then(() => 'empfang'); }
           if  (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang'); }          
@@ -614,6 +624,11 @@
           if  (~befehl.indexOf("--KREATION")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Doris. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo, ich bin Doris, der Kreations-Bot. Ich möchte Ihnen erzählen, wie wir den trockenen, ach so technischen Bots --Leben einhauchen! ')).then(() => bot.say(KreationsBot+' Oder wollen Sie sehen, wie reichhaltig unsere --Inhalte und --Formate sind? ')).then(() => bot.say(KreationsBot+' Ihre Entscheidung :D ')).then(() => 'kreation'); }if  (~befehl.indexOf("--DORIS")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Doris. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo, ich bin Doris, der Kreations-Bot. Ich möchte Ihnen erzählen, wie wir den trockenen, ach so technischen Bots --Leben einhauchen! ')).then(() => bot.say(KreationsBot+' Oder wollen Sie sehen, wie reichhaltig unsere --Inhalte und --Formate sind? ')).then(() => bot.say(KreationsBot+' Ihre Entscheidung :D ')).then(() => 'kreation'); }		    
 		    if  (~befehl.indexOf("--KONZEPTION")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Erika. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo, ich bin Erika, Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }if  (~befehl.indexOf("--ERIKA")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Erika. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo, ich bin Erika, Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }		    
 		    if  (~befehl.indexOf("--STRATEGIE")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Feline. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo, ich bin Feline, der Strategie-Bot. Ich möchte Ihnen erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ')).then(() => bot.say(StrategieBot+' Chats und Chat-Bots sind seit Neustem interessant, da die meisten Leute mit --Plattformen wie Sms, Messenger oder Chat kennen und häufig/gerne nutzen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }if  (~befehl.indexOf("--FELINE")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Feline. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo, ich bin Feline, der Strategie-Bot. Ich möchte Ihnen erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ')).then(() => bot.say(StrategieBot+' Chats und Chat-Bots sind seit Neustem interessant, da die meisten Leute mit --Plattformen wie Sms, Messenger oder Chat kennen und häufig/gerne nutzen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }		    
+		    }
+		    else {
+		       
+             bot.say(EmpfangsBot+' dann ('+dann+') == name_klein (technik)');
+             
 		    }
 
        // -----------------
@@ -772,9 +787,9 @@
        // Bots
        // -----------------
           
-          if (zuletzt != "Kreation") { 
+          if (dann != "kreation") { 
           
-          bot.say(EmpfangsBot+' Test dann: '+dann+'');
+          bot.say(EmpfangsBot+' dann ('+dann+') != name_klein (kreation)');
           
           if  (~befehl.indexOf("--SEFZIG")) { versuch = true; return bot.say(EmpfangsBot+' Ich habe Andreas benachrichtigt. ').then(() => bot.say(KreationsBot+' Sprechen Sie solange mit mir, indem Sie --Kreation schreiben! ')).then(() => 'empfang'); }
           if  (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang'); }          
@@ -783,6 +798,11 @@
           if  (~befehl.indexOf("--KREATION")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Doris. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo, ich bin Doris, der Kreations-Bot. Ich möchte Ihnen erzählen, wie wir den trockenen, ach so technischen Bots --Leben einhauchen! ')).then(() => bot.say(KreationsBot+' Oder wollen Sie sehen, wie reichhaltig unsere --Inhalte und --Formate sind? ')).then(() => bot.say(KreationsBot+' Ihre Entscheidung :D ')).then(() => 'kreation'); }if  (~befehl.indexOf("--DORIS")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Doris. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo, ich bin Doris, der Kreations-Bot. Ich möchte Ihnen erzählen, wie wir den trockenen, ach so technischen Bots --Leben einhauchen! ')).then(() => bot.say(KreationsBot+' Oder wollen Sie sehen, wie reichhaltig unsere --Inhalte und --Formate sind? ')).then(() => bot.say(KreationsBot+' Ihre Entscheidung :D ')).then(() => 'kreation'); }		    
 		    if  (~befehl.indexOf("--KONZEPTION")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Erika. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo, ich bin Erika, Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }if  (~befehl.indexOf("--ERIKA")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Erika. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo, ich bin Erika, Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }		    
 		    if  (~befehl.indexOf("--STRATEGIE")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Feline. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo, ich bin Feline, der Strategie-Bot. Ich möchte Ihnen erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ')).then(() => bot.say(StrategieBot+' Chats und Chat-Bots sind seit Neustem interessant, da die meisten Leute mit --Plattformen wie Sms, Messenger oder Chat kennen und häufig/gerne nutzen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }if  (~befehl.indexOf("--FELINE")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Feline. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo, ich bin Feline, der Strategie-Bot. Ich möchte Ihnen erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ')).then(() => bot.say(StrategieBot+' Chats und Chat-Bots sind seit Neustem interessant, da die meisten Leute mit --Plattformen wie Sms, Messenger oder Chat kennen und häufig/gerne nutzen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }		    
+		    }
+		    else {
+		       
+             bot.say(EmpfangsBot+' dann ('+dann+') == name_klein (kreation)');
+             
 		    }
 
        // -----------------
@@ -939,9 +959,9 @@
        // Bots
        // -----------------
           
-          if (zuletzt != "Konzeption") { 
+          if (dann != "konzeption") { 
           
-          bot.say(EmpfangsBot+' Test dann: '+dann+'');
+          bot.say(EmpfangsBot+' dann ('+dann+') != name_klein (konzeption)');
           
           if  (~befehl.indexOf("--SEFZIG")) { versuch = true; return bot.say(EmpfangsBot+' Ich habe Andreas benachrichtigt. ').then(() => bot.say(KonzeptionsBot+' Sprechen Sie solange mit mir, indem Sie --Konzeption schreiben! ')).then(() => 'empfang'); }
           if  (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang'); }          
@@ -950,6 +970,11 @@
           if  (~befehl.indexOf("--KREATION")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Doris. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo, ich bin Doris, der Kreations-Bot. Ich möchte Ihnen erzählen, wie wir den trockenen, ach so technischen Bots --Leben einhauchen! ')).then(() => bot.say(KreationsBot+' Oder wollen Sie sehen, wie reichhaltig unsere --Inhalte und --Formate sind? ')).then(() => bot.say(KreationsBot+' Ihre Entscheidung :D ')).then(() => 'kreation'); }if  (~befehl.indexOf("--DORIS")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Doris. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo, ich bin Doris, der Kreations-Bot. Ich möchte Ihnen erzählen, wie wir den trockenen, ach so technischen Bots --Leben einhauchen! ')).then(() => bot.say(KreationsBot+' Oder wollen Sie sehen, wie reichhaltig unsere --Inhalte und --Formate sind? ')).then(() => bot.say(KreationsBot+' Ihre Entscheidung :D ')).then(() => 'kreation'); }		    
 		    if  (~befehl.indexOf("--KONZEPTION")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Erika. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo, ich bin Erika, Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }if  (~befehl.indexOf("--ERIKA")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Erika. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo, ich bin Erika, Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }		    
 		    if  (~befehl.indexOf("--STRATEGIE")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Feline. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo, ich bin Feline, der Strategie-Bot. Ich möchte Ihnen erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ')).then(() => bot.say(StrategieBot+' Chats und Chat-Bots sind seit Neustem interessant, da die meisten Leute mit --Plattformen wie Sms, Messenger oder Chat kennen und häufig/gerne nutzen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }if  (~befehl.indexOf("--FELINE")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Feline. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo, ich bin Feline, der Strategie-Bot. Ich möchte Ihnen erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ')).then(() => bot.say(StrategieBot+' Chats und Chat-Bots sind seit Neustem interessant, da die meisten Leute mit --Plattformen wie Sms, Messenger oder Chat kennen und häufig/gerne nutzen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }		    
+		    }
+		    else {
+		       
+             bot.say(EmpfangsBot+' dann ('+dann+') == name_klein (konzeption)');
+             
 		    }
 
        // -----------------
@@ -1103,9 +1128,9 @@
        // Bots
        // -----------------
           
-          if (zuletzt != "Strategie") { 
+          if (dann != "strategie") { 
           
-          bot.say(EmpfangsBot+' Test dann: '+dann+'');
+          bot.say(EmpfangsBot+' dann ('+dann+') != name_klein (strategie)');
           
           if  (~befehl.indexOf("--SEFZIG")) { versuch = true; return bot.say(EmpfangsBot+' Ich habe Andreas benachrichtigt. ').then(() => bot.say(StrategieBot+' Sprechen Sie solange mit mir, indem Sie --Strategie schreiben! ')).then(() => 'empfang'); }
           if  (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang'); }if  (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang'); }          
@@ -1114,6 +1139,11 @@
           if  (~befehl.indexOf("--KREATION")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Doris. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo, ich bin Doris, der Kreations-Bot. Ich möchte Ihnen erzählen, wie wir den trockenen, ach so technischen Bots --Leben einhauchen! ')).then(() => bot.say(KreationsBot+' Oder wollen Sie sehen, wie reichhaltig unsere --Inhalte und --Formate sind? ')).then(() => bot.say(KreationsBot+' Ihre Entscheidung :D ')).then(() => 'kreation'); }if  (~befehl.indexOf("--DORIS")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Doris. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(KreationsBot+' Hallo, ich bin Doris, der Kreations-Bot. Ich möchte Ihnen erzählen, wie wir den trockenen, ach so technischen Bots --Leben einhauchen! ')).then(() => bot.say(KreationsBot+' Oder wollen Sie sehen, wie reichhaltig unsere --Inhalte und --Formate sind? ')).then(() => bot.say(KreationsBot+' Ihre Entscheidung :D ')).then(() => 'kreation'); }		    
 		    if  (~befehl.indexOf("--KONZEPTION")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Erika. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo, ich bin Erika, Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }if  (~befehl.indexOf("--ERIKA")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Erika. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(KonzeptionsBot+' Hallo, ich bin Erika, Konzeptions-Bot. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 2: --Befehle folgt. ')).then(() => bot.say(KonzeptionsBot+' Hallo Konzeption Text 3. ')).then(() => 'konzeption'); }		    
 		    if  (~befehl.indexOf("--STRATEGIE")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Feline. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo, ich bin Feline, der Strategie-Bot. Ich möchte Ihnen erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ')).then(() => bot.say(StrategieBot+' Chats und Chat-Bots sind seit Neustem interessant, da die meisten Leute mit --Plattformen wie Sms, Messenger oder Chat kennen und häufig/gerne nutzen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }if  (~befehl.indexOf("--FELINE")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Feline. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(StrategieBot+' Hallo, ich bin Feline, der Strategie-Bot. Ich möchte Ihnen erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ')).then(() => bot.say(StrategieBot+' Chats und Chat-Bots sind seit Neustem interessant, da die meisten Leute mit --Plattformen wie Sms, Messenger oder Chat kennen und häufig/gerne nutzen. ')).then(() => bot.say(StrategieBot+' Interessieren Sie sich für Bots, die --intern (z.B. mit Ihrem Team) oder --extern (z.B. mit Ihren Kunden) kommunizieren? ')).then(() => 'strategie'); }		    
+		    }
+		    else {
+		       
+             bot.say(EmpfangsBot+' dann ('+dann+') == name_klein (strategie)');
+             
 		    }
 
        // -----------------
