@@ -539,11 +539,11 @@
        // Slack
        // -----------------
           
-          if (~befehl.indexOf("--SLACK")) { versuch = true; return bot.say(BeratungsBot+' Ich möchte Ihnen unsere Inhalte zu Slack ans Herz legen: Ein --Slack-Artikel zeigt die Bedeutung für Marketer. Ein --Slack-Blogpost zeigt die Einfachheit der Anwendung. Öffnen Sie unsere --Slack-Links oder treten Sie unserem --Slack-Team bei. ').then(() => 'beratung');}          
           if (~befehl.indexOf("--SLACK-ARTIKEL")) { versuch = true; return bot.say(BeratungsBot+' Andreas hat einen fundierten Artikel zu --Slack geschrieben: Was müssen Marketer über Slack wissen? [Text:Slack-Artikel öffnen,SefzignetBlogSlack] ').then(() => 'beratung');}          
           if (~befehl.indexOf("--SLACK-BLOGPOST")) { versuch = true; return bot.say(BeratungsBot+' Lesen Sie auch unseren Blogpost zu --Slack: Was ist Slack und wie nutzt man es? [Text:Slack-Artikel öffnen,SefzignetBlogSlack] ').then(() => 'beratung');}          
           if (~befehl.indexOf("--SLACK-LINKS")) { versuch = true; return bot.say(BeratungsBot+' Wir haben uns viele wichtige Artikel zu --Slack gemerkt: [Linkliste:Linkliste Slack-Artikel öffnen,Slack;Artikel] ').then(() => 'beratung');}          
           if (~befehl.indexOf("--SLACK-TEAM")) { versuch = true; return bot.say(BeratungsBot+' Treten Sie unserem offenen Slack-Team  bei, um sich mit uns auszutauschen: [Button:Anmeldung,http://sefzig.net/link/SlackAnmeldung/] ').then(() => 'beratung');}          
+          if (~befehl.indexOf("--SLACK")) { versuch = true; return bot.say(BeratungsBot+' Ich möchte Ihnen unsere Inhalte zu Slack ans Herz legen: Ein --Slack-Artikel zeigt die Bedeutung für Marketer. Ein --Slack-Blogpost zeigt die Einfachheit der Anwendung. Öffnen Sie unsere --Slack-Links oder treten Sie unserem --Slack-Team bei. ').then(() => 'beratung');}          
        // -----------------
        // Vorlagen
        // -----------------
@@ -1122,7 +1122,7 @@
        // Plattformen
        // -----------------
           
-          if (~befehl.indexOf("--SLACK")) { versuch = true; return bot.say(KonzeptionsBot+' Slack ist eine fantastische neue Kommunikationsplattform für Teams! ').then(() => bot.say(KonzeptionsBot+' Wenn Sie Slack noch nicht kennen, erwägen Sie, es für Ihre Interne Kommunikation zu nutzen! Lesen Sie dazu Andreas --Slack-Artikel für Marketer, seinen --Slack-Blogpost für Anwender, öffnen Sie seine --Slack-Links oder treten Sie seinem --Slack-Team bei. ')).then(() => bot.say(KonzeptionsBot+' Mit Slack lässt sich --intern die effizienz-steigernde --Strategie von --ChatOps am besten auf ein Team oder Unternehmen anwenden. ')).then(() => 'technik');}          
+          if (~befehl.indexOf("--SLACK")) { versuch = true; return bot.say(KonzeptionsBot+' Slack ist eine fantastische neue Kommunikationsplattform für Teams! ').then(() => bot.say(KonzeptionsBot+' Wenn Sie Slack noch nicht kennen, erwägen Sie, es für Ihre Interne Kommunikation zu nutzen. Lassen Sie sich dazu von --Barbara unseren --Slack-Artikel für Marketer, den --Slack-Blogpost für Anwender, unsere --Slack-Links und unser --Slack-Team zeigen. ')).then(() => bot.say(KonzeptionsBot+' Slack eignet sich perfekt für eine --interne --Strategie mit --ChatOps. ')).then(() => 'technik');}          
           if (~befehl.indexOf("--HIPCHAT")) { versuch = true; return bot.say(KonzeptionsBot+' Technik HipChat 1. ').then(() => bot.say(KonzeptionsBot+' Technik HipChat 2. ')).then(() => bot.say(KonzeptionsBot+' Technik HipChat 3. ')).then(() => 'technik');}          
           if (~befehl.indexOf("--FACEBOOK")) { versuch = true; return bot.say(KonzeptionsBot+' Technik Facebook Messenger 1. ').then(() => bot.say(KonzeptionsBot+' Technik Facebook Messenger 2. ')).then(() => bot.say(KonzeptionsBot+' Technik Facebook Messenger 3. ')).then(() => 'technik');}       // -----------------
        // Vorlagen
