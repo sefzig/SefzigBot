@@ -250,8 +250,25 @@
              if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(EmpfangsBot+' Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name');}             
           }
           
+       // -----------------
+       // Über uns
+       // -----------------
+          
+          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(EmpfangsBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(EmpfangsBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(EmpfangsBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(EmpfangsBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'empfang');}	       // Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!
+	       // #Robogeddon sind die ersten in Deutschland, die Chat-Bots für und mit ihren Kunden entwickeln. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.
+          // Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).
+          // Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.
+          
+          if (~befehl.indexOf("--UBER")) { versuch = true; }if (~befehl.indexOf("--ÜBER")) { versuch = true; }          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(EmpfangsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(EmpfangsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'empfang');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(EmpfangsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(EmpfangsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'empfang');}          
+          if (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(EmpfangsBot+' Text Produkt Lösungen. ').then(() => bot.say(EmpfangsBot+' Text Produkt Beratung. ')).then(() => bot.say(EmpfangsBot+' Text Produkt Freelance. ')).then(() => 'empfang');}	       
+       // -----------------
+       // Funktionen
+       // -----------------
+          
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(EmpfangsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse');}          
           if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(EmpfangsBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
+          if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(EmpfangsBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(EmpfangsBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
        // -----------------
        // Bots
        // -----------------
@@ -262,10 +279,10 @@
           
           if (zuletzt_klein != "empfang") { 
              if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Alice. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Alice. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');} } else { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'empfang');}          }
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}          }
           
           if (zuletzt_klein != "beratung") { 
-             if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Barbara. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Barbara. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');} } else { 
+             if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Barbara. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Barbara. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');} } else { 
              if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(BeratungsBot+' Hallo Beratung Text 1. ').then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(BeratungsBot+' Hallo Beratung Text 1. ').then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}          }
           
           if (zuletzt_klein != "technik") { 
@@ -287,28 +304,11 @@
        // Vorlage (Gewerk, Name)
           if (~befehl.indexOf("--GEWERK")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Name. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Name. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}
        // -----------------
-       // Über uns
-       // -----------------
-          
-          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(EmpfangsBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(EmpfangsBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(EmpfangsBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(EmpfangsBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'empfang');}	       // Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!
-	       // #Robogeddon sind die ersten in Deutschland, die Chat-Bots für und mit ihren Kunden entwickeln. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.
-          // Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).
-          // Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.
-          
-          if (~befehl.indexOf("--UBER")) { versuch = true; }if (~befehl.indexOf("--ÜBER")) { versuch = true; }          
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(EmpfangsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(EmpfangsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'empfang');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(EmpfangsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(EmpfangsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'empfang');}          
-       // -----------------
-       // Produkte
-       // -----------------
-          
-          if (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(EmpfangsBot+' Über Produkte Text 1. ').then(() => bot.say(EmpfangsBot+' Über Produkte Text 2. ')).then(() => bot.say(EmpfangsBot+' Über Produkte Text 3. ')).then(() => 'empfang');}	       
-       // -----------------
        // System
        // -----------------
-       
-          if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(EmpfangsBot+' --Befehle dieser Seite:, --Mobil, --Newsletter, --Kontakt, --Über ').then(() => 'empfang');}          
-          if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(EmpfangsBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(EmpfangsBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}
-          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(EmpfangsBot+' Über Alice. ').then(() => 'empfang');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(EmpfangsBot+' Über Alice. ').then(() => 'empfang');}          
+          
+          if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(EmpfangsBot+' Empfang Befehle: --Kontakt, --Newsletter, --Mobil und --Über. ').then(() => 'empfang');}          
+          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(EmpfangsBot+' Über Alice. ').then(() => bot.say(EmpfangsBot+' Über Alice. ')).then(() => bot.say(EmpfangsBot+' Über Alice. ')).then(() => 'empfang');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(EmpfangsBot+' Über Alice. ').then(() => bot.say(EmpfangsBot+' Über Alice. ')).then(() => bot.say(EmpfangsBot+' Über Alice. ')).then(() => 'empfang');}          
        // -----------------
        // Inhalte
        // -----------------
@@ -459,8 +459,25 @@
              if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(BeratungsBot+' Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name');}             
           }
           
+       // -----------------
+       // Über uns
+       // -----------------
+          
+          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(BeratungsBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(BeratungsBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(BeratungsBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(BeratungsBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'beratung');}	       // Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!
+	       // #Robogeddon sind die ersten in Deutschland, die Chat-Bots für und mit ihren Kunden entwickeln. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.
+          // Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).
+          // Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.
+          
+          if (~befehl.indexOf("--UBER")) { versuch = true; }if (~befehl.indexOf("--ÜBER")) { versuch = true; }          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(BeratungsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(BeratungsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'beratung');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(BeratungsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(BeratungsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'beratung');}          
+          if (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Lösungen. ').then(() => bot.say(BeratungsBot+' Text Produkt Beratung. ')).then(() => bot.say(BeratungsBot+' Text Produkt Freelance. ')).then(() => 'beratung');}	       
+       // -----------------
+       // Funktionen
+       // -----------------
+          
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(BeratungsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse');}          
           if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(BeratungsBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
+          if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(BeratungsBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(BeratungsBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
        // -----------------
        // Bots
        // -----------------
@@ -471,10 +488,10 @@
           
           if (zuletzt_klein != "empfang") { 
              if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Alice. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Alice. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');} } else { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'empfang');}          }
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}          }
           
           if (zuletzt_klein != "beratung") { 
-             if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Barbara. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Barbara. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');} } else { 
+             if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Barbara. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Barbara. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');} } else { 
              if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(BeratungsBot+' Hallo Beratung Text 1. ').then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(BeratungsBot+' Hallo Beratung Text 1. ').then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}          }
           
           if (zuletzt_klein != "technik") { 
@@ -494,29 +511,13 @@
    		    if (~befehl.indexOf("--STRATEGIE")) { versuch = true; return bot.say(StrategieBot+' Darf ich erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ').then(() => bot.say(StrategieBot+' Die Anwendungs- --Szenarien für Chat-Bots unterscheiden sich nicht nur inhaltlich, sondern vor allem in ihrer Ausrichtung: --intern für die Kommunikation im Team oder --extern für den Austausch mit den Kunden. ')).then(() => 'strategie');}if (~befehl.indexOf("--FELINE")) { versuch = true; return bot.say(StrategieBot+' Darf ich erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ').then(() => bot.say(StrategieBot+' Die Anwendungs- --Szenarien für Chat-Bots unterscheiden sich nicht nur inhaltlich, sondern vor allem in ihrer Ausrichtung: --intern für die Kommunikation im Team oder --extern für den Austausch mit den Kunden. ')).then(() => 'strategie');}          }
    		 
        // Vorlage (Gewerk, Name)
-          if (~befehl.indexOf("--GEWERK")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Name. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Name. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}
-       // -----------------
-       // Über uns
-       // -----------------
-          
-          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(BeratungsBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(BeratungsBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(BeratungsBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(BeratungsBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'beratung');}	       // Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!
-	       // #Robogeddon sind die ersten in Deutschland, die Chat-Bots für und mit ihren Kunden entwickeln. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.
-          // Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).
-          // Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.
-          
-          if (~befehl.indexOf("--UBER")) { versuch = true; }if (~befehl.indexOf("--ÜBER")) { versuch = true; }          
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(BeratungsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(BeratungsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'beratung');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(BeratungsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(BeratungsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'beratung');}          
-       // -----------------
-       // Produkte
-       // -----------------
-          
-          if (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(BeratungsBot+' Über Produkte Text 1. ').then(() => bot.say(BeratungsBot+' Über Produkte Text 2. ')).then(() => bot.say(BeratungsBot+' Über Produkte Text 3. ')).then(() => 'beratung');}	                 
+          if (~befehl.indexOf("--GEWERK")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Name. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Name. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}          
        // -----------------
        // System
        // -----------------
-       
-          if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung 1. Befehle: --Produkte, --Leistungen, --Kalkulation. ').then(() => bot.say(BeratungsBot+' Text Beratung 2. ')).then(() => 'beratung');}if (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung 1. Befehle: --Produkte, --Leistungen, --Kalkulation. ').then(() => bot.say(BeratungsBot+' Text Beratung 2. ')).then(() => 'beratung');}
-          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ').then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ').then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ').then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ').then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}          
+          
+          if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Befehle: --Produkte, --Leistungen, --Kalkulation. ').then(() => bot.say(BeratungsBot+' Text Beratung Informationen:  --Slack ')).then(() => 'beratung');}if (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Befehle: --Produkte, --Leistungen, --Kalkulation. ').then(() => bot.say(BeratungsBot+' Text Beratung Informationen:  --Slack ')).then(() => 'beratung');}          
+          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(BeratungsBot+' Über Barbara. ').then(() => bot.say(BeratungsBot+' Über Barbara. ')).then(() => bot.say(BeratungsBot+' Über Barbara. ')).then(() => 'beratung');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(BeratungsBot+' Über Barbara. ').then(() => bot.say(BeratungsBot+' Über Barbara. ')).then(() => bot.say(BeratungsBot+' Über Barbara. ')).then(() => 'beratung');}          
        // -----------------
        // Inhalte
        // -----------------
@@ -524,10 +525,6 @@
           if (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Produkte. ').then(() => 'beratung');}          
           if (~befehl.indexOf("--LEISTUNGEN")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Leistungen. ').then(() => 'beratung');}          
           if (~befehl.indexOf("--KALKULATION")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Kalkulation. ').then(() => 'beratung');}          
-          if  (~befehl.indexOf("--SLACK-ARTIKEL"))  { versuch = true; befehl = "leer"; bot.say(AndreasSefzig+'Ich habe einen fundierten Artikel zu --Slack geschrieben: Was Sie als Marketer über Slack wissen müssen. [Text:Slack-Artikel öffnen,SefzignetBlogSlack] '); }
-          if  (~befehl.indexOf("--SLACK-BLOGPOST")) { versuch = true; befehl = "leer"; bot.say(AndreasSefzig+'Lesen Sie auch meinen Blogpost zu --Slack: Was ist Slack und wie nutzt man es? [Text:Slack-Artikel öffnen,SefzignetBlogSlack] '); }
-          if  (~befehl.indexOf("--SLACK-LINKS"))    { versuch = true; befehl = "leer"; bot.say(AndreasSefzig+'Ich habe eine Menge Artikel zu --Slack gelesen. Empfehlenswerte habe ich in meiner Linkliste gespeichert: [Linkliste:Linkliste Slack-Artikel öffnen,Slack;Artikel]'); }
-          if  (~befehl.indexOf("--SLACK-TEAM"))     { versuch = true; befehl = "leer"; bot.say(AndreasSefzig+'Treten Sie meinem offenen Slack-Team  bei, um sich mit mir zu beraten und um --Slack im laufenden Betrieb zu sehen: [Button:Anmeldung,http://sefzig.net/link/SlackAnmeldung/]'); }
           
           
           
@@ -538,7 +535,15 @@
           
           
           
+       // -----------------
+       // Slack
+       // -----------------
           
+          if (~befehl.indexOf("--SLACK")) { versuch = true; return bot.say(BeratungsBot+' Ich möchte Ihnen unsere Inhalte zu Slack ans Herz legen: Ein --Slack-Artikel zeigt die Bedeutung für Marketer. Ein --Slack-Blogpost zeigt die Einfachheit der Anwendung. Öffnen Sie unsere --Slack-Links oder treten Sie unserem --Slack-Team bei. ').then(() => 'beratung');}          
+          if (~befehl.indexOf("--SLACK-ARTIKEL")) { versuch = true; return bot.say(BeratungsBot+' Andreas hat einen fundierten Artikel zu --Slack geschrieben: Was müssen Marketer über Slack wissen? [Text:Slack-Artikel öffnen,SefzignetBlogSlack] ').then(() => 'beratung');}          
+          if (~befehl.indexOf("--SLACK-BLOGPOST")) { versuch = true; return bot.say(BeratungsBot+' Lesen Sie auch unseren Blogpost zu --Slack: Was ist Slack und wie nutzt man es? [Text:Slack-Artikel öffnen,SefzignetBlogSlack] ').then(() => 'beratung');}          
+          if (~befehl.indexOf("--SLACK-LINKS")) { versuch = true; return bot.say(BeratungsBot+' Wir haben uns viele wichtige Artikel zu --Slack gemerkt: [Linkliste:Linkliste Slack-Artikel öffnen,Slack;Artikel] ').then(() => 'beratung');}          
+          if (~befehl.indexOf("--SLACK-TEAM")) { versuch = true; return bot.say(BeratungsBot+' Treten Sie unserem offenen Slack-Team  bei, um sich mit uns auszutauschen: [Button:Anmeldung,http://sefzig.net/link/SlackAnmeldung/] ').then(() => 'beratung');}          
        // -----------------
        // Vorlagen
        // -----------------
@@ -649,8 +654,25 @@
              if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(TechnikBot+' Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name');}             
           }
           
+       // -----------------
+       // Über uns
+       // -----------------
+          
+          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(TechnikBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(TechnikBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(TechnikBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(TechnikBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'technik');}	       // Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!
+	       // #Robogeddon sind die ersten in Deutschland, die Chat-Bots für und mit ihren Kunden entwickeln. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.
+          // Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).
+          // Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.
+          
+          if (~befehl.indexOf("--UBER")) { versuch = true; }if (~befehl.indexOf("--ÜBER")) { versuch = true; }          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(TechnikBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(TechnikBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'technik');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(TechnikBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(TechnikBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'technik');}          
+          if (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(TechnikBot+' Text Produkt Lösungen. ').then(() => bot.say(TechnikBot+' Text Produkt Beratung. ')).then(() => bot.say(TechnikBot+' Text Produkt Freelance. ')).then(() => 'technik');}	       
+       // -----------------
+       // Funktionen
+       // -----------------
+          
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(TechnikBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse');}          
           if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(TechnikBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
+          if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(TechnikBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(TechnikBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
        // -----------------
        // Bots
        // -----------------
@@ -661,10 +683,10 @@
           
           if (zuletzt_klein != "empfang") { 
              if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Alice. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Alice. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');} } else { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'empfang');}          }
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}          }
           
           if (zuletzt_klein != "beratung") { 
-             if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Barbara. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Barbara. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');} } else { 
+             if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Barbara. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Barbara. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');} } else { 
              if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(BeratungsBot+' Hallo Beratung Text 1. ').then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(BeratungsBot+' Hallo Beratung Text 1. ').then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}          }
           
           if (zuletzt_klein != "technik") { 
@@ -684,42 +706,16 @@
    		    if (~befehl.indexOf("--STRATEGIE")) { versuch = true; return bot.say(StrategieBot+' Darf ich erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ').then(() => bot.say(StrategieBot+' Die Anwendungs- --Szenarien für Chat-Bots unterscheiden sich nicht nur inhaltlich, sondern vor allem in ihrer Ausrichtung: --intern für die Kommunikation im Team oder --extern für den Austausch mit den Kunden. ')).then(() => 'strategie');}if (~befehl.indexOf("--FELINE")) { versuch = true; return bot.say(StrategieBot+' Darf ich erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ').then(() => bot.say(StrategieBot+' Die Anwendungs- --Szenarien für Chat-Bots unterscheiden sich nicht nur inhaltlich, sondern vor allem in ihrer Ausrichtung: --intern für die Kommunikation im Team oder --extern für den Austausch mit den Kunden. ')).then(() => 'strategie');}          }
    		 
        // Vorlage (Gewerk, Name)
-          if (~befehl.indexOf("--GEWERK")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Name. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Name. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}
-       // -----------------
-       // Über uns
-       // -----------------
-          
-          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(TechnikBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(TechnikBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(TechnikBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(TechnikBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'technik');}	       // Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!
-	       // #Robogeddon sind die ersten in Deutschland, die Chat-Bots für und mit ihren Kunden entwickeln. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.
-          // Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).
-          // Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.
-          
-          if (~befehl.indexOf("--UBER")) { versuch = true; }if (~befehl.indexOf("--ÜBER")) { versuch = true; }          
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(TechnikBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(TechnikBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'technik');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(TechnikBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(TechnikBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'technik');}          
-       // -----------------
-       // Produkte
-       // -----------------
-          
-          if (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(TechnikBot+' Über Produkte Text 1. ').then(() => bot.say(TechnikBot+' Über Produkte Text 2. ')).then(() => bot.say(TechnikBot+' Über Produkte Text 3. ')).then(() => 'technik');}	                 
+          if (~befehl.indexOf("--GEWERK")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Name. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Name. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}          
        // -----------------
        // System
        // -----------------
           
-          if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(TechnikBot+' Text Technik 1. Befehle: --folgt. ').then(() => bot.say(TechnikBot+' Text Technik 2. ')).then(() => 'technik');}if (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(TechnikBot+' Text Technik 1. Befehle: --folgt. ').then(() => bot.say(TechnikBot+' Text Technik 2. ')).then(() => 'technik');}          
-          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(TechnikBot+' Hallo, ich bin Cynthia, der Technik-Bot. ').then(() => bot.say(TechnikBot+' Schreiben Sie: --Slack, --Folgt und --HipChat. ')).then(() => 'technik');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(TechnikBot+' Hallo, ich bin Cynthia, der Technik-Bot. ').then(() => bot.say(TechnikBot+' Schreiben Sie: --Slack, --Folgt und --HipChat. ')).then(() => 'technik');}if (~befehl.indexOf("--TECHNIK")) { versuch = true; return bot.say(TechnikBot+' Hallo, ich bin Cynthia, der Technik-Bot. ').then(() => bot.say(TechnikBot+' Schreiben Sie: --Slack, --Folgt und --HipChat. ')).then(() => 'technik');}if (~befehl.indexOf("--CYNTHIA")) { versuch = true; return bot.say(TechnikBot+' Hallo, ich bin Cynthia, der Technik-Bot. ').then(() => bot.say(TechnikBot+' Schreiben Sie: --Slack, --Folgt und --HipChat. ')).then(() => 'technik');}          
+          if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(TechnikBot+' Technik Befehle: --folgt. ').then(() => bot.say(TechnikBot+' Text Technik. ')).then(() => 'technik');}if (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(TechnikBot+' Technik Befehle: --folgt. ').then(() => bot.say(TechnikBot+' Text Technik. ')).then(() => 'technik');}          
+          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(TechnikBot+' Über Cynthia. ').then(() => bot.say(TechnikBot+' Über Cynthia. ')).then(() => bot.say(TechnikBot+' Über Cynthia. ')).then(() => 'technik');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(TechnikBot+' Über Cynthia. ').then(() => bot.say(TechnikBot+' Über Cynthia. ')).then(() => bot.say(TechnikBot+' Über Cynthia. ')).then(() => 'technik');}          
        // -----------------
        // Inhalte
        // -----------------
-          
-          if  (~befehl.indexOf("--SLACK"))          { versuch = true; bot.say(SlackBot+'Slack ist eine fantastische neue Kommunikationsplattform für Teams!').then(function(){
-                                                               return bot.say(SefzigBot+'Wenn Sie Slack noch nicht kennen, erwägen Sie, es für Ihre Interne Kommunikation zu nutzen! Lesen Sie dazu Andreas --Slack-Artikel für Marketer, seinen --Slack-Blogpost für Anwender, öffnen Sie seine --Slack-Links oder treten Sie seinem --Slack-Team bei.'); }).then(function(){
-                                                               return bot.say(SefzigBot+'Mit Slack lässt sich --intern die effizienz-steigernde --Strategie von --ChatOps am besten auf ein Team oder Unternehmen anwenden.'); }); }
-          
-          if  (~befehl.indexOf("--HIPCHAT"))        { versuch = true; bot.say(SefzigBot+'HipChat Text 1.').then(function(){
-                                                               return bot.say(SefzigBot+'HipChat Text 2.'); }).then(function(){
-                                                               return bot.say(SefzigBot+'HipChat Text 3.'); }); }
-          
-          
           
           
           
@@ -841,8 +837,25 @@
              if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(KreationsBot+' Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name');}             
           }
           
+       // -----------------
+       // Über uns
+       // -----------------
+          
+          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(KreationsBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(KreationsBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(KreationsBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(KreationsBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'kreation');}	       // Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!
+	       // #Robogeddon sind die ersten in Deutschland, die Chat-Bots für und mit ihren Kunden entwickeln. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.
+          // Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).
+          // Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.
+          
+          if (~befehl.indexOf("--UBER")) { versuch = true; }if (~befehl.indexOf("--ÜBER")) { versuch = true; }          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(KreationsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(KreationsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'kreation');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(KreationsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(KreationsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'kreation');}          
+          if (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(KreationsBot+' Text Produkt Lösungen. ').then(() => bot.say(KreationsBot+' Text Produkt Beratung. ')).then(() => bot.say(KreationsBot+' Text Produkt Freelance. ')).then(() => 'kreation');}	       
+       // -----------------
+       // Funktionen
+       // -----------------
+          
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(KreationsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse');}          
           if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(KreationsBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
+          if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(KreationsBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(KreationsBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
        // -----------------
        // Bots
        // -----------------
@@ -853,10 +866,10 @@
           
           if (zuletzt_klein != "empfang") { 
              if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Alice. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Alice. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');} } else { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'empfang');}          }
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}          }
           
           if (zuletzt_klein != "beratung") { 
-             if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Barbara. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Barbara. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');} } else { 
+             if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Barbara. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Barbara. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');} } else { 
              if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(BeratungsBot+' Hallo Beratung Text 1. ').then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(BeratungsBot+' Hallo Beratung Text 1. ').then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}          }
           
           if (zuletzt_klein != "technik") { 
@@ -876,28 +889,12 @@
    		    if (~befehl.indexOf("--STRATEGIE")) { versuch = true; return bot.say(StrategieBot+' Darf ich erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ').then(() => bot.say(StrategieBot+' Die Anwendungs- --Szenarien für Chat-Bots unterscheiden sich nicht nur inhaltlich, sondern vor allem in ihrer Ausrichtung: --intern für die Kommunikation im Team oder --extern für den Austausch mit den Kunden. ')).then(() => 'strategie');}if (~befehl.indexOf("--FELINE")) { versuch = true; return bot.say(StrategieBot+' Darf ich erklären, warum --Chats ein wichtiger --Trend für das --Marketing sind. ').then(() => bot.say(StrategieBot+' Die Anwendungs- --Szenarien für Chat-Bots unterscheiden sich nicht nur inhaltlich, sondern vor allem in ihrer Ausrichtung: --intern für die Kommunikation im Team oder --extern für den Austausch mit den Kunden. ')).then(() => 'strategie');}          }
    		 
        // Vorlage (Gewerk, Name)
-          if (~befehl.indexOf("--GEWERK")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Name. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Name. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}
-       // -----------------
-       // Über uns
-       // -----------------
-          
-          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(KreationsBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(KreationsBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(KreationsBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(KreationsBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'kreation');}	       // Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!
-	       // #Robogeddon sind die ersten in Deutschland, die Chat-Bots für und mit ihren Kunden entwickeln. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.
-          // Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).
-          // Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.
-          
-          if (~befehl.indexOf("--UBER")) { versuch = true; }if (~befehl.indexOf("--ÜBER")) { versuch = true; }          
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(KreationsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(KreationsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'kreation');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(KreationsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(KreationsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'kreation');}          
-       // -----------------
-       // Produkte
-       // -----------------
-          
-          if (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(KreationsBot+' Über Produkte Text 1. ').then(() => bot.say(KreationsBot+' Über Produkte Text 2. ')).then(() => bot.say(KreationsBot+' Über Produkte Text 3. ')).then(() => 'kreation');}	                 
+          if (~befehl.indexOf("--GEWERK")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Name. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Name. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}          
        // -----------------
        // System
        // -----------------
        
-          if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(KreationsBot+' Kreation Befehle:, --Uber, --Dialoge, --Persönlichkeit, --Geschichten, --Leben, --Inhalte, --Mehrwerte. ').then(() => bot.say(KreationsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'kreation');}if (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(KreationsBot+' Kreation Befehle:, --Uber, --Dialoge, --Persönlichkeit, --Geschichten, --Leben, --Inhalte, --Mehrwerte. ').then(() => bot.say(KreationsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'kreation');}          
+          if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(KreationsBot+' Kreation Befehle: --Uber, --Dialoge, --Persönlichkeit, --Geschichten, --Leben, --Inhalte, --Mehrwerte. ').then(() => 'kreation');}if (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(KreationsBot+' Kreation Befehle: --Uber, --Dialoge, --Persönlichkeit, --Geschichten, --Leben, --Inhalte, --Mehrwerte. ').then(() => 'kreation');}          
           if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(KreationsBot+' Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren. ').then(() => bot.say(KreationsBot+' Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in die Konversationen ein. ')).then(() => bot.say(KreationsBot+' Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer! ')).then(() => 'kreation');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(KreationsBot+' Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren. ').then(() => bot.say(KreationsBot+' Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in die Konversationen ein. ')).then(() => bot.say(KreationsBot+' Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer! ')).then(() => 'kreation');}          
        // -----------------
        // Leben
@@ -1045,8 +1042,25 @@
              if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(KonzeptionsBot+' Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name');}             
           }
           
+       // -----------------
+       // Über uns
+       // -----------------
+          
+          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(KonzeptionsBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(KonzeptionsBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(KonzeptionsBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(KonzeptionsBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'konzeption');}	       // Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!
+	       // #Robogeddon sind die ersten in Deutschland, die Chat-Bots für und mit ihren Kunden entwickeln. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.
+          // Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).
+          // Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.
+          
+          if (~befehl.indexOf("--UBER")) { versuch = true; }if (~befehl.indexOf("--ÜBER")) { versuch = true; }          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(KonzeptionsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(KonzeptionsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'konzeption');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(KonzeptionsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(KonzeptionsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'konzeption');}          
+          if (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(KonzeptionsBot+' Text Produkt Lösungen. ').then(() => bot.say(KonzeptionsBot+' Text Produkt Beratung. ')).then(() => bot.say(KonzeptionsBot+' Text Produkt Freelance. ')).then(() => 'konzeption');}	       
+       // -----------------
+       // Funktionen
+       // -----------------
+          
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(KonzeptionsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse');}          
           if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(KonzeptionsBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
+          if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(KonzeptionsBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(KonzeptionsBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
        // -----------------
        // Bots
        // -----------------
@@ -1057,10 +1071,10 @@
           
           if (zuletzt_klein != "empfang") { 
              if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Alice. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Alice. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');} } else { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'empfang');}          }
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}          }
           
           if (zuletzt_klein != "beratung") { 
-             if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Barbara. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Barbara. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');} } else { 
+             if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Barbara. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Barbara. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');} } else { 
              if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(BeratungsBot+' Hallo Beratung Text 1. ').then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(BeratungsBot+' Hallo Beratung Text 1. ').then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}          }
           
           if (zuletzt_klein != "technik") { 
@@ -1082,35 +1096,17 @@
        // Vorlage (Gewerk, Name)
           if (~befehl.indexOf("--GEWERK")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Name. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Name. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}
        // -----------------
-       // Über uns
-       // -----------------
-          
-          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(KonzeptionsBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(KonzeptionsBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(KonzeptionsBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(KonzeptionsBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'konzeption');}	       // Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!
-	       // #Robogeddon sind die ersten in Deutschland, die Chat-Bots für und mit ihren Kunden entwickeln. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.
-          // Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).
-          // Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.
-          
-          if (~befehl.indexOf("--UBER")) { versuch = true; }if (~befehl.indexOf("--ÜBER")) { versuch = true; }          
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(KonzeptionsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(KonzeptionsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'konzeption');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(KonzeptionsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(KonzeptionsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'konzeption');}          
-       // -----------------
-       // Produkte
-       // -----------------
-          
-          if (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(KonzeptionsBot+' Über Produkte Text 1. ').then(() => bot.say(KonzeptionsBot+' Über Produkte Text 2. ')).then(() => bot.say(KonzeptionsBot+' Über Produkte Text 3. ')).then(() => 'konzeption');}	       
-       // -----------------
        // System
        // -----------------
        
-          if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption 1. Befehle: --Kanäle, --Facebook. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption 2. ')).then(() => 'konzeption');}if (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption 1. Befehle: --Kanäle, --Facebook. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption 2. ')).then(() => 'konzeption');}
-          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption Über 1. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 2. ')).then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 3. ')).then(() => 'konzeption');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption Über 1. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 2. ')).then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 3. ')).then(() => 'konzeption');}if (~befehl.indexOf("--KONZEPTION")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption Über 1. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 2. ')).then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 3. ')).then(() => 'konzeption');}if (~befehl.indexOf("--ERIKA")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption Über 1. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 2. ')).then(() => bot.say(KonzeptionsBot+' Text Konzeption Über 3. ')).then(() => 'konzeption');}          
+          if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption Befehle: --Kanäle. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption. ')).then(() => 'konzeption');}if (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption Befehle: --Kanäle. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption. ')).then(() => 'konzeption');}
+          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(KonzeptionsBot+' Über Erika. ').then(() => bot.say(KonzeptionsBot+' Über Erika. ')).then(() => bot.say(KonzeptionsBot+' Über Erika. ')).then(() => 'konzeption');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(KonzeptionsBot+' Über Erika. ').then(() => bot.say(KonzeptionsBot+' Über Erika. ')).then(() => bot.say(KonzeptionsBot+' Über Erika. ')).then(() => 'konzeption');}          
        // -----------------
        // Inhalte
        // -----------------
           
           if (~befehl.indexOf("--KANÄLE")) { versuch = true; return bot.say(KonzeptionsBot+' Ein Bot lässt sich einfach in Ihre bestehenden Marketing-Kanäle einbinden - letztlich ist er nur die URL einer für alle Geräte optimierten Webseite. ').then(() => bot.say(KonzeptionsBot+' CRM/Dialog: Link in Newslettern, Kurzlink/QR-Code auf Drucksachen. ')).then(() => bot.say(KonzeptionsBot+' Marke: Webseiten-Widget, Link in Social Media und E-Mail-Signaturen, Kurzlink/QR-Code auf Visitenkarten. ')).then(() => bot.say(KonzeptionsBot+' Vor Ort: Kurzlink/QR-Code auf Plakat, Aufsteller, Schaufenster, Produkt. ')).then(() => bot.say(KonzeptionsBot+' Text mit --Konzeption und --extern. ')).then(() => 'konzeption');}          
-          if  (~befehl.indexOf("--FACEBOOK"))       { versuch = true; bot.say(SefzigBot+'Facebook Text 1.').then(function(){
-                                                               return bot.say(SefzigBot+'Facebook Text 2.'); }).then(function(){
-                                                               return bot.say(SefzigBot+'Facebook Text 3.'); }); }
+          
           
           
           
@@ -1123,6 +1119,12 @@
           
           
        // -----------------
+       // Plattformen
+       // -----------------
+          
+          if (~befehl.indexOf("--SLACK")) { versuch = true; return bot.say(KonzeptionsBot+' Slack ist eine fantastische neue Kommunikationsplattform für Teams! ').then(() => bot.say(KonzeptionsBot+' Wenn Sie Slack noch nicht kennen, erwägen Sie, es für Ihre Interne Kommunikation zu nutzen! Lesen Sie dazu Andreas --Slack-Artikel für Marketer, seinen --Slack-Blogpost für Anwender, öffnen Sie seine --Slack-Links oder treten Sie seinem --Slack-Team bei. ')).then(() => bot.say(KonzeptionsBot+' Mit Slack lässt sich --intern die effizienz-steigernde --Strategie von --ChatOps am besten auf ein Team oder Unternehmen anwenden. ')).then(() => 'technik');}          
+          if (~befehl.indexOf("--HIPCHAT")) { versuch = true; return bot.say(KonzeptionsBot+' Technik HipChat 1. ').then(() => bot.say(KonzeptionsBot+' Technik HipChat 2. ')).then(() => bot.say(KonzeptionsBot+' Technik HipChat 3. ')).then(() => 'technik');}          
+          if (~befehl.indexOf("--FACEBOOK")) { versuch = true; return bot.say(KonzeptionsBot+' Technik Facebook Messenger 1. ').then(() => bot.say(KonzeptionsBot+' Technik Facebook Messenger 2. ')).then(() => bot.say(KonzeptionsBot+' Technik Facebook Messenger 3. ')).then(() => 'technik');}       // -----------------
        // Vorlagen
        // -----------------
        
@@ -1232,8 +1234,25 @@
              if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(StrategieBot+' Wir kennen Ihren Namen noch nicht. Wollen Sie Ihren Namen eingeben? Schreiben Sie bitte --ja oder --nein. ').then(() => 'name');}             
           }
           
+       // -----------------
+       // Über uns
+       // -----------------
+          
+          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(StrategieBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(StrategieBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(StrategieBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(StrategieBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'strategie');}	       // Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!
+	       // #Robogeddon sind die ersten in Deutschland, die Chat-Bots für und mit ihren Kunden entwickeln. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.
+          // Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).
+          // Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.
+          
+          if (~befehl.indexOf("--UBER")) { versuch = true; }if (~befehl.indexOf("--ÜBER")) { versuch = true; }          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(StrategieBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(StrategieBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'strategie');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(StrategieBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(StrategieBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'strategie');}          
+          if (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(StrategieBot+' Text Produkt Lösungen. ').then(() => bot.say(StrategieBot+' Text Produkt Beratung. ')).then(() => bot.say(StrategieBot+' Text Produkt Freelance. ')).then(() => 'strategie');}	       
+       // -----------------
+       // Funktionen
+       // -----------------
+          
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(StrategieBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse');}          
           if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(StrategieBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
+          if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(StrategieBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(StrategieBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
        // -----------------
        // Bots
        // -----------------
@@ -1244,10 +1263,10 @@
           
           if (zuletzt_klein != "empfang") { 
              if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Alice. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Alice. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');} } else { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'empfang');}          }
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}          }
           
           if (zuletzt_klein != "beratung") { 
-             if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Barbara. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Barbara. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');} } else { 
+             if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Barbara. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Barbara. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Produkte und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');} } else { 
              if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(BeratungsBot+' Hallo Beratung Text 1. ').then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(BeratungsBot+' Hallo Beratung Text 1. ').then(() => bot.say(BeratungsBot+' Hallo Beratung Text 2: --Befehle folgt. ')).then(() => bot.say(BeratungsBot+' Hallo Beratung Text 3. ')).then(() => 'beratung');}          }
           
           if (zuletzt_klein != "technik") { 
@@ -1268,22 +1287,6 @@
    		 
        // Vorlage (Gewerk, Name)
           if (~befehl.indexOf("--GEWERK")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Name. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}if (~befehl.indexOf("--NAME")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Name. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(GewerksBot+' Hallo Gewerk Text 1: Hallo, ich bin Name, der Gewerks-Bot. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 2: --Befehle folgt. ')).then(() => bot.say(GewerksBot+' Hallo Gewerk Text 3. ')).then(() => 'gewerk');}
-       // -----------------
-       // Über uns
-       // -----------------
-          
-          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(StrategieBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(StrategieBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(StrategieBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(StrategieBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'strategie');}	       // Lassen Sie uns gemeinsam ein --Konzept für Ihren Bot erstellen!
-	       // #Robogeddon sind die ersten in Deutschland, die Chat-Bots für und mit ihren Kunden entwickeln. \n Unsere Bots vereinfachen die Unternehmens-Kommunikation --intern und --extern.
-          // Wir bestehen aus Andreas Sefzig, einer Reihe moderner Marketing- und Kommunikations-Technologien und einem Team aus mehreren Bots (und freien Mitarbeitern).
-          // Chatbots sind im --Kommen. Sie sind ideale digitale Rezeptionisten für Ihr digitales Universum.
-          
-          if (~befehl.indexOf("--UBER")) { versuch = true; }if (~befehl.indexOf("--ÜBER")) { versuch = true; }          
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(StrategieBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(StrategieBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'strategie');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(StrategieBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(StrategieBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt]  ')).then(() => 'strategie');}          
-       // -----------------
-       // Produkte
-       // -----------------
-          
-          if (~befehl.indexOf("--PRODUKTE")) { versuch = true; return bot.say(StrategieBot+' Über Produkte Text 1. ').then(() => bot.say(StrategieBot+' Über Produkte Text 2. ')).then(() => bot.say(StrategieBot+' Über Produkte Text 3. ')).then(() => 'strategie');}	       
        // -----------------
        // System
        // -----------------
