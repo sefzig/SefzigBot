@@ -204,6 +204,12 @@
        // Default-Zurück
           var zuruck = "Empfang";
           
+       // Zuletzt Varianten
+          var zuletzt_dann =  dann;
+          var zuletzt_klein = zuletzt_dann.toLowerCase();
+          var zuletzt_gross = zuletzt_dann.toUpperCase();
+          var zuletzt_kamel = zuletzt_dann.charAt(0).toUpperCase() + zuletzt_dann.slice(1);
+          
        // -----------------
        // Befehle
        // -----------------
@@ -400,6 +406,12 @@
        // Default-Zurück
           var zuruck = "Beratung";
           
+       // Zuletzt Varianten
+          var zuletzt_dann =  dann;
+          var zuletzt_klein = zuletzt_dann.toLowerCase();
+          var zuletzt_gross = zuletzt_dann.toUpperCase();
+          var zuletzt_kamel = zuletzt_dann.charAt(0).toUpperCase() + zuletzt_dann.slice(1);
+          
        // -----------------
        // Befehle
        // -----------------
@@ -575,6 +587,12 @@
           
        // Default-Zurück
           var zuruck = "Technik";
+          
+       // Zuletzt Varianten
+          var zuletzt_dann =  dann;
+          var zuletzt_klein = zuletzt_dann.toLowerCase();
+          var zuletzt_gross = zuletzt_dann.toUpperCase();
+          var zuletzt_kamel = zuletzt_dann.charAt(0).toUpperCase() + zuletzt_dann.slice(1);
           
        // -----------------
        // Befehle
@@ -754,6 +772,12 @@
        // Default-Zurück
           var zuruck = "Kreation";
           
+       // Zuletzt Varianten
+          var zuletzt_dann =  dann;
+          var zuletzt_klein = zuletzt_dann.toLowerCase();
+          var zuletzt_gross = zuletzt_dann.toUpperCase();
+          var zuletzt_kamel = zuletzt_dann.charAt(0).toUpperCase() + zuletzt_dann.slice(1);
+          
        // -----------------
        // Befehle
        // -----------------
@@ -930,6 +954,12 @@
        // Default-Zurück
           var zuruck = "Konzeption";
           
+       // Zuletzt Varianten
+          var zuletzt_dann =  dann;
+          var zuletzt_klein = zuletzt_dann.toLowerCase();
+          var zuletzt_gross = zuletzt_dann.toUpperCase();
+          var zuletzt_kamel = zuletzt_dann.charAt(0).toUpperCase() + zuletzt_dann.slice(1);
+          
        // -----------------
        // Befehle
        // -----------------
@@ -1102,6 +1132,12 @@
           
        // Default-Zurück
           var zuruck = "Strategie";
+          
+       // Zuletzt Varianten
+          var zuletzt_dann =  dann;
+          var zuletzt_klein = zuletzt_dann.toLowerCase();
+          var zuletzt_gross = zuletzt_dann.toUpperCase();
+          var zuletzt_kamel = zuletzt_dann.charAt(0).toUpperCase() + zuletzt_dann.slice(1);
           
        // -----------------
        // Befehle
