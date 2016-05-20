@@ -111,7 +111,7 @@
                       
                       Smooch.sendMessage(sagen);
                       
-                   }, 1000);
+                   }, 500);
                    
                 }, 1000);
                 
