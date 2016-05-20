@@ -109,7 +109,7 @@
                       
                       Smooch.sendMessage(sagen);
                       
-                   }, 1000);
+                   }, 300);
                    
                 }, 2000);
                 
