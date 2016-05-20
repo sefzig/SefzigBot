@@ -98,7 +98,7 @@
              
              anpassen();
              
-             sagen = getParameters("m");
+             sagen = getParameters("weiter");
              if ((sagen) && (sagen != "")) { 
              
                 window.setTimeout(function() { 
@@ -114,7 +114,15 @@
                 }, 1000);
                 
              }
-       
+             
+             menu = getParameters("menu");
+             if ((menu) && (menu != "")) { 
+             
+                $("#menu > div").css("display", "none");
+                $("#menu > #robogeddon").css("display", "block");
+                
+             }
+             
           }, 100); }); 
           
        // Smooch.open();
@@ -228,8 +236,8 @@
              }
              else {                   var button_text = "Link öffnen"; var button_url = ""+var1; }
              
-             console.log("> Button Text: "+button_text);
-             console.log("> Button Url: "+button_url);
+          // console.log("> Button Text: "+button_text);
+          // console.log("> Button Url: "+button_url);
              
           }
           

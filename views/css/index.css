@@ -123,7 +123,7 @@
     }
     
  /* Menü */
-    #seite > #menu {
+    #seite > #menu > #robogeddon {
        background: black;
        color: white;
        line-height: 20px;
