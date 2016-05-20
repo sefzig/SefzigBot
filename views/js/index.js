@@ -103,11 +103,15 @@
              
                 window.setTimeout(function() { 
                    
-                   nachricht = texte["chat"]["weiterleiten"];
-                   nachricht = nachricht+"--"+sagen;
-                   Smooch.sendMessage(nachricht);
+                   Smooch.sendMessage(texte["chat"]["weiterleiten"]);
                    
-                }, 2000);
+                   window.setTimeout(function() { 
+                      
+                      Smooch.sendMessage(sagen);
+                      
+                   }, 500);
+                   
+                }, 1000);
                 
              }
              

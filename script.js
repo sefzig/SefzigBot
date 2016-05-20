@@ -53,7 +53,7 @@
        // Nächster Schritt default
           var dann = "empfang";
           
-          if (~befehl.indexOf("Weiterleiten:")) {
+          if (~befehl.indexOf("Weiterleiten zu:")) {
              
           // bot.say(EmpfangsBot+'Ich leite Sie weiter.');
              
