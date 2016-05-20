@@ -117,8 +117,8 @@
                 
              }
              
-             menu = getParameters("menu");
-             if ((menu) && (menu != "")) { 
+             menup = getParameters("menu");
+             if ((menup) && (menup != "")) { 
              
                 $("#menu > div").css("display", "none");
                 $("#menu > #robogeddon").css("display", "block");
