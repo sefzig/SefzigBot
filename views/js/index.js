@@ -49,18 +49,20 @@
        if ((menue) && (menue != "")) { 
        
           $("#menu > div").css("display", "none");
-          $("#menu > #robogeddon").css("display", "block");
+          $("#menu > #"+menue).css("display", "block");
           
        }
        
     // menu("an");
-       
-       stil("");
+       stil();
        
     });
     
  // Stil (ggfls. auswählen und) anwenden
     function stil(auswahl) {
+       
+       zufall = 3;
+       root = "http://sefzigbot.herokuapp.com/";
        
        if ((!auswahl) || (auswahl == "")) {
           
@@ -74,8 +76,6 @@
        
        }
        
-       zufall = 3;
-       root = "";
        ladenCss(auswahl, zufall, root);
        
     }
