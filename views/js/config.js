@@ -8,7 +8,8 @@
           "id": "Sefzigbot", // Robogeddon
           "name": "Andreas Sefzigs Robogeddon",
           "defaultAnsicht": "chat", // chat, daten
-          "defaultStil": "default"
+          "defaultStil": "default",
+          "defaultMenu": "robogeddon"
           
        },
        

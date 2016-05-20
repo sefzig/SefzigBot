@@ -2,11 +2,22 @@
  // Anwendung starten
     $(document).ready(function(){
        
+    // Variablen
        var selektor = "";
        var befehl = "";
        var starten = "";
        var ansicht = "";
        var startklick = "";
+       
+    // Stil laden
+       stil();
+       $("[data-stil]").click(function() {
+          
+          datastil = $(this).attr("data-stil");
+          
+          if ((datastil) && (datastil != "")) { stil(datastil); }
+          
+       });
        
     // Datenfelder ausfüllen
        cookie("vorname");
@@ -36,6 +47,18 @@
           
        });
        
+    // Menü per Default anzeigen
+    // menu("an");
+       
+    // Menü auswählen und anzeigen
+       menue = getParameters("menu");
+       if ((!menue) || (menue == "")) { 
+          menue = config["anwendung"]["defaultMenu"];
+       }
+       $("#menu > div").css("display", "none");
+       $("#menu > #"+menue).css("display", "block");
+          
+    // Befehle im Menü
        selektor = "#seite > #menu div > div button";
        $(selektor).click(function() {
           
@@ -44,25 +67,13 @@
           
        });
        
-    // Menü auswählen und anzeigen
-       menue = getParameters("menu");
-       if ((menue) && (menue != "")) { 
-       
-          $("#menu > div").css("display", "none");
-          $("#menu > #"+menue).css("display", "block");
-          
-       }
-       
-    // menu("an");
-       stil();
-       
     });
     
  // Stil (ggfls. auswählen und) anwenden
     function stil(auswahl) {
        
        zufall = 3;
-       root = "http://sefzigbot.herokuapp.com/";
+       dir = "stil";
        
        if ((!auswahl) || (auswahl == "")) {
           
@@ -76,7 +87,7 @@
        
        }
        
-       ladenCss(auswahl, zufall, root);
+       ladenCss(auswahl, zufall, dir);
        
     }
     

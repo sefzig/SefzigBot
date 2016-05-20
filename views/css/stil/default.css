@@ -1,2 +1,17 @@
 
-    .sk-messages { background-color: red; }
+    #seite > #menu {
+       background: #dddddd;
+       color: black;
+    }
+    #seite > #menu h2,
+    #seite > #menu h3,
+    #seite > #menu h4,
+    #seite > #menu h5,
+    #seite > #menu h6 {
+       font-weight: 500;
+    }
+    
+    .sk-conversation {
+       background-color: #dddddd !important;
+       color: black;
+    }

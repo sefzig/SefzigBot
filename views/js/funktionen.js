@@ -125,12 +125,13 @@
                 tmp.style.cssText = input.currentStyle.cssText;
              tmp.style.width = '';
              tmp.style.position = 'absolute';
-             tmp.innerHTML = input.value.replace(/&/g, "&amp;")
-                                       .replace(/</g, "&lt;")
-                                       .replace(/>/g, "&gt;")
-                                       .replace(/"/g, "&quot;")
-                                       .replace(/'/g, "&#039;")
-                                       .replace(/ /g, '&nbsp;');
+             tmp.innerHTML = input.value
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;")
+                .replace(/ /g, '&nbsp;');
              input.parentNode.appendChild(tmp);
              var width = tmp.clientWidth+pad_right+1;
              tmp.parentNode.removeChild(tmp);
@@ -138,39 +139,39 @@
                 input.style.width = width+'px';
                 
           }, 1);
-       }
+       };
     }
     
  // Stylesheet laden (wenn noch nicht geladen)
-    function ladenCss(datei, zufall, root) {
+    function ladenCss(datei, zufall, dir) {
    	
       var cssSelector = document.getElementById("Css"+datei);
-      if (!cssSelector) {
-      // var filename = ""+root+"css/"+datei+".css?v=3";
-         var filename = ""+root+"css/"+datei+".css?v="+zufall;
+   // if (!cssSelector) {
+      // var filename = "css/"+dir+"/"+datei+".css?v=3";
+         var filename = "css/"+dir+"/"+datei+".css?v="+zufall;
          var fileref = document.createElement("link");
          fileref.setAttribute("href", filename);
          fileref.setAttribute("rel", "stylesheet");
          fileref.setAttribute("type", "text/css");
          fileref.setAttribute("ID", "Css"+datei);
          document.getElementsByTagName("head")[0].appendChild(fileref);
-      }
+   // }
    
    }
    
  // Javascript laden (wenn noch nicht geladen)
-    function ladenJs(datei, zufall, root) {
+    function ladenJs(datei, zufall, dir) {
    	
       var jsSelector = document.getElementById("Js"+datei);
-      if (!jsSelector) {
-         var filename = ""+root+"js/"+datei+".js?v=3";
-      // var filename = ""+root+"js/"+datei+".js?v="+zufall;
+   // if (!jsSelector) {
+      // var filename = "js/"+dir+"/"+datei+".js?v=3";
+         var filename = "js/"+dir+"/"+datei+".js?v="+zufall;
          var fileref = document.createElement("script");
          fileref.setAttribute("type", "text/javascript");
          fileref.setAttribute("src", filename);
          fileref.setAttribute("ID", "Js"+datei);
          document.getElementsByTagName("head")[0].appendChild(fileref);
-      }
+   // }
    
    }
    
