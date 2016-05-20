@@ -76,7 +76,7 @@
        
        zufall = 3;
        root = "";
-       ladenCss(auswahl, zufall, root) {
+       ladenCss(auswahl, zufall, root);
        
     }
     
