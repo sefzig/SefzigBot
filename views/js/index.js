@@ -44,9 +44,41 @@
           
        });
        
+    // Menü auswählen und anzeigen
+       menue = getParameters("menu");
+       if ((menue) && (menue != "")) { 
+       
+          $("#menu > div").css("display", "none");
+          $("#menu > #robogeddon").css("display", "block");
+          
+       }
+       
     // menu("an");
        
+       stil("");
+       
     });
+    
+ // Stil (ggfls. auswählen und) anwenden
+    function stil(auswahl) {
+       
+       if ((!auswahl) || (auswahl == "")) {
+          
+          auswahl = getParameters("stil");
+          
+          if ((!auswahl) || (auswahl == "")) {
+             
+             auswahl = config["anwendung"]["defaultStil"];
+             
+          }
+       
+       }
+       
+       zufall = 3;
+       root = "";
+       ladenCss(auswahl, zufall, root) {
+       
+    }
     
  // Chat starten
     function start(methode) {
@@ -114,14 +146,6 @@
                    }, 1000);
                    
                 }, 1000);
-                
-             }
-             
-             menup = getParameters("menu");
-             if ((menup) && (menup != "")) { 
-             
-                $("#menu > div").css("display", "none");
-                $("#menu > #robogeddon").css("display", "block");
                 
              }
              

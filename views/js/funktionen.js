@@ -141,3 +141,36 @@
        }
     }
     
+ // Stylesheet laden (wenn noch nicht geladen)
+    function ladenCss(datei, zufall, root) {
+   	
+      var cssSelector = document.getElementById("Css"+datei);
+      if (!cssSelector) {
+      // var filename = ""+root+"css/"+datei+".css?v=3";
+         var filename = ""+root+"css/"+datei+".css?v="+zufall;
+         var fileref = document.createElement("link");
+         fileref.setAttribute("href", filename);
+         fileref.setAttribute("rel", "stylesheet");
+         fileref.setAttribute("type", "text/css");
+         fileref.setAttribute("ID", "Css"+datei);
+         document.getElementsByTagName("head")[0].appendChild(fileref);
+      }
+   
+   }
+   
+ // Javascript laden (wenn noch nicht geladen)
+    function ladenJs(datei, zufall, root) {
+   	
+      var jsSelector = document.getElementById("Js"+datei);
+      if (!jsSelector) {
+         var filename = ""+root+"js/"+datei+".js?v=3";
+      // var filename = ""+root+"js/"+datei+".js?v="+zufall;
+         var fileref = document.createElement("script");
+         fileref.setAttribute("type", "text/javascript");
+         fileref.setAttribute("src", filename);
+         fileref.setAttribute("ID", "Js"+datei);
+         document.getElementsByTagName("head")[0].appendChild(fileref);
+      }
+   
+   }
+   
