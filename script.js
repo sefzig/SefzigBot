@@ -260,7 +260,7 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(EmpfangsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => 'beratung');}	       
+          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(EmpfangsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt 1: --Leistungen, --Lösungen. ')).then(() => bot.say(BeratungsBot+' Text Produkt 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt 3. ')).then(() => 'beratung');}	       
        // -----------------
        // Trivia
        // -----------------
@@ -448,7 +448,7 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(BeratungsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => 'beratung');}	       
+          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(BeratungsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt 1: --Leistungen, --Lösungen. ')).then(() => bot.say(BeratungsBot+' Text Produkt 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt 3. ')).then(() => 'beratung');}	       
        // -----------------
        // Trivia
        // -----------------
@@ -663,7 +663,7 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(TechnikBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => 'beratung');}	       
+          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(TechnikBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt 1: --Leistungen, --Lösungen. ')).then(() => bot.say(BeratungsBot+' Text Produkt 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt 3. ')).then(() => 'beratung');}	       
        // -----------------
        // Trivia
        // -----------------
@@ -875,7 +875,7 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(KreationsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => 'beratung');}	       
+          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(KreationsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt 1: --Leistungen, --Lösungen. ')).then(() => bot.say(BeratungsBot+' Text Produkt 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt 3. ')).then(() => 'beratung');}	       
        // -----------------
        // Trivia
        // -----------------
@@ -1084,7 +1084,7 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(KonzeptionsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => 'beratung');}	       
+          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(KonzeptionsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt 1: --Leistungen, --Lösungen. ')).then(() => bot.say(BeratungsBot+' Text Produkt 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt 3. ')).then(() => 'beratung');}	       
        // -----------------
        // Trivia
        // -----------------
@@ -1280,7 +1280,7 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(StrategieBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => 'beratung');}	       
+          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(StrategieBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt 1: --Leistungen, --Lösungen. ')).then(() => bot.say(BeratungsBot+' Text Produkt 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt 3. ')).then(() => 'beratung');}	       
        // -----------------
        // Trivia
        // -----------------
