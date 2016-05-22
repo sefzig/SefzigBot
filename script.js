@@ -260,7 +260,15 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(EmpfangsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt 1: --Leistungen, --Lösungen. ')).then(() => bot.say(BeratungsBot+' Text Produkt 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt 3. ')).then(() => 'beratung');}	       
+          if ("empfang" != "beratung") {
+          	 
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(EmpfangsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt: --Leistungen, --Lösungen. ')).then(() => 'beratung');}	       
+          }
+          else {
+          	 
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt: --Leistungen, --Lösungen. ').then(() => 'beratung');}	       
+          }
+          
        // -----------------
        // Trivia
        // -----------------
@@ -312,7 +320,7 @@
        // -----------------
           
           if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit unseren Gewerken: --Beratung, --Strategie, --Konzeption, --Kreation und --Technik. ').then(() => bot.say(EmpfangsBot+' Hilfs-Funktionen: --Kontakt, --Newsletter, --Mobil und --Über. ')).then(() => 'empfang');}          
-          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(EmpfangsBot+' Ich bin Alice, der Empfangsbot. ').then(() => bot.say(EmpfangsBot+' Über Alice. ')).then(() => bot.say(EmpfangsBot+' Über Alice. ')).then(() => 'empfang');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(EmpfangsBot+' Ich bin Alice, der Empfangsbot. ').then(() => bot.say(EmpfangsBot+' Über Alice. ')).then(() => bot.say(EmpfangsBot+' Über Alice. ')).then(() => 'empfang');}          
+          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(EmpfangsBot+' Ich bin Alice, der Empfangs-Bot. ').then(() => bot.say(KreationsBot+' Alice ist eine offene Person, die Besucher auf ihre hilfsbereite Art in Empfang nimmt. ')).then(() => bot.say(EmpfangsBot+' Ich leite weiter zu unseren Gewerken und übernehme einfache Aufgaben, wie z.B. Ihren --Namen zu erfassen. ')).then(() => 'empfang');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(EmpfangsBot+' Ich bin Alice, der Empfangs-Bot. ').then(() => bot.say(KreationsBot+' Alice ist eine offene Person, die Besucher auf ihre hilfsbereite Art in Empfang nimmt. ')).then(() => bot.say(EmpfangsBot+' Ich leite weiter zu unseren Gewerken und übernehme einfache Aufgaben, wie z.B. Ihren --Namen zu erfassen. ')).then(() => 'empfang');}          
        // -----------------
        // Inhalte
        // -----------------
@@ -448,7 +456,15 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(BeratungsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt 1: --Leistungen, --Lösungen. ')).then(() => bot.say(BeratungsBot+' Text Produkt 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt 3. ')).then(() => 'beratung');}	       
+          if ("beratung" != "beratung") {
+          	 
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(BeratungsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt: --Leistungen, --Lösungen. ')).then(() => 'beratung');}	       
+          }
+          else {
+          	 
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt: --Leistungen, --Lösungen. ').then(() => 'beratung');}	       
+          }
+          
        // -----------------
        // Trivia
        // -----------------
@@ -500,7 +516,7 @@
        // -----------------
           
           if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Befehle: --Lösungen, --Leistungen, --Kalkulation. ').then(() => bot.say(BeratungsBot+' Text Beratung Informationen:  --Slack. ')).then(() => 'beratung');}if (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Befehle: --Lösungen, --Leistungen, --Kalkulation. ').then(() => bot.say(BeratungsBot+' Text Beratung Informationen:  --Slack. ')).then(() => 'beratung');}          
-          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(BeratungsBot+' Über Barbara. ').then(() => bot.say(BeratungsBot+' Über Barbara. ')).then(() => bot.say(BeratungsBot+' Über Barbara. ')).then(() => 'beratung');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(BeratungsBot+' Über Barbara. ').then(() => bot.say(BeratungsBot+' Über Barbara. ')).then(() => bot.say(BeratungsBot+' Über Barbara. ')).then(() => 'beratung');}          
+          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(BeratungsBot+' Ich bin Barbara, Beratungs-Bot ').then(() => bot.say(StrategieBot+' Barbara gibt sich ein wenig trocken, weiß aber über alles Bescheid. Wir sind gut miteinander abgestimmt! ')).then(() => bot.say(BeratungsBot+' Ich habe den Überblick über alle unsere --Produkte. Ich habe Spaß daran, unsere Fortschritte zu dokumentieren - wie z.B. in unserer --Slack -Serie. ')).then(() => 'beratung');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(BeratungsBot+' Ich bin Barbara, Beratungs-Bot ').then(() => bot.say(StrategieBot+' Barbara gibt sich ein wenig trocken, weiß aber über alles Bescheid. Wir sind gut miteinander abgestimmt! ')).then(() => bot.say(BeratungsBot+' Ich habe den Überblick über alle unsere --Produkte. Ich habe Spaß daran, unsere Fortschritte zu dokumentieren - wie z.B. in unserer --Slack -Serie. ')).then(() => 'beratung');}          
        // -----------------
        // Inhalte
        // -----------------
@@ -663,7 +679,15 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(TechnikBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt 1: --Leistungen, --Lösungen. ')).then(() => bot.say(BeratungsBot+' Text Produkt 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt 3. ')).then(() => 'beratung');}	       
+          if ("technik" != "beratung") {
+          	 
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(TechnikBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt: --Leistungen, --Lösungen. ')).then(() => 'beratung');}	       
+          }
+          else {
+          	 
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt: --Leistungen, --Lösungen. ').then(() => 'beratung');}	       
+          }
+          
        // -----------------
        // Trivia
        // -----------------
@@ -715,7 +739,7 @@
        // -----------------
           
           if (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(TechnikBot+' Technik Befehle: --folgt. ').then(() => bot.say(TechnikBot+' Text Technik. ')).then(() => 'technik');}          
-          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(TechnikBot+' Über Cynthia. ').then(() => bot.say(TechnikBot+' Über Cynthia. ')).then(() => bot.say(TechnikBot+' Über Cynthia. ')).then(() => 'technik');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(TechnikBot+' Über Cynthia. ').then(() => bot.say(TechnikBot+' Über Cynthia. ')).then(() => bot.say(TechnikBot+' Über Cynthia. ')).then(() => 'technik');}          
+          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(TechnikBot+' Ich bin Cynthia. Ich mache hier die Systeme. ').then(() => bot.say(KonzeptionsBot+' Cynthia ist ein bisschen schräg drauf, aber eine hervorragende Programmiererin! Für sie gibt es den Hacker-Modus: --Hx. ')).then(() => bot.say(TechnikBot+' Ich entwickle ständig neue Funktionen und Templates, mit denen --Kreation und --Konzeption arbeiten. Ganz schön viel zu tun hier. ')).then(() => 'technik');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(TechnikBot+' Ich bin Cynthia. Ich mache hier die Systeme. ').then(() => bot.say(KonzeptionsBot+' Cynthia ist ein bisschen schräg drauf, aber eine hervorragende Programmiererin! Für sie gibt es den Hacker-Modus: --Hx. ')).then(() => bot.say(TechnikBot+' Ich entwickle ständig neue Funktionen und Templates, mit denen --Kreation und --Konzeption arbeiten. Ganz schön viel zu tun hier. ')).then(() => 'technik');}          
        // -----------------
        // Inhalte
        // -----------------
@@ -875,7 +899,15 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(KreationsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt 1: --Leistungen, --Lösungen. ')).then(() => bot.say(BeratungsBot+' Text Produkt 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt 3. ')).then(() => 'beratung');}	       
+          if ("kreation" != "beratung") {
+          	 
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(KreationsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt: --Leistungen, --Lösungen. ')).then(() => 'beratung');}	       
+          }
+          else {
+          	 
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt: --Leistungen, --Lösungen. ').then(() => 'beratung');}	       
+          }
+          
        // -----------------
        // Trivia
        // -----------------
@@ -927,7 +959,7 @@
        // -----------------
        
           if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(KreationsBot+' Kreation Befehle: --Uber, --Dialoge, --Persönlichkeit, --Geschichten, --Leben, --Inhalte, --Mehrwerte. ').then(() => 'kreation');}if (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(KreationsBot+' Kreation Befehle: --Uber, --Dialoge, --Persönlichkeit, --Geschichten, --Leben, --Inhalte, --Mehrwerte. ').then(() => 'kreation');}          
-          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(KreationsBot+' Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren. ').then(() => bot.say(KreationsBot+' Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in die Konversationen ein. ')).then(() => bot.say(KreationsBot+' Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer! ')).then(() => 'kreation');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(KreationsBot+' Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren. ').then(() => bot.say(KreationsBot+' Für ein Plus an --Persönlichkeit weben wir einfache --Geschichten und reichhaltige --Inhalte in die Konversationen ein. ')).then(() => bot.say(KreationsBot+' Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer! ')).then(() => 'kreation');}          
+          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(KreationsBot+' Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren. ').then(() => bot.say(TechnikBot+' Doris meint immer, allem --Geschichte und --Persönlichkeit geben zu müssen. Dabei geht es doch nur um --Inhalte und deren --Formate! ')).then(() => bot.say(KreationsBot+' Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer! ')).then(() => 'kreation');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(KreationsBot+' Hier in der Kreation hauchen wir den Bots --Leben ein, indem wir die --Dialoge menschlich und direkt formulieren. ').then(() => bot.say(TechnikBot+' Doris meint immer, allem --Geschichte und --Persönlichkeit geben zu müssen. Dabei geht es doch nur um --Inhalte und deren --Formate! ')).then(() => bot.say(KreationsBot+' Letztendlich geht es aber nur um eines: --Mehrwerte für die Nutzer! ')).then(() => 'kreation');}          
        // -----------------
        // Leben
        // -----------------
@@ -1084,7 +1116,15 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(KonzeptionsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt 1: --Leistungen, --Lösungen. ')).then(() => bot.say(BeratungsBot+' Text Produkt 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt 3. ')).then(() => 'beratung');}	       
+          if ("konzeption" != "beratung") {
+          	 
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(KonzeptionsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt: --Leistungen, --Lösungen. ')).then(() => 'beratung');}	       
+          }
+          else {
+          	 
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt: --Leistungen, --Lösungen. ').then(() => 'beratung');}	       
+          }
+          
        // -----------------
        // Trivia
        // -----------------
@@ -1136,7 +1176,7 @@
        // -----------------
        
           if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption Befehle: --Kanäle. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption. ')).then(() => 'konzeption');}if (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(KonzeptionsBot+' Text Konzeption Befehle: --Kanäle. ').then(() => bot.say(KonzeptionsBot+' Text Konzeption. ')).then(() => 'konzeption');}
-          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(KonzeptionsBot+' Über Erika. ').then(() => bot.say(KonzeptionsBot+' Über Erika. ')).then(() => bot.say(KonzeptionsBot+' Über Erika. ')).then(() => 'konzeption');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(KonzeptionsBot+' Über Erika. ').then(() => bot.say(KonzeptionsBot+' Über Erika. ')).then(() => bot.say(KonzeptionsBot+' Über Erika. ')).then(() => 'konzeption');}          
+          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(KonzeptionsBot+' Ich bin Erika, Konzeptions-Bot. ').then(() => bot.say(BeratungsBot+' 90% der Fehler werden in den ersten 10% des Projekts gemacht. Nicht bei uns - dank Erika! ')).then(() => bot.say(KonzeptionsBot+' Über Erika. ')).then(() => 'konzeption');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(KonzeptionsBot+' Ich bin Erika, Konzeptions-Bot. ').then(() => bot.say(BeratungsBot+' 90% der Fehler werden in den ersten 10% des Projekts gemacht. Nicht bei uns - dank Erika! ')).then(() => bot.say(KonzeptionsBot+' Über Erika. ')).then(() => 'konzeption');}          
        // -----------------
        // Inhalte
        // -----------------
@@ -1280,7 +1320,15 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(StrategieBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt 1: --Leistungen, --Lösungen. ')).then(() => bot.say(BeratungsBot+' Text Produkt 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt 3. ')).then(() => 'beratung');}	       
+          if ("strategie" != "beratung") {
+          	 
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(StrategieBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Text Produkt: --Leistungen, --Lösungen. ')).then(() => 'beratung');}	       
+          }
+          else {
+          	 
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt: --Leistungen, --Lösungen. ').then(() => 'beratung');}	       
+          }
+          
        // -----------------
        // Trivia
        // -----------------
@@ -1332,7 +1380,7 @@
        // -----------------
        
           if (~befehl.indexOf("--BEFEHLE")) { versuch = true; return bot.say(StrategieBot+' Kulturphänomen Chat: --Trend, --Marketing, --Szenarien. ').then(() => bot.say(StrategieBot+' Technologie und Nutzung: --Chat, --Daten, --Plattformen. ')).then(() => bot.say(StrategieBot+' Über --interne Strategie: --Daten, --Team, --Studie. ')).then(() => bot.say(StrategieBot+' Über --externe Strategie: --Kanäle, --Aufgaben. ')).then(() => 'strategie');}if (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(StrategieBot+' Kulturphänomen Chat: --Trend, --Marketing, --Szenarien. ').then(() => bot.say(StrategieBot+' Technologie und Nutzung: --Chat, --Daten, --Plattformen. ')).then(() => bot.say(StrategieBot+' Über --interne Strategie: --Daten, --Team, --Studie. ')).then(() => bot.say(StrategieBot+' Über --externe Strategie: --Kanäle, --Aufgaben. ')).then(() => 'strategie');}
-          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(StrategieBot+' Ich bin ein alter Hase im Bot-Geschäft. Wussten Sie, dass es Chat-Bots schon sehr --lange gibt? ').then(() => bot.say(StrategieBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'strategie');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(StrategieBot+' Ich bin ein alter Hase im Bot-Geschäft. Wussten Sie, dass es Chat-Bots schon sehr --lange gibt? ').then(() => bot.say(StrategieBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu erfahren. ')).then(() => 'strategie');}          
+          if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(StrategieBot+' Ich bin Feline und mache bei uns die Strategie. ').then(() => bot.say(KonzeptionsBot+' Feline ist ein alter Hase im Bot-Geschäft. Ob für --intern oder --extern, sie kennt alle --Trends. ')).then(() => bot.say(StrategieBot+' Wussten Sie, dass es Chat-Bots schon sehr --lange gibt? ')).then(() => 'strategie');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(StrategieBot+' Ich bin Feline und mache bei uns die Strategie. ').then(() => bot.say(KonzeptionsBot+' Feline ist ein alter Hase im Bot-Geschäft. Ob für --intern oder --extern, sie kennt alle --Trends. ')).then(() => bot.say(StrategieBot+' Wussten Sie, dass es Chat-Bots schon sehr --lange gibt? ')).then(() => 'strategie');}          
        // -----------------
        // Inhalte
        // -----------------
