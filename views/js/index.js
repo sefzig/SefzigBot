@@ -11,13 +11,6 @@
        
     // Stil laden
        stil();
-       $("[data-stil]").click(function() {
-          
-          datastil = $(this).attr("data-stil");
-          
-          if ((datastil) && (datastil != "")) { stil(datastil); }
-          
-       });
        
     // Datenfelder ausfüllen
        cookie("vorname");
@@ -62,8 +55,19 @@
        selektor = "#seite > #menu div > div button";
        $(selektor).click(function() {
           
-          befehl = $(this).text();
-          Smooch.sendMessage("--"+befehl);
+          datastil = $(this).attr("data-stil");
+          
+          if ((datastil) && (datastil != "")) { 
+             
+             stil(datastil);
+             
+          }
+          else {
+             
+             befehl = $(this).text();
+             Smooch.sendMessage("--"+befehl);
+             
+          }
           
        });
        
@@ -88,7 +92,7 @@
        }
        
        ladenCss(auswahl, zufall, dir);
-    // $("body").attr("data-stil", auswahl);
+       $("body").attr("data-stil", auswahl);
        
     }
     

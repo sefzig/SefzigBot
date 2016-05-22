@@ -9,6 +9,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" type="text/css" media="screen, projection" href="css/index.css">
+    <link rel="stylesheet" type="text/css" media="screen, projection" href="css/stil.css">
     <link rel="apple-touch-icon" href="img/icon_60x60.png">
     <link rel="apple-touch-icon" sizes="76x76" href="icon_76x76-precomposed.png">
     <link rel="apple-touch-icon" sizes="120x120" href="img/icon_120x120-precomposed.png">
@@ -21,7 +22,7 @@
     <script type="text/javascript" src="js/cookies.js"></script>
     <script type="text/javascript" src="js/funktionen.js"></script>
   </head>
-  <body data-menu="an">
+  <body data-menu="an" data-stil="">
     <div id="seite">
       <div id="intro" style="display:none">
         <!--
@@ -48,7 +49,7 @@
           </div>
           <div>
             <h3>Über uns</h3>
-            <li># <button tabindex="2">Robogeddon</button></li>
+            <li># <button tabindex="2" style="margin-left:-2px;">Robogeddon</button></li>
             <li>Unsere <button tabindex="3">Produkte</button></li>
         <!--<li>Unsere <button tabindex="4">Leistungen</button></li>-->
             <li><button tabindex="5">Kontakt</button> aufnehmen</li>
@@ -66,9 +67,9 @@
           </div>
           <div id="formular">
             <h3>Ihre Daten</h3>
-            <li><input type="text" id="vorname"  value="" style="width: 69px;" /></li><script>wachsen("vorname",  69);</script>
-            <li><input type="text" id="nachname" value="" style="width: 81px;" /></li><script>wachsen("nachname", 81);</script>
-            <li><input type="text" id="email"    value="" style="width:110px;" /></li><script>wachsen("email",    110);</script>
+            <li><input type="text" id="vorname"  value="" style="width:  84px;" /></li><script>wachsen("vorname",   84);</script>
+            <li><input type="text" id="nachname" value="" style="width:  96px;" /></li><script>wachsen("nachname",  96);</script>
+            <li><input type="text" id="email"    value="" style="width: 100px;" /></li><script>wachsen("email",    100);</script>
             <input type="submit" value="Gespräch beginnen" data-start="chat" />
           </div>
           <div>
@@ -77,10 +78,10 @@
             <li>Sie können immer <button>zurück</button></li>
             <li>Einfach <button>abbrechen</button> wenn lost</li>
             <li><button>Menü</button> an- oder ausschalten</li>
-            <li>Stile: <a data-stil=robogeddon>Robo</a>, <a data-stil=default>Tag</a>, <a data-stil=nacht>Nacht</a></li>
             <li>Den Chat <button>mobil</button> öffnen</li>
             <li><button>Über</button> den gerade aktiven Bot</li>
             <li>Unseren <button>Newsletter</button> bestellen</li>
+            <li>Stile: <button data-stil=tag>Tag</button>, <button data-stil=nacht>Nacht</button>, <button data-stil=robogeddon>Robo</button>, <button data-stil=hacks>Hx</button></li>
           </div>
         </div>
         <div id="anderesmenu">

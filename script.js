@@ -260,24 +260,7 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(EmpfangsBot+' Text Produkt 1. ').then(() => bot.say(EmpfangsBot+' Text Produkt 2. ')).then(() => bot.say(EmpfangsBot+' Text Produkt 3. ')).then(() => 'empfang');}	       
-       // -----------------
-       // Lösungen
-       // -----------------
-          
-          if (~befehl.indexOf("--LÖSUNG")) { versuch = true; return bot.say(EmpfangsBot+' Text Produkt Lösungen 1. ').then(() => bot.say(EmpfangsBot+' Text Produkt Lösungen 2. ')).then(() => bot.say(EmpfangsBot+' Text Produkt Lösungen 3. ')).then(() => 'empfang');}	       
-          if (~befehl.indexOf("--CHATRAUM")) { versuch = true; return bot.say(EmpfangsBot+' Text Produkt Chatraum 1. ').then(() => bot.say(EmpfangsBot+' Text Produkt Chatraum 2. ')).then(() => bot.say(EmpfangsBot+' Text Produkt Chatraum 3. ')).then(() => 'empfang');}	       
-          if (~befehl.indexOf("--CHATOPS")) { versuch = true; return bot.say(EmpfangsBot+' Text Produkt ChatOps 1. ').then(() => bot.say(EmpfangsBot+' Text Produkt ChatOps 2. ')).then(() => bot.say(EmpfangsBot+' Text Produkt ChatOps 3. ')).then(() => 'empfang');}	       
-          if (~befehl.indexOf("--EINFÜHRUNG")) { versuch = true; return bot.say(EmpfangsBot+' Text Produkt Einführung 1. ').then(() => bot.say(EmpfangsBot+' Text Produkt Einführung 2. ')).then(() => bot.say(EmpfangsBot+' Text Produkt Einführung 3. ')).then(() => 'empfang');}if (~befehl.indexOf("--EINFUHRUNG")) { versuch = true; return bot.say(EmpfangsBot+' Text Produkt Einführung 1. ').then(() => bot.say(EmpfangsBot+' Text Produkt Einführung 2. ')).then(() => bot.say(EmpfangsBot+' Text Produkt Einführung 3. ')).then(() => 'empfang');}	       
-          if (~befehl.indexOf("--BOTS")) { versuch = true; return bot.say(EmpfangsBot+' Text Produkt Bots 1. ').then(() => bot.say(EmpfangsBot+' Text Produkt Bots 2. ')).then(() => bot.say(EmpfangsBot+' Text Produkt Bots 3. ')).then(() => 'empfang');}	       
-          if (~befehl.indexOf("--REDAKTION")) { versuch = true; return bot.say(EmpfangsBot+' Text Produkt Redaktionsplan 1. ').then(() => bot.say(EmpfangsBot+' Text Produkt Redaktionsplan 2. ')).then(() => bot.say(EmpfangsBot+' Text Produkt Redaktionsplan 3. ')).then(() => 'empfang');}	       
-       // -----------------
-       // Leistungen
-       // -----------------
-          
-          if (~befehl.indexOf("--LEISTUNG")) { versuch = true; return bot.say(EmpfangsBot+' Text Produkt Leistungen 1. ').then(() => bot.say(EmpfangsBot+' Text Produkt Leistungen 2. ')).then(() => bot.say(EmpfangsBot+' Text Produkt Leistungen 3. ')).then(() => 'empfang');}	       
-          if (~befehl.indexOf("--MITARBEIT")) { versuch = true; return bot.say(EmpfangsBot+' Text Produkt Mitarbeit 1. ').then(() => bot.say(EmpfangsBot+' Text Produkt Mitarbeit 2. ')).then(() => bot.say(EmpfangsBot+' Text Produkt Mitarbeit 3. ')).then(() => 'empfang');}	       
-          if (~befehl.indexOf("--BERATEN")) { versuch = true; return bot.say(EmpfangsBot+' Text Produkt Beratung 1. ').then(() => bot.say(EmpfangsBot+' Text Produkt Beratung 2. ')).then(() => bot.say(EmpfangsBot+' Text Produkt Beratung 3. ')).then(() => 'empfang');}	       
+          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(EmpfangsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => 'beratung');}	       
        // -----------------
        // Trivia
        // -----------------
@@ -299,8 +282,8 @@
              if (~befehl.indexOf("--SEFZIG")) { versuch = true; return bot.say(EmpfangsBot+' Ich habe Andreas bereits benachrichtigt. ').then(() => bot.say(EmpfangsBot+' Sprechen Sie solange mit mir, indem Sie --Empfang schreiben! ')).then(() => 'empfang');}          }
           
           if (zuletzt_klein != "empfang") { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Alice. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Alice. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');} } else { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}          }
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Alice. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Alice. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => 'empfang');} } else { 
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => 'empfang');}          }
           
           if (zuletzt_klein != "beratung") { 
              if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Barbara. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Lösungen und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(EmpfangsBot+' Ich übergebe an Barbara. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Lösungen und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');} } else { 
@@ -465,24 +448,7 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt 1. ').then(() => bot.say(BeratungsBot+' Text Produkt 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt 3. ')).then(() => 'beratung');}	       
-       // -----------------
-       // Lösungen
-       // -----------------
-          
-          if (~befehl.indexOf("--LÖSUNG")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Lösungen 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Lösungen 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Lösungen 3. ')).then(() => 'beratung');}	       
-          if (~befehl.indexOf("--CHATRAUM")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Chatraum 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Chatraum 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Chatraum 3. ')).then(() => 'beratung');}	       
-          if (~befehl.indexOf("--CHATOPS")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt ChatOps 1. ').then(() => bot.say(BeratungsBot+' Text Produkt ChatOps 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt ChatOps 3. ')).then(() => 'beratung');}	       
-          if (~befehl.indexOf("--EINFÜHRUNG")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Einführung 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Einführung 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Einführung 3. ')).then(() => 'beratung');}if (~befehl.indexOf("--EINFUHRUNG")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Einführung 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Einführung 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Einführung 3. ')).then(() => 'beratung');}	       
-          if (~befehl.indexOf("--BOTS")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Bots 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Bots 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Bots 3. ')).then(() => 'beratung');}	       
-          if (~befehl.indexOf("--REDAKTION")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Redaktionsplan 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Redaktionsplan 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Redaktionsplan 3. ')).then(() => 'beratung');}	       
-       // -----------------
-       // Leistungen
-       // -----------------
-          
-          if (~befehl.indexOf("--LEISTUNG")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Leistungen 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Leistungen 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Leistungen 3. ')).then(() => 'beratung');}	       
-          if (~befehl.indexOf("--MITARBEIT")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Mitarbeit 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Mitarbeit 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Mitarbeit 3. ')).then(() => 'beratung');}	       
-          if (~befehl.indexOf("--BERATEN")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Beratung 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Beratung 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Beratung 3. ')).then(() => 'beratung');}	       
+          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(BeratungsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => 'beratung');}	       
        // -----------------
        // Trivia
        // -----------------
@@ -504,8 +470,8 @@
              if (~befehl.indexOf("--SEFZIG")) { versuch = true; return bot.say(EmpfangsBot+' Ich habe Andreas bereits benachrichtigt. ').then(() => bot.say(BeratungsBot+' Sprechen Sie solange mit mir, indem Sie --Beratung schreiben! ')).then(() => 'empfang');}          }
           
           if (zuletzt_klein != "empfang") { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Alice. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Alice. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');} } else { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}          }
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Alice. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Alice. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => 'empfang');} } else { 
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => 'empfang');}          }
           
           if (zuletzt_klein != "beratung") { 
              if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Barbara. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Lösungen und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(BeratungsBot+' Ich übergebe an Barbara. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Lösungen und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');} } else { 
@@ -539,9 +505,25 @@
        // Inhalte
        // -----------------
           
-          if (~befehl.indexOf("--LEISTUNG")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Leistungen. ').then(() => 'beratung');}          
-          if (~befehl.indexOf("--LÖSUNG")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Lösung. ').then(() => 'beratung');}          
+       // Kalkulation
+       // -----------------
+          
           if (~befehl.indexOf("--KALKULATION")) { versuch = true; return bot.say(BeratungsBot+' Text Beratung Kalkulation. ').then(() => 'beratung');}          
+       // Lösungen
+       // -----------------
+          
+          if (~befehl.indexOf("--LÖSUNG")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Lösungen 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Lösungen 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Lösungen 3. ')).then(() => 'beratung');}	       
+          if (~befehl.indexOf("--CHATRAUM")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Chatraum 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Chatraum 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Chatraum 3. ')).then(() => 'beratung');}	       
+          if (~befehl.indexOf("--CHATOPS")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt ChatOps 1. ').then(() => bot.say(BeratungsBot+' Text Produkt ChatOps 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt ChatOps 3. ')).then(() => 'beratung');}	       
+          if (~befehl.indexOf("--EINFÜHRUNG")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Einführung 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Einführung 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Einführung 3. ')).then(() => 'beratung');}if (~befehl.indexOf("--EINFUHRUNG")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Einführung 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Einführung 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Einführung 3. ')).then(() => 'beratung');}	       
+          if (~befehl.indexOf("--BOTS")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Bots 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Bots 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Bots 3. ')).then(() => 'beratung');}	       
+          if (~befehl.indexOf("--REDAKTION")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Redaktionsplan 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Redaktionsplan 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Redaktionsplan 3. ')).then(() => 'beratung');}	       
+       // Leistungen
+       // -----------------
+          
+          if (~befehl.indexOf("--LEISTUNG")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Leistungen 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Leistungen 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Leistungen 3. ')).then(() => 'beratung');}	       
+          if (~befehl.indexOf("--MITARBEIT")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Mitarbeit 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Mitarbeit 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Mitarbeit 3. ')).then(() => 'beratung');}	       
+          if (~befehl.indexOf("--BERATEN")) { versuch = true; return bot.say(BeratungsBot+' Text Produkt Beratung 1. ').then(() => bot.say(BeratungsBot+' Text Produkt Beratung 2. ')).then(() => bot.say(BeratungsBot+' Text Produkt Beratung 3. ')).then(() => 'beratung');}	       
           
           
           
@@ -681,24 +663,7 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(TechnikBot+' Text Produkt 1. ').then(() => bot.say(TechnikBot+' Text Produkt 2. ')).then(() => bot.say(TechnikBot+' Text Produkt 3. ')).then(() => 'technik');}	       
-       // -----------------
-       // Lösungen
-       // -----------------
-          
-          if (~befehl.indexOf("--LÖSUNG")) { versuch = true; return bot.say(TechnikBot+' Text Produkt Lösungen 1. ').then(() => bot.say(TechnikBot+' Text Produkt Lösungen 2. ')).then(() => bot.say(TechnikBot+' Text Produkt Lösungen 3. ')).then(() => 'technik');}	       
-          if (~befehl.indexOf("--CHATRAUM")) { versuch = true; return bot.say(TechnikBot+' Text Produkt Chatraum 1. ').then(() => bot.say(TechnikBot+' Text Produkt Chatraum 2. ')).then(() => bot.say(TechnikBot+' Text Produkt Chatraum 3. ')).then(() => 'technik');}	       
-          if (~befehl.indexOf("--CHATOPS")) { versuch = true; return bot.say(TechnikBot+' Text Produkt ChatOps 1. ').then(() => bot.say(TechnikBot+' Text Produkt ChatOps 2. ')).then(() => bot.say(TechnikBot+' Text Produkt ChatOps 3. ')).then(() => 'technik');}	       
-          if (~befehl.indexOf("--EINFÜHRUNG")) { versuch = true; return bot.say(TechnikBot+' Text Produkt Einführung 1. ').then(() => bot.say(TechnikBot+' Text Produkt Einführung 2. ')).then(() => bot.say(TechnikBot+' Text Produkt Einführung 3. ')).then(() => 'technik');}if (~befehl.indexOf("--EINFUHRUNG")) { versuch = true; return bot.say(TechnikBot+' Text Produkt Einführung 1. ').then(() => bot.say(TechnikBot+' Text Produkt Einführung 2. ')).then(() => bot.say(TechnikBot+' Text Produkt Einführung 3. ')).then(() => 'technik');}	       
-          if (~befehl.indexOf("--BOTS")) { versuch = true; return bot.say(TechnikBot+' Text Produkt Bots 1. ').then(() => bot.say(TechnikBot+' Text Produkt Bots 2. ')).then(() => bot.say(TechnikBot+' Text Produkt Bots 3. ')).then(() => 'technik');}	       
-          if (~befehl.indexOf("--REDAKTION")) { versuch = true; return bot.say(TechnikBot+' Text Produkt Redaktionsplan 1. ').then(() => bot.say(TechnikBot+' Text Produkt Redaktionsplan 2. ')).then(() => bot.say(TechnikBot+' Text Produkt Redaktionsplan 3. ')).then(() => 'technik');}	       
-       // -----------------
-       // Leistungen
-       // -----------------
-          
-          if (~befehl.indexOf("--LEISTUNG")) { versuch = true; return bot.say(TechnikBot+' Text Produkt Leistungen 1. ').then(() => bot.say(TechnikBot+' Text Produkt Leistungen 2. ')).then(() => bot.say(TechnikBot+' Text Produkt Leistungen 3. ')).then(() => 'technik');}	       
-          if (~befehl.indexOf("--MITARBEIT")) { versuch = true; return bot.say(TechnikBot+' Text Produkt Mitarbeit 1. ').then(() => bot.say(TechnikBot+' Text Produkt Mitarbeit 2. ')).then(() => bot.say(TechnikBot+' Text Produkt Mitarbeit 3. ')).then(() => 'technik');}	       
-          if (~befehl.indexOf("--BERATEN")) { versuch = true; return bot.say(TechnikBot+' Text Produkt Beratung 1. ').then(() => bot.say(TechnikBot+' Text Produkt Beratung 2. ')).then(() => bot.say(TechnikBot+' Text Produkt Beratung 3. ')).then(() => 'technik');}	       
+          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(TechnikBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => 'beratung');}	       
        // -----------------
        // Trivia
        // -----------------
@@ -720,8 +685,8 @@
              if (~befehl.indexOf("--SEFZIG")) { versuch = true; return bot.say(EmpfangsBot+' Ich habe Andreas bereits benachrichtigt. ').then(() => bot.say(TechnikBot+' Sprechen Sie solange mit mir, indem Sie --Technik schreiben! ')).then(() => 'empfang');}          }
           
           if (zuletzt_klein != "empfang") { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Alice. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Alice. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');} } else { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}          }
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Alice. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Alice. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => 'empfang');} } else { 
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => 'empfang');}          }
           
           if (zuletzt_klein != "beratung") { 
              if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Barbara. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Lösungen und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(TechnikBot+' Ich übergebe an Barbara. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Lösungen und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');} } else { 
@@ -910,24 +875,7 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(KreationsBot+' Text Produkt 1. ').then(() => bot.say(KreationsBot+' Text Produkt 2. ')).then(() => bot.say(KreationsBot+' Text Produkt 3. ')).then(() => 'kreation');}	       
-       // -----------------
-       // Lösungen
-       // -----------------
-          
-          if (~befehl.indexOf("--LÖSUNG")) { versuch = true; return bot.say(KreationsBot+' Text Produkt Lösungen 1. ').then(() => bot.say(KreationsBot+' Text Produkt Lösungen 2. ')).then(() => bot.say(KreationsBot+' Text Produkt Lösungen 3. ')).then(() => 'kreation');}	       
-          if (~befehl.indexOf("--CHATRAUM")) { versuch = true; return bot.say(KreationsBot+' Text Produkt Chatraum 1. ').then(() => bot.say(KreationsBot+' Text Produkt Chatraum 2. ')).then(() => bot.say(KreationsBot+' Text Produkt Chatraum 3. ')).then(() => 'kreation');}	       
-          if (~befehl.indexOf("--CHATOPS")) { versuch = true; return bot.say(KreationsBot+' Text Produkt ChatOps 1. ').then(() => bot.say(KreationsBot+' Text Produkt ChatOps 2. ')).then(() => bot.say(KreationsBot+' Text Produkt ChatOps 3. ')).then(() => 'kreation');}	       
-          if (~befehl.indexOf("--EINFÜHRUNG")) { versuch = true; return bot.say(KreationsBot+' Text Produkt Einführung 1. ').then(() => bot.say(KreationsBot+' Text Produkt Einführung 2. ')).then(() => bot.say(KreationsBot+' Text Produkt Einführung 3. ')).then(() => 'kreation');}if (~befehl.indexOf("--EINFUHRUNG")) { versuch = true; return bot.say(KreationsBot+' Text Produkt Einführung 1. ').then(() => bot.say(KreationsBot+' Text Produkt Einführung 2. ')).then(() => bot.say(KreationsBot+' Text Produkt Einführung 3. ')).then(() => 'kreation');}	       
-          if (~befehl.indexOf("--BOTS")) { versuch = true; return bot.say(KreationsBot+' Text Produkt Bots 1. ').then(() => bot.say(KreationsBot+' Text Produkt Bots 2. ')).then(() => bot.say(KreationsBot+' Text Produkt Bots 3. ')).then(() => 'kreation');}	       
-          if (~befehl.indexOf("--REDAKTION")) { versuch = true; return bot.say(KreationsBot+' Text Produkt Redaktionsplan 1. ').then(() => bot.say(KreationsBot+' Text Produkt Redaktionsplan 2. ')).then(() => bot.say(KreationsBot+' Text Produkt Redaktionsplan 3. ')).then(() => 'kreation');}	       
-       // -----------------
-       // Leistungen
-       // -----------------
-          
-          if (~befehl.indexOf("--LEISTUNG")) { versuch = true; return bot.say(KreationsBot+' Text Produkt Leistungen 1. ').then(() => bot.say(KreationsBot+' Text Produkt Leistungen 2. ')).then(() => bot.say(KreationsBot+' Text Produkt Leistungen 3. ')).then(() => 'kreation');}	       
-          if (~befehl.indexOf("--MITARBEIT")) { versuch = true; return bot.say(KreationsBot+' Text Produkt Mitarbeit 1. ').then(() => bot.say(KreationsBot+' Text Produkt Mitarbeit 2. ')).then(() => bot.say(KreationsBot+' Text Produkt Mitarbeit 3. ')).then(() => 'kreation');}	       
-          if (~befehl.indexOf("--BERATEN")) { versuch = true; return bot.say(KreationsBot+' Text Produkt Beratung 1. ').then(() => bot.say(KreationsBot+' Text Produkt Beratung 2. ')).then(() => bot.say(KreationsBot+' Text Produkt Beratung 3. ')).then(() => 'kreation');}	       
+          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(KreationsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => 'beratung');}	       
        // -----------------
        // Trivia
        // -----------------
@@ -949,8 +897,8 @@
              if (~befehl.indexOf("--SEFZIG")) { versuch = true; return bot.say(EmpfangsBot+' Ich habe Andreas bereits benachrichtigt. ').then(() => bot.say(KreationsBot+' Sprechen Sie solange mit mir, indem Sie --Kreation schreiben! ')).then(() => 'empfang');}          }
           
           if (zuletzt_klein != "empfang") { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Alice. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Alice. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');} } else { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}          }
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Alice. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Alice. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => 'empfang');} } else { 
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => 'empfang');}          }
           
           if (zuletzt_klein != "beratung") { 
              if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Barbara. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Lösungen und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(KreationsBot+' Ich übergebe an Barbara. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Lösungen und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');} } else { 
@@ -1136,24 +1084,7 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(KonzeptionsBot+' Text Produkt 1. ').then(() => bot.say(KonzeptionsBot+' Text Produkt 2. ')).then(() => bot.say(KonzeptionsBot+' Text Produkt 3. ')).then(() => 'konzeption');}	       
-       // -----------------
-       // Lösungen
-       // -----------------
-          
-          if (~befehl.indexOf("--LÖSUNG")) { versuch = true; return bot.say(KonzeptionsBot+' Text Produkt Lösungen 1. ').then(() => bot.say(KonzeptionsBot+' Text Produkt Lösungen 2. ')).then(() => bot.say(KonzeptionsBot+' Text Produkt Lösungen 3. ')).then(() => 'konzeption');}	       
-          if (~befehl.indexOf("--CHATRAUM")) { versuch = true; return bot.say(KonzeptionsBot+' Text Produkt Chatraum 1. ').then(() => bot.say(KonzeptionsBot+' Text Produkt Chatraum 2. ')).then(() => bot.say(KonzeptionsBot+' Text Produkt Chatraum 3. ')).then(() => 'konzeption');}	       
-          if (~befehl.indexOf("--CHATOPS")) { versuch = true; return bot.say(KonzeptionsBot+' Text Produkt ChatOps 1. ').then(() => bot.say(KonzeptionsBot+' Text Produkt ChatOps 2. ')).then(() => bot.say(KonzeptionsBot+' Text Produkt ChatOps 3. ')).then(() => 'konzeption');}	       
-          if (~befehl.indexOf("--EINFÜHRUNG")) { versuch = true; return bot.say(KonzeptionsBot+' Text Produkt Einführung 1. ').then(() => bot.say(KonzeptionsBot+' Text Produkt Einführung 2. ')).then(() => bot.say(KonzeptionsBot+' Text Produkt Einführung 3. ')).then(() => 'konzeption');}if (~befehl.indexOf("--EINFUHRUNG")) { versuch = true; return bot.say(KonzeptionsBot+' Text Produkt Einführung 1. ').then(() => bot.say(KonzeptionsBot+' Text Produkt Einführung 2. ')).then(() => bot.say(KonzeptionsBot+' Text Produkt Einführung 3. ')).then(() => 'konzeption');}	       
-          if (~befehl.indexOf("--BOTS")) { versuch = true; return bot.say(KonzeptionsBot+' Text Produkt Bots 1. ').then(() => bot.say(KonzeptionsBot+' Text Produkt Bots 2. ')).then(() => bot.say(KonzeptionsBot+' Text Produkt Bots 3. ')).then(() => 'konzeption');}	       
-          if (~befehl.indexOf("--REDAKTION")) { versuch = true; return bot.say(KonzeptionsBot+' Text Produkt Redaktionsplan 1. ').then(() => bot.say(KonzeptionsBot+' Text Produkt Redaktionsplan 2. ')).then(() => bot.say(KonzeptionsBot+' Text Produkt Redaktionsplan 3. ')).then(() => 'konzeption');}	       
-       // -----------------
-       // Leistungen
-       // -----------------
-          
-          if (~befehl.indexOf("--LEISTUNG")) { versuch = true; return bot.say(KonzeptionsBot+' Text Produkt Leistungen 1. ').then(() => bot.say(KonzeptionsBot+' Text Produkt Leistungen 2. ')).then(() => bot.say(KonzeptionsBot+' Text Produkt Leistungen 3. ')).then(() => 'konzeption');}	       
-          if (~befehl.indexOf("--MITARBEIT")) { versuch = true; return bot.say(KonzeptionsBot+' Text Produkt Mitarbeit 1. ').then(() => bot.say(KonzeptionsBot+' Text Produkt Mitarbeit 2. ')).then(() => bot.say(KonzeptionsBot+' Text Produkt Mitarbeit 3. ')).then(() => 'konzeption');}	       
-          if (~befehl.indexOf("--BERATEN")) { versuch = true; return bot.say(KonzeptionsBot+' Text Produkt Beratung 1. ').then(() => bot.say(KonzeptionsBot+' Text Produkt Beratung 2. ')).then(() => bot.say(KonzeptionsBot+' Text Produkt Beratung 3. ')).then(() => 'konzeption');}	       
+          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(KonzeptionsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => 'beratung');}	       
        // -----------------
        // Trivia
        // -----------------
@@ -1175,8 +1106,8 @@
              if (~befehl.indexOf("--SEFZIG")) { versuch = true; return bot.say(EmpfangsBot+' Ich habe Andreas bereits benachrichtigt. ').then(() => bot.say(KonzeptionsBot+' Sprechen Sie solange mit mir, indem Sie --Konzeption schreiben! ')).then(() => 'empfang');}          }
           
           if (zuletzt_klein != "empfang") { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Alice. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Alice. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');} } else { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}          }
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Alice. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Alice. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => 'empfang');} } else { 
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => 'empfang');}          }
           
           if (zuletzt_klein != "beratung") { 
              if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Barbara. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Lösungen und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(KonzeptionsBot+' Ich übergebe an Barbara. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Lösungen und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');} } else { 
@@ -1349,24 +1280,7 @@
        // Produkte
        // -----------------
           
-          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(StrategieBot+' Text Produkt 1. ').then(() => bot.say(StrategieBot+' Text Produkt 2. ')).then(() => bot.say(StrategieBot+' Text Produkt 3. ')).then(() => 'strategie');}	       
-       // -----------------
-       // Lösungen
-       // -----------------
-          
-          if (~befehl.indexOf("--LÖSUNG")) { versuch = true; return bot.say(StrategieBot+' Text Produkt Lösungen 1. ').then(() => bot.say(StrategieBot+' Text Produkt Lösungen 2. ')).then(() => bot.say(StrategieBot+' Text Produkt Lösungen 3. ')).then(() => 'strategie');}	       
-          if (~befehl.indexOf("--CHATRAUM")) { versuch = true; return bot.say(StrategieBot+' Text Produkt Chatraum 1. ').then(() => bot.say(StrategieBot+' Text Produkt Chatraum 2. ')).then(() => bot.say(StrategieBot+' Text Produkt Chatraum 3. ')).then(() => 'strategie');}	       
-          if (~befehl.indexOf("--CHATOPS")) { versuch = true; return bot.say(StrategieBot+' Text Produkt ChatOps 1. ').then(() => bot.say(StrategieBot+' Text Produkt ChatOps 2. ')).then(() => bot.say(StrategieBot+' Text Produkt ChatOps 3. ')).then(() => 'strategie');}	       
-          if (~befehl.indexOf("--EINFÜHRUNG")) { versuch = true; return bot.say(StrategieBot+' Text Produkt Einführung 1. ').then(() => bot.say(StrategieBot+' Text Produkt Einführung 2. ')).then(() => bot.say(StrategieBot+' Text Produkt Einführung 3. ')).then(() => 'strategie');}if (~befehl.indexOf("--EINFUHRUNG")) { versuch = true; return bot.say(StrategieBot+' Text Produkt Einführung 1. ').then(() => bot.say(StrategieBot+' Text Produkt Einführung 2. ')).then(() => bot.say(StrategieBot+' Text Produkt Einführung 3. ')).then(() => 'strategie');}	       
-          if (~befehl.indexOf("--BOTS")) { versuch = true; return bot.say(StrategieBot+' Text Produkt Bots 1. ').then(() => bot.say(StrategieBot+' Text Produkt Bots 2. ')).then(() => bot.say(StrategieBot+' Text Produkt Bots 3. ')).then(() => 'strategie');}	       
-          if (~befehl.indexOf("--REDAKTION")) { versuch = true; return bot.say(StrategieBot+' Text Produkt Redaktionsplan 1. ').then(() => bot.say(StrategieBot+' Text Produkt Redaktionsplan 2. ')).then(() => bot.say(StrategieBot+' Text Produkt Redaktionsplan 3. ')).then(() => 'strategie');}	       
-       // -----------------
-       // Leistungen
-       // -----------------
-          
-          if (~befehl.indexOf("--LEISTUNG")) { versuch = true; return bot.say(StrategieBot+' Text Produkt Leistungen 1. ').then(() => bot.say(StrategieBot+' Text Produkt Leistungen 2. ')).then(() => bot.say(StrategieBot+' Text Produkt Leistungen 3. ')).then(() => 'strategie');}	       
-          if (~befehl.indexOf("--MITARBEIT")) { versuch = true; return bot.say(StrategieBot+' Text Produkt Mitarbeit 1. ').then(() => bot.say(StrategieBot+' Text Produkt Mitarbeit 2. ')).then(() => bot.say(StrategieBot+' Text Produkt Mitarbeit 3. ')).then(() => 'strategie');}	       
-          if (~befehl.indexOf("--BERATEN")) { versuch = true; return bot.say(StrategieBot+' Text Produkt Beratung 1. ').then(() => bot.say(StrategieBot+' Text Produkt Beratung 2. ')).then(() => bot.say(StrategieBot+' Text Produkt Beratung 3. ')).then(() => 'strategie');}	       
+          if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(StrategieBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => 'beratung');}	       
        // -----------------
        // Trivia
        // -----------------
@@ -1388,8 +1302,8 @@
              if (~befehl.indexOf("--SEFZIG")) { versuch = true; return bot.say(EmpfangsBot+' Ich habe Andreas bereits benachrichtigt. ').then(() => bot.say(StrategieBot+' Sprechen Sie solange mit mir, indem Sie --Strategie schreiben! ')).then(() => 'empfang');}          }
           
           if (zuletzt_klein != "empfang") { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Alice. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Alice. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 2: --Befehle. ')).then(() => 'empfang');} } else { 
-             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --Befehle, um alle meine Inhalte zu sehen. ')).then(() => 'empfang');}          }
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Alice. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Alice. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(EmpfangsBot+' Hallo Empfang Text 1: --Strategie, --Konzeption, --Kreation, --Technik, --Beratung. ')).then(() => 'empfang');} } else { 
+             if (~befehl.indexOf("--EMPFANG")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => 'empfang');}if (~befehl.indexOf("--ALICE")) { versuch = true; return bot.say(EmpfangsBot+' Sprechen Sie mit mir über --Robogeddon - oder mit den anderen Bots aus der --Beratung, --Kreation, --Konzeption, --Strategie oder --Technik! ').then(() => 'empfang');}          }
           
           if (zuletzt_klein != "beratung") { 
              if (~befehl.indexOf("--BERATUNG")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Barbara. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Lösungen und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');}if (~befehl.indexOf("--BARBARA")) { versuch = true; return bot.say(StrategieBot+' Ich übergebe an Barbara. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo, ich bin Barbara, der Beratungs-Bot. Ich möchte Ihnen unsere --Lösungen und --Leistungen zeigen. ')).then(() => bot.say(BeratungsBot+' Wenn Sie möchten, erstellen wir gleich eine --Kalkulation für Ihren Bot! ')).then(() => 'beratung');} } else { 
