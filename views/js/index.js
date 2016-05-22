@@ -88,6 +88,7 @@
        }
        
        ladenCss(auswahl, zufall, dir);
+    // $("body").attr("data-stil", auswahl);
        
     }
     

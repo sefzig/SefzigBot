@@ -15,3 +15,11 @@
        background-color: #dddddd !important;
        color: black;
     }
+
+    #seite > #menu div > div button,
+    #seite > #menu div > div a { 
+       border: 0px;
+       border-radius: 0px;
+       background-color: #00aeff;
+       color: white;
+    }

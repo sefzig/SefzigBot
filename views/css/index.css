@@ -157,7 +157,8 @@
     @media (min-width: 550px) { #seite > #menu, #seite > #menu button, #seite > #menu #formular input { font-size: 13px !important; } #seite > #menu h2 { font-size: 17px; } #seite > #menu h3 { font-size: 15px !important; } }
     @media (min-width: 600px) { #seite > #menu, #seite > #menu button, #seite > #menu #formular input { font-size: 14px !important; } #seite > #menu h2 { font-size: 18px; } #seite > #menu h3 { font-size: 16px !important; } }
     
-    #seite > #menu div > div button { 
+    #seite > #menu div > div button,
+    #seite > #menu div > div [data-stil] { 
        margin-top: 1px;
        margin-bottom: 1px;
        padding-left: 3px;
