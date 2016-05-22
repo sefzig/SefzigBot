@@ -73,7 +73,8 @@
        margin: 15px;
        margin-bottom: 15px;
     }
-    #seite > #menu {
+    #seite > #menu,
+    #seite > #menu > div {
        overflow: auto;
     }
     
@@ -85,7 +86,6 @@
        bottom: 0px;
        width: 100%;
        max-width: 250px;
-       overflow: auto;
     }
     #seite > #daten {
        z-index: 101;
@@ -140,7 +140,6 @@
     #seite > #menu > div {
        display: none;
        line-height: 20px;
-       overflow: hidden;
     }
     #seite > #menu h2 {
        margin: 14px;
