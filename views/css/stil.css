@@ -21,9 +21,9 @@
     body[data-stil="nacht"]      #menu div > div button { background-color: #00aeff; color: black; }
     body[data-stil="hacks"]      #menu div > div button { background-color: #00ff00; color: black; }
     
- /* Button-Farben */
+ /* Button-Farben: aktiv */
     body[data-stil="tag"]        #menu div > div button.aktiv { background-color:   white !important; color:   black !important; }
-    body[data-stil="robogeddon"] #menu div > div button.aktiv { background-color:    gray !important; color:   white !important; }
+    body[data-stil="robogeddon"] #menu div > div button.aktiv { background-color:   white !important; color:   black !important; }
     body[data-stil="nacht"]      #menu div > div button.aktiv { background-color:   white !important; color:   black !important; }
     body[data-stil="hacks"]      #menu div > div button.aktiv { background-color: #ff00ff !important; color:   black !important; }
     
