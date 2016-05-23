@@ -377,7 +377,7 @@
           if (bot_neu != bot_alt) {
              
           // Konfiguration
-             var pfad = "http://sefzig.net/text/seiten/SefzigBot/dateien/Displaybild_"+kurzel+".png";
+             var pfad = config["anwendung"]["cdn"]+"Displaybild_"+kurzel+".png";
              
           // Bot-Inhalte anpassen
              $(".sk-from.bot"+zufall).html(name);
@@ -497,7 +497,8 @@
              konsole:      function (b) { konsolen(b); },
              blinken:      function ()  { blink(); },
              cookies:      function (b) { cookies(b); },
-             menu:         function (b) { menu(b); }
+             menu:         function (b) { menu(b); },
+             stil:         function (b) { stil(b); }
           };
           
        // Bot-Inhalte markieren :/

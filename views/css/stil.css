@@ -21,6 +21,12 @@
     body[data-stil="nacht"]      #menu div > div button { background-color: #00aeff; color: black; }
     body[data-stil="hacks"]      #menu div > div button { background-color: #00ff00; color: black; }
     
+ /* Button-Farben */
+    body[data-stil="tag"]        #menu div > div button.aktiv { background-color:   white; color:   black; }
+    body[data-stil="robogeddon"] #menu div > div button.aktiv { background-color:   black; color: #00aeff; }
+    body[data-stil="nacht"]      #menu div > div button.aktiv { background-color:   white; color:   black; }
+    body[data-stil="hacks"]      #menu div > div button.aktiv { background-color: #ff00ff; color:   black; }
+    
  /* Input-Farben */
     body[data-stil="tag"]        #menu #formular input { background-color: #ff00ff; color: white; }
     body[data-stil="robogeddon"] #menu #formular input { background-color: #ff00ff; color: white; }

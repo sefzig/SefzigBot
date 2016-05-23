@@ -9,7 +9,8 @@
           "name": "Andreas Sefzigs Robogeddon",
           "defaultAnsicht": "chat", // chat, daten
           "defaultStil": "robogeddon", // tag, robogeddon, nacht
-          "defaultMenu": "robogeddon" // anderesmenu
+          "defaultMenu": "robogeddon", // anderesmenu
+          "cdn" : "http://sefzig.net/text/seiten/RobogeddonCdn/dateien/"
           
        },
        
