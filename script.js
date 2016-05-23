@@ -1477,7 +1477,7 @@
           versuch = true; 
           
           if ((text5) && (text5 != "")) {
-             bot.say(text1).then(function(){ 
+             bot.say(text1).then(function(){
              return bot.say(text2) }).then(function(){
              return bot.say(text3) }).then(function(){
              return bot.say(text4) }).then(function(){
