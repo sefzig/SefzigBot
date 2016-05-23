@@ -389,7 +389,7 @@
                 $(".sk-from.bot"+zufall).wrap(wrap);
                 $(".sk-msg-avatar.bot"+zufall).wrap(wrap);
                 
-             }, 500);
+             }, 1000);
              
              
              

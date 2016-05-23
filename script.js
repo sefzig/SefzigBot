@@ -733,10 +733,10 @@
        // Inhalte
        // -----------------
           
-          if (~befehl.indexOf("--INHALTE")) { versuch = true; return bot.say(TechnikBot+' Inhaltliche --Techniken: --Text, --Bild, --Qr und --Youtube. ').then(() => bot.say(TechnikBot+' Weiter --testen oder --abbrechen? ')).then(() => 'technik');}          
-          if (~befehl.indexOf("--LINKS")) { versuch = true; return bot.say(TechnikBot+' --Techniken auf Basis von Links: --Link, --Textlink, --Linkliste, --Button und --Action. ').then(() => bot.say(TechnikBot+' Weiter --testen oder --abbrechen? ')).then(() => 'technik');}          
-          if (~befehl.indexOf("--JAVASCRIPT")) { versuch = true; return bot.say(TechnikBot+' Javascript-basierte --Techniken: --Menue, --MenuAn, --MenuAus, --StilTag, --StilNacht, --StilRobo, --StilHx, --Alert, --Konsole und --Cookie. ').then(() => bot.say(TechnikBot+' Weiter --testen oder --abbrechen? ')).then(() => 'technik');}          
-          if (~befehl.indexOf("--TEST")) { versuch = true; return bot.say(TechnikBot+' Wir entwickeln ständig neue --Techniken. Hier werden sie getestet. ').then(() => bot.say(TechnikBot+' Aktuelle Tests: --Inhalte, --Links, und --Javascript. ')).then(() => 'technik');}          
+          if (~befehl.indexOf("--INHALTE")) { versuch = true; return bot.say(TechnikBot+' Inhaltliche --Techniken: --Text, --Bild, --Qr und --Youtube. ').then(() => 'technik');}          
+          if (~befehl.indexOf("--LINKS")) { versuch = true; return bot.say(TechnikBot+' --Techniken auf Basis von Links: --Link, --Textlink, --Linkliste, --Button und --Action. ').then(() => 'technik');}          
+          if (~befehl.indexOf("--JAVASCRIPT")) { versuch = true; return bot.say(TechnikBot+' Javascript-basierte --Techniken: --Menue, --MenuAn, --MenuAus, --StilTag, --StilNacht, --StilRobo, --StilHx, --Alert, --Konsole und --Cookie. ').then(() => 'technik');}          
+          if (~befehl.indexOf("--TEST")) { versuch = true; return bot.say(TechnikBot+' Wir entwickeln ständig neue --Techniken. Aktuelle Tests: --Inhalte, --Links, und --Javascript. ').then(() => 'technik');}          
           
           
           
@@ -752,17 +752,17 @@
        // -----------------
        
        // Inhalte
-               if  (~befehl.indexOf("--TEXT"))       { versuch = true; bot.say(TechnikBot+' [Text:Slack-Blogpost öffnen,SefzignetBlogSlack] Text.'); }
-          else if  (~befehl.indexOf("--BILD"))       { versuch = true; bot.say(TechnikBot+' [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Bild.'); }
-          else if  (~befehl.indexOf("--QR"))         { versuch = true; bot.say(TechnikBot+' [Qr:https://sefzigbot.herokuapp.com/] QR-Code.'); }
-          else if  (~befehl.indexOf("--YOUTUBE"))    { versuch = true; bot.say(TechnikBot+' [Youtube:u07XONlDwX8] Youtube.'); }
+               if  (~befehl.indexOf("--TEXT"))       { versuch = true; bot.say(TechnikBot+' [Text:Slack-Blogpost öffnen,SefzignetBlogSlack] Ein Text.'); }
+          else if  (~befehl.indexOf("--BILD"))       { versuch = true; bot.say(TechnikBot+' [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Ein Bild.'); }
+          else if  (~befehl.indexOf("--QR"))         { versuch = true; bot.say(TechnikBot+' [Qr:https://sefzigbot.herokuapp.com/] Ein QR-Code.'); }
+          else if  (~befehl.indexOf("--YOUTUBE"))    { versuch = true; bot.say(TechnikBot+' [Youtube:u07XONlDwX8] Ein Youtube-Video.'); }
           
        // Links
-          else if  (~befehl.indexOf("--LINK"))       { versuch = true; bot.say(TechnikBot+' [Link:Testlink,ThinMedia] Link.'); }
-          else if  (~befehl.indexOf("--TEXTLINK"))   { versuch = true; bot.say(TechnikBot+' [Textlink:BI Intelligence Report,MessagingVsSocial] Textlink.'); }
-          else if  (~befehl.indexOf("--LINKLISTE"))  { versuch = true; bot.say(TechnikBot+' [Linkliste:Linkliste öffnen,Rtm:Strategie:Artikel] Linkliste.'); }
-          else if  (~befehl.indexOf("--BUTTON"))     { versuch = true; bot.say(TechnikBot+' [Button:Studie von Slack,http://slack.com/results] Button.'); }
-          else if  (~befehl.indexOf("--ACTION"))     { versuch = true; bot.say(TechnikBot+' %[Ein Nachbau von ELIZA](http://sefzig.net/link/ElizaMedai/) Action.'); }
+          else if  (~befehl.indexOf("--LINK"))       { versuch = true; bot.say(TechnikBot+' [Link:Testlink,ThinMedia] Ein Link.'); }
+          else if  (~befehl.indexOf("--TEXTLINK"))   { versuch = true; bot.say(TechnikBot+' [Textlink:BI Intelligence Report,MessagingVsSocial] Ein Textlink.'); }
+          else if  (~befehl.indexOf("--LINKLISTE"))  { versuch = true; bot.say(TechnikBot+' [Linkliste:Linkliste öffnen,Rtm:Strategie:Artikel] Eine Linkliste.'); }
+          else if  (~befehl.indexOf("--BUTTON"))     { versuch = true; bot.say(TechnikBot+' [Button:Studie von Slack,http://slack.com/results] Ein Button.'); }
+          else if  (~befehl.indexOf("--ACTION"))     { versuch = true; bot.say(TechnikBot+' %[Ein Nachbau von ELIZA](http://sefzig.net/link/ElizaMedai/) Eine Action.'); }
           
        // Javascript
           else if  (~befehl.indexOf("--STILTAG"))    { versuch = true; bot.say(TechnikBot+' [Javascript:stil(tag)] Javascript ausgeführt: Stil Tag.'); }
