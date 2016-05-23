@@ -9,17 +9,17 @@
     "SMOOCH_APP_TOKEN": {
       "description": "Your Smooch app token which is used to initialize the web widget.",
       "required": true,
-      "value": "d9k415y76nk8ab2croifjshpv"
+      "value": ""
     },
     "SMOOCH_KEY_ID": {
       "description": "Your Smooch key ID, used to talk to the Smooch API",
       "required": true,
-      "value": "571779e5074485e900110982"
+      "value": ""
     },
     "SMOOCH_SECRET": {
       "description": "Your Smooch secret, used to talk to the Smooch API",
       "required": true,
-      "value": "dPBcwuyLFv_dKrSSaX157SPt"
+      "value": ""
     }
   }
 }
