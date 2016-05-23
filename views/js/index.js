@@ -198,7 +198,7 @@
     // Menü anzeigen starten
        if (methode == "menu") {
           
-          menu("");
+          menu();
           
        }
        
@@ -378,10 +378,20 @@
              
           // Konfiguration
              var pfad = config["anwendung"]["cdn"]+"Displaybild_"+kurzel+".png";
+             var wrap = '<span class="roboter" onclick="befehlen(\''+id+'\');"></span>';
              
           // Bot-Inhalte anpassen
              $(".sk-from.bot"+zufall).html(name);
              $(".sk-msg-avatar.bot"+zufall).attr("src", pfad);
+             
+             window.setTimeout(function() { 
+                
+                $(".sk-from.bot"+zufall).wrap(wrap);
+                $(".sk-msg-avatar.bot"+zufall).wrap(wrap);
+                
+             }, 500);
+             
+             
              
           // Neuen Text anpassen
              text_string = text_string.replace("["+kurzel+"] ","");
@@ -461,6 +471,9 @@
           $("#seite > #menu").animate({ right: left_neu }, 300);
           $("#seite .sk-logo").animate({ width: breite_neu }, 300);
           $("body").attr("data-menu", methode_neu);
+          
+       // Button einblenden
+          window.setTimeout(function() { $("#start input").fadeIn(300); }, 300);
           
        // Zeit speichern
           $("body").attr("data-menu-zeit", zeit);

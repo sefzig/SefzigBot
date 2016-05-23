@@ -304,6 +304,9 @@
     #sk-conversation .sk-row.sk-left-row .sk-msg-avatar {
        border-radius: 5px;
     }
+    #sk-conversation .sk-row.sk-left-row .roboter {
+       cursor: pointer;
+    }
  /* Farben */
     .sk-left-row .sk-msg {
        background-color: #dddddd !important;

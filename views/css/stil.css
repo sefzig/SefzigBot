@@ -103,7 +103,7 @@
     body[data-stil="tag"]        #sk-conversation .sk-right-row .sk-msg span.befehl { background-color: #00aeff; color:   white; }
     body[data-stil="robogeddon"] #sk-conversation .sk-right-row .sk-msg span.befehl { background-color: #00aeff; color:   white; }
     body[data-stil="nacht"]      #sk-conversation .sk-right-row .sk-msg span.befehl { background-color: #00aeff; color:   black; }
-    body[data-stil="hacks"]      #sk-conversation .sk-right-row .sk-msg span.befehl { background-color:   black; color: #00ff00; }
+    body[data-stil="hacks"]      #sk-conversation .sk-right-row .sk-msg span.befehl { background-color: #00ff00; color:   black; }
     
  /* ------------------- */
  /* Footer */

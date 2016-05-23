@@ -2,7 +2,7 @@
  // Einstellungen
     var config = {
        
-    // Ansichten
+    // Anwendung
        "anwendung": {
           
           "id": "Sefzigbot", // Robogeddon
@@ -10,6 +10,7 @@
           "defaultAnsicht": "chat", // chat, daten
           "defaultStil": "robogeddon", // tag, robogeddon, nacht
           "defaultMenu": "robogeddon", // anderesmenu
+          "defaultButton": "aus", // an, aus
           "cdn" : "http://sefzig.net/text/seiten/RobogeddonCdn/dateien/"
           
        },
