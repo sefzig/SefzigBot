@@ -133,12 +133,12 @@
           [
              "<div class='modulButton sk-action'>",
                 "<a class='btn btn-sk-primary' ",
-                   "href='http://sefzig.net/text/%button_url%/' ",
+                   "href='http://sefzig.net/text/%var2%/#%var3%' ",
                    "target='_blank' ",
                    "onclick='",
-                      "fenster(\"text\",\"%button_url%\"); ",
+                      "fenster(\"text\",\"%var2%\"); ",
                       "return false;'>",
-                   "%button_text%",
+                   "%var1%",
                 "</a>",
              "</div>"
           ],
@@ -148,12 +148,12 @@
           [
              "<div class='modulButton sk-action'>",
                 "<a class='btn btn-sk-primary' ",
-                   "href='http://sefzig.net/link/liste/%button_url%/' ",
+                   "href='http://sefzig.net/link/liste/%var2%/' ",
                    "target='_blank' ",
                    "onclick='",
-                      "fenster(\"links\",\"%button_url%\"); ",
+                      "fenster(\"links\",\"%var2%\"); ",
                       "return false;'>",
-                   "%button_text%",
+                   "%var1%",
                 "</a>",
              "</div>"
           ],
@@ -163,12 +163,12 @@
           [
              "<div class='modulButton sk-action'>",
                 "<a class='btn btn-sk-primary' ",
-                   "href='http://sefzig.net/link/%button_url%/' ",
+                   "href='http://sefzig.net/link/%var2%/' ",
                    "target='_blank' ",
                    "onclick='",
-                      "fenster(\"link\",\"%button_url%\"); ",
+                      "fenster(\"link\",\"%var2%\"); ",
                       "return false;'>",
-                   "%button_text%",
+                   "%var1%",
                 "</a>",
              "</div>"
           ],
@@ -177,12 +177,12 @@
           "Textlink":
           [
              "<a class='textLink' ",
-                "href='http://sefzig.net/link/%button_url%/' ",
+                "href='http://sefzig.net/link/%var2%/' ",
                 "target='_blank' ",
                 "onclick='",
-                   "fenster(\"link\",\"%button_url%\"); ",
+                   "fenster(\"link\",\"%var2%\"); ",
                    "return false;'>",
-                "%button_text%",
+                "%var1%",
              "</a>",
           ],
           
@@ -191,12 +191,12 @@
           [
              "<div class='modulButton sk-action'>",
                 "<a class='btn btn-sk-primary' ",
-                   "href='%button_url%' ",
+                   "href='%var2%' ",
                    "target='_blank' ",
                    "onclick='",
-                      "fenster(\"link\",\"%button_url%\"); ",
+                      "fenster(\"link\",\"%var2%\"); ",
                       "return false;'>",
-                   "%button_text%",
+                   "%var1%",
                 "</a>",
              "</div>"
           ],
@@ -256,8 +256,8 @@
           [
              "<div class='modulButton sk-action'>",
                 "<a class='btn btn-sk-primary email' ",
-                   "href='mailto:%button_url%?subject=Robogeddon'> ",
-                   "%button_text%",
+                   "href='mailto:%var2%?subject=Robogeddon'> ",
+                   "%var1%",
                 "</a>",
              "</div>"
           ],
@@ -267,8 +267,8 @@
           [
              "<div class='modulButton sk-action'>",
                 "<a class='btn btn-sk-primary telefon' ",
-                   "href='tel:%button_url%'> ",
-                   "%button_text%",
+                   "href='tel:%var2%'> ",
+                   "%var1%",
                 "</a>",
              "</div>"
           ],

@@ -270,16 +270,19 @@
                 var buttons2 = buttons[1].split("]");
                 if (buttons2[1]) { 
                    var buttons3 = buttons2[0].split(",");
-                   if (buttons3[1]) { var button_text = buttons3[0];   var button_url = ""+buttons3[1];
+                   if (buttons3[2]) {      var var1 = buttons3[0];   var var2 = ""+buttons3[1]; var var3 = ""+buttons3[2];
                    }
-                   else {             var button_text = buttons2[0]; var button_url = ""+buttons2[0]; }
+                   else if (buttons3[1]) { var var1 = buttons3[0];   var var2 = ""+buttons3[1]; var var3 = "";
+                   }
+                   else {                  var var1 = buttons2[0];   var var2 = ""+buttons2[0]; var var3 = ""; }
                 }
-                else {                var button_text = "Link öffnen"; var button_url = ""+var1; }
+                else {                     var var1 = "Link öffnen"; var var2 = ""+var1;        var var3 = ""; }
              }
-             else {                   var button_text = "Link öffnen"; var button_url = ""+var1; }
+             else {                        var var1 = "Link öffnen"; var var2 = ""+var1;        var var3 = ""; }
              
-          // console.log("> Button Text: "+button_text);
-          // console.log("> Button Url: "+button_url);
+          // console.log("> Variable 1: "+var1);
+          // console.log("> Variable 2: "+var2);
+          // console.log("> Variable 3: "+var3);
              
           }
           
@@ -290,8 +293,9 @@
              template = template.join("a-f-z");
              template = template.replace(/a-f-z/g, "");
           }
-          template = template.replace(/%button_text%/g, button_text);
-          template = template.replace(/%button_url%/g,  button_url);
+          template = template.replace(/%var1%/g, var1);
+          template = template.replace(/%var2%/g, var2);
+          template = template.replace(/%var3%/g, var3);
           
        // Modul anpassen
           inhalte = inhalte.split("["+modul+":");
