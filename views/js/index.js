@@ -391,8 +391,6 @@
                 
              }, 500);
              
-             
-             
           // Neuen Text anpassen
              text_string = text_string.replace("["+kurzel+"] ","");
              
