@@ -251,15 +251,20 @@
           }
           
        // -----------------
+       // Kontakt
+       // -----------------
+          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(EmpfangsBot+'  Wollen Sie --telefonieren, eine --Email schreiben, --twittern oder eine Nachricht in --Xing senden? ').then(() => bot.say(EmpfangsBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'empfang');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(EmpfangsBot+'  Wollen Sie --telefonieren, eine --Email schreiben, --twittern oder eine Nachricht in --Xing senden? ').then(() => bot.say(EmpfangsBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'empfang');}          
+          if (~befehl.indexOf("--TELEFON")) { versuch = true; return bot.say(EmpfangsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] ').then(() => 'empfang');}          
+          if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(EmpfangsBot+' Schreiben Sie Andreas Sefzig eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'empfang');}          
+          if (~befehl.indexOf("--TWITTER")) { versuch = true; return bot.say(EmpfangsBot+' Senden Sie uns einen Tweet: [Link:PM in Twitter öffnen,RobogeddonTweet] ').then(() => 'empfang');}          
+          if (~befehl.indexOf("--XING")) { versuch = true; return bot.say(EmpfangsBot+' Senden Sie Andreas Sefzig eine Nachricht in Xing - er ist Premium-Mitglied: [Link:Xing-Profil öffnen,RobogeddonXing] ').then(() => 'empfang');}if (~befehl.indexOf("--XING")) { versuch = true; return bot.say(EmpfangsBot+' Senden Sie Andreas Sefzig eine Nachricht in Xing - er ist Premium-Mitglied: [Link:Xing-Profil öffnen,RobogeddonXing] ').then(() => 'empfang');}          
+       // -----------------
        // Über uns
        // -----------------
           
-          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(EmpfangsBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(EmpfangsBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(EmpfangsBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(EmpfangsBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'empfang');}          
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(EmpfangsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(EmpfangsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt] ')).then(() => 'empfang');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(EmpfangsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(EmpfangsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt] ')).then(() => 'empfang');}          
-       // -----------------
+          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(EmpfangsBot+' #Robogeddon sind eine auf Chats und Bots für das Marketing spezialisierte Agentur. ').then(() => bot.say(EmpfangsBot+' Wir sind Andreas --Sefzig und eine lose Gruppe freier Kreativer - und natürlich wir, die Bots! Wir realisieren Chat-Lösungen für die interne und externe Unternehmens-Kommunikation. [Text:Agenturprofil,RobogeddonAgentur] ')).then(() => bot.say(EmpfangsBot+' Lassen Sie uns über Ihre --Strategie und unsere --Produkte sprechen: --Kontakt. ')).then(() => 'empfang');}          
        // Produkte
-       // -----------------
-          
           if ("empfang" != "beratung") {
           	 
              if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(EmpfangsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo! Unsere Produkte sind Ihre Chat-Bots. Wir bieten tatkräftige Unterstützung als --Leistung an und entwickeln ständig weitere technische --Lösungen. ')).then(() => 'beratung');}	       
@@ -440,15 +445,20 @@
           }
           
        // -----------------
+       // Kontakt
+       // -----------------
+          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(BeratungsBot+'  Wollen Sie --telefonieren, eine --Email schreiben, --twittern oder eine Nachricht in --Xing senden? ').then(() => bot.say(BeratungsBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'beratung');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(BeratungsBot+'  Wollen Sie --telefonieren, eine --Email schreiben, --twittern oder eine Nachricht in --Xing senden? ').then(() => bot.say(BeratungsBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'beratung');}          
+          if (~befehl.indexOf("--TELEFON")) { versuch = true; return bot.say(BeratungsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] ').then(() => 'beratung');}          
+          if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(BeratungsBot+' Schreiben Sie Andreas Sefzig eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'beratung');}          
+          if (~befehl.indexOf("--TWITTER")) { versuch = true; return bot.say(BeratungsBot+' Senden Sie uns einen Tweet: [Link:PM in Twitter öffnen,RobogeddonTweet] ').then(() => 'beratung');}          
+          if (~befehl.indexOf("--XING")) { versuch = true; return bot.say(BeratungsBot+' Senden Sie Andreas Sefzig eine Nachricht in Xing - er ist Premium-Mitglied: [Link:Xing-Profil öffnen,RobogeddonXing] ').then(() => 'beratung');}if (~befehl.indexOf("--XING")) { versuch = true; return bot.say(BeratungsBot+' Senden Sie Andreas Sefzig eine Nachricht in Xing - er ist Premium-Mitglied: [Link:Xing-Profil öffnen,RobogeddonXing] ').then(() => 'beratung');}          
+       // -----------------
        // Über uns
        // -----------------
           
-          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(BeratungsBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(BeratungsBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(BeratungsBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(BeratungsBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'beratung');}          
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(BeratungsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(BeratungsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt] ')).then(() => 'beratung');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(BeratungsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(BeratungsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt] ')).then(() => 'beratung');}          
-       // -----------------
+          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(BeratungsBot+' #Robogeddon sind eine auf Chats und Bots für das Marketing spezialisierte Agentur. ').then(() => bot.say(BeratungsBot+' Wir sind Andreas --Sefzig und eine lose Gruppe freier Kreativer - und natürlich wir, die Bots! Wir realisieren Chat-Lösungen für die interne und externe Unternehmens-Kommunikation. [Text:Agenturprofil,RobogeddonAgentur] ')).then(() => bot.say(BeratungsBot+' Lassen Sie uns über Ihre --Strategie und unsere --Produkte sprechen: --Kontakt. ')).then(() => 'beratung');}          
        // Produkte
-       // -----------------
-          
           if ("beratung" != "beratung") {
           	 
              if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(BeratungsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Beratung, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo! Unsere Produkte sind Ihre Chat-Bots. Wir bieten tatkräftige Unterstützung als --Leistung an und entwickeln ständig weitere technische --Lösungen. ')).then(() => 'beratung');}	       
@@ -654,15 +664,20 @@
           }
           
        // -----------------
+       // Kontakt
+       // -----------------
+          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(TechnikBot+'  Wollen Sie --telefonieren, eine --Email schreiben, --twittern oder eine Nachricht in --Xing senden? ').then(() => bot.say(TechnikBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'technik');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(TechnikBot+'  Wollen Sie --telefonieren, eine --Email schreiben, --twittern oder eine Nachricht in --Xing senden? ').then(() => bot.say(TechnikBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'technik');}          
+          if (~befehl.indexOf("--TELEFON")) { versuch = true; return bot.say(TechnikBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] ').then(() => 'technik');}          
+          if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(TechnikBot+' Schreiben Sie Andreas Sefzig eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'technik');}          
+          if (~befehl.indexOf("--TWITTER")) { versuch = true; return bot.say(TechnikBot+' Senden Sie uns einen Tweet: [Link:PM in Twitter öffnen,RobogeddonTweet] ').then(() => 'technik');}          
+          if (~befehl.indexOf("--XING")) { versuch = true; return bot.say(TechnikBot+' Senden Sie Andreas Sefzig eine Nachricht in Xing - er ist Premium-Mitglied: [Link:Xing-Profil öffnen,RobogeddonXing] ').then(() => 'technik');}if (~befehl.indexOf("--XING")) { versuch = true; return bot.say(TechnikBot+' Senden Sie Andreas Sefzig eine Nachricht in Xing - er ist Premium-Mitglied: [Link:Xing-Profil öffnen,RobogeddonXing] ').then(() => 'technik');}          
+       // -----------------
        // Über uns
        // -----------------
           
-          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(TechnikBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(TechnikBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(TechnikBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(TechnikBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'technik');}          
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(TechnikBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(TechnikBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt] ')).then(() => 'technik');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(TechnikBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(TechnikBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt] ')).then(() => 'technik');}          
-       // -----------------
+          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(TechnikBot+' #Robogeddon sind eine auf Chats und Bots für das Marketing spezialisierte Agentur. ').then(() => bot.say(TechnikBot+' Wir sind Andreas --Sefzig und eine lose Gruppe freier Kreativer - und natürlich wir, die Bots! Wir realisieren Chat-Lösungen für die interne und externe Unternehmens-Kommunikation. [Text:Agenturprofil,RobogeddonAgentur] ')).then(() => bot.say(TechnikBot+' Lassen Sie uns über Ihre --Strategie und unsere --Produkte sprechen: --Kontakt. ')).then(() => 'technik');}          
        // Produkte
-       // -----------------
-          
           if ("technik" != "beratung") {
           	 
              if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(TechnikBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Technik, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo! Unsere Produkte sind Ihre Chat-Bots. Wir bieten tatkräftige Unterstützung als --Leistung an und entwickeln ständig weitere technische --Lösungen. ')).then(() => 'beratung');}	       
@@ -857,15 +872,20 @@
           }
           
        // -----------------
+       // Kontakt
+       // -----------------
+          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(KreationsBot+'  Wollen Sie --telefonieren, eine --Email schreiben, --twittern oder eine Nachricht in --Xing senden? ').then(() => bot.say(KreationsBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'kreation');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(KreationsBot+'  Wollen Sie --telefonieren, eine --Email schreiben, --twittern oder eine Nachricht in --Xing senden? ').then(() => bot.say(KreationsBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'kreation');}          
+          if (~befehl.indexOf("--TELEFON")) { versuch = true; return bot.say(KreationsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] ').then(() => 'kreation');}          
+          if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(KreationsBot+' Schreiben Sie Andreas Sefzig eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'kreation');}          
+          if (~befehl.indexOf("--TWITTER")) { versuch = true; return bot.say(KreationsBot+' Senden Sie uns einen Tweet: [Link:PM in Twitter öffnen,RobogeddonTweet] ').then(() => 'kreation');}          
+          if (~befehl.indexOf("--XING")) { versuch = true; return bot.say(KreationsBot+' Senden Sie Andreas Sefzig eine Nachricht in Xing - er ist Premium-Mitglied: [Link:Xing-Profil öffnen,RobogeddonXing] ').then(() => 'kreation');}if (~befehl.indexOf("--XING")) { versuch = true; return bot.say(KreationsBot+' Senden Sie Andreas Sefzig eine Nachricht in Xing - er ist Premium-Mitglied: [Link:Xing-Profil öffnen,RobogeddonXing] ').then(() => 'kreation');}          
+       // -----------------
        // Über uns
        // -----------------
           
-          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(KreationsBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(KreationsBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(KreationsBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(KreationsBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'kreation');}          
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(KreationsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(KreationsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt] ')).then(() => 'kreation');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(KreationsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(KreationsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt] ')).then(() => 'kreation');}          
-       // -----------------
+          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(KreationsBot+' #Robogeddon sind eine auf Chats und Bots für das Marketing spezialisierte Agentur. ').then(() => bot.say(KreationsBot+' Wir sind Andreas --Sefzig und eine lose Gruppe freier Kreativer - und natürlich wir, die Bots! Wir realisieren Chat-Lösungen für die interne und externe Unternehmens-Kommunikation. [Text:Agenturprofil,RobogeddonAgentur] ')).then(() => bot.say(KreationsBot+' Lassen Sie uns über Ihre --Strategie und unsere --Produkte sprechen: --Kontakt. ')).then(() => 'kreation');}          
        // Produkte
-       // -----------------
-          
           if ("kreation" != "beratung") {
           	 
              if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(KreationsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Kreation, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo! Unsere Produkte sind Ihre Chat-Bots. Wir bieten tatkräftige Unterstützung als --Leistung an und entwickeln ständig weitere technische --Lösungen. ')).then(() => 'beratung');}	       
@@ -1065,15 +1085,20 @@
           }
           
        // -----------------
+       // Kontakt
+       // -----------------
+          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(KonzeptionsBot+'  Wollen Sie --telefonieren, eine --Email schreiben, --twittern oder eine Nachricht in --Xing senden? ').then(() => bot.say(KonzeptionsBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'konzeption');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(KonzeptionsBot+'  Wollen Sie --telefonieren, eine --Email schreiben, --twittern oder eine Nachricht in --Xing senden? ').then(() => bot.say(KonzeptionsBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'konzeption');}          
+          if (~befehl.indexOf("--TELEFON")) { versuch = true; return bot.say(KonzeptionsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] ').then(() => 'konzeption');}          
+          if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(KonzeptionsBot+' Schreiben Sie Andreas Sefzig eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'konzeption');}          
+          if (~befehl.indexOf("--TWITTER")) { versuch = true; return bot.say(KonzeptionsBot+' Senden Sie uns einen Tweet: [Link:PM in Twitter öffnen,RobogeddonTweet] ').then(() => 'konzeption');}          
+          if (~befehl.indexOf("--XING")) { versuch = true; return bot.say(KonzeptionsBot+' Senden Sie Andreas Sefzig eine Nachricht in Xing - er ist Premium-Mitglied: [Link:Xing-Profil öffnen,RobogeddonXing] ').then(() => 'konzeption');}if (~befehl.indexOf("--XING")) { versuch = true; return bot.say(KonzeptionsBot+' Senden Sie Andreas Sefzig eine Nachricht in Xing - er ist Premium-Mitglied: [Link:Xing-Profil öffnen,RobogeddonXing] ').then(() => 'konzeption');}          
+       // -----------------
        // Über uns
        // -----------------
           
-          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(KonzeptionsBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(KonzeptionsBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(KonzeptionsBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(KonzeptionsBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'konzeption');}          
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(KonzeptionsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(KonzeptionsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt] ')).then(() => 'konzeption');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(KonzeptionsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(KonzeptionsBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt] ')).then(() => 'konzeption');}          
-       // -----------------
+          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(KonzeptionsBot+' #Robogeddon sind eine auf Chats und Bots für das Marketing spezialisierte Agentur. ').then(() => bot.say(KonzeptionsBot+' Wir sind Andreas --Sefzig und eine lose Gruppe freier Kreativer - und natürlich wir, die Bots! Wir realisieren Chat-Lösungen für die interne und externe Unternehmens-Kommunikation. [Text:Agenturprofil,RobogeddonAgentur] ')).then(() => bot.say(KonzeptionsBot+' Lassen Sie uns über Ihre --Strategie und unsere --Produkte sprechen: --Kontakt. ')).then(() => 'konzeption');}          
        // Produkte
-       // -----------------
-          
           if ("konzeption" != "beratung") {
           	 
              if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(KonzeptionsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Konzeption, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo! Unsere Produkte sind Ihre Chat-Bots. Wir bieten tatkräftige Unterstützung als --Leistung an und entwickeln ständig weitere technische --Lösungen. ')).then(() => 'beratung');}	       
@@ -1267,15 +1292,20 @@
           }
           
        // -----------------
+       // Kontakt
+       // -----------------
+          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(StrategieBot+'  Wollen Sie --telefonieren, eine --Email schreiben, --twittern oder eine Nachricht in --Xing senden? ').then(() => bot.say(StrategieBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'strategie');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(StrategieBot+'  Wollen Sie --telefonieren, eine --Email schreiben, --twittern oder eine Nachricht in --Xing senden? ').then(() => bot.say(StrategieBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'strategie');}          
+          if (~befehl.indexOf("--TELEFON")) { versuch = true; return bot.say(StrategieBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] ').then(() => 'strategie');}          
+          if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(StrategieBot+' Schreiben Sie Andreas Sefzig eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'strategie');}          
+          if (~befehl.indexOf("--TWITTER")) { versuch = true; return bot.say(StrategieBot+' Senden Sie uns einen Tweet: [Link:PM in Twitter öffnen,RobogeddonTweet] ').then(() => 'strategie');}          
+          if (~befehl.indexOf("--XING")) { versuch = true; return bot.say(StrategieBot+' Senden Sie Andreas Sefzig eine Nachricht in Xing - er ist Premium-Mitglied: [Link:Xing-Profil öffnen,RobogeddonXing] ').then(() => 'strategie');}if (~befehl.indexOf("--XING")) { versuch = true; return bot.say(StrategieBot+' Senden Sie Andreas Sefzig eine Nachricht in Xing - er ist Premium-Mitglied: [Link:Xing-Profil öffnen,RobogeddonXing] ').then(() => 'strategie');}          
+       // -----------------
        // Über uns
        // -----------------
           
-          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(StrategieBot+' #Robogeddon sind Andreas Sefzig und freie Mitarbeiter, eine Handvoll Marketing-Technologien und wir Bots. ').then(() => bot.say(StrategieBot+' Wir realisieren Chat-Bots für die --interne und --externe Unternehmens-Kommunikation. ')).then(() => bot.say(StrategieBot+' Wir befinden uns in einem sehr jungen Markt. Lassen Sie sich von uns beraten, warum und wie Sie Ihren Bot haben wollen! ')).then(() => bot.say(StrategieBot+' Lassen Sie uns über die --Strategie oder --Konzeption Ihres eigenen Chat-Bots sprechen! ')).then(() => 'strategie');}          
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(StrategieBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(StrategieBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt] ')).then(() => 'strategie');}if (~befehl.indexOf("--ANFRAGE")) { versuch = true; return bot.say(StrategieBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] Oder schreiben Sie ihm eine Email: [Email:sefzig@robogeddon.de] ').then(() => bot.say(StrategieBot+' Alle unsere Kontaktwege: [Text:RobogeddonKontakt] ')).then(() => 'strategie');}          
-       // -----------------
+          if (~befehl.indexOf("--ROBOGEDDON")) { versuch = true; return bot.say(StrategieBot+' #Robogeddon sind eine auf Chats und Bots für das Marketing spezialisierte Agentur. ').then(() => bot.say(StrategieBot+' Wir sind Andreas --Sefzig und eine lose Gruppe freier Kreativer - und natürlich wir, die Bots! Wir realisieren Chat-Lösungen für die interne und externe Unternehmens-Kommunikation. [Text:Agenturprofil,RobogeddonAgentur] ')).then(() => bot.say(StrategieBot+' Lassen Sie uns über Ihre --Strategie und unsere --Produkte sprechen: --Kontakt. ')).then(() => 'strategie');}          
        // Produkte
-       // -----------------
-          
           if ("strategie" != "beratung") {
           	 
              if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(StrategieBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Strategie, um wieder mit mir zu sprechen. ').then(() => bot.say(BeratungsBot+' Hallo! Unsere Produkte sind Ihre Chat-Bots. Wir bieten tatkräftige Unterstützung als --Leistung an und entwickeln ständig weitere technische --Lösungen. ')).then(() => 'beratung');}	       
