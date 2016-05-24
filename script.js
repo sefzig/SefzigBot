@@ -327,16 +327,7 @@
        // Inhalte
        // -----------------
           
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+       // Folgen..?
           
        // -----------------
        // Vorlagen
@@ -736,37 +727,25 @@
           if (~befehl.indexOf("--BEFEHL")) { versuch = true; return bot.say(TechnikBot+' Ich bin gerade sehr beschäftigt - daher kann ich Ihnen noch nicht allzuviel zeigen. ').then(() => bot.say(TechnikBot+' Aber wir können ein paar --technische --Tests durchlaufen. ')).then(() => 'technik');}          
           if (~befehl.indexOf("--UBER")) { versuch = true; return bot.say(TechnikBot+' Ich bin Cynthia. Ich bin die --Technik. ').then(() => bot.say(KonzeptionsBot+' Cynthia ist ein wenig schräg drauf und meist gestresst - aber sie ist eine hervorragende Entwicklerin! Für sie gibt es den Hacker-Modus: --StilHx. ')).then(() => bot.say(TechnikBot+' Ich programmiere und --teste ständig neue Funktionen und Templates, mit denen --Kreation und --Konzeption arbeiten. Ganz schön viel zu tun hier! ')).then(() => 'technik');}if (~befehl.indexOf("--ÜBER")) { versuch = true; return bot.say(TechnikBot+' Ich bin Cynthia. Ich bin die --Technik. ').then(() => bot.say(KonzeptionsBot+' Cynthia ist ein wenig schräg drauf und meist gestresst - aber sie ist eine hervorragende Entwicklerin! Für sie gibt es den Hacker-Modus: --StilHx. ')).then(() => bot.say(TechnikBot+' Ich programmiere und --teste ständig neue Funktionen und Templates, mit denen --Kreation und --Konzeption arbeiten. Ganz schön viel zu tun hier! ')).then(() => 'technik');}          
        // -----------------
-       // Inhalte
+       // Tests
        // -----------------
           
           if (~befehl.indexOf("--INHALTE")) { versuch = true; return bot.say(TechnikBot+' Inhaltliche --Techniken: --Text, --Bild, --Qr und --Youtube. ').then(() => 'technik');}          
-          if (~befehl.indexOf("--LINKS")) { versuch = true; return bot.say(TechnikBot+' --Techniken auf Basis von Links: --Link, --Textlink, --Linkliste, --Button und --Action. ').then(() => 'technik');}          
-          if (~befehl.indexOf("--JAVASCRIPT")) { versuch = true; return bot.say(TechnikBot+' Javascript-basierte --Techniken: --Menue, --MenuAn, --MenuAus, --StilTag, --StilNacht, --StilRobo, --StilHx, --Alert, --Konsole und --Cookie. ').then(() => 'technik');}          
-          if (~befehl.indexOf("--TEST")) { versuch = true; return bot.say(TechnikBot+' Wir entwickeln ständig neue --Techniken. Aktuell im Test: --Inhalte, --Links, und --Javascript. ').then(() => 'technik');}          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-       // -----------------
-       // Tests
-       // -----------------
-       
+          if (~befehl.indexOf("--LINKS")) { versuch = true; return bot.say(TechnikBot+' --Techniken für Links: --Link, --Textlink, --Linkliste, --Button und --Action. ').then(() => 'technik');}          
+          if (~befehl.indexOf("--STILE")) { versuch = true; return bot.say(TechnikBot+' Stil-basierte --Techniken: --StilTag, --StilNacht, --StilRobo und --StilHx. ').then(() => 'technik');}          
+          if (~befehl.indexOf("--MENÜS")) { versuch = true; return bot.say(TechnikBot+' Client-basierte --Techniken: --Menue, --MenuAn und --MenuAus. ').then(() => 'technik');}if (~befehl.indexOf("--MENUS")) { versuch = true; return bot.say(TechnikBot+' Client-basierte --Techniken: --Menue, --MenuAn und --MenuAus. ').then(() => 'technik');}          
+          if (~befehl.indexOf("--JAVASCRIPT")) { versuch = true; return bot.say(TechnikBot+' Javascript-basierte --Techniken: --Alert, --Konsole und --Cookie. ').then(() => 'technik');}          
+          if (~befehl.indexOf("--TEST")) { versuch = true; return bot.say(TechnikBot+' Wir entwickeln ständig neue --Techniken. Aktuell im Test: --Inhalte, --Links, --Stile, --Menüs und --Javascript. ').then(() => 'technik');}          
        // Inhalte
           if (~befehl.indexOf("--TEXT")) { versuch = true; return bot.say(TechnikBot+' [Text:Slack-Blogpost öffnen,SefzignetBlogSlack] Ein Text. ').then(() => bot.say(TechnikBot+' Mehr --Inhalte, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--BILD")) { versuch = true; return bot.say(TechnikBot+' [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Ein Bild. ').then(() => bot.say(TechnikBot+' Mehr --Inhalte, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--QR")) { versuch = true; return bot.say(TechnikBot+' [Qr:https://sefzigbot.herokuapp.com/] Ein QR-Code. ').then(() => bot.say(TechnikBot+' Mehr --Inhalte, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--YOUTUBE")) { versuch = true; return bot.say(TechnikBot+' [Youtube:u07XONlDwX8] Ein Youtube-Video. ').then(() => bot.say(TechnikBot+' Mehr --Inhalte, --Tests, --Technik? ')).then(() => 'technik');}          
        // Links
           if (~befehl.indexOf("--LINK")) { versuch = true; return bot.say(TechnikBot+' [Link:Testlink,ThinMedia] Ein Link. ').then(() => bot.say(TechnikBot+' Mehr --Links, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--TEXTLINK")) { versuch = true; return bot.say(TechnikBot+' [Textlink:BI Intelligence Report,MessagingVsSocial] Ein Textlink. ').then(() => bot.say(TechnikBot+' Mehr --Links, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--LINKLISTE")) { versuch = true; return bot.say(TechnikBot+' [Linkliste:Linkliste öffnen,Rtm:Strategie:Artikel] Eine Linkliste. ').then(() => bot.say(TechnikBot+' Mehr --Links, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--BUTTON")) { versuch = true; return bot.say(TechnikBot+' [Button:Studie von Slack,http://slack.com/results] Ein Button. ').then(() => bot.say(TechnikBot+' Mehr --Links, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--ACTION")) { versuch = true; return bot.say(TechnikBot+' %[Ein Nachbau von ELIZA](http://sefzig.net/link/ElizaMedai/) Eine Action. ').then(() => bot.say(TechnikBot+' Mehr --Links, --Tests, --Technik? ')).then(() => 'technik');}          
        // Stile
-          if (~befehl.indexOf("--STILTAG")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(tag)] Javascript ausgeführt: Stil Tag. ').then(() => bot.say(TechnikBot+' Mehr --Client, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--STILNACHT")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(nacht)] Javascript ausgeführt: Stil Nacht. ').then(() => bot.say(TechnikBot+' Mehr --Client, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--STILROBO")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(robogeddon)] Javascript ausgeführt: Stil Robogeddon. ').then(() => bot.say(TechnikBot+' Mehr --Client, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--STILHX")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(hacks)] Javascript ausgeführt: Stil Hx. ').then(() => bot.say(TechnikBot+' Mehr --Client, --Tests, --Technik? ')).then(() => 'technik');}          
+          if (~befehl.indexOf("--STILTAG")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(tag)] Stil geladen: Stil Tag. ').then(() => bot.say(TechnikBot+' Mehr --Stile, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--STILNACHT")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(nacht)] Stil geladen: Stil Nacht. ').then(() => bot.say(TechnikBot+' Mehr --Stile, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--STILROBO")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(robogeddon)] Stil geladen: Stil Robogeddon. ').then(() => bot.say(TechnikBot+' Mehr --Stile, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--STILHX")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(hacks)] Stil geladen: Stil Hx. ').then(() => bot.say(TechnikBot+' Mehr --Stile, --Tests, --Technik? ')).then(() => 'technik');}          
        // Menü
-          if (~befehl.indexOf("--MENUE")) { versuch = true; return bot.say(TechnikBot+' [Javascript:menu()] Javascript ausgeführt: Menü getoggelt. ').then(() => bot.say(TechnikBot+' Mehr --Client, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--MENUAN")) { versuch = true; return bot.say(TechnikBot+' [Javascript:menu(an)] Javascript ausgeführt: Menü an. ').then(() => bot.say(TechnikBot+' Mehr --Client, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--MENUAUS")) { versuch = true; return bot.say(TechnikBot+' [Javascript:menu(aus)] Javascript ausgeführt: Menü aus. ').then(() => bot.say(TechnikBot+' Mehr --Client, --Tests, --Technik? ')).then(() => 'technik');}          
+          if (~befehl.indexOf("--MENUE")) { versuch = true; return bot.say(TechnikBot+' [Javascript:menu()] Menü umgeschaltet. ').then(() => bot.say(TechnikBot+' Mehr --Menü, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--MENUAN")) { versuch = true; return bot.say(TechnikBot+' [Javascript:menu(an)] Menü angeschaltet. ').then(() => bot.say(TechnikBot+' Mehr --Menü, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--MENUAUS")) { versuch = true; return bot.say(TechnikBot+' [Javascript:menu(aus)] Menü ausgeschaltet. ').then(() => bot.say(TechnikBot+' Mehr --Menü, --Tests, --Technik? ')).then(() => 'technik');}          
        // Javascript
-          if (~befehl.indexOf("--ALERT")) { versuch = true; return bot.say(TechnikBot+' [Javascript:alert(123)] Javascript ausgeführt: Alert. ').then(() => bot.say(TechnikBot+' Mehr --Javascript, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--KONSOLE")) { versuch = true; return bot.say(TechnikBot+' [Javascript:konsole(123)] Javascript ausgeführt: Konsole. ').then(() => bot.say(TechnikBot+' Mehr --Javascript, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--COOKIE")) { versuch = true; return bot.say(TechnikBot+' [Javascript:cookies(test,123)] Javascript ausgeführt: Cookies. ').then(() => bot.say(TechnikBot+' Mehr --Javascript, --Tests, --Technik? ')).then(() => 'technik');}          
+          if (~befehl.indexOf("--ALERT")) { versuch = true; return bot.say(TechnikBot+' [Javascript:alert(123)] Javascript-Alert ausgegeben: 123. ').then(() => bot.say(TechnikBot+' Mehr --Javascript, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--KONSOLE")) { versuch = true; return bot.say(TechnikBot+' [Javascript:konsole(123)] In Konsole geschrieben: 123. ').then(() => bot.say(TechnikBot+' Mehr --Javascript, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--COOKIE")) { versuch = true; return bot.say(TechnikBot+' [Javascript:cookies(test,123)] Cookie gesetzt: text, 123. ').then(() => bot.say(TechnikBot+' Mehr --Javascript, --Tests, --Technik? ')).then(() => 'technik');}          
        // -----------------
        // Vorlagen
        // -----------------
@@ -975,17 +954,6 @@
           if (~befehl.indexOf("--LINK")) { versuch = true; return bot.say(KreationsBot+' Hier ein Link: [Link:Artikel öffnen,ThinMedia] Und eine Linkliste: [Linkliste:Strategie-Artikel,Rtm:Strategie:Artikel] ').then(() => bot.say(KreationsBot+' Zurück zu --Formate? ')).then(() => 'kreation');}          
           if (~befehl.indexOf("--WIDGET")) { versuch = true; return bot.say(KreationsBot+' Mittels Iframe binden wir externe Web-Elemente ein: [Iframe:http://sefzig.net/text/RobogeddonExtern/#einbindung] ').then(() => bot.say(KreationsBot+' Zurück zu --Formate? ')).then(() => 'kreation');}          
           if (~befehl.indexOf("--ELEMENT")) { versuch = true; return bot.say(KreationsBot+' Mit Javascript kann ich Ihren Browser ansprechen - daher kam der Javascript-Alert. [Javascript:alert(Der Bot hat Ihren Browser angesprochen.)] So ähnlich binden wir reichhaltige Daten und Funktionen aus anderen Quellen ein! ').then(() => bot.say(KreationsBot+' Zum Beispiel einen Text: [Text:RobogeddonDoku] Oder einen externen Link: [Link:Thin Media,ThinMedia] Oder eine ganze Linkliste: [Linkliste:Links zu Strategie-Artikeln,Rtm:Strategie:Artikel] ')).then(() => bot.say(KreationsBot+' Zurück zu --Formate? ')).then(() => 'kreation');}          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
        // -----------------
        // Vorlagen
        // -----------------
@@ -1174,24 +1142,21 @@
        // -----------------
           
           if (~befehl.indexOf("--KANAL")) { versuch = true; return bot.say(KonzeptionsBot+' Ein Bot lässt sich einfach in Ihre bestehenden Marketing-Kanäle einbinden - letztlich ist er nur die URL einer für alle Geräte optimierten Webseite. ').then(() => bot.say(KonzeptionsBot+' CRM/Dialog: Link in Newslettern, Kurzlink/QR-Code auf Drucksachen. ')).then(() => bot.say(KonzeptionsBot+' Marke: Webseiten-Widget, Link in Social Media und E-Mail-Signaturen, Kurzlink/QR-Code auf Visitenkarten. ')).then(() => bot.say(KonzeptionsBot+' Vor Ort: Kurzlink/QR-Code auf Plakat, Aufsteller, Schaufenster, Produkt. ')).then(() => bot.say(KonzeptionsBot+' Zurück zur --Konzeption. ')).then(() => 'konzeption');}if (~befehl.indexOf("--KANÄLE")) { versuch = true; return bot.say(KonzeptionsBot+' Ein Bot lässt sich einfach in Ihre bestehenden Marketing-Kanäle einbinden - letztlich ist er nur die URL einer für alle Geräte optimierten Webseite. ').then(() => bot.say(KonzeptionsBot+' CRM/Dialog: Link in Newslettern, Kurzlink/QR-Code auf Drucksachen. ')).then(() => bot.say(KonzeptionsBot+' Marke: Webseiten-Widget, Link in Social Media und E-Mail-Signaturen, Kurzlink/QR-Code auf Visitenkarten. ')).then(() => bot.say(KonzeptionsBot+' Vor Ort: Kurzlink/QR-Code auf Plakat, Aufsteller, Schaufenster, Produkt. ')).then(() => bot.say(KonzeptionsBot+' Zurück zur --Konzeption. ')).then(() => 'konzeption');}          
-          
-          
-          
        // -----------------
 	    // Nutzung
        // -----------------
           
-          if (~befehl.indexOf("--NUTZUNG")) { versuch = true; return bot.say(KonzeptionsBot+' Konzeption Nutzung Text 1. ').then(() => bot.say(KonzeptionsBot+' Konzeption Nutzung Text 2. ')).then(() => bot.say(KonzeptionsBot+' Zurück zur --Konzeption. ')).then(() => 'konzeption');}          if (~befehl.indexOf("--CHAT")) { versuch = true; return bot.say(KonzeptionsBot+' Konzeption Chats Text 1. ').then(() => bot.say(KonzeptionsBot+' Konzeption Chats Text 2. ')).then(() => bot.say(KonzeptionsBot+' Zurück zur --Konzeption. ')).then(() => 'konzeption');}          if (~befehl.indexOf("--PLATTFORM")) { versuch = true; return bot.say(KonzeptionsBot+' Konzeption Plattform Text 1. ').then(() => bot.say(KonzeptionsBot+' Konzeption Plattform Text 2. ')).then(() => bot.say(KonzeptionsBot+' Zurück zur --Konzeption. ')).then(() => 'konzeption');}          
-          
-          
-          
+          if (~befehl.indexOf("--NUTZUNG")) { versuch = true; return bot.say(KonzeptionsBot+' Konzeption Nutzung Text 1. ').then(() => bot.say(KonzeptionsBot+' Konzeption Nutzung Text 2. ')).then(() => bot.say(KonzeptionsBot+' Zurück zur --Konzeption. ')).then(() => 'konzeption');}	       
+          if (~befehl.indexOf("--CHAT")) { versuch = true; return bot.say(KonzeptionsBot+' Konzeption Chats Text 1. ').then(() => bot.say(KonzeptionsBot+' Konzeption Chats Text 2. ')).then(() => bot.say(KonzeptionsBot+' Zurück zur --Konzeption. ')).then(() => 'konzeption');}	       
+          if (~befehl.indexOf("--PLATTFORM")) { versuch = true; return bot.say(KonzeptionsBot+' Konzeption Plattform Text 1. ').then(() => bot.say(KonzeptionsBot+' Konzeption Plattform Text 2. ')).then(() => bot.say(KonzeptionsBot+' Zurück zur --Konzeption. ')).then(() => 'konzeption');}          
        // -----------------
        // Plattformen
        // -----------------
           
           if (~befehl.indexOf("--SLACK")) { versuch = true; return bot.say(KonzeptionsBot+' Slack ist eine fantastische neue Kommunikationsplattform für Teams! ').then(() => bot.say(KonzeptionsBot+' Wenn Sie Slack noch nicht kennen, erwägen Sie, es für Ihre Interne Kommunikation zu nutzen. Lassen Sie sich dazu von --Barbara unseren --Slack-Artikel für Marketer, den --Slack-Blogpost für Anwender, unsere --Slack-Links und unser --Slack-Team zeigen. ')).then(() => bot.say(KonzeptionsBot+' Slack eignet sich perfekt für eine --interne --Strategie mit --ChatOps. ')).then(() => 'technik');}          
           if (~befehl.indexOf("--HIPCHAT")) { versuch = true; return bot.say(KonzeptionsBot+' Technik HipChat 1. ').then(() => bot.say(KonzeptionsBot+' Technik HipChat 2. ')).then(() => bot.say(KonzeptionsBot+' Technik HipChat 3. ')).then(() => 'technik');}          
-          if (~befehl.indexOf("--FACEBOOK")) { versuch = true; return bot.say(KonzeptionsBot+' Technik Facebook Messenger 1. ').then(() => bot.say(KonzeptionsBot+' Technik Facebook Messenger 2. ')).then(() => bot.say(KonzeptionsBot+' Technik Facebook Messenger 3. ')).then(() => 'technik');}       // -----------------
+          if (~befehl.indexOf("--FACEBOOK")) { versuch = true; return bot.say(KonzeptionsBot+' Technik Facebook Messenger 1. ').then(() => bot.say(KonzeptionsBot+' Technik Facebook Messenger 2. ')).then(() => bot.say(KonzeptionsBot+' Technik Facebook Messenger 3. ')).then(() => 'technik');}	       
+       // -----------------
        // Vorlagen
        // -----------------
        
