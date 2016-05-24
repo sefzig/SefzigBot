@@ -281,6 +281,8 @@
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(EmpfangsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse');}          
           if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(EmpfangsBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
           if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(EmpfangsBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(EmpfangsBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
+       // Stile
+          if (~befehl.indexOf("--TAG")) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:stil(tag)] Stil: Tag. ').then(() => 'empfang');}          if (~befehl.indexOf("--NACHT")) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:stil(nacht)] Stil: Nacht. ').then(() => 'empfang');}          if (~befehl.indexOf("--ROBOS")) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:stil(robogeddon)] Stil: Robogeddon. ').then(() => 'empfang');}          if (~befehl.indexOf("--HX")) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:stil(hacks)] Stil: Hx. ').then(() => 'empfang');}          
        // -----------------
        // Bots
        // -----------------
@@ -477,6 +479,8 @@
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(BeratungsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse');}          
           if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(BeratungsBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
           if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(BeratungsBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(BeratungsBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
+       // Stile
+          if (~befehl.indexOf("--TAG")) { versuch = true; return bot.say(BeratungsBot+' [Javascript:stil(tag)] Stil: Tag. ').then(() => 'beratung');}          if (~befehl.indexOf("--NACHT")) { versuch = true; return bot.say(BeratungsBot+' [Javascript:stil(nacht)] Stil: Nacht. ').then(() => 'beratung');}          if (~befehl.indexOf("--ROBOS")) { versuch = true; return bot.say(BeratungsBot+' [Javascript:stil(robogeddon)] Stil: Robogeddon. ').then(() => 'beratung');}          if (~befehl.indexOf("--HX")) { versuch = true; return bot.say(BeratungsBot+' [Javascript:stil(hacks)] Stil: Hx. ').then(() => 'beratung');}          
        // -----------------
        // Bots
        // -----------------
@@ -689,6 +693,8 @@
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(TechnikBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse');}          
           if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(TechnikBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
           if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(TechnikBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(TechnikBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
+       // Stile
+          if (~befehl.indexOf("--TAG")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(tag)] Stil: Tag. ').then(() => 'technik');}          if (~befehl.indexOf("--NACHT")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(nacht)] Stil: Nacht. ').then(() => 'technik');}          if (~befehl.indexOf("--ROBOS")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(robogeddon)] Stil: Robogeddon. ').then(() => 'technik');}          if (~befehl.indexOf("--HX")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(hacks)] Stil: Hx. ').then(() => 'technik');}          
        // -----------------
        // Bots
        // -----------------
@@ -736,7 +742,7 @@
           if (~befehl.indexOf("--INHALTE")) { versuch = true; return bot.say(TechnikBot+' Inhaltliche --Techniken: --Text, --Bild, --Qr und --Youtube. ').then(() => 'technik');}          
           if (~befehl.indexOf("--LINKS")) { versuch = true; return bot.say(TechnikBot+' --Techniken auf Basis von Links: --Link, --Textlink, --Linkliste, --Button und --Action. ').then(() => 'technik');}          
           if (~befehl.indexOf("--JAVASCRIPT")) { versuch = true; return bot.say(TechnikBot+' Javascript-basierte --Techniken: --Menue, --MenuAn, --MenuAus, --StilTag, --StilNacht, --StilRobo, --StilHx, --Alert, --Konsole und --Cookie. ').then(() => 'technik');}          
-          if (~befehl.indexOf("--TEST")) { versuch = true; return bot.say(TechnikBot+' Wir entwickeln ständig neue --Techniken. Aktuelle Tests: --Inhalte, --Links, und --Javascript. ').then(() => 'technik');}          
+          if (~befehl.indexOf("--TEST")) { versuch = true; return bot.say(TechnikBot+' Wir entwickeln ständig neue --Techniken. Aktuell im Test: --Inhalte, --Links, und --Javascript. ').then(() => 'technik');}          
           
           
           
@@ -752,30 +758,15 @@
        // -----------------
        
        // Inhalte
-               if  (~befehl.indexOf("--TEXT"))       { versuch = true; bot.say(TechnikBot+' [Text:Slack-Blogpost öffnen,SefzignetBlogSlack] Ein Text.'); }
-          else if  (~befehl.indexOf("--BILD"))       { versuch = true; bot.say(TechnikBot+' [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Ein Bild.'); }
-          else if  (~befehl.indexOf("--QR"))         { versuch = true; bot.say(TechnikBot+' [Qr:https://sefzigbot.herokuapp.com/] Ein QR-Code.'); }
-          else if  (~befehl.indexOf("--YOUTUBE"))    { versuch = true; bot.say(TechnikBot+' [Youtube:u07XONlDwX8] Ein Youtube-Video.'); }
-          
+          if (~befehl.indexOf("--TEXT")) { versuch = true; return bot.say(TechnikBot+' [Text:Slack-Blogpost öffnen,SefzignetBlogSlack] Ein Text. ').then(() => bot.say(TechnikBot+' Mehr --Inhalte, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--BILD")) { versuch = true; return bot.say(TechnikBot+' [Bild:http://sefzig.net/text/seiten/SefzigBot/dateien/Mesaging_vs_Social.png] Ein Bild. ').then(() => bot.say(TechnikBot+' Mehr --Inhalte, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--QR")) { versuch = true; return bot.say(TechnikBot+' [Qr:https://sefzigbot.herokuapp.com/] Ein QR-Code. ').then(() => bot.say(TechnikBot+' Mehr --Inhalte, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--YOUTUBE")) { versuch = true; return bot.say(TechnikBot+' [Youtube:u07XONlDwX8] Ein Youtube-Video. ').then(() => bot.say(TechnikBot+' Mehr --Inhalte, --Tests, --Technik? ')).then(() => 'technik');}          
        // Links
-          else if  (~befehl.indexOf("--LINK"))       { versuch = true; bot.say(TechnikBot+' [Link:Testlink,ThinMedia] Ein Link.'); }
-          else if  (~befehl.indexOf("--TEXTLINK"))   { versuch = true; bot.say(TechnikBot+' [Textlink:BI Intelligence Report,MessagingVsSocial] Ein Textlink.'); }
-          else if  (~befehl.indexOf("--LINKLISTE"))  { versuch = true; bot.say(TechnikBot+' [Linkliste:Linkliste öffnen,Rtm:Strategie:Artikel] Eine Linkliste.'); }
-          else if  (~befehl.indexOf("--BUTTON"))     { versuch = true; bot.say(TechnikBot+' [Button:Studie von Slack,http://slack.com/results] Ein Button.'); }
-          else if  (~befehl.indexOf("--ACTION"))     { versuch = true; bot.say(TechnikBot+' %[Ein Nachbau von ELIZA](http://sefzig.net/link/ElizaMedai/) Eine Action.'); }
-          
+          if (~befehl.indexOf("--LINK")) { versuch = true; return bot.say(TechnikBot+' [Link:Testlink,ThinMedia] Ein Link. ').then(() => bot.say(TechnikBot+' Mehr --Links, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--TEXTLINK")) { versuch = true; return bot.say(TechnikBot+' [Textlink:BI Intelligence Report,MessagingVsSocial] Ein Textlink. ').then(() => bot.say(TechnikBot+' Mehr --Links, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--LINKLISTE")) { versuch = true; return bot.say(TechnikBot+' [Linkliste:Linkliste öffnen,Rtm:Strategie:Artikel] Eine Linkliste. ').then(() => bot.say(TechnikBot+' Mehr --Links, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--BUTTON")) { versuch = true; return bot.say(TechnikBot+' [Button:Studie von Slack,http://slack.com/results] Ein Button. ').then(() => bot.say(TechnikBot+' Mehr --Links, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--ACTION")) { versuch = true; return bot.say(TechnikBot+' %[Ein Nachbau von ELIZA](http://sefzig.net/link/ElizaMedai/) Eine Action. ').then(() => bot.say(TechnikBot+' Mehr --Links, --Tests, --Technik? ')).then(() => 'technik');}          
+       // Stile
+          if (~befehl.indexOf("--STILTAG")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(tag)] Javascript ausgeführt: Stil Tag. ').then(() => bot.say(TechnikBot+' Mehr --Client, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--STILNACHT")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(nacht)] Javascript ausgeführt: Stil Nacht. ').then(() => bot.say(TechnikBot+' Mehr --Client, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--STILROBO")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(robogeddon)] Javascript ausgeführt: Stil Robogeddon. ').then(() => bot.say(TechnikBot+' Mehr --Client, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--STILHX")) { versuch = true; return bot.say(TechnikBot+' [Javascript:stil(hacks)] Javascript ausgeführt: Stil Hx. ').then(() => bot.say(TechnikBot+' Mehr --Client, --Tests, --Technik? ')).then(() => 'technik');}          
+       // Menü
+          if (~befehl.indexOf("--MENUE")) { versuch = true; return bot.say(TechnikBot+' [Javascript:menu()] Javascript ausgeführt: Menü getoggelt. ').then(() => bot.say(TechnikBot+' Mehr --Client, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--MENUAN")) { versuch = true; return bot.say(TechnikBot+' [Javascript:menu(an)] Javascript ausgeführt: Menü an. ').then(() => bot.say(TechnikBot+' Mehr --Client, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--MENUAUS")) { versuch = true; return bot.say(TechnikBot+' [Javascript:menu(aus)] Javascript ausgeführt: Menü aus. ').then(() => bot.say(TechnikBot+' Mehr --Client, --Tests, --Technik? ')).then(() => 'technik');}          
        // Javascript
-          else if  (~befehl.indexOf("--STILTAG"))    { versuch = true; bot.say(TechnikBot+' [Javascript:stil(tag)] Javascript ausgeführt: Stil Tag.'); }
-          else if  (~befehl.indexOf("--STILNACHT"))  { versuch = true; bot.say(TechnikBot+' [Javascript:stil(nacht)] Javascript ausgeführt: Stil Nacht.'); }
-          else if  (~befehl.indexOf("--STILROBO"))   { versuch = true; bot.say(TechnikBot+' [Javascript:stil(robogeddon)] Javascript ausgeführt: Stil Robogeddon.'); }
-          else if  (~befehl.indexOf("--STILHX"))     { versuch = true; bot.say(TechnikBot+' [Javascript:stil(hx)] Javascript ausgeführt: Stil Hx.'); }
-          else if  (~befehl.indexOf("--MENUE"))      { versuch = true; bot.say(TechnikBot+' [Javascript:menu()] Javascript ausgeführt: Menü getoggelt.'); }
-          else if  (~befehl.indexOf("--MENUAN"))     { versuch = true; bot.say(TechnikBot+' [Javascript:menu(an)] Javascript ausgeführt: Menü an.'); }
-          else if  (~befehl.indexOf("--MENUAUS"))    { versuch = true; bot.say(TechnikBot+' [Javascript:menu(aus)] Javascript ausgeführt: Menü aus.'); }
-          else if  (~befehl.indexOf("--ALERT"))      { versuch = true; bot.say(TechnikBot+' [Javascript:alert(123)] Javascript ausgeführt: Alert.'); }
-          else if  (~befehl.indexOf("--KONSOLE"))    { versuch = true; bot.say(TechnikBot+' [Javascript:konsole(123)] Javascript ausgeführt: Konsole.'); }
-          else if  (~befehl.indexOf("--COOKIE"))     { versuch = true; bot.say(TechnikBot+' [Javascript:cookies(test,123)] Javascript ausgeführt: Cookies.'); }
-          
+          if (~befehl.indexOf("--ALERT")) { versuch = true; return bot.say(TechnikBot+' [Javascript:alert(123)] Javascript ausgeführt: Alert. ').then(() => bot.say(TechnikBot+' Mehr --Javascript, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--KONSOLE")) { versuch = true; return bot.say(TechnikBot+' [Javascript:konsole(123)] Javascript ausgeführt: Konsole. ').then(() => bot.say(TechnikBot+' Mehr --Javascript, --Tests, --Technik? ')).then(() => 'technik');}          if (~befehl.indexOf("--COOKIE")) { versuch = true; return bot.say(TechnikBot+' [Javascript:cookies(test,123)] Javascript ausgeführt: Cookies. ').then(() => bot.say(TechnikBot+' Mehr --Javascript, --Tests, --Technik? ')).then(() => 'technik');}          
        // -----------------
        // Vorlagen
        // -----------------
@@ -917,6 +908,8 @@
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(KreationsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse');}          
           if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(KreationsBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
           if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(KreationsBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(KreationsBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
+       // Stile
+          if (~befehl.indexOf("--TAG")) { versuch = true; return bot.say(KreationsBot+' [Javascript:stil(tag)] Stil: Tag. ').then(() => 'kreation');}          if (~befehl.indexOf("--NACHT")) { versuch = true; return bot.say(KreationsBot+' [Javascript:stil(nacht)] Stil: Nacht. ').then(() => 'kreation');}          if (~befehl.indexOf("--ROBOS")) { versuch = true; return bot.say(KreationsBot+' [Javascript:stil(robogeddon)] Stil: Robogeddon. ').then(() => 'kreation');}          if (~befehl.indexOf("--HX")) { versuch = true; return bot.say(KreationsBot+' [Javascript:stil(hacks)] Stil: Hx. ').then(() => 'kreation');}          
        // -----------------
        // Bots
        // -----------------
@@ -1134,6 +1127,8 @@
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(KonzeptionsBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse');}          
           if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(KonzeptionsBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
           if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(KonzeptionsBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(KonzeptionsBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
+       // Stile
+          if (~befehl.indexOf("--TAG")) { versuch = true; return bot.say(KonzeptionsBot+' [Javascript:stil(tag)] Stil: Tag. ').then(() => 'konzeption');}          if (~befehl.indexOf("--NACHT")) { versuch = true; return bot.say(KonzeptionsBot+' [Javascript:stil(nacht)] Stil: Nacht. ').then(() => 'konzeption');}          if (~befehl.indexOf("--ROBOS")) { versuch = true; return bot.say(KonzeptionsBot+' [Javascript:stil(robogeddon)] Stil: Robogeddon. ').then(() => 'konzeption');}          if (~befehl.indexOf("--HX")) { versuch = true; return bot.say(KonzeptionsBot+' [Javascript:stil(hacks)] Stil: Hx. ').then(() => 'konzeption');}          
        // -----------------
        // Bots
        // -----------------
@@ -1337,6 +1332,8 @@
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(StrategieBot+' Wir geben Ihre E-Mail-Adresse nicht an Dritte weiter! ').then(() => 'emailadresse');}          
           if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(StrategieBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
           if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(StrategieBot+' Diesen Chat mobil öffnen: [Qr:https://sefzigbot.herokuapp.com/] ').then(() => bot.say(TechnikBot+' Leider werden Sie dort nicht automatisch wiedererkannt. Wir arbeiten an einer Lösung... ')).then(() => bot.say(StrategieBot+' Oder öffnen Sie [Textlink:Robogeddon.herokuapp.com,http://sefzigbot.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
+       // Stile
+          if (~befehl.indexOf("--TAG")) { versuch = true; return bot.say(StrategieBot+' [Javascript:stil(tag)] Stil: Tag. ').then(() => 'strategie');}          if (~befehl.indexOf("--NACHT")) { versuch = true; return bot.say(StrategieBot+' [Javascript:stil(nacht)] Stil: Nacht. ').then(() => 'strategie');}          if (~befehl.indexOf("--ROBOS")) { versuch = true; return bot.say(StrategieBot+' [Javascript:stil(robogeddon)] Stil: Robogeddon. ').then(() => 'strategie');}          if (~befehl.indexOf("--HX")) { versuch = true; return bot.say(StrategieBot+' [Javascript:stil(hacks)] Stil: Hx. ').then(() => 'strategie');}          
        // -----------------
        // Bots
        // -----------------
