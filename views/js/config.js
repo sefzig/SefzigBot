@@ -76,7 +76,7 @@
        	
        // Benutzeroberfläche
           "headerText": "Andreas Sefzigs #Robogeddon",
-          "introText": "Dies ist der Anfang unseres Gesprächs.<br/><span class=blink>Schreiben Sie irgendetwas, um zu beginnen!</span>",
+          "introText": "Dies ist der Anfang unseres Gesprächs.<br/><span class=blink>Schreiben Sie irgendetwas, um zu beginnen - z.B. Hallo!</span>",
           "inputPlaceholder": "Schreiben Sie eine Nachricht...",
           "sendButtonText": "Absenden",
           
@@ -221,7 +221,7 @@
                 "<img class='%klasse%' ",
                    "src='http://chart.apis.google.com/chart?chs=225x225&cht=qr&chld=L&chf=bg,s,65432100&chl=%inhalt%' />",
              "</center> ",
-             "http://sefzigbot.herokuapp.com/ "
+             "%inhalt%"
           ],
           
        // Iframe
