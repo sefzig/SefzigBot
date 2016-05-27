@@ -615,12 +615,14 @@
     }
           
  // Text in Ebene öffnen
-    function fenster(methode, kurzel) {
+    function fenster(methode, kurzel, ansicht) {
+       
+       if ((!ansicht) || (ansicht == "")) { var ansicht = "einbindung"; }
        
     // URL errechnen
        if (methode == "link")  { var url = "http://sefzig.net/link/"+kurzel+"/"; }
        if (methode == "links") { var url = "http://sefzig.net/link/liste/"+kurzel+"/?ansicht=ansehen"; }
-       if (methode == "text")  { var url = "http://sefzig.net/text/"+kurzel+"/#einbindung"; }
+       if (methode == "text")  { var url = "http://sefzig.net/text/"+kurzel+"/#"+ansicht; }
        if (methode == "bild")  { var url = kurzel; }
        
        if ((methode == "link") || (methode == "links") || (methode == "text")) {

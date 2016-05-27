@@ -136,7 +136,7 @@
                    "href='http://sefzig.net/text/%var2%/#%var3%' ",
                    "target='_blank' ",
                    "onclick='",
-                      "fenster(\"text\",\"%var2%\"); ",
+                      "fenster(\"text\",\"%var2%\",\"%var3%\"); ",
                       "return false;'>",
                    "%var1%",
                 "</a>",
