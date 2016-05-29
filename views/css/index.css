@@ -227,7 +227,7 @@
     #sk-conversation {
        top: 12px !important;
        bottom: 0px !important;
-       height: calc(100% - 68px) !important;
+       height: calc(100% - 71px) !important;
     }
     #sk-footer {
        bottom: 0px;
@@ -442,4 +442,86 @@
     
     body[data-menu="an"]  .sk-right-row .sk-msg { margin-right: 0%;  transition: all 0.3s linear; }
     body[data-menu="aus"] .sk-right-row .sk-msg { margin-right: 40%; transition: all 0.3s linear; }
+    
+ /* ----------------- */
+ /* Befehler */
+ /* ----------------- */
+    
+    .befehle {
+       display: none;
+       position: fixed; 
+       z-index: 10001 !important;
+       bottom: 18px; 
+       left: 35px; 
+       right: 117px; 
+       height: 20px;
+       padding: 5px;
+       padding-top: 0px;
+       background: #ffffff;
+       overflow-y: hidden;
+       overflow-x: hidden;
+       white-space: nowrap;
+    }
+    
+    .befehle > div {
+       width: 1000px;
+       background-color: transparent;
+       overflow-y: hidden;
+       overflow-x: auto;
+    }
+    
+    .befehle > div > .befehler {
+       position: relative;
+       float: left;
+       margin: 2px;
+       margin-left: 0px;
+       margin-right: 4px;
+       margin-bottom: 2px;
+       padding-top: 3px;
+       padding-right: 5px;
+       padding-bottom: 3px;
+       padding-left: 5px;
+       background-color: #00aeff;
+       color: #ffffff;
+       border-radius: 2px;
+       cursor: pointer;
+    }
+    
+    .befehle > div > .befehler > span {
+       margin-left: 1px;
+    }
+    
+    #befehle {
+       display: none;
+       position: fixed;
+       z-index: 3002;
+       bottom: 20px;
+       right: 89px;
+       border: 0px black solid;
+    }
+    
+    #befehle input {
+       width: 20px;
+       height: 20px;
+       background-color: #dddddd;
+       border-radius: 10px;
+       color: white;
+       border: 0px black solid;
+       cursor: pointer;
+       font-style: italic;
+      -webkit-transition: background-color 500ms linear;
+      -moz-transition: background-color 500ms linear;
+      -o-transition: background-color 500ms linear;
+      -ms-transition: background-color 500ms linear;
+       transition: background-color 500ms linear;
+    }
+    
+    #befehle input.aktiv {
+       background-color: #00aeff;
+      -webkit-transition: background-color 500ms linear;
+      -moz-transition: background-color 500ms linear;
+      -o-transition: background-color 500ms linear;
+      -ms-transition: background-color 500ms linear;
+       transition: background-color 500ms linear;
+    }
     

@@ -1,4 +1,8 @@
 
+ // ------------------------
+ // Initialisierung
+ // ------------------------
+
  // Anwendung starten
     $(document).ready(function(){
        
@@ -50,7 +54,7 @@
        }
        $("#menu > div").css("display", "none");
        $("#menu > #"+menue).css("display", "block");
-          
+       
     // Befehle im Menü
        selektor = "#seite > #menu div > div button";
        $(selektor).click(function() {
@@ -72,29 +76,6 @@
        });
        
     });
-    
- // Stil (ggfls. auswählen und) anwenden
-    function stil(auswahl) {
-       
-       zufall = 3;
-       dir = "stil";
-       
-       if ((!auswahl) || (auswahl == "")) {
-          
-          auswahl = getParameters("stil");
-          
-          if ((!auswahl) || (auswahl == "")) {
-             
-             auswahl = config["anwendung"]["defaultStil"];
-             
-          }
-       
-       }
-       
-       ladenCss(auswahl, zufall, dir);
-       $("body").attr("data-stil", auswahl);
-       
-    }
     
  // Chat starten
     function start(methode) {
@@ -204,6 +185,48 @@
        
     }
     
+ // Befehler-Leiste laden
+    function befehlerLaden() {
+       
+       var stand = $("body").attr("data-befehler");
+       if (stand == "true") {} else {
+          
+       // Befehler-Template laden
+          template = templates["befehl"]["leiste"];
+          if ($.isArray(template)) {
+             template = template.join("a-f-z");
+             template = template.replace(/a-f-z/g, "");
+          }
+          
+       // Template einsetzen
+          selektor = "#chat";
+          $(selektor).append(template);
+          console.log("Setze Befehler-Leiste ein: "+template);
+          
+       // Status merken
+          $("body").attr("data-befehler", "true");
+          
+       // Befehlleiste erzeugen
+       // Folgt...
+       // alert("Befehler laden: "+inhalt);
+          
+       // Befehler-Button anzeigen
+          $("#befehle").fadeIn();
+          
+          $("#sk-footer").hover(function() {
+             $("#befehle input").addClass("aktiv");
+          }, function() {
+             $("#befehle input").removeClass("aktiv");
+          });
+          
+       }
+       
+    }
+    
+ // ------------------------
+ // Hilfs-Funktionen
+ // ------------------------
+    
  // Texte anpassen
     function inhalt(methode, text_string, var1, var2, var3, var4) {
        
@@ -237,11 +260,20 @@
                 befehl_button = befehl_button.replace(/a-f-z/g, "");
              // console.log("befehl_button array: "+befehl_button);
              }
+             
+          // Template füllen
              befehl_button = befehl_button.replace(/%inhalt%/g, inhalt);
           // console.log("befehl_button neu: "+befehl_button);
              
+          // Template einsetzen
              text_string = text_string.replace(befehl_prefix+""+inhalt, befehl_button); // ..?
           // console.log("text_string: "+text_string+"");
+             
+          // Befehler laden
+             befehlerLaden();
+       
+          // Befehler hinzufügen
+             befehlerNeu(inhalt);
              
           }
           
@@ -393,7 +425,7 @@
                 $(".sk-from.bot"+zufall).wrap(wrap);
                 $(".sk-msg-avatar.bot"+zufall).wrap(wrap);
                 
-             }, 500);
+             }, 666);
              
           // Neuen Text anpassen
              text_string = text_string.replace("["+kurzel+"] ","");
@@ -410,83 +442,6 @@
        }
        
        return text_string; 
-       
-    }
-    
-    function menu(methode) {
-       
-       console.log("\n\nmenu('"+methode+"')");
-       
-    // Toggle ermitteln
-       if ((methode == "an") || (methode == "aus")) {
-          
-          methode = methode;
-          console.log("methode übernommen: '"+methode+"'");
-          
-       }
-       else {
-          
-          var status = $("body").attr("data-menu");
-          if (status == "an") {
-             
-             methode = "an";
-             
-          }
-          else {
-             
-             methode = "aus";
-             
-          }
-          console.log("methode aus body-attr: '"+methode+"'");
-          
-       }
-       
-    // Aktuelle und gespeicherte Zeit nehmen
-       zeit = new Date().getTime();
-       zeitClient = $("body").attr("data-menu-zeit");
-       
-    // Zwei Sekunden abwarten (Konversation laden)
-       if ((!zeitClient) || (zeitClient == "")) { zeitClient = 0; }
-       else { zeitClient = zeitClient - (-333); }
-       
-       if (zeit > zeitClient) {
-          
-       // Animation vorbreiten
-          if (methode == "an") {
-                
-             methode_neu = "aus";
-             left_neu = "0%";
-             breite_neu = "60%";
-             console.log("neue methode (an): '"+methode+"'");
-                
-          }
-          else {
-             
-             methode_neu = "an";
-             left_neu = "-40%";
-             breite_neu = "100%";
-             console.log("neue methode (aus): '"+methode+"'");
-             
-          }
-          
-       // Animieren
-          $("#seite > #menu").animate({ right: left_neu }, 300);
-          $("#seite .sk-logo").animate({ width: breite_neu }, 300);
-          $("body").attr("data-menu", methode_neu);
-          
-       // Button einblenden
-          window.setTimeout(function() { $("#start input").fadeIn(300); }, 300);
-          
-       // Zeit speichern
-          $("body").attr("data-menu-zeit", zeit);
-          
-       }
-       
-    }
-    
-    function konsolen(b) {
-       
-       console.log('> '+b);
        
     }
     
@@ -602,6 +557,60 @@
        
     }
     
+ // ------------------------
+ // Client-Funktionen
+ // ------------------------
+    
+ // Befehler füllen
+    function befehlerNeu(inhalt) {
+    // alert("stand: "+stand+", inhalt: "+inhalt);
+    
+    // Bisherigen Befehl löschen
+       $("#chat .befehler[rel='"+inhalt+"']").remove();
+       
+    // Befehler-Template laden
+       template = templates["befehl"]["befehler"];
+       if ($.isArray(template)) {
+             template = template.join("a-f-z");
+             template = template.replace(/a-f-z/g, "");
+          }
+       
+    // Template ausfüllen
+       template = template.replace(/%inhalt%/g, inhalt);
+       console.log("Setze neuen Befehler ein: "+template);
+       
+    // Template einsetzen
+       selektor = "#chat .befehle > div";
+       $(selektor).prepend(template);
+          
+    }
+    
+ // Befehler-Klicks
+    function befehlerKlick(inhalt) {
+       
+    // Befehlleiste erzeugen
+    // Folgt...
+    // alert("Befehler geklickt: "+inhalt);
+       window.Smooch.sendMessage(inhalt);
+       
+    }
+    
+ // Befehler-Klicks
+    function befehlerSchalter() {
+       
+       var stand = $("#befehle input").val();
+          
+       if (stand == "i") {
+          $(".befehle").animate({ width: "toggle" });
+          $("#befehle input").val("x");
+       }
+       else {
+          $(".befehle").animate({ width: "toggle" });
+          $("#befehle input").val("i");
+       }
+       
+    }
+    
  // Klicks auf Befehle
     function befehlen(befehl) {
        
@@ -613,53 +622,8 @@
        window.Smooch.sendMessage(befehl);
        
     }
-          
- // Text in Ebene öffnen
-    function fenster(methode, kurzel, ansicht) {
-       
-       if ((!ansicht) || (ansicht == "")) { var ansicht = "einbindung"; }
-       
-    // URL errechnen
-       if (methode == "link")  { var url = "http://sefzig.net/link/"+kurzel+"/"; }
-       if (methode == "links") { var url = "http://sefzig.net/link/liste/"+kurzel+"/?ansicht=ansehen"; }
-       if (methode == "text")  { var url = "http://sefzig.net/text/"+kurzel+"/#"+ansicht; }
-       if (methode == "bild")  { var url = kurzel; }
-       
-       if ((methode == "link") || (methode == "links") || (methode == "text")) {
-          
-       // Bild verbergen
-          $("#fenster td > img").css("display", "none");
-          
-       // Iframe laden
-          $("#fenster td > iframe").attr("src", url);
-          $("#fenster td > iframe").css("display", "block");
-          
-       }
-       else if (methode == "bild") {
-          
-       // Iframe verbergen
-          $("#fenster td > iframe").css("display", "none");
-          
-       // Bild laden
-          $("#fenster td > img").attr("src", url);
-          $("#fenster td > img").css("display", "block");
-          
-       }
-       
-    // Ebene öffnen
-       $("#fenster").fadeIn(500);
-          
-       return false;
-       
-    }
-    function fensterSchliessen() {
-              
-       $('#fenster td > iframe, #fenster td > img').attr('src',''); 
-       $('#fenster').css('display','none');
-              
-    }
     
- // Helper: Cookie
+ // Helper: Cookie setzen
     function cookie(name) {
        
        if (name) {
@@ -698,6 +662,159 @@
           return wert;
           
        }
+       
+    }
+    
+ // Inhalt in Fenster öffnen
+    function fenster(methode, kurzel, ansicht) {
+       
+       if ((!ansicht) || (ansicht == "")) { var ansicht = "einbindung"; }
+       
+    // URL errechnen
+       if (methode == "link")  { var url = "http://sefzig.net/link/"+kurzel+"/"; }
+       if (methode == "links") { var url = "http://sefzig.net/link/liste/"+kurzel+"/?ansicht=ansehen"; }
+       if (methode == "text")  { var url = "http://sefzig.net/text/"+kurzel+"/#"+ansicht; }
+       if (methode == "bild")  { var url = kurzel; }
+       
+       if ((methode == "link") || (methode == "links") || (methode == "text")) {
+          
+       // Bild verbergen
+          $("#fenster td > img").css("display", "none");
+          
+       // Iframe laden
+          $("#fenster td > iframe").attr("src", url);
+          $("#fenster td > iframe").css("display", "block");
+          
+       }
+       else if (methode == "bild") {
+          
+       // Iframe verbergen
+          $("#fenster td > iframe").css("display", "none");
+          
+       // Bild laden
+          $("#fenster td > img").attr("src", url);
+          $("#fenster td > img").css("display", "block");
+          
+       }
+       
+    // Ebene öffnen
+       $("#fenster").fadeIn(500);
+          
+       return false;
+       
+    }
+    
+ // Fenster schliessen
+    function fensterSchliessen() {
+              
+       $('#fenster td > iframe, #fenster td > img').attr('src',''); 
+       $('#fenster').css('display','none');
+              
+    }
+    
+ // ------------------------
+ // Chat-Funktionen
+ // ------------------------
+    
+ // Stil (ggfls. auswählen und) anwenden
+    function stil(auswahl) {
+       
+       zufall = 3;
+       dir = "stil";
+       
+       if ((!auswahl) || (auswahl == "")) {
+          
+          auswahl = getParameters("stil");
+          
+          if ((!auswahl) || (auswahl == "")) {
+             
+             auswahl = config["anwendung"]["defaultStil"];
+             
+          }
+       
+       }
+       
+       ladenCss(auswahl, zufall, dir);
+       $("body").attr("data-stil", auswahl);
+       
+    }
+    
+ // Menü an- oder ausschalten
+    function menu(methode) {
+       
+    // console.log("\n\nmenu('"+methode+"')");
+       
+    // Toggle ermitteln
+       if ((methode == "an") || (methode == "aus")) {
+          
+          methode = methode;
+       // console.log("methode übernommen: '"+methode+"'");
+          
+       }
+       else {
+          
+          var status = $("body").attr("data-menu");
+          if (status == "an") {
+             
+             methode = "an";
+             
+          }
+          else {
+             
+             methode = "aus";
+             
+          }
+       // console.log("methode aus body-attr: '"+methode+"'");
+          
+       }
+       
+    // Aktuelle und gespeicherte Zeit nehmen
+       zeit = new Date().getTime();
+       zeitClient = $("body").attr("data-menu-zeit");
+       
+    // Zwei Sekunden abwarten (Konversation laden)
+       if ((!zeitClient) || (zeitClient == "")) { zeitClient = 0; }
+       else { zeitClient = zeitClient - (-333); }
+       
+       if (zeit > zeitClient) {
+          
+       // Animation vorbreiten
+          if (methode == "an") {
+                
+             methode_neu = "aus";
+             left_neu = "0%";
+             breite_neu = "60%";
+          // console.log("neue methode (an): '"+methode+"'");
+                
+          }
+          else {
+             
+             methode_neu = "an";
+             left_neu = "-40%";
+             breite_neu = "100%";
+             console.log("neue methode (aus): '"+methode+"'");
+             
+          }
+          
+       // Animieren
+          $("#seite > #menu").animate({ right: left_neu }, 300);
+          $("#seite .sk-logo").animate({ width: breite_neu }, 300);
+          $("body").attr("data-menu", methode_neu);
+          
+       // Button einblenden
+          window.setTimeout(function() { $("#start input").fadeIn(300); }, 300);
+          
+       // Zeit speichern
+          $("body").attr("data-menu-zeit", zeit);
+          
+       }
+       
+    }
+    
+ // Konsolen-Meldung ausgeben
+    function konsolen(b) {
+       
+       console.log('> '+b);
        
     }
     

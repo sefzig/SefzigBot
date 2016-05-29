@@ -120,6 +120,37 @@
                 ""+config["syntax"]["befehlErsatz"]+"%inhalt%",
              "</span>"
              
+          ],
+          
+       // Befehlleiste
+          "leiste": [
+             
+             "<div class='befehle'>",
+               "<div>",
+                 "",
+               "</div>",
+             "</div>"
+             
+          ],
+          
+       // Befehlleiste
+          "befehler": [
+             
+             "<div class='befehler' ",
+                "rel='%inhalt%' ",
+                "onclick='",
+                  "$(this).hide();",
+                "'>",
+                "<span onclick='",
+                  "befehlerKlick(\"%inhalt%\"); befehlerSchalter();",
+                  "'>",
+                  "%inhalt%",
+                "</span>",
+                "<span >",
+                  " x ",
+                "</span> ",
+             "</div>"
+             
           ]
           
        },
